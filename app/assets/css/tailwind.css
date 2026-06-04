@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PrimeVue 4 integration */
+@layer base {
+  body {
+    @apply bg-surface-50 dark:bg-surface-950 text-surface-700 dark:text-surface-0;
+  }
+
+  /* Premium distinct styling for disabled form elements */
+  input:disabled,
+  textarea:disabled,
+  select:disabled,
+  .p-disabled,
+  .p-disabled input,
+  .p-inputtext:disabled,
+  .p-dropdown.p-disabled,
+  .p-calendar.p-disabled input,
+  .p-multiselect.p-disabled {
+    background-color: #f1f5f9 !important; /* solid slate-100 */
+    border-color: #cbd5e1 !important;     /* slate-300 */
+    color: #64748b !important;            /* slate-500 */
+    cursor: not-allowed !important;
+    opacity: 0.85 !important;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05) !important; /* soft inset depth */
+    border-style: dashed !important;      /* dashed border to look locked */
+  }
+
+  /* Dark mode overrides for disabled elements */
+  .dark input:disabled,
+  .dark textarea:disabled,
+  .dark select:disabled,
+  .dark .p-disabled,
+  .dark .p-disabled input,
+  .dark .p-inputtext:disabled,
+  .dark .p-dropdown.p-disabled,
+  .dark .p-calendar.p-disabled input,
+  .dark .p-multiselect.p-disabled {
+    background-color: #1e293b !important; /* solid slate-800 */
+    border-color: #475569 !important;     /* slate-600 */
+    color: #94a3b8 !important;            /* slate-400 */
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
+    border-style: dashed !important;
+  }
+
+  /* Vibrant distinct styles for active input form elements to prevent looking disabled */
+  .p-inputtext,
+  input.p-inputtext,
+  textarea.p-inputtext,
+  .p-select,
+  .p-datepicker input,
+  .p-password input,
+  .p-multiselect {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important; /* slate-200 */
+    color: #0f172a !important;        /* slate-900 */
+    border-style: solid !important;
+    opacity: 1 !important;
+    cursor: text !important;
+    box-shadow: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .dark .p-inputtext,
+  .dark input.p-inputtext,
+  .dark textarea.p-inputtext,
+  .dark .p-select,
+  .dark .p-datepicker input,
+  .dark .p-password input,
+  .dark .p-multiselect {
+    background-color: #0f172a !important; /* deep slate-900 */
+    border-color: #334155 !important;      /* slate-700 */
+    color: #f8fafc !important;             /* slate-50 */
+    border-style: solid !important;
+    opacity: 1 !important;
+    cursor: text !important;
+    box-shadow: none !important;
+  }
+
+  /* Interactive hover transitions */
+  .p-inputtext:hover,
+  input.p-inputtext:hover,
+  textarea.p-inputtext:hover,
+  .p-select:hover,
+  .p-datepicker input:hover,
+  .p-password input:hover,
+  .p-multiselect:hover {
+    border-color: #cbd5e1 !important; /* slate-300 */
+  }
+
+  .dark .p-inputtext:hover,
+  .dark input.p-inputtext:hover,
+  .dark textarea.p-inputtext:hover,
+  .dark .p-select:hover,
+  .dark .p-datepicker input:hover,
+  .dark .p-password input:hover,
+  .dark .p-multiselect:hover {
+    border-color: #475569 !important; /* slate-600 */
+  }
+
+  /* Vibrant focus states */
+  .p-inputtext:focus,
+  input.p-inputtext:focus,
+  textarea.p-inputtext:focus,
+  .p-select:focus-within,
+  .p-datepicker input:focus,
+  .p-password input:focus,
+  .p-multiselect:focus-within {
+    background-color: #ffffff !important;
+    border-color: #3b82f6 !important; /* vibrant blue */
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12) !important;
+  }
+
+  .dark .p-inputtext:focus,
+  .dark input.p-inputtext:focus,
+  .dark textarea.p-inputtext:focus,
+  .dark .p-select:focus-within,
+  .dark .p-datepicker input:focus,
+  .dark .p-password input:focus,
+  .dark .p-multiselect:focus-within {
+    background-color: #0f172a !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25) !important;
+  }
+
+  /* Synchronize height and border-radius across all form elements */
+  .p-inputtext,
+  input.p-inputtext,
+  .p-select,
+  .p-datepicker input,
+  .p-datepicker,
+  .p-password input,
+  .p-password,
+  .p-multiselect,
+  .p-button,
+  button.p-button,
+  .p-select-label,
+  .p-multiselect-label {
+    height: 42px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Perfect vertical alignment for Select & MultiSelect labels */
+  .p-select-label,
+  .p-multiselect-label {
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Exclude textarea from the fixed 42px height rule so it can expand */
+  textarea.p-inputtext {
+    height: auto !important;
+    min-height: 100px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Premium subtle muted placeholders for enhanced contrast */
+  ::placeholder,
+  .p-inputtext::placeholder,
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important; /* slate-400 */
+    opacity: 0.65 !important;
+  }
+
+  .dark ::placeholder,
+  .dark .p-inputtext::placeholder,
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #64748b !important; /* slate-500 */
+    opacity: 0.75 !important;
+  }
+
+  /* Constraint DatePicker to a neat, professional width without stretching too wide */
+  .p-datepicker:not(.p-datepicker-panel):not([role="dialog"]),
+  span.relative.inline-flex.group:has(> .p-datepicker),
+  .p-datepicker-input {
+    max-width: 240px !important;
+  }
+
+  /* Constraint InputNumber (Amount inputs) and numeric inputs to a neat, professional width */
+  .p-inputnumber,
+  .p-inputnumber-input,
+  .p-inputtext[type="number"],
+  input[type="number"] {
+    width: 100% !important;
+    max-width: 260px !important;
+  }
+}
