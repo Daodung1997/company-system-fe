@@ -4,7 +4,7 @@
     @input="handleInput"
     @keypress="handleKeyPress"
     v-bind="$attrs"
-    class="w-full !rounded-xl !py-2.5 !bg-white dark:!bg-surface-900 border transition-all focus:!ring-4 focus:ring-primary/10 disabled:!bg-surface-100 dark:disabled:!bg-surface-800"
+    class="w-full !rounded-xl !py-2.5 !bg-white dark:!bg-surface-900 border transition-all focus:!ring-4 focus:ring-primary/10"
     :class="[
       invalid || $attrs.invalid ? '!border-red-500 !ring-red-500/20' : '!border-surface-200 dark:!border-surface-800'
     ]"

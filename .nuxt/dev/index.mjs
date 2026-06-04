@@ -12988,6 +12988,20 @@ var timesheet = {
 	success: "Chấm công thành công",
 	checkInSuccess: "Bạn đã check-in thành công hôm nay.",
 	checkOutSuccess: "Bạn đã check-out thành công hôm nay.",
+	multiModalCheckin: "Chấm công đa phương thức",
+	qrTab: "Mã QR Cá Nhân",
+	deviceTab: "Máy Vân Tay & FaceID",
+	qrDesc: "Đưa mã QR cá nhân dưới đây trước camera của máy quét để tự động chấm công.",
+	qrRefreshesIn: "Tự động làm mới sau {seconds} giây",
+	deviceConnected: "Máy quét: ZK-Teco FaceID Pro #01",
+	deviceStatusConnected: "KẾT NỐI",
+	deviceSyncDesc: "Hệ thống tự động đồng bộ dấu vân tay & khuôn mặt mỗi 5 phút.",
+	syncButtonLabel: "Đồng bộ từ thiết bị",
+	syncingText: "Đang kết nối máy chấm công...",
+	syncSuccess: "Đồng bộ thành công! Đã tải và ghi nhận 2 lượt chấm công mới nhất.",
+	simulateQrBtn: "Giả lập máy quét tại VP",
+	simulatingScan: "Đang giả lập camera văn phòng quét mã QR cá nhân của bạn...",
+	alreadyCheckedOut: "Bạn đã hoàn thành chấm công ra/vào hôm nay.",
 	date: "Ngày",
 	status: "Trạng thái",
 	day0: "Chủ Nhật",
@@ -13024,7 +13038,7 @@ var timesheet = {
 	loadingPayroll: "Đang tải bảng tính lương...",
 	noPayrollData: "Không có dữ liệu lương cho tháng này.",
 	baseSalary: "Lương cơ bản",
-	workingDaysActualStandard: "Công (Thực/Tiêu chuẩn)",
+	workingDaysActualStandard: "Công (Thực/Chuẩn)",
 	overtimeCol: "Tăng ca (OT)",
 	attendanceAllowance: "Chuyên cần",
 	deductionLate: "Trừ muộn",
@@ -13036,15 +13050,15 @@ var timesheet = {
 	payrollDetailsFor: "Bảng lương: {name} ({code})",
 	actualWorkingDays: "Công thực tế",
 	payrollMonth: "Tháng làm việc",
-	overtimeSalary: "Tiền làm thêm giờ (Tăng ca)",
-	attendanceAllowanceLabel: "Phụ cấp chuyên cần",
-	deductionLateLabel: "Trừ do đi muộn",
-	deductionLeaveLabel: "Trừ nghỉ quá số ngày phép",
+	overtimeSalary: "Tiền OT",
+	attendanceAllowanceLabel: "PC Chuyên cần",
+	deductionLateLabel: "Trừ đi muộn",
+	deductionLeaveLabel: "Trừ nghỉ K.Phép",
 	deductionUnion: "Phí công đoàn",
 	deductionTax: "Thuế TNCN",
 	deductionUnionLabel: "Phí công đoàn",
-	deductionTaxLabel: "Thuế TNCN (Thuế thu nhập cá nhân)",
-	advancePaymentLabel: "Đã trả trước (Tạm ứng)",
+	deductionTaxLabel: "Thuế TNCN",
+	advancePaymentLabel: "Tạm ứng",
 	paymentStatusLabel: "Trạng thái thanh toán",
 	netSalaryLabel: "Thực lĩnh",
 	btnSavePayroll: "Lưu bảng lương",
@@ -13275,6 +13289,13 @@ var leaveRequest = {
 	typeSpecial: "Nghỉ đặc biệt",
 	typeUnpaid: "Nghỉ không lương",
 	desc: "Đăng ký nghỉ phép trực tuyến và theo dõi lịch sử phê duyệt của bạn.",
+	attachment: "Tài liệu đính kèm",
+	uploadInstructions: "Kéo thả hoặc nhấp để chọn tệp",
+	attachmentCol: "Tài liệu",
+	noAttachment: "Không có tài liệu",
+	viewAttachment: "Xem tài liệu đính kèm",
+	attachmentPlaceholder: "Chọn tệp hỗ trợ (Đơn khám bệnh, vé tàu...)",
+	fileSizeLimitError: "Kích thước tệp vượt quá giới hạn 10MB.",
 	myList: "Danh sách phép của tôi",
 	myListDesc: "Lịch sử và trạng thái các đơn xin nghỉ phép đã nộp.",
 	noMyRequest: "Bạn chưa tạo bất kỳ đơn xin nghỉ phép nào.",
@@ -17405,7 +17426,22 @@ _AFYiMTNpS4iJVotjL5ihJeYOeIMmPOFr1fWZ8Us,
 _V_Dvlz5qWZ9ubHtCafG6Oqnf_7Kvw6ma5X8_JDeJC0o
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"b2f31-C4WPqrNcLLAiKbSDB0V8T3Vwm9U\"",
+    "mtime": "2026-06-04T03:21:05.403Z",
+    "size": 732977,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"217ebb-Vkx28GFOUSszmWxNBHpUkYhM63Q\"",
+    "mtime": "2026-06-04T03:21:05.405Z",
+    "size": 2195131,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));

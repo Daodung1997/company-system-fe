@@ -116,9 +116,10 @@
 
           <!-- Lý do -->
           <template v-else-if="column.key === 'reason'">
-            <span class="text-xs font-semibold text-surface-500 dark:text-surface-400 max-w-[220px] truncate block" :title="data.reason">
-              {{ data.reason || $t('leaveRequest.noReason') }}
-            </span>
+            <div class="flex items-center gap-1.5 text-xs font-semibold text-surface-500 dark:text-surface-400 max-w-[220px] truncate" :title="data.reason">
+              <i v-if="data.attachment_url" class="pi pi-paperclip text-primary text-[10px]" title="Có tài liệu đính kèm"></i>
+              <span>{{ data.reason || $t('leaveRequest.noReason') }}</span>
+            </div>
           </template>
 
           <!-- Trạng thái -->
@@ -202,6 +203,18 @@
           <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('leaveRequest.employee') }}</span>
           <span class="font-bold text-surface-800 dark:text-surface-200">{{ selectedRequest.employee?.full_name }}</span>
           <span class="text-xs text-surface-450 font-semibold font-mono">{{ formatDate(selectedRequest.start_date) }} ~ {{ formatDate(selectedRequest.end_date) }} ({{ getLeaveDaysCount(selectedRequest.start_date, selectedRequest.end_date) }} {{ $t('leaveRequest.days') }})</span>
+        </div>
+
+        <div v-if="selectedRequest.attachment_url" class="flex flex-col bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl">
+          <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('leaveRequest.attachment') }}</span>
+          <a
+            :href="selectedRequest.attachment_url"
+            target="_blank"
+            class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-surface-200 dark:border-surface-800 bg-white dark:bg-surface-900 text-xs font-bold text-primary transition-all hover:bg-surface-100 dark:hover:bg-surface-800"
+          >
+            <i class="pi pi-download"></i>
+            {{ $t('leaveRequest.viewAttachment') }}
+          </a>
         </div>
 
         <div class="flex flex-col gap-2">

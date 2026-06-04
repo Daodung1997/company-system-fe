@@ -27,9 +27,10 @@
     </div>
 
     <!-- Clock and Check Panel -->
+    <!-- Clock and Check Panel -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <!-- Live Clock Card -->
-      <div class="lg:col-span-5 shadow-2xl" style="background: linear-gradient(135deg, #0f172a, #020617); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-h: 320px; border-radius: 2.5rem; padding: 2rem;">
+      <div class="lg:col-span-4 shadow-2xl" style="background: linear-gradient(135deg, #0f172a, #020617); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-h: 320px; border-radius: 2.5rem; padding: 2rem;">
         <!-- Decorative high-opacity glowing orbs for vibrant sharp colors -->
         <div style="position: absolute; right: -80px; top: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(6,182,212,0.45) 0%, rgba(99,102,241,0.2) 50%, rgba(0,0,0,0) 100%); filter: blur(40px); pointer-events: none;"></div>
         <div style="position: absolute; left: -80px; bottom: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(20,184,166,0.15) 50%, rgba(0,0,0,0) 100%); filter: blur(40px); pointer-events: none;"></div>
@@ -40,13 +41,13 @@
               {{ $t('timesheet.standardTimeSystem') }}
             </span>
           </div>
-          <h2 style="font-size: 1.5rem; font-weight: 900; letter-spacing: -0.025em; margin: 0; color: #ffffff; line-height: 1.25;">
+          <h2 style="font-size: 1.35rem; font-weight: 900; letter-spacing: -0.025em; margin: 0; color: #ffffff; line-height: 1.25;">
             {{ $t('timesheet.workingTimeVN') }} <span style="color: #22d3ee;">(GMT+7)</span>
           </h2>
         </div>
 
         <div style="position: relative; z-index: 10; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-          <div style="font-size: 3.75rem; font-weight: 900; letter-spacing: -0.05em; font-family: monospace; background: linear-gradient(to right, #22d3ee, #38bdf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(34,211,238,0.55)); line-height: 1;">
+          <div style="font-size: 3.25rem; font-weight: 900; letter-spacing: -0.05em; font-family: monospace; background: linear-gradient(to right, #22d3ee, #38bdf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(34,211,238,0.55)); line-height: 1;">
             {{ currentTime || '--:--:--' }}
           </div>
           <p style="font-size: 0.75rem; color: rgba(34,211,238,0.85); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-family: monospace; margin: 0.5rem 0 0 0;">
@@ -63,56 +64,167 @@
       </div>
 
       <!-- Action Control Card -->
-      <div class="lg:col-span-7 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none flex flex-col justify-between">
+      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none flex flex-col justify-between min-h-[320px]">
         <div class="space-y-4">
-          <h3 class="text-lg font-bold text-surface-900 dark:text-surface-0 tracking-tight flex items-center gap-2">
+          <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight flex items-center gap-2">
             <i class="pi pi-shield text-primary"></i> {{ $t('timesheet.todayTracking') }}
           </h3>
-          <p class="text-xs text-surface-400 font-semibold leading-relaxed">
+          <p class="text-[10px] text-surface-400 font-semibold leading-relaxed">
             {{ $t('timesheet.trackingDesc') }}
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
+        <div class="flex flex-col gap-3 my-4">
           <!-- Check-in block -->
-          <div class="bg-surface-50 dark:bg-surface-950 p-6 rounded-[2rem] border border-surface-100 dark:border-surface-850 flex flex-col gap-4 relative overflow-hidden group">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('timesheet.checkInTime') }}</span>
-              <div v-if="isCheckedIn" class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600">
-                <i class="pi pi-check text-xs font-bold"></i>
+          <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-100 dark:border-surface-850 flex items-center justify-between gap-4 relative overflow-hidden group">
+            <div class="flex flex-col">
+              <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('timesheet.checkInTime') }}</span>
+              <div class="text-xl font-black tracking-tight text-surface-900 dark:text-surface-0 font-mono mt-0.5">
+                {{ todayCheckInTime || '--:--' }}
               </div>
-            </div>
-            <div class="text-3xl font-black tracking-tight text-surface-900 dark:text-surface-0 font-mono">
-              {{ todayCheckInTime || '--:--' }}
             </div>
             <Button
               :label="isCheckedIn ? $t('timesheet.checkedIn') : 'Check-in'"
               icon="pi pi-sign-in"
               severity="primary"
-              class="w-full !rounded-xl !py-3.5 !font-bold transition-all"
+              class="!rounded-xl !py-2 !px-4 !font-bold transition-all text-xs"
               :class="{ 'opacity-55 hover:!scale-100 pointer-events-none': isCheckedIn }"
               @click="handleCheckIn"
             />
           </div>
 
           <!-- Check-out block -->
-          <div class="bg-surface-50 dark:bg-surface-950 p-6 rounded-[2rem] border border-surface-100 dark:border-surface-850 flex flex-col gap-4 relative overflow-hidden group">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('timesheet.checkOutTime') }}</span>
-              <div v-if="isCheckedOut" class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-600">
-                <i class="pi pi-check text-xs font-bold"></i>
+          <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-100 dark:border-surface-850 flex items-center justify-between gap-4 relative overflow-hidden group">
+            <div class="flex flex-col">
+              <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('timesheet.checkOutTime') }}</span>
+              <div class="text-xl font-black tracking-tight text-surface-900 dark:text-surface-0 font-mono mt-0.5">
+                {{ todayCheckOutTime || '--:--' }}
               </div>
-            </div>
-            <div class="text-3xl font-black tracking-tight text-surface-900 dark:text-surface-0 font-mono">
-              {{ todayCheckOutTime || '--:--' }}
             </div>
             <Button
               :label="isCheckedOut ? $t('timesheet.checkedOut') : 'Check-out'"
               icon="pi pi-sign-out"
               severity="secondary"
-              class="w-full !rounded-xl !py-3.5 !font-bold transition-all"
+              class="!rounded-xl !py-2 !px-4 !font-bold transition-all text-xs"
               :class="{ 'opacity-55 hover:!scale-100 pointer-events-none': isCheckedOut || !isCheckedIn }"
               @click="handleCheckOut"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Alternative Check-in Card (QR & Fingerprint Sync) -->
+      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none flex flex-col justify-between min-h-[320px]">
+        <div class="space-y-4 flex-1">
+          <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-800 pb-3">
+            <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight flex items-center gap-2">
+              <i class="pi pi-qrcode text-primary"></i> {{ $t('timesheet.multiModalCheckin') }}
+            </h3>
+            <!-- Tabs Toggle -->
+            <div class="flex bg-surface-100 dark:bg-surface-800 p-1 rounded-xl">
+              <button
+                @click="activeCheckinTab = 'qr'"
+                class="px-3 py-1 text-[10px] font-black rounded-lg transition-all"
+                :class="activeCheckinTab === 'qr' ? 'bg-white dark:bg-surface-700 text-primary shadow-sm' : 'text-surface-500 hover:text-surface-800'"
+              >
+                {{ $t('timesheet.qrTab') }}
+              </button>
+              <button
+                @click="activeCheckinTab = 'device'"
+                class="px-3 py-1 text-[10px] font-black rounded-lg transition-all"
+                :class="activeCheckinTab === 'device' ? 'bg-white dark:bg-surface-700 text-primary shadow-sm' : 'text-surface-500 hover:text-surface-800'"
+              >
+                {{ $t('timesheet.deviceTab') }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content 1: QR CODE -->
+          <div v-if="activeCheckinTab === 'qr'" class="flex flex-col items-center justify-center py-2 space-y-3 animate-in fade-in duration-300">
+            <p class="text-[10px] text-center text-surface-400 font-semibold leading-normal max-w-[220px]">
+              {{ $t('timesheet.qrDesc') }}
+            </p>
+            <!-- Stylized QR Code with a moving Laser Scan Line -->
+            <div class="relative w-28 h-28 bg-white dark:bg-surface-950 p-2 rounded-2xl border border-surface-200 dark:border-surface-800 flex items-center justify-center shadow-inner overflow-hidden">
+              <svg viewBox="0 0 100 100" class="w-full h-full text-surface-900 dark:text-surface-100 fill-current opacity-85">
+                <!-- Outer borders -->
+                <path d="M 5 5 H 30 V 15 H 15 V 30 H 5 Z M 70 5 H 95 V 30 H 85 V 15 H 70 Z M 5 70 H 15 V 85 H 30 V 95 H 5 Z M 85 70 H 95 V 95 H 70 V 85 H 85 Z" />
+                <!-- Position detection markers -->
+                <rect x="10" y="10" width="15" height="15" rx="2" />
+                <rect x="75" y="10" width="15" height="15" rx="2" />
+                <rect x="10" y="75" width="15" height="15" rx="2" />
+                <!-- Inner marker points -->
+                <rect x="14" y="14" width="7" height="7" rx="1" fill="#3b82f6" />
+                <rect x="79" y="14" width="7" height="7" rx="1" fill="#3b82f6" />
+                <rect x="14" y="79" width="7" height="7" rx="1" fill="#3b82f6" />
+                <!-- Random mock QR pixel dots -->
+                <rect x="35" y="10" width="5" height="5" />
+                <rect x="45" y="15" width="10" height="5" />
+                <rect x="60" y="10" width="5" height="10" />
+                <rect x="35" y="30" width="10" height="5" />
+                <rect x="50" y="25" width="5" height="15" />
+                <rect x="65" y="35" width="10" height="5" />
+                
+                <rect x="10" y="35" width="5" height="10" />
+                <rect x="20" y="45" width="15" height="5" />
+                <rect x="10" y="55" width="10" height="5" />
+                
+                <rect x="80" y="35" width="5" height="10" />
+                <rect x="70" y="45" width="10" height="5" />
+                <rect x="85" y="55" width="5" height="5" />
+                
+                <rect x="35" y="60" width="15" height="5" />
+                <rect x="55" y="55" width="5" height="10" />
+                <rect x="65" y="65" width="10" height="5" />
+                
+                <rect x="35" y="75" width="5" height="15" />
+                <rect x="45" y="85" width="15" height="5" />
+                <rect x="65" y="80" width="5" height="10" />
+                <rect x="75" y="75" width="10" height="5" />
+                <!-- Center Logo background -->
+                <rect x="40" y="40" width="20" height="20" rx="4" fill="white" />
+                <!-- Center blue dot -->
+                <circle cx="50" cy="50" r="5" fill="#3b82f6" />
+              </svg>
+              <!-- Animated Scanning Laser Line -->
+              <div class="absolute left-0 right-0 h-[2px] bg-primary shadow-[0_0_8px_#3b82f6] style-scan-line"></div>
+            </div>
+            
+            <div class="text-[10px] text-primary font-black tracking-wider uppercase flex items-center gap-1.5 font-mono">
+              <i class="pi pi-spin pi-spinner text-[9px]"></i>
+              {{ $t('timesheet.qrRefreshesIn').replace('{seconds}', String(qrTimer)) }}
+            </div>
+            
+            <button
+              @click="simulateQrScan"
+              class="px-3 py-1.5 text-[9px] font-black text-primary bg-primary/10 hover:bg-primary/20 rounded-xl transition-all flex items-center gap-1.5"
+            >
+              <i class="pi pi-desktop"></i>
+              {{ $t('timesheet.simulateQrBtn') }}
+            </button>
+          </div>
+
+          <!-- Tab Content 2: DEVICE SYNC -->
+          <div v-else class="flex flex-col justify-between py-2 space-y-4 animate-in fade-in duration-300">
+            <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-100 dark:border-surface-850 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] text-surface-500 dark:text-surface-400 font-bold uppercase tracking-wider">{{ $t('timesheet.deviceConnected') }}</span>
+                <span class="px-2 py-0.5 rounded-full text-[8px] font-black tracking-widest bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                  {{ $t('timesheet.deviceStatusConnected') }}
+                </span>
+              </div>
+              <p class="text-[10px] text-surface-400 font-semibold leading-relaxed">
+                {{ $t('timesheet.deviceSyncDesc') }}
+              </p>
+            </div>
+
+            <Button
+              :label="isSyncingDevice ? $t('timesheet.syncingText') : $t('timesheet.syncButtonLabel')"
+              :icon="isSyncingDevice ? 'pi pi-spin pi-spinner' : 'pi pi-sync'"
+              severity="secondary"
+              class="w-full !rounded-xl !py-3.5 !font-bold transition-all"
+              :disabled="isSyncingDevice"
+              @click="handleDeviceSync"
             />
           </div>
         </div>
@@ -221,6 +333,48 @@ const { t, locale } = useI18n();
 const currentTime = ref('');
 const currentDate = ref('');
 let timerId: any = null;
+
+const activeCheckinTab = ref('qr');
+const qrTimer = ref(30);
+const isSyncingDevice = ref(false);
+let qrIntervalId: any = null;
+
+const startQrTimer = () => {
+  qrIntervalId = setInterval(() => {
+    if (qrTimer.value > 1) {
+      qrTimer.value--;
+    } else {
+      qrTimer.value = 30;
+    }
+  }, 1000);
+};
+
+const handleDeviceSync = () => {
+  isSyncingDevice.value = true;
+  setTimeout(() => {
+    isSyncingDevice.value = false;
+    showMessage("success", t('timesheet.success'), t('timesheet.syncSuccess'));
+    fetchTimesheets();
+    reloadTable();
+  }, 1500);
+};
+
+const simulateQrScan = () => {
+  if (isCheckedIn.value && isCheckedOut.value) {
+    showMessage("warn", t('timesheet.success'), t('timesheet.alreadyCheckedOut'));
+    return;
+  }
+  
+  showMessage("info", t('timesheet.syncingText'), t('timesheet.simulatingScan'));
+  
+  setTimeout(() => {
+    if (!isCheckedIn.value) {
+      handleCheckIn();
+    } else {
+      handleCheckOut();
+    }
+  }, 1000);
+};
 
 const monthPickerValue = ref<Date>(new Date());
 const selectedMonth = computed(() => {
@@ -376,13 +530,26 @@ const formatTime = (timeStr: string) => {
 onMounted(() => {
   updateClock();
   timerId = setInterval(updateClock, 1000);
+  startQrTimer();
   fetchTimesheets();
 });
 
 onUnmounted(() => {
   if (timerId) clearInterval(timerId);
+  if (qrIntervalId) clearInterval(qrIntervalId);
 });
 </script>
 
 <style scoped>
+@keyframes scan {
+  0%, 100% {
+    top: 5%;
+  }
+  50% {
+    top: 95%;
+  }
+}
+.style-scan-line {
+  animation: scan 2s ease-in-out infinite;
+}
 </style>

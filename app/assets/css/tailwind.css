@@ -14,10 +14,16 @@
   select:disabled,
   .p-disabled,
   .p-disabled input,
+  .p-disabled .p-select-label,
+  .p-disabled .p-multiselect-label,
   .p-inputtext:disabled,
-  .p-dropdown.p-disabled,
-  .p-calendar.p-disabled input,
-  .p-multiselect.p-disabled {
+  .p-select.p-disabled,
+  .p-datepicker.p-disabled input,
+  .p-datepicker-input:disabled,
+  .p-multiselect.p-disabled,
+  .p-inputnumber-input:disabled,
+  .p-inputnumber.p-disabled,
+  .p-inputnumber.p-disabled input {
     background-color: #f1f5f9 !important; /* solid slate-100 */
     border-color: #cbd5e1 !important;     /* slate-300 */
     color: #64748b !important;            /* slate-500 */
@@ -33,10 +39,16 @@
   .dark select:disabled,
   .dark .p-disabled,
   .dark .p-disabled input,
+  .dark .p-disabled .p-select-label,
+  .dark .p-disabled .p-multiselect-label,
   .dark .p-inputtext:disabled,
-  .dark .p-dropdown.p-disabled,
-  .dark .p-calendar.p-disabled input,
-  .dark .p-multiselect.p-disabled {
+  .dark .p-select.p-disabled,
+  .dark .p-datepicker.p-disabled input,
+  .dark .p-datepicker-input:disabled,
+  .dark .p-multiselect.p-disabled,
+  .dark .p-inputnumber-input:disabled,
+  .dark .p-inputnumber.p-disabled,
+  .dark .p-inputnumber.p-disabled input {
     background-color: #1e293b !important; /* solid slate-800 */
     border-color: #475569 !important;     /* slate-600 */
     color: #94a3b8 !important;            /* slate-400 */

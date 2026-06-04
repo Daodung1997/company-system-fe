@@ -294,8 +294,8 @@
                 </td>
                 <td class="py-4 px-4 text-surface-750 dark:text-surface-200">
                   <div class="flex flex-col">
-                    <span class="font-bold text-surface-900 dark:text-surface-0 tracking-tight text-sm">{{ item.full_name }}</span>
-                    <span class="text-[10px] text-surface-400 font-mono mt-0.5">{{ item.email }}</span>
+                    <span class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight">{{ item.full_name }}</span>
+                    <span class="text-[10px] text-surface-450 dark:text-surface-400 font-mono mt-0.5">{{ item.email }}</span>
                   </div>
                 </td>
                 <!-- Đúng giờ -->
@@ -576,7 +576,7 @@
             <thead class="bg-surface-50 dark:bg-surface-900 border-b border-surface-100 dark:border-surface-800 sticky top-0 z-10">
               <tr>
                 <th class="px-4 py-4 text-left font-bold text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 whitespace-nowrap">STT</th>
-                <th class="px-4 py-4 text-left font-bold text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 whitespace-nowrap">{{ $t('timesheet.staff') }}</th>
+                <th class="px-4 py-4 text-left font-bold text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 whitespace-nowrap w-64 min-w-[240px]">{{ $t('timesheet.staff') }}</th>
                 <th class="px-4 py-4 text-right font-bold text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 whitespace-nowrap">{{ $t('timesheet.baseSalary') }}</th>
                 <th class="px-4 py-4 text-center font-bold text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 whitespace-nowrap">{{ $t('timesheet.workingDaysActualStandard') }}</th>
                 <th class="px-4 py-4 text-right font-bold text-xs uppercase tracking-widest text-surface-500 dark:text-surface-400 whitespace-nowrap">{{ $t('timesheet.overtimeSalary') }}</th>
@@ -597,13 +597,25 @@
                 class="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200 border-b border-surface-100 dark:border-surface-800"
               >
                 <td class="px-4 py-4 font-mono text-surface-450 dark:text-surface-400 border-b border-surface-100 dark:border-surface-800">{{ String(idx + 1).padStart(2,'0') }}</td>
-                <td class="px-4 py-4 border-b border-surface-100 dark:border-surface-800">
-                  <div class="font-bold text-surface-900 dark:text-surface-0">{{ row.full_name }}</div>
-                  <div class="text-[9px] font-black text-surface-400 font-mono uppercase">{{ row.employee_code }}</div>
+                <td class="px-4 py-4 border-b border-surface-100 dark:border-surface-800 w-64 min-w-[240px]">
+                  <div class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight">{{ row.full_name }}</div>
+                  <div class="text-xs font-black text-surface-450 dark:text-surface-400 font-mono uppercase mt-0.5">{{ row.employee_code }}</div>
+                  <div v-if="row.department_name" class="text-xs font-bold text-surface-500 dark:text-surface-400 mt-1">
+                    {{ row.department_name }} <span class="text-surface-300 dark:text-surface-600 font-normal">|</span> {{ row.job_title_name }}
+                  </div>
                 </td>
                 <td class="px-4 py-4 text-right font-mono font-bold border-b border-surface-100 dark:border-surface-800 whitespace-nowrap text-surface-800 dark:text-surface-200">{{ formatVND(row.base_salary) }}</td>
                 <td class="px-4 py-4 text-center font-mono font-bold border-b border-surface-100 dark:border-surface-800 text-surface-700 dark:text-surface-300">{{ row.actual_working_days }}/{{ row.standard_working_days }}</td>
-                <td class="px-4 py-4 text-right font-mono border-b border-surface-100 dark:border-surface-800 whitespace-nowrap text-surface-700 dark:text-surface-300">{{ formatVND(row.overtime_salary) }}</td>
+                <td class="px-4 py-4 text-right font-mono border-b border-surface-100 dark:border-surface-800 whitespace-nowrap text-surface-700 dark:text-surface-300">
+                  <div class="space-y-0.5 text-[9px] text-surface-400 font-semibold">
+                    <div>T.Thường: {{ formatVND(row.overtime_salary_normal) }}</div>
+                    <div>C.Tuần: {{ formatVND(row.overtime_salary_weekend) }}</div>
+                    <div>Lễ: {{ formatVND(row.overtime_salary_holiday) }}</div>
+                  </div>
+                  <div class="font-bold text-surface-800 dark:text-surface-200 mt-1 pt-1 border-t border-surface-100/50 dark:border-surface-850/50 text-[10px]">
+                    Tổng: {{ formatVND(row.overtime_salary) }}
+                  </div>
+                </td>
                 <td class="px-4 py-4 text-right font-mono border-b border-surface-100 dark:border-surface-800 whitespace-nowrap text-emerald-600 dark:text-emerald-400">{{ formatVND(row.allowance_attendance) }}</td>
                 <td class="px-4 py-4 text-right font-mono border-b border-surface-100 dark:border-surface-800 whitespace-nowrap text-rose-500">-{{ formatVND(row.deduction_late) }}</td>
                 <td class="px-4 py-4 text-right font-mono border-b border-surface-100 dark:border-surface-800 whitespace-nowrap text-rose-500">-{{ formatVND(row.deduction_leave) }}</td>
@@ -3017,7 +3029,7 @@ const payrollForm = ref<any>({
   allowance_attendance: 0,
   deduction_late: 0,
   deduction_leave: 0,
-  deduction_union: 0,
+  deduction_union: 50000,
   deduction_tax: 0,
   advance_payment: 0,
   net_salary: 0,

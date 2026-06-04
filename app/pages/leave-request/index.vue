@@ -61,8 +61,9 @@
 
             <!-- Lý do -->
             <template v-else-if="column.key === 'reason'">
-              <div class="cursor-pointer text-xs font-semibold text-surface-500 dark:text-surface-400 max-w-[200px] truncate w-full py-2" :title="data.reason" @click="showDetailDialog(data)">
-                {{ data.reason || $t('leaveRequest.noReason') }}
+              <div class="cursor-pointer text-xs font-semibold text-surface-500 dark:text-surface-400 max-w-[200px] truncate w-full py-2 flex items-center gap-1.5" :title="data.reason" @click="showDetailDialog(data)">
+                <i v-if="data.attachment_url" class="pi pi-paperclip text-primary text-[10px]" title="Có tài liệu đính kèm"></i>
+                <span>{{ data.reason || $t('leaveRequest.noReason') }}</span>
               </div>
             </template>
 
@@ -162,6 +163,44 @@
                 @change="onValidate('reason')"
               />
             </AppInputField>
+
+            <AppInputField :label="$t('leaveRequest.attachment')" :error="formErrors.attachment">
+              <div class="flex flex-col gap-2">
+                <div
+                  class="border-2 border-dashed border-surface-200 dark:border-surface-800 rounded-2xl p-4 text-center cursor-pointer transition-all hover:border-primary flex flex-col items-center justify-center gap-2"
+                  @click="triggerFileSelect"
+                  @dragover.prevent
+                  @drop.prevent="handleFileDrop"
+                >
+                  <input
+                    ref="fileInput"
+                    type="file"
+                    class="hidden"
+                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.zip"
+                    @change="onFileChange"
+                  />
+                  <div class="w-10 h-10 rounded-xl bg-surface-50 dark:bg-surface-950 flex items-center justify-center text-surface-500">
+                    <i class="pi pi-cloud-upload text-lg"></i>
+                  </div>
+                  <div class="text-xs font-bold text-surface-700 dark:text-surface-300">
+                    {{ selectedFile ? selectedFile.name : $t('leaveRequest.uploadInstructions') }}
+                  </div>
+                  <div class="text-[10px] text-surface-400 font-semibold">
+                    PDF, DOC, DOCX, ZIP hoặc ảnh (Tối đa 10MB)
+                  </div>
+                </div>
+                <div v-if="selectedFile" class="flex items-center justify-between bg-surface-50 dark:bg-surface-950 p-2 px-3 rounded-xl border border-surface-100 dark:border-surface-800">
+                  <div class="flex items-center gap-2 text-xs font-semibold text-surface-700 dark:text-surface-300">
+                    <i class="pi pi-file text-primary"></i>
+                    <span class="truncate max-w-[180px]">{{ selectedFile.name }}</span>
+                    <span class="text-[10px] text-surface-400">({{ formatFileSize(selectedFile.size) }})</span>
+                  </div>
+                  <button type="button" @click="clearSelectedFile" class="text-rose-500 hover:text-rose-700 text-xs">
+                    <i class="pi pi-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </AppInputField>
           </div>
         </div>
 
@@ -241,6 +280,18 @@
           <span class="font-semibold text-surface-700 dark:text-surface-300 mt-1 whitespace-pre-line leading-relaxed text-sm">
             {{ selectedRequest.reason || $t('leaveRequest.noReason') }}
           </span>
+        </div>
+
+        <div v-if="selectedRequest.attachment_url" class="flex flex-col bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl">
+          <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('leaveRequest.attachment') }}</span>
+          <a
+            :href="selectedRequest.attachment_url"
+            target="_blank"
+            class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-surface-200 dark:border-surface-850 bg-white dark:bg-surface-900 text-xs font-bold text-primary transition-all hover:bg-surface-100 dark:hover:bg-surface-800"
+          >
+            <i class="pi pi-download"></i>
+            {{ $t('leaveRequest.viewAttachment') }}
+          </a>
         </div>
 
         <div v-if="selectedRequest.status !== 'PENDING'" class="flex flex-col bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-dashed border-surface-200 dark:border-surface-800">
@@ -327,7 +378,58 @@ const formErrors = ref<any>({
   start_date: '',
   end_date: '',
   reason: '',
+  attachment: '',
 });
+
+const fileInput = ref<HTMLInputElement | null>(null);
+const selectedFile = ref<File | null>(null);
+
+const triggerFileSelect = () => {
+  fileInput.value?.click();
+};
+
+const onFileChange = (e: Event) => {
+  const target = e.target as HTMLInputElement;
+  if (target.files && target.files.length > 0) {
+    const file = target.files[0];
+    if (file.size > 10 * 1024 * 1024) {
+      formErrors.value.attachment = t('leaveRequest.fileSizeLimitError');
+      selectedFile.value = null;
+      return;
+    }
+    formErrors.value.attachment = '';
+    selectedFile.value = file;
+  }
+};
+
+const handleFileDrop = (e: DragEvent) => {
+  if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
+    const file = e.dataTransfer.files[0];
+    if (file.size > 10 * 1024 * 1024) {
+      formErrors.value.attachment = t('leaveRequest.fileSizeLimitError');
+      selectedFile.value = null;
+      return;
+    }
+    formErrors.value.attachment = '';
+    selectedFile.value = file;
+  }
+};
+
+const clearSelectedFile = () => {
+  selectedFile.value = null;
+  formErrors.value.attachment = '';
+  if (fileInput.value) {
+    fileInput.value.value = '';
+  }
+};
+
+const formatFileSize = (bytes: number) => {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+};
 
 const FIELD_VALIDATIONS = {
   leave_type: { transitionKey: "leaveRequest.type", types: ["require"], errorKey: "leave_type" },
@@ -411,15 +513,19 @@ const handleSubmit = () => {
     return `${y}-${m}-${d}`;
   };
 
+  const formData = new FormData();
+  formData.append('leave_type', form.value.leave_type);
+  formData.append('leave_session', form.value.leave_session || 'ALL');
+  formData.append('start_date', formatDateForApi(form.value.start_date!));
+  formData.append('end_date', formatDateForApi(form.value.end_date!));
+  formData.append('reason', form.value.reason);
+  if (selectedFile.value) {
+    formData.append('attachment', selectedFile.value);
+  }
+
   submitting.value = true;
   CREATE_LEAVE_REQUEST(
-    {
-      leave_type: form.value.leave_type,
-      leave_session: form.value.leave_session || 'ALL',
-      start_date: formatDateForApi(form.value.start_date!),
-      end_date: formatDateForApi(form.value.end_date!),
-      reason: form.value.reason
-    },
+    formData,
     (res: any) => {
       showMessage("success", t('leaveRequest.submitSuccess'), t('leaveRequest.submitSuccessDesc'));
       form.value = {
@@ -429,6 +535,7 @@ const handleSubmit = () => {
         end_date: null,
         reason: ''
       };
+      selectedFile.value = null;
       submitting.value = false;
       reloadTable();
     },

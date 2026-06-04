@@ -595,7 +595,13 @@ const stats = computed(() => {
       commercialCount++;
     }
     if (item.value) {
-      totalValue += Number(item.value);
+      if (activeTab.value === 'COMMERCIAL') {
+        if (item.type !== 'LABOR') {
+          totalValue += Number(item.value);
+        }
+      } else {
+        totalValue += Number(item.value);
+      }
     }
   });
 

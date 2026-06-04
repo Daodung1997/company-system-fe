@@ -227,8 +227,4 @@ const onFilter = debounce((event: any) => {
 .app-master-select :deep(.p-select-label) {
   @apply py-2.5 px-4;
 }
-
-.app-master-select :deep(.p-select.p-disabled) {
-  @apply bg-surface-100 dark:bg-surface-800 border-surface-200 dark:border-surface-700 opacity-60;
-}
 </style>
