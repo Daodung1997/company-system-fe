@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/20">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
           <i class="pi pi-calendar-plus text-2xl"></i>
@@ -20,8 +20,8 @@
     <!-- Main Content Area split into List and Form -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <!-- Leave Requests List (Left Column) -->
-      <div class="lg:col-span-8 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none space-y-6">
-        <div class="border-b border-surface-100 dark:border-surface-800 pb-6">
+      <div class="lg:col-span-8 bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
+        <div class="border-b border-surface-200 dark:border-surface-700 pb-6">
           <h3 class="text-xl font-bold text-surface-900 dark:text-surface-0 tracking-tight">{{ $t('leaveRequest.myList') }}</h3>
           <p class="text-xs text-surface-400 font-semibold mt-1">{{ $t('leaveRequest.myListDesc') }}</p>
         </div>
@@ -30,7 +30,7 @@
           :columns="columns"
           :fetchApi="fetchRequestsWrapper"
           :isReload="isReload"
-          :emptyText="$t('leaveRequest.noMyRequest') || 'Không tìm thấy yêu cầu nghỉ phép nào'"
+          :emptyText="$t('leaveRequest.noMyRequest')"
           scrollHeight="50vh"
         >
           <template #body="{ column, data, index }">
@@ -47,7 +47,13 @@
                 <span class="font-bold text-surface-800 dark:text-surface-200 tracking-tight text-xs">
                   {{ getLeaveTypeLabel(data.leave_type) }}
                 </span>
-                <span class="text-[9px] font-black uppercase tracking-widest text-primary font-mono mt-0.5">{{ data.leave_type }}</span>
+                <span class="text-[9px] font-black uppercase tracking-widest mt-0.5" :class="[
+                  data.leave_session === 'ALL' ? 'text-primary' :
+                  data.leave_session === 'MORNING' ? 'text-amber-500' : 'text-sky-500'
+                ]">
+                  {{ data.leave_session === 'ALL' ? $t('leaveRequest.allDay') :
+                     data.leave_session === 'MORNING' ? $t('leaveRequest.morning') : $t('leaveRequest.afternoon') }}
+                </span>
               </div>
             </template>
 
@@ -62,7 +68,7 @@
             <!-- Lý do -->
             <template v-else-if="column.key === 'reason'">
               <div class="cursor-pointer text-xs font-semibold text-surface-500 dark:text-surface-400 max-w-[200px] truncate w-full py-2 flex items-center gap-1.5" :title="data.reason" @click="showDetailDialog(data)">
-                <i v-if="data.attachment_url" class="pi pi-paperclip text-primary text-[10px]" title="Có tài liệu đính kèm"></i>
+                <i v-if="data.attachment_url" class="pi pi-paperclip text-primary text-[10px]" :title="$t('leaveRequest.hasAttachment')"></i>
                 <span>{{ data.reason || $t('leaveRequest.noReason') }}</span>
               </div>
             </template>
@@ -95,9 +101,9 @@
       </div>
 
       <!-- Registration Form (Right Column) -->
-      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none space-y-6 flex flex-col justify-between">
+      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6 flex flex-col justify-between">
         <div class="space-y-6">
-          <div class="border-b border-surface-100 dark:border-surface-800 pb-4">
+          <div class="border-b border-surface-200 dark:border-surface-700 pb-4">
             <h3 class="text-xl font-bold text-surface-900 dark:text-surface-0 tracking-tight">{{ $t('leaveRequest.pendingTitle') }}</h3>
             <p class="text-xs text-surface-400 font-semibold mt-1">{{ $t('leaveRequest.createDesc') }}</p>
           </div>
@@ -186,10 +192,10 @@
                     {{ selectedFile ? selectedFile.name : $t('leaveRequest.uploadInstructions') }}
                   </div>
                   <div class="text-[10px] text-surface-400 font-semibold">
-                    PDF, DOC, DOCX, ZIP hoặc ảnh (Tối đa 10MB)
+                    {{ $t('leaveRequest.uploadFormats') }}
                   </div>
                 </div>
-                <div v-if="selectedFile" class="flex items-center justify-between bg-surface-50 dark:bg-surface-950 p-2 px-3 rounded-xl border border-surface-100 dark:border-surface-800">
+                <div v-if="selectedFile" class="flex items-center justify-between bg-surface-50 dark:bg-surface-950 p-2 px-3 rounded-xl border border-surface-200 dark:border-surface-700">
                   <div class="flex items-center gap-2 text-xs font-semibold text-surface-700 dark:text-surface-300">
                     <i class="pi pi-file text-primary"></i>
                     <span class="truncate max-w-[180px]">{{ selectedFile.name }}</span>
@@ -223,10 +229,10 @@
       modal
       :header="$t('leaveRequest.detailTitle')"
       :style="{ width: '32rem' }"
-      class="!rounded-[2rem] overflow-hidden"
+      class="!rounded-xl overflow-hidden"
     >
       <div v-if="selectedRequest" class="space-y-6 p-2">
-        <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-800 pb-4">
+        <div class="flex items-center justify-between border-b border-surface-200 dark:border-surface-700 pb-4">
           <div class="flex flex-col">
             <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('leaveRequest.code') }}</span>
             <span class="font-bold font-mono text-surface-800 dark:text-surface-200">#LR-{{ selectedRequest.id }}</span>
@@ -325,11 +331,11 @@ const reloadTable = () => {
 };
 
 const columns = computed(() => [
-  { key: 'stt', label: t('leaveRequest.stt') || 'STT', minWidth: '60px' },
-  { key: 'leave_type', label: t('leaveRequest.type') || 'Loại nghỉ', minWidth: '130px' },
-  { key: 'duration', label: t('leaveRequest.timeRange') || 'Thời hạn', minWidth: '180px' },
-  { key: 'reason', label: t('leaveRequest.reason') || 'Lý do', minWidth: '200px' },
-  { key: 'status', label: t('leaveRequest.status') || 'Trạng thái', minWidth: '135px' }
+  { key: 'stt', label: t('leaveRequest.stt'), minWidth: '60px' },
+  { key: 'leave_type', label: t('leaveRequest.type'), minWidth: '130px' },
+  { key: 'duration', label: t('leaveRequest.timeRange'), minWidth: '180px' },
+  { key: 'reason', label: t('leaveRequest.reason'), minWidth: '200px' },
+  { key: 'status', label: t('leaveRequest.status'), minWidth: '135px' }
 ]);
 
 const fetchRequestsWrapper = (payload: { query: string, successCallback: Function, errorCallback: Function }) => {
@@ -344,7 +350,7 @@ const fetchRequestsWrapper = (payload: { query: string, successCallback: Functio
       rawList.sort((a: any, b: any) => b.created_at.localeCompare(a.created_at));
       
       const page = parseInt(params.page || '1');
-      const limit = parseInt(params.limit || '10');
+      const limit = parseInt(params.limit || '30');
       const startIndex = (page - 1) * limit;
       const paginatedData = rawList.slice(startIndex, startIndex + limit);
       

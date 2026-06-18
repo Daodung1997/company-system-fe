@@ -1,9 +1,10 @@
 <template>
   <aside 
-    class="fixed left-0 top-0 h-screen z-50 border-r border-surface-200 dark:border-surface-800 flex flex-col shadow-2xl transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) will-change-[width]"
+    class="fixed left-0 top-0 h-screen z-50 border-r border-surface-200 dark:border-surface-800 flex flex-col shadow-2xl transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) will-change-[width,transform] sidebar-responsive lg:left-3 lg:top-3 lg:h-[calc(100vh-1.5rem)] lg:rounded-2xl lg:border"
     :class="[
       isCollapsed ? 'w-[88px]' : 'w-[290px]',
-      isCustomSidebar ? 'text-white border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.2)]' : 'bg-white/95 dark:bg-surface-950/95 backdrop-blur-3xl shadow-surface-200/50 dark:shadow-none'
+      isCustomSidebar ? 'text-white border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.2)]' : 'bg-white/95 dark:bg-surface-950/95 backdrop-blur-3xl shadow-surface-200/50 dark:shadow-none',
+      { 'sidebar-mobile-open': isMobileSidebarOpen }
     ]"
     :style="sidebarStyle"
   >
@@ -39,14 +40,15 @@
       ></div>
       
       <div 
-        class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 relative z-10 group/logo cursor-pointer transition-all duration-500"
+        class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 relative z-10 group/logo cursor-pointer transition-all duration-500 overflow-hidden"
         :class="[
           isCustomSidebar 
             ? 'bg-white/20 text-white border border-white/10 hover:bg-white/30' 
             : 'bg-gradient-to-br from-primary to-primary-600 shadow-xl shadow-primary/30 text-white'
         ]"
       >
-        <i class="pi pi-bolt text-2xl group-hover/logo:scale-125 transition-transform duration-500"></i>
+        <img v-if="apiStore.companySetting?.logo_path" :src="apiStore.companySetting.logo_path" class="w-full h-full object-contain p-1" />
+        <i v-else class="pi pi-bolt text-2xl group-hover/logo:scale-125 transition-transform duration-500"></i>
       </div>
       
       <div 
@@ -56,28 +58,28 @@
         ]"
       >
         <span 
-          class="font-black text-2xl tracking-tighter whitespace-nowrap uppercase italic bg-clip-text text-transparent bg-gradient-to-r"
+          class="font-black text-lg tracking-tighter whitespace-nowrap uppercase italic bg-clip-text text-transparent bg-gradient-to-r"
           :class="[
             isCustomSidebar 
               ? 'from-white to-white/80' 
               : 'from-primary to-primary-700'
           ]"
         >
-          {{ appName }}
+          {{ apiStore.companySetting?.sidebar_name || appName }}
         </span>
         <span 
           class="text-[9px] font-black tracking-[0.3em] uppercase -mt-1 opacity-70 whitespace-nowrap"
           :class="isCustomSidebar ? 'text-white/60' : 'text-surface-400'"
         >
-          Industrial Dashboard
+          {{ apiStore.companySetting?.sidebar_sub_name || $t('menu.industrialDashboard') }}
         </span>
       </div>
     </div>
 
     <!-- Navigation Menu -->
     <ClientOnly>
-      <div class="flex-1 px-5 py-4 overflow-y-auto overflow-x-hidden space-y-2 custom-scrollbar relative z-10">
-        <div v-for="(group, idx) in menuGroups" :key="idx" class="mb-8">
+      <div class="flex-1 px-4 py-3 overflow-y-auto overflow-x-hidden space-y-1 custom-scrollbar relative z-10">
+        <div v-for="(group, idx) in menuGroups" :key="idx" class="mb-5">
           <div 
             class="px-5 mb-4 text-[11px] font-black uppercase tracking-[0.25em] flex items-center transition-all duration-500"
             :class="[
@@ -87,7 +89,7 @@
           >
             <div class="flex items-center gap-2.5 whitespace-nowrap">
               <span class="w-1.5 h-1.5 rounded-full" :class="isCustomSidebar ? 'bg-white/40' : 'bg-primary/40'"></span>
-              {{ group.label }}
+              {{ $t(group.label) }}
             </div>
             <div 
               class="h-[1px] flex-1 ml-4 bg-gradient-to-r"
@@ -95,13 +97,13 @@
             ></div>
           </div>
           
-          <div class="space-y-1.5">
+          <div class="space-y-1">
             <div v-for="item in group.items" :key="item.label" class="relative">
               <!-- Parent Item (Button for sub-menus) -->
               <button 
                 v-if="item.children"
                 @click="handleMenuClick(item)"
-                class="sidebar-primary-item w-full flex items-center group relative py-3.5 rounded-[20px] z-10 outline-none cursor-pointer overflow-hidden transition-all duration-300"
+                class="sidebar-primary-item w-full flex items-center group relative py-3 rounded-[16px] z-10 outline-none cursor-pointer overflow-hidden transition-all duration-300"
                 :class="[
                   isItemActive(item) 
                     ? (isCustomSidebar ? 'bg-white/25 border border-white/20 text-white shadow-lg shadow-black/10 font-extrabold scale-[0.98]' : 'active-glow-container text-white border border-transparent') 
@@ -152,7 +154,7 @@
               <NuxtLink 
                 v-else
                 :to="item.to"
-                class="sidebar-primary-item w-full flex items-center group relative py-3.5 rounded-[20px] z-10 outline-none cursor-pointer overflow-hidden transition-all duration-300"
+                class="sidebar-primary-item w-full flex items-center group relative py-3 rounded-[16px] z-10 outline-none cursor-pointer overflow-hidden transition-all duration-300"
                 :class="[
                   isItemActive(item) 
                     ? (isCustomSidebar ? 'bg-white/25 border border-white/20 text-white shadow-lg shadow-black/10 font-extrabold scale-[0.98]' : 'active-glow-container text-white border border-transparent') 
@@ -266,6 +268,7 @@ const apiStore = useApiStore();
 
 const appName = import.meta.env.VITE_APP_NAME || 'BASE DEMO';
 const isCollapsed = useState('sidebarCollapsed', () => false);
+const isMobileSidebarOpen = useState('mobileSidebarOpen', () => false);
 const expandedMenus = ref<string[]>([]);
 
 // Shared State for Sidebar Customizer
@@ -350,23 +353,33 @@ interface MenuItem {
 }
 
 const menuGroups = computed(() => {
+  const role = userInfo.value?.role || 'STAFF';
+  
   const list = [
     {
-      label: 'Main',
+      label: 'menu.main',
       items: [
         { label: 'menu.dashboard', icon: 'pi pi-chart-pie', to: '/' },
-        { label: 'menu.timesheet', icon: 'pi pi-clock', to: '/timesheet' },
-        { label: 'menu.leaveRequest', icon: 'pi pi-calendar-plus', to: '/leave-request' },
+        { label: 'menu.companyBoard', icon: 'pi pi-megaphone', to: '/board' }
       ]
     }
   ];
 
-  if (isManagerOrAdmin.value) {
+  // 1. Personal standard menus (for all roles)
+  list[0].items.push({ label: 'menu.timesheet', icon: 'pi pi-clock', to: '/timesheet' });
+  list[0].items.push({ label: 'menu.leaveRequest', icon: 'pi pi-calendar-plus', to: '/leave-request' });
+
+  // 2. Timesheet Administration
+  if (['ADMIN', 'MANAGER', 'HR', 'ACCOUNTANT'].includes(role)) {
     list[0].items.push({
       label: 'menu.timesheetManage',
       icon: 'pi pi-sliders-h',
       to: '/timesheet/manage'
     });
+  }
+
+  // 3. Leave Requests Approvals
+  if (['ADMIN', 'MANAGER', 'HR'].includes(role)) {
     list[0].items.push({
       label: 'menu.leaveRequestPending',
       icon: 'pi pi-calendar-times',
@@ -374,25 +387,35 @@ const menuGroups = computed(() => {
     });
   }
 
-  list[0].items.push({
-    label: 'menu.contract',
-    icon: 'pi pi-file',
-    to: '/contract'
-  });
+  // 4. Contracts Management
+  if (['ADMIN', 'MANAGER', 'HR', 'ACCOUNTANT'].includes(role)) {
+    list[0].items.push({
+      label: 'menu.contract',
+      icon: 'pi pi-file',
+      to: '/contract'
+    });
+  }
 
-  list[0].items.push({
-    label: 'menu.transaction',
-    icon: 'pi pi-wallet',
-    to: '/transaction'
-  });
+  // 5. Financial Transactions
+  if (['ADMIN', 'MANAGER', 'ACCOUNTANT'].includes(role)) {
+    list[0].items.push({
+      label: 'menu.transaction',
+      icon: 'pi pi-wallet',
+      to: '/transaction'
+    });
+  }
 
-  list[0].items.push({
-    label: 'menu.document',
-    icon: 'pi pi-folder-open',
-    to: '/document'
-  });
+  // 6. Documents Vault
+  if (['ADMIN', 'MANAGER', 'HR', 'ACCOUNTANT'].includes(role)) {
+    list[0].items.push({
+      label: 'menu.document',
+      icon: 'pi pi-folder-open',
+      to: '/document'
+    });
+  }
 
-  if (isManagerOrAdmin.value) {
+  // 7. Compliance Audit Panel
+  if (['ADMIN', 'MANAGER', 'HR', 'ACCOUNTANT'].includes(role)) {
     list[0].items.push({
       label: 'menu.compliance',
       icon: 'pi pi-shield',
@@ -400,13 +423,31 @@ const menuGroups = computed(() => {
     });
   }
 
-  if (isManagerOrAdmin.value) {
+  // 8. Master Data Settings Group
+  const masterItems = [];
+  
+  if (['ADMIN', 'MANAGER'].includes(role)) {
+    masterItems.push({ label: 'menu.companySetting', icon: 'pi pi-cog', to: '/master/company-setting' });
+  }
+  
+  if (['ADMIN', 'MANAGER', 'HR'].includes(role)) {
+    masterItems.push({ label: 'menu.department', icon: 'pi pi-sitemap', to: '/master/department' });
+    masterItems.push({ label: 'menu.employee', icon: 'pi pi-id-card', to: '/master/employee' });
+  }
+
+  // Personal profile shortcut for STAFF & ACCOUNTANT
+  if (['STAFF', 'ACCOUNTANT'].includes(role) && userInfo.value?.id) {
+    masterItems.push({
+      label: 'menu.myProfile',
+      icon: 'pi pi-user',
+      to: `/master/employee/${userInfo.value.id}`
+    });
+  }
+
+  if (masterItems.length > 0) {
     list.push({
-      label: 'Master Data',
-      items: [
-        { label: 'menu.department', icon: 'pi pi-sitemap', to: '/master/department' },
-        { label: 'menu.employee', icon: 'pi pi-id-card', to: '/master/employee' },
-      ]
+      label: 'menu.masterData',
+      items: masterItems
     });
   }
 
@@ -437,7 +478,10 @@ onMounted(() => {
   }
 });
 
-watch(() => route.path, expandActiveParent, { immediate: true });
+watch(() => route.path, () => {
+  expandActiveParent();
+  isMobileSidebarOpen.value = false;
+}, { immediate: true });
 watch(isCollapsed, (newVal) => !newVal && expandActiveParent());
 
 const router = useRouter();
@@ -519,5 +563,17 @@ aside {
 
 span, i {
   flex-shrink: 0;
+}
+
+.sidebar-responsive {
+  transform: translateX(-100%);
+}
+@media (min-width: 1024px) {
+  .sidebar-responsive {
+    transform: translateX(0);
+  }
+}
+.sidebar-mobile-open {
+  transform: translateX(0) !important;
 }
 </style>

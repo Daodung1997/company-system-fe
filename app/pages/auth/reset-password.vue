@@ -1,19 +1,20 @@
 <template>
-  <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <div class="space-y-2">
-      <h2 class="text-3xl font-black text-surface-900 dark:text-white tracking-tighter uppercase italic">
+  <div>
+    <!-- Header -->
+    <div class="mb-8 text-center sm:text-left">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
         {{ $t("auth.resetPassword") }}
       </h2>
-      <p class="text-surface-500 dark:text-surface-400 font-medium">
+      <p class="text-surface-400 text-sm">
         {{ $t("auth.settingPassword") }}
       </p>
     </div>
 
-    <form @submit.prevent="handleResetPassword" class="space-y-6">
+    <form @submit.prevent="handleResetPassword" class="space-y-5">
       <div class="space-y-5">
         <!-- OTP -->
         <div class="group">
-          <label class="block text-[10px] font-black text-surface-400 group-focus-within:text-primary uppercase tracking-[0.2em] mb-2 px-1 transition-colors">
+          <label class="block text-[11px] font-bold text-surface-400 uppercase tracking-[0.15em] mb-1.5 ml-1 transition-colors">
             {{ $t("auth.code") }}
             <span class="text-red-500 ml-1">*</span>
           </label>
@@ -24,7 +25,7 @@
               v-model.trim="resetPass.otp"
               :invalid="!!resetPass.errorOtp"
               type="text"
-              class="w-full !rounded-2xl !py-4 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
+              class="w-full !rounded-xl !h-[44px] !pl-11 !text-sm"
               placeholder="000000"
               maxlength="6"
               @change="onValidate('otp')"
@@ -48,7 +49,7 @@
 
         <!-- New Password -->
         <div class="group">
-          <label class="block text-[10px] font-black text-surface-400 group-focus-within:text-primary uppercase tracking-[0.2em] mb-2 px-1 transition-colors">
+          <label class="block text-[11px] font-bold text-surface-400 uppercase tracking-[0.15em] mb-1.5 ml-1 transition-colors">
             {{ $t("auth.newPassword") }}
             <span class="text-red-500 ml-1">*</span>
           </label>
@@ -61,7 +62,7 @@
               :feedback="true"
               toggleMask
               class="w-full"
-              inputClass="w-full !rounded-2xl !py-4 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
+              inputClass="w-full !rounded-xl !h-[44px] !pl-11 !text-sm"
               placeholder="********"
               @change="onValidate('newPassword')"
             />
@@ -71,34 +72,34 @@
           <div class="mt-2 grid grid-cols-2 gap-1.5 text-[10px]" v-if="resetPass.newPassword">
             <div class="flex items-center gap-1" :class="/[a-z]/.test(resetPass.newPassword) ? 'text-green-600' : 'text-surface-400'">
               <i :class="/[a-z]/.test(resetPass.newPassword) ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[8px]"></i>
-              Chữ thường
+              {{ $t('auth.lowercaseHint') }}
             </div>
             <div class="flex items-center gap-1" :class="/[A-Z]/.test(resetPass.newPassword) ? 'text-green-600' : 'text-surface-400'">
               <i :class="/[A-Z]/.test(resetPass.newPassword) ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[8px]"></i>
-              Chữ hoa
+              {{ $t('auth.uppercaseHint') }}
             </div>
             <div class="flex items-center gap-1" :class="/[0-9]/.test(resetPass.newPassword) ? 'text-green-600' : 'text-surface-400'">
               <i :class="/[0-9]/.test(resetPass.newPassword) ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[8px]"></i>
-              Chữ số
+              {{ $t('auth.digitHint') }}
             </div>
             <div class="flex items-center gap-1" :class="/[!@#$%^&*()_+\-=\[\]{};':&quot;\\|,.<>\/?`~]/.test(resetPass.newPassword) ? 'text-green-600' : 'text-surface-400'">
               <i :class="/[!@#$%^&*()_+\-=\[\]{};':&quot;\\|,.<>\/?`~]/.test(resetPass.newPassword) ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[8px]"></i>
-              Ký tự đặc biệt
+              {{ $t('auth.specialHint') }}
             </div>
             <div class="flex items-center gap-1" :class="resetPass.newPassword.length >= 8 ? 'text-green-600' : 'text-surface-400'">
               <i :class="resetPass.newPassword.length >= 8 ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[8px]"></i>
-              Ít nhất 8 ký tự
+              {{ $t('auth.minLengthHint') }}
             </div>
             <div class="flex items-center gap-1" :class="resetPass.newPassword.length <= 50 ? 'text-green-600' : 'text-surface-400'">
               <i :class="resetPass.newPassword.length <= 50 ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[8px]"></i>
-              Tối đa 50 ký tự
+              {{ $t('auth.maxLengthHint') }}
             </div>
           </div>
         </div>
 
         <!-- Confirm Password -->
         <div class="group">
-          <label class="block text-[10px] font-black text-surface-400 group-focus-within:text-primary uppercase tracking-[0.2em] mb-2 px-1 transition-colors">
+          <label class="block text-[11px] font-bold text-surface-400 uppercase tracking-[0.15em] mb-1.5 ml-1 transition-colors">
             {{ $t("auth.newPasswordConfirm") }}
             <span class="text-red-500 ml-1">*</span>
           </label>
@@ -111,7 +112,7 @@
               :feedback="false"
               toggleMask
               class="w-full"
-              inputClass="w-full !rounded-2xl !py-4 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
+              inputClass="w-full !rounded-xl !h-[44px] !pl-11 !text-sm"
               placeholder="********"
               @change="onValidate('confirmPassword')"
             />
@@ -120,18 +121,18 @@
         </div>
       </div>
 
-      <div class="flex flex-col gap-4 pt-4">
+      <div class="flex flex-col gap-3 pt-3">
         <Button
           :label="$t('auth.resetPassword')"
           :loading="isLoading"
-          class="w-full !rounded-2xl !py-4 !font-black !tracking-tight !shadow-xl !shadow-primary/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          class="w-full !rounded-xl !h-[46px] !font-bold !tracking-wide !border-none hover:!-translate-y-0.5 active:!translate-y-0 !transition-all !duration-300"
           type="submit"
         />
         <Button
           :label="$t('btn.cancel')"
           severity="secondary"
           variant="text"
-          class="w-full !rounded-2xl !font-bold"
+          class="w-full !rounded-xl !font-bold !text-surface-400 hover:!text-white hover:!bg-white/5"
           @click="router.push('/login')"
         />
       </div>
@@ -220,7 +221,7 @@ const onValidate = (field: string) => {
 
 const handleResendOtp = () => {
   if (!resetPass.email) {
-    showMessage("warn", t("text.warning") || "Cảnh báo", t("auth.errorMail") || "Vui lòng nhập email.");
+    showMessage("warn", t("text.warning"), t("auth.errorMail"));
     return;
   }
   if (isResendingOtp.value) return;
@@ -230,14 +231,14 @@ const handleResendOtp = () => {
     data: { email: resetPass.email },
     successCallback: (response: any) => {
       const msg = response?.data?.data?.message || t("auth.reSendResetSuccess");
-      showMessage("success", t("text.success") || "Thành công", msg);
+      showMessage("success", t("text.success"), msg);
       isResendingOtp.value = false;
     },
     errorCallback: (error: any) => {
       const errMsg = error?.response?.data?.messages?.message
         || error?.response?.data?.messages?.[0]
-        || t("text.errorMessage") || "Có lỗi xảy ra.";
-      showMessage("error", t("text.error") || "Lỗi", errMsg);
+        || t("text.errorMessage");
+      showMessage("error", t("text.error"), errMsg);
       isResendingOtp.value = false;
     },
   });
@@ -267,8 +268,8 @@ const handleResetPassword = () => {
       errorCallback: (error: any) => {
         const errMsg = error?.response?.data?.messages?.message
           || error?.response?.data?.messages?.[0]
-          || t("text.errorMessage") || "Có lỗi xảy ra.";
-        showMessage("error", t("text.error") || "Lỗi", errMsg);
+          || t("text.errorMessage");
+        showMessage("error", t("text.error"), errMsg);
         isLoading.value = false;
       },
     });

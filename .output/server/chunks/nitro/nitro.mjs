@@ -1,0 +1,23832 @@
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import http, { Server as Server$1 } from 'node:http';
+import https, { Server } from 'node:https';
+import { EventEmitter } from 'node:events';
+import { Buffer as Buffer$1 } from 'node:buffer';
+import { promises, existsSync } from 'node:fs';
+import { resolve as resolve$1, dirname as dirname$1, join } from 'node:path';
+import { createHash } from 'node:crypto';
+import { createRouterMatcher } from 'vue-router';
+import BaseStyle from '@primevue/core/base/style';
+import BaseComponentStyle from '@primevue/core/basecomponent/style';
+import { style } from '@primeuix/styles/autocomplete';
+import { isNotEmpty, isEmpty } from '@primeuix/utils/object';
+import { style as style$1 } from '@primeuix/styles/cascadeselect';
+import { style as style$2 } from '@primeuix/styles/checkbox';
+import { style as style$3 } from '@primeuix/styles/checkboxgroup';
+import { style as style$4 } from '@primeuix/styles/colorpicker';
+import { style as style$5 } from '@primeuix/styles/datepicker';
+import { style as style$6 } from '@primeuix/styles/floatlabel';
+import { style as style$7 } from '@primeuix/styles/iconfield';
+import { style as style$8 } from '@primeuix/styles/iftalabel';
+import { style as style$9 } from '@primeuix/styles/inputchips';
+import { style as style$a } from '@primeuix/styles/inputgroup';
+import { style as style$b } from '@primeuix/styles/inputnumber';
+import { style as style$c } from '@primeuix/styles/inputotp';
+import { style as style$d } from '@primeuix/styles/inputtext';
+import { style as style$e } from '@primeuix/styles/knob';
+import { style as style$f } from '@primeuix/styles/listbox';
+import { style as style$g } from '@primeuix/styles/multiselect';
+import { style as style$h } from '@primeuix/styles/password';
+import { style as style$i } from '@primeuix/styles/radiobutton';
+import { style as style$j } from '@primeuix/styles/radiobuttongroup';
+import { style as style$k } from '@primeuix/styles/rating';
+import { style as style$l } from '@primeuix/styles/select';
+import { style as style$m } from '@primeuix/styles/selectbutton';
+import { style as style$n } from '@primeuix/styles/slider';
+import { style as style$o } from '@primeuix/styles/textarea';
+import { style as style$p } from '@primeuix/styles/togglebutton';
+import { style as style$q } from '@primeuix/styles/toggleswitch';
+import { style as style$r } from '@primeuix/styles/treeselect';
+import { style as style$s } from '@primeuix/styles/button';
+import { style as style$t } from '@primeuix/styles/buttongroup';
+import { style as style$u } from '@primeuix/styles/speeddial';
+import { style as style$v } from '@primeuix/styles/splitbutton';
+import { style as style$w } from '@primeuix/styles/datatable';
+import { style as style$x } from '@primeuix/styles/dataview';
+import { style as style$y } from '@primeuix/styles/orderlist';
+import { style as style$z } from '@primeuix/styles/organizationchart';
+import { style as style$A } from '@primeuix/styles/paginator';
+import { style as style$B } from '@primeuix/styles/picklist';
+import { style as style$C } from '@primeuix/styles/tree';
+import { style as style$D } from '@primeuix/styles/treetable';
+import { style as style$E } from '@primeuix/styles/timeline';
+import { style as style$F } from '@primeuix/styles/virtualscroller';
+import { style as style$G } from '@primeuix/styles/accordion';
+import { style as style$H } from '@primeuix/styles/card';
+import { style as style$I } from '@primeuix/styles/divider';
+import { style as style$J } from '@primeuix/styles/fieldset';
+import { style as style$K } from '@primeuix/styles/panel';
+import { style as style$L } from '@primeuix/styles/scrollpanel';
+import { style as style$M } from '@primeuix/styles/splitter';
+import { style as style$N } from '@primeuix/styles/stepper';
+import { style as style$O } from '@primeuix/styles/tabview';
+import { style as style$P } from '@primeuix/styles/tabs';
+import { style as style$Q } from '@primeuix/styles/toolbar';
+import { style as style$R } from '@primeuix/styles/confirmdialog';
+import { style as style$S } from '@primeuix/styles/confirmpopup';
+import { style as style$T } from '@primeuix/styles/dialog';
+import { style as style$U } from '@primeuix/styles/drawer';
+import { style as style$V } from '@primeuix/styles/popover';
+import { style as style$W } from '@primeuix/styles/fileupload';
+import { style as style$X } from '@primeuix/styles/breadcrumb';
+import { style as style$Y } from '@primeuix/styles/contextmenu';
+import { style as style$Z } from '@primeuix/styles/dock';
+import { style as style$_ } from '@primeuix/styles/menu';
+import { style as style$$ } from '@primeuix/styles/menubar';
+import { style as style$10 } from '@primeuix/styles/megamenu';
+import { style as style$11 } from '@primeuix/styles/panelmenu';
+import { style as style$12 } from '@primeuix/styles/steps';
+import { style as style$13 } from '@primeuix/styles/tabmenu';
+import { style as style$14 } from '@primeuix/styles/tieredmenu';
+import { style as style$15 } from '@primeuix/styles/message';
+import { style as style$16 } from '@primeuix/styles/inlinemessage';
+import { style as style$17 } from '@primeuix/styles/toast';
+import { style as style$18 } from '@primeuix/styles/carousel';
+import { style as style$19 } from '@primeuix/styles/galleria';
+import { style as style$1a } from '@primeuix/styles/image';
+import { style as style$1b } from '@primeuix/styles/imagecompare';
+import { style as style$1c } from '@primeuix/styles/avatar';
+import { style as style$1d } from '@primeuix/styles/badge';
+import { style as style$1e } from '@primeuix/styles/blockui';
+import { style as style$1f } from '@primeuix/styles/chip';
+import { style as style$1g } from '@primeuix/styles/inplace';
+import { style as style$1h } from '@primeuix/styles/metergroup';
+import { style as style$1i } from '@primeuix/styles/overlaybadge';
+import { style as style$1j } from '@primeuix/styles/scrolltop';
+import { style as style$1k } from '@primeuix/styles/skeleton';
+import { style as style$1l } from '@primeuix/styles/progressbar';
+import { style as style$1m } from '@primeuix/styles/progressspinner';
+import { style as style$1n } from '@primeuix/styles/tag';
+import { style as style$1o } from '@primeuix/styles/terminal';
+import FormStyle from '@primevue/forms/form/style';
+import FormFieldStyle from '@primevue/forms/formfield/style';
+import { style as style$1p } from '@primeuix/styles/tooltip';
+import { style as style$1q } from '@primeuix/styles/ripple';
+import { Theme } from '@primeuix/styled';
+import { fileURLToPath } from 'node:url';
+
+const suspectProtoRx = /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/;
+const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/;
+const JsonSigRx = /^\s*["[{]|^\s*-?\d{1,16}(\.\d{1,17})?([Ee][+-]?\d+)?\s*$/;
+function jsonParseTransform(key, value) {
+  if (key === "__proto__" || key === "constructor" && value && typeof value === "object" && "prototype" in value) {
+    warnKeyDropped(key);
+    return;
+  }
+  return value;
+}
+function warnKeyDropped(key) {
+  console.warn(`[destr] Dropping "${key}" key to prevent prototype pollution.`);
+}
+function destr(value, options = {}) {
+  if (typeof value !== "string") {
+    return value;
+  }
+  if (value[0] === '"' && value[value.length - 1] === '"' && value.indexOf("\\") === -1) {
+    return value.slice(1, -1);
+  }
+  const _value = value.trim();
+  if (_value.length <= 9) {
+    switch (_value.toLowerCase()) {
+      case "true": {
+        return true;
+      }
+      case "false": {
+        return false;
+      }
+      case "undefined": {
+        return void 0;
+      }
+      case "null": {
+        return null;
+      }
+      case "nan": {
+        return Number.NaN;
+      }
+      case "infinity": {
+        return Number.POSITIVE_INFINITY;
+      }
+      case "-infinity": {
+        return Number.NEGATIVE_INFINITY;
+      }
+    }
+  }
+  if (!JsonSigRx.test(value)) {
+    if (options.strict) {
+      throw new SyntaxError("[destr] Invalid JSON");
+    }
+    return value;
+  }
+  try {
+    if (suspectProtoRx.test(value) || suspectConstructorRx.test(value)) {
+      if (options.strict) {
+        throw new Error("[destr] Possible prototype pollution");
+      }
+      return JSON.parse(value, jsonParseTransform);
+    }
+    return JSON.parse(value);
+  } catch (error) {
+    if (options.strict) {
+      throw error;
+    }
+    return value;
+  }
+}
+
+const HASH_RE = /#/g;
+const AMPERSAND_RE = /&/g;
+const SLASH_RE = /\//g;
+const EQUAL_RE = /=/g;
+const PLUS_RE = /\+/g;
+const ENC_CARET_RE = /%5e/gi;
+const ENC_BACKTICK_RE = /%60/gi;
+const ENC_PIPE_RE = /%7c/gi;
+const ENC_SPACE_RE = /%20/gi;
+const ENC_SLASH_RE = /%2f/gi;
+function encode(text) {
+  return encodeURI("" + text).replace(ENC_PIPE_RE, "|");
+}
+function encodeQueryValue(input) {
+  return encode(typeof input === "string" ? input : JSON.stringify(input)).replace(PLUS_RE, "%2B").replace(ENC_SPACE_RE, "+").replace(HASH_RE, "%23").replace(AMPERSAND_RE, "%26").replace(ENC_BACKTICK_RE, "`").replace(ENC_CARET_RE, "^").replace(SLASH_RE, "%2F");
+}
+function encodeQueryKey(text) {
+  return encodeQueryValue(text).replace(EQUAL_RE, "%3D");
+}
+function decode$1(text = "") {
+  try {
+    return decodeURIComponent("" + text);
+  } catch {
+    return "" + text;
+  }
+}
+function decodePath(text) {
+  return decode$1(text.replace(ENC_SLASH_RE, "%252F"));
+}
+function decodeQueryKey(text) {
+  return decode$1(text.replace(PLUS_RE, " "));
+}
+function decodeQueryValue(text) {
+  return decode$1(text.replace(PLUS_RE, " "));
+}
+
+function parseQuery(parametersString = "") {
+  const object = /* @__PURE__ */ Object.create(null);
+  if (parametersString[0] === "?") {
+    parametersString = parametersString.slice(1);
+  }
+  for (const parameter of parametersString.split("&")) {
+    const s = parameter.match(/([^=]+)=?(.*)/) || [];
+    if (s.length < 2) {
+      continue;
+    }
+    const key = decodeQueryKey(s[1]);
+    if (key === "__proto__" || key === "constructor") {
+      continue;
+    }
+    const value = decodeQueryValue(s[2] || "");
+    if (object[key] === void 0) {
+      object[key] = value;
+    } else if (Array.isArray(object[key])) {
+      object[key].push(value);
+    } else {
+      object[key] = [object[key], value];
+    }
+  }
+  return object;
+}
+function encodeQueryItem(key, value) {
+  if (typeof value === "number" || typeof value === "boolean") {
+    value = String(value);
+  }
+  if (!value) {
+    return encodeQueryKey(key);
+  }
+  if (Array.isArray(value)) {
+    return value.map(
+      (_value) => `${encodeQueryKey(key)}=${encodeQueryValue(_value)}`
+    ).join("&");
+  }
+  return `${encodeQueryKey(key)}=${encodeQueryValue(value)}`;
+}
+function stringifyQuery(query) {
+  return Object.keys(query).filter((k) => query[k] !== void 0).map((k) => encodeQueryItem(k, query[k])).filter(Boolean).join("&");
+}
+
+const PROTOCOL_STRICT_REGEX = /^[\s\w\0+.-]{2,}:([/\\]{1,2})/;
+const PROTOCOL_REGEX = /^[\s\w\0+.-]{2,}:([/\\]{2})?/;
+const PROTOCOL_RELATIVE_REGEX = /^([/\\]\s*){2,}[^/\\]/;
+const JOIN_LEADING_SLASH_RE = /^\.?\//;
+function hasProtocol(inputString, opts = {}) {
+  if (typeof opts === "boolean") {
+    opts = { acceptRelative: opts };
+  }
+  if (opts.strict) {
+    return PROTOCOL_STRICT_REGEX.test(inputString);
+  }
+  return PROTOCOL_REGEX.test(inputString) || (opts.acceptRelative ? PROTOCOL_RELATIVE_REGEX.test(inputString) : false);
+}
+function hasTrailingSlash(input = "", respectQueryAndFragment) {
+  {
+    return input.endsWith("/");
+  }
+}
+function withoutTrailingSlash(input = "", respectQueryAndFragment) {
+  {
+    return (hasTrailingSlash(input) ? input.slice(0, -1) : input) || "/";
+  }
+}
+function withTrailingSlash(input = "", respectQueryAndFragment) {
+  {
+    return input.endsWith("/") ? input : input + "/";
+  }
+}
+function hasLeadingSlash(input = "") {
+  return input.startsWith("/");
+}
+function withLeadingSlash(input = "") {
+  return hasLeadingSlash(input) ? input : "/" + input;
+}
+function withBase(input, base) {
+  if (isEmptyURL(base) || hasProtocol(input)) {
+    return input;
+  }
+  const _base = withoutTrailingSlash(base);
+  if (input.startsWith(_base)) {
+    const nextChar = input[_base.length];
+    if (!nextChar || nextChar === "/" || nextChar === "?") {
+      return input;
+    }
+  }
+  return joinURL(_base, input);
+}
+function withoutBase(input, base) {
+  if (isEmptyURL(base)) {
+    return input;
+  }
+  const _base = withoutTrailingSlash(base);
+  if (!input.startsWith(_base)) {
+    return input;
+  }
+  const nextChar = input[_base.length];
+  if (nextChar && nextChar !== "/" && nextChar !== "?") {
+    return input;
+  }
+  const trimmed = input.slice(_base.length).replace(/^\/+/, "");
+  return "/" + trimmed;
+}
+function withQuery(input, query) {
+  const parsed = parseURL(input);
+  const mergedQuery = { ...parseQuery(parsed.search), ...query };
+  parsed.search = stringifyQuery(mergedQuery);
+  return stringifyParsedURL(parsed);
+}
+function getQuery$1(input) {
+  return parseQuery(parseURL(input).search);
+}
+function isEmptyURL(url) {
+  return !url || url === "/";
+}
+function isNonEmptyURL(url) {
+  return url && url !== "/";
+}
+function joinURL(base, ...input) {
+  let url = base || "";
+  for (const segment of input.filter((url2) => isNonEmptyURL(url2))) {
+    if (url) {
+      const _segment = segment.replace(JOIN_LEADING_SLASH_RE, "");
+      url = withTrailingSlash(url) + _segment;
+    } else {
+      url = segment;
+    }
+  }
+  return url;
+}
+function joinRelativeURL(..._input) {
+  const JOIN_SEGMENT_SPLIT_RE = /\/(?!\/)/;
+  const input = _input.filter(Boolean);
+  const segments = [];
+  let segmentsDepth = 0;
+  for (const i of input) {
+    if (!i || i === "/") {
+      continue;
+    }
+    for (const [sindex, s] of i.split(JOIN_SEGMENT_SPLIT_RE).entries()) {
+      if (!s || s === ".") {
+        continue;
+      }
+      if (s === "..") {
+        if (segments.length === 1 && hasProtocol(segments[0])) {
+          continue;
+        }
+        segments.pop();
+        segmentsDepth--;
+        continue;
+      }
+      if (sindex === 1 && segments[segments.length - 1]?.endsWith(":/")) {
+        segments[segments.length - 1] += "/" + s;
+        continue;
+      }
+      segments.push(s);
+      segmentsDepth++;
+    }
+  }
+  let url = segments.join("/");
+  if (segmentsDepth >= 0) {
+    if (input[0]?.startsWith("/") && !url.startsWith("/")) {
+      url = "/" + url;
+    } else if (input[0]?.startsWith("./") && !url.startsWith("./")) {
+      url = "./" + url;
+    }
+  } else {
+    url = "../".repeat(-1 * segmentsDepth) + url;
+  }
+  if (input[input.length - 1]?.endsWith("/") && !url.endsWith("/")) {
+    url += "/";
+  }
+  return url;
+}
+
+const protocolRelative = Symbol.for("ufo:protocolRelative");
+function parseURL(input = "", defaultProto) {
+  const _specialProtoMatch = input.match(
+    /^[\s\0]*(blob:|data:|javascript:|vbscript:)(.*)/i
+  );
+  if (_specialProtoMatch) {
+    const [, _proto, _pathname = ""] = _specialProtoMatch;
+    return {
+      protocol: _proto.toLowerCase(),
+      pathname: _pathname,
+      href: _proto + _pathname,
+      auth: "",
+      host: "",
+      search: "",
+      hash: ""
+    };
+  }
+  if (!hasProtocol(input, { acceptRelative: true })) {
+    return parsePath(input);
+  }
+  const [, protocol = "", auth, hostAndPath = ""] = input.replace(/\\/g, "/").match(/^[\s\0]*([\w+.-]{2,}:)?\/\/([^/@]+@)?(.*)/) || [];
+  let [, host = "", path = ""] = hostAndPath.match(/([^#/?]*)(.*)?/) || [];
+  if (protocol === "file:") {
+    path = path.replace(/\/(?=[A-Za-z]:)/, "");
+  }
+  const { pathname, search, hash } = parsePath(path);
+  return {
+    protocol: protocol.toLowerCase(),
+    auth: auth ? auth.slice(0, Math.max(0, auth.length - 1)) : "",
+    host,
+    pathname,
+    search,
+    hash,
+    [protocolRelative]: !protocol
+  };
+}
+function parsePath(input = "") {
+  const [pathname = "", search = "", hash = ""] = (input.match(/([^#?]*)(\?[^#]*)?(#.*)?/) || []).splice(1);
+  return {
+    pathname,
+    search,
+    hash
+  };
+}
+function stringifyParsedURL(parsed) {
+  const pathname = parsed.pathname || "";
+  const search = parsed.search ? (parsed.search.startsWith("?") ? "" : "?") + parsed.search : "";
+  const hash = parsed.hash || "";
+  const auth = parsed.auth ? parsed.auth + "@" : "";
+  const host = parsed.host || "";
+  const proto = parsed.protocol || parsed[protocolRelative] ? (parsed.protocol || "") + "//" : "";
+  return proto + auth + host + pathname + search + hash;
+}
+
+const NullObject = /* @__PURE__ */ (() => {
+  const C = function() {
+  };
+  C.prototype = /* @__PURE__ */ Object.create(null);
+  return C;
+})();
+function parse(str, options) {
+  if (typeof str !== "string") {
+    throw new TypeError("argument str must be a string");
+  }
+  const obj = new NullObject();
+  const opt = {};
+  const dec = opt.decode || decode;
+  let index = 0;
+  while (index < str.length) {
+    const eqIdx = str.indexOf("=", index);
+    if (eqIdx === -1) {
+      break;
+    }
+    let endIdx = str.indexOf(";", index);
+    if (endIdx === -1) {
+      endIdx = str.length;
+    } else if (endIdx < eqIdx) {
+      index = str.lastIndexOf(";", eqIdx - 1) + 1;
+      continue;
+    }
+    const key = str.slice(index, eqIdx).trim();
+    if (opt?.filter && !opt?.filter(key)) {
+      index = endIdx + 1;
+      continue;
+    }
+    if (void 0 === obj[key]) {
+      let val = str.slice(eqIdx + 1, endIdx).trim();
+      if (val.codePointAt(0) === 34) {
+        val = val.slice(1, -1);
+      }
+      obj[key] = tryDecode(val, dec);
+    }
+    index = endIdx + 1;
+  }
+  return obj;
+}
+function decode(str) {
+  return str.includes("%") ? decodeURIComponent(str) : str;
+}
+function tryDecode(str, decode2) {
+  try {
+    return decode2(str);
+  } catch {
+    return str;
+  }
+}
+
+const fieldContentRegExp = /^[\u0009\u0020-\u007E\u0080-\u00FF]+$/;
+function serialize$1(name, value, options) {
+  const opt = options || {};
+  const enc = opt.encode || encodeURIComponent;
+  if (typeof enc !== "function") {
+    throw new TypeError("option encode is invalid");
+  }
+  if (!fieldContentRegExp.test(name)) {
+    throw new TypeError("argument name is invalid");
+  }
+  const encodedValue = enc(value);
+  if (encodedValue && !fieldContentRegExp.test(encodedValue)) {
+    throw new TypeError("argument val is invalid");
+  }
+  let str = name + "=" + encodedValue;
+  if (void 0 !== opt.maxAge && opt.maxAge !== null) {
+    const maxAge = opt.maxAge - 0;
+    if (Number.isNaN(maxAge) || !Number.isFinite(maxAge)) {
+      throw new TypeError("option maxAge is invalid");
+    }
+    str += "; Max-Age=" + Math.floor(maxAge);
+  }
+  if (opt.domain) {
+    if (!fieldContentRegExp.test(opt.domain)) {
+      throw new TypeError("option domain is invalid");
+    }
+    str += "; Domain=" + opt.domain;
+  }
+  if (opt.path) {
+    if (!fieldContentRegExp.test(opt.path)) {
+      throw new TypeError("option path is invalid");
+    }
+    str += "; Path=" + opt.path;
+  }
+  if (opt.expires) {
+    if (!isDate(opt.expires) || Number.isNaN(opt.expires.valueOf())) {
+      throw new TypeError("option expires is invalid");
+    }
+    str += "; Expires=" + opt.expires.toUTCString();
+  }
+  if (opt.httpOnly) {
+    str += "; HttpOnly";
+  }
+  if (opt.secure) {
+    str += "; Secure";
+  }
+  if (opt.priority) {
+    const priority = typeof opt.priority === "string" ? opt.priority.toLowerCase() : opt.priority;
+    switch (priority) {
+      case "low": {
+        str += "; Priority=Low";
+        break;
+      }
+      case "medium": {
+        str += "; Priority=Medium";
+        break;
+      }
+      case "high": {
+        str += "; Priority=High";
+        break;
+      }
+      default: {
+        throw new TypeError("option priority is invalid");
+      }
+    }
+  }
+  if (opt.sameSite) {
+    const sameSite = typeof opt.sameSite === "string" ? opt.sameSite.toLowerCase() : opt.sameSite;
+    switch (sameSite) {
+      case true: {
+        str += "; SameSite=Strict";
+        break;
+      }
+      case "lax": {
+        str += "; SameSite=Lax";
+        break;
+      }
+      case "strict": {
+        str += "; SameSite=Strict";
+        break;
+      }
+      case "none": {
+        str += "; SameSite=None";
+        break;
+      }
+      default: {
+        throw new TypeError("option sameSite is invalid");
+      }
+    }
+  }
+  if (opt.partitioned) {
+    str += "; Partitioned";
+  }
+  return str;
+}
+function isDate(val) {
+  return Object.prototype.toString.call(val) === "[object Date]" || val instanceof Date;
+}
+
+function parseSetCookie(setCookieValue, options) {
+  const parts = (setCookieValue || "").split(";").filter((str) => typeof str === "string" && !!str.trim());
+  const nameValuePairStr = parts.shift() || "";
+  const parsed = _parseNameValuePair(nameValuePairStr);
+  const name = parsed.name;
+  let value = parsed.value;
+  try {
+    value = options?.decode === false ? value : (options?.decode || decodeURIComponent)(value);
+  } catch {
+  }
+  const cookie = {
+    name,
+    value
+  };
+  for (const part of parts) {
+    const sides = part.split("=");
+    const partKey = (sides.shift() || "").trimStart().toLowerCase();
+    const partValue = sides.join("=");
+    switch (partKey) {
+      case "expires": {
+        cookie.expires = new Date(partValue);
+        break;
+      }
+      case "max-age": {
+        cookie.maxAge = Number.parseInt(partValue, 10);
+        break;
+      }
+      case "secure": {
+        cookie.secure = true;
+        break;
+      }
+      case "httponly": {
+        cookie.httpOnly = true;
+        break;
+      }
+      case "samesite": {
+        cookie.sameSite = partValue;
+        break;
+      }
+      default: {
+        cookie[partKey] = partValue;
+      }
+    }
+  }
+  return cookie;
+}
+function _parseNameValuePair(nameValuePairStr) {
+  let name = "";
+  let value = "";
+  const nameValueArr = nameValuePairStr.split("=");
+  if (nameValueArr.length > 1) {
+    name = nameValueArr.shift();
+    value = nameValueArr.join("=");
+  } else {
+    value = nameValuePairStr;
+  }
+  return { name, value };
+}
+
+const NODE_TYPES = {
+  NORMAL: 0,
+  WILDCARD: 1,
+  PLACEHOLDER: 2
+};
+
+function createRouter$1(options = {}) {
+  const ctx = {
+    options,
+    rootNode: createRadixNode(),
+    staticRoutesMap: {}
+  };
+  const normalizeTrailingSlash = (p) => options.strictTrailingSlash ? p : p.replace(/\/$/, "") || "/";
+  if (options.routes) {
+    for (const path in options.routes) {
+      insert(ctx, normalizeTrailingSlash(path), options.routes[path]);
+    }
+  }
+  return {
+    ctx,
+    lookup: (path) => lookup(ctx, normalizeTrailingSlash(path)),
+    insert: (path, data) => insert(ctx, normalizeTrailingSlash(path), data),
+    remove: (path) => remove(ctx, normalizeTrailingSlash(path))
+  };
+}
+function lookup(ctx, path) {
+  const staticPathNode = ctx.staticRoutesMap[path];
+  if (staticPathNode) {
+    return staticPathNode.data;
+  }
+  const sections = path.split("/");
+  const params = {};
+  let paramsFound = false;
+  let wildcardNode = null;
+  let node = ctx.rootNode;
+  let wildCardParam = null;
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    if (node.wildcardChildNode !== null) {
+      wildcardNode = node.wildcardChildNode;
+      wildCardParam = sections.slice(i).join("/");
+    }
+    const nextNode = node.children.get(section);
+    if (nextNode === void 0) {
+      if (node && node.placeholderChildren.length > 1) {
+        const remaining = sections.length - i;
+        node = node.placeholderChildren.find((c) => c.maxDepth === remaining) || null;
+      } else {
+        node = node.placeholderChildren[0] || null;
+      }
+      if (!node) {
+        break;
+      }
+      if (node.paramName) {
+        params[node.paramName] = section;
+      }
+      paramsFound = true;
+    } else {
+      node = nextNode;
+    }
+  }
+  if ((node === null || node.data === null) && wildcardNode !== null) {
+    node = wildcardNode;
+    params[node.paramName || "_"] = wildCardParam;
+    paramsFound = true;
+  }
+  if (!node) {
+    return null;
+  }
+  if (paramsFound) {
+    return {
+      ...node.data,
+      params: paramsFound ? params : void 0
+    };
+  }
+  return node.data;
+}
+function insert(ctx, path, data) {
+  let isStaticRoute = true;
+  const sections = path.split("/");
+  let node = ctx.rootNode;
+  let _unnamedPlaceholderCtr = 0;
+  const matchedNodes = [node];
+  for (const section of sections) {
+    let childNode;
+    if (childNode = node.children.get(section)) {
+      node = childNode;
+    } else {
+      const type = getNodeType(section);
+      childNode = createRadixNode({ type, parent: node });
+      node.children.set(section, childNode);
+      if (type === NODE_TYPES.PLACEHOLDER) {
+        childNode.paramName = section === "*" ? `_${_unnamedPlaceholderCtr++}` : section.slice(1);
+        node.placeholderChildren.push(childNode);
+        isStaticRoute = false;
+      } else if (type === NODE_TYPES.WILDCARD) {
+        node.wildcardChildNode = childNode;
+        childNode.paramName = section.slice(
+          3
+          /* "**:" */
+        ) || "_";
+        isStaticRoute = false;
+      }
+      matchedNodes.push(childNode);
+      node = childNode;
+    }
+  }
+  for (const [depth, node2] of matchedNodes.entries()) {
+    node2.maxDepth = Math.max(matchedNodes.length - depth, node2.maxDepth || 0);
+  }
+  node.data = data;
+  if (isStaticRoute === true) {
+    ctx.staticRoutesMap[path] = node;
+  }
+  return node;
+}
+function remove(ctx, path) {
+  let success = false;
+  const sections = path.split("/");
+  let node = ctx.rootNode;
+  for (const section of sections) {
+    node = node.children.get(section);
+    if (!node) {
+      return success;
+    }
+  }
+  if (node.data) {
+    const lastSection = sections.at(-1) || "";
+    node.data = null;
+    if (Object.keys(node.children).length === 0 && node.parent) {
+      node.parent.children.delete(lastSection);
+      node.parent.wildcardChildNode = null;
+      node.parent.placeholderChildren = [];
+    }
+    success = true;
+  }
+  return success;
+}
+function createRadixNode(options = {}) {
+  return {
+    type: options.type || NODE_TYPES.NORMAL,
+    maxDepth: 0,
+    parent: options.parent || null,
+    children: /* @__PURE__ */ new Map(),
+    data: options.data || null,
+    paramName: options.paramName || null,
+    wildcardChildNode: null,
+    placeholderChildren: []
+  };
+}
+function getNodeType(str) {
+  if (str.startsWith("**")) {
+    return NODE_TYPES.WILDCARD;
+  }
+  if (str[0] === ":" || str === "*") {
+    return NODE_TYPES.PLACEHOLDER;
+  }
+  return NODE_TYPES.NORMAL;
+}
+
+function toRouteMatcher(router) {
+  const table = _routerNodeToTable("", router.ctx.rootNode);
+  return _createMatcher(table, router.ctx.options.strictTrailingSlash);
+}
+function _createMatcher(table, strictTrailingSlash) {
+  return {
+    ctx: { table },
+    matchAll: (path) => _matchRoutes(path, table, strictTrailingSlash)
+  };
+}
+function _createRouteTable() {
+  return {
+    static: /* @__PURE__ */ new Map(),
+    wildcard: /* @__PURE__ */ new Map(),
+    dynamic: /* @__PURE__ */ new Map()
+  };
+}
+function _matchRoutes(path, table, strictTrailingSlash) {
+  if (strictTrailingSlash !== true && path.endsWith("/")) {
+    path = path.slice(0, -1) || "/";
+  }
+  const matches = [];
+  for (const [key, value] of _sortRoutesMap(table.wildcard)) {
+    if (path === key || path.startsWith(key + "/")) {
+      matches.push(value);
+    }
+  }
+  for (const [key, value] of _sortRoutesMap(table.dynamic)) {
+    if (path.startsWith(key + "/")) {
+      const subPath = "/" + path.slice(key.length).split("/").splice(2).join("/");
+      matches.push(..._matchRoutes(subPath, value));
+    }
+  }
+  const staticMatch = table.static.get(path);
+  if (staticMatch) {
+    matches.push(staticMatch);
+  }
+  return matches.filter(Boolean);
+}
+function _sortRoutesMap(m) {
+  return [...m.entries()].sort((a, b) => a[0].length - b[0].length);
+}
+function _routerNodeToTable(initialPath, initialNode) {
+  const table = _createRouteTable();
+  function _addNode(path, node) {
+    if (path) {
+      if (node.type === NODE_TYPES.NORMAL && !(path.includes("*") || path.includes(":"))) {
+        if (node.data) {
+          table.static.set(path, node.data);
+        }
+      } else if (node.type === NODE_TYPES.WILDCARD) {
+        table.wildcard.set(path.replace("/**", ""), node.data);
+      } else if (node.type === NODE_TYPES.PLACEHOLDER) {
+        const subTable = _routerNodeToTable("", node);
+        if (node.data) {
+          subTable.static.set("/", node.data);
+        }
+        table.dynamic.set(path.replace(/\/\*|\/:\w+/, ""), subTable);
+        return;
+      }
+    }
+    for (const [childPath, child] of node.children.entries()) {
+      _addNode(`${path}/${childPath}`.replace("//", "/"), child);
+    }
+  }
+  _addNode(initialPath, initialNode);
+  return table;
+}
+
+function isPlainObject(value) {
+  if (value === null || typeof value !== "object") {
+    return false;
+  }
+  const prototype = Object.getPrototypeOf(value);
+  if (prototype !== null && prototype !== Object.prototype && Object.getPrototypeOf(prototype) !== null) {
+    return false;
+  }
+  if (Symbol.iterator in value) {
+    return false;
+  }
+  if (Symbol.toStringTag in value) {
+    return Object.prototype.toString.call(value) === "[object Module]";
+  }
+  return true;
+}
+
+function _defu(baseObject, defaults, namespace = ".", merger) {
+  if (!isPlainObject(defaults)) {
+    return _defu(baseObject, {}, namespace, merger);
+  }
+  const object = { ...defaults };
+  for (const key of Object.keys(baseObject)) {
+    if (key === "__proto__" || key === "constructor") {
+      continue;
+    }
+    const value = baseObject[key];
+    if (value === null || value === void 0) {
+      continue;
+    }
+    if (merger && merger(object, key, value, namespace)) {
+      continue;
+    }
+    if (Array.isArray(value) && Array.isArray(object[key])) {
+      object[key] = [...value, ...object[key]];
+    } else if (isPlainObject(value) && isPlainObject(object[key])) {
+      object[key] = _defu(
+        value,
+        object[key],
+        (namespace ? `${namespace}.` : "") + key.toString(),
+        merger
+      );
+    } else {
+      object[key] = value;
+    }
+  }
+  return object;
+}
+function createDefu(merger) {
+  return (...arguments_) => (
+    // eslint-disable-next-line unicorn/no-array-reduce
+    arguments_.reduce((p, c) => _defu(p, c, "", merger), {})
+  );
+}
+const defu = createDefu();
+const defuFn = createDefu((object, key, currentValue) => {
+  if (object[key] !== void 0 && typeof currentValue === "function") {
+    object[key] = currentValue(object[key]);
+    return true;
+  }
+});
+
+function o(n){throw new Error(`${n} is not implemented yet!`)}let i$1 = class i extends EventEmitter{__unenv__={};readableEncoding=null;readableEnded=true;readableFlowing=false;readableHighWaterMark=0;readableLength=0;readableObjectMode=false;readableAborted=false;readableDidRead=false;closed=false;errored=null;readable=false;destroyed=false;static from(e,t){return new i(t)}constructor(e){super();}_read(e){}read(e){}setEncoding(e){return this}pause(){return this}resume(){return this}isPaused(){return  true}unpipe(e){return this}unshift(e,t){}wrap(e){return this}push(e,t){return  false}_destroy(e,t){this.removeAllListeners();}destroy(e){return this.destroyed=true,this._destroy(e),this}pipe(e,t){return {}}compose(e,t){throw new Error("Method not implemented.")}[Symbol.asyncDispose](){return this.destroy(),Promise.resolve()}async*[Symbol.asyncIterator](){throw o("Readable.asyncIterator")}iterator(e){throw o("Readable.iterator")}map(e,t){throw o("Readable.map")}filter(e,t){throw o("Readable.filter")}forEach(e,t){throw o("Readable.forEach")}reduce(e,t,r){throw o("Readable.reduce")}find(e,t){throw o("Readable.find")}findIndex(e,t){throw o("Readable.findIndex")}some(e,t){throw o("Readable.some")}toArray(e){throw o("Readable.toArray")}every(e,t){throw o("Readable.every")}flatMap(e,t){throw o("Readable.flatMap")}drop(e,t){throw o("Readable.drop")}take(e,t){throw o("Readable.take")}asIndexedPairs(e){throw o("Readable.asIndexedPairs")}};let l$1 = class l extends EventEmitter{__unenv__={};writable=true;writableEnded=false;writableFinished=false;writableHighWaterMark=0;writableLength=0;writableObjectMode=false;writableCorked=0;closed=false;errored=null;writableNeedDrain=false;writableAborted=false;destroyed=false;_data;_encoding="utf8";constructor(e){super();}pipe(e,t){return {}}_write(e,t,r){if(this.writableEnded){r&&r();return}if(this._data===void 0)this._data=e;else {const s=typeof this._data=="string"?Buffer$1.from(this._data,this._encoding||t||"utf8"):this._data,a=typeof e=="string"?Buffer$1.from(e,t||this._encoding||"utf8"):e;this._data=Buffer$1.concat([s,a]);}this._encoding=t,r&&r();}_writev(e,t){}_destroy(e,t){}_final(e){}write(e,t,r){const s=typeof t=="string"?this._encoding:"utf8",a=typeof t=="function"?t:typeof r=="function"?r:void 0;return this._write(e,s,a),true}setDefaultEncoding(e){return this}end(e,t,r){const s=typeof e=="function"?e:typeof t=="function"?t:typeof r=="function"?r:void 0;if(this.writableEnded)return s&&s(),this;const a=e===s?void 0:e;if(a){const u=t===s?void 0:t;this.write(a,u,s);}return this.writableEnded=true,this.writableFinished=true,this.emit("close"),this.emit("finish"),this}cork(){}uncork(){}destroy(e){return this.destroyed=true,delete this._data,this.removeAllListeners(),this}compose(e,t){throw new Error("Method not implemented.")}[Symbol.asyncDispose](){return Promise.resolve()}};const c=class{allowHalfOpen=true;_destroy;constructor(e=new i$1,t=new l$1){Object.assign(this,e),Object.assign(this,t),this._destroy=m(e._destroy,t._destroy);}};function _(){return Object.assign(c.prototype,i$1.prototype),Object.assign(c.prototype,l$1.prototype),c}function m(...n){return function(...e){for(const t of n)t(...e);}}const g=_();class A extends g{__unenv__={};bufferSize=0;bytesRead=0;bytesWritten=0;connecting=false;destroyed=false;pending=false;localAddress="";localPort=0;remoteAddress="";remoteFamily="";remotePort=0;autoSelectFamilyAttemptedAddresses=[];readyState="readOnly";constructor(e){super();}write(e,t,r){return  false}connect(e,t,r){return this}end(e,t,r){return this}setEncoding(e){return this}pause(){return this}resume(){return this}setTimeout(e,t){return this}setNoDelay(e){return this}setKeepAlive(e,t){return this}address(){return {}}unref(){return this}ref(){return this}destroySoon(){this.destroy();}resetAndDestroy(){const e=new Error("ERR_SOCKET_CLOSED");return e.code="ERR_SOCKET_CLOSED",this.destroy(e),this}}class y extends i$1{aborted=false;httpVersion="1.1";httpVersionMajor=1;httpVersionMinor=1;complete=true;connection;socket;headers={};trailers={};method="GET";url="/";statusCode=200;statusMessage="";closed=false;errored=null;readable=false;constructor(e){super(),this.socket=this.connection=e||new A;}get rawHeaders(){const e=this.headers,t=[];for(const r in e)if(Array.isArray(e[r]))for(const s of e[r])t.push(r,s);else t.push(r,e[r]);return t}get rawTrailers(){return []}setTimeout(e,t){return this}get headersDistinct(){return p(this.headers)}get trailersDistinct(){return p(this.trailers)}}function p(n){const e={};for(const[t,r]of Object.entries(n))t&&(e[t]=(Array.isArray(r)?r:[r]).filter(Boolean));return e}class w extends l$1{statusCode=200;statusMessage="";upgrading=false;chunkedEncoding=false;shouldKeepAlive=false;useChunkedEncodingByDefault=false;sendDate=false;finished=false;headersSent=false;strictContentLength=false;connection=null;socket=null;req;_headers={};constructor(e){super(),this.req=e;}assignSocket(e){e._httpMessage=this,this.socket=e,this.connection=e,this.emit("socket",e),this._flush();}_flush(){this.flushHeaders();}detachSocket(e){}writeContinue(e){}writeHead(e,t,r){e&&(this.statusCode=e),typeof t=="string"&&(this.statusMessage=t,t=void 0);const s=r||t;if(s&&!Array.isArray(s))for(const a in s)this.setHeader(a,s[a]);return this.headersSent=true,this}writeProcessing(){}setTimeout(e,t){return this}appendHeader(e,t){e=e.toLowerCase();const r=this._headers[e],s=[...Array.isArray(r)?r:[r],...Array.isArray(t)?t:[t]].filter(Boolean);return this._headers[e]=s.length>1?s:s[0],this}setHeader(e,t){return this._headers[e.toLowerCase()]=t,this}setHeaders(e){for(const[t,r]of Object.entries(e))this.setHeader(t,r);return this}getHeader(e){return this._headers[e.toLowerCase()]}getHeaders(){return this._headers}getHeaderNames(){return Object.keys(this._headers)}hasHeader(e){return e.toLowerCase()in this._headers}removeHeader(e){delete this._headers[e.toLowerCase()];}addTrailers(e){}flushHeaders(){}writeEarlyHints(e,t){typeof t=="function"&&t();}}const E=(()=>{const n=function(){};return n.prototype=Object.create(null),n})();function R(n={}){const e=new E,t=Array.isArray(n)||H(n)?n:Object.entries(n);for(const[r,s]of t)if(s){if(e[r]===void 0){e[r]=s;continue}e[r]=[...Array.isArray(e[r])?e[r]:[e[r]],...Array.isArray(s)?s:[s]];}return e}function H(n){return typeof n?.entries=="function"}function v(n={}){if(n instanceof Headers)return n;const e=new Headers;for(const[t,r]of Object.entries(n))if(r!==void 0){if(Array.isArray(r)){for(const s of r)e.append(t,String(s));continue}e.set(t,String(r));}return e}const S=new Set([101,204,205,304]);async function b(n,e){const t=new y,r=new w(t);t.url=e.url?.toString()||"/";let s;if(!t.url.startsWith("/")){const d=new URL(t.url);s=d.host,t.url=d.pathname+d.search+d.hash;}t.method=e.method||"GET",t.headers=R(e.headers||{}),t.headers.host||(t.headers.host=e.host||s||"localhost"),t.connection.encrypted=t.connection.encrypted||e.protocol==="https",t.body=e.body||null,t.__unenv__=e.context,await n(t,r);let a=r._data;(S.has(r.statusCode)||t.method.toUpperCase()==="HEAD")&&(a=null,delete r._headers["content-length"]);const u={status:r.statusCode,statusText:r.statusMessage,headers:r._headers,body:a};return t.destroy(),r.destroy(),u}async function C(n,e,t={}){try{const r=await b(n,{url:e,...t});return new Response(r.body,{status:r.status,statusText:r.statusText,headers:v(r.headers)})}catch(r){return new Response(r.toString(),{status:Number.parseInt(r.statusCode||r.code)||500,statusText:r.statusText})}}
+
+function hasProp(obj, prop) {
+  try {
+    return prop in obj;
+  } catch {
+    return false;
+  }
+}
+
+class H3Error extends Error {
+  static __h3_error__ = true;
+  statusCode = 500;
+  fatal = false;
+  unhandled = false;
+  statusMessage;
+  data;
+  cause;
+  constructor(message, opts = {}) {
+    super(message, opts);
+    if (opts.cause && !this.cause) {
+      this.cause = opts.cause;
+    }
+  }
+  toJSON() {
+    const obj = {
+      message: this.message,
+      statusCode: sanitizeStatusCode(this.statusCode, 500)
+    };
+    if (this.statusMessage) {
+      obj.statusMessage = sanitizeStatusMessage(this.statusMessage);
+    }
+    if (this.data !== void 0) {
+      obj.data = this.data;
+    }
+    return obj;
+  }
+}
+function createError$1(input) {
+  if (typeof input === "string") {
+    return new H3Error(input);
+  }
+  if (isError(input)) {
+    return input;
+  }
+  const err = new H3Error(input.message ?? input.statusMessage ?? "", {
+    cause: input.cause || input
+  });
+  if (hasProp(input, "stack")) {
+    try {
+      Object.defineProperty(err, "stack", {
+        get() {
+          return input.stack;
+        }
+      });
+    } catch {
+      try {
+        err.stack = input.stack;
+      } catch {
+      }
+    }
+  }
+  if (input.data) {
+    err.data = input.data;
+  }
+  if (input.statusCode) {
+    err.statusCode = sanitizeStatusCode(input.statusCode, err.statusCode);
+  } else if (input.status) {
+    err.statusCode = sanitizeStatusCode(input.status, err.statusCode);
+  }
+  if (input.statusMessage) {
+    err.statusMessage = input.statusMessage;
+  } else if (input.statusText) {
+    err.statusMessage = input.statusText;
+  }
+  if (err.statusMessage) {
+    const originalMessage = err.statusMessage;
+    const sanitizedMessage = sanitizeStatusMessage(err.statusMessage);
+    if (sanitizedMessage !== originalMessage) {
+      console.warn(
+        "[h3] Please prefer using `message` for longer error messages instead of `statusMessage`. In the future, `statusMessage` will be sanitized by default."
+      );
+    }
+  }
+  if (input.fatal !== void 0) {
+    err.fatal = input.fatal;
+  }
+  if (input.unhandled !== void 0) {
+    err.unhandled = input.unhandled;
+  }
+  return err;
+}
+function sendError(event, error, debug) {
+  if (event.handled) {
+    return;
+  }
+  const h3Error = isError(error) ? error : createError$1(error);
+  const responseBody = {
+    statusCode: h3Error.statusCode,
+    statusMessage: h3Error.statusMessage,
+    stack: [],
+    data: h3Error.data
+  };
+  if (debug) {
+    responseBody.stack = (h3Error.stack || "").split("\n").map((l) => l.trim());
+  }
+  if (event.handled) {
+    return;
+  }
+  const _code = Number.parseInt(h3Error.statusCode);
+  setResponseStatus(event, _code, h3Error.statusMessage);
+  event.node.res.setHeader("content-type", MIMES.json);
+  event.node.res.end(JSON.stringify(responseBody, void 0, 2));
+}
+function isError(input) {
+  return input?.constructor?.__h3_error__ === true;
+}
+
+function getQuery(event) {
+  return getQuery$1(event.path || "");
+}
+function getRouterParams(event, opts = {}) {
+  let params = event.context.params || {};
+  if (opts.decode) {
+    params = { ...params };
+    for (const key in params) {
+      params[key] = decode$1(params[key]);
+    }
+  }
+  return params;
+}
+function getRouterParam(event, name, opts = {}) {
+  const params = getRouterParams(event, opts);
+  return params[name];
+}
+function isMethod(event, expected, allowHead) {
+  if (typeof expected === "string") {
+    if (event.method === expected) {
+      return true;
+    }
+  } else if (expected.includes(event.method)) {
+    return true;
+  }
+  return false;
+}
+function assertMethod(event, expected, allowHead) {
+  if (!isMethod(event, expected)) {
+    throw createError$1({
+      statusCode: 405,
+      statusMessage: "HTTP method is not allowed."
+    });
+  }
+}
+function getRequestHeaders(event) {
+  const _headers = {};
+  for (const key in event.node.req.headers) {
+    const val = event.node.req.headers[key];
+    _headers[key] = Array.isArray(val) ? val.filter(Boolean).join(", ") : val;
+  }
+  return _headers;
+}
+function getRequestHeader(event, name) {
+  const headers = getRequestHeaders(event);
+  const value = headers[name.toLowerCase()];
+  return value;
+}
+function getRequestHost(event, opts = {}) {
+  if (opts.xForwardedHost) {
+    const _header = event.node.req.headers["x-forwarded-host"];
+    const xForwardedHost = (_header || "").split(",").shift()?.trim();
+    if (xForwardedHost) {
+      return xForwardedHost;
+    }
+  }
+  return event.node.req.headers.host || "localhost";
+}
+function getRequestProtocol(event, opts = {}) {
+  if (opts.xForwardedProto !== false && event.node.req.headers["x-forwarded-proto"] === "https") {
+    return "https";
+  }
+  return event.node.req.connection?.encrypted ? "https" : "http";
+}
+function getRequestURL(event, opts = {}) {
+  const host = getRequestHost(event, opts);
+  const protocol = getRequestProtocol(event, opts);
+  const path = (event.node.req.originalUrl || event.path).replace(
+    /^[/\\]+/g,
+    "/"
+  );
+  return new URL(path, `${protocol}://${host}`);
+}
+
+const RawBodySymbol = Symbol.for("h3RawBody");
+const PayloadMethods$1 = ["PATCH", "POST", "PUT", "DELETE"];
+function readRawBody(event, encoding = "utf8") {
+  assertMethod(event, PayloadMethods$1);
+  const _rawBody = event._requestBody || event.web?.request?.body || event.node.req[RawBodySymbol] || event.node.req.rawBody || event.node.req.body;
+  if (_rawBody) {
+    const promise2 = Promise.resolve(_rawBody).then((_resolved) => {
+      if (Buffer.isBuffer(_resolved)) {
+        return _resolved;
+      }
+      if (typeof _resolved.pipeTo === "function") {
+        return new Promise((resolve, reject) => {
+          const chunks = [];
+          _resolved.pipeTo(
+            new WritableStream({
+              write(chunk) {
+                chunks.push(chunk);
+              },
+              close() {
+                resolve(Buffer.concat(chunks));
+              },
+              abort(reason) {
+                reject(reason);
+              }
+            })
+          ).catch(reject);
+        });
+      } else if (typeof _resolved.pipe === "function") {
+        return new Promise((resolve, reject) => {
+          const chunks = [];
+          _resolved.on("data", (chunk) => {
+            chunks.push(chunk);
+          }).on("end", () => {
+            resolve(Buffer.concat(chunks));
+          }).on("error", reject);
+        });
+      }
+      if (_resolved.constructor === Object) {
+        return Buffer.from(JSON.stringify(_resolved));
+      }
+      if (_resolved instanceof URLSearchParams) {
+        return Buffer.from(_resolved.toString());
+      }
+      if (_resolved instanceof FormData) {
+        return new Response(_resolved).bytes().then((uint8arr) => Buffer.from(uint8arr));
+      }
+      return Buffer.from(_resolved);
+    });
+    return encoding ? promise2.then((buff) => buff.toString(encoding)) : promise2;
+  }
+  if (!Number.parseInt(event.node.req.headers["content-length"] || "") && !/\bchunked\b/i.test(
+    String(event.node.req.headers["transfer-encoding"] ?? "")
+  )) {
+    return Promise.resolve(void 0);
+  }
+  const promise = event.node.req[RawBodySymbol] = new Promise(
+    (resolve, reject) => {
+      const bodyData = [];
+      event.node.req.on("error", (err) => {
+        reject(err);
+      }).on("data", (chunk) => {
+        bodyData.push(chunk);
+      }).on("end", () => {
+        resolve(Buffer.concat(bodyData));
+      });
+    }
+  );
+  const result = encoding ? promise.then((buff) => buff.toString(encoding)) : promise;
+  return result;
+}
+function getRequestWebStream(event) {
+  if (!PayloadMethods$1.includes(event.method)) {
+    return;
+  }
+  const bodyStream = event.web?.request?.body || event._requestBody;
+  if (bodyStream) {
+    return bodyStream;
+  }
+  const _hasRawBody = RawBodySymbol in event.node.req || "rawBody" in event.node.req || "body" in event.node.req || "__unenv__" in event.node.req;
+  if (_hasRawBody) {
+    return new ReadableStream({
+      async start(controller) {
+        const _rawBody = await readRawBody(event, false);
+        if (_rawBody) {
+          controller.enqueue(_rawBody);
+        }
+        controller.close();
+      }
+    });
+  }
+  return new ReadableStream({
+    start: (controller) => {
+      event.node.req.on("data", (chunk) => {
+        controller.enqueue(chunk);
+      });
+      event.node.req.on("end", () => {
+        controller.close();
+      });
+      event.node.req.on("error", (err) => {
+        controller.error(err);
+      });
+    }
+  });
+}
+
+function handleCacheHeaders(event, opts) {
+  const cacheControls = ["public", ...opts.cacheControls || []];
+  let cacheMatched = false;
+  if (opts.maxAge !== void 0) {
+    cacheControls.push(`max-age=${+opts.maxAge}`, `s-maxage=${+opts.maxAge}`);
+  }
+  if (opts.modifiedTime) {
+    const modifiedTime = new Date(opts.modifiedTime);
+    const ifModifiedSince = event.node.req.headers["if-modified-since"];
+    event.node.res.setHeader("last-modified", modifiedTime.toUTCString());
+    if (ifModifiedSince && new Date(ifModifiedSince) >= modifiedTime) {
+      cacheMatched = true;
+    }
+  }
+  if (opts.etag) {
+    event.node.res.setHeader("etag", opts.etag);
+    const ifNonMatch = event.node.req.headers["if-none-match"];
+    if (ifNonMatch === opts.etag) {
+      cacheMatched = true;
+    }
+  }
+  event.node.res.setHeader("cache-control", cacheControls.join(", "));
+  if (cacheMatched) {
+    event.node.res.statusCode = 304;
+    if (!event.handled) {
+      event.node.res.end();
+    }
+    return true;
+  }
+  return false;
+}
+
+const MIMES = {
+  html: "text/html",
+  json: "application/json"
+};
+
+const DISALLOWED_STATUS_CHARS = /[^\u0009\u0020-\u007E]/g;
+function sanitizeStatusMessage(statusMessage = "") {
+  return statusMessage.replace(DISALLOWED_STATUS_CHARS, "");
+}
+function sanitizeStatusCode(statusCode, defaultStatusCode = 200) {
+  if (!statusCode) {
+    return defaultStatusCode;
+  }
+  if (typeof statusCode === "string") {
+    statusCode = Number.parseInt(statusCode, 10);
+  }
+  if (statusCode < 100 || statusCode > 999) {
+    return defaultStatusCode;
+  }
+  return statusCode;
+}
+
+function getDistinctCookieKey(name, opts) {
+  return [name, opts.domain || "", opts.path || "/"].join(";");
+}
+
+function parseCookies(event) {
+  return parse(event.node.req.headers.cookie || "");
+}
+function getCookie(event, name) {
+  return parseCookies(event)[name];
+}
+function setCookie(event, name, value, serializeOptions = {}) {
+  if (!serializeOptions.path) {
+    serializeOptions = { path: "/", ...serializeOptions };
+  }
+  const newCookie = serialize$1(name, value, serializeOptions);
+  const currentCookies = splitCookiesString(
+    event.node.res.getHeader("set-cookie")
+  );
+  if (currentCookies.length === 0) {
+    event.node.res.setHeader("set-cookie", newCookie);
+    return;
+  }
+  const newCookieKey = getDistinctCookieKey(name, serializeOptions);
+  event.node.res.removeHeader("set-cookie");
+  for (const cookie of currentCookies) {
+    const parsed = parseSetCookie(cookie);
+    const key = getDistinctCookieKey(parsed.name, parsed);
+    if (key === newCookieKey) {
+      continue;
+    }
+    event.node.res.appendHeader("set-cookie", cookie);
+  }
+  event.node.res.appendHeader("set-cookie", newCookie);
+}
+function splitCookiesString(cookiesString) {
+  if (Array.isArray(cookiesString)) {
+    return cookiesString.flatMap((c) => splitCookiesString(c));
+  }
+  if (typeof cookiesString !== "string") {
+    return [];
+  }
+  const cookiesStrings = [];
+  let pos = 0;
+  let start;
+  let ch;
+  let lastComma;
+  let nextStart;
+  let cookiesSeparatorFound;
+  const skipWhitespace = () => {
+    while (pos < cookiesString.length && /\s/.test(cookiesString.charAt(pos))) {
+      pos += 1;
+    }
+    return pos < cookiesString.length;
+  };
+  const notSpecialChar = () => {
+    ch = cookiesString.charAt(pos);
+    return ch !== "=" && ch !== ";" && ch !== ",";
+  };
+  while (pos < cookiesString.length) {
+    start = pos;
+    cookiesSeparatorFound = false;
+    while (skipWhitespace()) {
+      ch = cookiesString.charAt(pos);
+      if (ch === ",") {
+        lastComma = pos;
+        pos += 1;
+        skipWhitespace();
+        nextStart = pos;
+        while (pos < cookiesString.length && notSpecialChar()) {
+          pos += 1;
+        }
+        if (pos < cookiesString.length && cookiesString.charAt(pos) === "=") {
+          cookiesSeparatorFound = true;
+          pos = nextStart;
+          cookiesStrings.push(cookiesString.slice(start, lastComma));
+          start = pos;
+        } else {
+          pos = lastComma + 1;
+        }
+      } else {
+        pos += 1;
+      }
+    }
+    if (!cookiesSeparatorFound || pos >= cookiesString.length) {
+      cookiesStrings.push(cookiesString.slice(start));
+    }
+  }
+  return cookiesStrings;
+}
+
+const defer = typeof setImmediate === "undefined" ? (fn) => fn() : setImmediate;
+function send(event, data, type) {
+  if (type) {
+    defaultContentType(event, type);
+  }
+  return new Promise((resolve) => {
+    defer(() => {
+      if (!event.handled) {
+        event.node.res.end(data);
+      }
+      resolve();
+    });
+  });
+}
+function sendNoContent(event, code) {
+  if (event.handled) {
+    return;
+  }
+  if (!code && event.node.res.statusCode !== 200) {
+    code = event.node.res.statusCode;
+  }
+  const _code = sanitizeStatusCode(code, 204);
+  if (_code === 204) {
+    event.node.res.removeHeader("content-length");
+  }
+  event.node.res.writeHead(_code);
+  event.node.res.end();
+}
+function setResponseStatus(event, code, text) {
+  if (code) {
+    event.node.res.statusCode = sanitizeStatusCode(
+      code,
+      event.node.res.statusCode
+    );
+  }
+  if (text) {
+    event.node.res.statusMessage = sanitizeStatusMessage(text);
+  }
+}
+function getResponseStatus(event) {
+  return event.node.res.statusCode;
+}
+function getResponseStatusText(event) {
+  return event.node.res.statusMessage;
+}
+function defaultContentType(event, type) {
+  if (type && event.node.res.statusCode !== 304 && !event.node.res.getHeader("content-type")) {
+    event.node.res.setHeader("content-type", type);
+  }
+}
+function sendRedirect(event, location, code = 302) {
+  event.node.res.statusCode = sanitizeStatusCode(
+    code,
+    event.node.res.statusCode
+  );
+  event.node.res.setHeader("location", location);
+  const encodedLoc = location.replace(/"/g, "%22");
+  const html = `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=${encodedLoc}"></head></html>`;
+  return send(event, html, MIMES.html);
+}
+function getResponseHeader(event, name) {
+  return event.node.res.getHeader(name);
+}
+function setResponseHeaders(event, headers) {
+  for (const [name, value] of Object.entries(headers)) {
+    event.node.res.setHeader(
+      name,
+      value
+    );
+  }
+}
+const setHeaders = setResponseHeaders;
+function setResponseHeader(event, name, value) {
+  event.node.res.setHeader(name, value);
+}
+function appendResponseHeader(event, name, value) {
+  let current = event.node.res.getHeader(name);
+  if (!current) {
+    event.node.res.setHeader(name, value);
+    return;
+  }
+  if (!Array.isArray(current)) {
+    current = [current.toString()];
+  }
+  event.node.res.setHeader(name, [...current, value]);
+}
+function removeResponseHeader(event, name) {
+  return event.node.res.removeHeader(name);
+}
+function isStream(data) {
+  if (!data || typeof data !== "object") {
+    return false;
+  }
+  if (typeof data.pipe === "function") {
+    if (typeof data._read === "function") {
+      return true;
+    }
+    if (typeof data.abort === "function") {
+      return true;
+    }
+  }
+  if (typeof data.pipeTo === "function") {
+    return true;
+  }
+  return false;
+}
+function isWebResponse(data) {
+  return typeof Response !== "undefined" && data instanceof Response;
+}
+function sendStream(event, stream) {
+  if (!stream || typeof stream !== "object") {
+    throw new Error("[h3] Invalid stream provided.");
+  }
+  event.node.res._data = stream;
+  if (!event.node.res.socket) {
+    event._handled = true;
+    return Promise.resolve();
+  }
+  if (hasProp(stream, "pipeTo") && typeof stream.pipeTo === "function") {
+    return stream.pipeTo(
+      new WritableStream({
+        write(chunk) {
+          event.node.res.write(chunk);
+        }
+      })
+    ).then(() => {
+      event.node.res.end();
+    });
+  }
+  if (hasProp(stream, "pipe") && typeof stream.pipe === "function") {
+    return new Promise((resolve, reject) => {
+      stream.pipe(event.node.res);
+      if (stream.on) {
+        stream.on("end", () => {
+          event.node.res.end();
+          resolve();
+        });
+        stream.on("error", (error) => {
+          reject(error);
+        });
+      }
+      event.node.res.on("close", () => {
+        if (stream.abort) {
+          stream.abort();
+        }
+      });
+    });
+  }
+  throw new Error("[h3] Invalid or incompatible stream provided.");
+}
+function sendWebResponse(event, response) {
+  for (const [key, value] of response.headers) {
+    if (key === "set-cookie") {
+      event.node.res.appendHeader(key, splitCookiesString(value));
+    } else {
+      event.node.res.setHeader(key, value);
+    }
+  }
+  if (response.status) {
+    event.node.res.statusCode = sanitizeStatusCode(
+      response.status,
+      event.node.res.statusCode
+    );
+  }
+  if (response.statusText) {
+    event.node.res.statusMessage = sanitizeStatusMessage(response.statusText);
+  }
+  if (response.redirected) {
+    event.node.res.setHeader("location", response.url);
+  }
+  if (!response.body) {
+    event.node.res.end();
+    return;
+  }
+  return sendStream(event, response.body);
+}
+
+const PayloadMethods = /* @__PURE__ */ new Set(["PATCH", "POST", "PUT", "DELETE"]);
+const ignoredHeaders = /* @__PURE__ */ new Set([
+  "transfer-encoding",
+  "accept-encoding",
+  "connection",
+  "keep-alive",
+  "upgrade",
+  "expect",
+  "host",
+  "accept"
+]);
+async function proxyRequest(event, target, opts = {}) {
+  let body;
+  let duplex;
+  if (PayloadMethods.has(event.method)) {
+    if (opts.streamRequest) {
+      body = getRequestWebStream(event);
+      duplex = "half";
+    } else {
+      body = await readRawBody(event, false).catch(() => void 0);
+    }
+  }
+  const method = opts.fetchOptions?.method || event.method;
+  const fetchHeaders = mergeHeaders$1(
+    getProxyRequestHeaders(event, { host: target.startsWith("/") }),
+    opts.fetchOptions?.headers,
+    opts.headers
+  );
+  return sendProxy(event, target, {
+    ...opts,
+    fetchOptions: {
+      method,
+      body,
+      duplex,
+      ...opts.fetchOptions,
+      headers: fetchHeaders
+    }
+  });
+}
+async function sendProxy(event, target, opts = {}) {
+  let response;
+  try {
+    response = await _getFetch(opts.fetch)(target, {
+      headers: opts.headers,
+      ignoreResponseError: true,
+      // make $ofetch.raw transparent
+      ...opts.fetchOptions
+    });
+  } catch (error) {
+    throw createError$1({
+      status: 502,
+      statusMessage: "Bad Gateway",
+      cause: error
+    });
+  }
+  event.node.res.statusCode = sanitizeStatusCode(
+    response.status,
+    event.node.res.statusCode
+  );
+  event.node.res.statusMessage = sanitizeStatusMessage(response.statusText);
+  const cookies = [];
+  for (const [key, value] of response.headers.entries()) {
+    if (key === "content-encoding") {
+      continue;
+    }
+    if (key === "content-length") {
+      continue;
+    }
+    if (key === "set-cookie") {
+      cookies.push(...splitCookiesString(value));
+      continue;
+    }
+    event.node.res.setHeader(key, value);
+  }
+  if (cookies.length > 0) {
+    event.node.res.setHeader(
+      "set-cookie",
+      cookies.map((cookie) => {
+        if (opts.cookieDomainRewrite) {
+          cookie = rewriteCookieProperty(
+            cookie,
+            opts.cookieDomainRewrite,
+            "domain"
+          );
+        }
+        if (opts.cookiePathRewrite) {
+          cookie = rewriteCookieProperty(
+            cookie,
+            opts.cookiePathRewrite,
+            "path"
+          );
+        }
+        return cookie;
+      })
+    );
+  }
+  if (opts.onResponse) {
+    await opts.onResponse(event, response);
+  }
+  if (response._data !== void 0) {
+    return response._data;
+  }
+  if (event.handled) {
+    return;
+  }
+  if (opts.sendStream === false) {
+    const data = new Uint8Array(await response.arrayBuffer());
+    return event.node.res.end(data);
+  }
+  if (response.body) {
+    for await (const chunk of response.body) {
+      event.node.res.write(chunk);
+    }
+  }
+  return event.node.res.end();
+}
+function getProxyRequestHeaders(event, opts) {
+  const headers = /* @__PURE__ */ Object.create(null);
+  const reqHeaders = getRequestHeaders(event);
+  for (const name in reqHeaders) {
+    if (!ignoredHeaders.has(name) || name === "host" && opts?.host) {
+      headers[name] = reqHeaders[name];
+    }
+  }
+  return headers;
+}
+function fetchWithEvent(event, req, init, options) {
+  return _getFetch(options?.fetch)(req, {
+    ...init,
+    context: init?.context || event.context,
+    headers: {
+      ...getProxyRequestHeaders(event, {
+        host: typeof req === "string" && req.startsWith("/")
+      }),
+      ...init?.headers
+    }
+  });
+}
+function _getFetch(_fetch) {
+  if (_fetch) {
+    return _fetch;
+  }
+  if (globalThis.fetch) {
+    return globalThis.fetch;
+  }
+  throw new Error(
+    "fetch is not available. Try importing `node-fetch-native/polyfill` for Node.js."
+  );
+}
+function rewriteCookieProperty(header, map, property) {
+  const _map = typeof map === "string" ? { "*": map } : map;
+  return header.replace(
+    new RegExp(`(;\\s*${property}=)([^;]+)`, "gi"),
+    (match, prefix, previousValue) => {
+      let newValue;
+      if (previousValue in _map) {
+        newValue = _map[previousValue];
+      } else if ("*" in _map) {
+        newValue = _map["*"];
+      } else {
+        return match;
+      }
+      return newValue ? prefix + newValue : "";
+    }
+  );
+}
+function mergeHeaders$1(defaults, ...inputs) {
+  const _inputs = inputs.filter(Boolean);
+  if (_inputs.length === 0) {
+    return defaults;
+  }
+  const merged = new Headers(defaults);
+  for (const input of _inputs) {
+    const entries = Array.isArray(input) ? input : typeof input.entries === "function" ? input.entries() : Object.entries(input);
+    for (const [key, value] of entries) {
+      if (value !== void 0) {
+        merged.set(key, value);
+      }
+    }
+  }
+  return merged;
+}
+
+class H3Event {
+  "__is_event__" = true;
+  // Context
+  node;
+  // Node
+  web;
+  // Web
+  context = {};
+  // Shared
+  // Request
+  _method;
+  _path;
+  _headers;
+  _requestBody;
+  // Response
+  _handled = false;
+  // Hooks
+  _onBeforeResponseCalled;
+  _onAfterResponseCalled;
+  constructor(req, res) {
+    this.node = { req, res };
+  }
+  // --- Request ---
+  get method() {
+    if (!this._method) {
+      this._method = (this.node.req.method || "GET").toUpperCase();
+    }
+    return this._method;
+  }
+  get path() {
+    return this._path || this.node.req.url || "/";
+  }
+  get headers() {
+    if (!this._headers) {
+      this._headers = _normalizeNodeHeaders(this.node.req.headers);
+    }
+    return this._headers;
+  }
+  // --- Respoonse ---
+  get handled() {
+    return this._handled || this.node.res.writableEnded || this.node.res.headersSent;
+  }
+  respondWith(response) {
+    return Promise.resolve(response).then(
+      (_response) => sendWebResponse(this, _response)
+    );
+  }
+  // --- Utils ---
+  toString() {
+    return `[${this.method}] ${this.path}`;
+  }
+  toJSON() {
+    return this.toString();
+  }
+  // --- Deprecated ---
+  /** @deprecated Please use `event.node.req` instead. */
+  get req() {
+    return this.node.req;
+  }
+  /** @deprecated Please use `event.node.res` instead. */
+  get res() {
+    return this.node.res;
+  }
+}
+function isEvent(input) {
+  return hasProp(input, "__is_event__");
+}
+function createEvent(req, res) {
+  return new H3Event(req, res);
+}
+function _normalizeNodeHeaders(nodeHeaders) {
+  const headers = new Headers();
+  for (const [name, value] of Object.entries(nodeHeaders)) {
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        headers.append(name, item);
+      }
+    } else if (value) {
+      headers.set(name, value);
+    }
+  }
+  return headers;
+}
+
+function defineEventHandler(handler) {
+  if (typeof handler === "function") {
+    handler.__is_handler__ = true;
+    return handler;
+  }
+  const _hooks = {
+    onRequest: _normalizeArray(handler.onRequest),
+    onBeforeResponse: _normalizeArray(handler.onBeforeResponse)
+  };
+  const _handler = (event) => {
+    return _callHandler(event, handler.handler, _hooks);
+  };
+  _handler.__is_handler__ = true;
+  _handler.__resolve__ = handler.handler.__resolve__;
+  _handler.__websocket__ = handler.websocket;
+  return _handler;
+}
+function _normalizeArray(input) {
+  return input ? Array.isArray(input) ? input : [input] : void 0;
+}
+async function _callHandler(event, handler, hooks) {
+  if (hooks.onRequest) {
+    for (const hook of hooks.onRequest) {
+      await hook(event);
+      if (event.handled) {
+        return;
+      }
+    }
+  }
+  const body = await handler(event);
+  const response = { body };
+  if (hooks.onBeforeResponse) {
+    for (const hook of hooks.onBeforeResponse) {
+      await hook(event, response);
+    }
+  }
+  return response.body;
+}
+const eventHandler = defineEventHandler;
+function isEventHandler(input) {
+  return hasProp(input, "__is_handler__");
+}
+function toEventHandler(input, _, _route) {
+  return input;
+}
+function defineLazyEventHandler(factory) {
+  let _promise;
+  let _resolved;
+  const resolveHandler = () => {
+    if (_resolved) {
+      return Promise.resolve(_resolved);
+    }
+    if (!_promise) {
+      _promise = Promise.resolve(factory()).then((r) => {
+        const handler2 = r.default || r;
+        if (typeof handler2 !== "function") {
+          throw new TypeError(
+            "Invalid lazy handler result. It should be a function:",
+            handler2
+          );
+        }
+        _resolved = { handler: toEventHandler(r.default || r) };
+        return _resolved;
+      });
+    }
+    return _promise;
+  };
+  const handler = eventHandler((event) => {
+    if (_resolved) {
+      return _resolved.handler(event);
+    }
+    return resolveHandler().then((r) => r.handler(event));
+  });
+  handler.__resolve__ = resolveHandler;
+  return handler;
+}
+const lazyEventHandler = defineLazyEventHandler;
+
+function createApp(options = {}) {
+  const stack = [];
+  const handler = createAppEventHandler(stack, options);
+  const resolve = createResolver(stack);
+  handler.__resolve__ = resolve;
+  const getWebsocket = cachedFn(() => websocketOptions(resolve, options));
+  const app = {
+    // @ts-expect-error
+    use: (arg1, arg2, arg3) => use(app, arg1, arg2, arg3),
+    resolve,
+    handler,
+    stack,
+    options,
+    get websocket() {
+      return getWebsocket();
+    }
+  };
+  return app;
+}
+function use(app, arg1, arg2, arg3) {
+  if (Array.isArray(arg1)) {
+    for (const i of arg1) {
+      use(app, i, arg2, arg3);
+    }
+  } else if (Array.isArray(arg2)) {
+    for (const i of arg2) {
+      use(app, arg1, i, arg3);
+    }
+  } else if (typeof arg1 === "string") {
+    app.stack.push(
+      normalizeLayer({ ...arg3, route: arg1, handler: arg2 })
+    );
+  } else if (typeof arg1 === "function") {
+    app.stack.push(normalizeLayer({ ...arg2, handler: arg1 }));
+  } else {
+    app.stack.push(normalizeLayer({ ...arg1 }));
+  }
+  return app;
+}
+function createAppEventHandler(stack, options) {
+  const spacing = options.debug ? 2 : void 0;
+  return eventHandler(async (event) => {
+    event.node.req.originalUrl = event.node.req.originalUrl || event.node.req.url || "/";
+    const _rawReqUrl = event.node.req.url || "/";
+    const _reqPath = _decodePath(event._path || _rawReqUrl);
+    event._path = _reqPath;
+    const _needsRawUrl = _reqPath !== _rawReqUrl;
+    let _layerPath;
+    if (options.onRequest) {
+      await options.onRequest(event);
+    }
+    for (const layer of stack) {
+      if (layer.route.length > 1) {
+        if (!_reqPath.startsWith(layer.route)) {
+          continue;
+        }
+        _layerPath = _reqPath.slice(layer.route.length) || "/";
+      } else {
+        _layerPath = _reqPath;
+      }
+      if (layer.match && !layer.match(_layerPath, event)) {
+        continue;
+      }
+      event._path = _layerPath;
+      event.node.req.url = _needsRawUrl ? layer.route.length > 1 ? _rawReqUrl.slice(layer.route.length) || "/" : _rawReqUrl : _layerPath;
+      const val = await layer.handler(event);
+      const _body = val === void 0 ? void 0 : await val;
+      if (_body !== void 0) {
+        const _response = { body: _body };
+        if (options.onBeforeResponse) {
+          event._onBeforeResponseCalled = true;
+          await options.onBeforeResponse(event, _response);
+        }
+        await handleHandlerResponse(event, _response.body, spacing);
+        if (options.onAfterResponse) {
+          event._onAfterResponseCalled = true;
+          await options.onAfterResponse(event, _response);
+        }
+        return;
+      }
+      if (event.handled) {
+        if (options.onAfterResponse) {
+          event._onAfterResponseCalled = true;
+          await options.onAfterResponse(event, void 0);
+        }
+        return;
+      }
+    }
+    if (!event.handled) {
+      throw createError$1({
+        statusCode: 404,
+        statusMessage: `Cannot find any path matching ${event.path || "/"}.`
+      });
+    }
+    if (options.onAfterResponse) {
+      event._onAfterResponseCalled = true;
+      await options.onAfterResponse(event, void 0);
+    }
+  });
+}
+function createResolver(stack) {
+  return async (path) => {
+    let _layerPath;
+    for (const layer of stack) {
+      if (layer.route === "/" && !layer.handler.__resolve__) {
+        continue;
+      }
+      if (!path.startsWith(layer.route)) {
+        continue;
+      }
+      _layerPath = path.slice(layer.route.length) || "/";
+      if (layer.match && !layer.match(_layerPath, void 0)) {
+        continue;
+      }
+      let res = { route: layer.route, handler: layer.handler };
+      if (res.handler.__resolve__) {
+        const _res = await res.handler.__resolve__(_layerPath);
+        if (!_res) {
+          continue;
+        }
+        res = {
+          ...res,
+          ..._res,
+          route: joinURL(res.route || "/", _res.route || "/")
+        };
+      }
+      return res;
+    }
+  };
+}
+function normalizeLayer(input) {
+  let handler = input.handler;
+  if (handler.handler) {
+    handler = handler.handler;
+  }
+  if (input.lazy) {
+    handler = lazyEventHandler(handler);
+  } else if (!isEventHandler(handler)) {
+    handler = toEventHandler(handler, void 0, input.route);
+  }
+  return {
+    route: withoutTrailingSlash(input.route),
+    match: input.match,
+    handler
+  };
+}
+function handleHandlerResponse(event, val, jsonSpace) {
+  if (val === null) {
+    return sendNoContent(event);
+  }
+  if (val) {
+    if (isWebResponse(val)) {
+      return sendWebResponse(event, val);
+    }
+    if (isStream(val)) {
+      return sendStream(event, val);
+    }
+    if (val.buffer) {
+      return send(event, val);
+    }
+    if (val.arrayBuffer && typeof val.arrayBuffer === "function") {
+      return val.arrayBuffer().then((arrayBuffer) => {
+        return send(event, Buffer.from(arrayBuffer), val.type);
+      });
+    }
+    if (val instanceof Error) {
+      throw createError$1(val);
+    }
+    if (typeof val.end === "function") {
+      return true;
+    }
+  }
+  const valType = typeof val;
+  if (valType === "string") {
+    return send(event, val, MIMES.html);
+  }
+  if (valType === "object" || valType === "boolean" || valType === "number") {
+    return send(event, JSON.stringify(val, void 0, jsonSpace), MIMES.json);
+  }
+  if (valType === "bigint") {
+    return send(event, val.toString(), MIMES.json);
+  }
+  throw createError$1({
+    statusCode: 500,
+    statusMessage: `[h3] Cannot send ${valType} as response.`
+  });
+}
+function cachedFn(fn) {
+  let cache;
+  return () => {
+    if (!cache) {
+      cache = fn();
+    }
+    return cache;
+  };
+}
+function _decodePath(url) {
+  const qIndex = url.indexOf("?");
+  const path = qIndex === -1 ? url : url.slice(0, qIndex);
+  const query = qIndex === -1 ? "" : url.slice(qIndex);
+  const decodedPath = path.includes("%25") ? decodePath(path.replace(/%25/g, "%2525")) : decodePath(path);
+  return decodedPath + query;
+}
+function websocketOptions(evResolver, appOptions) {
+  return {
+    ...appOptions.websocket,
+    async resolve(info) {
+      const url = info.request?.url || info.url || "/";
+      const { pathname } = typeof url === "string" ? parseURL(url) : url;
+      const resolved = await evResolver(pathname);
+      return resolved?.handler?.__websocket__ || {};
+    }
+  };
+}
+
+const RouterMethods = [
+  "connect",
+  "delete",
+  "get",
+  "head",
+  "options",
+  "post",
+  "put",
+  "trace",
+  "patch"
+];
+function createRouter(opts = {}) {
+  const _router = createRouter$1({});
+  const routes = {};
+  let _matcher;
+  const router = {};
+  const addRoute = (path, handler, method) => {
+    let route = routes[path];
+    if (!route) {
+      routes[path] = route = { path, handlers: {} };
+      _router.insert(path, route);
+    }
+    if (Array.isArray(method)) {
+      for (const m of method) {
+        addRoute(path, handler, m);
+      }
+    } else {
+      route.handlers[method] = toEventHandler(handler);
+    }
+    return router;
+  };
+  router.use = router.add = (path, handler, method) => addRoute(path, handler, method || "all");
+  for (const method of RouterMethods) {
+    router[method] = (path, handle) => router.add(path, handle, method);
+  }
+  const matchHandler = (path = "/", method = "get") => {
+    const qIndex = path.indexOf("?");
+    if (qIndex !== -1) {
+      path = path.slice(0, Math.max(0, qIndex));
+    }
+    const matched = _router.lookup(path);
+    if (!matched || !matched.handlers) {
+      return {
+        error: createError$1({
+          statusCode: 404,
+          name: "Not Found",
+          statusMessage: `Cannot find any route matching ${path || "/"}.`
+        })
+      };
+    }
+    let handler = matched.handlers[method] || matched.handlers.all;
+    if (!handler) {
+      if (!_matcher) {
+        _matcher = toRouteMatcher(_router);
+      }
+      const _matches = _matcher.matchAll(path).reverse();
+      for (const _match of _matches) {
+        if (_match.handlers[method]) {
+          handler = _match.handlers[method];
+          matched.handlers[method] = matched.handlers[method] || handler;
+          break;
+        }
+        if (_match.handlers.all) {
+          handler = _match.handlers.all;
+          matched.handlers.all = matched.handlers.all || handler;
+          break;
+        }
+      }
+    }
+    if (!handler) {
+      return {
+        error: createError$1({
+          statusCode: 405,
+          name: "Method Not Allowed",
+          statusMessage: `Method ${method} is not allowed on this route.`
+        })
+      };
+    }
+    return { matched, handler };
+  };
+  const isPreemptive = opts.preemptive || opts.preemtive;
+  router.handler = eventHandler((event) => {
+    const match = matchHandler(
+      event.path,
+      event.method.toLowerCase()
+    );
+    if ("error" in match) {
+      if (isPreemptive) {
+        throw match.error;
+      } else {
+        return;
+      }
+    }
+    event.context.matchedRoute = match.matched;
+    const params = match.matched.params || {};
+    event.context.params = params;
+    return Promise.resolve(match.handler(event)).then((res) => {
+      if (res === void 0 && isPreemptive) {
+        return null;
+      }
+      return res;
+    });
+  });
+  router.handler.__resolve__ = async (path) => {
+    path = withLeadingSlash(path);
+    const match = matchHandler(path);
+    if ("error" in match) {
+      return;
+    }
+    let res = {
+      route: match.matched.path,
+      handler: match.handler
+    };
+    if (match.handler.__resolve__) {
+      const _res = await match.handler.__resolve__(path);
+      if (!_res) {
+        return;
+      }
+      res = { ...res, ..._res };
+    }
+    return res;
+  };
+  return router;
+}
+function toNodeListener(app) {
+  const toNodeHandle = async function(req, res) {
+    const event = createEvent(req, res);
+    try {
+      await app.handler(event);
+    } catch (_error) {
+      const error = createError$1(_error);
+      if (!isError(_error)) {
+        error.unhandled = true;
+      }
+      setResponseStatus(event, error.statusCode, error.statusMessage);
+      if (app.options.onError) {
+        await app.options.onError(error, event);
+      }
+      if (event.handled) {
+        return;
+      }
+      if (error.unhandled || error.fatal) {
+        console.error("[h3]", error.fatal ? "[fatal]" : "[unhandled]", error);
+      }
+      if (app.options.onBeforeResponse && !event._onBeforeResponseCalled) {
+        await app.options.onBeforeResponse(event, { body: error });
+      }
+      await sendError(event, error, !!app.options.debug);
+      if (app.options.onAfterResponse && !event._onAfterResponseCalled) {
+        await app.options.onAfterResponse(event, { body: error });
+      }
+    }
+  };
+  return toNodeHandle;
+}
+
+function flatHooks(configHooks, hooks = {}, parentName) {
+  for (const key in configHooks) {
+    const subHook = configHooks[key];
+    const name = parentName ? `${parentName}:${key}` : key;
+    if (typeof subHook === "object" && subHook !== null) {
+      flatHooks(subHook, hooks, name);
+    } else if (typeof subHook === "function") {
+      hooks[name] = subHook;
+    }
+  }
+  return hooks;
+}
+const defaultTask = { run: (function_) => function_() };
+const _createTask = () => defaultTask;
+const createTask = typeof console.createTask !== "undefined" ? console.createTask : _createTask;
+function serialTaskCaller(hooks, args) {
+  const name = args.shift();
+  const task = createTask(name);
+  return hooks.reduce(
+    (promise, hookFunction) => promise.then(() => task.run(() => hookFunction(...args))),
+    Promise.resolve()
+  );
+}
+function parallelTaskCaller(hooks, args) {
+  const name = args.shift();
+  const task = createTask(name);
+  return Promise.all(hooks.map((hook) => task.run(() => hook(...args))));
+}
+function callEachWith(callbacks, arg0) {
+  for (const callback of [...callbacks]) {
+    callback(arg0);
+  }
+}
+
+class Hookable {
+  constructor() {
+    this._hooks = {};
+    this._before = void 0;
+    this._after = void 0;
+    this._deprecatedMessages = void 0;
+    this._deprecatedHooks = {};
+    this.hook = this.hook.bind(this);
+    this.callHook = this.callHook.bind(this);
+    this.callHookWith = this.callHookWith.bind(this);
+  }
+  hook(name, function_, options = {}) {
+    if (!name || typeof function_ !== "function") {
+      return () => {
+      };
+    }
+    const originalName = name;
+    let dep;
+    while (this._deprecatedHooks[name]) {
+      dep = this._deprecatedHooks[name];
+      name = dep.to;
+    }
+    if (dep && !options.allowDeprecated) {
+      let message = dep.message;
+      if (!message) {
+        message = `${originalName} hook has been deprecated` + (dep.to ? `, please use ${dep.to}` : "");
+      }
+      if (!this._deprecatedMessages) {
+        this._deprecatedMessages = /* @__PURE__ */ new Set();
+      }
+      if (!this._deprecatedMessages.has(message)) {
+        console.warn(message);
+        this._deprecatedMessages.add(message);
+      }
+    }
+    if (!function_.name) {
+      try {
+        Object.defineProperty(function_, "name", {
+          get: () => "_" + name.replace(/\W+/g, "_") + "_hook_cb",
+          configurable: true
+        });
+      } catch {
+      }
+    }
+    this._hooks[name] = this._hooks[name] || [];
+    this._hooks[name].push(function_);
+    return () => {
+      if (function_) {
+        this.removeHook(name, function_);
+        function_ = void 0;
+      }
+    };
+  }
+  hookOnce(name, function_) {
+    let _unreg;
+    let _function = (...arguments_) => {
+      if (typeof _unreg === "function") {
+        _unreg();
+      }
+      _unreg = void 0;
+      _function = void 0;
+      return function_(...arguments_);
+    };
+    _unreg = this.hook(name, _function);
+    return _unreg;
+  }
+  removeHook(name, function_) {
+    if (this._hooks[name]) {
+      const index = this._hooks[name].indexOf(function_);
+      if (index !== -1) {
+        this._hooks[name].splice(index, 1);
+      }
+      if (this._hooks[name].length === 0) {
+        delete this._hooks[name];
+      }
+    }
+  }
+  deprecateHook(name, deprecated) {
+    this._deprecatedHooks[name] = typeof deprecated === "string" ? { to: deprecated } : deprecated;
+    const _hooks = this._hooks[name] || [];
+    delete this._hooks[name];
+    for (const hook of _hooks) {
+      this.hook(name, hook);
+    }
+  }
+  deprecateHooks(deprecatedHooks) {
+    Object.assign(this._deprecatedHooks, deprecatedHooks);
+    for (const name in deprecatedHooks) {
+      this.deprecateHook(name, deprecatedHooks[name]);
+    }
+  }
+  addHooks(configHooks) {
+    const hooks = flatHooks(configHooks);
+    const removeFns = Object.keys(hooks).map(
+      (key) => this.hook(key, hooks[key])
+    );
+    return () => {
+      for (const unreg of removeFns.splice(0, removeFns.length)) {
+        unreg();
+      }
+    };
+  }
+  removeHooks(configHooks) {
+    const hooks = flatHooks(configHooks);
+    for (const key in hooks) {
+      this.removeHook(key, hooks[key]);
+    }
+  }
+  removeAllHooks() {
+    for (const key in this._hooks) {
+      delete this._hooks[key];
+    }
+  }
+  callHook(name, ...arguments_) {
+    arguments_.unshift(name);
+    return this.callHookWith(serialTaskCaller, name, ...arguments_);
+  }
+  callHookParallel(name, ...arguments_) {
+    arguments_.unshift(name);
+    return this.callHookWith(parallelTaskCaller, name, ...arguments_);
+  }
+  callHookWith(caller, name, ...arguments_) {
+    const event = this._before || this._after ? { name, args: arguments_, context: {} } : void 0;
+    if (this._before) {
+      callEachWith(this._before, event);
+    }
+    const result = caller(
+      name in this._hooks ? [...this._hooks[name]] : [],
+      arguments_
+    );
+    if (result instanceof Promise) {
+      return result.finally(() => {
+        if (this._after && event) {
+          callEachWith(this._after, event);
+        }
+      });
+    }
+    if (this._after && event) {
+      callEachWith(this._after, event);
+    }
+    return result;
+  }
+  beforeEach(function_) {
+    this._before = this._before || [];
+    this._before.push(function_);
+    return () => {
+      if (this._before !== void 0) {
+        const index = this._before.indexOf(function_);
+        if (index !== -1) {
+          this._before.splice(index, 1);
+        }
+      }
+    };
+  }
+  afterEach(function_) {
+    this._after = this._after || [];
+    this._after.push(function_);
+    return () => {
+      if (this._after !== void 0) {
+        const index = this._after.indexOf(function_);
+        if (index !== -1) {
+          this._after.splice(index, 1);
+        }
+      }
+    };
+  }
+}
+function createHooks() {
+  return new Hookable();
+}
+
+const s$1=globalThis.Headers,i=globalThis.AbortController,l=globalThis.fetch||(()=>{throw new Error("[node-fetch-native] Failed to fetch: `globalThis.fetch` is not available!")});
+
+class FetchError extends Error {
+  constructor(message, opts) {
+    super(message, opts);
+    this.name = "FetchError";
+    if (opts?.cause && !this.cause) {
+      this.cause = opts.cause;
+    }
+  }
+}
+function createFetchError(ctx) {
+  const errorMessage = ctx.error?.message || ctx.error?.toString() || "";
+  const method = ctx.request?.method || ctx.options?.method || "GET";
+  const url = ctx.request?.url || String(ctx.request) || "/";
+  const requestStr = `[${method}] ${JSON.stringify(url)}`;
+  const statusStr = ctx.response ? `${ctx.response.status} ${ctx.response.statusText}` : "<no response>";
+  const message = `${requestStr}: ${statusStr}${errorMessage ? ` ${errorMessage}` : ""}`;
+  const fetchError = new FetchError(
+    message,
+    ctx.error ? { cause: ctx.error } : void 0
+  );
+  for (const key of ["request", "options", "response"]) {
+    Object.defineProperty(fetchError, key, {
+      get() {
+        return ctx[key];
+      }
+    });
+  }
+  for (const [key, refKey] of [
+    ["data", "_data"],
+    ["status", "status"],
+    ["statusCode", "status"],
+    ["statusText", "statusText"],
+    ["statusMessage", "statusText"]
+  ]) {
+    Object.defineProperty(fetchError, key, {
+      get() {
+        return ctx.response && ctx.response[refKey];
+      }
+    });
+  }
+  return fetchError;
+}
+
+const payloadMethods = new Set(
+  Object.freeze(["PATCH", "POST", "PUT", "DELETE"])
+);
+function isPayloadMethod(method = "GET") {
+  return payloadMethods.has(method.toUpperCase());
+}
+function isJSONSerializable(value) {
+  if (value === void 0) {
+    return false;
+  }
+  const t = typeof value;
+  if (t === "string" || t === "number" || t === "boolean" || t === null) {
+    return true;
+  }
+  if (t !== "object") {
+    return false;
+  }
+  if (Array.isArray(value)) {
+    return true;
+  }
+  if (value.buffer) {
+    return false;
+  }
+  if (value instanceof FormData || value instanceof URLSearchParams) {
+    return false;
+  }
+  return value.constructor && value.constructor.name === "Object" || typeof value.toJSON === "function";
+}
+const textTypes = /* @__PURE__ */ new Set([
+  "image/svg",
+  "application/xml",
+  "application/xhtml",
+  "application/html"
+]);
+const JSON_RE = /^application\/(?:[\w!#$%&*.^`~-]*\+)?json(;.+)?$/i;
+function detectResponseType(_contentType = "") {
+  if (!_contentType) {
+    return "json";
+  }
+  const contentType = _contentType.split(";").shift() || "";
+  if (JSON_RE.test(contentType)) {
+    return "json";
+  }
+  if (contentType === "text/event-stream") {
+    return "stream";
+  }
+  if (textTypes.has(contentType) || contentType.startsWith("text/")) {
+    return "text";
+  }
+  return "blob";
+}
+function resolveFetchOptions(request, input, defaults, Headers) {
+  const headers = mergeHeaders(
+    input?.headers ?? request?.headers,
+    defaults?.headers,
+    Headers
+  );
+  let query;
+  if (defaults?.query || defaults?.params || input?.params || input?.query) {
+    query = {
+      ...defaults?.params,
+      ...defaults?.query,
+      ...input?.params,
+      ...input?.query
+    };
+  }
+  return {
+    ...defaults,
+    ...input,
+    query,
+    params: query,
+    headers
+  };
+}
+function mergeHeaders(input, defaults, Headers) {
+  if (!defaults) {
+    return new Headers(input);
+  }
+  const headers = new Headers(defaults);
+  if (input) {
+    for (const [key, value] of Symbol.iterator in input || Array.isArray(input) ? input : new Headers(input)) {
+      headers.set(key, value);
+    }
+  }
+  return headers;
+}
+async function callHooks(context, hooks) {
+  if (hooks) {
+    if (Array.isArray(hooks)) {
+      for (const hook of hooks) {
+        await hook(context);
+      }
+    } else {
+      await hooks(context);
+    }
+  }
+}
+
+const retryStatusCodes = /* @__PURE__ */ new Set([
+  408,
+  // Request Timeout
+  409,
+  // Conflict
+  425,
+  // Too Early (Experimental)
+  429,
+  // Too Many Requests
+  500,
+  // Internal Server Error
+  502,
+  // Bad Gateway
+  503,
+  // Service Unavailable
+  504
+  // Gateway Timeout
+]);
+const nullBodyResponses = /* @__PURE__ */ new Set([101, 204, 205, 304]);
+function createFetch(globalOptions = {}) {
+  const {
+    fetch = globalThis.fetch,
+    Headers = globalThis.Headers,
+    AbortController = globalThis.AbortController
+  } = globalOptions;
+  async function onError(context) {
+    const isAbort = context.error && context.error.name === "AbortError" && !context.options.timeout || false;
+    if (context.options.retry !== false && !isAbort) {
+      let retries;
+      if (typeof context.options.retry === "number") {
+        retries = context.options.retry;
+      } else {
+        retries = isPayloadMethod(context.options.method) ? 0 : 1;
+      }
+      const responseCode = context.response && context.response.status || 500;
+      if (retries > 0 && (Array.isArray(context.options.retryStatusCodes) ? context.options.retryStatusCodes.includes(responseCode) : retryStatusCodes.has(responseCode))) {
+        const retryDelay = typeof context.options.retryDelay === "function" ? context.options.retryDelay(context) : context.options.retryDelay || 0;
+        if (retryDelay > 0) {
+          await new Promise((resolve) => setTimeout(resolve, retryDelay));
+        }
+        return $fetchRaw(context.request, {
+          ...context.options,
+          retry: retries - 1
+        });
+      }
+    }
+    const error = createFetchError(context);
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(error, $fetchRaw);
+    }
+    throw error;
+  }
+  const $fetchRaw = async function $fetchRaw2(_request, _options = {}) {
+    const context = {
+      request: _request,
+      options: resolveFetchOptions(
+        _request,
+        _options,
+        globalOptions.defaults,
+        Headers
+      ),
+      response: void 0,
+      error: void 0
+    };
+    if (context.options.method) {
+      context.options.method = context.options.method.toUpperCase();
+    }
+    if (context.options.onRequest) {
+      await callHooks(context, context.options.onRequest);
+      if (!(context.options.headers instanceof Headers)) {
+        context.options.headers = new Headers(
+          context.options.headers || {}
+          /* compat */
+        );
+      }
+    }
+    if (typeof context.request === "string") {
+      if (context.options.baseURL) {
+        context.request = withBase(context.request, context.options.baseURL);
+      }
+      if (context.options.query) {
+        context.request = withQuery(context.request, context.options.query);
+        delete context.options.query;
+      }
+      if ("query" in context.options) {
+        delete context.options.query;
+      }
+      if ("params" in context.options) {
+        delete context.options.params;
+      }
+    }
+    if (context.options.body && isPayloadMethod(context.options.method)) {
+      if (isJSONSerializable(context.options.body)) {
+        const contentType = context.options.headers.get("content-type");
+        if (typeof context.options.body !== "string") {
+          context.options.body = contentType === "application/x-www-form-urlencoded" ? new URLSearchParams(
+            context.options.body
+          ).toString() : JSON.stringify(context.options.body);
+        }
+        if (!contentType) {
+          context.options.headers.set("content-type", "application/json");
+        }
+        if (!context.options.headers.has("accept")) {
+          context.options.headers.set("accept", "application/json");
+        }
+      } else if (
+        // ReadableStream Body
+        "pipeTo" in context.options.body && typeof context.options.body.pipeTo === "function" || // Node.js Stream Body
+        typeof context.options.body.pipe === "function"
+      ) {
+        if (!("duplex" in context.options)) {
+          context.options.duplex = "half";
+        }
+      }
+    }
+    let abortTimeout;
+    if (!context.options.signal && context.options.timeout) {
+      const controller = new AbortController();
+      abortTimeout = setTimeout(() => {
+        const error = new Error(
+          "[TimeoutError]: The operation was aborted due to timeout"
+        );
+        error.name = "TimeoutError";
+        error.code = 23;
+        controller.abort(error);
+      }, context.options.timeout);
+      context.options.signal = controller.signal;
+    }
+    try {
+      context.response = await fetch(
+        context.request,
+        context.options
+      );
+    } catch (error) {
+      context.error = error;
+      if (context.options.onRequestError) {
+        await callHooks(
+          context,
+          context.options.onRequestError
+        );
+      }
+      return await onError(context);
+    } finally {
+      if (abortTimeout) {
+        clearTimeout(abortTimeout);
+      }
+    }
+    const hasBody = (context.response.body || // https://github.com/unjs/ofetch/issues/324
+    // https://github.com/unjs/ofetch/issues/294
+    // https://github.com/JakeChampion/fetch/issues/1454
+    context.response._bodyInit) && !nullBodyResponses.has(context.response.status) && context.options.method !== "HEAD";
+    if (hasBody) {
+      const responseType = (context.options.parseResponse ? "json" : context.options.responseType) || detectResponseType(context.response.headers.get("content-type") || "");
+      switch (responseType) {
+        case "json": {
+          const data = await context.response.text();
+          const parseFunction = context.options.parseResponse || destr;
+          context.response._data = parseFunction(data);
+          break;
+        }
+        case "stream": {
+          context.response._data = context.response.body || context.response._bodyInit;
+          break;
+        }
+        default: {
+          context.response._data = await context.response[responseType]();
+        }
+      }
+    }
+    if (context.options.onResponse) {
+      await callHooks(
+        context,
+        context.options.onResponse
+      );
+    }
+    if (!context.options.ignoreResponseError && context.response.status >= 400 && context.response.status < 600) {
+      if (context.options.onResponseError) {
+        await callHooks(
+          context,
+          context.options.onResponseError
+        );
+      }
+      return await onError(context);
+    }
+    return context.response;
+  };
+  const $fetch = async function $fetch2(request, options) {
+    const r = await $fetchRaw(request, options);
+    return r._data;
+  };
+  $fetch.raw = $fetchRaw;
+  $fetch.native = (...args) => fetch(...args);
+  $fetch.create = (defaultOptions = {}, customGlobalOptions = {}) => createFetch({
+    ...globalOptions,
+    ...customGlobalOptions,
+    defaults: {
+      ...globalOptions.defaults,
+      ...customGlobalOptions.defaults,
+      ...defaultOptions
+    }
+  });
+  return $fetch;
+}
+
+function createNodeFetch() {
+  const useKeepAlive = JSON.parse(process.env.FETCH_KEEP_ALIVE || "false");
+  if (!useKeepAlive) {
+    return l;
+  }
+  const agentOptions = { keepAlive: true };
+  const httpAgent = new http.Agent(agentOptions);
+  const httpsAgent = new https.Agent(agentOptions);
+  const nodeFetchOptions = {
+    agent(parsedURL) {
+      return parsedURL.protocol === "http:" ? httpAgent : httpsAgent;
+    }
+  };
+  return function nodeFetchWithKeepAlive(input, init) {
+    return l(input, { ...nodeFetchOptions, ...init });
+  };
+}
+const fetch = globalThis.fetch ? (...args) => globalThis.fetch(...args) : createNodeFetch();
+const Headers$1 = globalThis.Headers || s$1;
+const AbortController = globalThis.AbortController || i;
+createFetch({ fetch, Headers: Headers$1, AbortController });
+
+function wrapToPromise(value) {
+  if (!value || typeof value.then !== "function") {
+    return Promise.resolve(value);
+  }
+  return value;
+}
+function asyncCall(function_, ...arguments_) {
+  try {
+    return wrapToPromise(function_(...arguments_));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+}
+function isPrimitive(value) {
+  const type = typeof value;
+  return value === null || type !== "object" && type !== "function";
+}
+function isPureObject(value) {
+  const proto = Object.getPrototypeOf(value);
+  return !proto || proto.isPrototypeOf(Object);
+}
+function stringify(value) {
+  if (isPrimitive(value)) {
+    return String(value);
+  }
+  if (isPureObject(value) || Array.isArray(value)) {
+    return JSON.stringify(value);
+  }
+  if (typeof value.toJSON === "function") {
+    return stringify(value.toJSON());
+  }
+  throw new Error("[unstorage] Cannot stringify value!");
+}
+const BASE64_PREFIX = "base64:";
+function serializeRaw(value) {
+  if (typeof value === "string") {
+    return value;
+  }
+  return BASE64_PREFIX + base64Encode(value);
+}
+function deserializeRaw(value) {
+  if (typeof value !== "string") {
+    return value;
+  }
+  if (!value.startsWith(BASE64_PREFIX)) {
+    return value;
+  }
+  return base64Decode(value.slice(BASE64_PREFIX.length));
+}
+function base64Decode(input) {
+  if (globalThis.Buffer) {
+    return Buffer.from(input, "base64");
+  }
+  return Uint8Array.from(
+    globalThis.atob(input),
+    (c) => c.codePointAt(0)
+  );
+}
+function base64Encode(input) {
+  if (globalThis.Buffer) {
+    return Buffer.from(input).toString("base64");
+  }
+  return globalThis.btoa(String.fromCodePoint(...input));
+}
+
+const storageKeyProperties = [
+  "has",
+  "hasItem",
+  "get",
+  "getItem",
+  "getItemRaw",
+  "set",
+  "setItem",
+  "setItemRaw",
+  "del",
+  "remove",
+  "removeItem",
+  "getMeta",
+  "setMeta",
+  "removeMeta",
+  "getKeys",
+  "clear",
+  "mount",
+  "unmount"
+];
+function prefixStorage(storage, base) {
+  base = normalizeBaseKey(base);
+  if (!base) {
+    return storage;
+  }
+  const nsStorage = { ...storage };
+  for (const property of storageKeyProperties) {
+    nsStorage[property] = (key = "", ...args) => (
+      // @ts-ignore
+      storage[property](base + key, ...args)
+    );
+  }
+  nsStorage.getKeys = (key = "", ...arguments_) => storage.getKeys(base + key, ...arguments_).then((keys) => keys.map((key2) => key2.slice(base.length)));
+  nsStorage.keys = nsStorage.getKeys;
+  nsStorage.getItems = async (items, commonOptions) => {
+    const prefixedItems = items.map(
+      (item) => typeof item === "string" ? base + item : { ...item, key: base + item.key }
+    );
+    const results = await storage.getItems(prefixedItems, commonOptions);
+    return results.map((entry) => ({
+      key: entry.key.slice(base.length),
+      value: entry.value
+    }));
+  };
+  nsStorage.setItems = async (items, commonOptions) => {
+    const prefixedItems = items.map((item) => ({
+      key: base + item.key,
+      value: item.value,
+      options: item.options
+    }));
+    return storage.setItems(prefixedItems, commonOptions);
+  };
+  return nsStorage;
+}
+function normalizeKey$1(key) {
+  if (!key) {
+    return "";
+  }
+  return key.split("?")[0]?.replace(/[/\\]/g, ":").replace(/:+/g, ":").replace(/^:|:$/g, "") || "";
+}
+function joinKeys(...keys) {
+  return normalizeKey$1(keys.join(":"));
+}
+function normalizeBaseKey(base) {
+  base = normalizeKey$1(base);
+  return base ? base + ":" : "";
+}
+function filterKeyByDepth(key, depth) {
+  if (depth === void 0) {
+    return true;
+  }
+  let substrCount = 0;
+  let index = key.indexOf(":");
+  while (index > -1) {
+    substrCount++;
+    index = key.indexOf(":", index + 1);
+  }
+  return substrCount <= depth;
+}
+function filterKeyByBase(key, base) {
+  if (base) {
+    return key.startsWith(base) && key[key.length - 1] !== "$";
+  }
+  return key[key.length - 1] !== "$";
+}
+
+function defineDriver$1(factory) {
+  return factory;
+}
+
+const DRIVER_NAME$1 = "memory";
+const memory = defineDriver$1(() => {
+  const data = /* @__PURE__ */ new Map();
+  return {
+    name: DRIVER_NAME$1,
+    getInstance: () => data,
+    hasItem(key) {
+      return data.has(key);
+    },
+    getItem(key) {
+      return data.get(key) ?? null;
+    },
+    getItemRaw(key) {
+      return data.get(key) ?? null;
+    },
+    setItem(key, value) {
+      data.set(key, value);
+    },
+    setItemRaw(key, value) {
+      data.set(key, value);
+    },
+    removeItem(key) {
+      data.delete(key);
+    },
+    getKeys() {
+      return [...data.keys()];
+    },
+    clear() {
+      data.clear();
+    },
+    dispose() {
+      data.clear();
+    }
+  };
+});
+
+function createStorage(options = {}) {
+  const context = {
+    mounts: { "": options.driver || memory() },
+    mountpoints: [""],
+    watching: false,
+    watchListeners: [],
+    unwatch: {}
+  };
+  const getMount = (key) => {
+    for (const base of context.mountpoints) {
+      if (key.startsWith(base)) {
+        return {
+          base,
+          relativeKey: key.slice(base.length),
+          driver: context.mounts[base]
+        };
+      }
+    }
+    return {
+      base: "",
+      relativeKey: key,
+      driver: context.mounts[""]
+    };
+  };
+  const getMounts = (base, includeParent) => {
+    return context.mountpoints.filter(
+      (mountpoint) => mountpoint.startsWith(base) || includeParent && base.startsWith(mountpoint)
+    ).map((mountpoint) => ({
+      relativeBase: base.length > mountpoint.length ? base.slice(mountpoint.length) : void 0,
+      mountpoint,
+      driver: context.mounts[mountpoint]
+    }));
+  };
+  const onChange = (event, key) => {
+    if (!context.watching) {
+      return;
+    }
+    key = normalizeKey$1(key);
+    for (const listener of context.watchListeners) {
+      listener(event, key);
+    }
+  };
+  const startWatch = async () => {
+    if (context.watching) {
+      return;
+    }
+    context.watching = true;
+    for (const mountpoint in context.mounts) {
+      context.unwatch[mountpoint] = await watch(
+        context.mounts[mountpoint],
+        onChange,
+        mountpoint
+      );
+    }
+  };
+  const stopWatch = async () => {
+    if (!context.watching) {
+      return;
+    }
+    for (const mountpoint in context.unwatch) {
+      await context.unwatch[mountpoint]();
+    }
+    context.unwatch = {};
+    context.watching = false;
+  };
+  const runBatch = (items, commonOptions, cb) => {
+    const batches = /* @__PURE__ */ new Map();
+    const getBatch = (mount) => {
+      let batch = batches.get(mount.base);
+      if (!batch) {
+        batch = {
+          driver: mount.driver,
+          base: mount.base,
+          items: []
+        };
+        batches.set(mount.base, batch);
+      }
+      return batch;
+    };
+    for (const item of items) {
+      const isStringItem = typeof item === "string";
+      const key = normalizeKey$1(isStringItem ? item : item.key);
+      const value = isStringItem ? void 0 : item.value;
+      const options2 = isStringItem || !item.options ? commonOptions : { ...commonOptions, ...item.options };
+      const mount = getMount(key);
+      getBatch(mount).items.push({
+        key,
+        value,
+        relativeKey: mount.relativeKey,
+        options: options2
+      });
+    }
+    return Promise.all([...batches.values()].map((batch) => cb(batch))).then(
+      (r) => r.flat()
+    );
+  };
+  const storage = {
+    // Item
+    hasItem(key, opts = {}) {
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      return asyncCall(driver.hasItem, relativeKey, opts);
+    },
+    getItem(key, opts = {}) {
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      return asyncCall(driver.getItem, relativeKey, opts).then(
+        (value) => destr(value)
+      );
+    },
+    getItems(items, commonOptions = {}) {
+      return runBatch(items, commonOptions, (batch) => {
+        if (batch.driver.getItems) {
+          return asyncCall(
+            batch.driver.getItems,
+            batch.items.map((item) => ({
+              key: item.relativeKey,
+              options: item.options
+            })),
+            commonOptions
+          ).then(
+            (r) => r.map((item) => ({
+              key: joinKeys(batch.base, item.key),
+              value: destr(item.value)
+            }))
+          );
+        }
+        return Promise.all(
+          batch.items.map((item) => {
+            return asyncCall(
+              batch.driver.getItem,
+              item.relativeKey,
+              item.options
+            ).then((value) => ({
+              key: item.key,
+              value: destr(value)
+            }));
+          })
+        );
+      });
+    },
+    getItemRaw(key, opts = {}) {
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      if (driver.getItemRaw) {
+        return asyncCall(driver.getItemRaw, relativeKey, opts);
+      }
+      return asyncCall(driver.getItem, relativeKey, opts).then(
+        (value) => deserializeRaw(value)
+      );
+    },
+    async setItem(key, value, opts = {}) {
+      if (value === void 0) {
+        return storage.removeItem(key);
+      }
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      if (!driver.setItem) {
+        return;
+      }
+      await asyncCall(driver.setItem, relativeKey, stringify(value), opts);
+      if (!driver.watch) {
+        onChange("update", key);
+      }
+    },
+    async setItems(items, commonOptions) {
+      await runBatch(items, commonOptions, async (batch) => {
+        if (batch.driver.setItems) {
+          return asyncCall(
+            batch.driver.setItems,
+            batch.items.map((item) => ({
+              key: item.relativeKey,
+              value: stringify(item.value),
+              options: item.options
+            })),
+            commonOptions
+          );
+        }
+        if (!batch.driver.setItem) {
+          return;
+        }
+        await Promise.all(
+          batch.items.map((item) => {
+            return asyncCall(
+              batch.driver.setItem,
+              item.relativeKey,
+              stringify(item.value),
+              item.options
+            );
+          })
+        );
+      });
+    },
+    async setItemRaw(key, value, opts = {}) {
+      if (value === void 0) {
+        return storage.removeItem(key, opts);
+      }
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      if (driver.setItemRaw) {
+        await asyncCall(driver.setItemRaw, relativeKey, value, opts);
+      } else if (driver.setItem) {
+        await asyncCall(driver.setItem, relativeKey, serializeRaw(value), opts);
+      } else {
+        return;
+      }
+      if (!driver.watch) {
+        onChange("update", key);
+      }
+    },
+    async removeItem(key, opts = {}) {
+      if (typeof opts === "boolean") {
+        opts = { removeMeta: opts };
+      }
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      if (!driver.removeItem) {
+        return;
+      }
+      await asyncCall(driver.removeItem, relativeKey, opts);
+      if (opts.removeMeta || opts.removeMata) {
+        await asyncCall(driver.removeItem, relativeKey + "$", opts);
+      }
+      if (!driver.watch) {
+        onChange("remove", key);
+      }
+    },
+    // Meta
+    async getMeta(key, opts = {}) {
+      if (typeof opts === "boolean") {
+        opts = { nativeOnly: opts };
+      }
+      key = normalizeKey$1(key);
+      const { relativeKey, driver } = getMount(key);
+      const meta = /* @__PURE__ */ Object.create(null);
+      if (driver.getMeta) {
+        Object.assign(meta, await asyncCall(driver.getMeta, relativeKey, opts));
+      }
+      if (!opts.nativeOnly) {
+        const value = await asyncCall(
+          driver.getItem,
+          relativeKey + "$",
+          opts
+        ).then((value_) => destr(value_));
+        if (value && typeof value === "object") {
+          if (typeof value.atime === "string") {
+            value.atime = new Date(value.atime);
+          }
+          if (typeof value.mtime === "string") {
+            value.mtime = new Date(value.mtime);
+          }
+          Object.assign(meta, value);
+        }
+      }
+      return meta;
+    },
+    setMeta(key, value, opts = {}) {
+      return this.setItem(key + "$", value, opts);
+    },
+    removeMeta(key, opts = {}) {
+      return this.removeItem(key + "$", opts);
+    },
+    // Keys
+    async getKeys(base, opts = {}) {
+      base = normalizeBaseKey(base);
+      const mounts = getMounts(base, true);
+      let maskedMounts = [];
+      const allKeys = [];
+      let allMountsSupportMaxDepth = true;
+      for (const mount of mounts) {
+        if (!mount.driver.flags?.maxDepth) {
+          allMountsSupportMaxDepth = false;
+        }
+        const rawKeys = await asyncCall(
+          mount.driver.getKeys,
+          mount.relativeBase,
+          opts
+        );
+        for (const key of rawKeys) {
+          const fullKey = mount.mountpoint + normalizeKey$1(key);
+          if (!maskedMounts.some((p) => fullKey.startsWith(p))) {
+            allKeys.push(fullKey);
+          }
+        }
+        maskedMounts = [
+          mount.mountpoint,
+          ...maskedMounts.filter((p) => !p.startsWith(mount.mountpoint))
+        ];
+      }
+      const shouldFilterByDepth = opts.maxDepth !== void 0 && !allMountsSupportMaxDepth;
+      return allKeys.filter(
+        (key) => (!shouldFilterByDepth || filterKeyByDepth(key, opts.maxDepth)) && filterKeyByBase(key, base)
+      );
+    },
+    // Utils
+    async clear(base, opts = {}) {
+      base = normalizeBaseKey(base);
+      await Promise.all(
+        getMounts(base, false).map(async (m) => {
+          if (m.driver.clear) {
+            return asyncCall(m.driver.clear, m.relativeBase, opts);
+          }
+          if (m.driver.removeItem) {
+            const keys = await m.driver.getKeys(m.relativeBase || "", opts);
+            return Promise.all(
+              keys.map((key) => m.driver.removeItem(key, opts))
+            );
+          }
+        })
+      );
+    },
+    async dispose() {
+      await Promise.all(
+        Object.values(context.mounts).map((driver) => dispose(driver))
+      );
+    },
+    async watch(callback) {
+      await startWatch();
+      context.watchListeners.push(callback);
+      return async () => {
+        context.watchListeners = context.watchListeners.filter(
+          (listener) => listener !== callback
+        );
+        if (context.watchListeners.length === 0) {
+          await stopWatch();
+        }
+      };
+    },
+    async unwatch() {
+      context.watchListeners = [];
+      await stopWatch();
+    },
+    // Mount
+    mount(base, driver) {
+      base = normalizeBaseKey(base);
+      if (base && context.mounts[base]) {
+        throw new Error(`already mounted at ${base}`);
+      }
+      if (base) {
+        context.mountpoints.push(base);
+        context.mountpoints.sort((a, b) => b.length - a.length);
+      }
+      context.mounts[base] = driver;
+      if (context.watching) {
+        Promise.resolve(watch(driver, onChange, base)).then((unwatcher) => {
+          context.unwatch[base] = unwatcher;
+        }).catch(console.error);
+      }
+      return storage;
+    },
+    async unmount(base, _dispose = true) {
+      base = normalizeBaseKey(base);
+      if (!base || !context.mounts[base]) {
+        return;
+      }
+      if (context.watching && base in context.unwatch) {
+        context.unwatch[base]?.();
+        delete context.unwatch[base];
+      }
+      if (_dispose) {
+        await dispose(context.mounts[base]);
+      }
+      context.mountpoints = context.mountpoints.filter((key) => key !== base);
+      delete context.mounts[base];
+    },
+    getMount(key = "") {
+      key = normalizeKey$1(key) + ":";
+      const m = getMount(key);
+      return {
+        driver: m.driver,
+        base: m.base
+      };
+    },
+    getMounts(base = "", opts = {}) {
+      base = normalizeKey$1(base);
+      const mounts = getMounts(base, opts.parents);
+      return mounts.map((m) => ({
+        driver: m.driver,
+        base: m.mountpoint
+      }));
+    },
+    // Aliases
+    keys: (base, opts = {}) => storage.getKeys(base, opts),
+    get: (key, opts = {}) => storage.getItem(key, opts),
+    set: (key, value, opts = {}) => storage.setItem(key, value, opts),
+    has: (key, opts = {}) => storage.hasItem(key, opts),
+    del: (key, opts = {}) => storage.removeItem(key, opts),
+    remove: (key, opts = {}) => storage.removeItem(key, opts)
+  };
+  return storage;
+}
+function watch(driver, onChange, base) {
+  return driver.watch ? driver.watch((event, key) => onChange(event, base + key)) : () => {
+  };
+}
+async function dispose(driver) {
+  if (typeof driver.dispose === "function") {
+    await asyncCall(driver.dispose);
+  }
+}
+
+const _assets = {
+
+};
+
+const normalizeKey = function normalizeKey(key) {
+  if (!key) {
+    return "";
+  }
+  return key.split("?")[0]?.replace(/[/\\]/g, ":").replace(/:+/g, ":").replace(/^:|:$/g, "") || "";
+};
+
+const assets$1 = {
+  getKeys() {
+    return Promise.resolve(Object.keys(_assets))
+  },
+  hasItem (id) {
+    id = normalizeKey(id);
+    return Promise.resolve(id in _assets)
+  },
+  getItem (id) {
+    id = normalizeKey(id);
+    return Promise.resolve(_assets[id] ? _assets[id].import() : null)
+  },
+  getMeta (id) {
+    id = normalizeKey(id);
+    return Promise.resolve(_assets[id] ? _assets[id].meta : {})
+  }
+};
+
+function defineDriver(factory) {
+  return factory;
+}
+function createError(driver, message, opts) {
+  const err = new Error(`[unstorage] [${driver}] ${message}`, opts);
+  if (Error.captureStackTrace) {
+    Error.captureStackTrace(err, createError);
+  }
+  return err;
+}
+function createRequiredError(driver, name) {
+  if (Array.isArray(name)) {
+    return createError(
+      driver,
+      `Missing some of the required options ${name.map((n) => "`" + n + "`").join(", ")}`
+    );
+  }
+  return createError(driver, `Missing required option \`${name}\`.`);
+}
+
+function ignoreNotfound(err) {
+  return err.code === "ENOENT" || err.code === "EISDIR" ? null : err;
+}
+function ignoreExists(err) {
+  return err.code === "EEXIST" ? null : err;
+}
+async function writeFile(path, data, encoding) {
+  await ensuredir(dirname$1(path));
+  return promises.writeFile(path, data, encoding);
+}
+function readFile(path, encoding) {
+  return promises.readFile(path, encoding).catch(ignoreNotfound);
+}
+function unlink(path) {
+  return promises.unlink(path).catch(ignoreNotfound);
+}
+function readdir(dir) {
+  return promises.readdir(dir, { withFileTypes: true }).catch(ignoreNotfound).then((r) => r || []);
+}
+async function ensuredir(dir) {
+  if (existsSync(dir)) {
+    return;
+  }
+  await ensuredir(dirname$1(dir)).catch(ignoreExists);
+  await promises.mkdir(dir).catch(ignoreExists);
+}
+async function readdirRecursive(dir, ignore, maxDepth) {
+  if (ignore && ignore(dir)) {
+    return [];
+  }
+  const entries = await readdir(dir);
+  const files = [];
+  await Promise.all(
+    entries.map(async (entry) => {
+      const entryPath = resolve$1(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (maxDepth === void 0 || maxDepth > 0) {
+          const dirFiles = await readdirRecursive(
+            entryPath,
+            ignore,
+            maxDepth === void 0 ? void 0 : maxDepth - 1
+          );
+          files.push(...dirFiles.map((f) => entry.name + "/" + f));
+        }
+      } else {
+        if (!(ignore && ignore(entry.name))) {
+          files.push(entry.name);
+        }
+      }
+    })
+  );
+  return files;
+}
+async function rmRecursive(dir) {
+  const entries = await readdir(dir);
+  await Promise.all(
+    entries.map((entry) => {
+      const entryPath = resolve$1(dir, entry.name);
+      if (entry.isDirectory()) {
+        return rmRecursive(entryPath).then(() => promises.rmdir(entryPath));
+      } else {
+        return promises.unlink(entryPath);
+      }
+    })
+  );
+}
+
+const PATH_TRAVERSE_RE = /\.\.:|\.\.$/;
+const DRIVER_NAME = "fs-lite";
+const unstorage_47drivers_47fs_45lite = defineDriver((opts = {}) => {
+  if (!opts.base) {
+    throw createRequiredError(DRIVER_NAME, "base");
+  }
+  opts.base = resolve$1(opts.base);
+  const r = (key) => {
+    if (PATH_TRAVERSE_RE.test(key)) {
+      throw createError(
+        DRIVER_NAME,
+        `Invalid key: ${JSON.stringify(key)}. It should not contain .. segments`
+      );
+    }
+    const resolved = join(opts.base, key.replace(/:/g, "/"));
+    return resolved;
+  };
+  return {
+    name: DRIVER_NAME,
+    options: opts,
+    flags: {
+      maxDepth: true
+    },
+    hasItem(key) {
+      return existsSync(r(key));
+    },
+    getItem(key) {
+      return readFile(r(key), "utf8");
+    },
+    getItemRaw(key) {
+      return readFile(r(key));
+    },
+    async getMeta(key) {
+      const { atime, mtime, size, birthtime, ctime } = await promises.stat(r(key)).catch(() => ({}));
+      return { atime, mtime, size, birthtime, ctime };
+    },
+    setItem(key, value) {
+      if (opts.readOnly) {
+        return;
+      }
+      return writeFile(r(key), value, "utf8");
+    },
+    setItemRaw(key, value) {
+      if (opts.readOnly) {
+        return;
+      }
+      return writeFile(r(key), value);
+    },
+    removeItem(key) {
+      if (opts.readOnly) {
+        return;
+      }
+      return unlink(r(key));
+    },
+    getKeys(_base, topts) {
+      return readdirRecursive(r("."), opts.ignore, topts?.maxDepth);
+    },
+    async clear() {
+      if (opts.readOnly || opts.noClear) {
+        return;
+      }
+      await rmRecursive(r("."));
+    }
+  };
+});
+
+const storage$1 = createStorage({});
+
+storage$1.mount('/assets', assets$1);
+
+storage$1.mount('data', unstorage_47drivers_47fs_45lite({"driver":"fsLite","base":"./.data/kv"}));
+
+function useStorage(base = "") {
+  return base ? prefixStorage(storage$1, base) : storage$1;
+}
+
+const e=globalThis.process?.getBuiltinModule?.("crypto")?.hash,r="sha256",s="base64url";function digest(t){if(e)return e(r,t,s);const o=createHash(r).update(t);return globalThis.process?.versions?.webcontainer?o.digest().toString(s):o.digest(s)}
+
+const Hasher = /* @__PURE__ */ (() => {
+  class Hasher2 {
+    buff = "";
+    #context = /* @__PURE__ */ new Map();
+    write(str) {
+      this.buff += str;
+    }
+    dispatch(value) {
+      const type = value === null ? "null" : typeof value;
+      return this[type](value);
+    }
+    object(object) {
+      if (object && typeof object.toJSON === "function") {
+        return this.object(object.toJSON());
+      }
+      const objString = Object.prototype.toString.call(object);
+      let objType = "";
+      const objectLength = objString.length;
+      objType = objectLength < 10 ? "unknown:[" + objString + "]" : objString.slice(8, objectLength - 1);
+      objType = objType.toLowerCase();
+      let objectNumber = null;
+      if ((objectNumber = this.#context.get(object)) === void 0) {
+        this.#context.set(object, this.#context.size);
+      } else {
+        return this.dispatch("[CIRCULAR:" + objectNumber + "]");
+      }
+      if (typeof Buffer !== "undefined" && Buffer.isBuffer && Buffer.isBuffer(object)) {
+        this.write("buffer:");
+        return this.write(object.toString("utf8"));
+      }
+      if (objType !== "object" && objType !== "function" && objType !== "asyncfunction") {
+        if (this[objType]) {
+          this[objType](object);
+        } else {
+          this.unknown(object, objType);
+        }
+      } else {
+        const keys = Object.keys(object).sort();
+        const extraKeys = [];
+        this.write("object:" + (keys.length + extraKeys.length) + ":");
+        const dispatchForKey = (key) => {
+          this.dispatch(key);
+          this.write(":");
+          this.dispatch(object[key]);
+          this.write(",");
+        };
+        for (const key of keys) {
+          dispatchForKey(key);
+        }
+        for (const key of extraKeys) {
+          dispatchForKey(key);
+        }
+      }
+    }
+    array(arr, unordered) {
+      unordered = unordered === void 0 ? false : unordered;
+      this.write("array:" + arr.length + ":");
+      if (!unordered || arr.length <= 1) {
+        for (const entry of arr) {
+          this.dispatch(entry);
+        }
+        return;
+      }
+      const contextAdditions = /* @__PURE__ */ new Map();
+      const entries = arr.map((entry) => {
+        const hasher = new Hasher2();
+        hasher.dispatch(entry);
+        for (const [key, value] of hasher.#context) {
+          contextAdditions.set(key, value);
+        }
+        return hasher.toString();
+      });
+      this.#context = contextAdditions;
+      entries.sort();
+      return this.array(entries, false);
+    }
+    date(date) {
+      return this.write("date:" + date.toJSON());
+    }
+    symbol(sym) {
+      return this.write("symbol:" + sym.toString());
+    }
+    unknown(value, type) {
+      this.write(type);
+      if (!value) {
+        return;
+      }
+      this.write(":");
+      if (value && typeof value.entries === "function") {
+        return this.array(
+          [...value.entries()],
+          true
+          /* ordered */
+        );
+      }
+    }
+    error(err) {
+      return this.write("error:" + err.toString());
+    }
+    boolean(bool) {
+      return this.write("bool:" + bool);
+    }
+    string(string) {
+      this.write("string:" + string.length + ":");
+      this.write(string);
+    }
+    function(fn) {
+      this.write("fn:");
+      if (isNativeFunction(fn)) {
+        this.dispatch("[native]");
+      } else {
+        this.dispatch(fn.toString());
+      }
+    }
+    number(number) {
+      return this.write("number:" + number);
+    }
+    null() {
+      return this.write("Null");
+    }
+    undefined() {
+      return this.write("Undefined");
+    }
+    regexp(regex) {
+      return this.write("regex:" + regex.toString());
+    }
+    arraybuffer(arr) {
+      this.write("arraybuffer:");
+      return this.dispatch(new Uint8Array(arr));
+    }
+    url(url) {
+      return this.write("url:" + url.toString());
+    }
+    map(map) {
+      this.write("map:");
+      const arr = [...map];
+      return this.array(arr, false);
+    }
+    set(set) {
+      this.write("set:");
+      const arr = [...set];
+      return this.array(arr, false);
+    }
+    bigint(number) {
+      return this.write("bigint:" + number.toString());
+    }
+  }
+  for (const type of [
+    "uint8array",
+    "uint8clampedarray",
+    "unt8array",
+    "uint16array",
+    "unt16array",
+    "uint32array",
+    "unt32array",
+    "float32array",
+    "float64array"
+  ]) {
+    Hasher2.prototype[type] = function(arr) {
+      this.write(type + ":");
+      return this.array([...arr], false);
+    };
+  }
+  function isNativeFunction(f) {
+    if (typeof f !== "function") {
+      return false;
+    }
+    return Function.prototype.toString.call(f).slice(
+      -15
+      /* "[native code] }".length */
+    ) === "[native code] }";
+  }
+  return Hasher2;
+})();
+function serialize(object) {
+  const hasher = new Hasher();
+  hasher.dispatch(object);
+  return hasher.buff;
+}
+function hash(value) {
+  return digest(typeof value === "string" ? value : serialize(value)).replace(/[-_]/g, "").slice(0, 10);
+}
+
+function defaultCacheOptions() {
+  return {
+    name: "_",
+    base: "/cache",
+    swr: true,
+    maxAge: 1
+  };
+}
+function defineCachedFunction(fn, opts = {}) {
+  opts = { ...defaultCacheOptions(), ...opts };
+  const pending = {};
+  const group = opts.group || "nitro/functions";
+  const name = opts.name || fn.name || "_";
+  const integrity = opts.integrity || hash([fn, opts]);
+  const validate = opts.validate || ((entry) => entry.value !== void 0);
+  async function get(key, resolver, shouldInvalidateCache, event) {
+    const cacheKey = [opts.base, group, name, key + ".json"].filter(Boolean).join(":").replace(/:\/$/, ":index");
+    let entry = await useStorage().getItem(cacheKey).catch((error) => {
+      console.error(`[cache] Cache read error.`, error);
+      useNitroApp().captureError(error, { event, tags: ["cache"] });
+    }) || {};
+    if (typeof entry !== "object") {
+      entry = {};
+      const error = new Error("Malformed data read from cache.");
+      console.error("[cache]", error);
+      useNitroApp().captureError(error, { event, tags: ["cache"] });
+    }
+    const ttl = (opts.maxAge ?? 0) * 1e3;
+    if (ttl) {
+      entry.expires = Date.now() + ttl;
+    }
+    const expired = shouldInvalidateCache || entry.integrity !== integrity || ttl && Date.now() - (entry.mtime || 0) > ttl || validate(entry) === false;
+    const _resolve = async () => {
+      const isPending = pending[key];
+      if (!isPending) {
+        if (entry.value !== void 0 && (opts.staleMaxAge || 0) >= 0 && opts.swr === false) {
+          entry.value = void 0;
+          entry.integrity = void 0;
+          entry.mtime = void 0;
+          entry.expires = void 0;
+        }
+        pending[key] = Promise.resolve(resolver());
+      }
+      try {
+        entry.value = await pending[key];
+      } catch (error) {
+        if (!isPending) {
+          delete pending[key];
+        }
+        throw error;
+      }
+      if (!isPending) {
+        entry.mtime = Date.now();
+        entry.integrity = integrity;
+        delete pending[key];
+        if (validate(entry) !== false) {
+          let setOpts;
+          if (opts.maxAge && !opts.swr) {
+            setOpts = { ttl: opts.maxAge };
+          }
+          const promise = useStorage().setItem(cacheKey, entry, setOpts).catch((error) => {
+            console.error(`[cache] Cache write error.`, error);
+            useNitroApp().captureError(error, { event, tags: ["cache"] });
+          });
+          if (event?.waitUntil) {
+            event.waitUntil(promise);
+          }
+        }
+      }
+    };
+    const _resolvePromise = expired ? _resolve() : Promise.resolve();
+    if (entry.value === void 0) {
+      await _resolvePromise;
+    } else if (expired && event && event.waitUntil) {
+      event.waitUntil(_resolvePromise);
+    }
+    if (opts.swr && validate(entry) !== false) {
+      _resolvePromise.catch((error) => {
+        console.error(`[cache] SWR handler error.`, error);
+        useNitroApp().captureError(error, { event, tags: ["cache"] });
+      });
+      return entry;
+    }
+    return _resolvePromise.then(() => entry);
+  }
+  return async (...args) => {
+    const shouldBypassCache = await opts.shouldBypassCache?.(...args);
+    if (shouldBypassCache) {
+      return fn(...args);
+    }
+    const key = await (opts.getKey || getKey)(...args);
+    const shouldInvalidateCache = await opts.shouldInvalidateCache?.(...args);
+    const entry = await get(
+      key,
+      () => fn(...args),
+      shouldInvalidateCache,
+      args[0] && isEvent(args[0]) ? args[0] : void 0
+    );
+    let value = entry.value;
+    if (opts.transform) {
+      value = await opts.transform(entry, ...args) || value;
+    }
+    return value;
+  };
+}
+function cachedFunction(fn, opts = {}) {
+  return defineCachedFunction(fn, opts);
+}
+function getKey(...args) {
+  return args.length > 0 ? hash(args) : "";
+}
+function escapeKey(key) {
+  return String(key).replace(/\W/g, "");
+}
+function defineCachedEventHandler(handler, opts = defaultCacheOptions()) {
+  const variableHeaderNames = (opts.varies || []).filter(Boolean).map((h) => h.toLowerCase()).sort();
+  const _opts = {
+    ...opts,
+    getKey: async (event) => {
+      const customKey = await opts.getKey?.(event);
+      if (customKey) {
+        return escapeKey(customKey);
+      }
+      const _path = event.node.req.originalUrl || event.node.req.url || event.path;
+      let _pathname;
+      try {
+        _pathname = escapeKey(decodeURI(parseURL(_path).pathname)).slice(0, 16) || "index";
+      } catch {
+        _pathname = "-";
+      }
+      const _hashedPath = `${_pathname}.${hash(_path)}`;
+      const _headers = variableHeaderNames.map((header) => [header, event.node.req.headers[header]]).map(([name, value]) => `${escapeKey(name)}.${hash(value)}`);
+      return [_hashedPath, ..._headers].join(":");
+    },
+    validate: (entry) => {
+      if (!entry.value) {
+        return false;
+      }
+      if (entry.value.code >= 400) {
+        return false;
+      }
+      if (entry.value.body === void 0) {
+        return false;
+      }
+      if (entry.value.headers.etag === "undefined" || entry.value.headers["last-modified"] === "undefined") {
+        return false;
+      }
+      return true;
+    },
+    group: opts.group || "nitro/handlers",
+    integrity: opts.integrity || hash([handler, opts])
+  };
+  const _cachedHandler = cachedFunction(
+    async (incomingEvent) => {
+      const variableHeaders = {};
+      for (const header of variableHeaderNames) {
+        const value = incomingEvent.node.req.headers[header];
+        if (value !== void 0) {
+          variableHeaders[header] = value;
+        }
+      }
+      const reqProxy = cloneWithProxy(incomingEvent.node.req, {
+        headers: variableHeaders
+      });
+      const resHeaders = {};
+      let _resSendBody;
+      const resProxy = cloneWithProxy(incomingEvent.node.res, {
+        statusCode: 200,
+        writableEnded: false,
+        writableFinished: false,
+        headersSent: false,
+        closed: false,
+        getHeader(name) {
+          return resHeaders[name];
+        },
+        setHeader(name, value) {
+          resHeaders[name] = value;
+          return this;
+        },
+        getHeaderNames() {
+          return Object.keys(resHeaders);
+        },
+        hasHeader(name) {
+          return name in resHeaders;
+        },
+        removeHeader(name) {
+          delete resHeaders[name];
+        },
+        getHeaders() {
+          return resHeaders;
+        },
+        end(chunk, arg2, arg3) {
+          if (typeof chunk === "string") {
+            _resSendBody = chunk;
+          }
+          if (typeof arg2 === "function") {
+            arg2();
+          }
+          if (typeof arg3 === "function") {
+            arg3();
+          }
+          return this;
+        },
+        write(chunk, arg2, arg3) {
+          if (typeof chunk === "string") {
+            _resSendBody = chunk;
+          }
+          if (typeof arg2 === "function") {
+            arg2(void 0);
+          }
+          if (typeof arg3 === "function") {
+            arg3();
+          }
+          return true;
+        },
+        writeHead(statusCode, headers2) {
+          this.statusCode = statusCode;
+          if (headers2) {
+            if (Array.isArray(headers2) || typeof headers2 === "string") {
+              throw new TypeError("Raw headers  is not supported.");
+            }
+            for (const header in headers2) {
+              const value = headers2[header];
+              if (value !== void 0) {
+                this.setHeader(
+                  header,
+                  value
+                );
+              }
+            }
+          }
+          return this;
+        }
+      });
+      const event = createEvent(reqProxy, resProxy);
+      event.fetch = (url, fetchOptions) => fetchWithEvent(event, url, fetchOptions, {
+        fetch: useNitroApp().localFetch
+      });
+      event.$fetch = (url, fetchOptions) => fetchWithEvent(event, url, fetchOptions, {
+        fetch: globalThis.$fetch
+      });
+      event.waitUntil = incomingEvent.waitUntil;
+      event.context = incomingEvent.context;
+      event.context.cache = {
+        options: _opts
+      };
+      const body = await handler(event) || _resSendBody;
+      const headers = event.node.res.getHeaders();
+      headers.etag = String(
+        headers.Etag || headers.etag || `W/"${hash(body)}"`
+      );
+      headers["last-modified"] = String(
+        headers["Last-Modified"] || headers["last-modified"] || (/* @__PURE__ */ new Date()).toUTCString()
+      );
+      const cacheControl = [];
+      if (opts.swr) {
+        if (opts.maxAge) {
+          cacheControl.push(`s-maxage=${opts.maxAge}`);
+        }
+        if (opts.staleMaxAge) {
+          cacheControl.push(`stale-while-revalidate=${opts.staleMaxAge}`);
+        } else {
+          cacheControl.push("stale-while-revalidate");
+        }
+      } else if (opts.maxAge) {
+        cacheControl.push(`max-age=${opts.maxAge}`);
+      }
+      if (cacheControl.length > 0) {
+        headers["cache-control"] = cacheControl.join(", ");
+      }
+      const cacheEntry = {
+        code: event.node.res.statusCode,
+        headers,
+        body
+      };
+      return cacheEntry;
+    },
+    _opts
+  );
+  return defineEventHandler(async (event) => {
+    if (opts.headersOnly) {
+      if (handleCacheHeaders(event, { maxAge: opts.maxAge })) {
+        return;
+      }
+      return handler(event);
+    }
+    const response = await _cachedHandler(
+      event
+    );
+    if (event.node.res.headersSent || event.node.res.writableEnded) {
+      return response.body;
+    }
+    if (handleCacheHeaders(event, {
+      modifiedTime: new Date(response.headers["last-modified"]),
+      etag: response.headers.etag,
+      maxAge: opts.maxAge
+    })) {
+      return;
+    }
+    event.node.res.statusCode = response.code;
+    for (const name in response.headers) {
+      const value = response.headers[name];
+      if (name === "set-cookie") {
+        event.node.res.appendHeader(
+          name,
+          splitCookiesString(value)
+        );
+      } else {
+        if (value !== void 0) {
+          event.node.res.setHeader(name, value);
+        }
+      }
+    }
+    return response.body;
+  });
+}
+function cloneWithProxy(obj, overrides) {
+  return new Proxy(obj, {
+    get(target, property, receiver) {
+      if (property in overrides) {
+        return overrides[property];
+      }
+      return Reflect.get(target, property, receiver);
+    },
+    set(target, property, value, receiver) {
+      if (property in overrides) {
+        overrides[property] = value;
+        return true;
+      }
+      return Reflect.set(target, property, value, receiver);
+    }
+  });
+}
+const cachedEventHandler = defineCachedEventHandler;
+
+function klona(x) {
+	if (typeof x !== 'object') return x;
+
+	var k, tmp, str=Object.prototype.toString.call(x);
+
+	if (str === '[object Object]') {
+		if (x.constructor !== Object && typeof x.constructor === 'function') {
+			tmp = new x.constructor();
+			for (k in x) {
+				if (x.hasOwnProperty(k) && tmp[k] !== x[k]) {
+					tmp[k] = klona(x[k]);
+				}
+			}
+		} else {
+			tmp = {}; // null
+			for (k in x) {
+				if (k === '__proto__') {
+					Object.defineProperty(tmp, k, {
+						value: klona(x[k]),
+						configurable: true,
+						enumerable: true,
+						writable: true,
+					});
+				} else {
+					tmp[k] = klona(x[k]);
+				}
+			}
+		}
+		return tmp;
+	}
+
+	if (str === '[object Array]') {
+		k = x.length;
+		for (tmp=Array(k); k--;) {
+			tmp[k] = klona(x[k]);
+		}
+		return tmp;
+	}
+
+	if (str === '[object Set]') {
+		tmp = new Set;
+		x.forEach(function (val) {
+			tmp.add(klona(val));
+		});
+		return tmp;
+	}
+
+	if (str === '[object Map]') {
+		tmp = new Map;
+		x.forEach(function (val, key) {
+			tmp.set(klona(key), klona(val));
+		});
+		return tmp;
+	}
+
+	if (str === '[object Date]') {
+		return new Date(+x);
+	}
+
+	if (str === '[object RegExp]') {
+		tmp = new RegExp(x.source, x.flags);
+		tmp.lastIndex = x.lastIndex;
+		return tmp;
+	}
+
+	if (str === '[object DataView]') {
+		return new x.constructor( klona(x.buffer) );
+	}
+
+	if (str === '[object ArrayBuffer]') {
+		return x.slice(0);
+	}
+
+	// ArrayBuffer.isView(x)
+	// ~> `new` bcuz `Buffer.slice` => ref
+	if (str.slice(-6) === 'Array]') {
+		return new x.constructor(x);
+	}
+
+	return x;
+}
+
+const inlineAppConfig = {
+  "nuxt": {}
+};
+
+
+
+const appConfig = defuFn(inlineAppConfig);
+
+const NUMBER_CHAR_RE = /\d/;
+const STR_SPLITTERS = ["-", "_", "/", "."];
+function isUppercase(char = "") {
+  if (NUMBER_CHAR_RE.test(char)) {
+    return void 0;
+  }
+  return char !== char.toLowerCase();
+}
+function splitByCase(str, separators) {
+  const splitters = STR_SPLITTERS;
+  const parts = [];
+  if (!str || typeof str !== "string") {
+    return parts;
+  }
+  let buff = "";
+  let previousUpper;
+  let previousSplitter;
+  for (const char of str) {
+    const isSplitter = splitters.includes(char);
+    if (isSplitter === true) {
+      parts.push(buff);
+      buff = "";
+      previousUpper = void 0;
+      continue;
+    }
+    const isUpper = isUppercase(char);
+    if (previousSplitter === false) {
+      if (previousUpper === false && isUpper === true) {
+        parts.push(buff);
+        buff = char;
+        previousUpper = isUpper;
+        continue;
+      }
+      if (previousUpper === true && isUpper === false && buff.length > 1) {
+        const lastChar = buff.at(-1);
+        parts.push(buff.slice(0, Math.max(0, buff.length - 1)));
+        buff = lastChar + char;
+        previousUpper = isUpper;
+        continue;
+      }
+    }
+    buff += char;
+    previousUpper = isUpper;
+    previousSplitter = isSplitter;
+  }
+  parts.push(buff);
+  return parts;
+}
+function kebabCase(str, joiner) {
+  return str ? (Array.isArray(str) ? str : splitByCase(str)).map((p) => p.toLowerCase()).join(joiner) : "";
+}
+function snakeCase(str) {
+  return kebabCase(str || "", "_");
+}
+
+function getEnv(key, opts) {
+  const envKey = snakeCase(key).toUpperCase();
+  return destr(
+    process.env[opts.prefix + envKey] ?? process.env[opts.altPrefix + envKey]
+  );
+}
+function _isObject(input) {
+  return typeof input === "object" && !Array.isArray(input);
+}
+function applyEnv(obj, opts, parentKey = "") {
+  for (const key in obj) {
+    const subKey = parentKey ? `${parentKey}_${key}` : key;
+    const envValue = getEnv(subKey, opts);
+    if (_isObject(obj[key])) {
+      if (_isObject(envValue)) {
+        obj[key] = { ...obj[key], ...envValue };
+        applyEnv(obj[key], opts, subKey);
+      } else if (envValue === void 0) {
+        applyEnv(obj[key], opts, subKey);
+      } else {
+        obj[key] = envValue ?? obj[key];
+      }
+    } else {
+      obj[key] = envValue ?? obj[key];
+    }
+    if (opts.envExpansion && typeof obj[key] === "string") {
+      obj[key] = _expandFromEnv(obj[key]);
+    }
+  }
+  return obj;
+}
+const envExpandRx = /\{\{([^{}]*)\}\}/g;
+function _expandFromEnv(value) {
+  return value.replace(envExpandRx, (match, key) => {
+    return process.env[key] || match;
+  });
+}
+
+const _inlineRuntimeConfig = {
+  "app": {
+    "baseURL": "/",
+    "buildId": "198f3bbe-456c-465c-a686-80fb15869b6c",
+    "buildAssetsDir": "/_nuxt/",
+    "cdnURL": ""
+  },
+  "nitro": {
+    "envPrefix": "NUXT_",
+    "routeRules": {
+      "/__nuxt_error": {
+        "cache": false
+      },
+      "/_nuxt/builds/meta/**": {
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      "/_nuxt/builds/**": {
+        "headers": {
+          "cache-control": "public, max-age=1, immutable"
+        }
+      },
+      "/_nuxt/**": {
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      }
+    }
+  },
+  "public": {
+    "primevue": {
+      "usePrimeVue": true,
+      "autoImport": true,
+      "resolvePath": "",
+      "importPT": "",
+      "importTheme": "",
+      "loadStyles": true,
+      "options": {
+        "ripple": true,
+        "inputVariant": "filled",
+        "theme": {
+          "preset": {
+            "primitive": {
+              "borderRadius": {
+                "none": "0",
+                "xs": "2px",
+                "sm": "4px",
+                "md": "6px",
+                "lg": "8px",
+                "xl": "12px"
+              },
+              "emerald": {
+                "50": "#ecfdf5",
+                "100": "#d1fae5",
+                "200": "#a7f3d0",
+                "300": "#6ee7b7",
+                "400": "#34d399",
+                "500": "#10b981",
+                "600": "#059669",
+                "700": "#047857",
+                "800": "#065f46",
+                "900": "#064e3b",
+                "950": "#022c22"
+              },
+              "green": {
+                "50": "#f0fdf4",
+                "100": "#dcfce7",
+                "200": "#bbf7d0",
+                "300": "#86efac",
+                "400": "#4ade80",
+                "500": "#22c55e",
+                "600": "#16a34a",
+                "700": "#15803d",
+                "800": "#166534",
+                "900": "#14532d",
+                "950": "#052e16"
+              },
+              "lime": {
+                "50": "#f7fee7",
+                "100": "#ecfccb",
+                "200": "#d9f99d",
+                "300": "#bef264",
+                "400": "#a3e635",
+                "500": "#84cc16",
+                "600": "#65a30d",
+                "700": "#4d7c0f",
+                "800": "#3f6212",
+                "900": "#365314",
+                "950": "#1a2e05"
+              },
+              "red": {
+                "50": "#fef2f2",
+                "100": "#fee2e2",
+                "200": "#fecaca",
+                "300": "#fca5a5",
+                "400": "#f87171",
+                "500": "#ef4444",
+                "600": "#dc2626",
+                "700": "#b91c1c",
+                "800": "#991b1b",
+                "900": "#7f1d1d",
+                "950": "#450a0a"
+              },
+              "orange": {
+                "50": "#fff7ed",
+                "100": "#ffedd5",
+                "200": "#fed7aa",
+                "300": "#fdba74",
+                "400": "#fb923c",
+                "500": "#f97316",
+                "600": "#ea580c",
+                "700": "#c2410c",
+                "800": "#9a3412",
+                "900": "#7c2d12",
+                "950": "#431407"
+              },
+              "amber": {
+                "50": "#fffbeb",
+                "100": "#fef3c7",
+                "200": "#fde68a",
+                "300": "#fcd34d",
+                "400": "#fbbf24",
+                "500": "#f59e0b",
+                "600": "#d97706",
+                "700": "#b45309",
+                "800": "#92400e",
+                "900": "#78350f",
+                "950": "#451a03"
+              },
+              "yellow": {
+                "50": "#fefce8",
+                "100": "#fef9c3",
+                "200": "#fef08a",
+                "300": "#fde047",
+                "400": "#facc15",
+                "500": "#eab308",
+                "600": "#ca8a04",
+                "700": "#a16207",
+                "800": "#854d0e",
+                "900": "#713f12",
+                "950": "#422006"
+              },
+              "teal": {
+                "50": "#f0fdfa",
+                "100": "#ccfbf1",
+                "200": "#99f6e4",
+                "300": "#5eead4",
+                "400": "#2dd4bf",
+                "500": "#14b8a6",
+                "600": "#0d9488",
+                "700": "#0f766e",
+                "800": "#115e59",
+                "900": "#134e4a",
+                "950": "#042f2e"
+              },
+              "cyan": {
+                "50": "#ecfeff",
+                "100": "#cffafe",
+                "200": "#a5f3fc",
+                "300": "#67e8f9",
+                "400": "#22d3ee",
+                "500": "#06b6d4",
+                "600": "#0891b2",
+                "700": "#0e7490",
+                "800": "#155e75",
+                "900": "#164e63",
+                "950": "#083344"
+              },
+              "sky": {
+                "50": "#f0f9ff",
+                "100": "#e0f2fe",
+                "200": "#bae6fd",
+                "300": "#7dd3fc",
+                "400": "#38bdf8",
+                "500": "#0ea5e9",
+                "600": "#0284c7",
+                "700": "#0369a1",
+                "800": "#075985",
+                "900": "#0c4a6e",
+                "950": "#082f49"
+              },
+              "blue": {
+                "50": "#eff6ff",
+                "100": "#dbeafe",
+                "200": "#bfdbfe",
+                "300": "#93c5fd",
+                "400": "#60a5fa",
+                "500": "#3b82f6",
+                "600": "#2563eb",
+                "700": "#1d4ed8",
+                "800": "#1e40af",
+                "900": "#1e3a8a",
+                "950": "#172554"
+              },
+              "indigo": {
+                "50": "#eef2ff",
+                "100": "#e0e7ff",
+                "200": "#c7d2fe",
+                "300": "#a5b4fc",
+                "400": "#818cf8",
+                "500": "#6366f1",
+                "600": "#4f46e5",
+                "700": "#4338ca",
+                "800": "#3730a3",
+                "900": "#312e81",
+                "950": "#1e1b4b"
+              },
+              "violet": {
+                "50": "#f5f3ff",
+                "100": "#ede9fe",
+                "200": "#ddd6fe",
+                "300": "#c4b5fd",
+                "400": "#a78bfa",
+                "500": "#8b5cf6",
+                "600": "#7c3aed",
+                "700": "#6d28d9",
+                "800": "#5b21b6",
+                "900": "#4c1d95",
+                "950": "#2e1065"
+              },
+              "purple": {
+                "50": "#faf5ff",
+                "100": "#f3e8ff",
+                "200": "#e9d5ff",
+                "300": "#d8b4fe",
+                "400": "#c084fc",
+                "500": "#a855f7",
+                "600": "#9333ea",
+                "700": "#7e22ce",
+                "800": "#6b21a8",
+                "900": "#581c87",
+                "950": "#3b0764"
+              },
+              "fuchsia": {
+                "50": "#fdf4ff",
+                "100": "#fae8ff",
+                "200": "#f5d0fe",
+                "300": "#f0abfc",
+                "400": "#e879f9",
+                "500": "#d946ef",
+                "600": "#c026d3",
+                "700": "#a21caf",
+                "800": "#86198f",
+                "900": "#701a75",
+                "950": "#4a044e"
+              },
+              "pink": {
+                "50": "#fdf2f8",
+                "100": "#fce7f3",
+                "200": "#fbcfe8",
+                "300": "#f9a8d4",
+                "400": "#f472b6",
+                "500": "#ec4899",
+                "600": "#db2777",
+                "700": "#be185d",
+                "800": "#9d174d",
+                "900": "#831843",
+                "950": "#500724"
+              },
+              "rose": {
+                "50": "#fff1f2",
+                "100": "#ffe4e6",
+                "200": "#fecdd3",
+                "300": "#fda4af",
+                "400": "#fb7185",
+                "500": "#f43f5e",
+                "600": "#e11d48",
+                "700": "#be123c",
+                "800": "#9f1239",
+                "900": "#881337",
+                "950": "#4c0519"
+              },
+              "slate": {
+                "50": "#f8fafc",
+                "100": "#f1f5f9",
+                "200": "#e2e8f0",
+                "300": "#cbd5e1",
+                "400": "#94a3b8",
+                "500": "#64748b",
+                "600": "#475569",
+                "700": "#334155",
+                "800": "#1e293b",
+                "900": "#0f172a",
+                "950": "#020617"
+              },
+              "gray": {
+                "50": "#f9fafb",
+                "100": "#f3f4f6",
+                "200": "#e5e7eb",
+                "300": "#d1d5db",
+                "400": "#9ca3af",
+                "500": "#6b7280",
+                "600": "#4b5563",
+                "700": "#374151",
+                "800": "#1f2937",
+                "900": "#111827",
+                "950": "#030712"
+              },
+              "zinc": {
+                "50": "#fafafa",
+                "100": "#f4f4f5",
+                "200": "#e4e4e7",
+                "300": "#d4d4d8",
+                "400": "#a1a1aa",
+                "500": "#71717a",
+                "600": "#52525b",
+                "700": "#3f3f46",
+                "800": "#27272a",
+                "900": "#18181b",
+                "950": "#09090b"
+              },
+              "neutral": {
+                "50": "#fafafa",
+                "100": "#f5f5f5",
+                "200": "#e5e5e5",
+                "300": "#d4d4d4",
+                "400": "#a3a3a3",
+                "500": "#737373",
+                "600": "#525252",
+                "700": "#404040",
+                "800": "#262626",
+                "900": "#171717",
+                "950": "#0a0a0a"
+              },
+              "stone": {
+                "50": "#fafaf9",
+                "100": "#f5f5f4",
+                "200": "#e7e5e4",
+                "300": "#d6d3d1",
+                "400": "#a8a29e",
+                "500": "#78716c",
+                "600": "#57534e",
+                "700": "#44403c",
+                "800": "#292524",
+                "900": "#1c1917",
+                "950": "#0c0a09"
+              }
+            },
+            "semantic": {
+              "transitionDuration": "0.2s",
+              "focusRing": {
+                "width": "1px",
+                "style": "solid",
+                "color": "{primary.color}",
+                "offset": "2px",
+                "shadow": "none"
+              },
+              "disabledOpacity": "0.6",
+              "iconSize": "1rem",
+              "anchorGutter": "2px",
+              "primary": {
+                "50": "{emerald.50}",
+                "100": "{emerald.100}",
+                "200": "{emerald.200}",
+                "300": "{emerald.300}",
+                "400": "{emerald.400}",
+                "500": "{emerald.500}",
+                "600": "{emerald.600}",
+                "700": "{emerald.700}",
+                "800": "{emerald.800}",
+                "900": "{emerald.900}",
+                "950": "{emerald.950}"
+              },
+              "formField": {
+                "paddingX": "0.75rem",
+                "paddingY": "0.5rem",
+                "sm": {
+                  "fontSize": "0.875rem",
+                  "paddingX": "0.625rem",
+                  "paddingY": "0.375rem"
+                },
+                "lg": {
+                  "fontSize": "1.125rem",
+                  "paddingX": "0.875rem",
+                  "paddingY": "0.625rem"
+                },
+                "borderRadius": "{border.radius.md}",
+                "focusRing": {
+                  "width": "0",
+                  "style": "none",
+                  "color": "transparent",
+                  "offset": "0",
+                  "shadow": "none"
+                },
+                "transitionDuration": "{transition.duration}"
+              },
+              "list": {
+                "padding": "0.25rem 0.25rem",
+                "gap": "2px",
+                "header": {
+                  "padding": "0.5rem 1rem 0.25rem 1rem"
+                },
+                "option": {
+                  "padding": "0.5rem 0.75rem",
+                  "borderRadius": "{border.radius.sm}"
+                },
+                "optionGroup": {
+                  "padding": "0.5rem 0.75rem",
+                  "fontWeight": "600"
+                }
+              },
+              "content": {
+                "borderRadius": "{border.radius.md}"
+              },
+              "mask": {
+                "transitionDuration": "0.3s"
+              },
+              "navigation": {
+                "list": {
+                  "padding": "0.25rem 0.25rem",
+                  "gap": "2px"
+                },
+                "item": {
+                  "padding": "0.5rem 0.75rem",
+                  "borderRadius": "{border.radius.sm}",
+                  "gap": "0.5rem"
+                },
+                "submenuLabel": {
+                  "padding": "0.5rem 0.75rem",
+                  "fontWeight": "600"
+                },
+                "submenuIcon": {
+                  "size": "0.875rem"
+                }
+              },
+              "overlay": {
+                "select": {
+                  "borderRadius": "{border.radius.md}",
+                  "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+                },
+                "popover": {
+                  "borderRadius": "{border.radius.md}",
+                  "padding": "0.75rem",
+                  "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+                },
+                "modal": {
+                  "borderRadius": "{border.radius.xl}",
+                  "padding": "1.25rem",
+                  "shadow": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+                },
+                "navigation": {
+                  "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+                }
+              },
+              "colorScheme": {
+                "light": {
+                  "surface": {
+                    "0": "#ffffff",
+                    "50": "{slate.50}",
+                    "100": "{slate.100}",
+                    "200": "{slate.200}",
+                    "300": "{slate.300}",
+                    "400": "{slate.400}",
+                    "500": "{slate.500}",
+                    "600": "{slate.600}",
+                    "700": "{slate.700}",
+                    "800": "{slate.800}",
+                    "900": "{slate.900}",
+                    "950": "{slate.950}"
+                  },
+                  "primary": {
+                    "color": "{primary.500}",
+                    "contrastColor": "#ffffff",
+                    "hoverColor": "{primary.600}",
+                    "activeColor": "{primary.700}"
+                  },
+                  "highlight": {
+                    "background": "{primary.50}",
+                    "focusBackground": "{primary.100}",
+                    "color": "{primary.700}",
+                    "focusColor": "{primary.800}"
+                  },
+                  "mask": {
+                    "background": "rgba(0,0,0,0.4)",
+                    "color": "{surface.200}"
+                  },
+                  "formField": {
+                    "background": "{surface.0}",
+                    "disabledBackground": "{surface.200}",
+                    "filledBackground": "{surface.50}",
+                    "filledHoverBackground": "{surface.50}",
+                    "filledFocusBackground": "{surface.50}",
+                    "borderColor": "{surface.300}",
+                    "hoverBorderColor": "{surface.400}",
+                    "focusBorderColor": "{primary.color}",
+                    "invalidBorderColor": "{red.400}",
+                    "color": "{surface.700}",
+                    "disabledColor": "{surface.500}",
+                    "placeholderColor": "{surface.500}",
+                    "invalidPlaceholderColor": "{red.600}",
+                    "floatLabelColor": "{surface.500}",
+                    "floatLabelFocusColor": "{primary.600}",
+                    "floatLabelActiveColor": "{surface.500}",
+                    "floatLabelInvalidColor": "{form.field.invalid.placeholder.color}",
+                    "iconColor": "{surface.400}",
+                    "shadow": "0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(18, 18, 23, 0.05)"
+                  },
+                  "text": {
+                    "color": "{surface.700}",
+                    "hoverColor": "{surface.800}",
+                    "mutedColor": "{surface.500}",
+                    "hoverMutedColor": "{surface.600}"
+                  },
+                  "content": {
+                    "background": "{surface.0}",
+                    "hoverBackground": "{surface.100}",
+                    "borderColor": "{surface.200}",
+                    "color": "{text.color}",
+                    "hoverColor": "{text.hover.color}"
+                  },
+                  "overlay": {
+                    "select": {
+                      "background": "{surface.0}",
+                      "borderColor": "{surface.200}",
+                      "color": "{text.color}"
+                    },
+                    "popover": {
+                      "background": "{surface.0}",
+                      "borderColor": "{surface.200}",
+                      "color": "{text.color}"
+                    },
+                    "modal": {
+                      "background": "{surface.0}",
+                      "borderColor": "{surface.200}",
+                      "color": "{text.color}"
+                    }
+                  },
+                  "list": {
+                    "option": {
+                      "focusBackground": "{surface.100}",
+                      "selectedBackground": "{highlight.background}",
+                      "selectedFocusBackground": "{highlight.focus.background}",
+                      "color": "{text.color}",
+                      "focusColor": "{text.hover.color}",
+                      "selectedColor": "{highlight.color}",
+                      "selectedFocusColor": "{highlight.focus.color}",
+                      "icon": {
+                        "color": "{surface.400}",
+                        "focusColor": "{surface.500}"
+                      }
+                    },
+                    "optionGroup": {
+                      "background": "transparent",
+                      "color": "{text.muted.color}"
+                    }
+                  },
+                  "navigation": {
+                    "item": {
+                      "focusBackground": "{surface.100}",
+                      "activeBackground": "{surface.100}",
+                      "color": "{text.color}",
+                      "focusColor": "{text.hover.color}",
+                      "activeColor": "{text.hover.color}",
+                      "icon": {
+                        "color": "{surface.400}",
+                        "focusColor": "{surface.500}",
+                        "activeColor": "{surface.500}"
+                      }
+                    },
+                    "submenuLabel": {
+                      "background": "transparent",
+                      "color": "{text.muted.color}"
+                    },
+                    "submenuIcon": {
+                      "color": "{surface.400}",
+                      "focusColor": "{surface.500}",
+                      "activeColor": "{surface.500}"
+                    }
+                  }
+                },
+                "dark": {
+                  "surface": {
+                    "0": "#ffffff",
+                    "50": "{zinc.50}",
+                    "100": "{zinc.100}",
+                    "200": "{zinc.200}",
+                    "300": "{zinc.300}",
+                    "400": "{zinc.400}",
+                    "500": "{zinc.500}",
+                    "600": "{zinc.600}",
+                    "700": "{zinc.700}",
+                    "800": "{zinc.800}",
+                    "900": "{zinc.900}",
+                    "950": "{zinc.950}"
+                  },
+                  "primary": {
+                    "color": "{primary.400}",
+                    "contrastColor": "{surface.900}",
+                    "hoverColor": "{primary.300}",
+                    "activeColor": "{primary.200}"
+                  },
+                  "highlight": {
+                    "background": "color-mix(in srgb, {primary.400}, transparent 84%)",
+                    "focusBackground": "color-mix(in srgb, {primary.400}, transparent 76%)",
+                    "color": "rgba(255,255,255,.87)",
+                    "focusColor": "rgba(255,255,255,.87)"
+                  },
+                  "mask": {
+                    "background": "rgba(0,0,0,0.6)",
+                    "color": "{surface.200}"
+                  },
+                  "formField": {
+                    "background": "{surface.950}",
+                    "disabledBackground": "{surface.700}",
+                    "filledBackground": "{surface.800}",
+                    "filledHoverBackground": "{surface.800}",
+                    "filledFocusBackground": "{surface.800}",
+                    "borderColor": "{surface.600}",
+                    "hoverBorderColor": "{surface.500}",
+                    "focusBorderColor": "{primary.color}",
+                    "invalidBorderColor": "{red.300}",
+                    "color": "{surface.0}",
+                    "disabledColor": "{surface.400}",
+                    "placeholderColor": "{surface.400}",
+                    "invalidPlaceholderColor": "{red.400}",
+                    "floatLabelColor": "{surface.400}",
+                    "floatLabelFocusColor": "{primary.color}",
+                    "floatLabelActiveColor": "{surface.400}",
+                    "floatLabelInvalidColor": "{form.field.invalid.placeholder.color}",
+                    "iconColor": "{surface.400}",
+                    "shadow": "0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(18, 18, 23, 0.05)"
+                  },
+                  "text": {
+                    "color": "{surface.0}",
+                    "hoverColor": "{surface.0}",
+                    "mutedColor": "{surface.400}",
+                    "hoverMutedColor": "{surface.300}"
+                  },
+                  "content": {
+                    "background": "{surface.900}",
+                    "hoverBackground": "{surface.800}",
+                    "borderColor": "{surface.700}",
+                    "color": "{text.color}",
+                    "hoverColor": "{text.hover.color}"
+                  },
+                  "overlay": {
+                    "select": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.700}",
+                      "color": "{text.color}"
+                    },
+                    "popover": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.700}",
+                      "color": "{text.color}"
+                    },
+                    "modal": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.700}",
+                      "color": "{text.color}"
+                    }
+                  },
+                  "list": {
+                    "option": {
+                      "focusBackground": "{surface.800}",
+                      "selectedBackground": "{highlight.background}",
+                      "selectedFocusBackground": "{highlight.focus.background}",
+                      "color": "{text.color}",
+                      "focusColor": "{text.hover.color}",
+                      "selectedColor": "{highlight.color}",
+                      "selectedFocusColor": "{highlight.focus.color}",
+                      "icon": {
+                        "color": "{surface.500}",
+                        "focusColor": "{surface.400}"
+                      }
+                    },
+                    "optionGroup": {
+                      "background": "transparent",
+                      "color": "{text.muted.color}"
+                    }
+                  },
+                  "navigation": {
+                    "item": {
+                      "focusBackground": "{surface.800}",
+                      "activeBackground": "{surface.800}",
+                      "color": "{text.color}",
+                      "focusColor": "{text.hover.color}",
+                      "activeColor": "{text.hover.color}",
+                      "icon": {
+                        "color": "{surface.500}",
+                        "focusColor": "{surface.400}",
+                        "activeColor": "{surface.400}"
+                      }
+                    },
+                    "submenuLabel": {
+                      "background": "transparent",
+                      "color": "{text.muted.color}"
+                    },
+                    "submenuIcon": {
+                      "color": "{surface.500}",
+                      "focusColor": "{surface.400}",
+                      "activeColor": "{surface.400}"
+                    }
+                  }
+                }
+              }
+            },
+            "components": {
+              "accordion": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "panel": {
+                  "borderWidth": "0 0 1px 0",
+                  "borderColor": "{content.border.color}"
+                },
+                "header": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "activeColor": "{text.color}",
+                  "activeHoverColor": "{text.color}",
+                  "padding": "1.125rem",
+                  "fontWeight": "600",
+                  "borderRadius": "0",
+                  "borderWidth": "0",
+                  "borderColor": "{content.border.color}",
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.background}",
+                  "activeBackground": "{content.background}",
+                  "activeHoverBackground": "{content.background}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "toggleIcon": {
+                    "color": "{text.muted.color}",
+                    "hoverColor": "{text.color}",
+                    "activeColor": "{text.color}",
+                    "activeHoverColor": "{text.color}"
+                  },
+                  "first": {
+                    "topBorderRadius": "{content.border.radius}",
+                    "borderWidth": "0"
+                  },
+                  "last": {
+                    "bottomBorderRadius": "{content.border.radius}",
+                    "activeBottomBorderRadius": "0"
+                  }
+                },
+                "content": {
+                  "borderWidth": "0",
+                  "borderColor": "{content.border.color}",
+                  "background": "{content.background}",
+                  "color": "{text.color}",
+                  "padding": "0 1.125rem 1.125rem 1.125rem"
+                }
+              },
+              "autocomplete": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}"
+                },
+                "overlay": {
+                  "background": "{overlay.select.background}",
+                  "borderColor": "{overlay.select.border.color}",
+                  "borderRadius": "{overlay.select.border.radius}",
+                  "color": "{overlay.select.color}",
+                  "shadow": "{overlay.select.shadow}"
+                },
+                "list": {
+                  "padding": "{list.padding}",
+                  "gap": "{list.gap}"
+                },
+                "option": {
+                  "focusBackground": "{list.option.focus.background}",
+                  "selectedBackground": "{list.option.selected.background}",
+                  "selectedFocusBackground": "{list.option.selected.focus.background}",
+                  "color": "{list.option.color}",
+                  "focusColor": "{list.option.focus.color}",
+                  "selectedColor": "{list.option.selected.color}",
+                  "selectedFocusColor": "{list.option.selected.focus.color}",
+                  "padding": "{list.option.padding}",
+                  "borderRadius": "{list.option.border.radius}"
+                },
+                "optionGroup": {
+                  "background": "{list.option.group.background}",
+                  "color": "{list.option.group.color}",
+                  "fontWeight": "{list.option.group.font.weight}",
+                  "padding": "{list.option.group.padding}"
+                },
+                "dropdown": {
+                  "width": "2.5rem",
+                  "sm": {
+                    "width": "2rem"
+                  },
+                  "lg": {
+                    "width": "3rem"
+                  },
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.border.color}",
+                  "activeBorderColor": "{form.field.border.color}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "chip": {
+                  "borderRadius": "{border.radius.sm}"
+                },
+                "emptyMessage": {
+                  "padding": "{list.option.padding}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "chip": {
+                      "focusBackground": "{surface.200}",
+                      "focusColor": "{surface.800}"
+                    },
+                    "dropdown": {
+                      "background": "{surface.100}",
+                      "hoverBackground": "{surface.200}",
+                      "activeBackground": "{surface.300}",
+                      "color": "{surface.600}",
+                      "hoverColor": "{surface.700}",
+                      "activeColor": "{surface.800}"
+                    }
+                  },
+                  "dark": {
+                    "chip": {
+                      "focusBackground": "{surface.700}",
+                      "focusColor": "{surface.0}"
+                    },
+                    "dropdown": {
+                      "background": "{surface.800}",
+                      "hoverBackground": "{surface.700}",
+                      "activeBackground": "{surface.600}",
+                      "color": "{surface.300}",
+                      "hoverColor": "{surface.200}",
+                      "activeColor": "{surface.100}"
+                    }
+                  }
+                }
+              },
+              "avatar": {
+                "root": {
+                  "width": "2rem",
+                  "height": "2rem",
+                  "fontSize": "1rem",
+                  "background": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "icon": {
+                  "size": "1rem"
+                },
+                "group": {
+                  "borderColor": "{content.background}",
+                  "offset": "-0.75rem"
+                },
+                "lg": {
+                  "width": "3rem",
+                  "height": "3rem",
+                  "fontSize": "1.5rem",
+                  "icon": {
+                    "size": "1.5rem"
+                  },
+                  "group": {
+                    "offset": "-1rem"
+                  }
+                },
+                "xl": {
+                  "width": "4rem",
+                  "height": "4rem",
+                  "fontSize": "2rem",
+                  "icon": {
+                    "size": "2rem"
+                  },
+                  "group": {
+                    "offset": "-1.5rem"
+                  }
+                }
+              },
+              "badge": {
+                "root": {
+                  "borderRadius": "{border.radius.md}",
+                  "padding": "0 0.5rem",
+                  "fontSize": "0.75rem",
+                  "fontWeight": "700",
+                  "minWidth": "1.5rem",
+                  "height": "1.5rem"
+                },
+                "dot": {
+                  "size": "0.5rem"
+                },
+                "sm": {
+                  "fontSize": "0.625rem",
+                  "minWidth": "1.25rem",
+                  "height": "1.25rem"
+                },
+                "lg": {
+                  "fontSize": "0.875rem",
+                  "minWidth": "1.75rem",
+                  "height": "1.75rem"
+                },
+                "xl": {
+                  "fontSize": "1rem",
+                  "minWidth": "2rem",
+                  "height": "2rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "primary": {
+                      "background": "{primary.color}",
+                      "color": "{primary.contrast.color}"
+                    },
+                    "secondary": {
+                      "background": "{surface.100}",
+                      "color": "{surface.600}"
+                    },
+                    "success": {
+                      "background": "{green.500}",
+                      "color": "{surface.0}"
+                    },
+                    "info": {
+                      "background": "{sky.500}",
+                      "color": "{surface.0}"
+                    },
+                    "warn": {
+                      "background": "{orange.500}",
+                      "color": "{surface.0}"
+                    },
+                    "danger": {
+                      "background": "{red.500}",
+                      "color": "{surface.0}"
+                    },
+                    "contrast": {
+                      "background": "{surface.950}",
+                      "color": "{surface.0}"
+                    }
+                  },
+                  "dark": {
+                    "primary": {
+                      "background": "{primary.color}",
+                      "color": "{primary.contrast.color}"
+                    },
+                    "secondary": {
+                      "background": "{surface.800}",
+                      "color": "{surface.300}"
+                    },
+                    "success": {
+                      "background": "{green.400}",
+                      "color": "{green.950}"
+                    },
+                    "info": {
+                      "background": "{sky.400}",
+                      "color": "{sky.950}"
+                    },
+                    "warn": {
+                      "background": "{orange.400}",
+                      "color": "{orange.950}"
+                    },
+                    "danger": {
+                      "background": "{red.400}",
+                      "color": "{red.950}"
+                    },
+                    "contrast": {
+                      "background": "{surface.0}",
+                      "color": "{surface.950}"
+                    }
+                  }
+                }
+              },
+              "blockui": {
+                "root": {
+                  "borderRadius": "{content.border.radius}"
+                }
+              },
+              "breadcrumb": {
+                "root": {
+                  "padding": "1rem",
+                  "background": "{content.background}",
+                  "gap": "0.5rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "item": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "gap": "{navigation.item.gap}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "hoverColor": "{navigation.item.icon.focus.color}"
+                  },
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "separator": {
+                  "color": "{navigation.item.icon.color}"
+                }
+              },
+              "button": {
+                "root": {
+                  "borderRadius": "{form.field.border.radius}",
+                  "roundedBorderRadius": "2rem",
+                  "gap": "0.5rem",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "iconOnlyWidth": "2.5rem",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}",
+                    "iconOnlyWidth": "2rem"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}",
+                    "iconOnlyWidth": "3rem"
+                  },
+                  "label": {
+                    "fontWeight": "500"
+                  },
+                  "raisedShadow": "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "offset": "{focus.ring.offset}"
+                  },
+                  "badgeSize": "1rem",
+                  "transitionDuration": "{form.field.transition.duration}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "primary": {
+                        "background": "{primary.color}",
+                        "hoverBackground": "{primary.hover.color}",
+                        "activeBackground": "{primary.active.color}",
+                        "borderColor": "{primary.color}",
+                        "hoverBorderColor": "{primary.hover.color}",
+                        "activeBorderColor": "{primary.active.color}",
+                        "color": "{primary.contrast.color}",
+                        "hoverColor": "{primary.contrast.color}",
+                        "activeColor": "{primary.contrast.color}",
+                        "focusRing": {
+                          "color": "{primary.color}",
+                          "shadow": "none"
+                        }
+                      },
+                      "secondary": {
+                        "background": "{surface.100}",
+                        "hoverBackground": "{surface.200}",
+                        "activeBackground": "{surface.300}",
+                        "borderColor": "{surface.100}",
+                        "hoverBorderColor": "{surface.200}",
+                        "activeBorderColor": "{surface.300}",
+                        "color": "{surface.600}",
+                        "hoverColor": "{surface.700}",
+                        "activeColor": "{surface.800}",
+                        "focusRing": {
+                          "color": "{surface.600}",
+                          "shadow": "none"
+                        }
+                      },
+                      "info": {
+                        "background": "{sky.500}",
+                        "hoverBackground": "{sky.600}",
+                        "activeBackground": "{sky.700}",
+                        "borderColor": "{sky.500}",
+                        "hoverBorderColor": "{sky.600}",
+                        "activeBorderColor": "{sky.700}",
+                        "color": "#ffffff",
+                        "hoverColor": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "focusRing": {
+                          "color": "{sky.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "success": {
+                        "background": "{green.500}",
+                        "hoverBackground": "{green.600}",
+                        "activeBackground": "{green.700}",
+                        "borderColor": "{green.500}",
+                        "hoverBorderColor": "{green.600}",
+                        "activeBorderColor": "{green.700}",
+                        "color": "#ffffff",
+                        "hoverColor": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "focusRing": {
+                          "color": "{green.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "warn": {
+                        "background": "{orange.500}",
+                        "hoverBackground": "{orange.600}",
+                        "activeBackground": "{orange.700}",
+                        "borderColor": "{orange.500}",
+                        "hoverBorderColor": "{orange.600}",
+                        "activeBorderColor": "{orange.700}",
+                        "color": "#ffffff",
+                        "hoverColor": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "focusRing": {
+                          "color": "{orange.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "help": {
+                        "background": "{purple.500}",
+                        "hoverBackground": "{purple.600}",
+                        "activeBackground": "{purple.700}",
+                        "borderColor": "{purple.500}",
+                        "hoverBorderColor": "{purple.600}",
+                        "activeBorderColor": "{purple.700}",
+                        "color": "#ffffff",
+                        "hoverColor": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "focusRing": {
+                          "color": "{purple.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "danger": {
+                        "background": "{red.500}",
+                        "hoverBackground": "{red.600}",
+                        "activeBackground": "{red.700}",
+                        "borderColor": "{red.500}",
+                        "hoverBorderColor": "{red.600}",
+                        "activeBorderColor": "{red.700}",
+                        "color": "#ffffff",
+                        "hoverColor": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "focusRing": {
+                          "color": "{red.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "contrast": {
+                        "background": "{surface.950}",
+                        "hoverBackground": "{surface.900}",
+                        "activeBackground": "{surface.800}",
+                        "borderColor": "{surface.950}",
+                        "hoverBorderColor": "{surface.900}",
+                        "activeBorderColor": "{surface.800}",
+                        "color": "{surface.0}",
+                        "hoverColor": "{surface.0}",
+                        "activeColor": "{surface.0}",
+                        "focusRing": {
+                          "color": "{surface.950}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "outlined": {
+                      "primary": {
+                        "hoverBackground": "{primary.50}",
+                        "activeBackground": "{primary.100}",
+                        "borderColor": "{primary.200}",
+                        "color": "{primary.color}"
+                      },
+                      "secondary": {
+                        "hoverBackground": "{surface.50}",
+                        "activeBackground": "{surface.100}",
+                        "borderColor": "{surface.200}",
+                        "color": "{surface.500}"
+                      },
+                      "success": {
+                        "hoverBackground": "{green.50}",
+                        "activeBackground": "{green.100}",
+                        "borderColor": "{green.200}",
+                        "color": "{green.500}"
+                      },
+                      "info": {
+                        "hoverBackground": "{sky.50}",
+                        "activeBackground": "{sky.100}",
+                        "borderColor": "{sky.200}",
+                        "color": "{sky.500}"
+                      },
+                      "warn": {
+                        "hoverBackground": "{orange.50}",
+                        "activeBackground": "{orange.100}",
+                        "borderColor": "{orange.200}",
+                        "color": "{orange.500}"
+                      },
+                      "help": {
+                        "hoverBackground": "{purple.50}",
+                        "activeBackground": "{purple.100}",
+                        "borderColor": "{purple.200}",
+                        "color": "{purple.500}"
+                      },
+                      "danger": {
+                        "hoverBackground": "{red.50}",
+                        "activeBackground": "{red.100}",
+                        "borderColor": "{red.200}",
+                        "color": "{red.500}"
+                      },
+                      "contrast": {
+                        "hoverBackground": "{surface.50}",
+                        "activeBackground": "{surface.100}",
+                        "borderColor": "{surface.700}",
+                        "color": "{surface.950}"
+                      },
+                      "plain": {
+                        "hoverBackground": "{surface.50}",
+                        "activeBackground": "{surface.100}",
+                        "borderColor": "{surface.200}",
+                        "color": "{surface.700}"
+                      }
+                    },
+                    "text": {
+                      "primary": {
+                        "hoverBackground": "{primary.50}",
+                        "activeBackground": "{primary.100}",
+                        "color": "{primary.color}"
+                      },
+                      "secondary": {
+                        "hoverBackground": "{surface.50}",
+                        "activeBackground": "{surface.100}",
+                        "color": "{surface.500}"
+                      },
+                      "success": {
+                        "hoverBackground": "{green.50}",
+                        "activeBackground": "{green.100}",
+                        "color": "{green.500}"
+                      },
+                      "info": {
+                        "hoverBackground": "{sky.50}",
+                        "activeBackground": "{sky.100}",
+                        "color": "{sky.500}"
+                      },
+                      "warn": {
+                        "hoverBackground": "{orange.50}",
+                        "activeBackground": "{orange.100}",
+                        "color": "{orange.500}"
+                      },
+                      "help": {
+                        "hoverBackground": "{purple.50}",
+                        "activeBackground": "{purple.100}",
+                        "color": "{purple.500}"
+                      },
+                      "danger": {
+                        "hoverBackground": "{red.50}",
+                        "activeBackground": "{red.100}",
+                        "color": "{red.500}"
+                      },
+                      "contrast": {
+                        "hoverBackground": "{surface.50}",
+                        "activeBackground": "{surface.100}",
+                        "color": "{surface.950}"
+                      },
+                      "plain": {
+                        "hoverBackground": "{surface.50}",
+                        "activeBackground": "{surface.100}",
+                        "color": "{surface.700}"
+                      }
+                    },
+                    "link": {
+                      "color": "{primary.color}",
+                      "hoverColor": "{primary.color}",
+                      "activeColor": "{primary.color}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "primary": {
+                        "background": "{primary.color}",
+                        "hoverBackground": "{primary.hover.color}",
+                        "activeBackground": "{primary.active.color}",
+                        "borderColor": "{primary.color}",
+                        "hoverBorderColor": "{primary.hover.color}",
+                        "activeBorderColor": "{primary.active.color}",
+                        "color": "{primary.contrast.color}",
+                        "hoverColor": "{primary.contrast.color}",
+                        "activeColor": "{primary.contrast.color}",
+                        "focusRing": {
+                          "color": "{primary.color}",
+                          "shadow": "none"
+                        }
+                      },
+                      "secondary": {
+                        "background": "{surface.800}",
+                        "hoverBackground": "{surface.700}",
+                        "activeBackground": "{surface.600}",
+                        "borderColor": "{surface.800}",
+                        "hoverBorderColor": "{surface.700}",
+                        "activeBorderColor": "{surface.600}",
+                        "color": "{surface.300}",
+                        "hoverColor": "{surface.200}",
+                        "activeColor": "{surface.100}",
+                        "focusRing": {
+                          "color": "{surface.300}",
+                          "shadow": "none"
+                        }
+                      },
+                      "info": {
+                        "background": "{sky.400}",
+                        "hoverBackground": "{sky.300}",
+                        "activeBackground": "{sky.200}",
+                        "borderColor": "{sky.400}",
+                        "hoverBorderColor": "{sky.300}",
+                        "activeBorderColor": "{sky.200}",
+                        "color": "{sky.950}",
+                        "hoverColor": "{sky.950}",
+                        "activeColor": "{sky.950}",
+                        "focusRing": {
+                          "color": "{sky.400}",
+                          "shadow": "none"
+                        }
+                      },
+                      "success": {
+                        "background": "{green.400}",
+                        "hoverBackground": "{green.300}",
+                        "activeBackground": "{green.200}",
+                        "borderColor": "{green.400}",
+                        "hoverBorderColor": "{green.300}",
+                        "activeBorderColor": "{green.200}",
+                        "color": "{green.950}",
+                        "hoverColor": "{green.950}",
+                        "activeColor": "{green.950}",
+                        "focusRing": {
+                          "color": "{green.400}",
+                          "shadow": "none"
+                        }
+                      },
+                      "warn": {
+                        "background": "{orange.400}",
+                        "hoverBackground": "{orange.300}",
+                        "activeBackground": "{orange.200}",
+                        "borderColor": "{orange.400}",
+                        "hoverBorderColor": "{orange.300}",
+                        "activeBorderColor": "{orange.200}",
+                        "color": "{orange.950}",
+                        "hoverColor": "{orange.950}",
+                        "activeColor": "{orange.950}",
+                        "focusRing": {
+                          "color": "{orange.400}",
+                          "shadow": "none"
+                        }
+                      },
+                      "help": {
+                        "background": "{purple.400}",
+                        "hoverBackground": "{purple.300}",
+                        "activeBackground": "{purple.200}",
+                        "borderColor": "{purple.400}",
+                        "hoverBorderColor": "{purple.300}",
+                        "activeBorderColor": "{purple.200}",
+                        "color": "{purple.950}",
+                        "hoverColor": "{purple.950}",
+                        "activeColor": "{purple.950}",
+                        "focusRing": {
+                          "color": "{purple.400}",
+                          "shadow": "none"
+                        }
+                      },
+                      "danger": {
+                        "background": "{red.400}",
+                        "hoverBackground": "{red.300}",
+                        "activeBackground": "{red.200}",
+                        "borderColor": "{red.400}",
+                        "hoverBorderColor": "{red.300}",
+                        "activeBorderColor": "{red.200}",
+                        "color": "{red.950}",
+                        "hoverColor": "{red.950}",
+                        "activeColor": "{red.950}",
+                        "focusRing": {
+                          "color": "{red.400}",
+                          "shadow": "none"
+                        }
+                      },
+                      "contrast": {
+                        "background": "{surface.0}",
+                        "hoverBackground": "{surface.100}",
+                        "activeBackground": "{surface.200}",
+                        "borderColor": "{surface.0}",
+                        "hoverBorderColor": "{surface.100}",
+                        "activeBorderColor": "{surface.200}",
+                        "color": "{surface.950}",
+                        "hoverColor": "{surface.950}",
+                        "activeColor": "{surface.950}",
+                        "focusRing": {
+                          "color": "{surface.0}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "outlined": {
+                      "primary": {
+                        "hoverBackground": "color-mix(in srgb, {primary.color}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {primary.color}, transparent 84%)",
+                        "borderColor": "{primary.700}",
+                        "color": "{primary.color}"
+                      },
+                      "secondary": {
+                        "hoverBackground": "rgba(255,255,255,0.04)",
+                        "activeBackground": "rgba(255,255,255,0.16)",
+                        "borderColor": "{surface.700}",
+                        "color": "{surface.400}"
+                      },
+                      "success": {
+                        "hoverBackground": "color-mix(in srgb, {green.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {green.400}, transparent 84%)",
+                        "borderColor": "{green.700}",
+                        "color": "{green.400}"
+                      },
+                      "info": {
+                        "hoverBackground": "color-mix(in srgb, {sky.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {sky.400}, transparent 84%)",
+                        "borderColor": "{sky.700}",
+                        "color": "{sky.400}"
+                      },
+                      "warn": {
+                        "hoverBackground": "color-mix(in srgb, {orange.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {orange.400}, transparent 84%)",
+                        "borderColor": "{orange.700}",
+                        "color": "{orange.400}"
+                      },
+                      "help": {
+                        "hoverBackground": "color-mix(in srgb, {purple.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {purple.400}, transparent 84%)",
+                        "borderColor": "{purple.700}",
+                        "color": "{purple.400}"
+                      },
+                      "danger": {
+                        "hoverBackground": "color-mix(in srgb, {red.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {red.400}, transparent 84%)",
+                        "borderColor": "{red.700}",
+                        "color": "{red.400}"
+                      },
+                      "contrast": {
+                        "hoverBackground": "{surface.800}",
+                        "activeBackground": "{surface.700}",
+                        "borderColor": "{surface.500}",
+                        "color": "{surface.0}"
+                      },
+                      "plain": {
+                        "hoverBackground": "{surface.800}",
+                        "activeBackground": "{surface.700}",
+                        "borderColor": "{surface.600}",
+                        "color": "{surface.0}"
+                      }
+                    },
+                    "text": {
+                      "primary": {
+                        "hoverBackground": "color-mix(in srgb, {primary.color}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {primary.color}, transparent 84%)",
+                        "color": "{primary.color}"
+                      },
+                      "secondary": {
+                        "hoverBackground": "{surface.800}",
+                        "activeBackground": "{surface.700}",
+                        "color": "{surface.400}"
+                      },
+                      "success": {
+                        "hoverBackground": "color-mix(in srgb, {green.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {green.400}, transparent 84%)",
+                        "color": "{green.400}"
+                      },
+                      "info": {
+                        "hoverBackground": "color-mix(in srgb, {sky.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {sky.400}, transparent 84%)",
+                        "color": "{sky.400}"
+                      },
+                      "warn": {
+                        "hoverBackground": "color-mix(in srgb, {orange.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {orange.400}, transparent 84%)",
+                        "color": "{orange.400}"
+                      },
+                      "help": {
+                        "hoverBackground": "color-mix(in srgb, {purple.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {purple.400}, transparent 84%)",
+                        "color": "{purple.400}"
+                      },
+                      "danger": {
+                        "hoverBackground": "color-mix(in srgb, {red.400}, transparent 96%)",
+                        "activeBackground": "color-mix(in srgb, {red.400}, transparent 84%)",
+                        "color": "{red.400}"
+                      },
+                      "contrast": {
+                        "hoverBackground": "{surface.800}",
+                        "activeBackground": "{surface.700}",
+                        "color": "{surface.0}"
+                      },
+                      "plain": {
+                        "hoverBackground": "{surface.800}",
+                        "activeBackground": "{surface.700}",
+                        "color": "{surface.0}"
+                      }
+                    },
+                    "link": {
+                      "color": "{primary.color}",
+                      "hoverColor": "{primary.color}",
+                      "activeColor": "{primary.color}"
+                    }
+                  }
+                }
+              },
+              "card": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderRadius": "{border.radius.xl}",
+                  "color": "{content.color}",
+                  "shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)"
+                },
+                "body": {
+                  "padding": "1.25rem",
+                  "gap": "0.5rem"
+                },
+                "caption": {
+                  "gap": "0.5rem"
+                },
+                "title": {
+                  "fontSize": "1.25rem",
+                  "fontWeight": "500"
+                },
+                "subtitle": {
+                  "color": "{text.muted.color}"
+                }
+              },
+              "carousel": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "content": {
+                  "gap": "0.25rem"
+                },
+                "indicatorList": {
+                  "padding": "1rem",
+                  "gap": "0.5rem"
+                },
+                "indicator": {
+                  "width": "2rem",
+                  "height": "0.5rem",
+                  "borderRadius": "{content.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "colorScheme": {
+                  "light": {
+                    "indicator": {
+                      "background": "{surface.200}",
+                      "hoverBackground": "{surface.300}",
+                      "activeBackground": "{primary.color}"
+                    }
+                  },
+                  "dark": {
+                    "indicator": {
+                      "background": "{surface.700}",
+                      "hoverBackground": "{surface.600}",
+                      "activeBackground": "{primary.color}"
+                    }
+                  }
+                }
+              },
+              "cascadeselect": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}"
+                  }
+                },
+                "dropdown": {
+                  "width": "2.5rem",
+                  "color": "{form.field.icon.color}"
+                },
+                "overlay": {
+                  "background": "{overlay.select.background}",
+                  "borderColor": "{overlay.select.border.color}",
+                  "borderRadius": "{overlay.select.border.radius}",
+                  "color": "{overlay.select.color}",
+                  "shadow": "{overlay.select.shadow}"
+                },
+                "list": {
+                  "padding": "{list.padding}",
+                  "gap": "{list.gap}",
+                  "mobileIndent": "1rem"
+                },
+                "option": {
+                  "focusBackground": "{list.option.focus.background}",
+                  "selectedBackground": "{list.option.selected.background}",
+                  "selectedFocusBackground": "{list.option.selected.focus.background}",
+                  "color": "{list.option.color}",
+                  "focusColor": "{list.option.focus.color}",
+                  "selectedColor": "{list.option.selected.color}",
+                  "selectedFocusColor": "{list.option.selected.focus.color}",
+                  "padding": "{list.option.padding}",
+                  "borderRadius": "{list.option.border.radius}",
+                  "icon": {
+                    "color": "{list.option.icon.color}",
+                    "focusColor": "{list.option.icon.focus.color}",
+                    "size": "0.875rem"
+                  }
+                },
+                "clearIcon": {
+                  "color": "{form.field.icon.color}"
+                }
+              },
+              "checkbox": {
+                "root": {
+                  "borderRadius": "{border.radius.sm}",
+                  "width": "1.25rem",
+                  "height": "1.25rem",
+                  "background": "{form.field.background}",
+                  "checkedBackground": "{primary.color}",
+                  "checkedHoverBackground": "{primary.hover.color}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.border.color}",
+                  "checkedBorderColor": "{primary.color}",
+                  "checkedHoverBorderColor": "{primary.hover.color}",
+                  "checkedFocusBorderColor": "{primary.color}",
+                  "checkedDisabledBorderColor": "{form.field.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "shadow": "{form.field.shadow}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "width": "1rem",
+                    "height": "1rem"
+                  },
+                  "lg": {
+                    "width": "1.5rem",
+                    "height": "1.5rem"
+                  }
+                },
+                "icon": {
+                  "size": "0.875rem",
+                  "color": "{form.field.color}",
+                  "checkedColor": "{primary.contrast.color}",
+                  "checkedHoverColor": "{primary.contrast.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "sm": {
+                    "size": "0.75rem"
+                  },
+                  "lg": {
+                    "size": "1rem"
+                  }
+                }
+              },
+              "chip": {
+                "root": {
+                  "borderRadius": "16px",
+                  "paddingX": "0.75rem",
+                  "paddingY": "0.5rem",
+                  "gap": "0.5rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "image": {
+                  "width": "2rem",
+                  "height": "2rem"
+                },
+                "icon": {
+                  "size": "1rem"
+                },
+                "removeIcon": {
+                  "size": "1rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  }
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "background": "{surface.100}",
+                      "color": "{surface.800}"
+                    },
+                    "icon": {
+                      "color": "{surface.800}"
+                    },
+                    "removeIcon": {
+                      "color": "{surface.800}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "background": "{surface.800}",
+                      "color": "{surface.0}"
+                    },
+                    "icon": {
+                      "color": "{surface.0}"
+                    },
+                    "removeIcon": {
+                      "color": "{surface.0}"
+                    }
+                  }
+                }
+              },
+              "colorpicker": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "preview": {
+                  "width": "1.5rem",
+                  "height": "1.5rem",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "panel": {
+                  "shadow": "{overlay.popover.shadow}",
+                  "borderRadius": "{overlay.popover.borderRadius}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "panel": {
+                      "background": "{surface.800}",
+                      "borderColor": "{surface.900}"
+                    },
+                    "handle": {
+                      "color": "{surface.0}"
+                    }
+                  },
+                  "dark": {
+                    "panel": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.700}"
+                    },
+                    "handle": {
+                      "color": "{surface.0}"
+                    }
+                  }
+                }
+              },
+              "confirmdialog": {
+                "icon": {
+                  "size": "2rem",
+                  "color": "{overlay.modal.color}"
+                },
+                "content": {
+                  "gap": "1rem"
+                }
+              },
+              "confirmpopup": {
+                "root": {
+                  "background": "{overlay.popover.background}",
+                  "borderColor": "{overlay.popover.border.color}",
+                  "color": "{overlay.popover.color}",
+                  "borderRadius": "{overlay.popover.border.radius}",
+                  "shadow": "{overlay.popover.shadow}",
+                  "gutter": "10px",
+                  "arrowOffset": "1.25rem"
+                },
+                "content": {
+                  "padding": "{overlay.popover.padding}",
+                  "gap": "1rem"
+                },
+                "icon": {
+                  "size": "1.5rem",
+                  "color": "{overlay.popover.color}"
+                },
+                "footer": {
+                  "gap": "0.5rem",
+                  "padding": "0 {overlay.popover.padding} {overlay.popover.padding} {overlay.popover.padding}"
+                }
+              },
+              "contextmenu": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "shadow": "{overlay.navigation.shadow}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "list": {
+                  "padding": "{navigation.list.padding}",
+                  "gap": "{navigation.list.gap}"
+                },
+                "item": {
+                  "focusBackground": "{navigation.item.focus.background}",
+                  "activeBackground": "{navigation.item.active.background}",
+                  "color": "{navigation.item.color}",
+                  "focusColor": "{navigation.item.focus.color}",
+                  "activeColor": "{navigation.item.active.color}",
+                  "padding": "{navigation.item.padding}",
+                  "borderRadius": "{navigation.item.border.radius}",
+                  "gap": "{navigation.item.gap}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "focusColor": "{navigation.item.icon.focus.color}",
+                    "activeColor": "{navigation.item.icon.active.color}"
+                  }
+                },
+                "submenu": {
+                  "mobileIndent": "1rem"
+                },
+                "submenuIcon": {
+                  "size": "{navigation.submenu.icon.size}",
+                  "color": "{navigation.submenu.icon.color}",
+                  "focusColor": "{navigation.submenu.icon.focus.color}",
+                  "activeColor": "{navigation.submenu.icon.active.color}"
+                },
+                "separator": {
+                  "borderColor": "{content.border.color}"
+                }
+              },
+              "datatable": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "header": {
+                  "background": "{content.background}",
+                  "borderColor": "{datatable.border.color}",
+                  "color": "{content.color}",
+                  "borderWidth": "0 0 1px 0",
+                  "padding": "0.75rem 1rem",
+                  "sm": {
+                    "padding": "0.375rem 0.5rem"
+                  },
+                  "lg": {
+                    "padding": "1rem 1.25rem"
+                  }
+                },
+                "headerCell": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "borderColor": "{datatable.border.color}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "selectedColor": "{highlight.color}",
+                  "gap": "0.5rem",
+                  "padding": "0.75rem 1rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "sm": {
+                    "padding": "0.375rem 0.5rem"
+                  },
+                  "lg": {
+                    "padding": "1rem 1.25rem"
+                  }
+                },
+                "columnTitle": {
+                  "fontWeight": "600"
+                },
+                "row": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "selectedColor": "{highlight.color}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "bodyCell": {
+                  "borderColor": "{datatable.border.color}",
+                  "padding": "0.75rem 1rem",
+                  "sm": {
+                    "padding": "0.375rem 0.5rem"
+                  },
+                  "lg": {
+                    "padding": "1rem 1.25rem"
+                  }
+                },
+                "footerCell": {
+                  "background": "{content.background}",
+                  "borderColor": "{datatable.border.color}",
+                  "color": "{content.color}",
+                  "padding": "0.75rem 1rem",
+                  "sm": {
+                    "padding": "0.375rem 0.5rem"
+                  },
+                  "lg": {
+                    "padding": "1rem 1.25rem"
+                  }
+                },
+                "columnFooter": {
+                  "fontWeight": "600"
+                },
+                "footer": {
+                  "background": "{content.background}",
+                  "borderColor": "{datatable.border.color}",
+                  "color": "{content.color}",
+                  "borderWidth": "0 0 1px 0",
+                  "padding": "0.75rem 1rem",
+                  "sm": {
+                    "padding": "0.375rem 0.5rem"
+                  },
+                  "lg": {
+                    "padding": "1rem 1.25rem"
+                  }
+                },
+                "dropPoint": {
+                  "color": "{primary.color}"
+                },
+                "columnResizer": {
+                  "width": "0.5rem"
+                },
+                "resizeIndicator": {
+                  "width": "1px",
+                  "color": "{primary.color}"
+                },
+                "sortIcon": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "size": "0.875rem"
+                },
+                "loadingIcon": {
+                  "size": "2rem"
+                },
+                "rowToggleButton": {
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedHoverBackground": "{content.background}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "selectedHoverColor": "{primary.color}",
+                  "size": "1.75rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "filter": {
+                  "inlineGap": "0.5rem",
+                  "overlaySelect": {
+                    "background": "{overlay.select.background}",
+                    "borderColor": "{overlay.select.border.color}",
+                    "borderRadius": "{overlay.select.border.radius}",
+                    "color": "{overlay.select.color}",
+                    "shadow": "{overlay.select.shadow}"
+                  },
+                  "overlayPopover": {
+                    "background": "{overlay.popover.background}",
+                    "borderColor": "{overlay.popover.border.color}",
+                    "borderRadius": "{overlay.popover.border.radius}",
+                    "color": "{overlay.popover.color}",
+                    "shadow": "{overlay.popover.shadow}",
+                    "padding": "{overlay.popover.padding}",
+                    "gap": "0.5rem"
+                  },
+                  "rule": {
+                    "borderColor": "{content.border.color}"
+                  },
+                  "constraintList": {
+                    "padding": "{list.padding}",
+                    "gap": "{list.gap}"
+                  },
+                  "constraint": {
+                    "focusBackground": "{list.option.focus.background}",
+                    "selectedBackground": "{list.option.selected.background}",
+                    "selectedFocusBackground": "{list.option.selected.focus.background}",
+                    "color": "{list.option.color}",
+                    "focusColor": "{list.option.focus.color}",
+                    "selectedColor": "{list.option.selected.color}",
+                    "selectedFocusColor": "{list.option.selected.focus.color}",
+                    "separator": {
+                      "borderColor": "{content.border.color}"
+                    },
+                    "padding": "{list.option.padding}",
+                    "borderRadius": "{list.option.border.radius}"
+                  }
+                },
+                "paginatorTop": {
+                  "borderColor": "{datatable.border.color}",
+                  "borderWidth": "0 0 1px 0"
+                },
+                "paginatorBottom": {
+                  "borderColor": "{datatable.border.color}",
+                  "borderWidth": "0 0 1px 0"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "borderColor": "{content.border.color}"
+                    },
+                    "row": {
+                      "stripedBackground": "{surface.50}"
+                    },
+                    "bodyCell": {
+                      "selectedBorderColor": "{primary.100}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "borderColor": "{surface.800}"
+                    },
+                    "row": {
+                      "stripedBackground": "{surface.950}"
+                    },
+                    "bodyCell": {
+                      "selectedBorderColor": "{primary.900}"
+                    }
+                  }
+                },
+                "css": "\n    .p-datatable-mask.p-overlay-mask {\n        --px-mask-background: light-dark(rgba(255,255,255,0.5),rgba(0,0,0,0.3));\n    }\n"
+              },
+              "dataview": {
+                "root": {
+                  "borderColor": "transparent",
+                  "borderWidth": "0",
+                  "borderRadius": "0",
+                  "padding": "0"
+                },
+                "header": {
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "0 0 1px 0",
+                  "padding": "0.75rem 1rem",
+                  "borderRadius": "0"
+                },
+                "content": {
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "borderColor": "transparent",
+                  "borderWidth": "0",
+                  "padding": "0",
+                  "borderRadius": "0"
+                },
+                "footer": {
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "1px 0 0 0",
+                  "padding": "0.75rem 1rem",
+                  "borderRadius": "0"
+                },
+                "paginatorTop": {
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "0 0 1px 0"
+                },
+                "paginatorBottom": {
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "1px 0 0 0"
+                }
+              },
+              "datepicker": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "panel": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "shadow": "{overlay.popover.shadow}",
+                  "padding": "{overlay.popover.padding}"
+                },
+                "header": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "padding": "0 0 0.5rem 0"
+                },
+                "title": {
+                  "gap": "0.5rem",
+                  "fontWeight": "500"
+                },
+                "dropdown": {
+                  "width": "2.5rem",
+                  "sm": {
+                    "width": "2rem"
+                  },
+                  "lg": {
+                    "width": "3rem"
+                  },
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.border.color}",
+                  "activeBorderColor": "{form.field.border.color}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "inputIcon": {
+                  "color": "{form.field.icon.color}"
+                },
+                "selectMonth": {
+                  "hoverBackground": "{content.hover.background}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "padding": "0.25rem 0.5rem",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "selectYear": {
+                  "hoverBackground": "{content.hover.background}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "padding": "0.25rem 0.5rem",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "group": {
+                  "borderColor": "{content.border.color}",
+                  "gap": "{overlay.popover.padding}"
+                },
+                "dayView": {
+                  "margin": "0.5rem 0 0 0"
+                },
+                "weekDay": {
+                  "padding": "0.25rem",
+                  "fontWeight": "500",
+                  "color": "{content.color}"
+                },
+                "date": {
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{primary.color}",
+                  "rangeSelectedBackground": "{highlight.background}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "selectedColor": "{primary.contrast.color}",
+                  "rangeSelectedColor": "{highlight.color}",
+                  "width": "2rem",
+                  "height": "2rem",
+                  "borderRadius": "50%",
+                  "padding": "0.25rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "monthView": {
+                  "margin": "0.5rem 0 0 0"
+                },
+                "month": {
+                  "padding": "0.375rem",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "yearView": {
+                  "margin": "0.5rem 0 0 0"
+                },
+                "year": {
+                  "padding": "0.375rem",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "buttonbar": {
+                  "padding": "0.5rem 0 0 0",
+                  "borderColor": "{content.border.color}"
+                },
+                "timePicker": {
+                  "padding": "0.5rem 0 0 0",
+                  "borderColor": "{content.border.color}",
+                  "gap": "0.5rem",
+                  "buttonGap": "0.25rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "dropdown": {
+                      "background": "{surface.100}",
+                      "hoverBackground": "{surface.200}",
+                      "activeBackground": "{surface.300}",
+                      "color": "{surface.600}",
+                      "hoverColor": "{surface.700}",
+                      "activeColor": "{surface.800}"
+                    },
+                    "today": {
+                      "background": "{surface.200}",
+                      "color": "{surface.900}"
+                    }
+                  },
+                  "dark": {
+                    "dropdown": {
+                      "background": "{surface.800}",
+                      "hoverBackground": "{surface.700}",
+                      "activeBackground": "{surface.600}",
+                      "color": "{surface.300}",
+                      "hoverColor": "{surface.200}",
+                      "activeColor": "{surface.100}"
+                    },
+                    "today": {
+                      "background": "{surface.700}",
+                      "color": "{surface.0}"
+                    }
+                  }
+                }
+              },
+              "dialog": {
+                "root": {
+                  "background": "{overlay.modal.background}",
+                  "borderColor": "{overlay.modal.border.color}",
+                  "color": "{overlay.modal.color}",
+                  "borderRadius": "{overlay.modal.border.radius}",
+                  "shadow": "{overlay.modal.shadow}"
+                },
+                "header": {
+                  "padding": "{overlay.modal.padding}",
+                  "gap": "0.5rem"
+                },
+                "title": {
+                  "fontSize": "1.25rem",
+                  "fontWeight": "600"
+                },
+                "content": {
+                  "padding": "0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}"
+                },
+                "footer": {
+                  "padding": "0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}",
+                  "gap": "0.5rem"
+                }
+              },
+              "divider": {
+                "root": {
+                  "borderColor": "{content.border.color}"
+                },
+                "content": {
+                  "background": "{content.background}",
+                  "color": "{text.color}"
+                },
+                "horizontal": {
+                  "margin": "1rem 0",
+                  "padding": "0 1rem",
+                  "content": {
+                    "padding": "0 0.5rem"
+                  }
+                },
+                "vertical": {
+                  "margin": "0 1rem",
+                  "padding": "0.5rem 0",
+                  "content": {
+                    "padding": "0.5rem 0"
+                  }
+                }
+              },
+              "dock": {
+                "root": {
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "borderColor": "rgba(255, 255, 255, 0.2)",
+                  "padding": "0.5rem",
+                  "borderRadius": "{border.radius.xl}"
+                },
+                "item": {
+                  "borderRadius": "{content.border.radius}",
+                  "padding": "0.5rem",
+                  "size": "3rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                }
+              },
+              "drawer": {
+                "root": {
+                  "background": "{overlay.modal.background}",
+                  "borderColor": "{overlay.modal.border.color}",
+                  "color": "{overlay.modal.color}",
+                  "shadow": "{overlay.modal.shadow}"
+                },
+                "header": {
+                  "padding": "{overlay.modal.padding}"
+                },
+                "title": {
+                  "fontSize": "1.5rem",
+                  "fontWeight": "600"
+                },
+                "content": {
+                  "padding": "0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}"
+                },
+                "footer": {
+                  "padding": "{overlay.modal.padding}"
+                }
+              },
+              "editor": {
+                "toolbar": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "toolbarItem": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "activeColor": "{primary.color}"
+                },
+                "overlay": {
+                  "background": "{overlay.select.background}",
+                  "borderColor": "{overlay.select.border.color}",
+                  "borderRadius": "{overlay.select.border.radius}",
+                  "color": "{overlay.select.color}",
+                  "shadow": "{overlay.select.shadow}",
+                  "padding": "{list.padding}"
+                },
+                "overlayOption": {
+                  "focusBackground": "{list.option.focus.background}",
+                  "color": "{list.option.color}",
+                  "focusColor": "{list.option.focus.color}",
+                  "padding": "{list.option.padding}",
+                  "borderRadius": "{list.option.border.radius}"
+                },
+                "content": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}"
+                }
+              },
+              "fieldset": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "color": "{content.color}",
+                  "padding": "0 1.125rem 1.125rem 1.125rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "legend": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "borderWidth": "1px",
+                  "borderColor": "transparent",
+                  "padding": "0.5rem 0.75rem",
+                  "gap": "0.5rem",
+                  "fontWeight": "600",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "toggleIcon": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}"
+                },
+                "content": {
+                  "padding": "0"
+                }
+              },
+              "fileupload": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "header": {
+                  "background": "transparent",
+                  "color": "{text.color}",
+                  "padding": "1.125rem",
+                  "borderColor": "unset",
+                  "borderWidth": "0",
+                  "borderRadius": "0",
+                  "gap": "0.5rem"
+                },
+                "content": {
+                  "highlightBorderColor": "{primary.color}",
+                  "padding": "0 1.125rem 1.125rem 1.125rem",
+                  "gap": "1rem"
+                },
+                "file": {
+                  "padding": "1rem",
+                  "gap": "1rem",
+                  "borderColor": "{content.border.color}",
+                  "info": {
+                    "gap": "0.5rem"
+                  }
+                },
+                "fileList": {
+                  "gap": "0.5rem"
+                },
+                "progressbar": {
+                  "height": "0.25rem"
+                },
+                "basic": {
+                  "gap": "0.5rem"
+                }
+              },
+              "floatlabel": {
+                "root": {
+                  "color": "{form.field.float.label.color}",
+                  "focusColor": "{form.field.float.label.focus.color}",
+                  "activeColor": "{form.field.float.label.active.color}",
+                  "invalidColor": "{form.field.float.label.invalid.color}",
+                  "transitionDuration": "0.2s",
+                  "positionX": "{form.field.padding.x}",
+                  "positionY": "{form.field.padding.y}",
+                  "fontWeight": "500",
+                  "active": {
+                    "fontSize": "0.75rem",
+                    "fontWeight": "400"
+                  }
+                },
+                "over": {
+                  "active": {
+                    "top": "-1.25rem"
+                  }
+                },
+                "in": {
+                  "input": {
+                    "paddingTop": "1.5rem",
+                    "paddingBottom": "{form.field.padding.y}"
+                  },
+                  "active": {
+                    "top": "{form.field.padding.y}"
+                  }
+                },
+                "on": {
+                  "borderRadius": "{border.radius.xs}",
+                  "active": {
+                    "background": "{form.field.background}",
+                    "padding": "0 0.125rem"
+                  }
+                }
+              },
+              "galleria": {
+                "root": {
+                  "borderWidth": "1px",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "navButton": {
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "hoverBackground": "rgba(255, 255, 255, 0.2)",
+                  "color": "{surface.100}",
+                  "hoverColor": "{surface.0}",
+                  "size": "3rem",
+                  "gutter": "0.5rem",
+                  "prev": {
+                    "borderRadius": "50%"
+                  },
+                  "next": {
+                    "borderRadius": "50%"
+                  },
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "navIcon": {
+                  "size": "1.5rem"
+                },
+                "thumbnailsContent": {
+                  "background": "{content.background}",
+                  "padding": "1rem 0.25rem"
+                },
+                "thumbnailNavButton": {
+                  "size": "2rem",
+                  "borderRadius": "{content.border.radius}",
+                  "gutter": "0.5rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "thumbnailNavButtonIcon": {
+                  "size": "1rem"
+                },
+                "caption": {
+                  "background": "rgba(0, 0, 0, 0.5)",
+                  "color": "{surface.100}",
+                  "padding": "1rem"
+                },
+                "indicatorList": {
+                  "gap": "0.5rem",
+                  "padding": "1rem"
+                },
+                "indicatorButton": {
+                  "width": "1rem",
+                  "height": "1rem",
+                  "activeBackground": "{primary.color}",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "insetIndicatorList": {
+                  "background": "rgba(0, 0, 0, 0.5)"
+                },
+                "insetIndicatorButton": {
+                  "background": "rgba(255, 255, 255, 0.4)",
+                  "hoverBackground": "rgba(255, 255, 255, 0.6)",
+                  "activeBackground": "rgba(255, 255, 255, 0.9)"
+                },
+                "closeButton": {
+                  "size": "3rem",
+                  "gutter": "0.5rem",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "hoverBackground": "rgba(255, 255, 255, 0.2)",
+                  "color": "{surface.50}",
+                  "hoverColor": "{surface.0}",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "closeButtonIcon": {
+                  "size": "1.5rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "thumbnailNavButton": {
+                      "hoverBackground": "{surface.100}",
+                      "color": "{surface.600}",
+                      "hoverColor": "{surface.700}"
+                    },
+                    "indicatorButton": {
+                      "background": "{surface.200}",
+                      "hoverBackground": "{surface.300}"
+                    }
+                  },
+                  "dark": {
+                    "thumbnailNavButton": {
+                      "hoverBackground": "{surface.700}",
+                      "color": "{surface.400}",
+                      "hoverColor": "{surface.0}"
+                    },
+                    "indicatorButton": {
+                      "background": "{surface.700}",
+                      "hoverBackground": "{surface.600}"
+                    }
+                  }
+                }
+              },
+              "iconfield": {
+                "icon": {
+                  "color": "{form.field.icon.color}"
+                }
+              },
+              "iftalabel": {
+                "root": {
+                  "color": "{form.field.float.label.color}",
+                  "focusColor": "{form.field.float.label.focus.color}",
+                  "invalidColor": "{form.field.float.label.invalid.color}",
+                  "transitionDuration": "0.2s",
+                  "positionX": "{form.field.padding.x}",
+                  "top": "{form.field.padding.y}",
+                  "fontSize": "0.75rem",
+                  "fontWeight": "400"
+                },
+                "input": {
+                  "paddingTop": "1.5rem",
+                  "paddingBottom": "{form.field.padding.y}"
+                }
+              },
+              "image": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "preview": {
+                  "icon": {
+                    "size": "1.5rem"
+                  },
+                  "mask": {
+                    "background": "{mask.background}",
+                    "color": "{mask.color}"
+                  }
+                },
+                "toolbar": {
+                  "position": {
+                    "left": "auto",
+                    "right": "1rem",
+                    "top": "1rem",
+                    "bottom": "auto"
+                  },
+                  "blur": "8px",
+                  "background": "rgba(255,255,255,0.1)",
+                  "borderColor": "rgba(255,255,255,0.2)",
+                  "borderWidth": "1px",
+                  "borderRadius": "30px",
+                  "padding": ".5rem",
+                  "gap": "0.5rem"
+                },
+                "action": {
+                  "hoverBackground": "rgba(255,255,255,0.1)",
+                  "color": "{surface.50}",
+                  "hoverColor": "{surface.0}",
+                  "size": "3rem",
+                  "iconSize": "1.5rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                }
+              },
+              "imagecompare": {
+                "handle": {
+                  "size": "15px",
+                  "hoverSize": "30px",
+                  "background": "rgba(255,255,255,0.3)",
+                  "hoverBackground": "rgba(255,255,255,0.3)",
+                  "borderColor": "unset",
+                  "hoverBorderColor": "unset",
+                  "borderWidth": "0",
+                  "borderRadius": "50%",
+                  "transitionDuration": "{transition.duration}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "rgba(255,255,255,0.3)",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                }
+              },
+              "inlinemessage": {
+                "root": {
+                  "padding": "{form.field.padding.y} {form.field.padding.x}",
+                  "borderRadius": "{content.border.radius}",
+                  "gap": "0.5rem"
+                },
+                "text": {
+                  "fontWeight": "500"
+                },
+                "icon": {
+                  "size": "1rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "info": {
+                      "background": "color-mix(in srgb, {blue.50}, transparent 5%)",
+                      "borderColor": "{blue.200}",
+                      "color": "{blue.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)"
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.50}, transparent 5%)",
+                      "borderColor": "{green.200}",
+                      "color": "{green.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)"
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb,{yellow.50}, transparent 5%)",
+                      "borderColor": "{yellow.200}",
+                      "color": "{yellow.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)"
+                    },
+                    "error": {
+                      "background": "color-mix(in srgb, {red.50}, transparent 5%)",
+                      "borderColor": "{red.200}",
+                      "color": "{red.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)"
+                    },
+                    "secondary": {
+                      "background": "{surface.100}",
+                      "borderColor": "{surface.200}",
+                      "color": "{surface.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)"
+                    },
+                    "contrast": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.950}",
+                      "color": "{surface.50}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)"
+                    }
+                  },
+                  "dark": {
+                    "info": {
+                      "background": "color-mix(in srgb, {blue.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {blue.700}, transparent 64%)",
+                      "color": "{blue.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)"
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {green.700}, transparent 64%)",
+                      "color": "{green.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)"
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb, {yellow.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {yellow.700}, transparent 64%)",
+                      "color": "{yellow.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)"
+                    },
+                    "error": {
+                      "background": "color-mix(in srgb, {red.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {red.700}, transparent 64%)",
+                      "color": "{red.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)"
+                    },
+                    "secondary": {
+                      "background": "{surface.800}",
+                      "borderColor": "{surface.700}",
+                      "color": "{surface.300}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)"
+                    },
+                    "contrast": {
+                      "background": "{surface.0}",
+                      "borderColor": "{surface.100}",
+                      "color": "{surface.950}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)"
+                    }
+                  }
+                }
+              },
+              "inplace": {
+                "root": {
+                  "padding": "{form.field.padding.y} {form.field.padding.x}",
+                  "borderRadius": "{content.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{transition.duration}"
+                },
+                "display": {
+                  "hoverBackground": "{content.hover.background}",
+                  "hoverColor": "{content.hover.color}"
+                }
+              },
+              "inputchips": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}"
+                },
+                "chip": {
+                  "borderRadius": "{border.radius.sm}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "chip": {
+                      "focusBackground": "{surface.200}",
+                      "color": "{surface.800}"
+                    }
+                  },
+                  "dark": {
+                    "chip": {
+                      "focusBackground": "{surface.700}",
+                      "color": "{surface.0}"
+                    }
+                  }
+                }
+              },
+              "inputgroup": {
+                "addon": {
+                  "background": "{form.field.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "color": "{form.field.icon.color}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "padding": "0.5rem",
+                  "minWidth": "2.5rem"
+                }
+              },
+              "inputnumber": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "button": {
+                  "width": "2.5rem",
+                  "borderRadius": "{form.field.border.radius}",
+                  "verticalPadding": "{form.field.padding.y}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "button": {
+                      "background": "transparent",
+                      "hoverBackground": "{surface.100}",
+                      "activeBackground": "{surface.200}",
+                      "borderColor": "{form.field.border.color}",
+                      "hoverBorderColor": "{form.field.border.color}",
+                      "activeBorderColor": "{form.field.border.color}",
+                      "color": "{surface.400}",
+                      "hoverColor": "{surface.500}",
+                      "activeColor": "{surface.600}"
+                    }
+                  },
+                  "dark": {
+                    "button": {
+                      "background": "transparent",
+                      "hoverBackground": "{surface.800}",
+                      "activeBackground": "{surface.700}",
+                      "borderColor": "{form.field.border.color}",
+                      "hoverBorderColor": "{form.field.border.color}",
+                      "activeBorderColor": "{form.field.border.color}",
+                      "color": "{surface.400}",
+                      "hoverColor": "{surface.300}",
+                      "activeColor": "{surface.200}"
+                    }
+                  }
+                }
+              },
+              "inputotp": {
+                "root": {
+                  "gap": "0.5rem"
+                },
+                "input": {
+                  "width": "2.5rem",
+                  "sm": {
+                    "width": "2rem"
+                  },
+                  "lg": {
+                    "width": "3rem"
+                  }
+                }
+              },
+              "inputtext": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}"
+                  }
+                }
+              },
+              "knob": {
+                "root": {
+                  "transitionDuration": "{transition.duration}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "value": {
+                  "background": "{primary.color}"
+                },
+                "range": {
+                  "background": "{content.border.color}"
+                },
+                "text": {
+                  "color": "{text.muted.color}"
+                }
+              },
+              "listbox": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "shadow": "{form.field.shadow}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "transitionDuration": "{form.field.transition.duration}"
+                },
+                "list": {
+                  "padding": "{list.padding}",
+                  "gap": "{list.gap}",
+                  "header": {
+                    "padding": "{list.header.padding}"
+                  }
+                },
+                "option": {
+                  "focusBackground": "{list.option.focus.background}",
+                  "selectedBackground": "{list.option.selected.background}",
+                  "selectedFocusBackground": "{list.option.selected.focus.background}",
+                  "color": "{list.option.color}",
+                  "focusColor": "{list.option.focus.color}",
+                  "selectedColor": "{list.option.selected.color}",
+                  "selectedFocusColor": "{list.option.selected.focus.color}",
+                  "padding": "{list.option.padding}",
+                  "borderRadius": "{list.option.border.radius}"
+                },
+                "optionGroup": {
+                  "background": "{list.option.group.background}",
+                  "color": "{list.option.group.color}",
+                  "fontWeight": "{list.option.group.font.weight}",
+                  "padding": "{list.option.group.padding}"
+                },
+                "checkmark": {
+                  "color": "{list.option.color}",
+                  "gutterStart": "-0.375rem",
+                  "gutterEnd": "0.375rem"
+                },
+                "emptyMessage": {
+                  "padding": "{list.option.padding}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "option": {
+                      "stripedBackground": "{surface.50}"
+                    }
+                  },
+                  "dark": {
+                    "option": {
+                      "stripedBackground": "{surface.900}"
+                    }
+                  }
+                }
+              },
+              "megamenu": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "color": "{content.color}",
+                  "gap": "0.5rem",
+                  "verticalOrientation": {
+                    "padding": "{navigation.list.padding}",
+                    "gap": "{navigation.list.gap}"
+                  },
+                  "horizontalOrientation": {
+                    "padding": "0.5rem 0.75rem",
+                    "gap": "0.5rem"
+                  },
+                  "transitionDuration": "{transition.duration}"
+                },
+                "baseItem": {
+                  "borderRadius": "{content.border.radius}",
+                  "padding": "{navigation.item.padding}"
+                },
+                "item": {
+                  "focusBackground": "{navigation.item.focus.background}",
+                  "activeBackground": "{navigation.item.active.background}",
+                  "color": "{navigation.item.color}",
+                  "focusColor": "{navigation.item.focus.color}",
+                  "activeColor": "{navigation.item.active.color}",
+                  "padding": "{navigation.item.padding}",
+                  "borderRadius": "{navigation.item.border.radius}",
+                  "gap": "{navigation.item.gap}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "focusColor": "{navigation.item.icon.focus.color}",
+                    "activeColor": "{navigation.item.icon.active.color}"
+                  }
+                },
+                "overlay": {
+                  "padding": "0",
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "color": "{content.color}",
+                  "shadow": "{overlay.navigation.shadow}",
+                  "gap": "0.5rem"
+                },
+                "submenu": {
+                  "padding": "{navigation.list.padding}",
+                  "gap": "{navigation.list.gap}"
+                },
+                "submenuLabel": {
+                  "padding": "{navigation.submenu.label.padding}",
+                  "fontWeight": "{navigation.submenu.label.font.weight}",
+                  "background": "{navigation.submenu.label.background}",
+                  "color": "{navigation.submenu.label.color}"
+                },
+                "submenuIcon": {
+                  "size": "{navigation.submenu.icon.size}",
+                  "color": "{navigation.submenu.icon.color}",
+                  "focusColor": "{navigation.submenu.icon.focus.color}",
+                  "activeColor": "{navigation.submenu.icon.active.color}"
+                },
+                "separator": {
+                  "borderColor": "{content.border.color}"
+                },
+                "mobileButton": {
+                  "borderRadius": "50%",
+                  "size": "1.75rem",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "hoverBackground": "{content.hover.background}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                }
+              },
+              "menu": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "shadow": "{overlay.navigation.shadow}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "list": {
+                  "padding": "{navigation.list.padding}",
+                  "gap": "{navigation.list.gap}"
+                },
+                "item": {
+                  "focusBackground": "{navigation.item.focus.background}",
+                  "color": "{navigation.item.color}",
+                  "focusColor": "{navigation.item.focus.color}",
+                  "padding": "{navigation.item.padding}",
+                  "borderRadius": "{navigation.item.border.radius}",
+                  "gap": "{navigation.item.gap}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "focusColor": "{navigation.item.icon.focus.color}"
+                  }
+                },
+                "submenuLabel": {
+                  "padding": "{navigation.submenu.label.padding}",
+                  "fontWeight": "{navigation.submenu.label.font.weight}",
+                  "background": "{navigation.submenu.label.background}",
+                  "color": "{navigation.submenu.label.color}"
+                },
+                "separator": {
+                  "borderColor": "{content.border.color}"
+                }
+              },
+              "menubar": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "color": "{content.color}",
+                  "gap": "0.5rem",
+                  "padding": "0.5rem 0.75rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "baseItem": {
+                  "borderRadius": "{content.border.radius}",
+                  "padding": "{navigation.item.padding}"
+                },
+                "item": {
+                  "focusBackground": "{navigation.item.focus.background}",
+                  "activeBackground": "{navigation.item.active.background}",
+                  "color": "{navigation.item.color}",
+                  "focusColor": "{navigation.item.focus.color}",
+                  "activeColor": "{navigation.item.active.color}",
+                  "padding": "{navigation.item.padding}",
+                  "borderRadius": "{navigation.item.border.radius}",
+                  "gap": "{navigation.item.gap}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "focusColor": "{navigation.item.icon.focus.color}",
+                    "activeColor": "{navigation.item.icon.active.color}"
+                  }
+                },
+                "submenu": {
+                  "padding": "{navigation.list.padding}",
+                  "gap": "{navigation.list.gap}",
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "shadow": "{overlay.navigation.shadow}",
+                  "mobileIndent": "1rem",
+                  "icon": {
+                    "size": "{navigation.submenu.icon.size}",
+                    "color": "{navigation.submenu.icon.color}",
+                    "focusColor": "{navigation.submenu.icon.focus.color}",
+                    "activeColor": "{navigation.submenu.icon.active.color}"
+                  }
+                },
+                "separator": {
+                  "borderColor": "{content.border.color}"
+                },
+                "mobileButton": {
+                  "borderRadius": "50%",
+                  "size": "1.75rem",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "hoverBackground": "{content.hover.background}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                }
+              },
+              "message": {
+                "root": {
+                  "borderRadius": "{content.border.radius}",
+                  "borderWidth": "1px",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "content": {
+                  "padding": "0.5rem 0.75rem",
+                  "gap": "0.5rem",
+                  "sm": {
+                    "padding": "0.375rem 0.625rem"
+                  },
+                  "lg": {
+                    "padding": "0.625rem 0.875rem"
+                  }
+                },
+                "text": {
+                  "fontSize": "1rem",
+                  "fontWeight": "500",
+                  "sm": {
+                    "fontSize": "0.875rem"
+                  },
+                  "lg": {
+                    "fontSize": "1.125rem"
+                  }
+                },
+                "icon": {
+                  "size": "1.125rem",
+                  "sm": {
+                    "size": "1rem"
+                  },
+                  "lg": {
+                    "size": "1.25rem"
+                  }
+                },
+                "closeButton": {
+                  "width": "1.75rem",
+                  "height": "1.75rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "offset": "{focus.ring.offset}"
+                  }
+                },
+                "closeIcon": {
+                  "size": "1rem",
+                  "sm": {
+                    "size": "0.875rem"
+                  },
+                  "lg": {
+                    "size": "1.125rem"
+                  }
+                },
+                "outlined": {
+                  "root": {
+                    "borderWidth": "1px"
+                  }
+                },
+                "simple": {
+                  "content": {
+                    "padding": "0"
+                  }
+                },
+                "colorScheme": {
+                  "light": {
+                    "info": {
+                      "background": "color-mix(in srgb, {blue.50}, transparent 5%)",
+                      "borderColor": "{blue.200}",
+                      "color": "{blue.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{blue.100}",
+                        "focusRing": {
+                          "color": "{blue.600}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{blue.600}",
+                        "borderColor": "{blue.600}"
+                      },
+                      "simple": {
+                        "color": "{blue.600}"
+                      }
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.50}, transparent 5%)",
+                      "borderColor": "{green.200}",
+                      "color": "{green.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{green.100}",
+                        "focusRing": {
+                          "color": "{green.600}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{green.600}",
+                        "borderColor": "{green.600}"
+                      },
+                      "simple": {
+                        "color": "{green.600}"
+                      }
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb,{yellow.50}, transparent 5%)",
+                      "borderColor": "{yellow.200}",
+                      "color": "{yellow.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{yellow.100}",
+                        "focusRing": {
+                          "color": "{yellow.600}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{yellow.600}",
+                        "borderColor": "{yellow.600}"
+                      },
+                      "simple": {
+                        "color": "{yellow.600}"
+                      }
+                    },
+                    "error": {
+                      "background": "color-mix(in srgb, {red.50}, transparent 5%)",
+                      "borderColor": "{red.200}",
+                      "color": "{red.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{red.100}",
+                        "focusRing": {
+                          "color": "{red.600}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{red.600}",
+                        "borderColor": "{red.600}"
+                      },
+                      "simple": {
+                        "color": "{red.600}"
+                      }
+                    },
+                    "secondary": {
+                      "background": "{surface.100}",
+                      "borderColor": "{surface.200}",
+                      "color": "{surface.600}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.200}",
+                        "focusRing": {
+                          "color": "{surface.600}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{surface.500}",
+                        "borderColor": "{surface.500}"
+                      },
+                      "simple": {
+                        "color": "{surface.500}"
+                      }
+                    },
+                    "contrast": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.950}",
+                      "color": "{surface.50}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.800}",
+                        "focusRing": {
+                          "color": "{surface.50}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{surface.950}",
+                        "borderColor": "{surface.950}"
+                      },
+                      "simple": {
+                        "color": "{surface.950}"
+                      }
+                    }
+                  },
+                  "dark": {
+                    "info": {
+                      "background": "color-mix(in srgb, {blue.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {blue.700}, transparent 64%)",
+                      "color": "{blue.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{blue.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{blue.500}",
+                        "borderColor": "{blue.500}"
+                      },
+                      "simple": {
+                        "color": "{blue.500}"
+                      }
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {green.700}, transparent 64%)",
+                      "color": "{green.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{green.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{green.500}",
+                        "borderColor": "{green.500}"
+                      },
+                      "simple": {
+                        "color": "{green.500}"
+                      }
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb, {yellow.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {yellow.700}, transparent 64%)",
+                      "color": "{yellow.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{yellow.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{yellow.500}",
+                        "borderColor": "{yellow.500}"
+                      },
+                      "simple": {
+                        "color": "{yellow.500}"
+                      }
+                    },
+                    "error": {
+                      "background": "color-mix(in srgb, {red.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {red.700}, transparent 64%)",
+                      "color": "{red.500}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{red.500}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{red.500}",
+                        "borderColor": "{red.500}"
+                      },
+                      "simple": {
+                        "color": "{red.500}"
+                      }
+                    },
+                    "secondary": {
+                      "background": "{surface.800}",
+                      "borderColor": "{surface.700}",
+                      "color": "{surface.300}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.700}",
+                        "focusRing": {
+                          "color": "{surface.300}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{surface.400}",
+                        "borderColor": "{surface.400}"
+                      },
+                      "simple": {
+                        "color": "{surface.400}"
+                      }
+                    },
+                    "contrast": {
+                      "background": "{surface.0}",
+                      "borderColor": "{surface.100}",
+                      "color": "{surface.950}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.100}",
+                        "focusRing": {
+                          "color": "{surface.950}",
+                          "shadow": "none"
+                        }
+                      },
+                      "outlined": {
+                        "color": "{surface.0}",
+                        "borderColor": "{surface.0}"
+                      },
+                      "simple": {
+                        "color": "{surface.0}"
+                      }
+                    }
+                  }
+                }
+              },
+              "metergroup": {
+                "root": {
+                  "borderRadius": "{content.border.radius}",
+                  "gap": "1rem"
+                },
+                "meters": {
+                  "background": "{content.border.color}",
+                  "size": "0.5rem"
+                },
+                "label": {
+                  "gap": "0.5rem"
+                },
+                "labelMarker": {
+                  "size": "0.5rem"
+                },
+                "labelIcon": {
+                  "size": "1rem"
+                },
+                "labelList": {
+                  "verticalGap": "0.5rem",
+                  "horizontalGap": "1rem"
+                }
+              },
+              "multiselect": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}"
+                  }
+                },
+                "dropdown": {
+                  "width": "2.5rem",
+                  "color": "{form.field.icon.color}"
+                },
+                "overlay": {
+                  "background": "{overlay.select.background}",
+                  "borderColor": "{overlay.select.border.color}",
+                  "borderRadius": "{overlay.select.border.radius}",
+                  "color": "{overlay.select.color}",
+                  "shadow": "{overlay.select.shadow}"
+                },
+                "list": {
+                  "padding": "{list.padding}",
+                  "gap": "{list.gap}",
+                  "header": {
+                    "padding": "{list.header.padding}"
+                  }
+                },
+                "option": {
+                  "focusBackground": "{list.option.focus.background}",
+                  "selectedBackground": "{list.option.selected.background}",
+                  "selectedFocusBackground": "{list.option.selected.focus.background}",
+                  "color": "{list.option.color}",
+                  "focusColor": "{list.option.focus.color}",
+                  "selectedColor": "{list.option.selected.color}",
+                  "selectedFocusColor": "{list.option.selected.focus.color}",
+                  "padding": "{list.option.padding}",
+                  "borderRadius": "{list.option.border.radius}",
+                  "gap": "0.5rem"
+                },
+                "optionGroup": {
+                  "background": "{list.option.group.background}",
+                  "color": "{list.option.group.color}",
+                  "fontWeight": "{list.option.group.font.weight}",
+                  "padding": "{list.option.group.padding}"
+                },
+                "chip": {
+                  "borderRadius": "{border.radius.sm}"
+                },
+                "clearIcon": {
+                  "color": "{form.field.icon.color}"
+                },
+                "emptyMessage": {
+                  "padding": "{list.option.padding}"
+                }
+              },
+              "orderlist": {
+                "root": {
+                  "gap": "1.125rem"
+                },
+                "controls": {
+                  "gap": "0.5rem"
+                }
+              },
+              "organizationchart": {
+                "root": {
+                  "gutter": "0.75rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "node": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "selectedColor": "{highlight.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "padding": "0.75rem 1rem",
+                  "toggleablePadding": "0.75rem 1rem 1.25rem 1rem",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "nodeToggleButton": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "size": "1.5rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "connector": {
+                  "color": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "height": "24px"
+                }
+              },
+              "overlaybadge": {
+                "root": {
+                  "outline": {
+                    "width": "2px",
+                    "color": "{content.background}"
+                  }
+                }
+              },
+              "paginator": {
+                "root": {
+                  "padding": "0.5rem 1rem",
+                  "gap": "0.25rem",
+                  "borderRadius": "{content.border.radius}",
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "navButton": {
+                  "background": "transparent",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "selectedColor": "{highlight.color}",
+                  "width": "2.5rem",
+                  "height": "2.5rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "currentPageReport": {
+                  "color": "{text.muted.color}"
+                },
+                "jumpToPageInput": {
+                  "maxWidth": "2.5rem"
+                }
+              },
+              "panel": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}"
+                },
+                "header": {
+                  "background": "transparent",
+                  "color": "{text.color}",
+                  "padding": "1.125rem",
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "0",
+                  "borderRadius": "0"
+                },
+                "toggleableHeader": {
+                  "padding": "0.375rem 1.125rem"
+                },
+                "title": {
+                  "fontWeight": "600"
+                },
+                "content": {
+                  "padding": "0 1.125rem 1.125rem 1.125rem"
+                },
+                "footer": {
+                  "padding": "0 1.125rem 1.125rem 1.125rem"
+                }
+              },
+              "panelmenu": {
+                "root": {
+                  "gap": "0.5rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "panel": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "1px",
+                  "color": "{content.color}",
+                  "padding": "0.25rem 0.25rem",
+                  "borderRadius": "{content.border.radius}",
+                  "first": {
+                    "borderWidth": "1px",
+                    "topBorderRadius": "{content.border.radius}"
+                  },
+                  "last": {
+                    "borderWidth": "1px",
+                    "bottomBorderRadius": "{content.border.radius}"
+                  }
+                },
+                "item": {
+                  "focusBackground": "{navigation.item.focus.background}",
+                  "color": "{navigation.item.color}",
+                  "focusColor": "{navigation.item.focus.color}",
+                  "gap": "0.5rem",
+                  "padding": "{navigation.item.padding}",
+                  "borderRadius": "{content.border.radius}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "focusColor": "{navigation.item.icon.focus.color}"
+                  }
+                },
+                "submenu": {
+                  "indent": "1rem"
+                },
+                "submenuIcon": {
+                  "color": "{navigation.submenu.icon.color}",
+                  "focusColor": "{navigation.submenu.icon.focus.color}"
+                }
+              },
+              "password": {
+                "meter": {
+                  "background": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "height": ".75rem"
+                },
+                "icon": {
+                  "color": "{form.field.icon.color}"
+                },
+                "overlay": {
+                  "background": "{overlay.popover.background}",
+                  "borderColor": "{overlay.popover.border.color}",
+                  "borderRadius": "{overlay.popover.border.radius}",
+                  "color": "{overlay.popover.color}",
+                  "padding": "{overlay.popover.padding}",
+                  "shadow": "{overlay.popover.shadow}"
+                },
+                "content": {
+                  "gap": "0.5rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "strength": {
+                      "weakBackground": "{red.500}",
+                      "mediumBackground": "{amber.500}",
+                      "strongBackground": "{green.500}"
+                    }
+                  },
+                  "dark": {
+                    "strength": {
+                      "weakBackground": "{red.400}",
+                      "mediumBackground": "{amber.400}",
+                      "strongBackground": "{green.400}"
+                    }
+                  }
+                }
+              },
+              "picklist": {
+                "root": {
+                  "gap": "1.125rem"
+                },
+                "controls": {
+                  "gap": "0.5rem"
+                }
+              },
+              "popover": {
+                "root": {
+                  "background": "{overlay.popover.background}",
+                  "borderColor": "{overlay.popover.border.color}",
+                  "color": "{overlay.popover.color}",
+                  "borderRadius": "{overlay.popover.border.radius}",
+                  "shadow": "{overlay.popover.shadow}",
+                  "gutter": "10px",
+                  "arrowOffset": "1.25rem"
+                },
+                "content": {
+                  "padding": "{overlay.popover.padding}"
+                }
+              },
+              "progressbar": {
+                "root": {
+                  "background": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "height": "1.25rem"
+                },
+                "value": {
+                  "background": "{primary.color}"
+                },
+                "label": {
+                  "color": "{primary.contrast.color}",
+                  "fontSize": "0.75rem",
+                  "fontWeight": "600"
+                }
+              },
+              "progressspinner": {
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "colorOne": "{red.500}",
+                      "colorTwo": "{blue.500}",
+                      "colorThree": "{green.500}",
+                      "colorFour": "{yellow.500}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "colorOne": "{red.400}",
+                      "colorTwo": "{blue.400}",
+                      "colorThree": "{green.400}",
+                      "colorFour": "{yellow.400}"
+                    }
+                  }
+                }
+              },
+              "radiobutton": {
+                "root": {
+                  "width": "1.25rem",
+                  "height": "1.25rem",
+                  "background": "{form.field.background}",
+                  "checkedBackground": "{primary.color}",
+                  "checkedHoverBackground": "{primary.hover.color}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.border.color}",
+                  "checkedBorderColor": "{primary.color}",
+                  "checkedHoverBorderColor": "{primary.hover.color}",
+                  "checkedFocusBorderColor": "{primary.color}",
+                  "checkedDisabledBorderColor": "{form.field.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "shadow": "{form.field.shadow}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "width": "1rem",
+                    "height": "1rem"
+                  },
+                  "lg": {
+                    "width": "1.5rem",
+                    "height": "1.5rem"
+                  }
+                },
+                "icon": {
+                  "size": "0.75rem",
+                  "checkedColor": "{primary.contrast.color}",
+                  "checkedHoverColor": "{primary.contrast.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "sm": {
+                    "size": "0.5rem"
+                  },
+                  "lg": {
+                    "size": "1rem"
+                  }
+                }
+              },
+              "rating": {
+                "root": {
+                  "gap": "0.25rem",
+                  "transitionDuration": "{transition.duration}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "icon": {
+                  "size": "1rem",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{primary.color}",
+                  "activeColor": "{primary.color}"
+                }
+              },
+              "ripple": {
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "background": "rgba(0,0,0,0.1)"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "background": "rgba(255,255,255,0.3)"
+                    }
+                  }
+                }
+              },
+              "scrollpanel": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "bar": {
+                  "size": "9px",
+                  "borderRadius": "{border.radius.sm}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "colorScheme": {
+                  "light": {
+                    "bar": {
+                      "background": "{surface.100}"
+                    }
+                  },
+                  "dark": {
+                    "bar": {
+                      "background": "{surface.800}"
+                    }
+                  }
+                }
+              },
+              "select": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}"
+                  }
+                },
+                "dropdown": {
+                  "width": "2.5rem",
+                  "color": "{form.field.icon.color}"
+                },
+                "overlay": {
+                  "background": "{overlay.select.background}",
+                  "borderColor": "{overlay.select.border.color}",
+                  "borderRadius": "{overlay.select.border.radius}",
+                  "color": "{overlay.select.color}",
+                  "shadow": "{overlay.select.shadow}"
+                },
+                "list": {
+                  "padding": "{list.padding}",
+                  "gap": "{list.gap}",
+                  "header": {
+                    "padding": "{list.header.padding}"
+                  }
+                },
+                "option": {
+                  "focusBackground": "{list.option.focus.background}",
+                  "selectedBackground": "{list.option.selected.background}",
+                  "selectedFocusBackground": "{list.option.selected.focus.background}",
+                  "color": "{list.option.color}",
+                  "focusColor": "{list.option.focus.color}",
+                  "selectedColor": "{list.option.selected.color}",
+                  "selectedFocusColor": "{list.option.selected.focus.color}",
+                  "padding": "{list.option.padding}",
+                  "borderRadius": "{list.option.border.radius}"
+                },
+                "optionGroup": {
+                  "background": "{list.option.group.background}",
+                  "color": "{list.option.group.color}",
+                  "fontWeight": "{list.option.group.font.weight}",
+                  "padding": "{list.option.group.padding}"
+                },
+                "clearIcon": {
+                  "color": "{form.field.icon.color}"
+                },
+                "checkmark": {
+                  "color": "{list.option.color}",
+                  "gutterStart": "-0.375rem",
+                  "gutterEnd": "0.375rem"
+                },
+                "emptyMessage": {
+                  "padding": "{list.option.padding}"
+                }
+              },
+              "selectbutton": {
+                "root": {
+                  "borderRadius": "{form.field.border.radius}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "invalidBorderColor": "{form.field.invalid.border.color}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "invalidBorderColor": "{form.field.invalid.border.color}"
+                    }
+                  }
+                }
+              },
+              "skeleton": {
+                "root": {
+                  "borderRadius": "{content.border.radius}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "background": "{surface.200}",
+                      "animationBackground": "rgba(255,255,255,0.4)"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "background": "rgba(255, 255, 255, 0.06)",
+                      "animationBackground": "rgba(255, 255, 255, 0.04)"
+                    }
+                  }
+                }
+              },
+              "slider": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "track": {
+                  "background": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "size": "3px"
+                },
+                "range": {
+                  "background": "{primary.color}"
+                },
+                "handle": {
+                  "width": "20px",
+                  "height": "20px",
+                  "borderRadius": "50%",
+                  "background": "{content.border.color}",
+                  "hoverBackground": "{content.border.color}",
+                  "content": {
+                    "borderRadius": "50%",
+                    "hoverBackground": "{content.background}",
+                    "width": "16px",
+                    "height": "16px",
+                    "shadow": "0px 0.5px 0px 0px rgba(0, 0, 0, 0.08), 0px 1px 1px 0px rgba(0, 0, 0, 0.14)"
+                  },
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "colorScheme": {
+                  "light": {
+                    "handle": {
+                      "content": {
+                        "background": "{surface.0}"
+                      }
+                    }
+                  },
+                  "dark": {
+                    "handle": {
+                      "content": {
+                        "background": "{surface.950}"
+                      }
+                    }
+                  }
+                }
+              },
+              "speeddial": {
+                "root": {
+                  "gap": "0.5rem",
+                  "transitionDuration": "{transition.duration}"
+                }
+              },
+              "splitbutton": {
+                "root": {
+                  "borderRadius": "{form.field.border.radius}",
+                  "roundedBorderRadius": "2rem",
+                  "raisedShadow": "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)"
+                }
+              },
+              "splitter": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "gutter": {
+                  "background": "{content.border.color}"
+                },
+                "handle": {
+                  "size": "24px",
+                  "background": "transparent",
+                  "borderRadius": "{content.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                }
+              },
+              "stepper": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "separator": {
+                  "background": "{content.border.color}",
+                  "activeBackground": "{primary.color}",
+                  "margin": "0 0 0 1.625rem",
+                  "size": "2px"
+                },
+                "step": {
+                  "padding": "0.5rem",
+                  "gap": "1rem"
+                },
+                "stepHeader": {
+                  "padding": "0",
+                  "borderRadius": "{content.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "gap": "0.5rem"
+                },
+                "stepTitle": {
+                  "color": "{text.muted.color}",
+                  "activeColor": "{primary.color}",
+                  "fontWeight": "500"
+                },
+                "stepNumber": {
+                  "background": "{content.background}",
+                  "activeBackground": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "activeBorderColor": "{content.border.color}",
+                  "color": "{text.muted.color}",
+                  "activeColor": "{primary.color}",
+                  "size": "2rem",
+                  "fontSize": "1.143rem",
+                  "fontWeight": "500",
+                  "borderRadius": "50%",
+                  "shadow": "0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)"
+                },
+                "steppanels": {
+                  "padding": "0.875rem 0.5rem 1.125rem 0.5rem"
+                },
+                "steppanel": {
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "padding": "0",
+                  "indent": "1rem"
+                }
+              },
+              "steps": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "separator": {
+                  "background": "{content.border.color}"
+                },
+                "itemLink": {
+                  "borderRadius": "{content.border.radius}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "gap": "0.5rem"
+                },
+                "itemLabel": {
+                  "color": "{text.muted.color}",
+                  "activeColor": "{primary.color}",
+                  "fontWeight": "500"
+                },
+                "itemNumber": {
+                  "background": "{content.background}",
+                  "activeBackground": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "activeBorderColor": "{content.border.color}",
+                  "color": "{text.muted.color}",
+                  "activeColor": "{primary.color}",
+                  "size": "2rem",
+                  "fontSize": "1.143rem",
+                  "fontWeight": "500",
+                  "borderRadius": "50%",
+                  "shadow": "0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)"
+                }
+              },
+              "tabmenu": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "tablist": {
+                  "borderWidth": "0 0 1px 0",
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}"
+                },
+                "item": {
+                  "background": "transparent",
+                  "hoverBackground": "transparent",
+                  "activeBackground": "transparent",
+                  "borderWidth": "0 0 1px 0",
+                  "borderColor": "{content.border.color}",
+                  "hoverBorderColor": "{content.border.color}",
+                  "activeBorderColor": "{primary.color}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "activeColor": "{primary.color}",
+                  "padding": "1rem 1.125rem",
+                  "fontWeight": "600",
+                  "margin": "0 0 -1px 0",
+                  "gap": "0.5rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "itemIcon": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "activeColor": "{primary.color}"
+                },
+                "activeBar": {
+                  "height": "1px",
+                  "bottom": "-1px",
+                  "background": "{primary.color}"
+                }
+              },
+              "tabs": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "tablist": {
+                  "borderWidth": "0 0 1px 0",
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}"
+                },
+                "tab": {
+                  "background": "transparent",
+                  "hoverBackground": "transparent",
+                  "activeBackground": "transparent",
+                  "borderWidth": "0 0 1px 0",
+                  "borderColor": "{content.border.color}",
+                  "hoverBorderColor": "{content.border.color}",
+                  "activeBorderColor": "{primary.color}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "activeColor": "{primary.color}",
+                  "padding": "1rem 1.125rem",
+                  "fontWeight": "600",
+                  "margin": "0 0 -1px 0",
+                  "gap": "0.5rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "tabpanel": {
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "padding": "0.875rem 1.125rem 1.125rem 1.125rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "inset {focus.ring.shadow}"
+                  }
+                },
+                "navButton": {
+                  "background": "{content.background}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "width": "2.5rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "activeBar": {
+                  "height": "1px",
+                  "bottom": "-1px",
+                  "background": "{primary.color}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "navButton": {
+                      "shadow": "0px 0px 10px 50px rgba(255, 255, 255, 0.6)"
+                    }
+                  },
+                  "dark": {
+                    "navButton": {
+                      "shadow": "0px 0px 10px 50px color-mix(in srgb, {content.background}, transparent 50%)"
+                    }
+                  }
+                }
+              },
+              "tabview": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "tabList": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}"
+                },
+                "tab": {
+                  "borderColor": "{content.border.color}",
+                  "activeBorderColor": "{primary.color}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "activeColor": "{primary.color}"
+                },
+                "tabPanel": {
+                  "background": "{content.background}",
+                  "color": "{content.color}"
+                },
+                "navButton": {
+                  "background": "{content.background}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "navButton": {
+                      "shadow": "0px 0px 10px 50px rgba(255, 255, 255, 0.6)"
+                    }
+                  },
+                  "dark": {
+                    "navButton": {
+                      "shadow": "0px 0px 10px 50px color-mix(in srgb, {content.background}, transparent 50%)"
+                    }
+                  }
+                }
+              },
+              "tag": {
+                "root": {
+                  "fontSize": "0.875rem",
+                  "fontWeight": "700",
+                  "padding": "0.25rem 0.5rem",
+                  "gap": "0.25rem",
+                  "borderRadius": "{content.border.radius}",
+                  "roundedBorderRadius": "{border.radius.xl}"
+                },
+                "icon": {
+                  "size": "0.75rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "primary": {
+                      "background": "{primary.100}",
+                      "color": "{primary.700}"
+                    },
+                    "secondary": {
+                      "background": "{surface.100}",
+                      "color": "{surface.600}"
+                    },
+                    "success": {
+                      "background": "{green.100}",
+                      "color": "{green.700}"
+                    },
+                    "info": {
+                      "background": "{sky.100}",
+                      "color": "{sky.700}"
+                    },
+                    "warn": {
+                      "background": "{orange.100}",
+                      "color": "{orange.700}"
+                    },
+                    "danger": {
+                      "background": "{red.100}",
+                      "color": "{red.700}"
+                    },
+                    "contrast": {
+                      "background": "{surface.950}",
+                      "color": "{surface.0}"
+                    }
+                  },
+                  "dark": {
+                    "primary": {
+                      "background": "color-mix(in srgb, {primary.500}, transparent 84%)",
+                      "color": "{primary.300}"
+                    },
+                    "secondary": {
+                      "background": "{surface.800}",
+                      "color": "{surface.300}"
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.500}, transparent 84%)",
+                      "color": "{green.300}"
+                    },
+                    "info": {
+                      "background": "color-mix(in srgb, {sky.500}, transparent 84%)",
+                      "color": "{sky.300}"
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb, {orange.500}, transparent 84%)",
+                      "color": "{orange.300}"
+                    },
+                    "danger": {
+                      "background": "color-mix(in srgb, {red.500}, transparent 84%)",
+                      "color": "{red.300}"
+                    },
+                    "contrast": {
+                      "background": "{surface.0}",
+                      "color": "{surface.950}"
+                    }
+                  }
+                }
+              },
+              "terminal": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "color": "{form.field.color}",
+                  "height": "18rem",
+                  "padding": "{form.field.padding.y} {form.field.padding.x}",
+                  "borderRadius": "{form.field.border.radius}"
+                },
+                "prompt": {
+                  "gap": "0.25rem"
+                },
+                "commandResponse": {
+                  "margin": "2px 0"
+                }
+              },
+              "textarea": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}"
+                  }
+                }
+              },
+              "tieredmenu": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "color": "{content.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "shadow": "{overlay.navigation.shadow}",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "list": {
+                  "padding": "{navigation.list.padding}",
+                  "gap": "{navigation.list.gap}"
+                },
+                "item": {
+                  "focusBackground": "{navigation.item.focus.background}",
+                  "activeBackground": "{navigation.item.active.background}",
+                  "color": "{navigation.item.color}",
+                  "focusColor": "{navigation.item.focus.color}",
+                  "activeColor": "{navigation.item.active.color}",
+                  "padding": "{navigation.item.padding}",
+                  "borderRadius": "{navigation.item.border.radius}",
+                  "gap": "{navigation.item.gap}",
+                  "icon": {
+                    "color": "{navigation.item.icon.color}",
+                    "focusColor": "{navigation.item.icon.focus.color}",
+                    "activeColor": "{navigation.item.icon.active.color}"
+                  }
+                },
+                "submenu": {
+                  "mobileIndent": "1rem"
+                },
+                "submenuIcon": {
+                  "size": "{navigation.submenu.icon.size}",
+                  "color": "{navigation.submenu.icon.color}",
+                  "focusColor": "{navigation.submenu.icon.focus.color}",
+                  "activeColor": "{navigation.submenu.icon.active.color}"
+                },
+                "separator": {
+                  "borderColor": "{content.border.color}"
+                }
+              },
+              "timeline": {
+                "event": {
+                  "minHeight": "5rem"
+                },
+                "horizontal": {
+                  "eventContent": {
+                    "padding": "1rem 0"
+                  }
+                },
+                "vertical": {
+                  "eventContent": {
+                    "padding": "0 1rem"
+                  }
+                },
+                "eventMarker": {
+                  "size": "1.125rem",
+                  "borderRadius": "50%",
+                  "borderWidth": "2px",
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "content": {
+                    "borderRadius": "50%",
+                    "size": "0.375rem",
+                    "background": "{primary.color}",
+                    "insetShadow": "0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)"
+                  }
+                },
+                "eventConnector": {
+                  "color": "{content.border.color}",
+                  "size": "2px"
+                }
+              },
+              "toast": {
+                "root": {
+                  "width": "25rem",
+                  "borderRadius": "{content.border.radius}",
+                  "borderWidth": "1px",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "icon": {
+                  "size": "1.125rem"
+                },
+                "content": {
+                  "padding": "{overlay.popover.padding}",
+                  "gap": "0.5rem"
+                },
+                "text": {
+                  "gap": "0.5rem"
+                },
+                "summary": {
+                  "fontWeight": "500",
+                  "fontSize": "1rem"
+                },
+                "detail": {
+                  "fontWeight": "500",
+                  "fontSize": "0.875rem"
+                },
+                "closeButton": {
+                  "width": "1.75rem",
+                  "height": "1.75rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "offset": "{focus.ring.offset}"
+                  }
+                },
+                "closeIcon": {
+                  "size": "1rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "blur": "1.5px"
+                    },
+                    "info": {
+                      "background": "color-mix(in srgb, {blue.50}, transparent 5%)",
+                      "borderColor": "{blue.200}",
+                      "color": "{blue.600}",
+                      "detailColor": "{surface.700}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{blue.100}",
+                        "focusRing": {
+                          "color": "{blue.600}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.50}, transparent 5%)",
+                      "borderColor": "{green.200}",
+                      "color": "{green.600}",
+                      "detailColor": "{surface.700}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{green.100}",
+                        "focusRing": {
+                          "color": "{green.600}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb,{yellow.50}, transparent 5%)",
+                      "borderColor": "{yellow.200}",
+                      "color": "{yellow.600}",
+                      "detailColor": "{surface.700}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{yellow.100}",
+                        "focusRing": {
+                          "color": "{yellow.600}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "error": {
+                      "background": "color-mix(in srgb, {red.50}, transparent 5%)",
+                      "borderColor": "{red.200}",
+                      "color": "{red.600}",
+                      "detailColor": "{surface.700}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{red.100}",
+                        "focusRing": {
+                          "color": "{red.600}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "secondary": {
+                      "background": "{surface.100}",
+                      "borderColor": "{surface.200}",
+                      "color": "{surface.600}",
+                      "detailColor": "{surface.700}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.200}",
+                        "focusRing": {
+                          "color": "{surface.600}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "contrast": {
+                      "background": "{surface.900}",
+                      "borderColor": "{surface.950}",
+                      "color": "{surface.50}",
+                      "detailColor": "{surface.0}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.800}",
+                        "focusRing": {
+                          "color": "{surface.50}",
+                          "shadow": "none"
+                        }
+                      }
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "blur": "10px"
+                    },
+                    "info": {
+                      "background": "color-mix(in srgb, {blue.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {blue.700}, transparent 64%)",
+                      "color": "{blue.500}",
+                      "detailColor": "{surface.0}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{blue.500}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "success": {
+                      "background": "color-mix(in srgb, {green.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {green.700}, transparent 64%)",
+                      "color": "{green.500}",
+                      "detailColor": "{surface.0}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{green.500}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "warn": {
+                      "background": "color-mix(in srgb, {yellow.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {yellow.700}, transparent 64%)",
+                      "color": "{yellow.500}",
+                      "detailColor": "{surface.0}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{yellow.500}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "error": {
+                      "background": "color-mix(in srgb, {red.500}, transparent 84%)",
+                      "borderColor": "color-mix(in srgb, {red.700}, transparent 64%)",
+                      "color": "{red.500}",
+                      "detailColor": "{surface.0}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "rgba(255, 255, 255, 0.05)",
+                        "focusRing": {
+                          "color": "{red.500}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "secondary": {
+                      "background": "{surface.800}",
+                      "borderColor": "{surface.700}",
+                      "color": "{surface.300}",
+                      "detailColor": "{surface.0}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.700}",
+                        "focusRing": {
+                          "color": "{surface.300}",
+                          "shadow": "none"
+                        }
+                      }
+                    },
+                    "contrast": {
+                      "background": "{surface.0}",
+                      "borderColor": "{surface.100}",
+                      "color": "{surface.950}",
+                      "detailColor": "{surface.950}",
+                      "shadow": "0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)",
+                      "closeButton": {
+                        "hoverBackground": "{surface.100}",
+                        "focusRing": {
+                          "color": "{surface.950}",
+                          "shadow": "none"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "togglebutton": {
+                "root": {
+                  "padding": "0.25rem",
+                  "borderRadius": "{content.border.radius}",
+                  "gap": "0.5rem",
+                  "fontWeight": "500",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "disabledBorderColor": "{form.field.disabled.background}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "padding": "0.25rem"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "padding": "0.25rem"
+                  }
+                },
+                "icon": {
+                  "disabledColor": "{form.field.disabled.color}"
+                },
+                "content": {
+                  "padding": "0.25rem 0.75rem",
+                  "borderRadius": "{content.border.radius}",
+                  "checkedShadow": "0px 1px 2px 0px rgba(0, 0, 0, 0.02), 0px 1px 2px 0px rgba(0, 0, 0, 0.04)",
+                  "sm": {
+                    "padding": "0.25rem 0.75rem"
+                  },
+                  "lg": {
+                    "padding": "0.25rem 0.75rem"
+                  }
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "background": "{surface.100}",
+                      "checkedBackground": "{surface.100}",
+                      "hoverBackground": "{surface.100}",
+                      "borderColor": "{surface.100}",
+                      "color": "{surface.500}",
+                      "hoverColor": "{surface.700}",
+                      "checkedColor": "{surface.900}",
+                      "checkedBorderColor": "{surface.100}"
+                    },
+                    "content": {
+                      "checkedBackground": "{surface.0}"
+                    },
+                    "icon": {
+                      "color": "{surface.500}",
+                      "hoverColor": "{surface.700}",
+                      "checkedColor": "{surface.900}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "background": "{surface.950}",
+                      "checkedBackground": "{surface.950}",
+                      "hoverBackground": "{surface.950}",
+                      "borderColor": "{surface.950}",
+                      "color": "{surface.400}",
+                      "hoverColor": "{surface.300}",
+                      "checkedColor": "{surface.0}",
+                      "checkedBorderColor": "{surface.950}"
+                    },
+                    "content": {
+                      "checkedBackground": "{surface.800}"
+                    },
+                    "icon": {
+                      "color": "{surface.400}",
+                      "hoverColor": "{surface.300}",
+                      "checkedColor": "{surface.0}"
+                    }
+                  }
+                }
+              },
+              "toggleswitch": {
+                "root": {
+                  "width": "2.5rem",
+                  "height": "1.5rem",
+                  "borderRadius": "30px",
+                  "gap": "0.25rem",
+                  "shadow": "{form.field.shadow}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "borderWidth": "1px",
+                  "borderColor": "transparent",
+                  "hoverBorderColor": "transparent",
+                  "checkedBorderColor": "transparent",
+                  "checkedHoverBorderColor": "transparent",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "slideDuration": "0.2s"
+                },
+                "handle": {
+                  "borderRadius": "50%",
+                  "size": "1rem"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "background": "{surface.300}",
+                      "disabledBackground": "{form.field.disabled.background}",
+                      "hoverBackground": "{surface.400}",
+                      "checkedBackground": "{primary.color}",
+                      "checkedHoverBackground": "{primary.hover.color}"
+                    },
+                    "handle": {
+                      "background": "{surface.0}",
+                      "disabledBackground": "{form.field.disabled.color}",
+                      "hoverBackground": "{surface.0}",
+                      "checkedBackground": "{surface.0}",
+                      "checkedHoverBackground": "{surface.0}",
+                      "color": "{text.muted.color}",
+                      "hoverColor": "{text.color}",
+                      "checkedColor": "{primary.color}",
+                      "checkedHoverColor": "{primary.hover.color}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "background": "{surface.700}",
+                      "disabledBackground": "{surface.600}",
+                      "hoverBackground": "{surface.600}",
+                      "checkedBackground": "{primary.color}",
+                      "checkedHoverBackground": "{primary.hover.color}"
+                    },
+                    "handle": {
+                      "background": "{surface.400}",
+                      "disabledBackground": "{surface.900}",
+                      "hoverBackground": "{surface.300}",
+                      "checkedBackground": "{surface.900}",
+                      "checkedHoverBackground": "{surface.900}",
+                      "color": "{surface.900}",
+                      "hoverColor": "{surface.800}",
+                      "checkedColor": "{primary.color}",
+                      "checkedHoverColor": "{primary.hover.color}"
+                    }
+                  }
+                }
+              },
+              "toolbar": {
+                "root": {
+                  "background": "{content.background}",
+                  "borderColor": "{content.border.color}",
+                  "borderRadius": "{content.border.radius}",
+                  "color": "{content.color}",
+                  "gap": "0.5rem",
+                  "padding": "0.75rem"
+                }
+              },
+              "tooltip": {
+                "root": {
+                  "maxWidth": "12.5rem",
+                  "gutter": "0.25rem",
+                  "shadow": "{overlay.popover.shadow}",
+                  "padding": "0.5rem 0.75rem",
+                  "borderRadius": "{overlay.popover.border.radius}"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "background": "{surface.700}",
+                      "color": "{surface.0}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "background": "{surface.700}",
+                      "color": "{surface.0}"
+                    }
+                  }
+                }
+              },
+              "tree": {
+                "root": {
+                  "background": "{content.background}",
+                  "color": "{content.color}",
+                  "padding": "1rem",
+                  "gap": "2px",
+                  "indent": "1rem",
+                  "transitionDuration": "{transition.duration}"
+                },
+                "node": {
+                  "padding": "0.25rem 0.5rem",
+                  "borderRadius": "{content.border.radius}",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "color": "{text.color}",
+                  "hoverColor": "{text.hover.color}",
+                  "selectedColor": "{highlight.color}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  },
+                  "gap": "0.25rem"
+                },
+                "nodeIcon": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "selectedColor": "{highlight.color}"
+                },
+                "nodeToggleButton": {
+                  "borderRadius": "50%",
+                  "size": "1.75rem",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedHoverBackground": "{content.background}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "selectedHoverColor": "{primary.color}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "loadingIcon": {
+                  "size": "2rem"
+                },
+                "filter": {
+                  "margin": "0 0 0.5rem 0"
+                },
+                "css": "\n    .p-tree-mask.p-overlay-mask {\n        --px-mask-background: light-dark(rgba(255,255,255,0.5),rgba(0,0,0,0.3));\n    }\n"
+              },
+              "treeselect": {
+                "root": {
+                  "background": "{form.field.background}",
+                  "disabledBackground": "{form.field.disabled.background}",
+                  "filledBackground": "{form.field.filled.background}",
+                  "filledHoverBackground": "{form.field.filled.hover.background}",
+                  "filledFocusBackground": "{form.field.filled.focus.background}",
+                  "borderColor": "{form.field.border.color}",
+                  "hoverBorderColor": "{form.field.hover.border.color}",
+                  "focusBorderColor": "{form.field.focus.border.color}",
+                  "invalidBorderColor": "{form.field.invalid.border.color}",
+                  "color": "{form.field.color}",
+                  "disabledColor": "{form.field.disabled.color}",
+                  "placeholderColor": "{form.field.placeholder.color}",
+                  "invalidPlaceholderColor": "{form.field.invalid.placeholder.color}",
+                  "shadow": "{form.field.shadow}",
+                  "paddingX": "{form.field.padding.x}",
+                  "paddingY": "{form.field.padding.y}",
+                  "borderRadius": "{form.field.border.radius}",
+                  "focusRing": {
+                    "width": "{form.field.focus.ring.width}",
+                    "style": "{form.field.focus.ring.style}",
+                    "color": "{form.field.focus.ring.color}",
+                    "offset": "{form.field.focus.ring.offset}",
+                    "shadow": "{form.field.focus.ring.shadow}"
+                  },
+                  "transitionDuration": "{form.field.transition.duration}",
+                  "sm": {
+                    "fontSize": "{form.field.sm.font.size}",
+                    "paddingX": "{form.field.sm.padding.x}",
+                    "paddingY": "{form.field.sm.padding.y}"
+                  },
+                  "lg": {
+                    "fontSize": "{form.field.lg.font.size}",
+                    "paddingX": "{form.field.lg.padding.x}",
+                    "paddingY": "{form.field.lg.padding.y}"
+                  }
+                },
+                "dropdown": {
+                  "width": "2.5rem",
+                  "color": "{form.field.icon.color}"
+                },
+                "overlay": {
+                  "background": "{overlay.select.background}",
+                  "borderColor": "{overlay.select.border.color}",
+                  "borderRadius": "{overlay.select.border.radius}",
+                  "color": "{overlay.select.color}",
+                  "shadow": "{overlay.select.shadow}"
+                },
+                "tree": {
+                  "padding": "{list.padding}"
+                },
+                "emptyMessage": {
+                  "padding": "{list.option.padding}"
+                },
+                "chip": {
+                  "borderRadius": "{border.radius.sm}"
+                },
+                "clearIcon": {
+                  "color": "{form.field.icon.color}"
+                }
+              },
+              "treetable": {
+                "root": {
+                  "transitionDuration": "{transition.duration}"
+                },
+                "header": {
+                  "background": "{content.background}",
+                  "borderColor": "{treetable.border.color}",
+                  "color": "{content.color}",
+                  "borderWidth": "0 0 1px 0",
+                  "padding": "0.75rem 1rem"
+                },
+                "headerCell": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "borderColor": "{treetable.border.color}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "selectedColor": "{highlight.color}",
+                  "gap": "0.5rem",
+                  "padding": "0.75rem 1rem",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "columnTitle": {
+                  "fontWeight": "600"
+                },
+                "row": {
+                  "background": "{content.background}",
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedBackground": "{highlight.background}",
+                  "color": "{content.color}",
+                  "hoverColor": "{content.hover.color}",
+                  "selectedColor": "{highlight.color}",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "-1px",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "bodyCell": {
+                  "borderColor": "{treetable.border.color}",
+                  "padding": "0.75rem 1rem",
+                  "gap": "0.5rem"
+                },
+                "footerCell": {
+                  "background": "{content.background}",
+                  "borderColor": "{treetable.border.color}",
+                  "color": "{content.color}",
+                  "padding": "0.75rem 1rem"
+                },
+                "columnFooter": {
+                  "fontWeight": "600"
+                },
+                "footer": {
+                  "background": "{content.background}",
+                  "borderColor": "{treetable.border.color}",
+                  "color": "{content.color}",
+                  "borderWidth": "0 0 1px 0",
+                  "padding": "0.75rem 1rem"
+                },
+                "columnResizer": {
+                  "width": "0.5rem"
+                },
+                "resizeIndicator": {
+                  "width": "1px",
+                  "color": "{primary.color}"
+                },
+                "sortIcon": {
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.hover.muted.color}",
+                  "size": "0.875rem"
+                },
+                "loadingIcon": {
+                  "size": "2rem"
+                },
+                "nodeToggleButton": {
+                  "hoverBackground": "{content.hover.background}",
+                  "selectedHoverBackground": "{content.background}",
+                  "color": "{text.muted.color}",
+                  "hoverColor": "{text.color}",
+                  "selectedHoverColor": "{primary.color}",
+                  "size": "1.75rem",
+                  "borderRadius": "50%",
+                  "focusRing": {
+                    "width": "{focus.ring.width}",
+                    "style": "{focus.ring.style}",
+                    "color": "{focus.ring.color}",
+                    "offset": "{focus.ring.offset}",
+                    "shadow": "{focus.ring.shadow}"
+                  }
+                },
+                "paginatorTop": {
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "0 0 1px 0"
+                },
+                "paginatorBottom": {
+                  "borderColor": "{content.border.color}",
+                  "borderWidth": "0 0 1px 0"
+                },
+                "colorScheme": {
+                  "light": {
+                    "root": {
+                      "borderColor": "{content.border.color}"
+                    },
+                    "bodyCell": {
+                      "selectedBorderColor": "{primary.100}"
+                    }
+                  },
+                  "dark": {
+                    "root": {
+                      "borderColor": "{surface.800}"
+                    },
+                    "bodyCell": {
+                      "selectedBorderColor": "{primary.900}"
+                    }
+                  }
+                },
+                "css": "\n    .p-treetable-mask.p-overlay-mask {\n        --px-mask-background: light-dark(rgba(255,255,255,0.5),rgba(0,0,0,0.3));\n    }\n"
+              },
+              "virtualscroller": {
+                "loader": {
+                  "mask": {
+                    "background": "{content.background}",
+                    "color": "{text.muted.color}"
+                  },
+                  "icon": {
+                    "size": "2rem"
+                  }
+                }
+              }
+            },
+            "css": "\n    li.p-autocomplete-option,\n    div.p-cascadeselect-option-content,\n    li.p-listbox-option,\n    li.p-multiselect-option,\n    li.p-select-option,\n    li.p-listbox-option,\n    div.p-tree-node-content,\n    li.p-datatable-filter-constraint,\n    .p-datatable .p-datatable-tbody > tr,\n    .p-treetable .p-treetable-tbody > tr,\n    div.p-menu-item-content,\n    div.p-tieredmenu-item-content,\n    div.p-contextmenu-item-content,\n    div.p-menubar-item-content,\n    div.p-megamenu-item-content,\n    div.p-panelmenu-header-content,\n    div.p-panelmenu-item-content,\n    th.p-datatable-header-cell,\n    th.p-treetable-header-cell,\n    thead.p-datatable-thead > tr > th,\n    .p-treetable thead.p-treetable-thead>tr>th {\n        transition: none;\n    }\n"
+          },
+          "options": {
+            "prefix": "p",
+            "darkModeSelector": ".dark",
+            "cssLayer": false
+          }
+        }
+      },
+      "components": [
+        {
+          "name": "AutoComplete",
+          "as": "AutoComplete",
+          "from": "primevue/autocomplete",
+          "export": "default",
+          "filePath": "primevue/autocomplete",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Calendar",
+          "as": "Calendar",
+          "from": "primevue/calendar",
+          "export": "default",
+          "filePath": "primevue/calendar",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "CascadeSelect",
+          "as": "CascadeSelect",
+          "from": "primevue/cascadeselect",
+          "export": "default",
+          "filePath": "primevue/cascadeselect",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Checkbox",
+          "as": "Checkbox",
+          "from": "primevue/checkbox",
+          "export": "default",
+          "filePath": "primevue/checkbox",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "CheckboxGroup",
+          "as": "CheckboxGroup",
+          "from": "primevue/checkboxgroup",
+          "export": "default",
+          "filePath": "primevue/checkboxgroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Chips",
+          "as": "Chips",
+          "from": "primevue/chips",
+          "export": "default",
+          "filePath": "primevue/chips",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ColorPicker",
+          "as": "ColorPicker",
+          "from": "primevue/colorpicker",
+          "export": "default",
+          "filePath": "primevue/colorpicker",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "DatePicker",
+          "as": "DatePicker",
+          "from": "primevue/datepicker",
+          "export": "default",
+          "filePath": "primevue/datepicker",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Dropdown",
+          "as": "Dropdown",
+          "from": "primevue/dropdown",
+          "export": "default",
+          "filePath": "primevue/dropdown",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "FloatLabel",
+          "as": "FloatLabel",
+          "from": "primevue/floatlabel",
+          "export": "default",
+          "filePath": "primevue/floatlabel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Fluid",
+          "as": "Fluid",
+          "from": "primevue/fluid",
+          "export": "default",
+          "filePath": "primevue/fluid",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "IconField",
+          "as": "IconField",
+          "from": "primevue/iconfield",
+          "export": "default",
+          "filePath": "primevue/iconfield",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "IftaLabel",
+          "as": "IftaLabel",
+          "from": "primevue/iftalabel",
+          "export": "default",
+          "filePath": "primevue/iftalabel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputChips",
+          "as": "InputChips",
+          "from": "primevue/inputchips",
+          "export": "default",
+          "filePath": "primevue/inputchips",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputGroup",
+          "as": "InputGroup",
+          "from": "primevue/inputgroup",
+          "export": "default",
+          "filePath": "primevue/inputgroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputGroupAddon",
+          "as": "InputGroupAddon",
+          "from": "primevue/inputgroupaddon",
+          "export": "default",
+          "filePath": "primevue/inputgroupaddon",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputIcon",
+          "as": "InputIcon",
+          "from": "primevue/inputicon",
+          "export": "default",
+          "filePath": "primevue/inputicon",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputMask",
+          "as": "InputMask",
+          "from": "primevue/inputmask",
+          "export": "default",
+          "filePath": "primevue/inputmask",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputNumber",
+          "as": "InputNumber",
+          "from": "primevue/inputnumber",
+          "export": "default",
+          "filePath": "primevue/inputnumber",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputOtp",
+          "as": "InputOtp",
+          "from": "primevue/inputotp",
+          "export": "default",
+          "filePath": "primevue/inputotp",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputSwitch",
+          "as": "InputSwitch",
+          "from": "primevue/inputswitch",
+          "export": "default",
+          "filePath": "primevue/inputswitch",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InputText",
+          "as": "InputText",
+          "from": "primevue/inputtext",
+          "export": "default",
+          "filePath": "primevue/inputtext",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Knob",
+          "as": "Knob",
+          "from": "primevue/knob",
+          "export": "default",
+          "filePath": "primevue/knob",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Listbox",
+          "as": "Listbox",
+          "from": "primevue/listbox",
+          "export": "default",
+          "filePath": "primevue/listbox",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "MultiSelect",
+          "as": "MultiSelect",
+          "from": "primevue/multiselect",
+          "export": "default",
+          "filePath": "primevue/multiselect",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Password",
+          "as": "Password",
+          "from": "primevue/password",
+          "export": "default",
+          "filePath": "primevue/password",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "RadioButton",
+          "as": "RadioButton",
+          "from": "primevue/radiobutton",
+          "export": "default",
+          "filePath": "primevue/radiobutton",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "RadioButtonGroup",
+          "as": "RadioButtonGroup",
+          "from": "primevue/radiobuttongroup",
+          "export": "default",
+          "filePath": "primevue/radiobuttongroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Rating",
+          "as": "Rating",
+          "from": "primevue/rating",
+          "export": "default",
+          "filePath": "primevue/rating",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Select",
+          "as": "Select",
+          "from": "primevue/select",
+          "export": "default",
+          "filePath": "primevue/select",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "SelectButton",
+          "as": "SelectButton",
+          "from": "primevue/selectbutton",
+          "export": "default",
+          "filePath": "primevue/selectbutton",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Slider",
+          "as": "Slider",
+          "from": "primevue/slider",
+          "export": "default",
+          "filePath": "primevue/slider",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Textarea",
+          "as": "Textarea",
+          "from": "primevue/textarea",
+          "export": "default",
+          "filePath": "primevue/textarea",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ToggleButton",
+          "as": "ToggleButton",
+          "from": "primevue/togglebutton",
+          "export": "default",
+          "filePath": "primevue/togglebutton",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ToggleSwitch",
+          "as": "ToggleSwitch",
+          "from": "primevue/toggleswitch",
+          "export": "default",
+          "filePath": "primevue/toggleswitch",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TreeSelect",
+          "as": "TreeSelect",
+          "from": "primevue/treeselect",
+          "export": "default",
+          "filePath": "primevue/treeselect",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Button",
+          "as": "Button",
+          "from": "primevue/button",
+          "export": "default",
+          "filePath": "primevue/button",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ButtonGroup",
+          "as": "ButtonGroup",
+          "from": "primevue/buttongroup",
+          "export": "default",
+          "filePath": "primevue/buttongroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "SpeedDial",
+          "as": "SpeedDial",
+          "from": "primevue/speeddial",
+          "export": "default",
+          "filePath": "primevue/speeddial",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "SplitButton",
+          "as": "SplitButton",
+          "from": "primevue/splitbutton",
+          "export": "default",
+          "filePath": "primevue/splitbutton",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Column",
+          "as": "Column",
+          "from": "primevue/column",
+          "export": "default",
+          "filePath": "primevue/column",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Row",
+          "as": "Row",
+          "from": "primevue/row",
+          "export": "default",
+          "filePath": "primevue/row",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ColumnGroup",
+          "as": "ColumnGroup",
+          "from": "primevue/columngroup",
+          "export": "default",
+          "filePath": "primevue/columngroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "DataTable",
+          "as": "DataTable",
+          "from": "primevue/datatable",
+          "export": "default",
+          "filePath": "primevue/datatable",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "DataView",
+          "as": "DataView",
+          "from": "primevue/dataview",
+          "export": "default",
+          "filePath": "primevue/dataview",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "OrderList",
+          "as": "OrderList",
+          "from": "primevue/orderlist",
+          "export": "default",
+          "filePath": "primevue/orderlist",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "OrganizationChart",
+          "as": "OrganizationChart",
+          "from": "primevue/organizationchart",
+          "export": "default",
+          "filePath": "primevue/organizationchart",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Paginator",
+          "as": "Paginator",
+          "from": "primevue/paginator",
+          "export": "default",
+          "filePath": "primevue/paginator",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "PickList",
+          "as": "PickList",
+          "from": "primevue/picklist",
+          "export": "default",
+          "filePath": "primevue/picklist",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Tree",
+          "as": "Tree",
+          "from": "primevue/tree",
+          "export": "default",
+          "filePath": "primevue/tree",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TreeTable",
+          "as": "TreeTable",
+          "from": "primevue/treetable",
+          "export": "default",
+          "filePath": "primevue/treetable",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Timeline",
+          "as": "Timeline",
+          "from": "primevue/timeline",
+          "export": "default",
+          "filePath": "primevue/timeline",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "VirtualScroller",
+          "as": "VirtualScroller",
+          "from": "primevue/virtualscroller",
+          "export": "default",
+          "filePath": "primevue/virtualscroller",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Accordion",
+          "as": "Accordion",
+          "from": "primevue/accordion",
+          "export": "default",
+          "filePath": "primevue/accordion",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "AccordionPanel",
+          "as": "AccordionPanel",
+          "from": "primevue/accordionpanel",
+          "export": "default",
+          "filePath": "primevue/accordionpanel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "AccordionHeader",
+          "as": "AccordionHeader",
+          "from": "primevue/accordionheader",
+          "export": "default",
+          "filePath": "primevue/accordionheader",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "AccordionContent",
+          "as": "AccordionContent",
+          "from": "primevue/accordioncontent",
+          "export": "default",
+          "filePath": "primevue/accordioncontent",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "AccordionTab",
+          "as": "AccordionTab",
+          "from": "primevue/accordiontab",
+          "export": "default",
+          "filePath": "primevue/accordiontab",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Card",
+          "as": "Card",
+          "from": "primevue/card",
+          "export": "default",
+          "filePath": "primevue/card",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "DeferredContent",
+          "as": "DeferredContent",
+          "from": "primevue/deferredcontent",
+          "export": "default",
+          "filePath": "primevue/deferredcontent",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Divider",
+          "as": "Divider",
+          "from": "primevue/divider",
+          "export": "default",
+          "filePath": "primevue/divider",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Fieldset",
+          "as": "Fieldset",
+          "from": "primevue/fieldset",
+          "export": "default",
+          "filePath": "primevue/fieldset",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Panel",
+          "as": "Panel",
+          "from": "primevue/panel",
+          "export": "default",
+          "filePath": "primevue/panel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ScrollPanel",
+          "as": "ScrollPanel",
+          "from": "primevue/scrollpanel",
+          "export": "default",
+          "filePath": "primevue/scrollpanel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Splitter",
+          "as": "Splitter",
+          "from": "primevue/splitter",
+          "export": "default",
+          "filePath": "primevue/splitter",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "SplitterPanel",
+          "as": "SplitterPanel",
+          "from": "primevue/splitterpanel",
+          "export": "default",
+          "filePath": "primevue/splitterpanel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Stepper",
+          "as": "Stepper",
+          "from": "primevue/stepper",
+          "export": "default",
+          "filePath": "primevue/stepper",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "StepList",
+          "as": "StepList",
+          "from": "primevue/steplist",
+          "export": "default",
+          "filePath": "primevue/steplist",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Step",
+          "as": "Step",
+          "from": "primevue/step",
+          "export": "default",
+          "filePath": "primevue/step",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "StepItem",
+          "as": "StepItem",
+          "from": "primevue/stepitem",
+          "export": "default",
+          "filePath": "primevue/stepitem",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "StepPanels",
+          "as": "StepPanels",
+          "from": "primevue/steppanels",
+          "export": "default",
+          "filePath": "primevue/steppanels",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "StepPanel",
+          "as": "StepPanel",
+          "from": "primevue/steppanel",
+          "export": "default",
+          "filePath": "primevue/steppanel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TabView",
+          "as": "TabView",
+          "from": "primevue/tabview",
+          "export": "default",
+          "filePath": "primevue/tabview",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Tabs",
+          "as": "Tabs",
+          "from": "primevue/tabs",
+          "export": "default",
+          "filePath": "primevue/tabs",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TabList",
+          "as": "TabList",
+          "from": "primevue/tablist",
+          "export": "default",
+          "filePath": "primevue/tablist",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Tab",
+          "as": "Tab",
+          "from": "primevue/tab",
+          "export": "default",
+          "filePath": "primevue/tab",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TabPanels",
+          "as": "TabPanels",
+          "from": "primevue/tabpanels",
+          "export": "default",
+          "filePath": "primevue/tabpanels",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TabPanel",
+          "as": "TabPanel",
+          "from": "primevue/tabpanel",
+          "export": "default",
+          "filePath": "primevue/tabpanel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Toolbar",
+          "as": "Toolbar",
+          "from": "primevue/toolbar",
+          "export": "default",
+          "filePath": "primevue/toolbar",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ConfirmDialog",
+          "use": {
+            "as": "ConfirmationService"
+          },
+          "as": "ConfirmDialog",
+          "from": "primevue/confirmdialog",
+          "export": "default",
+          "filePath": "primevue/confirmdialog",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ConfirmPopup",
+          "use": {
+            "as": "ConfirmationService"
+          },
+          "as": "ConfirmPopup",
+          "from": "primevue/confirmpopup",
+          "export": "default",
+          "filePath": "primevue/confirmpopup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Dialog",
+          "as": "Dialog",
+          "from": "primevue/dialog",
+          "export": "default",
+          "filePath": "primevue/dialog",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Drawer",
+          "as": "Drawer",
+          "from": "primevue/drawer",
+          "export": "default",
+          "filePath": "primevue/drawer",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "DynamicDialog",
+          "use": {
+            "as": "DialogService"
+          },
+          "as": "DynamicDialog",
+          "from": "primevue/dynamicdialog",
+          "export": "default",
+          "filePath": "primevue/dynamicdialog",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "OverlayPanel",
+          "as": "OverlayPanel",
+          "from": "primevue/overlaypanel",
+          "export": "default",
+          "filePath": "primevue/overlaypanel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Popover",
+          "as": "Popover",
+          "from": "primevue/popover",
+          "export": "default",
+          "filePath": "primevue/popover",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Sidebar",
+          "as": "Sidebar",
+          "from": "primevue/sidebar",
+          "export": "default",
+          "filePath": "primevue/sidebar",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "FileUpload",
+          "as": "FileUpload",
+          "from": "primevue/fileupload",
+          "export": "default",
+          "filePath": "primevue/fileupload",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Breadcrumb",
+          "as": "Breadcrumb",
+          "from": "primevue/breadcrumb",
+          "export": "default",
+          "filePath": "primevue/breadcrumb",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ContextMenu",
+          "as": "ContextMenu",
+          "from": "primevue/contextmenu",
+          "export": "default",
+          "filePath": "primevue/contextmenu",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Dock",
+          "as": "Dock",
+          "from": "primevue/dock",
+          "export": "default",
+          "filePath": "primevue/dock",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Menu",
+          "as": "Menu",
+          "from": "primevue/menu",
+          "export": "default",
+          "filePath": "primevue/menu",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Menubar",
+          "as": "Menubar",
+          "from": "primevue/menubar",
+          "export": "default",
+          "filePath": "primevue/menubar",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "MegaMenu",
+          "as": "MegaMenu",
+          "from": "primevue/megamenu",
+          "export": "default",
+          "filePath": "primevue/megamenu",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "PanelMenu",
+          "as": "PanelMenu",
+          "from": "primevue/panelmenu",
+          "export": "default",
+          "filePath": "primevue/panelmenu",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Steps",
+          "as": "Steps",
+          "from": "primevue/steps",
+          "export": "default",
+          "filePath": "primevue/steps",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TabMenu",
+          "as": "TabMenu",
+          "from": "primevue/tabmenu",
+          "export": "default",
+          "filePath": "primevue/tabmenu",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "TieredMenu",
+          "as": "TieredMenu",
+          "from": "primevue/tieredmenu",
+          "export": "default",
+          "filePath": "primevue/tieredmenu",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Message",
+          "as": "Message",
+          "from": "primevue/message",
+          "export": "default",
+          "filePath": "primevue/message",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "InlineMessage",
+          "as": "InlineMessage",
+          "from": "primevue/inlinemessage",
+          "export": "default",
+          "filePath": "primevue/inlinemessage",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Toast",
+          "use": {
+            "as": "ToastService"
+          },
+          "as": "Toast",
+          "from": "primevue/toast",
+          "export": "default",
+          "filePath": "primevue/toast",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Carousel",
+          "as": "Carousel",
+          "from": "primevue/carousel",
+          "export": "default",
+          "filePath": "primevue/carousel",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Galleria",
+          "as": "Galleria",
+          "from": "primevue/galleria",
+          "export": "default",
+          "filePath": "primevue/galleria",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Image",
+          "as": "Image",
+          "from": "primevue/image",
+          "export": "default",
+          "filePath": "primevue/image",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ImageCompare",
+          "as": "ImageCompare",
+          "from": "primevue/imagecompare",
+          "export": "default",
+          "filePath": "primevue/imagecompare",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Avatar",
+          "as": "Avatar",
+          "from": "primevue/avatar",
+          "export": "default",
+          "filePath": "primevue/avatar",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "AvatarGroup",
+          "as": "AvatarGroup",
+          "from": "primevue/avatargroup",
+          "export": "default",
+          "filePath": "primevue/avatargroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Badge",
+          "as": "Badge",
+          "from": "primevue/badge",
+          "export": "default",
+          "filePath": "primevue/badge",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "BlockUI",
+          "as": "BlockUI",
+          "from": "primevue/blockui",
+          "export": "default",
+          "filePath": "primevue/blockui",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Chip",
+          "as": "Chip",
+          "from": "primevue/chip",
+          "export": "default",
+          "filePath": "primevue/chip",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Inplace",
+          "as": "Inplace",
+          "from": "primevue/inplace",
+          "export": "default",
+          "filePath": "primevue/inplace",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "MeterGroup",
+          "as": "MeterGroup",
+          "from": "primevue/metergroup",
+          "export": "default",
+          "filePath": "primevue/metergroup",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "OverlayBadge",
+          "as": "OverlayBadge",
+          "from": "primevue/overlaybadge",
+          "export": "default",
+          "filePath": "primevue/overlaybadge",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ScrollTop",
+          "as": "ScrollTop",
+          "from": "primevue/scrolltop",
+          "export": "default",
+          "filePath": "primevue/scrolltop",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Skeleton",
+          "as": "Skeleton",
+          "from": "primevue/skeleton",
+          "export": "default",
+          "filePath": "primevue/skeleton",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ProgressBar",
+          "as": "ProgressBar",
+          "from": "primevue/progressbar",
+          "export": "default",
+          "filePath": "primevue/progressbar",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "ProgressSpinner",
+          "as": "ProgressSpinner",
+          "from": "primevue/progressspinner",
+          "export": "default",
+          "filePath": "primevue/progressspinner",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Tag",
+          "as": "Tag",
+          "from": "primevue/tag",
+          "export": "default",
+          "filePath": "primevue/tag",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Terminal",
+          "as": "Terminal",
+          "from": "primevue/terminal",
+          "export": "default",
+          "filePath": "primevue/terminal",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "Form",
+          "from": "@primevue/forms/form",
+          "as": "Form",
+          "export": "default",
+          "filePath": "@primevue/forms/form",
+          "global": true,
+          "mode": "all"
+        },
+        {
+          "name": "FormField",
+          "from": "@primevue/forms/formfield",
+          "as": "FormField",
+          "export": "default",
+          "filePath": "@primevue/forms/formfield",
+          "global": true,
+          "mode": "all"
+        }
+      ],
+      "directives": [
+        {
+          "name": "badge",
+          "as": "BadgeDirective",
+          "from": "primevue/badgedirective"
+        },
+        {
+          "name": "tooltip",
+          "as": "Tooltip",
+          "from": "primevue/tooltip"
+        },
+        {
+          "name": "ripple",
+          "as": "Ripple",
+          "from": "primevue/ripple"
+        },
+        {
+          "name": "styleclass",
+          "as": "StyleClass",
+          "from": "primevue/styleclass"
+        },
+        {
+          "name": "focustrap",
+          "as": "FocusTrap",
+          "from": "primevue/focustrap"
+        },
+        {
+          "name": "animateonscroll",
+          "as": "AnimateOnScroll",
+          "from": "primevue/animateonscroll"
+        },
+        {
+          "name": "keyfilter",
+          "as": "KeyFilter",
+          "from": "primevue/keyfilter"
+        }
+      ],
+      "composables": [
+        {
+          "name": "usePrimeVue",
+          "as": "usePrimeVue",
+          "from": "primevue/config"
+        },
+        {
+          "name": "useStyle",
+          "as": "useStyle",
+          "from": "primevue/usestyle"
+        },
+        {
+          "name": "useConfirm",
+          "as": "useConfirm",
+          "from": "primevue/useconfirm"
+        },
+        {
+          "name": "useToast",
+          "as": "useToast",
+          "from": "primevue/usetoast"
+        },
+        {
+          "name": "useDialog",
+          "as": "useDialog",
+          "from": "primevue/usedialog"
+        }
+      ],
+      "config": [
+        {
+          "name": "PrimeVue",
+          "as": "PrimeVue",
+          "from": "primevue/config"
+        }
+      ],
+      "services": [
+        {
+          "name": "ConfirmationService",
+          "as": "ConfirmationService",
+          "from": "primevue/confirmationservice"
+        },
+        {
+          "name": "DialogService",
+          "as": "DialogService",
+          "from": "primevue/dialogservice"
+        },
+        {
+          "name": "ToastService",
+          "as": "ToastService",
+          "from": "primevue/toastservice"
+        }
+      ],
+      "styles": [
+        {
+          "name": "BaseStyle",
+          "as": "BaseStyle",
+          "from": "@primevue/core/base/style"
+        },
+        {
+          "name": "BaseComponentStyle",
+          "as": "BaseComponentStyle",
+          "from": "@primevue/core/basecomponent/style"
+        },
+        {
+          "name": "AutoCompleteStyle",
+          "as": "AutoCompleteStyle",
+          "from": "primevue/autocomplete/style"
+        },
+        {
+          "name": "CalendarStyle",
+          "as": "CalendarStyle",
+          "from": "primevue/calendar/style"
+        },
+        {
+          "name": "CascadeSelectStyle",
+          "as": "CascadeSelectStyle",
+          "from": "primevue/cascadeselect/style"
+        },
+        {
+          "name": "CheckboxStyle",
+          "as": "CheckboxStyle",
+          "from": "primevue/checkbox/style"
+        },
+        {
+          "name": "CheckboxGroupStyle",
+          "as": "CheckboxGroupStyle",
+          "from": "primevue/checkboxgroup/style"
+        },
+        {
+          "name": "ChipsStyle",
+          "as": "ChipsStyle",
+          "from": "primevue/chips/style"
+        },
+        {
+          "name": "ColorPickerStyle",
+          "as": "ColorPickerStyle",
+          "from": "primevue/colorpicker/style"
+        },
+        {
+          "name": "DatePickerStyle",
+          "as": "DatePickerStyle",
+          "from": "primevue/datepicker/style"
+        },
+        {
+          "name": "DropdownStyle",
+          "as": "DropdownStyle",
+          "from": "primevue/dropdown/style"
+        },
+        {
+          "name": "FloatLabelStyle",
+          "as": "FloatLabelStyle",
+          "from": "primevue/floatlabel/style"
+        },
+        {
+          "name": "FluidStyle",
+          "as": "FluidStyle",
+          "from": "primevue/fluid/style"
+        },
+        {
+          "name": "IconFieldStyle",
+          "as": "IconFieldStyle",
+          "from": "primevue/iconfield/style"
+        },
+        {
+          "name": "IftaLabelStyle",
+          "as": "IftaLabelStyle",
+          "from": "primevue/iftalabel/style"
+        },
+        {
+          "name": "InputChipsStyle",
+          "as": "InputChipsStyle",
+          "from": "primevue/inputchips/style"
+        },
+        {
+          "name": "InputGroupStyle",
+          "as": "InputGroupStyle",
+          "from": "primevue/inputgroup/style"
+        },
+        {
+          "name": "InputGroupAddonStyle",
+          "as": "InputGroupAddonStyle",
+          "from": "primevue/inputgroupaddon/style"
+        },
+        {
+          "name": "InputIconStyle",
+          "as": "InputIconStyle",
+          "from": "primevue/inputicon/style"
+        },
+        {
+          "name": "InputMaskStyle",
+          "as": "InputMaskStyle",
+          "from": "primevue/inputmask/style"
+        },
+        {
+          "name": "InputNumberStyle",
+          "as": "InputNumberStyle",
+          "from": "primevue/inputnumber/style"
+        },
+        {
+          "name": "InputOtpStyle",
+          "as": "InputOtpStyle",
+          "from": "primevue/inputotp/style"
+        },
+        {
+          "name": "InputSwitchStyle",
+          "as": "InputSwitchStyle",
+          "from": "primevue/inputswitch/style"
+        },
+        {
+          "name": "InputTextStyle",
+          "as": "InputTextStyle",
+          "from": "primevue/inputtext/style"
+        },
+        {
+          "name": "KnobStyle",
+          "as": "KnobStyle",
+          "from": "primevue/knob/style"
+        },
+        {
+          "name": "ListboxStyle",
+          "as": "ListboxStyle",
+          "from": "primevue/listbox/style"
+        },
+        {
+          "name": "MultiSelectStyle",
+          "as": "MultiSelectStyle",
+          "from": "primevue/multiselect/style"
+        },
+        {
+          "name": "PasswordStyle",
+          "as": "PasswordStyle",
+          "from": "primevue/password/style"
+        },
+        {
+          "name": "RadioButtonStyle",
+          "as": "RadioButtonStyle",
+          "from": "primevue/radiobutton/style"
+        },
+        {
+          "name": "RadioButtonGroupStyle",
+          "as": "RadioButtonGroupStyle",
+          "from": "primevue/radiobuttongroup/style"
+        },
+        {
+          "name": "RatingStyle",
+          "as": "RatingStyle",
+          "from": "primevue/rating/style"
+        },
+        {
+          "name": "SelectStyle",
+          "as": "SelectStyle",
+          "from": "primevue/select/style"
+        },
+        {
+          "name": "SelectButtonStyle",
+          "as": "SelectButtonStyle",
+          "from": "primevue/selectbutton/style"
+        },
+        {
+          "name": "SliderStyle",
+          "as": "SliderStyle",
+          "from": "primevue/slider/style"
+        },
+        {
+          "name": "TextareaStyle",
+          "as": "TextareaStyle",
+          "from": "primevue/textarea/style"
+        },
+        {
+          "name": "ToggleButtonStyle",
+          "as": "ToggleButtonStyle",
+          "from": "primevue/togglebutton/style"
+        },
+        {
+          "name": "ToggleSwitchStyle",
+          "as": "ToggleSwitchStyle",
+          "from": "primevue/toggleswitch/style"
+        },
+        {
+          "name": "TreeSelectStyle",
+          "as": "TreeSelectStyle",
+          "from": "primevue/treeselect/style"
+        },
+        {
+          "name": "ButtonStyle",
+          "as": "ButtonStyle",
+          "from": "primevue/button/style"
+        },
+        {
+          "name": "ButtonGroupStyle",
+          "as": "ButtonGroupStyle",
+          "from": "primevue/buttongroup/style"
+        },
+        {
+          "name": "SpeedDialStyle",
+          "as": "SpeedDialStyle",
+          "from": "primevue/speeddial/style"
+        },
+        {
+          "name": "SplitButtonStyle",
+          "as": "SplitButtonStyle",
+          "from": "primevue/splitbutton/style"
+        },
+        {
+          "name": "ColumnStyle",
+          "as": "ColumnStyle",
+          "from": "primevue/column/style"
+        },
+        {
+          "name": "RowStyle",
+          "as": "RowStyle",
+          "from": "primevue/row/style"
+        },
+        {
+          "name": "ColumnGroupStyle",
+          "as": "ColumnGroupStyle",
+          "from": "primevue/columngroup/style"
+        },
+        {
+          "name": "DataTableStyle",
+          "as": "DataTableStyle",
+          "from": "primevue/datatable/style"
+        },
+        {
+          "name": "DataViewStyle",
+          "as": "DataViewStyle",
+          "from": "primevue/dataview/style"
+        },
+        {
+          "name": "OrderListStyle",
+          "as": "OrderListStyle",
+          "from": "primevue/orderlist/style"
+        },
+        {
+          "name": "OrganizationChartStyle",
+          "as": "OrganizationChartStyle",
+          "from": "primevue/organizationchart/style"
+        },
+        {
+          "name": "PaginatorStyle",
+          "as": "PaginatorStyle",
+          "from": "primevue/paginator/style"
+        },
+        {
+          "name": "PickListStyle",
+          "as": "PickListStyle",
+          "from": "primevue/picklist/style"
+        },
+        {
+          "name": "TreeStyle",
+          "as": "TreeStyle",
+          "from": "primevue/tree/style"
+        },
+        {
+          "name": "TreeTableStyle",
+          "as": "TreeTableStyle",
+          "from": "primevue/treetable/style"
+        },
+        {
+          "name": "TimelineStyle",
+          "as": "TimelineStyle",
+          "from": "primevue/timeline/style"
+        },
+        {
+          "name": "VirtualScrollerStyle",
+          "as": "VirtualScrollerStyle",
+          "from": "primevue/virtualscroller/style"
+        },
+        {
+          "name": "AccordionStyle",
+          "as": "AccordionStyle",
+          "from": "primevue/accordion/style"
+        },
+        {
+          "name": "AccordionPanelStyle",
+          "as": "AccordionPanelStyle",
+          "from": "primevue/accordionpanel/style"
+        },
+        {
+          "name": "AccordionHeaderStyle",
+          "as": "AccordionHeaderStyle",
+          "from": "primevue/accordionheader/style"
+        },
+        {
+          "name": "AccordionContentStyle",
+          "as": "AccordionContentStyle",
+          "from": "primevue/accordioncontent/style"
+        },
+        {
+          "name": "AccordionTabStyle",
+          "as": "AccordionTabStyle",
+          "from": "primevue/accordiontab/style"
+        },
+        {
+          "name": "CardStyle",
+          "as": "CardStyle",
+          "from": "primevue/card/style"
+        },
+        {
+          "name": "DeferredContentStyle",
+          "as": "DeferredContentStyle",
+          "from": "primevue/deferredcontent/style"
+        },
+        {
+          "name": "DividerStyle",
+          "as": "DividerStyle",
+          "from": "primevue/divider/style"
+        },
+        {
+          "name": "FieldsetStyle",
+          "as": "FieldsetStyle",
+          "from": "primevue/fieldset/style"
+        },
+        {
+          "name": "PanelStyle",
+          "as": "PanelStyle",
+          "from": "primevue/panel/style"
+        },
+        {
+          "name": "ScrollPanelStyle",
+          "as": "ScrollPanelStyle",
+          "from": "primevue/scrollpanel/style"
+        },
+        {
+          "name": "SplitterStyle",
+          "as": "SplitterStyle",
+          "from": "primevue/splitter/style"
+        },
+        {
+          "name": "SplitterPanelStyle",
+          "as": "SplitterPanelStyle",
+          "from": "primevue/splitterpanel/style"
+        },
+        {
+          "name": "StepperStyle",
+          "as": "StepperStyle",
+          "from": "primevue/stepper/style"
+        },
+        {
+          "name": "StepListStyle",
+          "as": "StepListStyle",
+          "from": "primevue/steplist/style"
+        },
+        {
+          "name": "StepStyle",
+          "as": "StepStyle",
+          "from": "primevue/step/style"
+        },
+        {
+          "name": "StepItemStyle",
+          "as": "StepItemStyle",
+          "from": "primevue/stepitem/style"
+        },
+        {
+          "name": "StepPanelsStyle",
+          "as": "StepPanelsStyle",
+          "from": "primevue/steppanels/style"
+        },
+        {
+          "name": "StepPanelStyle",
+          "as": "StepPanelStyle",
+          "from": "primevue/steppanel/style"
+        },
+        {
+          "name": "TabViewStyle",
+          "as": "TabViewStyle",
+          "from": "primevue/tabview/style"
+        },
+        {
+          "name": "TabsStyle",
+          "as": "TabsStyle",
+          "from": "primevue/tabs/style"
+        },
+        {
+          "name": "TabListStyle",
+          "as": "TabListStyle",
+          "from": "primevue/tablist/style"
+        },
+        {
+          "name": "TabStyle",
+          "as": "TabStyle",
+          "from": "primevue/tab/style"
+        },
+        {
+          "name": "TabPanelsStyle",
+          "as": "TabPanelsStyle",
+          "from": "primevue/tabpanels/style"
+        },
+        {
+          "name": "TabPanelStyle",
+          "as": "TabPanelStyle",
+          "from": "primevue/tabpanel/style"
+        },
+        {
+          "name": "ToolbarStyle",
+          "as": "ToolbarStyle",
+          "from": "primevue/toolbar/style"
+        },
+        {
+          "name": "ConfirmDialogStyle",
+          "as": "ConfirmDialogStyle",
+          "from": "primevue/confirmdialog/style"
+        },
+        {
+          "name": "ConfirmPopupStyle",
+          "as": "ConfirmPopupStyle",
+          "from": "primevue/confirmpopup/style"
+        },
+        {
+          "name": "DialogStyle",
+          "as": "DialogStyle",
+          "from": "primevue/dialog/style"
+        },
+        {
+          "name": "DrawerStyle",
+          "as": "DrawerStyle",
+          "from": "primevue/drawer/style"
+        },
+        {
+          "name": "DynamicDialogStyle",
+          "as": "DynamicDialogStyle",
+          "from": "primevue/dynamicdialog/style"
+        },
+        {
+          "name": "OverlayPanelStyle",
+          "as": "OverlayPanelStyle",
+          "from": "primevue/overlaypanel/style"
+        },
+        {
+          "name": "PopoverStyle",
+          "as": "PopoverStyle",
+          "from": "primevue/popover/style"
+        },
+        {
+          "name": "SidebarStyle",
+          "as": "SidebarStyle",
+          "from": "primevue/sidebar/style"
+        },
+        {
+          "name": "FileUploadStyle",
+          "as": "FileUploadStyle",
+          "from": "primevue/fileupload/style"
+        },
+        {
+          "name": "BreadcrumbStyle",
+          "as": "BreadcrumbStyle",
+          "from": "primevue/breadcrumb/style"
+        },
+        {
+          "name": "ContextMenuStyle",
+          "as": "ContextMenuStyle",
+          "from": "primevue/contextmenu/style"
+        },
+        {
+          "name": "DockStyle",
+          "as": "DockStyle",
+          "from": "primevue/dock/style"
+        },
+        {
+          "name": "MenuStyle",
+          "as": "MenuStyle",
+          "from": "primevue/menu/style"
+        },
+        {
+          "name": "MenubarStyle",
+          "as": "MenubarStyle",
+          "from": "primevue/menubar/style"
+        },
+        {
+          "name": "MegaMenuStyle",
+          "as": "MegaMenuStyle",
+          "from": "primevue/megamenu/style"
+        },
+        {
+          "name": "PanelMenuStyle",
+          "as": "PanelMenuStyle",
+          "from": "primevue/panelmenu/style"
+        },
+        {
+          "name": "StepsStyle",
+          "as": "StepsStyle",
+          "from": "primevue/steps/style"
+        },
+        {
+          "name": "TabMenuStyle",
+          "as": "TabMenuStyle",
+          "from": "primevue/tabmenu/style"
+        },
+        {
+          "name": "TieredMenuStyle",
+          "as": "TieredMenuStyle",
+          "from": "primevue/tieredmenu/style"
+        },
+        {
+          "name": "MessageStyle",
+          "as": "MessageStyle",
+          "from": "primevue/message/style"
+        },
+        {
+          "name": "InlineMessageStyle",
+          "as": "InlineMessageStyle",
+          "from": "primevue/inlinemessage/style"
+        },
+        {
+          "name": "ToastStyle",
+          "as": "ToastStyle",
+          "from": "primevue/toast/style"
+        },
+        {
+          "name": "CarouselStyle",
+          "as": "CarouselStyle",
+          "from": "primevue/carousel/style"
+        },
+        {
+          "name": "GalleriaStyle",
+          "as": "GalleriaStyle",
+          "from": "primevue/galleria/style"
+        },
+        {
+          "name": "ImageStyle",
+          "as": "ImageStyle",
+          "from": "primevue/image/style"
+        },
+        {
+          "name": "ImageCompareStyle",
+          "as": "ImageCompareStyle",
+          "from": "primevue/imagecompare/style"
+        },
+        {
+          "name": "AvatarStyle",
+          "as": "AvatarStyle",
+          "from": "primevue/avatar/style"
+        },
+        {
+          "name": "AvatarGroupStyle",
+          "as": "AvatarGroupStyle",
+          "from": "primevue/avatargroup/style"
+        },
+        {
+          "name": "BadgeStyle",
+          "as": "BadgeStyle",
+          "from": "primevue/badge/style"
+        },
+        {
+          "name": "BlockUIStyle",
+          "as": "BlockUIStyle",
+          "from": "primevue/blockui/style"
+        },
+        {
+          "name": "ChipStyle",
+          "as": "ChipStyle",
+          "from": "primevue/chip/style"
+        },
+        {
+          "name": "InplaceStyle",
+          "as": "InplaceStyle",
+          "from": "primevue/inplace/style"
+        },
+        {
+          "name": "MeterGroupStyle",
+          "as": "MeterGroupStyle",
+          "from": "primevue/metergroup/style"
+        },
+        {
+          "name": "OverlayBadgeStyle",
+          "as": "OverlayBadgeStyle",
+          "from": "primevue/overlaybadge/style"
+        },
+        {
+          "name": "ScrollTopStyle",
+          "as": "ScrollTopStyle",
+          "from": "primevue/scrolltop/style"
+        },
+        {
+          "name": "SkeletonStyle",
+          "as": "SkeletonStyle",
+          "from": "primevue/skeleton/style"
+        },
+        {
+          "name": "ProgressBarStyle",
+          "as": "ProgressBarStyle",
+          "from": "primevue/progressbar/style"
+        },
+        {
+          "name": "ProgressSpinnerStyle",
+          "as": "ProgressSpinnerStyle",
+          "from": "primevue/progressspinner/style"
+        },
+        {
+          "name": "TagStyle",
+          "as": "TagStyle",
+          "from": "primevue/tag/style"
+        },
+        {
+          "name": "TerminalStyle",
+          "as": "TerminalStyle",
+          "from": "primevue/terminal/style"
+        },
+        {
+          "name": "FormStyle",
+          "as": "FormStyle",
+          "from": "@primevue/forms/form/style"
+        },
+        {
+          "name": "FormFieldStyle",
+          "as": "FormFieldStyle",
+          "from": "@primevue/forms/formfield/style"
+        },
+        {
+          "name": "TooltipStyle",
+          "as": "TooltipStyle",
+          "from": "primevue/tooltip/style"
+        },
+        {
+          "name": "RippleStyle",
+          "as": "RippleStyle",
+          "from": "primevue/ripple/style"
+        },
+        {
+          "name": "StyleClassStyle",
+          "as": "StyleClassStyle",
+          "from": "primevue/styleclass/style"
+        },
+        {
+          "name": "FocusTrapStyle",
+          "as": "FocusTrapStyle",
+          "from": "primevue/focustrap/style"
+        },
+        {
+          "name": "AnimateOnScrollStyle",
+          "as": "AnimateOnScrollStyle",
+          "from": "primevue/animateonscroll/style"
+        },
+        {
+          "name": "KeyFilterStyle",
+          "as": "KeyFilterStyle",
+          "from": "primevue/keyfilter/style"
+        }
+      ],
+      "injectStylesAsString": [],
+      "injectStylesAsStringToTop": [
+        ""
+      ]
+    },
+    "i18n": {
+      "baseUrl": "",
+      "defaultLocale": "ja",
+      "rootRedirect": "",
+      "redirectStatusCode": 302,
+      "skipSettingLocaleOnNavigate": false,
+      "locales": [
+        {
+          "code": "en",
+          "name": "English",
+          "language": ""
+        },
+        {
+          "code": "ja",
+          "name": "Japanese",
+          "language": ""
+        },
+        {
+          "code": "vi",
+          "name": "Vietnamese",
+          "language": ""
+        }
+      ],
+      "detectBrowserLanguage": {
+        "alwaysRedirect": false,
+        "cookieCrossOrigin": false,
+        "cookieDomain": "",
+        "cookieKey": "i18n_redirected",
+        "cookieSecure": false,
+        "fallbackLocale": "",
+        "redirectOn": "root",
+        "useCookie": true
+      },
+      "experimental": {
+        "localeDetector": "",
+        "typedPages": true,
+        "typedOptionsAndMessages": false,
+        "alternateLinkCanonicalQueries": true,
+        "devCache": false,
+        "cacheLifetime": "",
+        "stripMessagesPayload": false,
+        "preload": false,
+        "strictSeo": false,
+        "nitroContextDetection": true,
+        "httpCacheDuration": 10
+      },
+      "domainLocales": {
+        "en": {
+          "domain": ""
+        },
+        "ja": {
+          "domain": ""
+        },
+        "vi": {
+          "domain": ""
+        }
+      }
+    }
+  }
+};
+const envOptions = {
+  prefix: "NITRO_",
+  altPrefix: _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_",
+  envExpansion: _inlineRuntimeConfig.nitro.envExpansion ?? process.env.NITRO_ENV_EXPANSION ?? false
+};
+const _sharedRuntimeConfig = _deepFreeze(
+  applyEnv(klona(_inlineRuntimeConfig), envOptions)
+);
+function useRuntimeConfig(event) {
+  if (!event) {
+    return _sharedRuntimeConfig;
+  }
+  if (event.context.nitro.runtimeConfig) {
+    return event.context.nitro.runtimeConfig;
+  }
+  const runtimeConfig = klona(_inlineRuntimeConfig);
+  applyEnv(runtimeConfig, envOptions);
+  event.context.nitro.runtimeConfig = runtimeConfig;
+  return runtimeConfig;
+}
+_deepFreeze(klona(appConfig));
+function _deepFreeze(object) {
+  const propNames = Object.getOwnPropertyNames(object);
+  for (const name of propNames) {
+    const value = object[name];
+    if (value && typeof value === "object") {
+      _deepFreeze(value);
+    }
+  }
+  return Object.freeze(object);
+}
+new Proxy(/* @__PURE__ */ Object.create(null), {
+  get: (_, prop) => {
+    console.warn(
+      "Please use `useRuntimeConfig()` instead of accessing config directly."
+    );
+    const runtimeConfig = useRuntimeConfig();
+    if (prop in runtimeConfig) {
+      return runtimeConfig[prop];
+    }
+    return void 0;
+  }
+});
+
+function createContext(opts = {}) {
+  let currentInstance;
+  let isSingleton = false;
+  const checkConflict = (instance) => {
+    if (currentInstance && currentInstance !== instance) {
+      throw new Error("Context conflict");
+    }
+  };
+  let als;
+  if (opts.asyncContext) {
+    const _AsyncLocalStorage = opts.AsyncLocalStorage || globalThis.AsyncLocalStorage;
+    if (_AsyncLocalStorage) {
+      als = new _AsyncLocalStorage();
+    } else {
+      console.warn("[unctx] `AsyncLocalStorage` is not provided.");
+    }
+  }
+  const _getCurrentInstance = () => {
+    if (als) {
+      const instance = als.getStore();
+      if (instance !== void 0) {
+        return instance;
+      }
+    }
+    return currentInstance;
+  };
+  return {
+    use: () => {
+      const _instance = _getCurrentInstance();
+      if (_instance === void 0) {
+        throw new Error("Context is not available");
+      }
+      return _instance;
+    },
+    tryUse: () => {
+      return _getCurrentInstance();
+    },
+    set: (instance, replace) => {
+      if (!replace) {
+        checkConflict(instance);
+      }
+      currentInstance = instance;
+      isSingleton = true;
+    },
+    unset: () => {
+      currentInstance = void 0;
+      isSingleton = false;
+    },
+    call: (instance, callback) => {
+      checkConflict(instance);
+      currentInstance = instance;
+      try {
+        return als ? als.run(instance, callback) : callback();
+      } finally {
+        if (!isSingleton) {
+          currentInstance = void 0;
+        }
+      }
+    },
+    async callAsync(instance, callback) {
+      currentInstance = instance;
+      const onRestore = () => {
+        currentInstance = instance;
+      };
+      const onLeave = () => currentInstance === instance ? onRestore : void 0;
+      asyncHandlers.add(onLeave);
+      try {
+        const r = als ? als.run(instance, callback) : callback();
+        if (!isSingleton) {
+          currentInstance = void 0;
+        }
+        return await r;
+      } finally {
+        asyncHandlers.delete(onLeave);
+      }
+    }
+  };
+}
+function createNamespace(defaultOpts = {}) {
+  const contexts = {};
+  return {
+    get(key, opts = {}) {
+      if (!contexts[key]) {
+        contexts[key] = createContext({ ...defaultOpts, ...opts });
+      }
+      return contexts[key];
+    }
+  };
+}
+const _globalThis = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : {};
+const globalKey = "__unctx__";
+const defaultNamespace = _globalThis[globalKey] || (_globalThis[globalKey] = createNamespace());
+const getContext = (key, opts = {}) => defaultNamespace.get(key, opts);
+const asyncHandlersKey = "__unctx_async_handlers__";
+const asyncHandlers = _globalThis[asyncHandlersKey] || (_globalThis[asyncHandlersKey] = /* @__PURE__ */ new Set());
+
+getContext("nitro-app", {
+  asyncContext: false,
+  AsyncLocalStorage: void 0
+});
+
+const config$1 = useRuntimeConfig();
+const _routeRulesMatcher = toRouteMatcher(
+  createRouter$1({ routes: config$1.nitro.routeRules })
+);
+function createRouteRulesHandler(ctx) {
+  return eventHandler((event) => {
+    const routeRules = getRouteRules(event);
+    if (routeRules.headers) {
+      setHeaders(event, routeRules.headers);
+    }
+    if (routeRules.redirect) {
+      let target = routeRules.redirect.to;
+      if (target.endsWith("/**")) {
+        let targetPath = event.path;
+        const strpBase = routeRules.redirect._redirectStripBase;
+        if (strpBase) {
+          targetPath = withoutBase(targetPath, strpBase);
+        }
+        target = joinURL(target.slice(0, -3), targetPath);
+      } else if (event.path.includes("?")) {
+        const query = getQuery$1(event.path);
+        target = withQuery(target, query);
+      }
+      return sendRedirect(event, target, routeRules.redirect.statusCode);
+    }
+    if (routeRules.proxy) {
+      let target = routeRules.proxy.to;
+      if (target.endsWith("/**")) {
+        let targetPath = event.path;
+        const strpBase = routeRules.proxy._proxyStripBase;
+        if (strpBase) {
+          targetPath = withoutBase(targetPath, strpBase);
+        }
+        target = joinURL(target.slice(0, -3), targetPath);
+      } else if (event.path.includes("?")) {
+        const query = getQuery$1(event.path);
+        target = withQuery(target, query);
+      }
+      return proxyRequest(event, target, {
+        fetch: ctx.localFetch,
+        ...routeRules.proxy
+      });
+    }
+  });
+}
+function getRouteRules(event) {
+  event.context._nitro = event.context._nitro || {};
+  if (!event.context._nitro.routeRules) {
+    event.context._nitro.routeRules = getRouteRulesForPath(
+      withoutBase(event.path.split("?")[0], useRuntimeConfig().app.baseURL)
+    );
+  }
+  return event.context._nitro.routeRules;
+}
+function getRouteRulesForPath(path) {
+  return defu({}, ..._routeRulesMatcher.matchAll(path).reverse());
+}
+
+function _captureError(error, type) {
+  console.error(`[${type}]`, error);
+  useNitroApp().captureError(error, { tags: [type] });
+}
+function trapUnhandledNodeErrors() {
+  process.on(
+    "unhandledRejection",
+    (error) => _captureError(error, "unhandledRejection")
+  );
+  process.on(
+    "uncaughtException",
+    (error) => _captureError(error, "uncaughtException")
+  );
+}
+function joinHeaders(value) {
+  return Array.isArray(value) ? value.join(", ") : String(value);
+}
+function normalizeFetchResponse(response) {
+  if (!response.headers.has("set-cookie")) {
+    return response;
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: normalizeCookieHeaders(response.headers)
+  });
+}
+function normalizeCookieHeader(header = "") {
+  return splitCookiesString(joinHeaders(header));
+}
+function normalizeCookieHeaders(headers) {
+  const outgoingHeaders = new Headers();
+  for (const [name, header] of headers) {
+    if (name === "set-cookie") {
+      for (const cookie of normalizeCookieHeader(header)) {
+        outgoingHeaders.append("set-cookie", cookie);
+      }
+    } else {
+      outgoingHeaders.set(name, joinHeaders(header));
+    }
+  }
+  return outgoingHeaders;
+}
+
+/**
+* Nitro internal functions extracted from https://github.com/nitrojs/nitro/blob/v2/src/runtime/internal/utils.ts
+*/
+function isJsonRequest(event) {
+	// If the client specifically requests HTML, then avoid classifying as JSON.
+	if (hasReqHeader(event, "accept", "text/html")) {
+		return false;
+	}
+	return hasReqHeader(event, "accept", "application/json") || hasReqHeader(event, "user-agent", "curl/") || hasReqHeader(event, "user-agent", "httpie/") || hasReqHeader(event, "sec-fetch-mode", "cors") || event.path.startsWith("/api/") || event.path.endsWith(".json");
+}
+function hasReqHeader(event, name, includes) {
+	const value = getRequestHeader(event, name);
+	return value && typeof value === "string" && value.toLowerCase().includes(includes);
+}
+
+const errorHandler$0 = (async function errorhandler(error, event, { defaultHandler }) {
+	if (event.handled || isJsonRequest(event)) {
+		// let Nitro handle JSON errors
+		return;
+	}
+	// invoke default Nitro error handler (which will log appropriately if required)
+	const defaultRes = await defaultHandler(error, event, { json: true });
+	// let Nitro handle redirect if appropriate
+	const status = error.status || error.statusCode || 500;
+	if (status === 404 && defaultRes.status === 302) {
+		setResponseHeaders(event, defaultRes.headers);
+		setResponseStatus(event, defaultRes.status, defaultRes.statusText);
+		return send(event, JSON.stringify(defaultRes.body, null, 2));
+	}
+	const errorObject = defaultRes.body;
+	// remove proto/hostname/port from URL
+	const url = new URL(errorObject.url);
+	errorObject.url = withoutBase(url.pathname, useRuntimeConfig(event).app.baseURL) + url.search + url.hash;
+	// add default server message (keep sanitized for unhandled errors)
+	errorObject.message = error.unhandled ? errorObject.message || "Server Error" : error.message || errorObject.message || "Server Error";
+	// we will be rendering this error internally so we can pass along the error.data safely
+	errorObject.data ||= error.data;
+	errorObject.statusText ||= error.statusText || error.statusMessage;
+	delete defaultRes.headers["content-type"];
+	delete defaultRes.headers["content-security-policy"];
+	setResponseHeaders(event, defaultRes.headers);
+	// Access request headers
+	const reqHeaders = getRequestHeaders(event);
+	// Detect to avoid recursion in SSR rendering of errors
+	const isRenderingError = event.path.startsWith("/__nuxt_error") || !!reqHeaders["x-nuxt-error"];
+	// HTML response (via SSR)
+	const res = isRenderingError ? null : await useNitroApp().localFetch(withQuery(joinURL(useRuntimeConfig(event).app.baseURL, "/__nuxt_error"), errorObject), {
+		headers: {
+			...reqHeaders,
+			"x-nuxt-error": "true"
+		},
+		redirect: "manual"
+	}).catch(() => null);
+	if (event.handled) {
+		return;
+	}
+	// Fallback to static rendered error page
+	if (!res) {
+		const { template } = await import('../_/error-500.mjs');
+		setResponseHeader(event, "Content-Type", "text/html;charset=UTF-8");
+		return send(event, template(errorObject));
+	}
+	const html = await res.text();
+	for (const [header, value] of res.headers.entries()) {
+		if (header === "set-cookie") {
+			appendResponseHeader(event, header, value);
+			continue;
+		}
+		setResponseHeader(event, header, value);
+	}
+	setResponseStatus(event, res.status && res.status !== 200 ? res.status : defaultRes.status, res.statusText || defaultRes.statusText);
+	return send(event, html);
+});
+
+function defineNitroErrorHandler(handler) {
+  return handler;
+}
+
+const errorHandler$1 = defineNitroErrorHandler(
+  function defaultNitroErrorHandler(error, event) {
+    const res = defaultHandler(error, event);
+    setResponseHeaders(event, res.headers);
+    setResponseStatus(event, res.status, res.statusText);
+    return send(event, JSON.stringify(res.body, null, 2));
+  }
+);
+function defaultHandler(error, event, opts) {
+  const isSensitive = error.unhandled || error.fatal;
+  const statusCode = error.statusCode || 500;
+  const statusMessage = error.statusMessage || "Server Error";
+  const url = getRequestURL(event, { xForwardedHost: true, xForwardedProto: true });
+  if (statusCode === 404) {
+    const baseURL = "/";
+    if (/^\/[^/]/.test(baseURL) && !url.pathname.startsWith(baseURL)) {
+      const redirectTo = `${baseURL}${url.pathname.slice(1)}${url.search}`;
+      return {
+        status: 302,
+        statusText: "Found",
+        headers: { location: redirectTo },
+        body: `Redirecting...`
+      };
+    }
+  }
+  if (isSensitive && !opts?.silent) {
+    const tags = [error.unhandled && "[unhandled]", error.fatal && "[fatal]"].filter(Boolean).join(" ");
+    console.error(`[request error] ${tags} [${event.method}] ${url}
+`, error);
+  }
+  const headers = {
+    "content-type": "application/json",
+    // Prevent browser from guessing the MIME types of resources.
+    "x-content-type-options": "nosniff",
+    // Prevent error page from being embedded in an iframe
+    "x-frame-options": "DENY",
+    // Prevent browsers from sending the Referer header
+    "referrer-policy": "no-referrer",
+    // Disable the execution of any js
+    "content-security-policy": "script-src 'none'; frame-ancestors 'none';"
+  };
+  setResponseStatus(event, statusCode, statusMessage);
+  if (statusCode === 404 || !getResponseHeader(event, "cache-control")) {
+    headers["cache-control"] = "no-cache";
+  }
+  const body = {
+    error: true,
+    url: url.href,
+    statusCode,
+    statusMessage,
+    message: isSensitive ? "Server Error" : error.message,
+    data: isSensitive ? void 0 : error.data
+  };
+  return {
+    status: statusCode,
+    statusText: statusMessage,
+    headers,
+    body
+  };
+}
+
+const errorHandlers = [errorHandler$0, errorHandler$1];
+
+async function errorHandler(error, event) {
+  for (const handler of errorHandlers) {
+    try {
+      await handler(error, event, { defaultHandler });
+      if (event.handled) {
+        return; // Response handled
+      }
+    } catch(error) {
+      // Handler itself thrown, log and continue
+      console.error(error);
+    }
+  }
+  // H3 will handle fallback
+}
+
+/*!
+  * shared v11.3.0
+  * (c) 2026 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const _create = Object.create;
+const create = (obj = null) => _create(obj);
+/* eslint-enable */
+/**
+ * Useful Utilities By Evan you
+ * Modified by kazuya kawaguchi
+ * MIT License
+ * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/index.ts
+ * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/codeframe.ts
+ */
+const isArray = Array.isArray;
+const isFunction = (val) => typeof val === 'function';
+const isString = (val) => typeof val === 'string';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isObject = (val) => val !== null && typeof val === 'object';
+const objectToString = Object.prototype.toString;
+const toTypeString = (value) => objectToString.call(value);
+
+const isNotObjectOrIsArray = (val) => !isObject(val) || isArray(val);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function deepCopy(src, des) {
+    // src and des should both be objects, and none of them can be a array
+    if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
+        throw new Error('Invalid value');
+    }
+    const stack = [{ src, des }];
+    while (stack.length) {
+        const { src, des } = stack.pop();
+        // using `Object.keys` which skips prototype properties
+        Object.keys(src).forEach(key => {
+            if (key === '__proto__') {
+                return;
+            }
+            // if src[key] is an object/array, set des[key]
+            // to empty object/array to prevent setting by reference
+            if (isObject(src[key]) && !isObject(des[key])) {
+                des[key] = Array.isArray(src[key]) ? [] : create();
+            }
+            if (isNotObjectOrIsArray(des[key]) || isNotObjectOrIsArray(src[key])) {
+                // replace with src[key] when:
+                // src[key] or des[key] is not an object, or
+                // src[key] or des[key] is an array
+                des[key] = src[key];
+            }
+            else {
+                // src[key] and des[key] are both objects, merge them
+                stack.push({ src: src[key], des: des[key] });
+            }
+        });
+    }
+}
+
+const __nuxtMock = { runWithContext: async (fn) => await fn() };
+const merger = createDefu((obj, key, value) => {
+  if (key === "messages" || key === "datetimeFormats" || key === "numberFormats") {
+    obj[key] ??= create(null);
+    deepCopy(value, obj[key]);
+    return true;
+  }
+});
+async function loadVueI18nOptions(vueI18nConfigs) {
+  const nuxtApp = __nuxtMock;
+  let vueI18nOptions = { messages: create(null) };
+  for (const configFile of vueI18nConfigs) {
+    const resolver = await configFile().then((x) => isModule(x) ? x.default : x);
+    const resolved = isFunction(resolver) ? await nuxtApp.runWithContext(() => resolver()) : resolver;
+    vueI18nOptions = merger(create(null), resolved, vueI18nOptions);
+  }
+  vueI18nOptions.fallbackLocale ??= false;
+  return vueI18nOptions;
+}
+const isModule = (val) => toTypeString(val) === "[object Module]";
+async function getLocaleMessages(locale, loader) {
+  const nuxtApp = __nuxtMock;
+  try {
+    const getter = await nuxtApp.runWithContext(loader.load).then((x) => isModule(x) ? x.default : x);
+    return isFunction(getter) ? await nuxtApp.runWithContext(() => getter(locale)) : getter;
+  } catch (e) {
+    throw new Error(`Failed loading locale (${locale}): ` + e.message);
+  }
+}
+async function getLocaleMessagesMerged(locale, loaders = []) {
+  const nuxtApp = __nuxtMock;
+  const messages = await Promise.all(
+    loaders.map((loader) => nuxtApp.runWithContext(() => getLocaleMessages(locale, loader)))
+  );
+  const merged = {};
+  for (const message of messages) {
+    deepCopy(message, merged);
+  }
+  return merged;
+}
+
+var btn$2 = {
+	disable: "Disable",
+	enable: "Enable",
+	duplicate: "Duplicate",
+	imageUpload: "Attach",
+	fileUpload: "Select File",
+	detail: "Detail",
+	edit: "Edit",
+	view: "Detail",
+	create: "Register",
+	ok: "OK",
+	list: "List",
+	add: "Add",
+	register: "Register",
+	save: "Save",
+	back: "Back",
+	"delete": "Delete",
+	cancel: "Cancel",
+	change: "Change",
+	search: "Search...",
+	deactivate: "Deactivate",
+	activate: "Activate",
+	approval: "Approval",
+	reject: "Reject",
+	confirm: "Confirm",
+	start: "Start",
+	draft: "Draft",
+	send: "Send",
+	login: "Login",
+	select: "Select",
+	auto: "Auto numbering",
+	success: "Success",
+	warning: "Warning",
+	total: "Total",
+	entries: "Entries",
+	"import": "Import",
+	next: "Next",
+	request: "Request",
+	"export": "Export",
+	sendFax: "Send FAX",
+	sendMail: "Send Email",
+	update: "Update Billing Info",
+	filter: "Search",
+	removeFilter: "Clear",
+	showAll: "Detail",
+	logOut: "Logout",
+	close: "Close",
+	sync: "Update",
+	logout: "Logout",
+	upload: "Upload Image",
+	error: "Error",
+	deleteConfirm: "Confirm Delete",
+	exportExcel: "Export Excel",
+	exportPdf: "Export PDF"
+};
+var text$2 = {
+	cancel: "Cancel",
+	"delete": "Delete",
+	empty: "Empty",
+	no: "No.",
+	id: "ID",
+	deleteSuccess: "{field} deleted successfully",
+	syncSuccess: "Saved to sync queue successfully. It will be processed in order, please wait.",
+	resignSuccess: "{field} registered.",
+	noData: "No data available.",
+	notEmptyData: "Please enter this field.",
+	notEmptyChoose: "Please select {field}.",
+	notEmptyInput: "Please enter {field}.",
+	errorTimePast: "Please do not select a time in the past.",
+	saveSuccess: "{field} saved successfully.",
+	max255: "Please enter {field} within 255 characters.",
+	max500: "Please enter {field} within 500 characters.",
+	max150: "Please enter {field} within 150 characters.",
+	max100: "Please enter {field} within 100 characters.",
+	max50: "Please enter {field} within 50 characters.",
+	max20: "Please enter {field} within 20 characters.",
+	max10: "Please enter {field} within 10 characters.",
+	max9: "Please enter {field} within 9 characters.",
+	min8: "Please enter {field} with at least 8 characters.",
+	slugFormat: "{field} can only contain lowercase (a-z), numbers, and hyphens",
+	length10to13: "Please enter {field} between 10 and 13 characters",
+	length10to12: "Please enter {field} between 10 and 12 characters",
+	updateSuccess: "Blastmail account settings completed.",
+	createSuccess: "Registered successfully.",
+	udSuccess: "Saved successfully.",
+	activateSuccess: "Activated successfully.",
+	deactivateSuccess: "Deactivated successfully.",
+	max2000: "Please enter {field} within 2000 characters.",
+	duplicate: "is duplicated.",
+	date: "Date",
+	time: "Time",
+	note: "Note",
+	name: "Plan Name",
+	type: "Type",
+	price: "Price",
+	action: "Action",
+	email: "Email Address",
+	profile: "Profile",
+	director: "Director",
+	all: "All",
+	status: "Status",
+	minus: "min",
+	second: "sec",
+	success: "Success",
+	error: "Error",
+	require: "Required",
+	registerBy: "Registered by",
+	updatedBy: "Updated by",
+	msgPostcodeValid: "Postcode format is incorrect",
+	msgDropdownNoData: "No matching results",
+	errorCodeFormat: "Product code must be alphanumeric, Japanese characters, or underscores.",
+	errorMailFormat: "Email address format is incorrect.",
+	min0Valid: "Please enter a value greater than 0.",
+	validHiragana: "Please enter in Hiragana",
+	validSpacing: "Please do not include spaces in {field}.",
+	validUrl: "URL is invalid. Please double check.",
+	textRequired: "{field} is a required field.",
+	textNumberItem: "Only {maxLength} can be selected",
+	validateCalendarRange: "Please select both start and end dates.",
+	copy: "Copy",
+	sendSuccess: "Sent successfully.",
+	confirmLogoutTitle: "Are you sure you want to logout?",
+	confirmLogoutText: "This process cannot be undone.",
+	active: "Active",
+	inactive: "Inactive",
+	deleted: "Deleted",
+	sendAllSuccess: "Sending was successful.",
+	createdAt: "Registered Date",
+	updatedAt: "Updated Date",
+	stt: "No.",
+	accountLimit: "Account Limit",
+	collaboration: "Collaboration",
+	content: "Description",
+	apps: "Apps",
+	fromDate: "Start Date",
+	toDate: "End Date",
+	dateRange: "Select Period",
+	createNew: "Create New",
+	search: "Search",
+	confirmDelete: "Are you sure you want to delete?",
+	systemCode: "System Code",
+	year: "Year",
+	month: "Month",
+	week: "Week",
+	weekNum: "Week {field}",
+	rangeDate: "{start} - {end}",
+	textMoney: "$",
+	quantity: "Quantity",
+	profit: "Profit",
+	total: "Total",
+	showAll: "Show All",
+	hide: "Hide",
+	pdf: "PDF",
+	file: "File",
+	history: "Detail",
+	msgDeleteSuccess: "Deleted successfully.",
+	startDate: "Start Date",
+	endDate: "End Date",
+	selectMonth: "Select Month",
+	weekOfMonth: "Week of Month",
+	loadMore: "Load More",
+	errorPassLength: "Please enter a password between 8-20 characters including uppercase, lowercase, numbers, and special characters.",
+	errorOtpLength: "Please enter the verification code correctly.",
+	unique: "{field} already exists in the system",
+	formatTax: "Please enter a tax code between 10 and 13 characters",
+	taxMin9: "Discount must be within 9 characters",
+	password: "Please enter {field} between 8-20 characters including uppercase, lowercase, numbers, and special characters.",
+	invalidFileType: "Invalid file format. Allowed formats: png, jpg, jpeg, svg.",
+	invalidFileType1: "Invalid file format. Allowed formats: glb, gltf, obj.",
+	invalidFileSize: "Please upload an image size not exceeding 10MB.",
+	invalidMediaType: "Unsupported file format",
+	fileTooLarge: "{type} exceeds the allowed size limit ({size}).",
+	image: "Image",
+	video: "Video",
+	emailExists: "Email address or password is invalid. Please double check.",
+	emailMax: "Please enter email within 255 characters.",
+	codeIncorrect: "OTP code is invalid. Please check again.",
+	please_fill_all_fields: "Please fill in all required information",
+	msgMapNotFound: "The address could not be found on the map.",
+	verifyFidelity: "Verify Data Fidelity",
+	requiredFidelity: "Ensure all REQUIRED fields are populated before finalizing.",
+	errorInput: "Invalid input information. Please double check the fields highlighted in red.",
+	addSuccess: "Added successfully.",
+	edit: "Edit",
+	viewDetail: "View Details",
+	errorMessage: "Invalid input or system error.",
+	info: "Information",
+	warning: "Warning",
+	errorSystem: "An error occurred"
+};
+var msgCommon$2 = {
+	select: "Select",
+	confirmLogoutTitle: "Are you sure you want to logout?",
+	confirmLogoutText: "This process cannot be undone."
+};
+var radioButton$2 = {
+	yes: "Yes",
+	no: "No"
+};
+var deleteModal$2 = {
+	areYouSure: "Are you sure you want to delete?",
+	confirmDelete: "This process cannot be undone."
+};
+var confirmModal$2 = {
+	confirm: "Confirm",
+	confirmRequest: "Do you want to determine the new unit price?",
+	cancel: "Cancel",
+	language: "Language",
+	vietnamese: "Vietnamese",
+	english: "English",
+	japanese: "Japanese",
+	confirmExport: "Export Confirmation",
+	ExportFile: "Export",
+	leaveTabTitle: "Are you sure you want to switch tabs?",
+	leaveTabMessage: "Unsaved changes will be lost if you switch.",
+	changeActiveNotifySuccess: "Collaboration has been enabled.",
+	changeDeactiveNotifySuccess: "Collaboration has been disabled."
+};
+var tableBox$2 = {
+	noData: "No data available.",
+	noSearchData: "No matching results",
+	action: "Action",
+	deleteAllSelect: "Delete all selected data"
+};
+var uploadAvatar$2 = {
+	errType: "File format or extension is incorrect.",
+	maxImage: "Please upload an image less than 10MB."
+};
+var uploadFile$2 = {
+	errType: "File format or extension is incorrect.",
+	maxFile: "Please upload a file less than 10MB.",
+	uploadFileSuccess: "File data has been imported."
+};
+var paginator$2 = {
+	itemsPerPage: "per page",
+	showItems: "Page {from}-{to}/{total}",
+	pages: "Page {page}/{total}",
+	display: "per page",
+	perPage: "items",
+	showInfo: "{fieldFrom}-{fieldTo}/{fieldTotal} items"
+};
+var auth$2 = {
+	titleLogin: "Please log in to your account",
+	invalid: "Email address or password is invalid. Please double check.",
+	unauthorized: "Token is invalid and cannot be used",
+	need_update_password: "Password update is required.",
+	forbidden: "Access denied!",
+	not_found: "OTP code entered is incorrect.",
+	blacklist_token: "This token has already been used",
+	login: "Login",
+	email: "User ID",
+	code: "Verification Code",
+	password: "Password",
+	rememberPassword: "Keep me logged in",
+	loginSuccess: "Login completed.",
+	errorMail: "Please enter user ID.",
+	errorMailFormat: "User ID format is incorrect.",
+	userNotExisted: "User ID or password is incorrect.",
+	errorPass: "Please enter password.",
+	errorPassNew: "Please enter new password.",
+	errorPassLength: "Please enter 8-32 characters password including lowercase, uppercase, numbers, and special characters.",
+	forgotPassword: "Forgot Password",
+	haveAnPassword: "Remembered password?",
+	sendResetSuccess: "Password reset request has been sent.",
+	resetPassword: "Reset Password",
+	receiveOtp: "Didn't receive verification code?",
+	retransmission: "Resend",
+	settingPassword: "Password Setting",
+	reSendResetSuccess: "Verification code has been sent to email. Please check your email.",
+	errorOtp: "Please enter verification code.",
+	newPassword: "New Password",
+	newPasswordConfirm: "Confirm Password",
+	errorRePass: "Please enter password confirmation.",
+	rePassNotMatch: "Password and confirmation password do not match. Please check.",
+	resetSuccess: "Password has been changed.",
+	confirmLogout: "Are you sure you want to logout?",
+	settingPasswordSuccess: "First password update successful",
+	resetPass: "Change Password",
+	enterEmailResetPass: "Please enter your email address to reset password.",
+	sendForgotPass: "Send Verification Code",
+	otp: "OTP",
+	errorEmail: "Invalid email address. Please check.",
+	inactive: "Access denied. Account is locked or not yet activated.",
+	msgWelcomeBack: "Welcome {name} back!",
+	msgMustChangePassword: "Password change required",
+	msgMustChangePasswordDesc: "This is your first login. Please change your password to activate the account!",
+	msgChangePasswordSuccess: "Password has been changed successfully.",
+	changePasswordDesc: "Change your account password. The new password must be at least 8 characters long, including uppercase, lowercase, numbers, and special characters.",
+	currentPassword: "Current Password",
+	currentPasswordPlaceholder: "Enter current password",
+	newPasswordPlaceholder: "Enter new password",
+	confirmPasswordPlaceholder: "Re-enter new password",
+	lowercaseHint: "Lowercase (a-z)",
+	uppercaseHint: "Uppercase (A-Z)",
+	digitHint: "Digits (0-9)",
+	specialHint: "Special characters (!{'@'}#$...)",
+	minLengthHint: "At least 8 characters",
+	maxLengthHint: "At most 50 characters",
+	backToLogin: "Back to login",
+	usernameLabel: "User ID / Email / Phone number",
+	usernamePlaceholder: "Enter User ID, email, or phone number",
+	defaultSloganTitle1: "Comprehensive",
+	defaultSloganTitle2: "compliance",
+	defaultSloganTitle3: "control.",
+	defaultSloganDesc: "Compliance management system for legal documents, HR, contracts, and corporate documents for Vietnam - Japan multinational enterprises.",
+	passwordMin: "Password must be at least 8 characters.",
+	passwordMax: "Password must not exceed 50 characters.",
+	passwordLower: "Password must contain at least 1 lowercase letter (a-z).",
+	passwordUpper: "Password must contain at least 1 uppercase letter (A-Z).",
+	passwordDigit: "Password must contain at least 1 digit (0-9).",
+	passwordSpecial: "Password must contain at least 1 special character (!{'@'}#$%...)."
+};
+var notFound$2 = {
+	backToHome: "Go back home"
+};
+var router$2 = {
+	homePage: "Home",
+	userList: "Employee List",
+	userRegister: "Employee Registration",
+	userDetail: "Employee Details",
+	userEdit: "Edit Employee",
+	categoryRegister: "Product Catalog Registration",
+	categoryList: "Product Catalog List",
+	categoryEdit: "Edit Product Catalog",
+	categoryDetail: "Product Catalog Details",
+	customerRegister: "Customer Registration",
+	customerList: "Customer List",
+	customerEdit: "Edit Customer",
+	customerDetail: "Customer Details"
+};
+var menu$2 = {
+	main: "Main",
+	companyBoard: "Company News Board",
+	masterData: "Master data",
+	industrialDashboard: "Industrial dashboard",
+	master: "Master",
+	list: "List",
+	register: "Register",
+	dashboard: "Dashboard",
+	department: "Department Management",
+	departmentList: "Department List",
+	departmentAdd: "Add Department",
+	departmentEdit: "Edit Department",
+	position: "Position Management",
+	positionList: "Position List",
+	positionAdd: "Add Position",
+	positionEdit: "Edit Position",
+	company: "Company Management",
+	companySetting: "Company Settings",
+	companyList: "Company List",
+	companyAdd: "Add Company",
+	companyEdit: "Edit Company",
+	userMaster: "User Management",
+	employee: "Employee Management",
+	userMasterList: "User List",
+	userMasterAdd: "Register User",
+	userMasterEdit: "Edit User",
+	basicInfo: "Basic Information",
+	contactInfo: "Contact Details",
+	noteInfo: "Notes & Others",
+	timesheet: "Timesheet Management",
+	timesheetManage: "Admin Timesheets",
+	leaveRequest: "Leave Request",
+	leaveRequestPending: "Leave Approval",
+	contract: "Contract Management",
+	transaction: "Cash Flow Management",
+	compliance: "Compliance Engine",
+	document: "Document & Archive Management",
+	member: "Member Management",
+	myProfile: "My Profile",
+	logout: "Logout",
+	sidebarConfig: "Sidebar Configuration",
+	changePassword: "Change Password"
+};
+var department$2 = {
+	code: "Department Code",
+	name: "Department Name",
+	note: "Note",
+	status: "Status",
+	title: "Department Management",
+	placeholderSearch: "Code, department name",
+	noteBasic: "Basic department information configuration",
+	noteDetail: "Task details & Functions",
+	namePlaceholder: "Research & Development Department (R&D)",
+	positionListTitle: "Job Position/Title List",
+	positionListDesc: "Add job positions belonging to this department",
+	addPosition: "Add Position",
+	noPositionYet: "No positions yet. Please click the add position button.",
+	positionName: "Job Title",
+	positionNamePlaceholder: "Senior Engineer...",
+	positionDesc: "Job Description",
+	positionDescPlaceholder: "Describe responsibilities...",
+	noteAndDesc: "Description & Notes",
+	notePlaceholder: "Enter detailed description of the functional structure of this department...",
+	valMissPositionName: "Please enter job title",
+	valMissPositionDesc: "Please fill in all job titles.",
+	associatedJobTitles: "Associated Job Titles"
+};
+var user$2 = {
+	gender: "Gender",
+	status: "Status"
+};
+var position$2 = {
+	title: "Position Management",
+	code: "Position Code",
+	name: "Position Name",
+	note: "Note",
+	status: "Status",
+	placeholderSearch: "Code, position name",
+	noteBasic: "Identification and role configuration",
+	noteDetail: "Job requirements & Role description"
+};
+var company$2 = {
+	title: "Company Management",
+	code: "Company Code",
+	name: "Company Name",
+	postcode: "Postcode",
+	searchAddress: "Search Address",
+	area: "Area",
+	prefecture: "Prefecture",
+	city: "City",
+	town: "Town",
+	address: "Current Office Address",
+	addressRegistered: "Registered Business Address (Legal)",
+	phone: "Phone Number",
+	fax: "Fax Number",
+	email: "Business Contact Email",
+	note: "Note",
+	status: "Operating Status",
+	statusActive: "Active",
+	statusInactive: "Inactive",
+	placeholderSearch: "Code, company name",
+	noteCode: "Core identity configuration",
+	noteContact: "Official business contact channels",
+	noteDetail: "Record important notes",
+	editTitle: "Edit Company",
+	createTitle: "Add New Company",
+	editDesc: "Update legal entity profile",
+	createDesc: "Set up partner & branch information",
+	saveProfile: "Save Profile",
+	basicInfo: "Basic Information",
+	basicInfoDesc: "Company name, legal entity code and legal representative",
+	nameKana: "Kana Name",
+	legalRepresentative: "Legal Representative",
+	taxSection: "Tax & Legal Identifiers",
+	taxSectionDesc: "Tax code, corporate number for invoicing and reporting",
+	taxCode: "Tax Code",
+	corporateNumber: "Corporate Number",
+	contactSection: "Contact Information",
+	contactSectionDesc: "Contact details for direct communication with the company",
+	addressSection: "Headquarters Address",
+	addressSectionDesc: "Business registration and office working address",
+	noteSection: "Notes & Memos",
+	companyInfo: "Company Info",
+	contactInfo: "Contact Info",
+	headOfficeAddress: "Headquarters Address",
+	registeredAddress: "Registered Address"
+};
+var companySetting$2 = {
+	desc: "Configure the legal and corporate profile of the managing enterprise",
+	basicSectionTitle: "Basic Corporate Profile",
+	basicSectionDesc: "Fill in the official registered profile of the managing enterprise.",
+	namePlaceholder: "e.g. Technology Solutions Joint Stock Company",
+	nameKana: "Abbreviation / Kana Name",
+	capital: "Charter Capital",
+	capitalPlaceholder: "e.g. 10,000,000,000 VND or 100,000,000 JPY",
+	corporatePlaceholder: "e.g. Corporate ID: 1234567890123",
+	legalTitle: "Legal Representative",
+	legalDesc: "Legal identity details of the representative authorized for contracts.",
+	repPlaceholder: "John Doe",
+	repTitle: "Representative Position",
+	repTitlePlaceholder: "e.g. Director / General Manager / President",
+	repIdNumber: "ID / Passport Number",
+	repIdDate: "ID Date of Issue",
+	repIdPlace: "ID Place of Issue",
+	repIdPlacePlaceholder: "e.g. Department of Administrative Police",
+	contactTitle: "Contact Details & Address",
+	contactDesc: "Official registered address and communication endpoints.",
+	website: "Website",
+	addressPlaceholder: "e.g. Keangnam Landmark Tower, Me Tri, Nam Tu Liem, Hanoi",
+	addressRegisteredPlaceholder: "e.g. 12th Floor, Keangnam Landmark Tower, Me Tri, Hanoi",
+	brandingTitle: "Branding & Interface Config",
+	brandingDesc: "Customize corporate logo, login background, sidebar titles, and company slogans.",
+	sidebarName: "Sidebar Display Name",
+	sidebarSubName: "Sidebar Sub Name",
+	sidebarSubPlaceholder: "Compliance Management System",
+	logoLabel: "Corporate Logo (Web Logo)",
+	logoAccept: "Supports JPG, PNG. Transparent square image is recommended.",
+	loginBgLabel: "Login Background Image",
+	loginBgAccept: "Supports JPG, PNG. 16:9 ratio or high-resolution image is recommended.",
+	slogan1: "Company Slogan (Line 1 - Main Title)",
+	slogan1Placeholder: "Pioneering Tech - Shaping the Future",
+	slogan2: "Company Slogan (Line 2)",
+	slogan2Placeholder: "Enterprise Compliance Management System",
+	slogan3: "Company Slogan (Line 3)",
+	slogan3Placeholder: "Elevate Governance, Optimize Operations",
+	complianceBadge: "COMPLIANCE ENGINE",
+	defaultContractTitle: "Default Contract Information",
+	defaultContractDesc: "Information registered here will be auto-populated under Party A (Employer / Client) for new contracts. This can still be customized per contract.",
+	uploadLogoSuccess: "Logo uploaded successfully.",
+	uploadLogoError: "Failed to upload logo.",
+	uploadBgSuccess: "Background image uploaded successfully.",
+	uploadBgError: "Failed to upload background image.",
+	landingTitle: "Company Website Settings",
+	landingDescText: "Configure your company website using an external link or building a custom introduction page",
+	landingStyleLabel: "Introduction Page Style",
+	businessFieldLabel: "Business Field",
+	aboutUsLabel: "About Us Introduction",
+	aboutUsPlaceholder: "Introduce mission, vision, and core values of your company...",
+	servicesListLabel: "Main Services List (One service per line)",
+	servicesListPlaceholder: "Service 1: Brief description\nService 2: Brief description\nService 3: Brief description",
+	bannerDesignTitle: "Slide Banner & Image Assets (Preview Intro Page)",
+	slide1Label: "Slide Banner 1",
+	slide2Label: "Slide Banner 2",
+	slide3Label: "Slide Banner 3",
+	aboutImgLabel: "About Us Image",
+	uploadSlide1: "Upload Slide 1",
+	uploadSlide2: "Upload Slide 2",
+	uploadSlide3: "Upload Slide 3",
+	uploadAboutImg: "Upload About Image",
+	loadMockupBtn: "Load Mockup Data",
+	previewLandingBtn: "Preview Intro Page",
+	websiteOptionLabel: "Company Website Option",
+	websiteOptionExternal: "Already has own website (Enter URL link)",
+	websiteOptionInternal: "No custom website yet (Build custom intro page)",
+	websiteUrlLabel: "Company Website URL",
+	websiteUrlPlaceholder: "Example: https://www.company.com",
+	style1Label: "Style 1 - Modern Tech (Modern & Clean)",
+	style2Label: "Style 2 - Elegant Classic (Classic & Luxurious)",
+	style3Label: "Style 3 - Minimalist Clean (Minimal & Minimalist)",
+	style4Label: "Style 4 - Vibrant Creative (Creative & Active)",
+	style5Label: "Style 5 - Trust Corporate (Professional & Trusted)",
+	fieldIt: "Information Technology & Software",
+	fieldFinance: "Financial & Accounting Services",
+	fieldManufacturing: "Manufacturing & Import-Export",
+	fieldLegal: "Legal Consulting & Law",
+	fieldServices: "Services & Commerce"
+};
+var userMaster$2 = {
+	title: "User Management",
+	code: "User Code",
+	name: "Full Name",
+	company: "Company",
+	department: "Department",
+	position: "Position",
+	phone: "Phone Number",
+	note: "Note",
+	email: "Email",
+	status: "Status",
+	placeholderSearch: "Name, email, user code...",
+	noteBasic: "Employee identity information",
+	noteAdditional: "Additional information"
+};
+var document$2 = {
+	dragDropText: "Drag and drop documents here or click to upload",
+	allowedFormats: "Supported formats: PDF, Word, Excel, JPG, PNG (Max 10MB)",
+	uploading: "Uploading...",
+	totalFiles: "Total files",
+	view: "Preview online",
+	download: "Download file",
+	"delete": "Delete document",
+	noDocuments: "No documents attached.",
+	viewerNotSupportedTitle: "Direct Preview Not Supported",
+	viewerNotSupportedDesc: "This file format does not support online preview. Please download to view.",
+	downloadFile: "Download File",
+	deleteConfirmTitle: "Confirm Document Deletion",
+	deleteConfirmDesc: "Are you sure you want to delete this document from the system? This action is permanent and cannot be undone.",
+	msgFileTooLarge: "File too large",
+	msgFileTooLargeDesc: "Please select a file under 10MB.",
+	msgNoFile: "No file selected",
+	msgNoFileDesc: "Please select a document to upload.",
+	msgNoType: "Missing document type",
+	msgNoTypeDesc: "Please select a document type.",
+	msgNoLink: "No link attached",
+	msgNoLinkDesc: "Please select a corresponding record to attach the document.",
+	msgUploadSuccess: "Document uploaded and linked successfully.",
+	msgUploadError: "An error occurred while uploading the document.",
+	msgViewError: "Unable to view the document.",
+	msgDownloadError: "Unable to download the document.",
+	msgDeleteSuccess: "Document deleted from the system.",
+	msgDeleteError: "An error occurred while deleting the document.",
+	maxSizeText: "Max size: 10MB",
+	tooltipGrid: "Grid view",
+	tooltipList: "List view",
+	uploadedBy: "Uploaded by",
+	deleteConfirmWarning: "This action cannot be undone!",
+	deleteConfirmDetails: "The system will permanently delete the attachment {name} from cloud storage. Please make sure before continuing.",
+	pageDesc: "Centralized document management, upload and smart linking to personnel, contracts and expenses.",
+	uploadDoc: "Upload Document",
+	totalDocs: "Total Documents",
+	employeeDocs: "Employee Documents",
+	contractDocs: "Contracts",
+	transactionDocs: "Invoice & Expenses",
+	placeholderSearch: "Document code, filename...",
+	placeholderFormat: "File format",
+	noData: "No documents found on the system",
+	transactionCode: "Transaction Code #{id}",
+	notLinked: "Not linked",
+	preview: "Preview",
+	downloadTooltip: "Download",
+	deleteTooltip: "Delete document",
+	uploadDialogHeader: "UPLOAD & LINK DOCUMENT",
+	docTypeLabel: "Document & File Type",
+	placeholderSelectType: "Select document type",
+	linkToTarget: "Link to {target}",
+	placeholderSearchTarget: "Search and select {target}...",
+	processUpload: "Process Upload",
+	previewDialogHeader: "VIEW DOCUMENT: {name}",
+	deleteForeverTitle: "Permanently delete this file?",
+	colName: "Document / File Name",
+	colType: "Classification",
+	colLinkedTo: "Linked to",
+	colUploadedAt: "Uploaded At",
+	tabAll: "All documents",
+	tabEmployee: "Employee records",
+	tabContract: "Labor Contract",
+	tabTransaction: "Invoice & Expenses",
+	extPdf: "PDF file (.pdf)",
+	extImage: "Image (.png, .jpg)",
+	extWord: "Word file (.doc, .docx)",
+	extExcel: "Excel file (.xls, .xlsx)",
+	otherDocs: "Other Documents",
+	filesize: "File Size",
+	deleteWarningDetails: "Document \"{name}\" will be permanently deleted from the server. You cannot undo this action."
+};
+var employee$2 = {
+	title: "Employee Management",
+	status: "Status",
+	email: "Email Address",
+	code: "Employee Code",
+	addTitle: "Add New Employee",
+	editTitle: "Edit Employee",
+	editSubtitle: "Update personnel record",
+	addSubtitle: "Set up account and organization info",
+	saveProfile: "Save Profile",
+	personalInfo: "Personal Information",
+	personalInfoDesc: "Identification, contact and residential profile",
+	orgUnit: "Organizational Unit",
+	basicInfo: "Basic Information",
+	basicInfoDesc: "Set up basic information, contact email and system access account",
+	avatar: "Avatar",
+	uploadPhoto: "Upload Photo",
+	removePhoto: "Remove Photo",
+	fullName: "Full Name",
+	katakanaName: "Katakana Name",
+	romajiName: "Romaji Name",
+	dateOfBirth: "Date of Birth",
+	gender: "Gender",
+	hometown: "Hometown",
+	placeOfBirth: "Place of Birth",
+	nationality: "Nationality",
+	ethnicity: "Ethnicity",
+	religion: "Religion",
+	phone: "Phone Number",
+	department: "Department",
+	selectDepartment: "Select department",
+	jobTitle: "Job Title",
+	selectJobTitle: "Select job title",
+	statusActive: "Active",
+	statusInactive: "Inactive",
+	statusProbation: "Probation",
+	roleAdmin: "Admin",
+	roleRbacTooltipTitle: "Role-Based Access Control (RBAC) Permissions",
+	roleManager: "Manager / Director",
+	roleHr: "HR Personnel",
+	roleAccountant: "Accountant",
+	roleStaff: "Staff",
+	roleAdminDesc: "Full system administration rights",
+	roleManagerDesc: "Director / Executive Management",
+	roleHrDesc: "Manages profiles, contracts, timesheets, leaves",
+	roleAccountantDesc: "Manages finance, cash flow, and payrolls",
+	roleStaffDesc: "Staff self-access, timesheet, leave requests",
+	placeholderSearch: "Name, email, employee code...",
+	dialogDisableTitle: "Disable Employee?",
+	dialogDisableDesc: "The status of employee {name} will be changed to INACTIVE.",
+	msgDisableSuccess: "Employee disabled successfully.",
+	joinDate: "Join Date",
+	role: "Role",
+	password: "Password",
+	taxInsurance: "Tax & Insurance",
+	taxInsuranceBank: "Tax, Insurance & Banking",
+	contractDocument: "Contracts & Documents",
+	taxInsuranceTitle: "ID Documents & Social Insurance",
+	taxInsuranceDesc: "Configure tax code, insurance and identity documents",
+	identityType: "Identity Type",
+	identityNumber: "Identity Number",
+	zairyuExpiry: "Residence Card Expiry",
+	taxCode: "Tax Code",
+	socialInsurance: "Social Insurance Code",
+	pensionNumber: "Pension Number",
+	employmentInsurance: "Employment Insurance Number",
+	bankInfo: "Bank Information",
+	bankInfoTitle: "Salary Account & Banking",
+	bankInfoDesc: "Set up salary receiving account and payment information",
+	bankCode: "Bank Code",
+	bankBranch: "Branch Code",
+	bankAccountType: "Account Type",
+	bankAccountNumber: "Account Number",
+	bankAccountHolder: "Account Holder Name (Kana)",
+	addressInfo: "Address & Relatives",
+	addressTitle: "Residential Address",
+	addressDesc: "Registered and current residential addresses",
+	registeredAddress: "Registered Address",
+	currentAddress: "Current Address",
+	dependentsCount: "Number of Dependents",
+	relatives: "Relatives Information",
+	relativesTitle: "Relatives List",
+	relativesDesc: "Emergency contacts and dependent information",
+	addRelative: "Add Relative",
+	relationship: "Relationship",
+	occupation: "Occupation",
+	address: "Address",
+	emergencyContact: "Emergency Contact",
+	isDependent: "Dependent",
+	notes: "Notes",
+	detailTitle: "Employee Detail",
+	missingInfo: "Missing Information",
+	missingInfoDesc: "Please check the tabs marked with red error badges to complete the information.",
+	contractListTitle: "Labor Contracts List",
+	contractListDesc: "View the list of labor contracts signed with this employee (Display only, no editing)",
+	contractEmpty: "No labor contract information available.",
+	contractCode: "Contract Code",
+	contractType: "Contract Type",
+	contractDuration: "Duration",
+	contractSalary: "Salary / Value",
+	contractStatus: "Status",
+	contractAction: "Download / View",
+	contractActive: "Active",
+	contractInactive: "Expired",
+	contractNoScan: "No scan",
+	contractIndefinite: "Indefinite",
+	personalDocTitle: "Personal Documents & Credentials Store",
+	personalDocDesc: "Upload, preview, and delete scanned IDs, Passports, Residence Cards, and Certificates of the employee",
+	btnUploadDoc: "Upload Document",
+	msgUploadingDoc: "Uploading document, please wait...",
+	docEmptyTitle: "No personal documents uploaded yet.",
+	docEmptyDesc: "Drag & drop file or click the Upload Document button above.",
+	tooltipViewDoc: "View Document",
+	tooltipDownloadDoc: "Download",
+	tooltipDeleteDoc: "Delete Document",
+	workHistory: "Work History",
+	workHistoryTitle: "Department, Job Title & Salary History",
+	workHistoryDesc: "Manage employee work history stages over time",
+	btnAddWorkHistory: "Add Stage",
+	workHistoryStage: "Work Stage",
+	workHistoryDefault: "Initial Default",
+	workHistoryStartDate: "Start Date",
+	workHistoryEndDate: "End Date",
+	workHistorySalary: "Basic Salary (VND)",
+	workHistoryNote: "Note",
+	workHistoryEmpty: "No work history recorded yet.",
+	workHistorySyncDept: "Synced from personal info",
+	workHistorySyncJoin: "Synced with join date",
+	workHistoryDateError: "End date cannot be before start date",
+	relativeName: "Relative's Full Name",
+	relativesEmpty: "No relatives information declared.",
+	relationshipSpouse: "Spouse",
+	relationshipChild: "Child",
+	relationshipParent: "Parent",
+	relationshipSibling: "Sibling",
+	relationshipOther: "Other",
+	noViewUrl: "No document preview URL available.",
+	noDownloadUrl: "No document download URL available.",
+	viewError: "Unable to view the document.",
+	downloadError: "Unable to download the document.",
+	startDate: "Start Date",
+	salary: "Salary",
+	placeholderHometown: "e.g., Ha Nam",
+	placeholderPlaceOfBirth: "Maternity Hospital",
+	placeholderNationality: "Vietnam",
+	placeholderReligion: "None",
+	sectionAccountWork: "2. Account & Work",
+	sectionAccountWorkDesc: "Contact information, specialized departments, and system permissions",
+	sectionContactAddress: "3. Contact Address",
+	sectionContactAddressDesc: "Permanent residence address and current residential address",
+	placeholderBankAccountType: "Ordinary",
+	noRelatives: "No relatives added yet. Click the button above to create a new one.",
+	relativeNumber: "Relative #",
+	deleteRelativeTooltip: "Delete this relative",
+	birthday: "Date of Birth",
+	dependentTax: "Dependent (Tax Deduction)",
+	pendingUpload: "PENDING UPLOAD",
+	deletePendingFileTooltip: "Delete pending file",
+	deletePeriodTooltip: "Delete this period",
+	placeholderSalary: "e.g., 10,000,000",
+	placeholderSalaryReason: "e.g., Regular salary increase",
+	endDateBeforeStartDate: "End date cannot be before start date",
+	removedPendingFile: "Document removed from pending list.",
+	imageTooLarge: "Image too large",
+	imageTooLargeDesc: "Please select an image under 2MB.",
+	updateSuccess: "Employee information updated.",
+	createSuccess: "New employee created successfully.",
+	createAndUploadSuccess: "Successfully created new employee and uploaded {successCount} documents.",
+	uploadDocsError: "Document upload error",
+	createSuccessUploadError: "Successfully created new employee but some document uploads failed (Success: {successCount}, Failed: {failCount}).",
+	fileTooLarge: "File too large",
+	fileTooLargeDesc: "Please select a document under 10MB.",
+	addedPendingFile: "Document added to pending list.",
+	uploadDocsSuccess: "Document uploaded successfully.",
+	uploadDocsFailed: "Error uploading document.",
+	deleteDocConfirm: "Are you sure you want to delete this document? This action cannot be undone.",
+	deleteDocSuccess: "Document deleted successfully.",
+	deleteDocFailed: "Error deleting document.",
+	ocrTitle: "Quick Profile Import using AI Gemini",
+	ocrDesc: "Upload resume, ID card, passport, or Excel sheet for AI to auto-fill the form fields.",
+	ocrButton: "Select File & Analyze",
+	ocrLoading: "Gemini AI is scanning the document and analyzing information...",
+	ocrSuccessTitle: "Analysis Successful",
+	ocrSuccessDesc: "Information has been automatically filled in the form.",
+	ocrErrorTitle: "Error",
+	ocrErrorDesc: "Could not extract information from the document.",
+	ocrFileTooLarge: "File too large",
+	ocrFileTooLargeDesc: "File \"{name}\" exceeds the 10MB limit.",
+	ocrConnectError: "Could not connect to or process the file.",
+	name: "Personnel"
+};
+var gender$2 = {
+	male: "Male",
+	female: "Female",
+	other: "Other"
+};
+var contract$2 = {
+	companySection: "Party A: Managing Company Information",
+	companyNameLabel: "Managing Company Name (Party A)",
+	companyTaxCodeLabel: "Party A Tax Code",
+	companyAddressLabel: "Party A Address",
+	companyRepresentativeLabel: "Party A Representative",
+	companyRepresentativeRoleLabel: "Representative Position",
+	defaultConfig: "Default Configuration",
+	contractInfo: "Contract Information",
+	title: "Contract Management",
+	createTitle: "Sign New Contract",
+	editTitle: "Update Contract",
+	subtitle: "Compliance Management",
+	updateSubtitle: "Update contract",
+	generalInfo: "General Contract Information",
+	type: "Contract Type",
+	code: "Contract Code",
+	codePlaceholder: "Auto-generated if left blank",
+	signDate: "Sign Date",
+	startDate: "Effective Date",
+	endDate: "Expiry Date (Leave blank if indefinite)",
+	baseSalary: "Monthly Base Salary",
+	totalValue: "Total Contract Value",
+	status: "Contract Status",
+	laborSection: "Employee Details (Party B)",
+	selectEmployee: "Select Employee",
+	selectEmployeePlaceholder: "Search and select employee for contract",
+	employmentType: "Employment Type",
+	jobTitle: "Job Title / Position",
+	workLocation: "Work Location",
+	workingHours: "Standard Working Hours (hours/day)",
+	probationPeriod: "Probation Period",
+	probationSalary: "Probation Salary Rate (%)",
+	bankName: "Salary Bank",
+	bankAccount: "Bank Account Number",
+	insurance: "Insurance Types Enrolled",
+	partnerSection: "Partner / Client Details (Party B)",
+	partnerName: "Partner / Client Name",
+	partnerTaxCode: "Tax Code / Business License",
+	partnerRepresentative: "Authorized Representative",
+	partnerRepresentativeRole: "Representative Position",
+	partnerAddress: "Head Office Address",
+	paymentMethod: "Payment Method",
+	paymentTerms: "Payment Terms",
+	billingCycle: "Billing Cycle",
+	overtimeSection: "Overtime Compliance (Vietnam Labor Code)",
+	agreement36: "Apply Overtime Limits (Vietnam Labor Code)",
+	overtimeAllowance: "Include fixed/lump-sum overtime allowance",
+	includedOvertimeHours: "Included OT Hours / Month",
+	edmSection: "Scanned Documents / Attachments (EDM)",
+	edmUpload: "Upload scanned contract files",
+	complianceBadge: "Compliance Control",
+	complianceTitle: "Compliance Registration",
+	complianceDescCreate: "Upon submission, the contract will be automatically cross-checked with the existing personnel list to ensure legality before storage.",
+	complianceDescEdit: "Any updates to contract parameters (salary, overtime terms) will automatically sync with payroll and overtime control systems.",
+	complianceDescView: "Contract details are automatically monitored by the compliance system to prevent legal risks and labor disputes.",
+	viewDetails: "Contract Details",
+	edmReadonly: "List of documents attached to this contract.",
+	submitContract: "Finalize Contract",
+	missingInfo: "Missing Information",
+	saveSuccess: "Success",
+	saveSuccessDesc: "New contract has been signed with full compliance.",
+	updateSuccess: "Success",
+	updateSuccessDesc: "Contract has been updated successfully.",
+	saveError: "Contract Signing Error",
+	updateError: "Contract Update Error",
+	loadError: "Contract Load Error",
+	loadingData: "Loading contract data...",
+	typeLabor: "Labor Contract",
+	typeVendor: "Vendor (Party B)",
+	typeClient: "Client (Party B)",
+	statusActive: "Active (ACTIVE)",
+	statusExpired: "Expired (EXPIRED)",
+	statusTerminated: "Terminated (TERMINATED)",
+	employmentSeishain: "Full-time (Seishain)",
+	employmentKeiyakushain: "Contract (Keiyakushain)",
+	employmentHaken: "Dispatched (Haken)",
+	employmentArubaito: "Part-time (Arubaito)",
+	selectMissEmployee: "Please select the employee for this contract.",
+	selectMissPartner: "Please enter partner / organization name.",
+	selectMissPartnerTax: "Please enter partner tax code.",
+	selectMissValue: "Please enter contract value.",
+	edmUploading: "Uploading attachments...",
+	manageTitle: "Contract Management",
+	manageDesc: "Manage and archive employee labor contracts and commercial agreements for the business.",
+	signNew: "Sign New Contract",
+	quickSign: "Quick Sign Contract",
+	quickSignSuccess: "Contract signed successfully. Profile updated.",
+	typeCommercial: "Commercial Contract",
+	searchPlaceholder: "Search contract code, employee...",
+	typeSelect: "Contract Type",
+	statusSelect: "Status",
+	party: "Party",
+	duration: "Duration",
+	value: "Value",
+	documents: "Documents",
+	actions: "Actions",
+	loading: "Loading contract list...",
+	noData: "No matching contracts found.",
+	noEmployee: "No Employee Assigned",
+	corporatePartner: "Corporate Partner",
+	indefinite: "Indefinite",
+	files: "files",
+	exportPdf: "Export Sample PDF",
+	exportPdfStyle: "Select PDF Export Theme Style",
+	exportPdfDesc: "Choose one of the professional document designs below to export the contract:",
+	styleClassic: "Legal Traditional (Classic Style)",
+	selected: "Selected",
+	styleClassicDesc: "Uses formal Serif typography, standardized national header formats, and clean, elegant thin borders separating clauses.",
+	styleModern: "Modern Corporate (Modern Style)",
+	styleModernDesc: "Clean Sans-serif typography with emerald green theme color, outstanding compliance highlight box, and structured visual signature areas.",
+	styleAcademic: "Elegant Publication (Academic Style)",
+	styleAcademicDesc: "Minimalist layout with elegant Navy Blue accent and generous margin spacing. Perfect for large commercial agreements.",
+	downloadPdf: "Export and Download PDF",
+	deleteConfirmTitle: "Delete Contract?",
+	deleteConfirmDesc: "Are you sure you want to delete contract {code}? This action cannot be undone.",
+	allContracts: "All Contracts",
+	allTypes: "All Types",
+	statusAll: "All Statuses",
+	deleteSuccessDesc: "Contract has been successfully deleted from the system.",
+	deleteError: "Contract Deletion Error",
+	payBank: "Bank Transfer",
+	payCash: "Cash",
+	payCredit: "Credit Card",
+	cycleMonthly: "Monthly",
+	cycleQuarterly: "Quarterly",
+	cycleOneTime: "One-time",
+	fileTooLarge: "File Too Large",
+	fileTooLargeDesc: "File {name} exceeds the 10MB limit.",
+	createSuccess: "Contract created successfully",
+	createSuccessWithDocs: "Contract created and documents uploaded successfully",
+	createError: "Error creating contract",
+	downloadPdfSuccess: "PDF downloaded successfully",
+	exportPdfError: "Error exporting contract PDF",
+	formatError: "Invalid file format",
+	formatErrorDesc: "Only PDF, DOC, DOCX, JPG, PNG formats are supported",
+	sizeError: "File size too large",
+	sizeErrorDesc: "Attached file size must not exceed 10MB",
+	statusPending: "Pending Approval (PENDING)",
+	employmentFullTimeVn: "Full-time (Vietnam)",
+	employmentPartTimeVn: "Part-time (Vietnam)",
+	ocrTitle: "Quick Contract Import using AI Gemini",
+	ocrDesc: "Upload labor contract scan, image, or Excel template for AI to auto-fill contract fields.",
+	ocrButton: "Select File & Analyze",
+	ocrLoading: "Gemini AI is scanning the document and analyzing information...",
+	ocrSuccessTitle: "Contract Analysis Successful",
+	ocrSuccessDesc: "Extracted contract information has been filled in the form.",
+	ocrErrorTitle: "Error",
+	ocrErrorDesc: "Could not extract contract information.",
+	ocrFileTooLarge: "File too large",
+	ocrFileTooLargeDesc: "File \"{name}\" exceeds the 10MB limit.",
+	ocrConnectError: "Could not connect to or process the contract."
+};
+var timesheet$2 = {
+	title: "Personal Timesheet",
+	desc: "Record your daily working hours and track your attendance history.",
+	standardTimeSystem: "STANDARD TIME SYSTEM",
+	workingTimeVN: "Vietnam Working Time",
+	gpsClock: "High-precision GPS clock time",
+	todayTracking: "Today's Attendance Recording",
+	trackingDesc: "Press Check-in when starting your workday. If check-in is after 09:00, the status will be recorded as Late. Press Check-out before leaving to complete the daily work record.",
+	checkInTime: "Check-in Time",
+	checkOutTime: "Check-out Time",
+	checkedIn: "Checked In",
+	checkedOut: "Checked Out",
+	history: "Attendance History",
+	historyDesc: "Track detailed working days recorded during the month.",
+	selectMonth: "Select month",
+	noData: "No attendance data for this month.",
+	success: "Attendance Success",
+	checkInSuccess: "You have successfully checked in today.",
+	checkOutSuccess: "You have successfully checked out today.",
+	multiModalCheckin: "Multi-modal Attendance Tracking",
+	qrTab: "Personal QR Code",
+	deviceTab: "Fingerprint & FaceID Device",
+	qrDesc: "Hold your personal QR code in front of the scanner's camera to check-in/out automatically.",
+	qrRefreshesIn: "Auto refreshes in {seconds} seconds",
+	deviceConnected: "Scanner: ZK-Teco FaceID Pro #01",
+	deviceStatusConnected: "CONNECTED",
+	deviceSyncDesc: "The system automatically synchronizes fingerprints & faces every 5 minutes.",
+	syncButtonLabel: "Sync from device",
+	syncingText: "Connecting to attendance scanner...",
+	syncSuccess: "Sync successful! Loaded and recorded 2 latest attendance logs.",
+	simulateQrBtn: "Simulate Office Scanner",
+	simulatingScan: "Simulating office camera scanning your personal QR code...",
+	alreadyCheckedOut: "You have completed your check-in/out for today.",
+	date: "Date",
+	status: "Status",
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+	checkIn: "Check In",
+	checkOut: "Check Out",
+	today: "Today",
+	workingHours: "Working Hours",
+	overtime: "Overtime",
+	manageTitle: "Timesheet Administration",
+	employee: "Employee",
+	totalHours: "Total Hours",
+	overtimeHours: "Overtime Hours",
+	lateMins: "Late (mins)",
+	earlyLeaveMins: "Early Leave (mins)",
+	accessDenied: "Access Denied",
+	accessDeniedDesc: "Your account does not have Manager or Administrator role to manage staff timesheets.",
+	backHome: "Back to Home",
+	adminTitle: "Staff Timesheet Administration",
+	adminDesc: "Review, adjust or add new manual timesheets and view the overall attendance report for all employees.",
+	addManual: "Add Manual Timesheet",
+	tabHistory: "Timesheet History",
+	tabStats: "Attendance Statistics",
+	tabConfigs: "Working Hour Configs",
+	tabPayroll: "Payroll",
+	payrollTitle: "Monthly Payroll Calculation",
+	payrollDesc: "View details of hours worked, basic salary, overtime, attendance bonuses, and late/absence deductions.",
+	selectPayrollMonth: "Select payroll month",
+	loadingPayroll: "Loading payroll calculations...",
+	noPayrollData: "No payroll data found for this month.",
+	baseSalary: "Basic Salary",
+	workingDaysActualStandard: "Days (Actual/Standard)",
+	overtimeCol: "Overtime (OT)",
+	attendanceAllowance: "Attendance Allowance",
+	deductionLate: "Late Deduction",
+	deductionLeave: "Unapproved Leave Deduction",
+	advancePayment: "Paid in Advance",
+	netSalary: "Net Salary",
+	statusPaid: "Paid",
+	statusPending: "Pending",
+	payrollDetailsFor: "Payslip: {name} ({code})",
+	actualWorkingDays: "Actual Working Days",
+	payrollMonth: "Working Month",
+	overtimeSalary: "Overtime Salary",
+	attendanceAllowanceLabel: "Attendance Allowance",
+	deductionLateLabel: "Late Deduction",
+	deductionLeaveLabel: "Exceeded Leave Deduction",
+	deductionUnion: "Union Deduction",
+	deductionTax: "Personal Income Tax",
+	deductionUnionLabel: "Union Fee Deduction",
+	deductionTaxLabel: "Income Tax Deduction",
+	totalDeductions: "Total Deductions",
+	deductionInsuranceLabel: "Compulsory Insurance (10.5%)",
+	advancePaymentLabel: "Advance Payment",
+	paymentStatusLabel: "Payment Status",
+	netSalaryLabel: "Net Paid",
+	btnSavePayroll: "Save Payslip",
+	msgSavePayrollSuccess: "Employee payroll saved successfully.",
+	msgSavePayrollError: "An error occurred while saving payroll.",
+	overtimeBreakdown: "Overtime breakdown details",
+	overtimeNormal: "Normal Overtime (1.5x)",
+	overtimeWeekend: "Weekend Work (2.0x)",
+	overtimeHoliday: "Holiday Work (3.0x)",
+	exportExcelSuccess: "Payroll Excel file exported successfully.",
+	exportExcelError: "An error occurred while exporting Excel.",
+	exportPdfSuccess: "Payroll PDF file exported successfully.",
+	exportPdfError: "An error occurred while exporting PDF.",
+	searchKeyword: "Search keyword",
+	searchPlaceholder: "Employee name or code...",
+	statusAll: "All Statuses",
+	statusPresent: "On Time (PRESENT)",
+	statusLate: "Late (LATE)",
+	statusAbsent: "Absent (ABSENT)",
+	fromDate: "From Date",
+	toDate: "To Date",
+	no: "No.",
+	staff: "Staff",
+	dateCol: "Date",
+	checkInCol: "Check-in",
+	checkOutCol: "Check-out",
+	expectedWork: "Expected Work",
+	checkoutDiff: "Checkout Diff",
+	statusCol: "Status",
+	noteCol: "Note",
+	actionCol: "Actions",
+	loadingList: "Loading timesheet records...",
+	noHistoryFound: "No timesheet history found matching the filters.",
+	editOrCompensate: "Edit / Compensate",
+	showLines: "Showing {current}/{total} rows",
+	monthStats: "Monthly Attendance Statistics",
+	monthStatsDesc: "Summary of working days, late arrivals, and absences for all employees.",
+	selectStatsMonth: "Select statistics month",
+	statsSummary: "Summary Report",
+	stats30Days: "30-Day Calendar Detail",
+	loadingStats: "Calculating attendance metrics...",
+	noEmployeeMonth: "No employees found in the selected month.",
+	staffCode: "ID",
+	staffName: "Employee Name",
+	onTime: "On Time",
+	lateCol: "Late",
+	lateHoursPenalty: "Late Hours Penalty",
+	excusedLeave: "Excused",
+	absentNoExcuse: "Unexcused",
+	totalAbsent: "Total Absent",
+	workingDaysMax: "Working Days / Max",
+	otHours: "OT (hrs)",
+	hours: "hrs",
+	days: "days",
+	mins: "mins",
+	times: "times",
+	statsCalendarFor: "Detailed calendar for",
+	legendLateEarly: "Late / Early Leave",
+	legendMissInOut: "Missing check-in/out",
+	legendWeekendHoliday: "Weekend / Holiday",
+	legendOnTime: "On Time",
+	weekend: "Weekend",
+	holiday: "Holiday",
+	excusedLeaveAll: "Excused Leave (All Day)",
+	excusedLeaveMorning: "Excused Leave (Morning)",
+	excusedLeaveAfternoon: "Excused Leave (Afternoon)",
+	missCheck: "Missing Check",
+	configTitle: "Working Hour Configurations",
+	configDesc: "Define standard attendance shifts with flexible application periods.",
+	addConfig: "Add Configuration",
+	loadingConfigs: "Loading configurations...",
+	noConfigsYet: "No working hour configurations created yet.",
+	defaultSystem: "System Default",
+	flexible: "Flexible",
+	applyAllTime: "Apply: All time (Fallback)",
+	applyRange: "Apply: {start} ~ {end}",
+	standardIn: "Standard Check-in",
+	standardOut: "Standard Check-out",
+	saturday: "Saturday",
+	saturdayOff: "Saturday Off",
+	saturdayMorning: "Saturday Morning (until 12:00)",
+	saturdayFull: "Full-day Saturday",
+	editConfig: "Edit Configuration",
+	deleteConfig: "Delete Configuration",
+	dialogManualEdit: "Update Timesheet / Compensation",
+	dialogManualCreate: "Add Manual Timesheet",
+	employeeLabel: "Employee",
+	employeeSelectPlaceholder: "Select employee",
+	attendanceDate: "Attendance Date",
+	selectDate: "Select date",
+	checkInLabel: "Check-in Time",
+	checkInPlaceholder: "Select check-in time",
+	checkOutLabel: "Check-out Time",
+	checkOutPlaceholder: "Select check-out time",
+	statusLabel: "Recorded Status",
+	noteLabel: "Reason / Additional Notes",
+	notePlaceholder: "Enter reason for adjustment or compensation...",
+	btnCancel: "Cancel",
+	btnSaveRecord: "Save Record",
+	dialogConfigEdit: "Edit Working Hour Config",
+	dialogConfigCreate: "Add Working Hour Config",
+	configName: "Configuration Name",
+	configNamePlaceholder: "e.g. Summer Working Hours",
+	setDefaultConfig: "Set as Default Configuration",
+	setDefaultConfigDesc: "The system will use this if no other flexible configurations match the time period.",
+	saturdayWorkingMode: "Saturday Working Mode",
+	saturdayWorkingModeDesc: "Apply attendance counting and late penalties for Saturdays.",
+	valMissManualData: "Missing Data",
+	valMissManualDataDesc: "Please select employee and attendance date.",
+	msgUpdateSuccess: "Update Successful",
+	msgUpdateSuccessDesc: "The timesheet record has been saved successfully.",
+	valInvalidConfig: "Invalid Information",
+	valInvalidConfigDesc: "Please fill in configuration name and shift hours fully.",
+	msgSaveConfigSuccess: "Working hour configuration saved.",
+	msgDeleteConfigConfirm: "Are you sure you want to delete this working hour configuration?",
+	msgDeleteConfigSuccess: "Configuration deleted successfully.",
+	tabShifts: "Shifts",
+	tabShiftAssignments: "Shift Assignments",
+	shiftTitle: "Shift Management",
+	shiftDesc: "Configure shifts and define overtime calculation rules for employees.",
+	addShift: "Add Shift",
+	dialogShiftCreate: "Create New Shift",
+	dialogShiftEdit: "Edit Shift",
+	shiftName: "Shift Name",
+	shiftNamePlaceholder: "e.g. Day Shift, Night Shift...",
+	allowOvertime: "Allow Overtime Calculation",
+	maxOvertimeHours: "Max Overtime Hours",
+	maxOvertimeHoursPlaceholder: "Hours (e.g. 2), leave blank for unlimited",
+	shiftAssignedSuccess: "Shift assigned to employees successfully.",
+	deleteShiftConfirm: "Are you sure you want to delete this shift? All related assignments will be deleted.",
+	deleteShiftSuccess: "Shift deleted successfully.",
+	assignShift: "Assign Shift to Employees",
+	employeeSelect: "Select Employees",
+	datesSelect: "Select Dates",
+	selectShift: "Select Shift",
+	btnAssign: "Assign Shift",
+	assignedShiftsList: "Employee Shift Assignments",
+	noAssignedShifts: "No shift assignments found for this period.",
+	deleteAssignmentConfirm: "Are you sure you want to delete this assignment?",
+	deleteAssignmentSuccess: "Assignment deleted successfully.",
+	overtimeStatus: "Overtime",
+	overtimeAllowed: "Allowed",
+	overtimeNotAllowed: "Not Allowed",
+	overtimeAllowedWithMax: "Allowed (Max {hours} hours)",
+	leave: "Leave",
+	resetDefault: "Restore default shift",
+	assignShiftsTitle: "Employee Shift & Overtime Schedule",
+	assignShiftsDesc: "Manage flexible shifts, overtime configurations, and synchronize monthly leaves.",
+	bulkActions: "Bulk Actions",
+	selectedEmployees: "Selected: {count} employees",
+	bulkAssignBtn: "Bulk Assign",
+	bulkResetBtn: "Bulk Reset",
+	legendTitle: "Schedule Legend:",
+	legendAL: "Annual Leave",
+	legendSL: "Sick Leave",
+	legendOT: "Overtime Allowed",
+	legendNoOT: "No Overtime",
+	legendOff: "Day Off / Weekend",
+	loadingAssignData: "Loading shift assignment data...",
+	noEmployeesFound: "No employees found",
+	employeeHeader: "Employee",
+	departmentHeader: "Department",
+	monthAssign: "Schedule Month",
+	allDepartments: "All Departments",
+	searchEmployee: "Search Employee",
+	searchEmployeePlaceholder: "Name, employee code...",
+	w0: "Sun",
+	w1: "Mon",
+	w2: "Tue",
+	w3: "Wed",
+	w4: "Thu",
+	w5: "Fri",
+	w6: "Sat",
+	selectAtLeastOneEmployee: "Please select at least one employee",
+	selectShiftError: "Please select a shift",
+	selectDateRangeError: "Please select a date range",
+	selectAtLeastOneWeekdayAssign: "Please select at least one day of the week to apply",
+	selectAtLeastOneWeekdayReset: "Please select at least one day of the week to reset",
+	bulkAssignSuccess: "Bulk shift assignment completed successfully",
+	bulkResetSuccess: "Bulk shift reset completed successfully",
+	dialogBulkAssignHeader: "Bulk Shift Assignment",
+	dialogBulkAssignWarningPrefix: "You are assigning a shift to",
+	dialogBulkAssignWarningSuffix: "selected employees.",
+	dialogBulkResetHeader: "Bulk Reset Shifts to Default",
+	dialogBulkResetWarningPrefix: "This action will restore the schedule of",
+	dialogBulkResetWarningSuffix: "employees to system default shift within the selected date range.",
+	applyToWeekdays: "Apply to weekdays",
+	confirm: "Confirm",
+	msgResetShiftDefault: "Reset {name}'s shift to default",
+	msgSelectShift: "Please select a shift",
+	msgSelectDateRange: "Please select a date range",
+	msgSelectWeekday: "Please select at least one weekday",
+	msgSelectEmployee: "Please select at least one employee",
+	msgSetShiftSuccess: "Shift setup successful",
+	msgResetDefaultSuccess: "Default shift restored successfully",
+	msgSelectWeekdayAssign: "Please select at least one weekday to apply",
+	msgSelectWeekdayReset: "Please select at least one weekday to reset",
+	msgPayrollLoadError: "Unable to load payroll data",
+	msgPayrollSaveSuccess: "Payroll updated successfully",
+	msgPayrollSaveError: "Error saving payroll information",
+	msgExportExcelError: "Unable to export Excel file",
+	msgExportPdfError: "Unable to export PDF file",
+	msgSaveManualSuccess: "Timesheet saved successfully",
+	insuranceLabel: "Insurance (10.5%)",
+	otNormal: "Normal:",
+	otWeekend: "Weekend:",
+	otHoliday: "Holiday:",
+	total: "Total:",
+	socialInsurance: "Social Insurance:",
+	healthInsurance: "Health Insurance:",
+	unemploymentInsurance: "Unemployment Insurance:",
+	payrollAdjustmentInfo: "Salary Adjustment Information",
+	standardWorkingDays: "Standard Working Days",
+	otNormalHours: "Normal OT (hours)",
+	otWeekendHours: "Weekend OT (hours)",
+	otHolidayHours: "Holiday OT (hours)",
+	dependents: "Dependents",
+	taxAndNetSalaryDetails: "Tax & Net Salary Details",
+	dailyRate: "Daily Rate",
+	dayUnit: "day",
+	overtimePay: "Overtime Pay",
+	otNormalRate: "Normal (1.5x)",
+	otWeekendRate: "Weekend (2.0x)",
+	otHolidayRate: "Holiday (3.0x)",
+	attendanceDeduction: "Attendance/Leave Deduction",
+	grossSalary: "GROSS Salary",
+	insuranceDeduction: "Compulsory Insurance (10.5%)",
+	socialInsuranceDeduction: "Social Insurance (8%)",
+	healthInsuranceDeduction: "Health Insurance (1.5%)",
+	unemploymentInsuranceDeduction: "Unemployment Insurance (1%)",
+	incomeBeforeTax: "Income Before Tax",
+	progressivePit: "Progressive PIT",
+	selfDeduction: "Personal Deduction",
+	dependentDeduction: "Dependent Deduction",
+	personUnit: "person",
+	taxableIncome: "Taxable Income",
+	unionAndAdvance: "Union & Advance Payment"
+};
+var leaveRequest$2 = {
+	title: "Leave Request",
+	pendingTitle: "Leave Approval",
+	startDate: "Start Date",
+	endDate: "End Date",
+	reason: "Reason",
+	type: "Leave Type",
+	status: "Status",
+	approver: "Approver",
+	approvedAt: "Approved At",
+	rejectedAt: "Rejected At",
+	accessDenied: "Access Denied",
+	accessDeniedDesc: "Your account does not have Manager or Administrator role to approve leave requests.",
+	backToHome: "Back to Home",
+	panelDesc: "Review, approve or reject pending leave requests from employees.",
+	tabAll: "All",
+	tabPending: "Pending",
+	tabApproved: "Approved",
+	tabRejected: "Rejected",
+	noRequest: "There are currently no leave requests.",
+	noRequestWithStatus: "No leave requests found with status \"{status}\".",
+	searchEmployeePlaceholder: "Search name, code...",
+	typeSelect: "Select type...",
+	allDay: "All day",
+	morning: "Morning",
+	afternoon: "Afternoon",
+	days: "days",
+	noReason: "No reason provided",
+	dialogApproveTitle: "Approve Leave Request",
+	dialogRejectTitle: "Reject Leave Request",
+	employee: "Employee",
+	approverNote: "Approver Feedback / Notes",
+	approverNotePlaceholder: "Enter feedback to the employee (optional)...",
+	confirmApprove: "Confirm Approve",
+	confirmReject: "Confirm Reject",
+	processSuccess: "Processed successfully",
+	approveSuccessDesc: "Leave request has been successfully approved.",
+	rejectSuccessDesc: "Leave request has been successfully rejected.",
+	stt: "No.",
+	timeRange: "Leave Period",
+	system: "System",
+	typeAnnual: "Annual Leave",
+	typeSick: "Sick Leave",
+	typeSpecial: "Special Leave",
+	typeUnpaid: "Unpaid Leave",
+	desc: "Request leave online and track your approval history.",
+	myList: "My Leave Requests",
+	myListDesc: "History and status of submitted leave requests.",
+	noMyRequest: "You have not created any leave requests yet.",
+	createDesc: "Submit a new leave request to your manager.",
+	session: "Leave Session",
+	reasonPlaceholder: "Please specify the reason for leave...",
+	submit: "Submit Request",
+	detailTitle: "Leave Request Details",
+	code: "Request Code",
+	totalDays: "Total Days",
+	period: "Time Period",
+	approverFeedback: "Approver Feedback",
+	noFeedback: "No feedback comments",
+	morningSession: "Morning (Off 8:30 - 12:00)",
+	afternoonSession: "Afternoon (Off 13:15 - 17:30)",
+	valIncomplete: "Incomplete Information",
+	valIncompleteDesc: "Please select leave type, start date, and end date.",
+	submitSuccess: "Leave Request Submitted",
+	submitSuccessDesc: "Your leave request has been sent to the manager.",
+	from: "From",
+	to: "To",
+	attachment: "Attachments",
+	uploadInstructions: "Drag and drop or click to upload file",
+	attachmentCol: "Document",
+	noAttachment: "No attachment",
+	viewAttachment: "View attachment",
+	attachmentPlaceholder: "Select supporting file (medical certificate, ticket...)",
+	fileSizeLimitError: "File size exceeds the 10MB limit.",
+	uploadFormats: "PDF, DOC, DOCX, ZIP or image (Max 10MB)",
+	hasAttachment: "Has attachment"
+};
+var compliance$2 = {
+	title: "Compliance Engine",
+	summary: "Compliance Overview",
+	riskLevel: "Risk Level",
+	violations: "Violations",
+	warnings: "Warnings",
+	centerTitle: "Compliance Warning Center",
+	centerDesc: "Automated scanning & early warning of legal risks (Visa, Contract, Tax, Overtime Limits).",
+	btnScan: "Real-time Compliance Scan",
+	scanning: "Scanning...",
+	healthScore: "Compliance Health Score",
+	healthScoreDesc: "Calculated based on the severity of active compliance issues in the system.",
+	recommendation: "Recommendation",
+	healthExcellent: "Excellent (Compliant)",
+	healthFair: "Fair (Moderate Risk)",
+	healthAlarm: "Alarm (High Risk)",
+	recExcellent: "Continue maintaining compliance procedures.",
+	recFair: "Resolve WARNING level risks immediately.",
+	recAlarm: "Resolve CRITICAL errors urgently to avoid legal penalties.",
+	criticalRisk: "Critical Risk",
+	criticalDesc: "CRITICAL / Urgent action required",
+	warningRisk: "Risk Warning",
+	warningDesc: "WARNING / Action & review required",
+	resolvedRisk: "Auto-healed Risks",
+	resolvedDesc: "AUTO-HEALED / SELF-RESOLVED",
+	criticalTitle: "CRITICAL RISK (CRITICAL)",
+	btnActNow: "Resolve Now",
+	tabActiveRisks: "Active Risks",
+	tabResolvedHistory: "Resolution History",
+	searchPlaceholder: "Search compliance issues...",
+	severityPlaceholder: "Severity level",
+	typePlaceholder: "Risk category",
+	tooltipRefresh: "Refresh",
+	colSeverity: "Severity",
+	colType: "Category",
+	colDescription: "Issue Details",
+	colEntity: "Detected Target",
+	colStatus: "Status",
+	colAction: "Resolution Actions",
+	loading: "Analyzing compliance risks...",
+	noDataTitle: "Excellent! No compliance risks detected.",
+	noDataDesc: "Your system is operating in perfect compliance.",
+	sevCritical: "Critical",
+	sevWarning: "Warning",
+	sevInfo: "Info",
+	sevAll: "All Severities",
+	statusOpen: "Open",
+	statusResolved: "Resolved",
+	resolvedBy: "By",
+	btnResolve: "Resolve",
+	tooltipManualResolve: "Manual resolve",
+	dialogResolveTitle: "Confirm Issue Resolution",
+	dialogResolveHeader: "Resolve Compliance Alert",
+	dialogResolveDesc: "You are marking this compliance alert as Resolved in the system.",
+	dialogResolveNote: "Explanation Note (Required)",
+	dialogResolvePlaceholder: "Enter reason or notes for resolving this risk...",
+	btnCancel: "Cancel",
+	btnConfirmResolve: "Confirm Resolve",
+	typeVisa: "Alien card expiration",
+	typeContract: "Contract expiration",
+	typeInvoice: "Missing invoice/receipt",
+	typeOvertime: "Overtime limit exceed",
+	typeAll: "All Categories",
+	typeVisaExpiration: "Visa Expiration (VISA)",
+	typeContractExpiration: "Contract Expiration (CONTRACT)",
+	typeMissingInvoice: "Missing Receipt/Invoice (INVOICE)",
+	typeOvertimeLimit: "Overtime limit exceed (OVERTIME)",
+	msgScanSuccess: "Compliance Scan Complete",
+	msgScanSuccessDesc: "Compliance scan completed. Newly detected: {created} risks, auto-healed: {resolved} risks.",
+	msgScanError: "Compliance Scan Failed",
+	msgScanErrorDesc: "Failed to connect to the scanner engine.",
+	msgActError: "Unable to determine the resolution path for this alert type.",
+	msgResolveSuccess: "Resolution Successful",
+	msgResolveSuccessDesc: "Compliance warning has been resolved successfully.",
+	msgResolveError: "Action Failed",
+	msgResolveErrorDesc: "Unable to resolve compliance alert."
+};
+var dashboard$2 = {
+	title: "Dashboard",
+	welcome: "Welcome Back",
+	totalEmployees: "Total Employees",
+	totalContracts: "Total Contracts",
+	totalTransactions: "Total Transactions",
+	pendingLeaves: "Pending Leave Requests",
+	complianceBannerTitle: "LEGAL VIOLATION DETECTION SYSTEM",
+	complianceBannerDesc: "Warning: Detected {count} CRITICAL risks (Visa expiring soon, overtime exceeding legal limits, or missing invoices). Click to resolve automatically!",
+	enterpriseDashboard: "Enterprise Dashboard",
+	welcomeUser: "Welcome, {name}. Here is the aggregated analysis of actual department data.",
+	admin: "Administrator",
+	fiscalYear: "Fiscal Year",
+	btnComplianceControl: "Compliance Control",
+	revenueYearBadge: "REVENUE YEAR",
+	revenueYearTitle: "Fiscal Revenue",
+	expenseYearBadge: "EXPENSE YEAR",
+	expenseYearTitle: "Operating Expenses",
+	netIncomePositive: "SURPLUS",
+	netIncomeNegative: "DEFICIT",
+	netIncomeTitle: "Net Income",
+	complianceScoreTitle: "Legal Compliance Index",
+	compCompliant: "COMPLIANT",
+	compWarning: "WARNING",
+	compDanger: "DANGER",
+	activeEmployees: "Present Employees",
+	employeesCount: "{active} / {total} Staff",
+	activeContracts: "Active Contracts",
+	contractsCount: "{active} / {total} Contracts",
+	pendingLeavesCount: "{count} Requests",
+	cashflowTitle: "Revenue & Expenses for {year}",
+	cashflowDesc: "Monthly growth trends and actual operating expenses",
+	optRevenue: "Revenue",
+	optExpense: "Expenses",
+	optProfit: "Profit",
+	contractStructure: "Contract Structure",
+	contractStructureDesc: "Distribution ratio among different contract types",
+	topExpenses: "Top Spend Categories",
+	topExpensesDesc: "Most significant expenses incurred during the fiscal year",
+	staffDensity: "Staff Distribution by Department",
+	staffDensityDesc: "Allocation percentage of workforce",
+	timesheetStat: "Attendance & Overtime This Month",
+	timesheetStatDesc: "Monitor attendance days, total hours, and actual overtime hours",
+	btnTimesheetDetail: "Timesheet Details",
+	colEmpCode: "Emp Code",
+	colEmpName: "Employee",
+	colPresent: "Present",
+	colAbsent: "Absent",
+	colTotalHours: "Total Hours",
+	colOvertime: "Overtime",
+	colOtStatus: "OT Status",
+	otOverLimit: "Over Overtime Limit!",
+	otWarning: "Over Warning Limit",
+	otApproaching: "Approaching Warning",
+	otSafe: "Safe",
+	noTimesheetData: "No attendance data recorded for this month.",
+	recentTransactions: "Recent Transactions",
+	recentTransactionsDesc: "Latest real-time financial ledger activity",
+	btnCashbook: "Cashbook",
+	unclassified: "Unclassified",
+	noTransactions: "No financial transactions recorded.",
+	msgConnectError: "Connection Error",
+	msgSyncError: "Unable to synchronize Dashboard data.",
+	ageDemographics: "Employee Age Demographics",
+	ageDemographicsDesc: "Ratio of employees by age group in the company",
+	genderDemographics: "Employee Gender Demographics",
+	genderDemographicsDesc: "Ratio of male and female employees in the company"
+};
+var transaction$2 = {
+	title: "Cashflow & Expenses",
+	desc: "Manage actual Cash In/Out and monitor supporting document attachments (Invoices/Bank Transfer Slips).",
+	addBtn: "Add New Transaction",
+	totalRevenue: "Actual Revenue Received",
+	totalExpense: "Actual Expense Paid",
+	netBalance: "Net Cashflow",
+	complianceRate: "Document Compliance Rate",
+	tabAll: "All Transactions",
+	tabExpense: "Actual Expenses",
+	tabRevenue: "Revenue Streams",
+	searchPlaceholder: "Transaction code, category...",
+	type: "Transaction Type",
+	status: "Status",
+	compliance: "Legal Document Status",
+	refresh: "Refresh",
+	allTypes: "All Types",
+	expense: "Expense (EXPENSE)",
+	revenue: "Revenue (REVENUE)",
+	allStatus: "All Statuses",
+	paid: "Paid",
+	pending: "Pending",
+	cancelled: "Cancelled",
+	allDocs: "All Documents",
+	hasDocs: "With Documents",
+	missingDocs: "Missing Documents",
+	dateCol: "Date",
+	codeCol: "Txn Code",
+	typeCol: "Type",
+	categoryCol: "Category",
+	amountCol: "Amount (Total)",
+	taxCol: "Tax Info / Invoice ID",
+	paymentCol: "Payment",
+	documentCol: "Legal Documents",
+	actionCol: "Actions",
+	loading: "Loading cashflow data...",
+	noData: "No matching transactions found.",
+	revenueShort: "In",
+	expenseShort: "Out",
+	original: "Net Amount",
+	files: "files",
+	missingDocsAlert: "MISSING DOCUMENTS",
+	editTooltip: "Edit Transaction",
+	deleteTooltip: "Delete Transaction",
+	dialogDeleteTitle: "Confirm Transaction Deletion",
+	dialogDeleteConfirm: "Delete Financial Transaction?",
+	dialogDeleteDesc: "Are you sure you want to delete transaction {code} under category {category}? This action will update the cashflow statistics and cannot be undone.",
+	btnCancel: "Cancel",
+	btnConfirmDelete: "Confirm Delete",
+	dialogDocTitle: "Transaction Documents — {code}",
+	errorLoad: "Error Loading Cashflow",
+	errorLoadDesc: "Could not load transaction list.",
+	msgDeleteSuccess: "Transaction Deleted Successfully",
+	msgDeleteSuccessDesc: "The cashflow record has been cleared.",
+	msgDeleteFailed: "Action Failed",
+	msgDeleteFailedDesc: "Could not delete the transaction.",
+	statusPaid: "Paid/Full",
+	statusPending: "Pending Payment",
+	statusCancelled: "Cancelled",
+	noTax: "Tax-exempt (0%)",
+	bankTransfer: "Bank Transfer",
+	cash: "Cash",
+	creditCard: "Credit Card",
+	subtitle: "Accounting & Cashflow",
+	createTitle: "Record New Transaction",
+	editTitle: "Edit Transaction",
+	infoSection: "Transaction Info & Payment",
+	code: "Transaction Code",
+	amount: "Total Amount (Tax Included)",
+	date: "Transaction Date",
+	codeAutoGenerate: "Auto-generated Code",
+	category: "Category",
+	paymentMethod: "Payment Method",
+	amountSection: "Transaction Value & Tax Calculation",
+	netAmount: "Original Value (Before Tax)",
+	taxAmount: "Tax Amount",
+	withholdingTax: "Withholding Tax (if applicable)",
+	invoiceNumber: "Tax ID / Invoice Number",
+	invoiceError: "Qualified Invoice must start with T and followed by exactly 13 digits.",
+	descriptionSection: "Detailed Explanation / Description",
+	descriptionPlaceholder: "Enter detailed explanation (purpose, vendor, items)...",
+	saveTransaction: "Record Transaction",
+	attachSection: "Invoice & Evidence Attachment",
+	attachRequired: "Required",
+	attachDesc: "Please attach an e-invoice, bank transfer slip or valid receipt.",
+	uploadFile: "Select file or drag and drop here",
+	uploadFormats: "Supported formats: PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, JPEG (max 10MB)",
+	taxRate: "Applied Tax Rate",
+	valMissInfo: "Missing Information",
+	valMissInfoDesc: "Please fill in all required fields.",
+	valMissDocs: "Missing Legal Evidence",
+	valMissDocsDesc: "Businesses are required to attach supporting documents (Invoices/Receipts) for expenses to ensure tax compliance.",
+	valInvalidInvoice: "Format Error",
+	valInvalidInvoiceDesc: "Qualified Invoice must start with T and followed by exactly 13 digits.",
+	msgSaveSuccess: "Transaction Saved Successfully",
+	msgSaveSuccessDesc: "Transaction and attached documents have been updated.",
+	msgSaveSuccessShort: "Transaction has been recorded.",
+	msgSaveFailed: "Failed to Save Transaction",
+	msgSaveFailedDesc: "Record error",
+	catSalary: "Salary",
+	catOfficeRent: "Office Rent",
+	catUtilities: "Utilities & Internet",
+	catOutsourcing: "Outsourcing Cost",
+	catSoftware: "Software & SaaS",
+	catTravel: "Travel Expense",
+	catMarketing: "Marketing & Ads",
+	catClientRevenue: "Client Revenue",
+	catConsulting: "Consulting Fee",
+	catOthers: "Others",
+	selectType: "Select Type",
+	selectCategory: "Select Category",
+	selectMethod: "Select Method",
+	selectStatus: "Select Status",
+	selectTax: "Select Tax Rate",
+	categorySalary: "Staff Salary",
+	categoryRent: "Office Rent",
+	categoryUtilities: "Utilities & Internet",
+	categoryOutsourcing: "Outsourcing Cost",
+	categorySoftware: "Software & SaaS Tools",
+	categoryTravel: "Travel Expenses",
+	categoryMarketing: "Advertising & Marketing",
+	categoryRevenue: "Client Revenue",
+	categoryConsulting: "Consulting Fee",
+	categoryOthers: "Other Expenses",
+	edmSection: "Scanned Documents / Attachments (EDM)",
+	edmDesc: "Attach digital invoice or valid payment voucher",
+	edmRequired: "Evidence Required",
+	loadError: "Error loading transaction details",
+	loadingData: "Loading transaction details...",
+	methodBankTransfer: "Bank Transfer",
+	methodCash: "Cash",
+	methodCreditCard: "Credit Card",
+	missingEvidence: "Missing Legal Evidence",
+	missingEvidenceDesc: "Expense transactions must have an attached invoice or voucher.",
+	saveChanges: "Save Changes",
+	saveError: "Error saving transaction",
+	taxCt10Jp: "Japan Consumption Tax 10%",
+	taxCt8Jp: "Japan Consumption Tax 8%",
+	taxNone: "No Tax Applicable (0%)",
+	taxVat10Vn: "Vietnam VAT 10%",
+	taxVat8Vn: "Vietnam VAT 8%",
+	typeExpense: "Expense (EXPENSE)",
+	typeRevenue: "Revenue (REVENUE)",
+	updateSubtitle: "Update transaction details",
+	updateSuccess: "Transaction updated successfully",
+	updateSuccessDesc: "Transaction details and attachments have been saved.",
+	viewDetails: "Transaction Details",
+	edmReadonly: "List of documents attached to this transaction.",
+	complianceBadge: "Compliance Control",
+	complianceTitle: "Document verification status",
+	msgFormatError: "Format error",
+	msgFormatErrorDesc: "Format .{ext} is not supported.",
+	msgSizeError: "Size limit exceeded",
+	msgSizeErrorDesc: "File {name} exceeds 10MB."
+};
+var pagination$2 = {
+	total: "Total: {total} items",
+	layout: "Page Layout"
+};
+var common$2 = {
+	cancel: "Cancel",
+	"delete": "Delete",
+	system: "System",
+	actions: "Actions",
+	index: "No."
+};
+var themeCustomizer$2 = {
+	title: "Sidebar Settings",
+	subtitle: "Theme & Style Customizer",
+	mode: "Display Mode",
+	modeColor: "Solid Color",
+	modeImage: "Background Image",
+	modeBoth: "Blended Mix",
+	colorLabel: "Sidebar Theme Color (6 Colors)",
+	colorNameDefault: "Default",
+	colorNameGoc: "Classic",
+	imageLabel: "Artistic Background (6 Images)",
+	imageNone: "None",
+	opacityLabel: "Transparency (Opacity)",
+	opacitySub: "Applies to sidebar background color & image",
+	opacityStart: "Clear",
+	opacityEnd: "Solid",
+	btnReset: "Reset to Default",
+	btnDone: "Done",
+	systemPrimaryLabel: "System Brand Color",
+	systemPrimarySub: "Change the global PrimeVue theme and primary color",
+	colorEmerald: "Emerald Green",
+	colorBlue: "Royal Blue",
+	colorPurple: "Amethyst Purple",
+	colorOrange: "Vibrant Orange",
+	colorRed: "Crimson Red",
+	colorTeal: "Teal Breeze",
+	fontLabel: "System Typography",
+	fontSub: "Change the global application font family",
+	fontDefault: "Outfit (Original)",
+	fontInter: "Inter (Clean Tech)",
+	fontPoppins: "Poppins (Soft rounded)",
+	fontMontserrat: "Montserrat (Geometric)",
+	fontPlayfair: "Playfair (Classic Serif)",
+	fontMono: "Roboto Mono (Monospace)"
+};
+var notification$2 = {
+	title: "Notifications",
+	pageTitle: "Notification Center",
+	"new": "NEW",
+	markAllRead: "Read All",
+	empty: "No notifications",
+	emptyDesc: "System notifications will appear here.",
+	justNow: "Just now",
+	minutesAgo: "{n} minutes ago",
+	hoursAgo: "{n} hours ago",
+	daysAgo: "{n} days ago",
+	viewAll: "View all notifications",
+	searchPlaceholder: "Search notifications...",
+	searchBtn: "Search",
+	allTypes: "All types",
+	filterAll: "All",
+	filterUnread: "Unread",
+	filterRead: "Read",
+	totalLabel: "Total notifications",
+	unreadLabel: "Unread",
+	readLabel: "Read",
+	readStatus: "Read",
+	goToAction: "Go to",
+	loading: "Loading notifications...",
+	typeLeaveCreated: "New leave request",
+	typeLeaveApproved: "Leave approved",
+	typeLeaveRejected: "Leave rejected",
+	typeCompliance: "Compliance alert",
+	typeContract: "Contract",
+	typeTransaction: "Transaction"
+};
+var quickSignSuccess$2 = "Contract signed successfully.";
+var placeholder$2 = {
+	selectCategory: "Select category",
+	selectItem: "Select item",
+	selectMethod: "Select method",
+	selectStatus: "Select status",
+	enterTotalAmount: "Enter total amount",
+	selectTaxRate: "Select tax rate",
+	amountBeforeTax: "Base amount before tax",
+	taxAmount: "Tax amount",
+	taxNoteExample: "E.g., 10% PIT, contractor tax...",
+	japanInvoiceNo: "T1234567890123 (If Japan business expense)",
+	vietnamTechCompany: "Vietnam Technology Solutions Joint Stock Company",
+	taxCode: "Tax code",
+	registeredAddress: "Registered address",
+	legalRepresentative: "Legal representative name",
+	jobTitleExample: "E.g., Director, General Manager",
+	enterContractCode: "Enter contract code",
+	enterContractValue: "Enter contract value",
+	enterCurrencyValue: "Enter monetary value",
+	jobTitleDev: "E.g., Developer, Administrator",
+	officeExample: "E.g., Hanoi HQ, Tokyo Office",
+	numberEight: "E.g., 8",
+	durationTwoMonths: "E.g., 2 months",
+	numberEightyFive: "E.g., 85",
+	bankNames: "E.g., Vietcombank, Techcombank",
+	accountNumber: "E.g., 1018273645",
+	insuranceType: "Social, Health, Unemployment or Special Commercial Insurance",
+	enterOfficialCompanyName: "Enter official name on business registration",
+	enterPartnerTaxCode: "Enter partner tax code",
+	partnerLegalJob: "E.g., Director, General Manager, CEO",
+	partnerAddress: "Partner official business address",
+	paymentTerm: "E.g., Net 30, 100% upfront",
+	otHours: "E.g., 20 or 30 hours",
+	systemAutoGenerated: "System automatically generated",
+	companyNameDemo: "Technology Solutions Co., Ltd.",
+	fullNameExample: "John Doe",
+	addressDemo: "Keangnam Landmark Tower, Me Tri, Nam Tu Liem, Hanoi",
+	addressDetailDemo: "12th Floor, Keangnam Landmark Tower, Me Tri, Nam Tu Liem, Hanoi",
+	companyNote: "Enter special notes about this business...",
+	selectFont: "Select font...",
+	searchAndSelectType: "Search and select {type}..."
+};
+var board$2 = {
+	title: "Company News Board",
+	createPost: "Post New Announcement",
+	editPost: "Edit Post",
+	deletePost: "Delete Post",
+	deletePostConfirm: "Are you sure you want to delete this post? This action cannot be undone.",
+	deleteCommentConfirm: "Are you sure you want to delete this comment?",
+	postTitle: "Post Title",
+	postContent: "Post Content",
+	postLink: "Attached URL Link",
+	postImage: "Upload Image",
+	postTag: "Post Tag/Flag",
+	submitPost: "Post Announcement",
+	updatePost: "Update",
+	allTags: "All Tags",
+	tagImportant: "Important",
+	tagAnnouncement: "Announcement",
+	tagEvent: "Event",
+	tagNews: "News",
+	likes: "Likes",
+	comments: "Comments",
+	writeComment: "Write a comment...",
+	sendComment: "Send",
+	noPosts: "No announcements posted yet.",
+	errorCreate: "Failed to create post. Please check the inputs.",
+	successCreate: "Post created successfully!",
+	successDelete: "Post deleted successfully.",
+	successUpdate: "Post updated successfully!",
+	authorAdmin: "Board of Directors",
+	authorManager: "Department Head",
+	attachedLink: "View Attached Link",
+	description: "Where official announcements, featured events, business news, and member connections are updated.",
+	createPostSubtitle: "Publish news to reach all employees in the company",
+	placeholderTitle: "Enter news title or announcement...",
+	placeholderTag: "Select a tag...",
+	changeImage: "Change image",
+	selectImage: "Select image",
+	removeCurrentImage: "Remove current image",
+	placeholderContent: "Share posts, news, or work instructions here...",
+	firstToShare: "Be the first to share news or work instructions.",
+	systemUser: "System User",
+	defaultDept: "Administration",
+	defaultTitle: "Officer",
+	likeBtn: "Like",
+	commentBtn: "Comment",
+	noComments: "No comments yet. Be the first to leave a comment!",
+	systemEmployee: "System Staff",
+	deleteComment: "Delete comment",
+	placeholderComment: "Write your comment...",
+	loadMorePosts: "Load more posts",
+	placeholderSelectTag: "Select tag...",
+	imageWillBeDeleted: "Current image will be deleted upon update",
+	restore: "Restore",
+	changeSelectedImage: "Change selected image",
+	uploadReplacementImage: "Upload replacement image",
+	failUpdate: "Failed to update post. Please try again.",
+	failDelete: "Failed to delete post.",
+	failAction: "Action failed.",
+	failComment: "Failed to post comment.",
+	successDeleteComment: "Comment deleted.",
+	failDeleteComment: "Failed to delete comment.",
+	likesNoOne: "No one has liked this post yet",
+	likesBy: "Liked by: {names}",
+	likesByAndOthers: "Liked by: {names} and {count} others",
+	failFetch: "Failed to load board news. Please try again."
+};
+const locale_en_46json_0ab7440b = {
+	btn: btn$2,
+	text: text$2,
+	msgCommon: msgCommon$2,
+	radioButton: radioButton$2,
+	deleteModal: deleteModal$2,
+	confirmModal: confirmModal$2,
+	tableBox: tableBox$2,
+	uploadAvatar: uploadAvatar$2,
+	uploadFile: uploadFile$2,
+	paginator: paginator$2,
+	"token.invalid": "Token has expired, please log in again",
+	"email.exists": "The entered email address does not exist.",
+	"email.unique": "The entered email address already exists.",
+	"password.min": "Please enter a password between 8-20 characters including uppercase, lowercase, numbers, and special characters.",
+	"password.regex": "Please enter a password between 8-20 characters including uppercase, lowercase, numbers, and special characters.",
+	"common.in_use": "Data is in use.",
+	"system.error": "System Error",
+	"common.system_error": "System Error",
+	"errors.invalid_reset_password_token": "OTP code is invalid. Please check again.",
+	"common.exists": "Data already exists",
+	"common.update.fail": "Data update failed",
+	"common.not_found": "Data not found",
+	"common.noOptions": "No options available",
+	"code.unique": "This code already exists in the system.",
+	"code.duplicate": "This code is duplicated.",
+	"start_date.invalid": "Invalid start date specify.",
+	"end_date.after": "Invalid start date specify.",
+	"product_manual_code.unique": "This product code is already registered in the system.",
+	"common.max_rate_limit": "API call rate limit exceeded for 1 minute.",
+	"email.not_found": "Person in charge with no email selected, please check.",
+	auth: auth$2,
+	notFound: notFound$2,
+	router: router$2,
+	menu: menu$2,
+	department: department$2,
+	user: user$2,
+	position: position$2,
+	company: company$2,
+	companySetting: companySetting$2,
+	userMaster: userMaster$2,
+	document: document$2,
+	employee: employee$2,
+	gender: gender$2,
+	contract: contract$2,
+	timesheet: timesheet$2,
+	leaveRequest: leaveRequest$2,
+	compliance: compliance$2,
+	dashboard: dashboard$2,
+	transaction: transaction$2,
+	pagination: pagination$2,
+	common: common$2,
+	themeCustomizer: themeCustomizer$2,
+	notification: notification$2,
+	quickSignSuccess: quickSignSuccess$2,
+	placeholder: placeholder$2,
+	board: board$2
+};
+
+var btn$1 = {
+	disable: "無効",
+	enable: "有効",
+	duplicate: "複製",
+	imageUpload: "添付",
+	fileUpload: "ファイル選択",
+	detail: "詳細",
+	edit: "編集",
+	view: "詳細",
+	create: "登録",
+	ok: "OK",
+	list: "一覧",
+	add: "追加",
+	register: "登録",
+	save: "保存",
+	back: "戻る",
+	"delete": "削除",
+	cancel: "キャンセル",
+	change: "変更",
+	search: "探す...",
+	deactivate: "無効化",
+	activate: "有効化",
+	approval: "承認",
+	reject: "却下",
+	confirm: "確定",
+	start: "開始",
+	draft: "下書き",
+	send: "送信",
+	login: "ログイン",
+	select: "選択する",
+	auto: "自動付番",
+	success: "成功",
+	warning: "警告",
+	total: "合計",
+	entries: "エントリ",
+	"import": "インポート",
+	next: "次へ",
+	request: "申請",
+	"export": "エクスポート",
+	sendFax: "FAX送信",
+	sendMail: "メール送信",
+	update: "請求情報更新",
+	filter: "検索",
+	removeFilter: "クリア",
+	showAll: "詳細",
+	logOut: "ログアウト",
+	close: "閉じる",
+	sync: "更新",
+	logout: "ログアウト",
+	upload: "画像をアップロード",
+	error: "エラー",
+	deleteConfirm: "削除に同意する",
+	exportExcel: "Excel出力",
+	exportPdf: "PDF出力"
+};
+var text$1 = {
+	cancel: "キャンセル",
+	"delete": "削除",
+	empty: "空欄",
+	no: "No.",
+	id: "ID",
+	deleteSuccess: "{field}削除に成功しました",
+	syncSuccess: "同期の待列に保存成功しました。順番に処理されますので、お待ちください。",
+	resignSuccess: "{field}登録されました。",
+	noData: "データがありません。",
+	notEmptyData: "このフィールドを入力してください。",
+	notEmptyChoose: "{field}をご選択ください。",
+	notEmptyInput: "{field}をご入力ください。",
+	errorTimePast: "過去時間を選択しないでください。",
+	saveSuccess: "{field}保存されました。",
+	max255: "{field}を２５５文字以内で入力してください。",
+	max500: "{field}を500文字以内で入力してください。",
+	max150: "{field}を150文字以内で入力してください。",
+	max100: "{field}を100文字以内で入力してください。",
+	max50: "{field}を50文字以内で入力してください。",
+	max20: "{field}を20文字以内で入力してください。",
+	max10: "{field}を10文字以内で入力してください。",
+	max9: "{field}を9文字以内で入力してください。",
+	min8: "{field} を 8 文字以上で入力してください。",
+	slugFormat: "{field} は小文字 (a-z)、数字、ハイフンのみ使用できます",
+	length10to13: "{field} は10文字から13文字の間で入力してください",
+	length10to12: "{field} は10文字から12文字の間で入力してください",
+	updateSuccess: "Blastmailのアカウント設定が完了しました。",
+	createSuccess: "登録に成功しました。",
+	udSuccess: "保存に成功しました。",
+	activateSuccess: "有効化に成功しました。",
+	deactivateSuccess: "無効化に成功しました。",
+	max2000: "{field}を2000文字以内で入力してください。",
+	duplicate: "は重複されています。",
+	date: "日付",
+	time: "時間",
+	note: "備考",
+	name: "プラン名",
+	type: "種類",
+	price: "価格",
+	action: "アクション",
+	email: "メールアドレス",
+	profile: "プロフィール",
+	director: "社長",
+	all: "全て",
+	status: "ステータス",
+	minus: "分",
+	second: "秒",
+	success: "成功",
+	error: "エラー",
+	errorInput: "入力内容が正しくありません。赤く表示されている項目を確認してください。",
+	require: "必須",
+	registerBy: "登録",
+	updatedBy: "最更",
+	msgPostcodeValid: "郵便番号のフォーマットが正しくない",
+	msgDropdownNoData: "一致する結果はありません",
+	errorCodeFormat: "商品コードは英数字、日本の文字とアンダライン記号でご記入ください。",
+	errorMailFormat: "メールアドレスの形式が正しくありません。",
+	min0Valid: "0より大きい数値を入力してください。",
+	validHiragana: "ひらがなでご記入ください",
+	validSpacing: "{field}には空白を記入しないでください。",
+	validUrl: "URLが無効です。再確認してください。",
+	textRequired: "{field}は必須項目です。",
+	textNumberItem: "{maxLength}つだけ選択可能",
+	validateCalendarRange: "開始日と終了日の両方をご選択ください。",
+	copy: "コピー",
+	sendSuccess: "送信されました。",
+	confirmLogoutTitle: "ログアウトしてもよろしいでしょうか？",
+	confirmLogoutText: "このプロセスは元に戻せません。",
+	active: "有効",
+	inactive: "無効",
+	deleted: "削除済み",
+	sendAllSuccess: "送信が成功しました。",
+	createdAt: "登録日",
+	updatedAt: "更新日",
+	stt: "No.",
+	accountLimit: "アカウント制限",
+	collaboration: "コラボレーション",
+	content: "説明",
+	apps: "アプリ",
+	fromDate: "開始日",
+	toDate: "終了日",
+	dateRange: "期間を選択",
+	createNew: "新規作成",
+	search: "検索",
+	confirmDelete: "削除してもよろしいでしょうか？",
+	systemCode: "システムコード",
+	year: "年",
+	month: "月",
+	week: "週",
+	weekNum: "第{field}週",
+	rangeDate: "{start}～{end}日",
+	textMoney: "¥",
+	quantity: "数量",
+	profit: "粗利",
+	total: "合計",
+	showAll: "すべて表示",
+	hide: "非表示",
+	pdf: "PDF",
+	file: "ファイル",
+	history: "詳細",
+	msgDeleteSuccess: "削除されました。",
+	startDate: "開始日",
+	endDate: "終了日",
+	selectMonth: "月を選択",
+	weekOfMonth: "月の週",
+	loadMore: "もっと見る",
+	errorPassLength: "8～20文字の長さで、大文字、小文字、数字、特殊文字を含むパスワードを入力してください。",
+	errorOtpLength: "認証コードを正しく入力してください。",
+	unique: "{field} はシステムに存在してる",
+	formatTax: "10文字から13文字までの税コードを入力してください",
+	taxMin9: "割引は9文字以内で入力してください",
+	password: "8～20文字の長さで、大文字、小文字、数字、特殊文字を含む{field}を入力してください。",
+	invalidFileType: "無効なファイル形式です。許可されているファイル形式は png、jpg、jpeg、svg です。",
+	invalidFileType1: "無効なファイル形式です。許可されているファイル形式は glb,gltf,obj です。",
+	invalidFileSize: "10MBを超えないサイズの画像をアップロードしてください。",
+	invalidMediaType: "サポートされていないファイル形式です",
+	fileTooLarge: "{type}は許可されたサイズ制限（{size}）を超えています。",
+	image: "画像",
+	video: "ビデオ",
+	emailExists: "メールアドレスまたはパスワードが無効です。再度ご確認ください。",
+	emailMax: "メールを２５５文字以内で入力してください。",
+	codeIncorrect: "OTPコードが無効です。もう一度ご確認ください。",
+	please_fill_all_fields: "すべての必要な情報を入力してください",
+	msgMapNotFound: "地図上で住所が見つかりませんでした。",
+	verifyFidelity: "データの忠実度を確認する",
+	requiredFidelity: "完了する前に、すべての必須フィールドが入力されていることを確認してください。",
+	addSuccess: "追加に成功しました。",
+	edit: "編集",
+	viewDetail: "詳細を表示",
+	errorMessage: "入力内容が無効であるか、システムエラーが発生しました。",
+	info: "情報",
+	warning: "警告",
+	errorSystem: "エラーが発生しました"
+};
+var msgCommon$1 = {
+	select: "選択",
+	confirmLogoutTitle: "ログアウトしてもよろしいでしょうか？",
+	confirmLogoutText: "このプロセスは元に戻せません。"
+};
+var radioButton$1 = {
+	yes: "有",
+	no: "無"
+};
+var deleteModal$1 = {
+	areYouSure: "削除してもよろしいでしょうか？",
+	confirmDelete: "このプロセスは元に戻せません。"
+};
+var confirmModal$1 = {
+	confirm: "確定",
+	confirmRequest: "新しい単価を決定しますか?",
+	cancel: "キャンセル",
+	language: "言語",
+	vietnamese: "ベトナム語",
+	english: "英語",
+	japanese: "日本語",
+	confirmExport: "出力確認",
+	ExportFile: "輸出",
+	leaveTabTitle: "本当にタブを切り替えますか？",
+	leaveTabMessage: "保存しない場合、現在のタブの変更内容は失われます。",
+	changeActiveNotifySuccess: "連携が有効にされました。",
+	changeDeactiveNotifySuccess: "連携が無効にされました。"
+};
+var tableBox$1 = {
+	noData: "まだデータがありません。",
+	noSearchData: "一致する結果はありません",
+	action: "アクション",
+	deleteAllSelect: "選択したデータを全て削除"
+};
+var uploadAvatar$1 = {
+	errType: "ファイル形式またはファイル拡張子が正しくありません。",
+	maxImage: "10MB以下の画像をアップロードしてください。"
+};
+var uploadFile$1 = {
+	errType: "ファイル形式またはファイル拡張子が正しくありません。",
+	maxFile: "10MB以下の画像をアップロードしてください。",
+	uploadFileSuccess: "ファイルのデータがインポート出来ました。"
+};
+var paginator$1 = {
+	itemsPerPage: "1ページに",
+	showItems: "{from}-{to}/{total}ページ",
+	pages: "{page}/{total}ページ",
+	display: " 1ページに",
+	perPage: "件",
+	showInfo: "{fieldFrom}-{fieldTo}/{fieldTotal}件"
+};
+var auth$1 = {
+	titleLogin: "アカウントにアクセスしてください",
+	invalid: "メールアドレスまたはパスワードが無効です。再度ご確認ください。",
+	unauthorized: "トークンが不正で利用できません",
+	need_update_password: "パスワードの更新が必要です。",
+	forbidden: "アクセスが拒否されました！",
+	not_found: "入力された OTP コードが正しくありません。",
+	blacklist_token: "このトークンはすでに使用されています",
+	login: "ログイン",
+	email: "ユーザーID",
+	code: "認証コード",
+	password: "パスワード",
+	rememberPassword: "ログイン状態を保持する",
+	loginSuccess: "ログインが完了しました。",
+	errorMail: "ユーザーIDを入力してください。",
+	errorMailFormat: "ユーザーIDの形式が正しくありません。",
+	userNotExisted: "ユーザーIDまたはパスワードが正しくありません。",
+	errorPass: "パスワードを入力してください。",
+	errorPassNew: "新しいパスワードを入力してください。",
+	errorPassLength: "半角英小文字、大文字、数字、特殊文字を含む8〜32文字 frontのパスワードを入力してください。",
+	forgotPassword: "パスワード忘れ",
+	haveAnPassword: "パスワードを覚えましたか?",
+	sendResetSuccess: "パスワード再設定リクエストは送信されました。",
+	resetPassword: "パスワード再設定",
+	receiveOtp: " 認証コードがまだ届いていません？",
+	retransmission: "再送信",
+	settingPassword: "パスワード設定",
+	reSendResetSuccess: "認証コードがメールに送信されました。メールを確認してください。",
+	errorOtp: "認証コードを入力してください。",
+	newPassword: "新しいパスワード",
+	newPasswordConfirm: "パスワード確認",
+	errorRePass: "パスワード確認を入力してください。",
+	rePassNotMatch: "パスワードとパスワード（確認）が一致しません。ご確認ください。",
+	resetSuccess: "パスワードが変更されました。",
+	confirmLogout: "ログアウトしてもよろしいでしょうか。",
+	settingPasswordSuccess: "初回のパスワード更新に成功しました",
+	resetPass: "パスワード変更",
+	enterEmailResetPass: "パスワードをリセットするには、メールアドレスを入力してください。",
+	sendForgotPass: "認証コード送信",
+	otp: "OTP",
+	errorEmail: "無効なメールアドレスです。ご確認ください。",
+	inactive: "アクセスが拒否されました. アカウントがロックされているか、まだ有効化されていないかです。",
+	msgWelcomeBack: "{name}さん、おかえりなさい！",
+	msgMustChangePassword: "パスワード変更が必要です",
+	msgMustChangePasswordDesc: "初回ログインです。アカウントを有効にするためにパスワードを変更してください！",
+	msgChangePasswordSuccess: "パスワードが正常に変更されました。",
+	changePasswordDesc: "アカウントのパスワードを変更します。新しいパスワードは、英大文字、英小文字、数字、および特殊文字を含む8文字以上である必要があります。",
+	currentPassword: "現在のパスワード",
+	currentPasswordPlaceholder: "現在のパスワードを入力してください",
+	newPasswordPlaceholder: "新しいパスワードを入力してください",
+	confirmPasswordPlaceholder: "新しいパスワードを再入力してください",
+	lowercaseHint: "英小文字 (a-z)",
+	uppercaseHint: "英大文字 (A-Z)",
+	digitHint: "数字 (0-9)",
+	specialHint: "特殊文字 (!{'@'}#$...)",
+	minLengthHint: "8文字以上",
+	maxLengthHint: "50文字以下",
+	backToLogin: "ログインに戻る",
+	usernameLabel: "ユーザーID / メール / 電話番号",
+	usernamePlaceholder: "ユーザーID、メール、または電話番号を入力してください",
+	defaultSloganTitle1: "総合的な",
+	defaultSloganTitle2: "コンプライアンス",
+	defaultSloganTitle3: "管理。",
+	defaultSloganDesc: "ベトナム・日本間の多国籍企業向け法務、人事、契約書および企業文書管理システム。",
+	passwordMin: "パスワードは8文字以上である必要があります。",
+	passwordMax: "パスワードは50文字を超えることはできません。",
+	passwordLower: "パスワードには小文字（a-z）を少なくとも1文字含める必要があります。",
+	passwordUpper: "パスワードには大文字（A-Z）を少なくとも1文字含める必要があります。",
+	passwordDigit: "パスワードには数字（0-9）を少なくとも1文字含める必要があります。",
+	passwordSpecial: "パスワードには特殊文字（!{'@'}#$%...）を少なくとも1文字含める必要があります。"
+};
+var notFound$1 = {
+	backToHome: "家に帰る"
+};
+var router$1 = {
+	homePage: "家",
+	userList: "社員リスト",
+	userRegister: "社員登録",
+	userDetail: "従業員の詳細",
+	userEdit: "従業員編集",
+	categoryRegister: "商品カタログ登録",
+	categoryList: "商品カタログ一覧",
+	categoryEdit: "製品カタログを編集",
+	categoryDetail: "詳細製品カタログ",
+	customerRegister: "依頼者登録",
+	customerList: "依頼者リスト",
+	customerEdit: "顧客編集",
+	customerDetail: "顧客詳細"
+};
+var menu$1 = {
+	main: "メイン",
+	companyBoard: "社内掲示板",
+	masterData: "マスターデータ",
+	industrialDashboard: "インダストリアルダッシュボード",
+	master: "マスター",
+	list: "一覧",
+	register: "登録",
+	dashboard: "ダッシュボード",
+	member: "メンバー管理",
+	myProfile: "マイプロフィール",
+	department: "部署管理",
+	departmentList: "部署一覧",
+	departmentAdd: "部署新規登録",
+	departmentEdit: "部署編集",
+	position: "役職管理",
+	positionList: "役職一覧",
+	positionAdd: "役職新規登録",
+	positionEdit: "役職編集",
+	company: "会社管理",
+	companySetting: "自社情報設定",
+	companyList: "会社一覧",
+	companyAdd: "会社新規登録",
+	companyEdit: "会社編集",
+	userMaster: "ユーザー管理",
+	employee: "人事管理",
+	userMasterList: "ユーザー一覧",
+	userMasterAdd: "ユーザー登録",
+	userMasterEdit: "ユーザー編集",
+	basicInfo: "基本情報",
+	contactInfo: "連絡先詳細",
+	noteInfo: "備考とその他",
+	timesheet: "勤務管理",
+	timesheetManage: "勤怠管理 (管理者)",
+	leaveRequest: "休暇申請",
+	leaveRequestPending: "休暇承認",
+	contract: "契約管理",
+	transaction: "収支管理 (Cash Flow)",
+	compliance: "コンプライアンス管理",
+	document: "文書・アーカイブ管理",
+	logout: "ログアウト",
+	sidebarConfig: "サイドバーの設定",
+	changePassword: "パスワード変更"
+};
+var department$1 = {
+	code: "部署コード",
+	name: "部署名",
+	note: "備考",
+	status: "ステータス",
+	title: "部署管理",
+	placeholderSearch: "部署コード、部署名",
+	noteBasic: "基本部署情報の構成",
+	noteDetail: "タスク詳細と機能",
+	namePlaceholder: "研究開発部 (R&D)",
+	positionListTitle: "役職・職種リスト",
+	positionListDesc: "この部署に所属する役職を追加します",
+	addPosition: "役職の追加",
+	noPositionYet: "役職がまだ登録されていません。追加ボタンをクリックしてください。",
+	positionName: "役職名",
+	positionNamePlaceholder: "シニアエンジニア...",
+	positionDesc: "業務内容",
+	positionDescPlaceholder: "業務内容の説明...",
+	noteAndDesc: "説明と備考",
+	notePlaceholder: "この部署の機能構造に関する詳細な説明を入力してください...",
+	valMissPositionName: "役職名を入力してください",
+	valMissPositionDesc: "すべての役職名を入力してください。",
+	associatedJobTitles: "所属役職"
+};
+var user$1 = {
+	gender: "性別",
+	status: "ステータス"
+};
+var position$1 = {
+	title: "役職管理",
+	code: "役職コード",
+	name: "役職名",
+	note: "備考",
+	status: "ステータス",
+	placeholderSearch: "役職コード、役職名",
+	noteBasic: "識別情報とロールの構成",
+	noteDetail: "職務要件と役割の説明"
+};
+var company$1 = {
+	title: "会社管理",
+	code: "会社コード",
+	name: "会社名",
+	postcode: "郵便番号 (Postcode)",
+	searchAddress: "住所検索",
+	area: "エリア",
+	prefecture: "都道府県",
+	city: "市区町村",
+	town: "町域",
+	address: "現在のオフィス住所",
+	addressRegistered: "登記上の本社住所 (法的)",
+	phone: "電話番号",
+	fax: "FAX番号",
+	email: "企業連絡先メールアドレス",
+	note: "備考",
+	status: "稼働ステータス",
+	statusActive: "稼働中",
+	statusInactive: "停止中",
+	placeholderSearch: "会社コード、会社名",
+	noteCode: "コア識別情報の構成",
+	noteContact: "企業の公式連絡先",
+	noteDetail: "重要な注意事項を記録する",
+	editTitle: "企業情報の編集",
+	createTitle: "新規企業の追加",
+	editDesc: "法人プロファイルの更新",
+	createDesc: "パートナーおよびブランチ情報のセットアップ",
+	saveProfile: "プロファイルを保存",
+	basicInfo: "基本情報",
+	basicInfoDesc: "企業名、法人コード、および法的代表者",
+	nameKana: "フリガナ (カタカナ)",
+	legalRepresentative: "法的代表者",
+	taxSection: "登録・法的識別番号",
+	taxSectionDesc: "適格請求書発行のための登録番号・法人番号",
+	taxCode: "登録番号/税務コード",
+	corporateNumber: "法人番号 (Corporate Number)",
+	contactSection: "連絡先情報",
+	contactSectionDesc: "企業と直接連絡を取るための連絡先詳細",
+	addressSection: "本社所在地",
+	addressSectionDesc: "商業登記住所および実際の勤務地住所",
+	noteSection: "備考・メモ",
+	companyInfo: "会社情報",
+	contactInfo: "連絡先情報",
+	headOfficeAddress: "本社所在地",
+	registeredAddress: "登記住所"
+};
+var companySetting$1 = {
+	desc: "管理本社の法的・企業情報の構成",
+	basicSectionTitle: "管理本社の基本情報",
+	basicSectionDesc: "公式な管理本社の登録情報を入力してください。",
+	namePlaceholder: "例：株式会社テクノロジーソリューションズ",
+	nameKana: "略称 / カナ表記",
+	capital: "資本金",
+	capitalPlaceholder: "例：10,000,000,000 VND または 100,000,000 JPY",
+	corporatePlaceholder: "例：法人番号 1234567890123",
+	legalTitle: "法的代表者",
+	legalDesc: "契約締結等に必要な企業の法的代表者の個人情報。",
+	repPlaceholder: "山田 太郎",
+	repTitle: "代表者役職",
+	repTitlePlaceholder: "例：代表取締役 / 社長 / 会長",
+	repIdNumber: "身分証明書番号 / パスポート番号",
+	repIdDate: "身分証明書発行日",
+	repIdPlace: "身分証明書発行機関",
+	repIdPlacePlaceholder: "例：警察庁、または所管の政府機関",
+	contactTitle: "連絡先情報 & 所在地",
+	contactDesc: "公式の住所および連絡用チャネルの詳細情報。",
+	website: "ウェブサイト (Website)",
+	addressPlaceholder: "例：東京都千代田区永田町1-1-1",
+	addressRegisteredPlaceholder: "例：東京都千防田区永田町1-1-1（登記上の本社）",
+	brandingTitle: "ブランディング & UI設定",
+	brandingDesc: "ロゴ、ログイン背景、サイドバーの表示名、スローガンのカスタマイズ設定。",
+	sidebarName: "サイドバー表示名",
+	sidebarSubName: "サイドバー副表示名",
+	sidebarSubPlaceholder: "コンプライアンス管理システム",
+	logoLabel: "企業ロゴ (Web Logo)",
+	logoAccept: "JPG, PNGに対応。透過背景 of 正方形画像を推奨します。",
+	loginBgLabel: "ログイン画面背景画像",
+	loginBgAccept: "JPG, PNGに対応。16:9比率または高解像度の画像を推奨します。",
+	slogan1: "企業スローガン (1行目 - メインタイトル)",
+	slogan1Placeholder: "テクノロジーの先駆者 - 未来を創造する",
+	slogan2: "企業スローガン (2行目)",
+	slogan2Placeholder: "企業コンプライアンス管理システム",
+	slogan3: "企業スローガン (3行目)",
+	slogan3Placeholder: "ガバナンスの向上、運用の最適化",
+	complianceBadge: "コンプライアンスシステム",
+	defaultContractTitle: "デフォルト契約情報の構成",
+	defaultContractDesc: "ここに登録された情報は、新規契約書作成時に「甲」（雇用主／発注元）として自動入力されます。契約書作成時に直接編集することも可能です。",
+	uploadLogoSuccess: "ロゴのアップロードに成功しました。",
+	uploadLogoError: "ロゴ of アップロードに失敗しました。",
+	uploadBgSuccess: "背景画像のアップロードに成功しました。",
+	uploadBgError: "背景画像 of アップロードに失敗しました。",
+	landingTitle: "企業ウェブサイト設定",
+	landingDescText: "外部リンクを使用するか、カスタム紹介ページを構築して、企業のウェブサイトを構成します",
+	landingStyleLabel: "紹介ページのスタイル",
+	businessFieldLabel: "事業分野",
+	aboutUsLabel: "企業紹介 (About Us)",
+	aboutUsPlaceholder: "会社のミッション、ビジョン、コアバリューをご紹介ください...",
+	servicesListLabel: "主なサービス内容 (1行に1サービス)",
+	servicesListPlaceholder: "サービス1: 簡単な説明\nサービス2: 簡単な説明\nサービス3: 簡単な説明",
+	bannerDesignTitle: "スライドバナー＆画像アセット (紹介ページのプレビュー用)",
+	slide1Label: "スライドバナー 1",
+	slide2Label: "スライドバナー 2",
+	slide3Label: "スライドバナー 3",
+	aboutImgLabel: "紹介画像 (About Us Image)",
+	uploadSlide1: "スライド1画像をアップロード",
+	uploadSlide2: "スライド2画像をアップロード",
+	uploadSlide3: "スライド3画像をアップロード",
+	uploadAboutImg: "紹介画像をアップロード",
+	loadMockupBtn: "サンプルデータ読込",
+	previewLandingBtn: "紹介ページのプレビュー",
+	websiteOptionLabel: "企業ウェブサイトの選択",
+	websiteOptionExternal: "すでに独自のウェブサイトがある (URLを入力)",
+	websiteOptionInternal: "独自のウェブサイトがまだない (カスタム紹介ページを作成)",
+	websiteUrlLabel: "企業ウェブサイト of URL",
+	websiteUrlPlaceholder: "例: https://www.company.com",
+	style1Label: "スタイル 1 - Modern Tech (現代的＆シャープ)",
+	style2Label: "スタイル 2 - Elegant Classic (古典的＆上品)",
+	style3Label: "スタイル 3 - Minimalist Clean (極シンプル＆精巧)",
+	style4Label: "スタイル 4 - Vibrant Creative (クリエイティブ＆活発)",
+	style5Label: "スタイル 5 - Trust Corporate (プロフェッショナル＆信頼性)",
+	fieldIt: "情報技術＆ソフトウェア",
+	fieldFinance: "財務・会計サービス",
+	fieldManufacturing: "製造・輸出入",
+	fieldLegal: "法的コンサルティング＆法律",
+	fieldServices: "サービス・商業"
+};
+var userMaster$1 = {
+	title: "ユーザー管理",
+	code: "ユーザーコード",
+	name: "氏名",
+	company: "会社",
+	department: "部署",
+	position: "役職",
+	phone: "電話番号",
+	note: "備考",
+	email: "メールアドレス",
+	status: "ステータス",
+	placeholderSearch: "氏名、メール, 従業員コードで検索...",
+	noteBasic: "従業員識別情報",
+	noteAdditional: "追加情報"
+};
+var document$1 = {
+	dragDropText: "ここにドキュメントをドラッグ＆ドロップするか、クリックしてアップロードします",
+	allowedFormats: "対応形式: PDF, Word, Excel, JPG, PNG (最大10MB)",
+	uploading: "アップロード中...",
+	totalFiles: "合計ファイル数",
+	view: "オンラインプレビュー",
+	download: "ダウンロード",
+	"delete": "削除",
+	noDocuments: "添付されたドキュメントはありません。",
+	viewerNotSupportedTitle: "プレビュー非対応",
+	viewerNotSupportedDesc: "このファイル形式はオンラインプレビューに対応していません。ダウンロードしてご確認ください。",
+	downloadFile: "ファイルをダウンロード",
+	deleteConfirmTitle: "書類削除の確認",
+	deleteConfirmDesc: "このドキュメントをシステムから削除してもよろしいですか？この操作は取り消すことができず、永久に削除されます。",
+	msgFileTooLarge: "ファイルが大きすぎます",
+	msgFileTooLargeDesc: "10MB以下のファイルを選択してください。",
+	msgNoFile: "ファイル未選択",
+	msgNoFileDesc: "アップロードするドキュメントを選択してください。",
+	msgNoType: "ドキュメントタイプ未選択",
+	msgNoTypeDesc: "ドキュメントタイプを選択してください。",
+	msgNoLink: "リンク未設定",
+	msgNoLinkDesc: "ドキュメントを添付するレコードを選択してください。",
+	msgUploadSuccess: "ドキュメントのアップロードとリンクが成功しました。",
+	msgUploadError: "ドキュメントのアップロード中にエラーが発生しました。",
+	msgViewError: "ドキュメントを表示できません。",
+	msgDownloadError: "ドキュメントをダウンロードできません。",
+	msgDeleteSuccess: "ドキュメントをシステムから削除しました。",
+	msgDeleteError: "ドキュメントの削除中にエラーが発生しました。",
+	maxSizeText: "最大サイズ: 10MB",
+	tooltipGrid: "グリッド表示",
+	tooltipList: "リスト表示",
+	uploadedBy: "アップロード者",
+	deleteConfirmWarning: "この操作は取り消せません！",
+	deleteConfirmDetails: "システムはクラウドストレージから添付ファイル {name} を永久に削除します。よろしければ続行してください。",
+	pageDesc: "ドキュメントの一元管理、アップロード、および従業員、契約、費用へのスマートなリンクを行います。",
+	uploadDoc: "ドキュメントをアップロード",
+	totalDocs: "ドキュメント総数",
+	employeeDocs: "従業員書類",
+	contractDocs: "契約書",
+	transactionDocs: "インボイス＆収支",
+	placeholderSearch: "ドキュメントコード、ファイル名...",
+	placeholderFormat: "ファイル形式",
+	noData: "システムにドキュメントが見つかりません",
+	transactionCode: "収支コード #{id}",
+	notLinked: "リンク未設定",
+	preview: "プレビュー",
+	downloadTooltip: "ダウンロード",
+	deleteTooltip: "ドキュメント削除",
+	uploadDialogHeader: "ドキュメントのアップロードとリンク",
+	docTypeLabel: "書類＆ドキュメントの種類",
+	placeholderSelectType: "書類の分類を選択",
+	linkToTarget: "{target}にリンクする",
+	placeholderSearchTarget: "{target}を検索して選択...",
+	processUpload: "アップロード処理",
+	previewDialogHeader: "ドキュメント表示: {name}",
+	deleteForeverTitle: "このファイルを永久に削除しますか？",
+	colName: "ドキュメント / ファイル名",
+	colType: "分類",
+	colLinkedTo: "リンク先",
+	colUploadedAt: "アップロード日",
+	tabAll: "すべてのドキュメント",
+	tabEmployee: "従業員情報",
+	tabContract: "労働契約",
+	tabTransaction: "インボイス＆経費",
+	extPdf: "PDFファイル (.pdf)",
+	extImage: "画像 (.png, .jpg)",
+	extWord: "Wordファイル (.doc, .docx)",
+	extExcel: "Excelファイル (.xls, .xlsx)",
+	otherDocs: "その他の書類",
+	filesize: "サイズ",
+	deleteWarningDetails: "ドキュメント「{name}」はサーバーから永久に削除されます。この操作は取り消せません。"
+};
+var employee$1 = {
+	title: "従業員管理",
+	status: "ステータス",
+	email: "メールアドレス",
+	code: "従業員コード",
+	addTitle: "新規従業員登録",
+	editTitle: "従業員編集",
+	editSubtitle: "人事記録の更新",
+	addSubtitle: "アカウントと組織情報の設定",
+	saveProfile: "保存",
+	personalInfo: "個人情報",
+	personalInfoDesc: "身分証明、連絡先、居住プロファイル",
+	orgUnit: "管理組織",
+	basicInfo: "基本情報",
+	basicInfoDesc: "基本情報、連絡先メール、システムアクセスアカウントの設定",
+	avatar: "プロフィール写真",
+	uploadPhoto: "写真アップロード",
+	removePhoto: "写真削除",
+	fullName: "氏名",
+	katakanaName: "カタカナ名",
+	romajiName: "ローマ字名",
+	dateOfBirth: "生年月日",
+	gender: "性別",
+	hometown: "本籍地",
+	placeOfBirth: "出生地",
+	nationality: "国籍",
+	ethnicity: "民族",
+	religion: "宗教",
+	phone: "電話番号",
+	department: "部署",
+	selectDepartment: "部署を選択",
+	jobTitle: "職位",
+	selectJobTitle: "役職を選択",
+	statusActive: "在職中",
+	statusInactive: "退職",
+	statusProbation: "試用期間",
+	roleAdmin: "管理者",
+	roleRbacTooltipTitle: "ロールベースのアクセス制御 (RBAC) 権限一覧",
+	roleManager: "マネージャー／取締役",
+	roleHr: "人事 (HR)",
+	roleAccountant: "経理 (Accountant)",
+	roleStaff: "一般社員",
+	roleAdminDesc: "フルシステム管理権限",
+	roleManagerDesc: "取締役 / 経営執行役員",
+	roleHrDesc: "人事情報、契約、勤怠、休暇の管理",
+	roleAccountantDesc: "財務、収支取引、給与計算の管理",
+	roleStaffDesc: "個人情報閲覧、自己打刻、休暇申請のみ",
+	placeholderSearch: "氏名、メール、従業員コード...",
+	dialogDisableTitle: "従業員を無効化しますか？",
+	dialogDisableDesc: "従業員 {name} のステータスが「無効 (INACTIVE)」に変更されます。",
+	msgDisableSuccess: "従業員が無効化されました。",
+	joinDate: "入社日",
+	role: "ロール",
+	password: "パスワード",
+	taxInsurance: "税金・保険",
+	taxInsuranceBank: "税・保険・銀行",
+	contractDocument: "契約・書類",
+	taxInsuranceTitle: "身分証明書・社会保険",
+	taxInsuranceDesc: "税番号、保険、身分証明書の設定",
+	identityType: "身分証明書の種類",
+	identityNumber: "証明書番号",
+	zairyuExpiry: "在留カード有効期限",
+	taxCode: "税番号",
+	socialInsurance: "社会保険番号",
+	pensionNumber: "年金番号",
+	employmentInsurance: "雇用保険番号",
+	bankInfo: "銀行情報",
+	bankInfoTitle: "給与口座・銀行",
+	bankInfoDesc: "給与受取口座と決済情報の設定",
+	bankCode: "銀行コード",
+	bankBranch: "支店コード",
+	bankAccountType: "口座種別",
+	bankAccountNumber: "口座番号",
+	bankAccountHolder: "口座名義（カナ）",
+	addressInfo: "住所・親族",
+	addressTitle: "居住地住所",
+	addressDesc: "登録住所と現住所",
+	registeredAddress: "登録住所",
+	currentAddress: "現住所",
+	dependentsCount: "扶養人数",
+	relatives: "親族情報",
+	relativesTitle: "親族一覧",
+	relativesDesc: "緊急連絡先と扶養者情報",
+	addRelative: "親族追加",
+	relationship: "関係",
+	occupation: "職業",
+	address: "住所",
+	emergencyContact: "緊急連絡先",
+	isDependent: "扶養者",
+	notes: "備考",
+	detailTitle: "従業員詳細",
+	missingInfo: "情報不足",
+	missingInfoDesc: "赤いエラーマークのあるタブを確認して情報を完成させてください。",
+	contractListTitle: "雇用契約書一覧",
+	contractListDesc: "この従業員と締結した雇用契約書の一覧を表示します（表示のみ、編集不可）",
+	contractEmpty: "雇用契約情報がありません。",
+	contractCode: "契約番号",
+	contractType: "契約の種類",
+	contractDuration: "契約期間",
+	contractSalary: "基本給 / 契約額",
+	contractStatus: "ステータス",
+	contractAction: "ダウンロード/プレビュー",
+	contractActive: "有効",
+	contractInactive: "無効",
+	contractNoScan: "スキャンなし",
+	contractIndefinite: "無期限",
+	personalDocTitle: "個人証明書・資料キャビネット",
+	personalDocDesc: "従業員のマイナンバー、パスポート、在留カード、資格証明書等のスキャンデータをアップロード・管理します",
+	btnUploadDoc: "書類をアップロード",
+	msgUploadingDoc: "書類をアップロードしています。しばらくお待ちください...",
+	docEmptyTitle: "アップロードされた個人書類はありません。",
+	docEmptyDesc: "ファイルをドラッグ＆ドロップするか、上のアップロードボタンをクリックしてください。",
+	tooltipViewDoc: "書類を表示",
+	tooltipDownloadDoc: "ダウンロード",
+	tooltipDeleteDoc: "書類を削除",
+	workHistory: "職歴",
+	workHistoryTitle: "部署・職位・給与の異動履歴",
+	workHistoryDesc: "各ステージにおける従業員の職歴を管理します",
+	btnAddWorkHistory: "履歴を追加",
+	workHistoryStage: "勤務期間",
+	workHistoryDefault: "初期デフォルト",
+	workHistoryStartDate: "開始日",
+	workHistoryEndDate: "終了日",
+	workHistorySalary: "基本給 (VND)",
+	workHistoryNote: "備考",
+	workHistoryEmpty: "職歴が登録されていません。",
+	workHistorySyncDept: "個人情報から同期",
+	workHistorySyncJoin: "入社日と同期",
+	workHistoryDateError: "終了日は開始日より前の日付にできません",
+	relativeName: "親族の氏名",
+	relativesEmpty: "親族情報が登録されていません。",
+	relationshipSpouse: "配偶者",
+	relationshipChild: "子供",
+	relationshipParent: "親",
+	relationshipSibling: "兄弟姉妹",
+	relationshipOther: "その他",
+	noViewUrl: "書類プレビューのURLがありません。",
+	noDownloadUrl: "書類ダウンロードのURLがありません。",
+	viewError: "ドキュメントを表示できません。",
+	downloadError: "ドキュメントをダウンロードできません。",
+	startDate: "開始日",
+	salary: "給与額",
+	placeholderHometown: "例: ハナム",
+	placeholderPlaceOfBirth: "産婦人科病院",
+	placeholderNationality: "ベトナム",
+	placeholderReligion: "なし",
+	sectionAccountWork: "2. アカウント＆業務",
+	sectionAccountWorkDesc: "連絡先情報、専任部署、およびシステム権限",
+	sectionContactAddress: "3. 連絡先住所",
+	sectionContactAddressDesc: "住民登録住所および現在の居住地住所",
+	placeholderBankAccountType: "普通",
+	noRelatives: "扶養家族が追加されていません。上のボタンをクリックして新規作成してください。",
+	relativeNumber: "扶養家族 #",
+	deleteRelativeTooltip: "この扶養家族を削除",
+	birthday: "生年月日",
+	dependentTax: "扶養家族（所得控除）",
+	pendingUpload: "アップロード待ち",
+	deletePendingFileTooltip: "待機ファイルを削除",
+	deletePeriodTooltip: "この期間を削除",
+	placeholderSalary: "例: 10,000,000",
+	placeholderSalaryReason: "例: 定期昇給",
+	endDateBeforeStartDate: "終了日は開始日より前であってはなりません",
+	removedPendingFile: "待機リストからドキュメントを削除しました。",
+	imageTooLarge: "画像が大きすぎます",
+	imageTooLargeDesc: "2MB以下の画像を選択してください。",
+	updateSuccess: "従業員情報を更新しました。",
+	createSuccess: "新しい従業員の作成に成功しました。",
+	createAndUploadSuccess: "新しい従業員を作成し、{successCount} 件のドキュメントを正常にアップロードしました。",
+	uploadDocsError: "ドキュメントアップロードエラー",
+	createSuccessUploadError: "新しい従業員の作成に成功しましたが、一部のドキュメントのアップロードに失敗しました（成功: {successCount} 件、失敗: {failCount} 件）。",
+	fileTooLarge: "ファイルサイズ超過",
+	fileTooLargeDesc: "10MB以下のファイルを選択してください。",
+	addedPendingFile: "ドキュメントを待機リストに追加しました。",
+	uploadDocsSuccess: "ドキュメントのアップロードに成功しました。",
+	uploadDocsFailed: "ドキュメントのアップロード中にエラーが発生しました。",
+	deleteDocConfirm: "この書類を削除してもよろしいですか？この操作は取り消せません。",
+	deleteDocSuccess: "書類を削除しました。",
+	deleteDocFailed: "書類の削除中にエラーが発生しました。",
+	ocrTitle: "Gemini AIを使用したプロフィール簡易入力",
+	ocrDesc: "履歴書、身分証明書、パスポート、またはExcelシートをアップロードして、AIがフォームのフィールドに自動入力します。",
+	ocrButton: "ファイル選択＆解析",
+	ocrLoading: "Gemini AIがドキュメントをスキャンし、情報を解析しています...",
+	ocrSuccessTitle: "解析成功",
+	ocrSuccessDesc: "情報がフォームに自動的に入力されました。",
+	ocrErrorTitle: "エラー",
+	ocrErrorDesc: "ドキュメントから情報を抽出できませんでした。",
+	ocrFileTooLarge: "ファイルが大きすぎます",
+	ocrFileTooLargeDesc: "ファイル「{name}」は制限の10MBを超えています。",
+	ocrConnectError: "ファイルに接続または処理できませんでした。",
+	name: "従業員"
+};
+var gender$1 = {
+	male: "男性",
+	female: "女性",
+	other: "その他"
+};
+var contract$1 = {
+	companySection: "甲様: 運営企業情報",
+	companyNameLabel: "運営企業名 (甲様)",
+	companyTaxCodeLabel: "甲様税コード",
+	companyAddressLabel: "甲様住所",
+	companyRepresentativeLabel: "甲様代表者",
+	companyRepresentativeRoleLabel: "代表者役職",
+	defaultConfig: "デフォルト設定",
+	contractInfo: "契約情報",
+	title: "契約管理",
+	createTitle: "新規契約締結",
+	editTitle: "契約更新",
+	subtitle: "コンプライアンス管理",
+	updateSubtitle: "契約更新",
+	generalInfo: "契約基本情報",
+	type: "契約種別",
+	code: "契約コード",
+	codePlaceholder: "空白の場合は自動生成",
+	signDate: "締結日",
+	startDate: "発効日",
+	endDate: "満了日（無期限の場合は空白）",
+	baseSalary: "月額基本給",
+	totalValue: "契約総額",
+	status: "契約ステータス",
+	laborSection: "労働者詳細（労働契約）",
+	selectEmployee: "従業員選択",
+	selectEmployeePlaceholder: "契約対象の従業員を検索・選択",
+	employmentType: "雇用形態",
+	jobTitle: "職種・職位",
+	workLocation: "勤務地",
+	workingHours: "所定労働時間（時間/日）",
+	probationPeriod: "試用期間",
+	probationSalary: "試用期間給与率（%）",
+	bankName: "給与振込銀行",
+	bankAccount: "銀行口座番号",
+	insurance: "加入保険種別",
+	partnerSection: "取引先・顧客詳細",
+	partnerName: "取引先・顧客名",
+	partnerTaxCode: "法人番号・営業許可番号",
+	partnerRepresentative: "代表者",
+	partnerRepresentativeRole: "代表者役職",
+	partnerAddress: "本社所在地",
+	paymentMethod: "支払方法",
+	paymentTerms: "支払条件",
+	billingCycle: "請求サイクル",
+	overtimeSection: "残業コンプライアンス（ベトナム労働法）",
+	agreement36: "残業時間上限の適用（ベトナム労働法基準）",
+	overtimeAllowance: "固定/一括残業手当を含む",
+	includedOvertimeHours: "月間固定残業時間",
+	edmSection: "スキャン文書・添付ファイル（EDM）",
+	edmUpload: "契約書スキャンファイルをアップロード",
+	complianceBadge: "コンプライアンス管理",
+	complianceTitle: "コンプライアンス登録",
+	complianceDescCreate: "送信時、契約は既存の人事リストと自動的にクロスチェックされ、保存前に合法性が確保されます。",
+	complianceDescEdit: "契約パラメータ（給与、残業条件）の更新は、給与計算・残業管理システムに自動同期されます。",
+	complianceDescView: "契約の詳細は、法的リスクと労働紛争を防止するためにコンプライアンスシステムにより自動的に監視されています。",
+	viewDetails: "契約詳細",
+	edmReadonly: "この契約に添付された書類の一覧。",
+	submitContract: "契約を完了",
+	missingInfo: "情報不足",
+	saveSuccess: "成功",
+	saveSuccessDesc: "新規契約がコンプライアンスに準拠して締結されました。",
+	updateSuccess: "成功",
+	updateSuccessDesc: "契約が正常に更新されました。",
+	saveError: "契約締結エラー",
+	updateError: "契約更新エラー",
+	loadError: "契約読み込みエラー",
+	loadingData: "契約データを読み込み中...",
+	typeLabor: "雇用契約",
+	typeVendor: "業務委託（取引先）",
+	typeClient: "サービス提供（顧客）",
+	statusActive: "有効（ACTIVE）",
+	statusExpired: "期限切れ（EXPIRED）",
+	statusTerminated: "解約（TERMINATED）",
+	employmentSeishain: "正社員（Seishain）",
+	employmentKeiyakushain: "契約社員（Keiyakushain）",
+	employmentHaken: "派遣社員（Haken）",
+	employmentArubaito: "アルバイト（Arubaito）",
+	selectMissEmployee: "契約対象 of 従業員を選択してください。",
+	selectMissPartner: "パートナー・組織名を入力してください。",
+	selectMissPartnerTax: "パートナーの法人番号を入力してください。",
+	selectMissValue: "契約金額を入力してください。",
+	edmUploading: "添付ファイルをアップロード中...",
+	manageTitle: "契約管理",
+	manageDesc: "従業員の雇用契約および企業の商取引契約の管理・保管を行います。",
+	signNew: "新規契約締結",
+	quickSign: "簡易契約締結",
+	quickSignSuccess: "簡易契約の締結が完了し、プロファイルが更新されました。",
+	typeCommercial: "商取引契約",
+	searchPlaceholder: "契約コード、従業員名で検索...",
+	typeSelect: "契約種別",
+	statusSelect: "ステータス",
+	party: "契約対象",
+	duration: "適用期間",
+	value: "総額",
+	documents: "添付書類",
+	actions: "操作",
+	loading: "契約リストを読み込み中...",
+	noData: "条件に一致する契約が見つかりません。",
+	noEmployee: "従業員未割り当て",
+	corporatePartner: "企業パートナー",
+	indefinite: "無期限",
+	files: "件",
+	exportPdf: "PDFサンプル出力",
+	exportPdfStyle: "契約書PDF出力スタイルの選択",
+	exportPdfDesc: "出力する契約書のプロフェッショナルなドキュメントデザインを選択してください：",
+	styleClassic: "クラシック・リーガル（Classic Style）",
+	selected: "選択中",
+	styleClassicDesc: "格式高い明朝体（Serif）フォントを使用し、日本の公的書式に準拠したレイアウト。条項を細い罫線でエレガントに分割します。",
+	styleModern: "モダン・コーポレート（Modern Style）",
+	styleModernDesc: "クリーンなゴシック体（Sans-serif）フォントとエメラルドグリーンを基調としたデザイン。コンプライアンス強調ボックスと視覚的な署名エリアが特徴です。",
+	styleAcademic: "アカデミック・エレガント（Academic Style）",
+	styleAcademicDesc: "洗練されたネイビーブルーをアクセントに、広めの余白を取ったミニマルなデザイン。高額な商取引契約に最適です。",
+	downloadPdf: "PDFを出力してダウンロード",
+	deleteConfirmTitle: "契約を削除しますか？",
+	deleteConfirmDesc: "契約コード {code} を削除してもよろしいですか？この操作は取り消せません。",
+	allContracts: "すべての契約",
+	allTypes: "すべての種別",
+	statusAll: "すべてのステータス",
+	deleteSuccessDesc: "契約はシステムから正常に削除されました。",
+	deleteError: "契約削除エラー",
+	payBank: "銀行振込",
+	payCash: "現金",
+	payCredit: "クレジットカード",
+	cycleMonthly: "月払い",
+	cycleQuarterly: "四半期払い",
+	cycleOneTime: "一括払い",
+	fileTooLarge: "ファイルサイズ超過",
+	fileTooLargeDesc: "ファイル {name} は制限の10MBを超えています。",
+	createSuccess: "契約書の作成に成功しました",
+	createSuccessWithDocs: "契約書の作成および書類のアップロードに成功しました",
+	createError: "契約書作成エラー",
+	downloadPdfSuccess: "PDFダウンロードに成功しました",
+	exportPdfError: "契約書PDF出力エラー",
+	formatError: "無効なファイル形式",
+	formatErrorDesc: "サポートされている形式：PDF, DOC, DOCX, JPG, PNG",
+	sizeError: "ファイルサイズ超過",
+	sizeErrorDesc: "添付ファイルのサイズは10MBを超えてはなりません",
+	statusPending: "承認待ち (PENDING)",
+	employmentFullTimeVn: "正社員 (ベトナム)",
+	employmentPartTimeVn: "アルバイト (ベトナム)",
+	ocrTitle: "Gemini AIを使用した契約書簡易入力",
+	ocrDesc: "雇用契約書のスキャンファイル、画像、またはExcelテンプレートをアップロードして、AIが契約フィールドに自動入力します。",
+	ocrButton: "ファイル選択＆解析",
+	ocrLoading: "Gemini AIがドキュメントをスキャンし、情報を解析しています...",
+	ocrSuccessTitle: "契約書解析成功",
+	ocrSuccessDesc: "抽出された契約情報がフォームに入力されました。",
+	ocrErrorTitle: "エラー",
+	ocrErrorDesc: "契約情報を抽出できませんでした。",
+	ocrFileTooLarge: "ファイルが大きすぎます",
+	ocrFileTooLargeDesc: "ファイル「{name}」は制限 of 10MBを超えています。",
+	ocrConnectError: "契約書に接続または処理できませんでした。"
+};
+var timesheet$1 = {
+	title: "個人タイムシート",
+	desc: "毎日の労働時間を記録し、出勤履歴を追跡します。",
+	standardTimeSystem: "標準時刻システム",
+	workingTimeVN: "ベトナム労働時間",
+	gpsClock: "高精度GPSクロック時間",
+	todayTracking: "本日の勤怠記録",
+	trackingDesc: "勤務開始時に「チェックイン」を押してください。09:00以降のチェックインは「遅刻」として記録されます。退勤前に「チェックアウト」を押して、毎日の勤務記録を完了させてください。",
+	checkInTime: "出勤時間",
+	checkOutTime: "退勤時間",
+	checkedIn: "チェックイン済み",
+	checkedOut: "チェックアウト済み",
+	history: "勤怠履歴",
+	historyDesc: "月内に記録された勤務日の詳細を追跡します。",
+	selectMonth: "月を選択",
+	noData: "今月の勤怠データはありません。",
+	success: "打刻成功",
+	checkInSuccess: "本日正常にチェックインしました。",
+	checkOutSuccess: "本日正常にチェックアウトしました。",
+	multiModalCheckin: "マルチモード打刻システム",
+	qrTab: "個人QRコード",
+	deviceTab: "指紋・顔認証デバイス",
+	qrDesc: "自動的に打刻するには、スキャナーのカメラの前に個人のQRコードをかざしてください。",
+	qrRefreshesIn: "{seconds} 秒後に自動更新されます",
+	deviceConnected: "スキャナー: ZK-Teco FaceID Pro #01",
+	deviceStatusConnected: "接続中",
+	deviceSyncDesc: "システムは5分ごとに指紋と顔認証データを自動的に同期します。",
+	syncButtonLabel: "デバイスから同期",
+	syncingText: "タイムレコーダーに接続中...",
+	syncSuccess: "同期成功！最新の2件の打刻ログを読み込み、記録しました。",
+	simulateQrBtn: "オフィススキャナーをシミュレート",
+	simulatingScan: "オフィスのカメラで個人QRコードをスキャンするシミュレーション中...",
+	alreadyCheckedOut: "本日の出退勤の打刻は既に完了しています。",
+	date: "日付",
+	status: "ステータス",
+	day0: "日曜日",
+	day1: "月曜日",
+	day2: "火曜日",
+	day3: "水曜日",
+	day4: "木曜日",
+	day5: "金曜日",
+	day6: "土曜日",
+	checkIn: "出勤",
+	checkOut: "退勤",
+	today: "本日",
+	workingHours: "勤務時間",
+	overtime: "残業",
+	manageTitle: "勤怠管理（管理者）",
+	employee: "従業員",
+	totalHours: "合計時間",
+	overtimeHours: "残業時間",
+	lateMins: "遅刻（分）",
+	earlyLeaveMins: "早退（分）",
+	accessDenied: "アクセス拒否",
+	accessDeniedDesc: "従業員の勤怠を管理するためのマネージャーまたは管理者ロールを持っていません。",
+	backHome: "ホームに戻る",
+	adminTitle: "勤怠管理パネル",
+	adminDesc: "全従業員の勤怠履歴の確認、手動修正、新規作成、および勤怠統計レポートを表示します。",
+	addManual: "手動勤怠登録",
+	tabHistory: "勤怠履歴",
+	tabStats: "勤怠統計",
+	tabConfigs: "勤務時間設定",
+	tabPayroll: "給与計算",
+	payrollTitle: "月次給与計算表",
+	payrollDesc: "勤務時間詳細、基本給、残業代、精勤手当、遅刻ペナルティ、欠勤控除の計算および確認。",
+	selectPayrollMonth: "給与対象月を選択",
+	loadingPayroll: "給与データを読み込み中...",
+	noPayrollData: "この月の給与データはありません。",
+	baseSalary: "基本給",
+	workingDaysActualStandard: "出勤日数 (実績/所定)",
+	overtimeCol: "残業 (OT)",
+	attendanceAllowance: "皆勤手当",
+	deductionLate: "遅刻控除",
+	deductionLeave: "無断欠勤控除",
+	advancePayment: "前払い金",
+	netSalary: "手取り額 (Net)",
+	statusPaid: "支払済",
+	statusPending: "未処理",
+	payrollDetailsFor: "給与明細: {name} ({code})",
+	actualWorkingDays: "実働日数",
+	payrollMonth: "対象月",
+	overtimeSalary: "時間外勤務手当 (残業代)",
+	attendanceAllowanceLabel: "精勤手当",
+	deductionLateLabel: "遅刻控除額",
+	deductionLeaveLabel: "所定外欠勤控除額",
+	deductionUnion: "組合費",
+	deductionTax: "所得税",
+	deductionUnionLabel: "組合費控除",
+	deductionTaxLabel: "所得税控除 (源泉徴収税)",
+	totalDeductions: "控除合計",
+	deductionInsuranceLabel: "社会保険料 (10.5%)",
+	advancePaymentLabel: "前払い・仮払金",
+	paymentStatusLabel: "支払状況",
+	netSalaryLabel: "差引支給額",
+	btnSavePayroll: "給与明細を保存",
+	msgSavePayrollSuccess: "従業員の給与情報を保存しました。",
+	msgSavePayrollError: "給与情報の保存中にエラーが発生しました。",
+	overtimeBreakdown: "時間外手当（残業）の内訳詳細",
+	overtimeNormal: "通常残業 (1.5x)",
+	overtimeWeekend: "休日労働 (2.0x)",
+	overtimeHoliday: "祝日労働 (3.0x)",
+	exportExcelSuccess: "給与のExcelファイルを正常にエクスポートしました。",
+	exportExcelError: "Excelのエクスポート中にエラーが発生しました。",
+	exportPdfSuccess: "給与のPDFファイルを正常にエクスポートしました。",
+	exportPdfError: "PDFのエクスポート中にエラーが発生しました。",
+	searchKeyword: "検索キーワード",
+	searchPlaceholder: "従業員名またはコード...",
+	statusAll: "すべてのステータス",
+	statusPresent: "定時 (PRESENT)",
+	statusLate: "遅刻 (LATE)",
+	statusAbsent: "欠勤 (ABSENT)",
+	fromDate: "開始日",
+	toDate: "終了日",
+	no: "No.",
+	staff: "従業員",
+	dateCol: "日付",
+	checkInCol: "出勤",
+	checkOutCol: "退勤",
+	expectedWork: "所定勤務 ca",
+	checkoutDiff: "退勤差分",
+	statusCol: "ステータス",
+	noteCol: "備考",
+	actionCol: "操作",
+	loadingList: "勤怠履歴を読み込み中...",
+	noHistoryFound: "フィルターに一致する勤怠履歴が見つかりません。",
+	editOrCompensate: "編集 / 打刻補正",
+	showLines: "{current} / {total} 件表示中",
+	monthStats: "月間勤怠統計",
+	monthStatsDesc: "全従業員の出勤日数、遅刻、欠勤データの集計。",
+	selectStatsMonth: "統計月を選択",
+	statsSummary: "集計レポート",
+	stats30Days: "30日カレンダー詳細",
+	loadingStats: "勤怠データを集計中...",
+	noEmployeeMonth: "選択した月に従業員が見つかりません。",
+	staffCode: "従業員ID",
+	staffName: "従業員名",
+	onTime: "定時",
+	lateCol: "遅刻",
+	lateHoursPenalty: "遅刻ペナルティ時間",
+	excusedLeave: "有給/公欠",
+	absentNoExcuse: "無断欠勤",
+	totalAbsent: "合計欠勤",
+	workingDaysMax: "出勤日数 / 所定日数",
+	otHours: "残業（時間）",
+	hours: "時間",
+	days: "日",
+	mins: "分",
+	times: "回",
+	statsCalendarFor: "詳細カレンダーの表示対象",
+	legendLateEarly: "遅刻 / 早退",
+	legendMissInOut: "打刻漏れ",
+	legendWeekendHoliday: "土日 / 祝日",
+	legendOnTime: "定時出勤",
+	weekend: "週末",
+	holiday: "祝日",
+	excusedLeaveAll: "終日休暇",
+	excusedLeaveMorning: "午前半休",
+	excusedLeaveAfternoon: "午後半休",
+	missCheck: "打刻なし",
+	configTitle: "勤務時間設定",
+	configDesc: "適用期間に応じた柔軟な勤務シフト時間帯を設定します。",
+	addConfig: "設定を追加",
+	loadingConfigs: "設定を読み込み中...",
+	noConfigsYet: "勤務時間設定がまだ作成されていません。",
+	defaultSystem: "システムデフォルト",
+	flexible: "フレックス",
+	applyAllTime: "適用: 全期間 (Fallback)",
+	applyRange: "適用: {start} ~ {end}",
+	standardIn: "所定出勤時間",
+	standardOut: "所定退勤時間",
+	saturday: "土曜日",
+	saturdayOff: "土曜休み",
+	saturdayMorning: "土曜午前出勤 (12:00まで)",
+	saturdayFull: "土曜終日出勤",
+	editConfig: "設定を編集",
+	deleteConfig: "設定を削除",
+	dialogManualEdit: "勤怠更新 / 打刻補正",
+	dialogManualCreate: "手動勤怠登録",
+	employeeLabel: "従業員",
+	employeeSelectPlaceholder: "従業員を選択してください",
+	attendanceDate: "勤怠日付",
+	selectDate: "日付を選択",
+	checkInLabel: "出勤時間",
+	checkInPlaceholder: "出勤時間を選択",
+	checkOutLabel: "退勤時間",
+	checkOutPlaceholder: "退勤時間を選択",
+	statusLabel: "記録ステータス",
+	noteLabel: "理由 / 補足備考",
+	notePlaceholder: "修正または補正の理由を入力してください...",
+	btnCancel: "キャンセル",
+	btnSaveRecord: "保存する",
+	dialogConfigEdit: "勤務時間設定を編集",
+	dialogConfigCreate: "勤務時間設定を追加",
+	configName: "設定名",
+	configNamePlaceholder: "例: 夏季勤務時間",
+	setDefaultConfig: "デフォルト設定にする",
+	setDefaultConfigDesc: "他の期間設定に一致しない場合、このデフォルト設定が適用されます。",
+	saturdayWorkingMode: "土曜日の勤務モード",
+	saturdayWorkingModeDesc: "土曜日の出勤カウントおよび遅刻判定 of Saturdays。",
+	valMissManualData: "データ不足",
+	valMissManualDataDesc: "従業員と勤怠日付を選択してください。",
+	msgUpdateSuccess: "更新成功",
+	msgUpdateSuccessDesc: "勤怠記録が正常に保存されました。",
+	valInvalidConfig: "入力情報が無効です",
+	valInvalidConfigDesc: "設定名および所定時間帯を正しく入力してください。",
+	msgSaveConfigSuccess: "勤務時間設定を保存しました。",
+	msgDeleteConfigConfirm: "この勤務時間設定を削除してもよろしいですか？",
+	msgDeleteConfigSuccess: "設定を正常に削除しました。",
+	tabShifts: "シフト管理",
+	tabShiftAssignments: "シフト割り当て",
+	shiftTitle: "シフト一覧",
+	shiftDesc: "従業員のシフトパターンを設定し、時間外労働의 計算ルールを定義します。",
+	addShift: "シフトを追加",
+	dialogShiftCreate: "新規シフト作成",
+	dialogShiftEdit: "シフト編集",
+	shiftName: "シフト名",
+	shiftNamePlaceholder: "例: 日勤、夜勤...",
+	allowOvertime: "残業計算を有効にする",
+	maxOvertimeHours: "最大残業時間",
+	maxOvertimeHoursPlaceholder: "時間（例: 2）、制限なしの場合は空白",
+	shiftAssignedSuccess: "従業員にシフトが正常に割り当てられました。",
+	deleteShiftConfirm: "このシフトを削除してもよろしいですか？関連するすべての割り当てが削除されます。",
+	deleteShiftSuccess: "シフトが正常に削除されました。",
+	assignShift: "従業員にシフトを割り当てる",
+	employeeSelect: "従業員を選択",
+	datesSelect: "日付を選択",
+	selectShift: "シフトを選択",
+	btnAssign: "割り当てる",
+	assignedShiftsList: "従業員シフト割り当て状況",
+	noAssignedShifts: "この期間のシフト割り当てデータはありません。",
+	deleteAssignmentConfirm: "この割り当てを削除してもよろしいですか？",
+	deleteAssignmentSuccess: "割り当てが正常に削除されました。",
+	overtimeStatus: "残業",
+	overtimeAllowed: "許可",
+	overtimeNotAllowed: "不許可",
+	overtimeAllowedWithMax: "許可（最大 {hours} 時間）",
+	leave: "休暇",
+	resetDefault: "デフォルトシフトへ復元",
+	assignShiftsTitle: "従業員シフト・残業予定表",
+	assignShiftsDesc: "柔軟なシフト、残業時間設定、および月間休暇情報の同期を管理します。",
+	bulkActions: "一括操作",
+	selectedEmployees: "選択中: {count} 名",
+	bulkAssignBtn: "一括シフト割り当て",
+	bulkResetBtn: "一括リセット",
+	legendTitle: "シフト記号一覧:",
+	legendAL: "有給休暇",
+	legendSL: "病気休暇",
+	legendOT: "残業計算対象",
+	legendNoOT: "残業計算対象外",
+	legendOff: "休日 / 土日",
+	loadingAssignData: "シフト割り当てデータを読み込み中...",
+	noEmployeesFound: "従業員が見つかりません",
+	employeeHeader: "従業員",
+	departmentHeader: "部署",
+	monthAssign: "割り当て月",
+	allDepartments: "すべての部署",
+	searchEmployee: "従業員検索",
+	searchEmployeePlaceholder: "氏名、従業員コード...",
+	w0: "日",
+	w1: "月",
+	w2: "火",
+	w3: "水",
+	w4: "木",
+	w5: "金",
+	w6: "土",
+	selectAtLeastOneEmployee: "少なくとも1人の従業員を選択してください",
+	selectShiftError: "シフトを選択してください",
+	selectDateRangeError: "期間を選択してください",
+	selectAtLeastOneWeekdayAssign: "適用する曜日を少なくとも1つ選択してください",
+	selectAtLeastOneWeekdayReset: "リセットする曜日を少なくとも1つ選択してください",
+	bulkAssignSuccess: "一括シフト割り当てが正常に完了しました",
+	bulkResetSuccess: "一括シフトリセットが正常に完了しました",
+	dialogBulkAssignHeader: "一括シフト割り当て",
+	dialogBulkAssignWarningPrefix: "選択した",
+	dialogBulkAssignWarningSuffix: "名の従業員にシフトを設定しています。",
+	dialogBulkResetHeader: "一括デフォルトシフトへ復元",
+	dialogBulkResetWarningPrefix: "この操作により、指定された期間内において選択された",
+	dialogBulkResetWarningSuffix: "名の従業員のスケジュールがシステムデフォルトのシフトに復元されます。",
+	applyToWeekdays: "適用曜日",
+	confirm: "確定",
+	msgResetShiftDefault: "{name}のシフトをデフォルトにリセットしました",
+	msgSelectShift: "シフトを選択してください",
+	msgSelectDateRange: "期間を選択してください",
+	msgSelectWeekday: "少なくとも1つの曜日を選択してください",
+	msgSelectEmployee: "少なくとも1人の従業員を選択してください",
+	msgSetShiftSuccess: "シフト設定が成功しました",
+	msgResetDefaultSuccess: "デフォルトシフトに復元しました",
+	msgSelectWeekdayAssign: "適用する曜日を少なくとも1つ選択してください",
+	msgSelectWeekdayReset: "リセットする曜日を少なくとも1つ選択してください",
+	msgPayrollLoadError: "給与データを読み込めません",
+	msgPayrollSaveSuccess: "給与情報を更新しました",
+	msgPayrollSaveError: "給与情報の保存中にエラーが発生しました",
+	msgExportExcelError: "Excelファイルをエクスポートできません",
+	msgExportPdfError: "PDFファイルをエクスポートできません",
+	msgSaveManualSuccess: "打刻の保存に成功しました",
+	insuranceLabel: "保険 (10.5%)",
+	otNormal: "通常:",
+	otWeekend: "週末:",
+	otHoliday: "祝日:",
+	total: "合計:",
+	socialInsurance: "社会保険:",
+	healthInsurance: "医療保険:",
+	unemploymentInsurance: "雇用保険:",
+	payrollAdjustmentInfo: "給与調整情報",
+	standardWorkingDays: "基準労働日数",
+	otNormalHours: "通常OT（時間）",
+	otWeekendHours: "週末OT（時間）",
+	otHolidayHours: "祝日OT（時間）",
+	dependents: "扶養家族数",
+	taxAndNetSalaryDetails: "税金＆手取り詳細",
+	dailyRate: "日給単価",
+	dayUnit: "日",
+	overtimePay: "時間外手当",
+	otNormalRate: "平日 (1.5x)",
+	otWeekendRate: "週末 (2.0x)",
+	otHolidayRate: "祝日 (3.0x)",
+	attendanceDeduction: "遅刻・欠勤控除",
+	grossSalary: "総支給額 (GROSS)",
+	insuranceDeduction: "強制保険 (10.5%)",
+	socialInsuranceDeduction: "社会保険 (8%)",
+	healthInsuranceDeduction: "医療保険 (1.5%)",
+	unemploymentInsuranceDeduction: "雇用保険 (1%)",
+	incomeBeforeTax: "税引前所得",
+	progressivePit: "累進個人所得税",
+	selfDeduction: "基礎控除",
+	dependentDeduction: "扶養控除",
+	personUnit: "人",
+	taxableIncome: "課税所得",
+	unionAndAdvance: "組合費＆前払い"
+};
+var leaveRequest$1 = {
+	title: "休暇申請",
+	pendingTitle: "休暇承認",
+	startDate: "開始日",
+	endDate: "終了日",
+	reason: "理由",
+	type: "休暇種別",
+	status: "ステータス",
+	approver: "承認者",
+	approvedAt: "承認日",
+	rejectedAt: "却下日",
+	accessDenied: "アクセス拒否",
+	accessDeniedDesc: "あなたのアカウントには、休暇申請を承認するためのマネージャーまたは管理者の権限がありません。",
+	backToHome: "ホームに戻る",
+	panelDesc: "従業員からの保留中の休暇申請を確認、承認、または却下します。",
+	tabAll: "すべて",
+	tabPending: "保留中",
+	tabApproved: "承認済み",
+	tabRejected: "却下済み",
+	noRequest: "現在、休暇申請はありません。",
+	noRequestWithStatus: "{status} 状態の休暇申請はありません。",
+	searchEmployeePlaceholder: "名前、社員番号で検索...",
+	typeSelect: "休暇種別を選択...",
+	allDay: "終日",
+	morning: "午前休",
+	afternoon: "午後休",
+	days: "日間",
+	noReason: "理由なし",
+	dialogApproveTitle: "休暇申請の承認",
+	dialogRejectTitle: "休暇申請の却下",
+	employee: "従業員",
+	approverNote: "承認者フィードバック / メモ",
+	approverNotePlaceholder: "従業員へのフィードバックを入力（任意）...",
+	confirmApprove: "承認する",
+	confirmReject: "却下する",
+	processSuccess: "処理が成功しました",
+	approveSuccessDesc: "休暇申請が正常に承認されました。",
+	rejectSuccessDesc: "休暇申請が正常に却下されました。",
+	stt: "No.",
+	timeRange: "休暇期間",
+	system: "システム",
+	typeAnnual: "有給休暇",
+	typeSick: "病気休暇",
+	typeSpecial: "特別休暇",
+	typeUnpaid: "無給休暇",
+	desc: "オンラインで休暇を申請し、承認履歴を追跡します。",
+	myList: "マイ休暇申請",
+	myListDesc: "送信された休暇申請の履歴とステータス。",
+	noMyRequest: "休暇申請はまだ作成されていません。",
+	createDesc: "上司に新しい休暇申請を提出します。",
+	session: "休暇区分",
+	reasonPlaceholder: "休暇の理由を詳しく入力してください...",
+	submit: "申請を送信",
+	detailTitle: "休暇申請の詳細",
+	code: "申請コード",
+	totalDays: "合計日数",
+	period: "対象期間",
+	approverFeedback: "承認者のフィードバック",
+	noFeedback: "フィードバックコメントなし",
+	morningSession: "午前（8:30 - 12:00休み）",
+	afternoonSession: "午後（13:15 - 17:30休み）",
+	valIncomplete: "不完全な情報",
+	valIncompleteDesc: "休暇の種類、開始日、終了日を選択してください。",
+	submitSuccess: "休暇申請の送信完了",
+	submitSuccessDesc: "休暇申請がマネージャーに送信されました。",
+	from: "開始",
+	to: "終了",
+	attachment: "添付書類",
+	uploadInstructions: "ファイルをドラッグ＆ドロップするか、クリックしてアップロード",
+	attachmentCol: "添付書類",
+	noAttachment: "添付ファイルなし",
+	viewAttachment: "添付ファイルを表示",
+	attachmentPlaceholder: "証明書類（診断書、乗車券など）を選択してください",
+	fileSizeLimitError: "ファイルサイズは制限の10MBを超えています。",
+	uploadFormats: "PDF、DOC、DOCX、ZIPまたは画像（最大10MB）",
+	hasAttachment: "添付ファイルあり"
+};
+var compliance$1 = {
+	title: "コンプライアンス管理",
+	summary: "コンプライアンス概要",
+	riskLevel: "リスクレベル",
+	violations: "違反",
+	warnings: "警告",
+	centerTitle: "コンプライアンス警告センター",
+	centerDesc: "法的リスク（ビザ期限、雇用契約、領収書、残業時間上限）を自動的にスキャンし、早期警告します。",
+	btnScan: "リアルタイムスキャン実行",
+	scanning: "スキャン中...",
+	healthScore: "コンプライアンス健康度",
+	healthScoreDesc: "現在システム内で発生している問題の深刻度に基づいて算出されます。",
+	recommendation: "推奨アクション",
+	healthExcellent: "極めて良好（適合）",
+	healthFair: "良好（中リスク）",
+	healthAlarm: "警告（高リスク）",
+	recExcellent: "現在の管理体制を維持してください。",
+	recFair: "WARNINGレベルのリスクを直ちに解消してください。",
+	recAlarm: "法的処罰を避けるため、CRITICALエラーを緊急に解決してください。",
+	criticalRisk: "致命的なリスク",
+	criticalDesc: "CRITICAL / 即時対応が必要",
+	warningRisk: "リスク警告",
+	warningDesc: "WARNING / 追加の確認が必要",
+	resolvedRisk: "自動修復済みリスク",
+	resolvedDesc: "AUTO-HEALED / 自動解消",
+	criticalTitle: "致命的なリスク（CRITICAL）",
+	btnActNow: "今すぐ解決",
+	tabActiveRisks: "未解決リスク",
+	tabResolvedHistory: "対応履歴",
+	searchPlaceholder: "問題を検索...",
+	severityPlaceholder: "深刻度",
+	typePlaceholder: "リスクカテゴリ",
+	tooltipRefresh: "更新",
+	colSeverity: "深刻度",
+	colType: "カテゴリ",
+	colDescription: "問題の詳細内容",
+	colEntity: "対象オブジェクト",
+	colStatus: "ステータス",
+	colAction: "対応アクション",
+	loading: "コンプライアンスリスクを分析中...",
+	noDataTitle: "素晴らしい！問題は検出されませんでした。",
+	noDataDesc: "システムは完璧なコンプライアンス状態で稼働しています。",
+	sevCritical: "致命的",
+	sevWarning: "警告",
+	sevInfo: "情報",
+	sevAll: "すべての深刻度",
+	statusOpen: "未解決",
+	statusResolved: "解決済み",
+	resolvedBy: "担当者",
+	btnResolve: "解決する",
+	tooltipManualResolve: "手動で解決",
+	dialogResolveTitle: "対応完了の確認",
+	dialogResolveHeader: "コンプライアンス警告の解決",
+	dialogResolveDesc: "このコンプライアンス警告を解決済みとしてマークします。",
+	dialogResolveNote: "対応理由 / メモ（必須）",
+	dialogResolvePlaceholder: "このリスクを解決した理由や対応内容を入力してください...",
+	btnCancel: "キャンセル",
+	btnConfirmResolve: "解決を確定",
+	typeVisa: "在留カード期限切れ",
+	typeContract: "雇用契約書期限切れ",
+	typeInvoice: "領収書/請求書の不足",
+	typeOvertime: "法定残業上限超過",
+	typeAll: "すべてのカテゴリ",
+	typeVisaExpiration: "ビザ有効期限 (VISA)",
+	typeContractExpiration: "雇用契約有効期限 (CONTRACT)",
+	typeMissingInvoice: "領収書/請求書の不足 (INVOICE)",
+	typeOvertimeLimit: "法定残業上限超過 (OVERTIME)",
+	msgScanSuccess: "スキャン完了",
+	msgScanSuccessDesc: "コンプライアンススキャンが完了しました。新規検出：{created}件、自動修復：{resolved}件。",
+	msgScanError: "スキャン失敗",
+	msgScanErrorDesc: "スキャンエンジンへの接続に失敗しました。",
+	msgActError: "この警告タイプに対する解決パスを特定できません。",
+	msgResolveSuccess: "対応完了",
+	msgResolveSuccessDesc: "警告が正常に解決されました。",
+	msgResolveError: "エラー",
+	msgResolveErrorDesc: "警告を解決できませんでした。"
+};
+var dashboard$1 = {
+	title: "ダッシュボード",
+	welcome: "おかえりなさい",
+	totalEmployees: "従業員数",
+	totalContracts: "契約数",
+	totalTransactions: "取引数",
+	pendingLeaves: "承認待ち休暇",
+	complianceBannerTitle: "法的違反検出システム",
+	complianceBannerDesc: "警告: {count}件の致命的なリスク（在留カード期限切れ、残業時間上限超過、または領収書不足）が検出されました。クリックして自動修復します！",
+	enterpriseDashboard: "企業管理ダッシュボード",
+	welcomeUser: "こんにちは、{name}さん。こちらは各部署の実データの集計分析です。",
+	admin: "管理者",
+	fiscalYear: "会計年度",
+	btnComplianceControl: "コンプライアンス管理",
+	revenueYearBadge: "年間売上",
+	revenueYearTitle: "会計売上",
+	expenseYearBadge: "年間支出",
+	expenseYearTitle: "営業費用",
+	netIncomePositive: "黒字",
+	netIncomeNegative: "赤字",
+	netIncomeTitle: "当期純利益",
+	complianceScoreTitle: "コンプライアンス適合指数",
+	compCompliant: "適合",
+	compWarning: "警告",
+	compDanger: "危険",
+	activeEmployees: "現在従業員数",
+	employeesCount: "{active} / {total} 名",
+	activeContracts: "有効契約数",
+	contractsCount: "{active} / {total} 件",
+	pendingLeavesCount: "{count} 件",
+	cashflowTitle: "{year}年度 キャッシュフロー推移",
+	cashflowDesc: "月別の成長傾向と実際の営業費用",
+	optRevenue: "売上高",
+	optExpense: "費用",
+	optProfit: "利益",
+	contractStructure: "契約構成比",
+	contractStructureDesc: "各契約タイプ間の分布割合",
+	topExpenses: "支出上位カテゴリ",
+	topExpensesDesc: "当年度に発生した主な営業費用",
+	staffDensity: "部署別人員分布",
+	staffDensityDesc: "全従業員における部署ごとの割合",
+	timesheetStat: "今月の勤務＆時間外統計",
+	timesheetStatDesc: "勤務日数、総労働時間、実際の時間外労働時間の監視",
+	btnTimesheetDetail: "勤務詳細",
+	colEmpCode: "社員コード",
+	colEmpName: "氏名",
+	colPresent: "出勤",
+	colAbsent: "欠勤",
+	colTotalHours: "総時間",
+	colOvertime: "残業",
+	colOtStatus: "残業状況",
+	otOverLimit: "残業上限超過！",
+	otWarning: "警告基準超過",
+	otApproaching: "警告基準近接",
+	otSafe: "安全",
+	noTimesheetData: "今月の勤務データは記録されていません。",
+	recentTransactions: "最近の取引履歴",
+	recentTransactionsDesc: "最新のリアルタイム財務取引履歴",
+	btnCashbook: "出納帳",
+	unclassified: "未分類",
+	noTransactions: "財務取引データがありません。",
+	msgConnectError: "接続エラー",
+	msgSyncError: "ダッシュボードデータを同期できませんでした。",
+	ageDemographics: "従業員年齢構成",
+	ageDemographicsDesc: "企業内の年齢グループ別の従業員比率",
+	genderDemographics: "従業員男女比率",
+	genderDemographicsDesc: "企業内の男女従業員の比率"
+};
+var transaction$1 = {
+	title: "キャッシュフローと経費",
+	desc: "実際の入出金を管理し、証憑書類（請求書や振込伝票など）の添付状況を監視します。",
+	addBtn: "新規取引を追加",
+	totalRevenue: "実績売上高",
+	totalExpense: "実績経費支出",
+	netBalance: "フリーキャッシュフロー",
+	complianceRate: "証憑類添付率",
+	tabAll: "すべての取引",
+	tabExpense: "経費支出",
+	tabRevenue: "売上収入",
+	searchPlaceholder: "取引コード、カテゴリ...",
+	type: "取引タイプ",
+	status: "ステータス",
+	compliance: "法令文書ステータス",
+	refresh: "更新",
+	allTypes: "すべてのタイプ",
+	expense: "経費 (EXPENSE)",
+	revenue: "売上 (REVENUE)",
+	allStatus: "すべてのステータス",
+	paid: "支払済み",
+	pending: "処理中",
+	cancelled: "キャンセル済み",
+	allDocs: "すべての書類",
+	hasDocs: "証憑あり",
+	missingDocs: "証憑不足",
+	dateCol: "日付",
+	codeCol: "取引コード",
+	typeCol: "タイプ",
+	categoryCol: "カテゴリ",
+	amountCol: "金額 (税込合計)",
+	taxCol: "税金情報 / 適格請求書番号",
+	paymentCol: "決済状況",
+	documentCol: "証憑書類",
+	actionCol: "操作",
+	loading: "キャッシュフローデータを読み込み中...",
+	noData: "一致する取引が見つかりませんでした。",
+	revenueShort: "収入",
+	expenseShort: "支出",
+	original: "税抜金額",
+	files: "ファイル",
+	missingDocsAlert: "証憑不足",
+	editTooltip: "取引を編集",
+	deleteTooltip: "取引を削除",
+	dialogDeleteTitle: "取引削除の確認",
+	dialogDeleteConfirm: "財務取引を削除しますか？",
+	dialogDeleteDesc: "本当にカテゴリ「{category}」の取引「{code}」を削除しますか？この操作によりキャッシュフロー統計が再計算され、元に戻すことはできません。",
+	btnCancel: "キャンセル",
+	btnConfirmDelete: "削除する",
+	dialogDocTitle: "取引証憑書類 — {code}",
+	errorLoad: "キャッシュフローの読み込みエラー",
+	errorLoadDesc: "取引リストを読み込めませんでした。",
+	msgDeleteSuccess: "取引を正常に削除しました",
+	msgDeleteSuccessDesc: "キャッシュフローの記録が正常に消去されました。",
+	msgDeleteFailed: "操作失敗",
+	msgDeleteFailedDesc: "取引を削除できませんでした。",
+	statusPaid: "出金済み/完了",
+	statusPending: "支払待ち",
+	statusCancelled: "キャンセル済み",
+	noTax: "非課税 (0%)",
+	bankTransfer: "銀行振込",
+	cash: "現金",
+	creditCard: "クレジットカード",
+	subtitle: "会計＆キャッシュフロー",
+	createTitle: "新規取引を記録",
+	editTitle: "取引を編集",
+	infoSection: "取引情報＆決済方法",
+	code: "取引コード",
+	amount: "合計金額（税込）",
+	date: "取引日",
+	codeAutoGenerate: "取引コード自動採番",
+	category: "勘定科目",
+	paymentMethod: "支払方法",
+	amountSection: "取引金額＆税計算",
+	netAmount: "本体価格 (税抜額)",
+	taxAmount: "消費税額",
+	withholdingTax: "源泉徴収税 (該当する場合)",
+	invoiceNumber: "登録番号 / 納税コード / 請求書番号",
+	invoiceError: "日本の適格請求書登録番号はTから始まる13桁の数字である必要があります。",
+	descriptionSection: "取引詳細内容 / 摘要",
+	descriptionPlaceholder: "取引詳細、目的、サプライヤー、購入内容などの摘要を入力...",
+	saveTransaction: "取引を記録",
+	attachSection: "請求書＆証憑添付",
+	attachRequired: "必須",
+	attachDesc: "電子請求書、振込依頼書、または有効な領収書・証憑を添付してください。",
+	uploadFile: "ファイルを選択するか、ここにドラッグ＆ドロップしてください",
+	uploadFormats: "対応形式: PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, JPEG (最大10MB)",
+	taxRate: "適用税率",
+	valMissInfo: "情報不足",
+	valMissInfoDesc: "必須フィールドをすべて入力してください。",
+	valMissDocs: "法的証憑不足",
+	valMissDocsDesc: "企業は経費の税法準拠を確保するために、証憑（請求書/領収書）の添付が必須です。",
+	valInvalidInvoice: "形式エラー",
+	valInvalidInvoiceDesc: "日本の適格請求書登録番号はTから始まる13桁の数字である必要があります。",
+	msgSaveSuccess: "取引を保存しました",
+	msgSaveSuccessDesc: "取引と添付証憑書類が正常に更新されました。",
+	msgSaveSuccessShort: "取引が正常に記録されました。",
+	msgSaveFailed: "取引保存失敗",
+	msgSaveFailedDesc: "記録に失敗しました。",
+	catSalary: "人件費 (Salary)",
+	catOfficeRent: "オフィス賃料 (Office Rent)",
+	catUtilities: "水道光熱費・通信費 (Utilities)",
+	catOutsourcing: "外注費 (Outsourcing Cost)",
+	catSoftware: "ソフトウェア・SaaS (Software & SaaS)",
+	catTravel: "旅費交通費 (Travel Expense)",
+	catMarketing: "広告宣伝費 (Marketing & Ads)",
+	catClientRevenue: "売上高 (Client Revenue)",
+	catConsulting: "コンサルティング料 (Consulting Fee)",
+	catOthers: "その他費用 (Others)",
+	selectType: "取引タイプを選択",
+	selectCategory: "勘定科目を選択",
+	selectMethod: "決済方法を選択",
+	selectStatus: "ステータスを選択",
+	selectTax: "税率を選択",
+	categorySalary: "給与・手当",
+	categoryRent: "オフィス賃料",
+	categoryUtilities: "水道光熱費・ネット",
+	categoryOutsourcing: "外注費",
+	categorySoftware: "ツール・ソフトウェア",
+	categoryTravel: "旅費交通費",
+	categoryMarketing: "広告宣伝費",
+	categoryRevenue: "売上・収入",
+	categoryConsulting: "コンサルティング費",
+	categoryOthers: "その他経費",
+	edmSection: "スキャン文書・添付ファイル (EDM)",
+	edmDesc: "有効な電子請求書または支払伝票を添付してください",
+	edmRequired: "証憑書類必須",
+	loadError: "取引詳細の読み込みエラー",
+	loadingData: "取引データを読み込み中...",
+	methodBankTransfer: "銀行振込",
+	methodCash: "現金",
+	methodCreditCard: "クレジットカード",
+	missingEvidence: "法的証憑書類不足",
+	missingEvidenceDesc: "経費取引には請求書または領収書の添付が必須です。",
+	saveChanges: "変更を保存",
+	saveError: "取引保存エラー",
+	taxCt10Jp: "日本消費税 10%",
+	taxCt8Jp: "日本消費税 8%",
+	taxNone: "課税対象外 (0%)",
+	taxVat10Vn: "ベトナム VAT 10%",
+	taxVat8Vn: "ベトナム VAT 8%",
+	typeExpense: "経費 (EXPENSE)",
+	typeRevenue: "収益 (REVENUE)",
+	updateSubtitle: "取引詳細の更新",
+	updateSuccess: "取引の更新に成功しました",
+	updateSuccessDesc: "取引内容および添付書類が保存されました。",
+	viewDetails: "取引詳細",
+	edmReadonly: "この取引に添付された書類の一覧。",
+	complianceBadge: "コンプライアンス管理",
+	complianceTitle: "書類検証状況",
+	msgFormatError: "フォーマットエラー",
+	msgFormatErrorDesc: ".{ext}形式はサポートされていません。",
+	msgSizeError: "サイズ制限超過",
+	msgSizeErrorDesc: "ファイル{name}は10MBを超えています。"
+};
+var pagination$1 = {
+	total: "合計: {total} 件",
+	layout: "ページレイアウト"
+};
+var common$1 = {
+	cancel: "キャンセル",
+	"delete": "削除",
+	system: "システム",
+	actions: "アクション",
+	index: "番号"
+};
+var themeCustomizer$1 = {
+	title: "サイドバー設定",
+	subtitle: "テーマ＆スタイルカスタマイザー",
+	mode: "表示モード",
+	modeColor: "単色",
+	modeImage: "背景画像",
+	modeBoth: "ブレンド",
+	colorLabel: "サイドバーのテーマカラー（6色）",
+	colorNameDefault: "デフォルト",
+	colorNameGoc: "クラシック",
+	imageLabel: "アート背景画像（6枚）",
+	imageNone: "なし",
+	opacityLabel: "不透明度 (Opacity)",
+	opacitySub: "サイドバーの背景色と画像に適用されます",
+	opacityStart: "透明",
+	opacityEnd: "不透明",
+	btnReset: "デフォルトに戻す",
+	btnDone: "完了",
+	systemPrimaryLabel: "システムブランドカラー",
+	systemPrimarySub: "グローバルなPrimeVueのプライマリカラーを変更します",
+	colorEmerald: "エメラルドグリーン",
+	colorBlue: "ロイヤルブルー",
+	colorPurple: "アメジストパープル",
+	colorOrange: "ビブラントオレンジ",
+	colorRed: "クリムゾンレッド",
+	colorTeal: "ティールブリーズ",
+	fontLabel: "システムフォント設定",
+	fontSub: "アプリケーション全体のフォントファミリーを変更します",
+	fontDefault: "Outfit (オリジナル)",
+	fontInter: "Inter (モダンテクロノジー)",
+	fontPoppins: "Poppins (ソフト丸型)",
+	fontMontserrat: "Montserrat (ジオメトリック)",
+	fontPlayfair: "Playfair (クラシックセリフ)",
+	fontMono: "Roboto Mono (等幅)"
+};
+var notification$1 = {
+	title: "通知",
+	pageTitle: "通知センター",
+	"new": "新着",
+	markAllRead: "すべて既読",
+	empty: "通知はありません",
+	emptyDesc: "システム通知はここに表示されます。",
+	justNow: "たった今",
+	minutesAgo: "{n}分前",
+	hoursAgo: "{n}時間前",
+	daysAgo: "{n}日前",
+	viewAll: "すべての通知を表示",
+	searchPlaceholder: "通知を検索...",
+	searchBtn: "検索",
+	allTypes: "すべてのタイプ",
+	filterAll: "すべて",
+	filterUnread: "未読",
+	filterRead: "既読",
+	totalLabel: "通知合計",
+	unreadLabel: "未読",
+	readLabel: "既読",
+	readStatus: "既読",
+	goToAction: "移動",
+	loading: "通知を読み込み中...",
+	typeLeaveCreated: "新規休暇申請",
+	typeLeaveApproved: "休暇承認済み",
+	typeLeaveRejected: "休暇却下",
+	typeCompliance: "コンプライアンス警告",
+	typeContract: "契約",
+	typeTransaction: "取引"
+};
+var quickSignSuccess$1 = "契約書の署名に成功しました。";
+var placeholder$1 = {
+	selectCategory: "カテゴリを選択",
+	selectItem: "項目を選択",
+	selectMethod: "方法を選択",
+	selectStatus: "ステータスを選択",
+	enterTotalAmount: "総額を入力",
+	selectTaxRate: "税率を選択",
+	amountBeforeTax: "税抜金額",
+	taxAmount: "消費税額",
+	taxNoteExample: "例：源泉所得税10%、請負税など...",
+	japanInvoiceNo: "T1234567890123 (日本国内の経費の場合)",
+	vietnamTechCompany: "ベトナムテクノロジーソリューションズ株式会社",
+	taxCode: "税務番号",
+	registeredAddress: "登録住所",
+	legalRepresentative: "法的代表者氏名",
+	jobTitleExample: "例：取締役、総支配人",
+	enterContractCode: "契約コードを入力",
+	enterContractValue: "契約金額を入力",
+	enterCurrencyValue: "通貨金額を入力",
+	jobTitleDev: "例：プログラマー、管理者",
+	officeExample: "例：ハノイ本社、東京オフィス",
+	numberEight: "例：8",
+	durationTwoMonths: "例：2ヶ月",
+	numberEightyFive: "例：85",
+	bankNames: "例：Vietcombank、Techcombank",
+	accountNumber: "例：1018273645",
+	insuranceType: "社会保険、医療保険、失業保険、または特別商業保険",
+	enterOfficialCompanyName: "商業登記上の正式名称を入力",
+	enterPartnerTaxCode: "取引先の税務番号を入力",
+	partnerLegalJob: "例：取締役、総支配人、CEO",
+	partnerAddress: "取引先の公式取引住所",
+	paymentTerm: "例：Net 30、契約時100%支払い",
+	otHours: "例：20時間または30時間",
+	systemAutoGenerated: "システム自動生成",
+	companyNameDemo: "テクノロジーソリューションズ有限会社",
+	fullNameExample: "山田 太郎",
+	addressDemo: "ハノイ市ナムトゥリエム区メーチー、キアンナムランドマークタワー",
+	addressDetailDemo: "ハノイ市ナムトゥリエム区メーチー、キアンナムランドマークタワー12階",
+	companyNote: "この企業に関する特別なメモを入力してください...",
+	selectFont: "フォントを選択...",
+	searchAndSelectType: "{type}を検索して選択してください..."
+};
+var board$1 = {
+	title: "社内掲示板",
+	createPost: "新規投稿の作成",
+	editPost: "投稿の編集",
+	deletePost: "投稿の削除",
+	deletePostConfirm: "この投稿を削除してもよろしいですか？この操作は取り消せません。",
+	deleteCommentConfirm: "このコメントを削除してもよろしいですか？",
+	postTitle: "タイトル",
+	postContent: "本文",
+	postLink: "関連リンク (URL)",
+	postImage: "画像をアップロード",
+	postTag: "タグ設定",
+	submitPost: "投稿する",
+	updatePost: "更新する",
+	allTags: "すべてのタグ",
+	tagImportant: "重要",
+	tagAnnouncement: "お知らせ",
+	tagEvent: "イベント",
+	tagNews: "ニュース",
+	likes: "いいね",
+	comments: "コメント",
+	writeComment: "コメントを入力...",
+	sendComment: "送信",
+	noPosts: "掲示板に投稿はありません。",
+	errorCreate: "投稿の作成に失敗しました。入力内容を確認してください。",
+	successCreate: "新規投稿を作成しました！",
+	successDelete: "投稿を削除しました。",
+	successUpdate: "投稿を更新しました！",
+	authorAdmin: "経営陣",
+	authorManager: "部門長",
+	attachedLink: "関連リンクを開く",
+	description: "公式のお知らせ、注目イベント、社内ニュースの更新やメンバーとのつながりの場所です。",
+	createPostSubtitle: "全社員向けの情報を投稿する",
+	placeholderTitle: "ニュースのタイトルまたはお知らせを入力...",
+	placeholderTag: "タグを選択してください...",
+	changeImage: "画像を変更",
+	selectImage: "画像を選択",
+	removeCurrentImage: "現在の画像を削除",
+	placeholderContent: "投稿、ニュース、または業務指示などをここに入力...",
+	firstToShare: "最初の投稿を共有しましょう。",
+	systemUser: "システムユーザー",
+	defaultDept: "総務",
+	defaultTitle: "一般",
+	likeBtn: "いいね",
+	commentBtn: "コメント",
+	noComments: "まだコメントはありません。最初のコメントを書き込みましょう！",
+	systemEmployee: "システム社員",
+	deleteComment: "コメントの削除",
+	placeholderComment: "コメントを入力...",
+	loadMorePosts: "さらに読み込む",
+	placeholderSelectTag: "タグを選択...",
+	imageWillBeDeleted: "更新時に現在の画像が削除されます",
+	restore: "復元",
+	changeSelectedImage: "選択した画像を変更",
+	uploadReplacementImage: "新しい画像をアップロードして置き換える",
+	failUpdate: "投稿の更新に失敗しました。再試行してください。",
+	failDelete: "投稿の削除に失敗しました。",
+	failAction: "操作に失敗しました。",
+	failComment: "コメントの投稿に失敗しました。",
+	successDeleteComment: "コメントを削除しました。",
+	failDeleteComment: "コメントの削除に失敗しました。",
+	likesNoOne: "まだいいねはありません",
+	likesBy: "いいね：{names}",
+	likesByAndOthers: "いいね：{names} 他{count}人",
+	failFetch: "掲示板の読み込みに失敗しました。再試行してください。"
+};
+const locale_ja_46json_63a99cd6 = {
+	btn: btn$1,
+	text: text$1,
+	msgCommon: msgCommon$1,
+	radioButton: radioButton$1,
+	deleteModal: deleteModal$1,
+	confirmModal: confirmModal$1,
+	tableBox: tableBox$1,
+	uploadAvatar: uploadAvatar$1,
+	uploadFile: uploadFile$1,
+	paginator: paginator$1,
+	"token.invalid": "トークンの有効期限が切れているため、再度ログインする必要があります",
+	"email.exists": "入力されたメールアドレスは存在しません。",
+	"email.unique": "入力したメールは存在されました。",
+	"password.min": "8～20文字の長さで、大文字、小文字、数字、特殊文字を含むパスワードを入力してください。",
+	"password.regex": "8～20文字の長さで、大文字、小文字、数字、特殊文字を含むパスワードを入力してください。",
+	"common.in_use": "データは使用されています。",
+	"system.error": "システムエラー",
+	"common.system_error": "システムエラー",
+	"errors.invalid_reset_password_token": "OTPコードが無効です。もう一度ご確認ください。",
+	"common.exists": "データはすでに存在されています",
+	"common.update.fail": "データの更新に失敗しました",
+	"common.not_found": "データが見つかりませんでした",
+	"common.noOptions": "データがありません",
+	"code.unique": "このコードはすでにシステムに存在しています。",
+	"code.duplicate": "このコードは重複されています。",
+	"start_date.invalid": "開始日の指定が正しくありません。",
+	"end_date.after": "開始日の指定が正しくありません。",
+	"product_manual_code.unique": "この商品コードは既にシステムに登録されています。",
+	"common.max_rate_limit": "1分間のAPI呼び出し数の制限を超えました。",
+	"email.not_found": "メールがない担当者が選択されたので、ご確認ください。",
+	auth: auth$1,
+	notFound: notFound$1,
+	router: router$1,
+	menu: menu$1,
+	department: department$1,
+	user: user$1,
+	position: position$1,
+	company: company$1,
+	companySetting: companySetting$1,
+	userMaster: userMaster$1,
+	document: document$1,
+	employee: employee$1,
+	gender: gender$1,
+	contract: contract$1,
+	timesheet: timesheet$1,
+	leaveRequest: leaveRequest$1,
+	compliance: compliance$1,
+	dashboard: dashboard$1,
+	transaction: transaction$1,
+	pagination: pagination$1,
+	common: common$1,
+	themeCustomizer: themeCustomizer$1,
+	notification: notification$1,
+	quickSignSuccess: quickSignSuccess$1,
+	placeholder: placeholder$1,
+	board: board$1
+};
+
+var btn = {
+	disable: "Vô hiệu hóa",
+	enable: "Kích hoạt",
+	duplicate: "Sao chép",
+	imageUpload: "Đính kèm",
+	fileUpload: "Chọn tệp",
+	detail: "Chi tiết",
+	edit: "Chỉnh sửa",
+	view: "Chi tiết",
+	create: "Đăng ký",
+	ok: "OK",
+	list: "Danh sách",
+	add: "Thêm mới",
+	register: "Đăng ký",
+	save: "Lưu",
+	back: "Quay lại",
+	"delete": "Xóa",
+	cancel: "Hủy",
+	change: "Thay đổi",
+	search: "Tìm kiếm...",
+	deactivate: "Vô hiệu hóa",
+	activate: "Kích hoạt",
+	approval: "Phê duyệt",
+	reject: "Từ chối",
+	confirm: "Xác nhận",
+	start: "Bắt đầu",
+	draft: "Bản nháp",
+	send: "Gửi",
+	login: "Đăng nhập",
+	select: "Chọn",
+	auto: "Đánh số tự động",
+	success: "Thành công",
+	warning: "Cảnh báo",
+	total: "Tổng cộng",
+	entries: "Mục",
+	"import": "Nhập dữ liệu",
+	next: "Tiếp theo",
+	request: "Yêu cầu",
+	"export": "Xuất dữ liệu",
+	sendFax: "Gửi FAX",
+	sendMail: "Gửi Email",
+	update: "Cập nhật thông tin thanh toán",
+	filter: "Tìm kiếm",
+	removeFilter: "Xóa bộ lọc",
+	showAll: "Chi tiết",
+	logOut: "Đăng xuất",
+	close: "Đóng",
+	sync: "Cập nhật",
+	logout: "Đăng xuất",
+	upload: "Tải ảnh lên",
+	error: "Lỗi",
+	deleteConfirm: "Đồng ý Xóa",
+	exportExcel: "Xuất Excel",
+	exportPdf: "Xuất PDF"
+};
+var text = {
+	cancel: "Hủy",
+	"delete": "Xóa",
+	empty: "Trống",
+	no: "STT",
+	id: "ID",
+	deleteSuccess: "Xóa {field} thành công",
+	syncSuccess: "Đã lưu vào hàng đợi đồng bộ thành công. Vui lòng chờ xử lý.",
+	resignSuccess: "Đã đăng ký {field}.",
+	noData: "Không có dữ liệu.",
+	notEmptyData: "Vui lòng nhập trường này.",
+	notEmptyChoose: "Vui lòng chọn {field}.",
+	notEmptyInput: "Vui lòng nhập {field}.",
+	errorTimePast: "Vui lòng không chọn thời gian trong quá khứ.",
+	saveSuccess: "Đã lưu {field} thành công.",
+	max255: "Vui lòng nhập {field} trong vòng 255 ký tự.",
+	max500: "Vui lòng nhập {field} trong vòng 500 ký tự.",
+	max150: "Vui lòng nhập {field} trong vòng 150 ký tự.",
+	max100: "Vui lòng nhập {field} trong vòng 100 ký tự.",
+	max50: "Vui lòng nhập {field} trong vòng 50 ký tự.",
+	max20: "Vui lòng nhập {field} trong vòng 20 ký tự.",
+	max10: "Vui lòng nhập {field} trong vòng 10 ký tự.",
+	max9: "Vui lòng nhập {field} trong vòng 9 ký tự.",
+	min8: "Vui lòng nhập {field} tối thiểu 8 ký tự.",
+	slugFormat: "{field} chỉ có thể chứa chữ thường (a-z), số và dấu gạch ngang",
+	length10to13: "Vui lòng nhập {field} từ 10 đến 13 ký tự",
+	length10to12: "Vui lòng nhập {field} từ 10 đến 12 ký tự",
+	updateSuccess: "Hoàn tất cài đặt tài khoản Blastmail.",
+	createSuccess: "Đăng ký thành công.",
+	udSuccess: "Lưu thành công.",
+	activateSuccess: "Kích hoạt thành công.",
+	deactivateSuccess: "Hủy kích hoạt thành công.",
+	max2000: "Vui lòng nhập {field} trong vòng 2000 ký tự.",
+	duplicate: "đã bị trùng lặp.",
+	date: "Ngày",
+	time: "Thời gian",
+	note: "Ghi chú",
+	name: "Tên gói",
+	type: "Loại",
+	price: "Giá",
+	action: "Thao tác",
+	email: "Địa chỉ Email",
+	profile: "Hồ sơ",
+	director: "Giám đốc",
+	all: "Tất cả",
+	status: "Trạng thái",
+	minus: "phút",
+	second: "giây",
+	success: "Thành công",
+	error: "Lỗi",
+	errorInput: "Thông tin nhập liệu không hợp lệ. Vui lòng kiểm tra lại các trường bị báo lỗi đỏ.",
+	require: "Bắt buộc",
+	registerBy: "Người đăng ký",
+	updatedBy: "Người cập nhật",
+	msgPostcodeValid: "Định dạng mã bưu điện không đúng",
+	msgDropdownNoData: "Không có kết quả phù hợp",
+	errorCodeFormat: "Mã sản phẩm phải là chữ số, ký tự tiếng Nhật hoặc dấu gạch dưới.",
+	errorMailFormat: "Định dạng địa chỉ email không đúng.",
+	min0Valid: "Vui lòng nhập giá trị lớn hơn 0.",
+	validHiragana: "Vui lòng nhập bằng chữ Hiragana",
+	validSpacing: "Vui lòng không nhập khoảng trắng trong {field}.",
+	validUrl: "URL không hợp lệ. Vui lòng kiểm tra lại.",
+	textRequired: "{field} là trường bắt buộc.",
+	textNumberItem: "Chỉ có thể chọn {maxLength} mục",
+	validateCalendarRange: "Vui lòng chọn cả ngày bắt đầu và ngày kết thúc.",
+	copy: "Sao chép",
+	sendSuccess: "Gửi thành công.",
+	active: "Hoạt động",
+	inactive: "Ngưng hoạt động",
+	deleted: "Đã xóa",
+	sendAllSuccess: "Gửi tất cả thành công.",
+	createdAt: "Ngày đăng ký",
+	updatedAt: "Ngày cập nhật",
+	stt: "STT",
+	accountLimit: "Giới hạn tài khoản",
+	collaboration: "Cộng tác",
+	content: "Mô tả",
+	apps: "Ứng dụng",
+	fromDate: "Từ ngày",
+	toDate: "Đến ngày",
+	dateRange: "Chọn khoảng thời gian",
+	createNew: "Tạo mới",
+	search: "Tìm kiếm",
+	confirmDelete: "Bạn có chắc chắn muốn xóa không?",
+	systemCode: "Mã hệ thống",
+	year: "Năm",
+	month: "Tháng",
+	week: "Tuần",
+	weekNum: "Tuần {field}",
+	rangeDate: "{start} ~ {end}",
+	textMoney: "₫",
+	quantity: "Số lượng",
+	profit: "Lợi nhuận",
+	total: "Tổng",
+	showAll: "Hiển thị tất cả",
+	hide: "Ẩn",
+	pdf: "PDF",
+	file: "Tệp",
+	history: "Chi tiết",
+	msgDeleteSuccess: "Đã xóa thành công.",
+	startDate: "Ngày bắt đầu",
+	endDate: "Ngày kết thúc",
+	selectMonth: "Chọn tháng",
+	weekOfMonth: "Tuần của tháng",
+	loadMore: "Xem thêm",
+	errorPassLength: "Vui lòng nhập mật khẩu từ 8-20 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.",
+	errorOtpLength: "Vui lòng nhập đúng mã xác thực.",
+	unique: "{field} đã tồn tại trong hệ thống",
+	formatTax: "Vui lòng nhập mã số thuế từ 10 đến 13 ký tự",
+	taxMin9: "Mô tả giảm giá tối đa 9 ký tự",
+	password: "Vui lòng nhập {field} từ 8-20 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.",
+	invalidFileType: "Định dạng tệp không hợp lệ. Các định dạng cho phép: png, jpg, jpeg, svg.",
+	invalidFileType1: "Định dạng tệp không hợp lệ. Các định dạng cho phép: glb, gltf, obj.",
+	invalidFileSize: "Vui lòng tải lên hình ảnh có dung lượng không quá 10MB.",
+	invalidMediaType: "Định dạng phương tiện không được hỗ trợ",
+	fileTooLarge: "{type} vượt quá giới hạn kích thước cho phép ({size}).",
+	image: "Hình ảnh",
+	video: "Video",
+	emailExists: "Địa chỉ email hoặc mật khẩu không hợp lệ. Vui lòng kiểm tra lại.",
+	emailMax: "Vui lòng nhập email trong vòng 255 ký tự.",
+	codeIncorrect: "Mã OTP không hợp lệ. Vui lòng kiểm tra lại.",
+	please_fill_all_fields: "Vui lòng điền đầy đủ tất cả các thông tin bắt buộc",
+	msgMapNotFound: "Không tìm thấy địa chỉ trên bản đồ.",
+	verifyFidelity: "Xác thực tính xác thực của dữ liệu",
+	requiredFidelity: "Đảm bảo tất cả các trường BẮT BUỘC được điền đầy đủ trước khi hoàn tất.",
+	confirmLogoutTitle: "Bạn có chắc chắn muốn đăng xuất không?",
+	confirmLogoutText: "Quy trình này không thể hoàn tác.",
+	addSuccess: "Thêm mới thành công.",
+	edit: "Chỉnh sửa",
+	viewDetail: "Xem chi tiết",
+	errorMessage: "Thông tin không hợp lệ hoặc lỗi hệ thống.",
+	info: "Thông tin",
+	warning: "Cảnh báo",
+	errorSystem: "Có lỗi xảy ra"
+};
+var msgCommon = {
+	select: "Chọn",
+	confirmLogoutTitle: "Bạn có chắc chắn muốn đăng xuất không?",
+	confirmLogoutText: "Quy trình này không thể hoàn tác."
+};
+var radioButton = {
+	yes: "Có",
+	no: "Không"
+};
+var deleteModal = {
+	areYouSure: "Bạn có chắc chắn muốn xóa không?",
+	confirmDelete: "Quy trình này không thể hoàn tác."
+};
+var confirmModal = {
+	confirm: "Xác nhận",
+	confirmRequest: "Bạn có muốn xác định đơn giá mới không?",
+	cancel: "Hủy",
+	language: "Ngôn ngữ",
+	vietnamese: "Tiếng Việt",
+	english: "Tiếng Anh",
+	japanese: "Tiếng Nhật",
+	confirmExport: "Xác nhận xuất",
+	ExportFile: "Xuất",
+	leaveTabTitle: "Bạn có chắc chắn muốn chuyển tab không?",
+	leaveTabMessage: "Các thay đổi chưa lưu sẽ bị mất nếu bạn chuyển tab.",
+	changeActiveNotifySuccess: "Đã bật liên kết.",
+	changeDeactiveNotifySuccess: "Đã tắt liên kết."
+};
+var tableBox = {
+	noData: "Chưa có dữ liệu.",
+	noSearchData: "Không có kết quả phù hợp",
+	action: "Thao tác",
+	deleteAllSelect: "Xoa tất cả dữ liệu đã chọn"
+};
+var uploadAvatar = {
+	errType: "Định dạng hoặc phần mở rộng tệp không đúng.",
+	maxImage: "Vui lòng tải lên hình ảnh dung lượng dưới 10MB."
+};
+var uploadFile = {
+	errType: "Định dạng hoặc phần mở rộng tệp không đúng.",
+	maxFile: "Vui lòng tải lên tệp dung lượng dưới 10MB.",
+	uploadFileSuccess: "Dữ liệu tệp đã được nhập thành công."
+};
+var paginator = {
+	itemsPerPage: "mỗi trang",
+	showItems: "Trang {from}-{to}/{total}",
+	pages: "Trang {page}/{total}",
+	display: "mỗi trang",
+	perPage: "mục",
+	showInfo: "{fieldFrom}-{fieldTo}/{fieldTotal} mục"
+};
+var auth = {
+	titleLogin: "Vui lòng đăng nhập vào tài khoản của bạn",
+	invalid: "Địa chỉ email hoặc mật khẩu không hợp lệ. Vui lòng kiểm tra lại.",
+	unauthorized: "Token không hợp lệ và không thể sử dụng",
+	need_update_password: "Cần cập nhật mật khẩu.",
+	forbidden: "Truy cập bị từ chối!",
+	not_found: "Mã OTP đã nhập không đúng.",
+	blacklist_token: "Token này đã được sử dụng",
+	login: "Đăng nhập",
+	email: "ID người dùng",
+	code: "Mã xác thực",
+	password: "Mật khẩu",
+	rememberPassword: "Duy trì đăng nhập",
+	loginSuccess: "Đăng nhập thành công.",
+	errorMail: "Vui lòng nhập ID người dùng.",
+	errorMailFormat: "Định dạng ID người dùng không đúng.",
+	userNotExisted: "ID người dùng hoặc mật khẩu không đúng.",
+	errorPass: "Vui lòng nhập mật khẩu.",
+	errorPassNew: "Vui lòng nhập mật khẩu mới.",
+	errorPassLength: "Vui lòng nhập mật khẩu từ 8-32 ký tự bao gồm chữ thường, chữ hoa, số và ký tự đặc biệt.",
+	forgotPassword: "Quên mật khẩu",
+	haveAnPassword: "Bạn đã nhớ mật khẩu?",
+	sendResetSuccess: "Yêu cầu đặt lại mật khẩu đã được gửi.",
+	resetPassword: "Đặt lại mật khẩu",
+	receiveOtp: "Bạn chưa nhận được mã xác thực?",
+	retransmission: "Gửi lại",
+	settingPassword: "Cài đặt mật khẩu",
+	reSendResetSuccess: "Mã xác thực đã được gửi đến email. Vui lòng kiểm tra email.",
+	errorOtp: "Vui lòng nhập mã xác thực.",
+	newPassword: "Mật khẩu mới",
+	newPasswordConfirm: "Xác nhận mật khẩu",
+	errorRePass: "Vui lòng nhập xác nhận mật khẩu.",
+	rePassNotMatch: "Mật khẩu và mật khẩu xác nhận không khớp. Vui lòng kiểm tra lại.",
+	resetSuccess: "Mật khẩu đã được thay đổi.",
+	confirmLogout: "Bạn có chắc chắn muốn đăng xuất không?",
+	settingPasswordSuccess: "Cập nhật mật khẩu lần đầu thành công",
+	resetPass: "Thay đổi mật khẩu",
+	enterEmailResetPass: "Vui lòng nhập địa chỉ email để đặt lại mật khẩu.",
+	sendForgotPass: "Gửi mã xác thực",
+	otp: "OTP",
+	errorEmail: "Địa chỉ email không hợp lệ. Vui lòng kiểm tra lại.",
+	inactive: "Truy cập bị từ chối. Tài khoản đã bị khóa hoặc chưa được kích hoạt.",
+	msgWelcomeBack: "Chào mừng {name} quay trở lại!",
+	msgMustChangePassword: "Yêu cầu đổi mật khẩu",
+	msgMustChangePasswordDesc: "Đây là lần đầu đăng nhập. Vui lòng đổi mật khẩu để kích hoạt tài khoản!",
+	msgChangePasswordSuccess: "Mật khẩu đã được thay đổi thành công.",
+	changePasswordDesc: "Thay đổi mật khẩu tài khoản của bạn. Mật khẩu mới phải chứa ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, chữ số và ký tự đặc biệt.",
+	currentPassword: "Mật khẩu hiện tại",
+	currentPasswordPlaceholder: "Nhập mật khẩu hiện tại",
+	newPasswordPlaceholder: "Nhập mật khẩu mới",
+	confirmPasswordPlaceholder: "Nhập lại mật khẩu mới",
+	lowercaseHint: "Chữ thường (a-z)",
+	uppercaseHint: "Chữ hoa (A-Z)",
+	digitHint: "Chữ số (0-9)",
+	specialHint: "Ký tự đặc biệt (!{'@'}#$...)",
+	minLengthHint: "Ít nhất 8 ký tự",
+	maxLengthHint: "Tối đa 50 ký tự",
+	backToLogin: "Quay về đăng nhập",
+	usernameLabel: "ID người dùng / Email / Số điện thoại",
+	usernamePlaceholder: "Nhập ID người dùng, email hoặc SĐT",
+	defaultSloganTitle1: "Kiểm soát",
+	defaultSloganTitle2: "tuân thủ",
+	defaultSloganTitle3: "toàn diện.",
+	defaultSloganDesc: "Hệ thống quản lý hồ sơ pháp lý, nhân sự, hợp đồng và tài liệu doanh nghiệp đa quốc gia Việt Nam - Nhật Bản.",
+	passwordMin: "Mật khẩu phải chứa ít nhất 8 ký tự.",
+	passwordMax: "Mật khẩu không được vượt quá 50 ký tự.",
+	passwordLower: "Mật khẩu phải chứa ít nhất 1 chữ thường (a-z).",
+	passwordUpper: "Mật khẩu phải chứa ít nhất 1 chữ hoa (A-Z).",
+	passwordDigit: "Mật khẩu phải chứa ít nhất 1 chữ số (0-9).",
+	passwordSpecial: "Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt (!{'@'}#$%...)."
+};
+var notFound = {
+	backToHome: "Quay về trang chủ"
+};
+var router = {
+	homePage: "Trang chủ",
+	userList: "Danh sách nhân viên",
+	userRegister: "Đăng ký nhân viên",
+	userDetail: "Chi tiết nhân viên",
+	userEdit: "Chỉnh sửa nhân viên",
+	categoryRegister: "Đăng ký danh mục sản phẩm",
+	categoryList: "Danh mục sản phẩm",
+	categoryEdit: "Chỉnh sửa danh mục sản phẩm",
+	categoryDetail: "Chi tiết danh mục sản phẩm",
+	customerRegister: "Đăng ký khách hàng",
+	customerList: "Danh sách khách hàng",
+	customerEdit: "Chỉnh sửa khách hàng",
+	customerDetail: "Chi tiết khách hàng"
+};
+var menu = {
+	main: "Chức Năng Chính",
+	companyBoard: "Bảng tin doanh nghiệp",
+	masterData: "Dữ liệu cấu hình",
+	industrialDashboard: "Bảng điều khiển công nghiệp",
+	master: "Master",
+	list: "Danh sách",
+	register: "Đăng ký",
+	dashboard: "Bảng điều khiển",
+	department: "Quản lý phòng ban",
+	departmentList: "Danh sách phòng ban",
+	departmentAdd: "Thêm mới phòng ban",
+	departmentEdit: "Chỉnh sửa phòng ban",
+	position: "Quản lý chức vụ",
+	positionList: "Danh sách chức vụ",
+	positionAdd: "Thêm mới chức vụ",
+	positionEdit: "Chỉnh sửa chức vụ",
+	company: "Quản lý công ty",
+	companySetting: "Cấu hình thông tin công ty",
+	companyList: "Danh sách công ty",
+	companyAdd: "Thêm mới công ty",
+	companyEdit: "Chỉnh sửa công ty",
+	userMaster: "Quản lý nhân viên",
+	employee: "Quản lý nhân sự",
+	userMasterList: "Danh sách nhân viên",
+	userMasterAdd: "Đăng ký nhân viên",
+	userMasterEdit: "Chỉnh sửa nhân viên",
+	basicInfo: "Thông tin cơ bản",
+	contactInfo: "Thông tin liên hệ",
+	noteInfo: "Ghi chú & Khác",
+	timesheet: "Quản lý chấm công",
+	timesheetManage: "Quản trị chấm công",
+	leaveRequest: "Đơn xin nghỉ phép",
+	leaveRequestPending: "Phê duyệt nghỉ phép",
+	contract: "Quản lý hợp đồng",
+	transaction: "Quản lý thu chi (Cash Flow)",
+	compliance: "Kiểm soát Tuân thủ",
+	document: "Quản lý tài liệu & hồ sơ",
+	member: "Quản lý thành viên",
+	myProfile: "Hồ sơ cá nhân",
+	logout: "Đăng xuất",
+	sidebarConfig: "Cấu hình Sidebar",
+	changePassword: "Đổi mật khẩu"
+};
+var department = {
+	code: "Mã phòng ban",
+	name: "Tên phòng ban",
+	note: "Ghi chú",
+	status: "Trạng thái",
+	title: "Quản lý phòng ban",
+	placeholderSearch: "Mã phòng ban, tên phòng ban...",
+	noteBasic: "Cấu hình thông tin phòng ban cơ sở",
+	noteDetail: "Chi tiết nhiệm vụ & Chức năng",
+	namePlaceholder: "Phòng Nghiên cứu & Phát triển (R&D)",
+	positionListTitle: "Danh sách chức vụ/chức danh",
+	positionListDesc: "Thêm các chức vụ thuộc phòng ban này",
+	addPosition: "Thêm chức vụ",
+	noPositionYet: "Chưa có chức vụ nào. Vui lòng nhấp nút thêm chức vụ.",
+	positionName: "Tên chức vụ",
+	positionNamePlaceholder: "Kỹ sư Senior...",
+	positionDesc: "Mô tả công việc",
+	positionDescPlaceholder: "Mô tả nhiệm vụ...",
+	noteAndDesc: "Mô tả & Ghi chú",
+	notePlaceholder: "Nhập thông tin mô tả chi tiết về sơ đồ chức năng của phòng ban này...",
+	valMissPositionName: "Vui lòng nhập tên chức vụ",
+	valMissPositionDesc: "Vui lòng điền đầy đủ tên các chức vụ.",
+	associatedJobTitles: "Chức vụ trực thuộc"
+};
+var user = {
+	gender: "Giới tính",
+	status: "Trạng thái"
+};
+var position = {
+	title: "Quản lý chức vụ",
+	code: "Mã chức vụ",
+	name: "Tên chức vụ",
+	note: "Ghi chú",
+	status: "Trạng thái",
+	placeholderSearch: "Mã chức vụ, tên chức vụ",
+	noteBasic: "Cấu hình các thông tin định danh và vai trò",
+	noteDetail: "Yêu cầu công việc & Mô tả vai trò"
+};
+var company = {
+	title: "Quản lý công ty",
+	code: "Mã công ty",
+	name: "Tên công ty",
+	postcode: "Mã bưu điện (Postcode)",
+	searchAddress: "Tìm kiếm địa chỉ",
+	area: "Vùng",
+	prefecture: "Tỉnh/Thành phố",
+	city: "Quận/Huyện",
+	town: "Phường/Xã",
+	address: "Địa chỉ văn phòng hiện tại",
+	addressRegistered: "Địa chỉ đăng ký kinh doanh (Hồ sơ pháp lý)",
+	phone: "Số điện thoại",
+	fax: "Số Fax",
+	email: "Email liên hệ doanh nghiệp",
+	note: "Ghi chú",
+	status: "Trạng thái hoạt động",
+	statusActive: "Đang hoạt động",
+	statusInactive: "Ngừng hoạt động",
+	placeholderSearch: "Mã công ty, tên công ty",
+	noteCode: "Cấu hình các thông tin định danh cốt lõi",
+	noteContact: "Kênh liên lạc chính thức của doanh nghiệp",
+	noteDetail: "Ghi lại các lưu ý quan trọng",
+	editTitle: "Chỉnh sửa doanh nghiệp",
+	createTitle: "Thêm doanh nghiệp mới",
+	editDesc: "Cập nhật hồ sơ pháp nhân",
+	createDesc: "Thiết lập thông tin đối tác & chi nhánh",
+	saveProfile: "Lưu hồ sơ",
+	basicInfo: "Thông tin cơ bản",
+	basicInfoDesc: "Tên doanh nghiệp, mã pháp nhân và người đại diện pháp luật",
+	nameKana: "Tên Kana",
+	legalRepresentative: "Người đại diện pháp luật",
+	taxSection: "Mã số & Định danh pháp lý",
+	taxSectionDesc: "Mã số thuế, mã số doanh nghiệp phục vụ xuất hóa đơn và khai báo",
+	taxCode: "Mã số thuế",
+	corporateNumber: "Mã số doanh nghiệp (Corporate Number)",
+	contactSection: "Thông tin liên hệ",
+	contactSectionDesc: "Các thông tin để trao đổi, liên hệ trực tiếp với doanh nghiệp",
+	addressSection: "Địa chỉ trụ sở",
+	addressSectionDesc: "Địa chỉ đăng ký kinh doanh và địa chỉ văn phòng làm việc",
+	noteSection: "Ghi chú & Ghi nhớ",
+	companyInfo: "Thông tin công ty",
+	contactInfo: "Thông tin liên hệ",
+	headOfficeAddress: "Địa chỉ trụ sở",
+	registeredAddress: "Địa chỉ đăng ký"
+};
+var companySetting = {
+	desc: "Cấu hình thông tin pháp lý doanh nghiệp chủ quản",
+	basicSectionTitle: "Thông tin cơ bản doanh nghiệp chủ quản",
+	basicSectionDesc: "Điền thông tin đăng ký doanh nghiệp chủ quản chính thức của bạn.",
+	namePlaceholder: "Công ty Cổ phần Giải pháp Công nghệ",
+	nameKana: "Tên viết tắt / Tên Kana",
+	capital: "Vốn điều lệ",
+	capitalPlaceholder: "Ví dụ: 10.000.000.000 VNĐ hoặc 100.000.000 JPY",
+	corporatePlaceholder: "GPKD: 1234567890123",
+	legalTitle: "Người đại diện pháp luật",
+	legalDesc: "Thông tin cá nhân pháp lý của người đại diện công ty ký kết hợp đồng.",
+	repPlaceholder: "Nguyễn Văn A",
+	repTitle: "Chức danh người đại diện",
+	repTitlePlaceholder: "Ví dụ: Giám đốc / Tổng giám đốc / Chủ tịch",
+	repIdNumber: "Số CMND/CCCD/Hộ chiếu",
+	repIdDate: "Ngày cấp CMND/CCCD",
+	repIdPlace: "Nơi cấp CMND/CCCD",
+	repIdPlacePlaceholder: "Cục Cảnh sát Quản lý hành chính về trật tự xã hội",
+	contactTitle: "Thông tin liên hệ & Địa chỉ",
+	contactDesc: "Địa chỉ trụ sở chính thức và các cổng thông tin liên lạc.",
+	website: "Trang web (Website)",
+	addressPlaceholder: "Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	addressRegisteredPlaceholder: "Tầng 12, Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	brandingTitle: "Cấu hình thương hiệu & Giao diện",
+	brandingDesc: "Thay đổi logo, hình nền đăng nhập, tên hiển thị tại sidebar và khẩu hiệu (slogan) của công ty.",
+	sidebarName: "Tên hiển thị ở Sidebar",
+	sidebarSubName: "Tên hiển thị phụ ở Sidebar",
+	sidebarSubPlaceholder: "Hệ thống Quản lý Tuân thủ",
+	logoLabel: "Logo công ty (Web Logo)",
+	logoAccept: "Chấp nhận JPG, PNG. Khuyên dùng ảnh vuông nền trong suốt.",
+	loginBgLabel: "Hình nền trang đăng nhập",
+	loginBgAccept: "Chấp nhận JPG, PNG. Khuyên dùng tỉ lệ 16:9 hoặc ảnh độ phân giải cao.",
+	slogan1: "Slogan công ty (Dòng 1 - Tiêu đề chính)",
+	slogan1Placeholder: "Tiên phong Công nghệ - Kiến tạo Tương lai",
+	slogan2: "Slogan công ty (Dòng 2)",
+	slogan2Placeholder: "Hệ thống Quản lý Tuân thủ Doanh nghiệp",
+	slogan3: "Slogan công ty (Dòng 3)",
+	slogan3Placeholder: "Nâng tầm Quản trị, Tối ưu Vận hành",
+	complianceBadge: "HỆ THỐNG TUÂN THỦ",
+	defaultContractTitle: "Cài đặt thông tin hợp đồng mặc định",
+	defaultContractDesc: "Các thông tin được khai báo tại trang này sẽ tự động điền vào mục \"Bên A\" (Người sử dụng lao động / Đơn vị giao thầu) khi tạo hợp đồng mới. Nhân sự soạn thảo hợp đồng vẫn có thể chỉnh sửa lại trực tiếp trên từng hợp đồng cụ thể.",
+	uploadLogoSuccess: "Tải logo lên thành công.",
+	uploadLogoError: "Lỗi tải logo lên hệ thống.",
+	uploadBgSuccess: "Tải hình nền lên thành công.",
+	uploadBgError: "Lỗi tải hình nền lên hệ thống.",
+	landingTitle: "Cấu hình Website Doanh nghiệp",
+	landingDescText: "Cấu hình website giới thiệu của công ty bạn bằng liên kết ngoài hoặc tự thiết kế trang giới thiệu",
+	landingStyleLabel: "Giao diện trang giới thiệu",
+	businessFieldLabel: "Lĩnh vực hoạt động",
+	aboutUsLabel: "Lời giới thiệu doanh nghiệp (About Us)",
+	aboutUsPlaceholder: "Giới thiệu sứ mệnh, tầm nhìn và giá trị cốt lõi của công ty...",
+	servicesListLabel: "Danh sách dịch vụ chính (Mỗi dịch vụ một dòng)",
+	servicesListPlaceholder: "Dịch vụ 1: Mô tả ngắn gọn\nDịch vụ 2: Mô tả ngắn gọn\nDịch vụ 3: Mô tả ngắn gọn",
+	bannerDesignTitle: "Thiết kế Slide Banner & Hình ảnh (Xem trước trang giới thiệu)",
+	slide1Label: "Slide Banner 1",
+	slide2Label: "Slide Banner 2",
+	slide3Label: "Slide Banner 3",
+	aboutImgLabel: "Hình ảnh About Us",
+	uploadSlide1: "Tải ảnh Slide 1",
+	uploadSlide2: "Tải ảnh Slide 2",
+	uploadSlide3: "Tải ảnh Slide 3",
+	uploadAboutImg: "Tải ảnh Giới thiệu",
+	loadMockupBtn: "Tải dữ liệu mẫu",
+	previewLandingBtn: "Xem trước trang giới thiệu",
+	websiteOptionLabel: "Lựa chọn Website doanh nghiệp",
+	websiteOptionExternal: "Đã có website riêng (Nhập URL liên kết)",
+	websiteOptionInternal: "Chưa có website riêng (Tự thiết kế trang giới thiệu)",
+	websiteUrlLabel: "Địa chỉ URL Website công ty",
+	websiteUrlPlaceholder: "Ví dụ: https://www.company.com",
+	style1Label: "Style 1 - Modern Tech (Hiện đại & Sắc nét)",
+	style2Label: "Style 2 - Elegant Classic (Cổ điển & Sang trọng)",
+	style3Label: "Style 3 - Minimalist Clean (Tối giản & Tinh tế)",
+	style4Label: "Style 4 - Vibrant Creative (Sáng tạo & Năng động)",
+	style5Label: "Style 5 - Trust Corporate (Chuyên nghiệp & Tin cậy)",
+	fieldIt: "Công nghệ thông tin & Phần mềm",
+	fieldFinance: "Dịch vụ Tài chính & Kế toán",
+	fieldManufacturing: "Sản xuất & Xuất nhập khẩu",
+	fieldLegal: "Tư vấn pháp lý & Luật",
+	fieldServices: "Dịch vụ & Thương mại"
+};
+var userMaster = {
+	title: "Quản lý nhân viên",
+	code: "Mã nhân viên",
+	name: "Họ và tên",
+	company: "Công ty",
+	department: "Phòng ban",
+	position: "Chức vụ",
+	phone: "Số điện thoại",
+	note: "Ghi chú",
+	email: "Email",
+	status: "Trạng thái",
+	placeholderSearch: "Tên, email, mã nhân viên...",
+	noteBasic: "Thông tin định danh nhân viên",
+	noteAdditional: "Thông tin bổ sung"
+};
+var document = {
+	dragDropText: "Kéo thả tài liệu vào đây hoặc click để tải lên",
+	allowedFormats: "Hỗ trợ định dạng: PDF, Word, Excel, JPG, PNG (Tối đa 10MB)",
+	uploading: "Đang tải lên...",
+	totalFiles: "Tổng số tệp tin",
+	view: "Xem trực tuyến",
+	download: "Tải xuống",
+	"delete": "Xóa tài liệu",
+	noDocuments: "Không có tài liệu nào đính kèm.",
+	viewerNotSupportedTitle: "Không hỗ trợ xem trực tiếp",
+	viewerNotSupportedDesc: "Trình duyệt không hỗ trợ xem trực tiếp định dạng này. Vui lòng tải xuống máy để mở.",
+	downloadFile: "Tải xuống tệp tin",
+	deleteConfirmTitle: "Xác nhận xóa tài liệu",
+	deleteConfirmDesc: "Bạn có chắc chắn muốn xóa tài liệu này khỏi hệ thống? Hành động này sẽ xóa vĩnh viễn tệp lưu trữ và không thể khôi phục.",
+	msgFileTooLarge: "Tệp quá lớn",
+	msgFileTooLargeDesc: "Vui lòng chọn tệp có dung lượng dưới 10MB.",
+	msgNoFile: "Chưa chọn file",
+	msgNoFileDesc: "Vui lòng bấm chọn tài liệu cần tải lên.",
+	msgNoType: "Thiếu loại hồ sơ",
+	msgNoTypeDesc: "Vui lòng chọn loại hồ sơ cần lưu trữ.",
+	msgNoLink: "Chưa gắn liên kết",
+	msgNoLinkDesc: "Vui lòng chọn một bản ghi tương ứng để gắn tài liệu.",
+	msgUploadSuccess: "Đã tải lên và liên kết tài liệu thành công.",
+	msgUploadError: "Lỗi xảy ra khi tải lên tài liệu.",
+	msgViewError: "Không thể xem tài liệu.",
+	msgDownloadError: "Không thể tải tài liệu.",
+	msgDeleteSuccess: "Đã xóa tài liệu khỏi hệ thống.",
+	msgDeleteError: "Có lỗi xảy ra khi xóa tài liệu.",
+	maxSizeText: "Dung lượng tối đa: 10MB",
+	tooltipGrid: "Hiển thị lưới",
+	tooltipList: "Hiển thị danh sách",
+	uploadedBy: "Tải lên bởi",
+	deleteConfirmWarning: "Hành động này không thể hoàn tác!",
+	deleteConfirmDetails: "Hệ thống sẽ tiến hành xóa vĩnh viễn tệp đính kèm {name} khỏi lưu trữ đám mây. Hãy chắc chắn trước khi tiếp tục.",
+	pageDesc: "Quản lý tài liệu tập trung, tải lên và gắn hồ sơ thông minh vào nhân sự, hợp đồng và chi phí.",
+	uploadDoc: "Tải lên tài liệu",
+	totalDocs: "Tổng tài liệu",
+	employeeDocs: "Hồ sơ Nhân sự",
+	contractDocs: "Hợp đồng",
+	transactionDocs: "Invoice & Thu Chi",
+	placeholderSearch: "Mã tài liệu, tên file...",
+	placeholderFormat: "Định dạng file",
+	noData: "Không tìm thấy tài liệu nào trên hệ thống",
+	transactionCode: "Mã thu chi #{id}",
+	notLinked: "Chưa gắn liên kết",
+	preview: "Xem trước",
+	downloadTooltip: "Tải xuống",
+	deleteTooltip: "Xóa tài liệu",
+	uploadDialogHeader: "TẢI LÊN & GẮN LIÊN KẾT TÀI LIỆU",
+	docTypeLabel: "Loại Hồ sơ & Tài liệu",
+	placeholderSelectType: "Chọn phân loại hồ sơ",
+	linkToTarget: "Gắn liên kết vào {target}",
+	placeholderSearchTarget: "Tìm kiếm và chọn {target}...",
+	processUpload: "Xử lý Tải lên",
+	previewDialogHeader: "XEM TÀI LIỆU: {name}",
+	deleteForeverTitle: "Xóa vĩnh viễn tệp này?",
+	colName: "Tên Tài liệu / Tập tin",
+	colType: "Phân loại",
+	colLinkedTo: "Gắn liên kết tới",
+	colUploadedAt: "Ngày tải lên",
+	tabAll: "Tất cả tài liệu",
+	tabEmployee: "Hồ sơ nhân sự",
+	tabContract: "Hợp đồng lao động",
+	tabTransaction: "Invoice & Chi phí",
+	extPdf: "Tệp PDF (.pdf)",
+	extImage: "Ảnh (.png, .jpg)",
+	extWord: "Microsoft Word (.doc, .docx)",
+	extExcel: "Microsoft Excel (.xls, .xlsx)",
+	otherDocs: "Tài liệu khác",
+	filesize: "Dung lượng",
+	deleteWarningDetails: "Tài liệu \"{name}\" sẽ bị xóa vĩnh viễn khỏi máy chủ. Bạn không thể hoàn tác thao tác này."
+};
+var employee = {
+	title: "Quản lý nhân viên",
+	status: "Trạng thái",
+	email: "Địa chỉ Email",
+	code: "Mã nhân viên",
+	addTitle: "Thêm nhân viên mới",
+	editTitle: "Chỉnh sửa nhân viên",
+	editSubtitle: "Cập nhật hồ sơ nhân sự",
+	addSubtitle: "Thiết lập thông tin tài khoản và tổ chức",
+	saveProfile: "Lưu hồ sơ",
+	personalInfo: "Thông tin cá nhân",
+	personalInfoDesc: "Hồ sơ định danh, liên hệ và thông tin cư trú",
+	orgUnit: "Đơn vị quản lý",
+	basicInfo: "Thông tin cơ bản",
+	basicInfoDesc: "Thiết lập các thông tin cơ bản, email liên lạc và tài khoản truy cập hệ thống",
+	avatar: "Ảnh đại diện",
+	uploadPhoto: "Tải ảnh",
+	removePhoto: "Xóa ảnh",
+	fullName: "Họ và tên",
+	katakanaName: "Tên Katakana",
+	romajiName: "Tên Romaji",
+	dateOfBirth: "Ngày sinh",
+	gender: "Giới tính",
+	hometown: "Quê quán",
+	placeOfBirth: "Nơi sinh",
+	nationality: "Quốc tịch",
+	ethnicity: "Dân tộc",
+	religion: "Tôn giáo",
+	phone: "Số điện thoại",
+	department: "Phòng ban",
+	selectDepartment: "Chọn phòng ban",
+	jobTitle: "Chức vụ",
+	selectJobTitle: "Chọn chức vụ",
+	statusActive: "Đang làm việc",
+	statusInactive: "Nghỉ việc",
+	statusProbation: "Thử việc",
+	roleAdmin: "Admin",
+	roleRbacTooltipTitle: "Quyền hạn của vai trò (RBAC)",
+	roleManager: "Quản lý / Giám đốc",
+	roleHr: "Nhân sự (HR)",
+	roleAccountant: "Kế toán",
+	roleStaff: "Nhân viên",
+	roleAdminDesc: "Toàn quyền quản trị hệ thống",
+	roleManagerDesc: "Giám đốc / Quản lý điều hành",
+	roleHrDesc: "Quản lý nhân sự, hợp đồng, chấm công, nghỉ phép",
+	roleAccountantDesc: "Quản lý tài chính, giao dịch thu chi, bảng lương",
+	roleStaffDesc: "Nhân viên xem thông tin cá nhân, gửi đơn nghỉ phép",
+	placeholderSearch: "Tên, email, mã nhân viên...",
+	dialogDisableTitle: "Vô hiệu hóa nhân viên?",
+	dialogDisableDesc: "Trạng thái của nhân sự {name} sẽ được chuyển thành INACTIVE.",
+	msgDisableSuccess: "Đã vô hiệu hóa nhân viên.",
+	joinDate: "Ngày gia nhập",
+	role: "Vai trò",
+	password: "Mật khẩu",
+	taxInsurance: "Thuế & Bảo hiểm",
+	taxInsuranceBank: "Thuế, Bảo hiểm & Ngân hàng",
+	contractDocument: "Hợp đồng & Tài liệu",
+	taxInsuranceTitle: "Giấy tờ & Bảo hiểm xã hội",
+	taxInsuranceDesc: "Cấu hình mã số thuế, bảo hiểm và giấy tờ tuỳ thân",
+	identityType: "Loại giấy tờ",
+	identityNumber: "Số giấy tờ",
+	zairyuExpiry: "Hạn thẻ cư trú",
+	taxCode: "Mã số thuế",
+	socialInsurance: "Mã bảo hiểm xã hội",
+	pensionNumber: "Mã số lương hưu",
+	employmentInsurance: "Số bảo hiểm thất nghiệp",
+	bankInfo: "Thông tin ngân hàng",
+	bankInfoTitle: "Tài khoản lương & Ngân hàng",
+	bankInfoDesc: "Thiết lập thông tin tài khoản nhận lương và thanh toán",
+	bankCode: "Mã ngân hàng",
+	bankBranch: "Mã chi nhánh",
+	bankAccountType: "Loại tài khoản",
+	bankAccountNumber: "Số tài khoản",
+	bankAccountHolder: "Tên chủ tài khoản (Katakana)",
+	addressInfo: "Địa chỉ & Người thân",
+	addressTitle: "Địa chỉ cư trú",
+	addressDesc: "Địa chỉ đăng ký hộ khẩu và địa chỉ hiện tại",
+	registeredAddress: "Địa chỉ đăng ký hộ khẩu",
+	currentAddress: "Địa chỉ cư trú hiện tại",
+	dependentsCount: "Số người phụ thuộc",
+	relatives: "Thông tin người thân",
+	relativesTitle: "Danh sách người thân",
+	relativesDesc: "Thông tin liên lạc khẩn cấp và người phụ thuộc",
+	addRelative: "Thêm người thân",
+	relationship: "Quan hệ",
+	occupation: "Nghề nghiệp",
+	address: "Địa chỉ",
+	emergencyContact: "Liên lạc khẩn cấp",
+	isDependent: "Người phụ thuộc",
+	notes: "Ghi chú",
+	detailTitle: "Chi tiết nhân viên",
+	missingInfo: "Thiếu thông tin",
+	missingInfoDesc: "Vui lòng kiểm tra các tab có đánh dấu lỗi đỏ để hoàn thiện thông tin.",
+	contractListTitle: "Danh sách Hợp đồng lao động",
+	contractListDesc: "Xem danh sách các hợp đồng lao động đã và đang ký kết của nhân viên này (Chỉ hiển thị, không chỉnh sửa)",
+	contractEmpty: "Chưa có thông tin hợp đồng lao động nào.",
+	contractCode: "Số hiệu HĐ",
+	contractType: "Loại hợp đồng",
+	contractDuration: "Thời hạn",
+	contractSalary: "Giá trị / Lương",
+	contractStatus: "Trạng thái",
+	contractAction: "Tải/Xem scan",
+	contractActive: "Còn hiệu lực",
+	contractInactive: "Hết hiệu lực",
+	contractNoScan: "Không có scan",
+	contractIndefinite: "Không thời hạn",
+	personalDocTitle: "Kho Chứng từ & Tài liệu cá nhân",
+	personalDocDesc: "Tải lên, xem trực tiếp và xóa các bản scan CCCD, Hộ chiếu, Thẻ cư trú, Bằng cấp, Chứng chỉ của nhân sự",
+	btnUploadDoc: "Tải tài liệu lên",
+	msgUploadingDoc: "Đang tải tài liệu lên hệ thống, vui lòng chờ...",
+	docEmptyTitle: "Chưa có chứng từ cá nhân nào được tải lên.",
+	docEmptyDesc: "Kéo thả file hoặc click nút Tải tài liệu lên ở góc trên.",
+	tooltipViewDoc: "Xem tài liệu",
+	tooltipDownloadDoc: "Tải xuống",
+	tooltipDeleteDoc: "Xóa tài liệu",
+	workHistory: "Quá trình làm việc",
+	workHistoryTitle: "Lịch sử thay đổi phòng ban, chức vụ & lương",
+	workHistoryDesc: "Quản lý lịch sử quá trình làm việc của nhân viên qua các giai đoạn",
+	btnAddWorkHistory: "Thêm quá trình",
+	workHistoryStage: "Giai đoạn làm việc",
+	workHistoryDefault: "Mặc định ban đầu",
+	workHistoryStartDate: "Ngày bắt đầu",
+	workHistoryEndDate: "Ngày kết thúc",
+	workHistorySalary: "Mức lương cơ bản (VND)",
+	workHistoryNote: "Ghi chú",
+	workHistoryEmpty: "Chưa có lịch sử làm việc nào được ghi nhận.",
+	workHistorySyncDept: "Đồng bộ từ thông tin cá nhân",
+	workHistorySyncJoin: "Đồng bộ với Ngày gia nhập",
+	workHistoryDateError: "Ngày kết thúc không được trước ngày bắt đầu",
+	relativeName: "Họ tên thân nhân",
+	relativesEmpty: "Chưa có thông tin thân nhân nào được khai báo.",
+	relationshipSpouse: "Vợ/Chồng",
+	relationshipChild: "Con",
+	relationshipParent: "Bố/Mẹ",
+	relationshipSibling: "Anh/Chị/Em",
+	relationshipOther: "Khác",
+	noViewUrl: "Không có URL xem tài liệu.",
+	noDownloadUrl: "Không có URL tải tài liệu.",
+	viewError: "Không thể xem tài liệu.",
+	downloadError: "Không thể tải tài liệu.",
+	startDate: "Ngày bắt đầu",
+	salary: "Mức lương",
+	placeholderHometown: "Ví dụ: Hà Nam",
+	placeholderPlaceOfBirth: "Bệnh viện Phụ sản",
+	placeholderNationality: "Việt Nam",
+	placeholderReligion: "Không",
+	sectionAccountWork: "2. Tài khoản & Công việc",
+	sectionAccountWorkDesc: "Các thông tin liên hệ, phòng ban chuyên trách và quyền hạn hệ thống",
+	sectionContactAddress: "3. Địa chỉ liên lạc",
+	sectionContactAddressDesc: "Địa chỉ đăng ký hộ khẩu thường trú và địa chỉ cư trú hiện tại",
+	placeholderBankAccountType: "普通",
+	noRelatives: "Chưa thêm thân nhân nào. Nhấp nút phía trên để tạo mới.",
+	relativeNumber: "Thân nhân #",
+	deleteRelativeTooltip: "Xóa thân nhân này",
+	birthday: "Ngày sinh",
+	dependentTax: "Người phụ thuộc (Giảm trừ gia cảnh)",
+	pendingUpload: "CHỜ TẢI LÊN",
+	deletePendingFileTooltip: "Xóa tệp chờ",
+	deletePeriodTooltip: "Xóa giai đoạn này",
+	placeholderSalary: "Ví dụ: 10,000,000",
+	placeholderSalaryReason: "Ví dụ: Tăng lương định kỳ",
+	endDateBeforeStartDate: "Ngày kết thúc không được trước ngày bắt đầu",
+	removedPendingFile: "Đã xóa tài liệu khỏi danh sách chờ.",
+	imageTooLarge: "Ảnh quá lớn",
+	imageTooLargeDesc: "Vui lòng chọn ảnh có dung lượng dưới 2MB.",
+	updateSuccess: "Đã cập nhật thông tin nhân viên.",
+	createSuccess: "Đã tạo nhân viên mới thành công.",
+	createAndUploadSuccess: "Đã tạo nhân viên mới và tải lên thành công {successCount} tài liệu.",
+	uploadDocsError: "Tải tài liệu có lỗi",
+	createSuccessUploadError: "Đã tạo nhân viên mới thành công. Tải lên thành công {successCount} tài liệu, thất bại {failCount} tài liệu.",
+	fileTooLarge: "File quá lớn",
+	fileTooLargeDesc: "Vui lòng chọn tài liệu có dung lượng dưới 10MB.",
+	addedPendingFile: "Đã thêm tài liệu vào danh sách chờ.",
+	uploadDocsSuccess: "Tải tài liệu lên thành công.",
+	uploadDocsFailed: "Lỗi tải tài liệu lên.",
+	deleteDocConfirm: "Bạn có chắc chắn muốn xóa chứng từ này không? Hành động này không thể hoàn tác.",
+	deleteDocSuccess: "Đã xóa chứng từ thành công.",
+	deleteDocFailed: "Lỗi khi xóa chứng từ.",
+	ocrTitle: "Nhập nhanh hồ sơ bằng AI Gemini",
+	ocrDesc: "Tải lên file sơ yếu lý lịch, CCCD, hộ chiếu hoặc bảng Excel để AI tự động điền các trường thông tin.",
+	ocrButton: "Chọn file & Phân tích",
+	ocrLoading: "Gemini AI đang quét tài liệu và phân tích thông tin...",
+	ocrSuccessTitle: "Phân tích thành công",
+	ocrSuccessDesc: "Thông tin đã được tự động điền vào biểu mẫu.",
+	ocrErrorTitle: "Lỗi",
+	ocrErrorDesc: "Không trích xuất được thông tin từ tài liệu.",
+	ocrFileTooLarge: "File quá lớn",
+	ocrFileTooLargeDesc: "File \"{name}\" vượt quá giới hạn 10MB.",
+	ocrConnectError: "Không thể kết nối hoặc xử lý file.",
+	name: "Nhân sự"
+};
+var gender = {
+	male: "Nam",
+	female: "Nữ",
+	other: "Khác"
+};
+var contract = {
+	companySection: "Bên A: Thông tin doanh nghiệp chủ quản",
+	companyNameLabel: "Tên đơn vị chủ quản (Bên A)",
+	companyTaxCodeLabel: "Mã số thuế Bên A",
+	companyAddressLabel: "Địa chỉ Bên A",
+	companyRepresentativeLabel: "Người đại diện Bên A",
+	companyRepresentativeRoleLabel: "Chức danh người đại diện",
+	defaultConfig: "Cấu hình mặc định",
+	contractInfo: "Thông tin hợp đồng",
+	title: "Quản lý Hợp Đồng",
+	createTitle: "Ký Hợp Đồng Mới",
+	editTitle: "Cập nhật Hợp Đồng",
+	subtitle: "Quản lý Tuân thủ",
+	updateSubtitle: "Cập nhật hợp đồng",
+	generalInfo: "Thông tin chung hợp đồng",
+	type: "Loại hợp đồng",
+	code: "Mã số hợp đồng",
+	codePlaceholder: "Hệ thống tự tạo nếu để trống",
+	signDate: "Ngày ký",
+	startDate: "Ngày hiệu lực",
+	endDate: "Ngày hết hạn (Để trống nếu vô thời hạn)",
+	baseSalary: "Lương cơ bản hàng tháng",
+	totalValue: "Tổng giá trị hợp đồng",
+	status: "Trạng thái hợp đồng",
+	laborSection: "Chi tiết Người lao động (Bên B)",
+	selectEmployee: "Chọn nhân viên",
+	selectEmployeePlaceholder: "Tìm và chọn nhân sự cần ký hợp đồng",
+	employmentType: "Hình thức nhân sự",
+	jobTitle: "Chức danh / Vị trí công tác",
+	workLocation: "Địa điểm làm việc",
+	workingHours: "Thời giờ làm việc quy chuẩn (giờ/ngày)",
+	probationPeriod: "Thời gian thử việc",
+	probationSalary: "Tỷ lệ hưởng lương thử việc (%)",
+	bankName: "Ngân hàng nhận lương",
+	bankAccount: "Số tài khoản ngân hàng",
+	insurance: "Các loại bảo hiểm tham gia",
+	partnerSection: "Chi tiết đối tác / khách hàng (Bên B)",
+	partnerName: "Tên đơn vị đối tác / khách hàng",
+	partnerTaxCode: "Mã số thuế / Số GPKD",
+	partnerRepresentative: "Người đại diện ký kết",
+	partnerRepresentativeRole: "Chức vụ người đại diện",
+	partnerAddress: "Địa chỉ trụ sở chính",
+	paymentMethod: "Phương thức thanh toán",
+	paymentTerms: "Điều khoản thanh toán",
+	billingCycle: "Chu kỳ thanh toán",
+	overtimeSection: "Tuân thủ làm thêm giờ theo Luật Lao động Việt Nam",
+	agreement36: "Áp dụng giới hạn làm thêm giờ (Bộ Luật Lao động Việt Nam)",
+	overtimeAllowance: "Bao gồm phụ cấp làm thêm giờ khoán/gộp sẵn",
+	includedOvertimeHours: "Định mức số giờ OT gộp sẵn / tháng",
+	edmSection: "Bản quét / Tệp đính kèm (EDM)",
+	edmUpload: "Tải lên tệp quét hợp đồng",
+	complianceBadge: "Kiểm soát tuân thủ",
+	complianceTitle: "Đăng ký tuân thủ",
+	complianceDescCreate: "Khi bạn gửi biểu mẫu, hợp đồng sẽ được kiểm tra chéo tự động với danh sách nhân sự hiện hữu để đảm bảo tính pháp lý trước khi lưu trữ.",
+	complianceDescEdit: "Mọi cập nhật thông số hợp đồng (lương, điều khoản làm thêm giờ) sẽ tự động đồng bộ sang bộ máy tính lương và kiểm soát giờ tăng ca.",
+	complianceDescView: "Thông tin chi tiết hợp đồng được hệ thống bảo mật tự động kiểm soát nhằm phòng tránh rủi ro pháp lý và tranh chấp lao động.",
+	viewDetails: "Chi tiết hợp đồng",
+	edmReadonly: "Danh sách tài liệu liên kết được đính kèm với hợp đồng này.",
+	submitContract: "Hoàn tất ký hợp đồng",
+	missingInfo: "Thiếu thông tin",
+	saveSuccess: "Thành công",
+	saveSuccessDesc: "Hợp đồng mới đã được ký kết và tuân thủ hoàn hảo.",
+	updateSuccess: "Thành công",
+	updateSuccessDesc: "Hợp đồng đã được cập nhật tuân thủ thành công.",
+	saveError: "Lỗi ký hợp đồng",
+	updateError: "Lỗi cập nhật hợp đồng",
+	loadError: "Lỗi tải chi tiết hợp đồng",
+	loadingData: "Đang tải dữ liệu hợp đồng...",
+	typeLabor: "Hợp đồng lao động",
+	typeVendor: "Thầu phụ (Vendor)",
+	typeClient: "Khách hàng (Client)",
+	statusActive: "Đang hoạt động (ACTIVE)",
+	statusExpired: "Hết hạn (EXPIRED)",
+	statusTerminated: "Chấm dứt (TERMINATED)",
+	employmentSeishain: "Chính thức (Seishain)",
+	employmentKeiyakushain: "Hợp đồng (Keiyakushain)",
+	employmentHaken: "Phái cử (Haken)",
+	employmentArubaito: "Bán thời gian (Arubaito)",
+	selectMissEmployee: "Vui lòng chọn nhân viên được ký kết hợp đồng.",
+	selectMissPartner: "Vui lòng nhập tên đối tác / đơn vị ký kết.",
+	selectMissPartnerTax: "Vui lòng nhập mã số thuế đối tác.",
+	selectMissValue: "Vui lòng nhập giá trị hợp đồng.",
+	edmUploading: "Đang tải lên các tệp đính kèm...",
+	manageTitle: "Quản Lý Hợp Đồng",
+	manageDesc: "Quản lý và lưu trữ hợp đồng lao động nhân viên và hợp đồng thương mại của doanh nghiệp.",
+	signNew: "Ký hợp đồng mới",
+	quickSign: "Ký nhanh hợp đồng",
+	quickSignSuccess: "Ký hợp đồng thành công. Hợp đồng đã được cập nhật.",
+	typeCommercial: "Hợp đồng thương mại",
+	searchPlaceholder: "Tìm kiếm số HĐ, nhân viên...",
+	typeSelect: "Loại hợp đồng",
+	statusSelect: "Trạng thái",
+	party: "Đối tượng",
+	duration: "Thời hạn",
+	value: "Giá trị",
+	documents: "Tài liệu",
+	actions: "Thao tác",
+	loading: "Đang tải danh sách hợp đồng...",
+	noData: "Không tìm thấy hợp đồng nào phù hợp.",
+	noEmployee: "Chưa phân bổ nhân sự",
+	corporatePartner: "Đối tác Doanh nghiệp",
+	indefinite: "Vô thời hạn",
+	files: "tệp",
+	exportPdf: "Xuất PDF mẫu",
+	exportPdfStyle: "Chọn phong cách xuất hợp đồng PDF",
+	exportPdfDesc: "Chọn một trong các phong cách thiết kế biểu mẫu chuyên nghiệp dưới đây để xuất hợp đồng:",
+	styleClassic: "Truyền thống pháp lý (Classic Style)",
+	selected: "Đang chọn",
+	styleClassicDesc: "Sử dụng phông chữ Serif trang trọng, Quốc hiệu tiêu ngữ chuẩn Bộ Nội vụ Việt Nam, phân chia các Điều khoản bằng đường viền kẻ mảnh thanh lịch.",
+	styleModern: "Doanh nghiệp hiện đại (Modern Style)",
+	styleModernDesc: "Phông chữ Sans-serif hiện đại, phối màu ngọc lục bảo (Emerald Green) chủ đạo, khung điều khoản tuân thủ nổi bật và chữ ký phân chia trực quan.",
+	styleAcademic: "Ấn phẩm thanh lịch (Academic Style)",
+	styleAcademicDesc: "Thiết kế tinh giản phối sắc xanh Navy lịch lãm, lề giấy rộng rãi chuẩn định dạng ấn phẩm cao cấp, lý tưởng cho hợp đồng thương mại lớn.",
+	downloadPdf: "Xuất và Tải xuống PDF",
+	deleteConfirmTitle: "Xóa hợp đồng?",
+	deleteConfirmDesc: "Bạn chắc chắn muốn xóa hợp đồng {code}? Hành động này không thể hoàn tác.",
+	allContracts: "Tất cả hợp đồng",
+	allTypes: "Tất cả loại",
+	statusAll: "Tất cả trạng thái",
+	deleteSuccessDesc: "Hợp đồng đã được xóa khỏi hệ thống.",
+	deleteError: "Lỗi xóa hợp đồng",
+	payBank: "Chuyển khoản ngân hàng",
+	payCash: "Tiền mặt",
+	payCredit: "Thẻ tín dụng",
+	cycleMonthly: "Hàng tháng",
+	cycleQuarterly: "Hàng quý",
+	cycleOneTime: "Một lần",
+	fileTooLarge: "Tệp quá lớn",
+	fileTooLargeDesc: "Tệp {name} vượt quá giới hạn cho phép 10MB.",
+	createSuccess: "Tạo hợp đồng thành công",
+	createSuccessWithDocs: "Tạo hợp đồng và tải chứng từ thành công",
+	createError: "Lỗi khi tạo hợp đồng",
+	downloadPdfSuccess: "Tải tệp PDF thành công",
+	exportPdfError: "Lỗi khi xuất PDF hợp đồng",
+	formatError: "Định dạng tệp không hợp lệ",
+	formatErrorDesc: "Hệ thống chỉ hỗ trợ các định dạng: PDF, DOC, DOCX, JPG, PNG",
+	sizeError: "Kích thước tệp quá lớn",
+	sizeErrorDesc: "Kích thước tệp đính kèm không được vượt quá 10MB",
+	statusPending: "Chờ duyệt (PENDING)",
+	employmentFullTimeVn: "Chính thức (Việt Nam)",
+	employmentPartTimeVn: "Bán thời gian (Việt Nam)",
+	ocrTitle: "Nhập nhanh hợp đồng bằng AI Gemini",
+	ocrDesc: "Tải lên file scan hợp đồng lao động, file ảnh hoặc file excel mẫu để AI tự động điền các trường thông tin hợp đồng.",
+	ocrButton: "Chọn file & Phân tích",
+	ocrLoading: "Gemini AI đang quét tài liệu và phân tích thông tin...",
+	ocrSuccessTitle: "Phân tích hợp đồng thành công",
+	ocrSuccessDesc: "Các thông tin hợp đồng trích xuất được đã điền vào biểu mẫu.",
+	ocrErrorTitle: "Lỗi",
+	ocrErrorDesc: "Không trích xuất được thông tin hợp đồng.",
+	ocrFileTooLarge: "File quá lớn",
+	ocrFileTooLargeDesc: "File \"{name}\" vượt quá giới hạn 10MB.",
+	ocrConnectError: "Không thể kết nối hoặc xử lý hợp đồng."
+};
+var timesheet = {
+	title: "Bảng công cá nhân",
+	desc: "Ghi nhận thời gian làm việc hàng ngày và theo dõi lịch sử chuyên cần của bạn.",
+	standardTimeSystem: "HỆ THỐNG GIỜ CHUẨN",
+	workingTimeVN: "Giờ làm việc Việt Nam",
+	gpsClock: "Giờ đồng hồ GPS độ phân giải cao",
+	todayTracking: "Ghi nhận chấm công hôm nay",
+	trackingDesc: "Nhấn Check-in khi bắt đầu ngày làm việc. Nếu check-in sau 09:00, trạng thái ghi nhận sẽ là đi muộn. Nhấn Check-out trước khi ra về để hoàn tất ghi nhận ngày công.",
+	checkInTime: "Giờ vào",
+	checkOutTime: "Giờ ra",
+	checkedIn: "Đã Check-in",
+	checkedOut: "Đã Check-out",
+	history: "Lịch sử chấm công",
+	historyDesc: "Theo dõi chi tiết các ngày công ghi nhận trong tháng.",
+	selectMonth: "Chọn tháng",
+	noData: "Chưa có dữ liệu chấm công cho tháng này.",
+	success: "Chấm công thành công",
+	checkInSuccess: "Bạn đã check-in thành công hôm nay.",
+	checkOutSuccess: "Bạn đã check-out thành công hôm nay.",
+	multiModalCheckin: "Chấm công đa phương thức",
+	qrTab: "Mã QR Cá Nhân",
+	deviceTab: "Máy Vân Tay & FaceID",
+	qrDesc: "Đưa mã QR cá nhân dưới đây trước camera của máy quét để tự động chấm công.",
+	qrRefreshesIn: "Tự động làm mới sau {seconds} giây",
+	deviceConnected: "Máy quét: ZK-Teco FaceID Pro #01",
+	deviceStatusConnected: "KẾT NỐI",
+	deviceSyncDesc: "Hệ thống tự động đồng bộ dấu vân tay & khuôn mặt mỗi 5 phút.",
+	syncButtonLabel: "Đồng bộ từ thiết bị",
+	syncingText: "Đang kết nối máy chấm công...",
+	syncSuccess: "Đồng bộ thành công! Đã tải và ghi nhận 2 lượt chấm công mới nhất.",
+	simulateQrBtn: "Giả lập máy quét tại VP",
+	simulatingScan: "Đang giả lập camera văn phòng quét mã QR cá nhân của bạn...",
+	alreadyCheckedOut: "Bạn đã hoàn thành chấm công ra/vào hôm nay.",
+	date: "Ngày",
+	status: "Trạng thái",
+	day0: "Chủ Nhật",
+	day1: "Thứ Hai",
+	day2: "Thứ Ba",
+	day3: "Thứ Tư",
+	day4: "Thứ Năm",
+	day5: "Thứ Sáu",
+	day6: "Thứ Bảy",
+	checkIn: "Vào ca",
+	checkOut: "Kết ca",
+	today: "Hôm nay",
+	workingHours: "Số giờ làm việc",
+	overtime: "Tăng ca",
+	manageTitle: "Quản trị chấm công",
+	employee: "Nhân viên",
+	totalHours: "Tổng giờ",
+	overtimeHours: "Giờ tăng ca",
+	lateMins: "Đi muộn (phút)",
+	earlyLeaveMins: "Về sớm (phút)",
+	accessDenied: "Từ chối truy cập",
+	accessDeniedDesc: "Tài khoản của bạn không có vai trò Quản lý hoặc Quản trị viên để thực hiện quản lý chấm công nhân sự.",
+	backHome: "Quay lại Trang chủ",
+	adminTitle: "Quản trị Chấm công Nhân sự",
+	adminDesc: "Kiểm tra, điều chỉnh hoặc thêm mới chấm công thủ công và xem báo cáo tổng hợp chuyên cần của toàn bộ nhân viên.",
+	addManual: "Thêm chấm công thủ công",
+	tabHistory: "Lịch sử Chấm công",
+	tabStats: "Thống kê chuyên cần",
+	tabConfigs: "Cấu hình Giờ làm việc",
+	tabPayroll: "Tính tiền lương",
+	payrollTitle: "Bảng tính tiền lương hàng tháng",
+	payrollDesc: "Xem chi tiết công, tính lương cơ bản, tính tăng ca, các khoản phụ cấp chuyên cần và khấu trừ đi muộn, nghỉ phép.",
+	selectPayrollMonth: "Chọn tháng tính lương",
+	loadingPayroll: "Đang tải bảng tính lương...",
+	noPayrollData: "Không có dữ liệu lương cho tháng này.",
+	baseSalary: "Lương cơ bản",
+	workingDaysActualStandard: "Công (Thực/Chuẩn)",
+	overtimeCol: "Tăng ca (OT)",
+	attendanceAllowance: "Phụ cấp chuyên cần",
+	deductionLate: "Trừ đi muộn",
+	deductionLeave: "Trừ nghỉ không phép",
+	advancePayment: "Đã trả trước",
+	netSalary: "Tổng lương thực nhận (Net)",
+	statusPaid: "Đã thanh toán",
+	statusPending: "Chờ xử lý",
+	payrollDetailsFor: "Bảng lương: {name} ({code})",
+	actualWorkingDays: "Công thực tế",
+	payrollMonth: "Tháng làm việc",
+	overtimeSalary: "Tiền OT",
+	attendanceAllowanceLabel: "PC Chuyên cần",
+	deductionLateLabel: "Trừ đi muộn",
+	deductionLeaveLabel: "Trừ nghỉ K.Phép",
+	deductionUnion: "Đoàn phí công đoàn",
+	deductionTax: "Thuế TNCN",
+	deductionUnionLabel: "Phí công đoàn",
+	deductionTaxLabel: "Thuế TNCN",
+	totalDeductions: "Tổng khấu trừ",
+	deductionInsuranceLabel: "Bảo hiểm (10.5%)",
+	advancePaymentLabel: "Tạm ứng",
+	paymentStatusLabel: "Trạng thái thanh toán",
+	netSalaryLabel: "Thực lĩnh",
+	btnSavePayroll: "Lưu bảng lương",
+	msgSavePayrollSuccess: "Đã lưu thông tin bảng lương nhân viên thành công.",
+	msgSavePayrollError: "Có lỗi xảy ra khi lưu bảng lương.",
+	overtimeBreakdown: "Chi tiết các khoản làm thêm (Tăng ca)",
+	overtimeNormal: "Tăng ca ngày thường (1.5x)",
+	overtimeWeekend: "Cuối tuần (2.0x)",
+	overtimeHoliday: "Ngày lễ, Tết (3.0x)",
+	exportExcelSuccess: "Đã xuất file Excel bảng lương thành công.",
+	exportExcelError: "Có lỗi xảy ra khi xuất file Excel.",
+	exportPdfSuccess: "Đã xuất file PDF bảng lương thành công.",
+	exportPdfError: "Có lỗi xảy ra khi xuất file PDF.",
+	searchKeyword: "Từ khóa tìm kiếm",
+	searchPlaceholder: "Tên hoặc mã nhân viên...",
+	statusAll: "Tất cả trạng thái",
+	statusPresent: "Đúng giờ (PRESENT)",
+	statusLate: "Đi muộn (LATE)",
+	statusAbsent: "Vắng mặt (ABSENT)",
+	fromDate: "Từ ngày",
+	toDate: "Đến ngày",
+	no: "STT",
+	staff: "Nhân sự",
+	dateCol: "Ngày",
+	checkInCol: "Check-in",
+	checkOutCol: "Check-out",
+	expectedWork: "Ca quy định",
+	checkoutDiff: "Chênh lệch ra",
+	statusCol: "Trạng thái",
+	noteCol: "Ghi chú",
+	actionCol: "Thao tác",
+	loadingList: "Đang tải danh sách chấm công...",
+	noHistoryFound: "Không tìm thấy lịch sử chấm công nào phù hợp với bộ lọc.",
+	editOrCompensate: "Sửa / Bù công",
+	showLines: "Hiển thị {current}/{total} dòng",
+	monthStats: "Thống kê chuyên cần tháng",
+	monthStatsDesc: "Tổng hợp số liệu ngày công đi làm, muộn, vắng mặt của toàn bộ nhân viên.",
+	selectStatsMonth: "Chọn tháng thống kê",
+	statsSummary: "Thống kê tổng hợp",
+	stats30Days: "Chi tiết lịch 30 ngày",
+	loadingStats: "Đang tính toán số liệu thống kê...",
+	noEmployeeMonth: "Không tìm thấy nhân viên nào trong tháng được chọn.",
+	staffCode: "Mã NV",
+	staffName: "Tên Nhân viên",
+	onTime: "Đúng Giờ",
+	lateCol: "Đi Muộn",
+	lateHoursPenalty: "Giờ muộn phạt",
+	excusedLeave: "Nghỉ có phép",
+	absentNoExcuse: "Vắng KP",
+	totalAbsent: "Tổng Vắng",
+	workingDaysMax: "Ngày đi làm / Tối đa",
+	otHours: "OT (giờ)",
+	hours: "giờ",
+	days: "ngày",
+	mins: "phút",
+	times: "lần",
+	statsCalendarFor: "Xem lịch chi tiết cho nhân viên",
+	legendLateEarly: "Muộn / Về sớm",
+	legendMissInOut: "Thiếu check-in/out",
+	legendWeekendHoliday: "Cuối tuần / Lễ",
+	legendOnTime: "Đúng giờ",
+	weekend: "Cuối tuần",
+	holiday: "Nghỉ lễ",
+	excusedLeaveAll: "Nghỉ phép cả ngày",
+	excusedLeaveMorning: "Nghỉ phép sáng",
+	excusedLeaveAfternoon: "Nghỉ phép chiều",
+	missCheck: "Thiếu Check",
+	configTitle: "Cấu hình Giờ làm việc",
+	configDesc: "Thiết lập khung giờ chấm công chuẩn theo từng khoảng thời gian linh hoạt.",
+	addConfig: "Thêm cấu hình",
+	loadingConfigs: "Đang tải danh sách...",
+	noConfigsYet: "Chưa có cấu hình giờ làm việc nào được tạo.",
+	defaultSystem: "Mặc định hệ thống",
+	flexible: "Linh hoạt",
+	applyAllTime: "Áp dụng: Toàn bộ thời gian (Fallback)",
+	applyRange: "Áp dụng: {start} ~ {end}",
+	standardIn: "Giờ vào chuẩn",
+	standardOut: "Giờ ra chuẩn",
+	saturday: "Thứ 7",
+	saturdayOff: "Nghỉ Thứ 7",
+	saturdayMorning: "Làm sáng Thứ 7 (đến 12:00)",
+	saturdayFull: "Làm cả ngày Thứ 7",
+	editConfig: "Chỉnh sửa",
+	deleteConfig: "Xóa cấu hình",
+	dialogManualEdit: "Cập nhật Chấm công / Bù giờ",
+	dialogManualCreate: "Thêm Chấm công Thủ công",
+	employeeLabel: "Nhân viên",
+	employeeSelectPlaceholder: "Chọn nhân sự",
+	attendanceDate: "Ngày chấm công",
+	selectDate: "Chọn ngày",
+	checkInLabel: "Giờ Check-in",
+	checkInPlaceholder: "Chọn giờ vào",
+	checkOutLabel: "Giờ Check-out",
+	checkOutPlaceholder: "Chọn giờ ra",
+	statusLabel: "Trạng thái ghi nhận",
+	noteLabel: "Lý do / Ghi chú bổ sung",
+	notePlaceholder: "Nhập lý do điều chỉnh hoặc bù công...",
+	btnCancel: "Hủy",
+	btnSaveRecord: "Lưu bản ghi",
+	dialogConfigEdit: "Chỉnh sửa Cấu hình Giờ làm việc",
+	dialogConfigCreate: "Thêm Cấu hình Giờ làm việc",
+	configName: "Tên cấu hình",
+	configNamePlaceholder: "e.g. Giờ làm việc mùa hè",
+	setDefaultConfig: "Đặt làm cấu hình mặc định",
+	setDefaultConfigDesc: "Hệ thống sẽ dùng cấu hình này nếu không có khoảng thời gian nào khớp.",
+	saturdayWorkingMode: "Chế độ làm việc ngày Thứ 7",
+	saturdayWorkingModeDesc: "Áp dụng tính công và kiểm soát đi muộn cho ngày Thứ 7.",
+	valMissManualData: "Thiếu dữ liệu",
+	valMissManualDataDesc: "Vui lòng chọn nhân viên và ngày chấm công.",
+	msgUpdateSuccess: "Cập nhật thành công",
+	msgUpdateSuccessDesc: "Bản ghi chấm công đã được lưu thành công.",
+	valInvalidConfig: "Thông tin không hợp lệ",
+	valInvalidConfigDesc: "Vui lòng điền đầy đủ tên cấu hình và khoảng giờ làm việc.",
+	msgSaveConfigSuccess: "Đã lưu cấu hình giờ làm việc.",
+	msgDeleteConfigConfirm: "Bạn có chắc chắn muốn xóa cấu hình giờ làm việc này?",
+	msgDeleteConfigSuccess: "Đã xóa cấu hình thành công.",
+	tabShifts: "Ca làm việc",
+	tabShiftAssignments: "Phân ca nhân viên",
+	shiftTitle: "Danh sách Ca làm việc",
+	shiftDesc: "Thiết lập các ca làm việc khác nhau cho nhân viên và cấu hình điều kiện tính tăng ca.",
+	addShift: "Thêm ca làm việc",
+	dialogShiftCreate: "Thêm Ca Làm Việc Mới",
+	dialogShiftEdit: "Chỉnh Sửa Ca Làm Việc",
+	shiftName: "Tên ca làm việc",
+	shiftNamePlaceholder: "Ví dụ: Ca hành chính, Ca tối...",
+	allowOvertime: "Cho phép tính tăng ca",
+	maxOvertimeHours: "Số giờ tăng ca tối đa",
+	maxOvertimeHoursPlaceholder: "Số giờ (e.g. 2), để trống nếu không giới hạn",
+	shiftAssignedSuccess: "Đã phân ca cho nhân viên thành công.",
+	deleteShiftConfirm: "Bạn có chắc chắn muốn xóa ca làm việc này? Tất cả dữ liệu phân ca liên quan sẽ bị xóa.",
+	deleteShiftSuccess: "Đã xóa ca làm việc thành công.",
+	assignShift: "Phân ca cho nhân viên",
+	employeeSelect: "Chọn nhân viên",
+	datesSelect: "Chọn ngày phân ca",
+	selectShift: "Chọn ca làm việc",
+	btnAssign: "Phân ca",
+	assignedShiftsList: "Bảng phân ca nhân viên",
+	noAssignedShifts: "Chưa có nhân sự nào được phân ca trong khoảng thời gian này.",
+	deleteAssignmentConfirm: "Bạn có chắc chắn muốn xóa phân ca này?",
+	deleteAssignmentSuccess: "Đã xóa phân ca thành công.",
+	overtimeStatus: "Tăng ca",
+	overtimeAllowed: "Cho phép",
+	overtimeNotAllowed: "Không cho phép",
+	overtimeAllowedWithMax: "Cho phép (Tối đa {hours} giờ)",
+	leave: "Nghỉ",
+	resetDefault: "Khôi phục ca mặc định",
+	assignShiftsTitle: "Bảng Phân ca & Tăng ca Nhân viên",
+	assignShiftsDesc: "Quản lý ca làm việc linh hoạt, tăng ca và đồng bộ thông tin nghỉ phép hàng tháng.",
+	bulkActions: "Hành động hàng loạt",
+	selectedEmployees: "Đã chọn: {count} nhân viên",
+	bulkAssignBtn: "Phân ca hàng loạt",
+	bulkResetBtn: "Reset ca hàng loạt",
+	legendTitle: "Ký hiệu phân ca:",
+	legendAL: "Nghỉ phép năm",
+	legendSL: "Nghỉ ốm",
+	legendOT: "Cho phép tăng ca",
+	legendNoOT: "Không tăng ca",
+	legendOff: "Ngày nghỉ / Cuối tuần",
+	loadingAssignData: "Đang tải dữ liệu phân ca...",
+	noEmployeesFound: "Không tìm thấy nhân viên nào",
+	employeeHeader: "Nhân viên",
+	departmentHeader: "Bộ phận",
+	monthAssign: "Tháng phân ca",
+	allDepartments: "Tất cả phòng ban",
+	searchEmployee: "Tìm kiếm nhân viên",
+	searchEmployeePlaceholder: "Tên, mã nhân viên...",
+	w0: "CN",
+	w1: "T2",
+	w2: "T3",
+	w3: "T4",
+	w4: "T5",
+	w5: "T6",
+	w6: "T7",
+	selectAtLeastOneEmployee: "Vui lòng chọn ít nhất một nhân viên",
+	selectShiftError: "Vui lòng chọn ca làm việc",
+	selectDateRangeError: "Vui lòng chọn khoảng thời gian",
+	selectAtLeastOneWeekdayAssign: "Vui lòng chọn ít nhất một ngày trong tuần để áp dụng",
+	selectAtLeastOneWeekdayReset: "Vui lòng chọn ít nhất một ngày trong tuần để reset",
+	bulkAssignSuccess: "Phân ca hàng loạt thành công",
+	bulkResetSuccess: "Reset ca làm việc hàng loạt thành công",
+	dialogBulkAssignHeader: "Phân ca làm việc hàng loạt",
+	dialogBulkAssignWarningPrefix: "Bạn đang thiết lập ca làm việc cho",
+	dialogBulkAssignWarningSuffix: "nhân viên đã chọn.",
+	dialogBulkResetHeader: "Khôi phục ca mặc định hàng loạt",
+	dialogBulkResetWarningPrefix: "Hành động này sẽ khôi phục lịch làm việc của",
+	dialogBulkResetWarningSuffix: "nhân viên về ca mặc định của hệ thống trong khoảng thời gian đã chọn.",
+	applyToWeekdays: "Áp dụng cho các ngày trong tuần",
+	confirm: "Xác nhận",
+	msgResetShiftDefault: "Đã reset ca làm việc của {name} về mặc định",
+	msgSelectShift: "Vui lòng chọn ca làm việc",
+	msgSelectDateRange: "Vui lòng chọn khoảng thời gian",
+	msgSelectWeekday: "Vui lòng chọn ít nhất một ngày trong tuần",
+	msgSelectEmployee: "Vui lòng chọn ít nhất một nhân viên",
+	msgSetShiftSuccess: "Thiết lập ca làm việc thành công",
+	msgResetDefaultSuccess: "Khôi phục ca mặc định thành công",
+	msgSelectWeekdayAssign: "Vui lòng chọn ít nhất một ngày trong tuần để áp dụng",
+	msgSelectWeekdayReset: "Vui lòng chọn ít nhất một ngày trong tuần để reset",
+	msgPayrollLoadError: "Không thể tải dữ liệu bảng lương",
+	msgPayrollSaveSuccess: "Cập nhật bảng lương thành công",
+	msgPayrollSaveError: "Lỗi lưu thông tin bảng lương",
+	msgExportExcelError: "Không thể xuất file Excel",
+	msgExportPdfError: "Không thể xuất file PDF",
+	msgSaveManualSuccess: "Lưu chấm công thành công",
+	insuranceLabel: "Bảo hiểm (10.5%)",
+	otNormal: "T.Thường:",
+	otWeekend: "C.Tuần:",
+	otHoliday: "Lễ:",
+	total: "Tổng:",
+	socialInsurance: "BHXH:",
+	healthInsurance: "BHYT:",
+	unemploymentInsurance: "BHTN:",
+	payrollAdjustmentInfo: "Thông tin điều chỉnh lương",
+	standardWorkingDays: "Công chuẩn",
+	otNormalHours: "OT Thường (giờ)",
+	otWeekendHours: "OT Cuối tuần (giờ)",
+	otHolidayHours: "OT Lễ Tết (giờ)",
+	dependents: "Người phụ thuộc",
+	taxAndNetSalaryDetails: "Chi tiết thuế & Thực nhận",
+	dailyRate: "Đơn giá ngày công",
+	dayUnit: "ngày",
+	overtimePay: "Tiền OT làm thêm giờ",
+	otNormalRate: "Ngày thường (1.5x)",
+	otWeekendRate: "Cuối tuần (2.0x)",
+	otHolidayRate: "Lễ Tết (3.0x)",
+	attendanceDeduction: "Khấu trừ chuyên cần/nghỉ phép",
+	grossSalary: "Lương GROSS",
+	insuranceDeduction: "Bảo hiểm bắt buộc (10.5%)",
+	socialInsuranceDeduction: "Bảo hiểm xã hội (8%)",
+	healthInsuranceDeduction: "Bảo hiểm y tế (1.5%)",
+	unemploymentInsuranceDeduction: "Bảo hiểm thất nghiệp (1%)",
+	incomeBeforeTax: "Thu nhập trước thuế",
+	progressivePit: "Thuế TNCN lũy tiến",
+	selfDeduction: "Giảm trừ bản thân",
+	dependentDeduction: "Giảm trừ người phụ thuộc",
+	personUnit: "người",
+	taxableIncome: "Thu nhập tính thuế",
+	unionAndAdvance: "Đoàn phí & Tạm ứng"
+};
+var leaveRequest = {
+	title: "Đơn xin nghỉ phép",
+	pendingTitle: "Phê duyệt nghỉ phép",
+	startDate: "Ngày bắt đầu",
+	endDate: "Ngày kết thúc",
+	reason: "Lý do",
+	type: "Loại nghỉ phép",
+	status: "Trạng thái",
+	approver: "Người phê duyệt",
+	approvedAt: "Ngày phê duyệt",
+	rejectedAt: "Ngày từ chối",
+	accessDenied: "Từ chối truy cập",
+	accessDeniedDesc: "Tài khoản của bạn không có vai trò Quản lý hoặc Quản trị viên để thực hiện phê duyệt đơn xin nghỉ phép.",
+	backToHome: "Quay lại Trang chủ",
+	panelDesc: "Xem xét, phê duyệt hoặc từ chối các đơn xin nghỉ phép đang chờ xử lý của nhân viên.",
+	tabAll: "Tất cả",
+	tabPending: "Chờ duyệt",
+	tabApproved: "Đã duyệt",
+	tabRejected: "Đã từ chối",
+	noRequest: "Hiện không có đơn xin nghỉ phép nào.",
+	noRequestWithStatus: "Không có đơn nghỉ phép nào ở trạng thái \"{status}\".",
+	searchEmployeePlaceholder: "Tìm tên, mã nhân viên...",
+	typeSelect: "Chọn loại nghỉ...",
+	allDay: "Cả ngày",
+	morning: "Nghỉ Sáng",
+	afternoon: "Nghỉ Chiều",
+	days: "ngày",
+	noReason: "Không có lý do",
+	dialogApproveTitle: "Phê duyệt đơn nghỉ phép",
+	dialogRejectTitle: "Từ chối đơn nghỉ phép",
+	employee: "Nhân viên",
+	approverNote: "Phản hồi / Ghi chú phê duyệt",
+	approverNotePlaceholder: "Nhập ý kiến phản hồi gửi tới nhân viên (không bắt buộc)...",
+	confirmApprove: "Xác nhận Duyệt",
+	confirmReject: "Xác nhận Từ chối",
+	processSuccess: "Xử lý thành công",
+	approveSuccessDesc: "Đã duyệt đơn phép thành công.",
+	rejectSuccessDesc: "Đã từ chối đơn phép thành công.",
+	stt: "STT",
+	timeRange: "Thời gian nghỉ",
+	system: "Hệ thống",
+	typeAnnual: "Nghỉ phép năm",
+	typeSick: "Nghỉ ốm",
+	typeSpecial: "Nghỉ đặc biệt",
+	typeUnpaid: "Nghỉ không lương",
+	desc: "Đăng ký nghỉ phép trực tuyến và theo dõi lịch sử phê duyệt của bạn.",
+	attachment: "Tài liệu đính kèm",
+	uploadInstructions: "Kéo thả hoặc nhấp để chọn tệp",
+	attachmentCol: "Tài liệu",
+	noAttachment: "Không có tài liệu",
+	viewAttachment: "Xem tài liệu đính kèm",
+	attachmentPlaceholder: "Chọn tệp hỗ trợ (Đơn khám bệnh, vé tàu...)",
+	fileSizeLimitError: "Kích thước tệp vượt quá giới hạn 10MB.",
+	myList: "Danh sách phép của tôi",
+	myListDesc: "Lịch sử và trạng thái các đơn xin nghỉ phép đã nộp.",
+	noMyRequest: "Bạn chưa tạo bất kỳ đơn xin nghỉ phép nào.",
+	createDesc: "Đăng ký ngày xin nghỉ gửi tới cấp trên.",
+	session: "Buổi nghỉ",
+	reasonPlaceholder: "Vui lòng nêu rõ lý do nghỉ phép...",
+	submit: "Gửi yêu cầu",
+	detailTitle: "Chi tiết đơn xin nghỉ phép",
+	code: "Mã đơn phép",
+	totalDays: "Tổng số ngày",
+	period: "Khoảng thời gian",
+	approverFeedback: "Ý kiến phản hồi từ người duyệt",
+	noFeedback: "Không có ghi chú phản hồi",
+	morningSession: "Buổi sáng (Nghỉ 8:30 - 12:00)",
+	afternoonSession: "Buổi chiều (Nghỉ 13:15 - 17:30)",
+	valIncomplete: "Thông tin không đầy đủ",
+	valIncompleteDesc: "Vui lòng chọn loại phép, ngày bắt đầu và kết thúc.",
+	submitSuccess: "Gửi đơn phép thành công",
+	submitSuccessDesc: "Đơn xin nghỉ phép của bạn đã được gửi cho quản lý.",
+	from: "Từ",
+	to: "Đến",
+	uploadFormats: "PDF, DOC, DOCX, ZIP hoặc ảnh (Tối đa 10MB)",
+	hasAttachment: "Có tài liệu đính kèm"
+};
+var compliance = {
+	title: "Kiểm soát Tuân thủ",
+	summary: "Tổng quan tuân thủ",
+	riskLevel: "Mức độ rủi ro",
+	violations: "Vi phạm",
+	warnings: "Cảnh báo",
+	centerTitle: "Trung Tâm Cảnh Báo Tuân Thủ",
+	centerDesc: "Quét tự động & cảnh báo sớm các rủi ro pháp lý (Visa, Hợp đồng, Thuế khóa, Tăng ca quá giờ).",
+	btnScan: "Quét Tuân Thủ Real-time",
+	scanning: "Đang quét...",
+	healthScore: "Điểm số sức khỏe tuân thủ",
+	healthScoreDesc: "Được đánh giá dựa trên mức độ nghiêm trọng của các rủi ro hiện hữu trong hệ thống.",
+	recommendation: "Khuyến nghị",
+	healthExcellent: "Tuyệt vời (Hợp chuẩn)",
+	healthFair: "Khá (Rủi ro trung bình)",
+	healthAlarm: "Báo động (Rủi ro cao)",
+	recExcellent: "Tiếp tục duy trì quy trình kiểm soát.",
+	recFair: "Cần khắc phục ngay các rủi ro loại WARNING.",
+	recAlarm: "Xử lý khẩn cấp các lỗi CRITICAL để tránh phạt pháp lý.",
+	criticalRisk: "Nguy cơ Chí mạng",
+	criticalDesc: "CRITICAL / Yêu cầu xử lý gấp",
+	warningRisk: "Cảnh báo rủi ro",
+	warningDesc: "WARNING / Cần bổ sung & lưu tâm",
+	resolvedRisk: "Đã tự động khắc phục",
+	resolvedDesc: "TỰ ĐỘNG CHỮA LÀNH / SELF-HEALED",
+	criticalTitle: "NGUY CƠ CHÍ MẠNG (CRITICAL)",
+	btnActNow: "Xử lý ngay",
+	tabActiveRisks: "Rủi ro Hiện hữu",
+	tabResolvedHistory: "Lịch sử giải quyết",
+	searchPlaceholder: "Tìm kiếm nội dung vi phạm...",
+	severityPlaceholder: "Mức độ nghiêm trọng",
+	typePlaceholder: "Phân loại rủi ro",
+	tooltipRefresh: "Làm mới",
+	colSeverity: "Mức độ",
+	colType: "Phân loại",
+	colDescription: "Nội dung chi tiết vi phạm",
+	colEntity: "Đối tượng phát hiện",
+	colStatus: "Trạng thái",
+	colAction: "Hành động khắc phục",
+	loading: "Đang phân tích rủi ro tuân thủ...",
+	noDataTitle: "Tuyệt vời! Không phát hiện rủi ro tuân thủ nào.",
+	noDataDesc: "Hệ thống của bạn đang hoạt động tuân thủ hoàn hảo.",
+	sevCritical: "Chí mạng",
+	sevWarning: "Cảnh báo",
+	sevInfo: "Thẩm định",
+	sevAll: "Tất cả mức độ",
+	statusOpen: "Chưa giải quyết",
+	statusResolved: "Đã giải quyết",
+	resolvedBy: "Bởi",
+	btnResolve: "Khắc phục",
+	tooltipManualResolve: "Giải quyết thủ công",
+	dialogResolveTitle: "Xác nhận giải quyết vi phạm",
+	dialogResolveHeader: "Giải quyết cảnh báo tuân thủ",
+	dialogResolveDesc: "Bạn đang đánh dấu cảnh báo này là Đã được giải quyết trong hệ thống kiểm tra.",
+	dialogResolveNote: "Ghi chú giải trình (Bắt buộc)",
+	dialogResolvePlaceholder: "Nhập ghi chú hoặc lý do giải quyết rủi ro này...",
+	btnCancel: "Hủy",
+	btnConfirmResolve: "Xác nhận Giải quyết",
+	typeVisa: "Hạn thẻ ngoại kiều",
+	typeContract: "Hết hạn hợp đồng",
+	typeInvoice: "Thiếu hóa đơn/chứng từ",
+	typeOvertime: "Làm thêm giờ quá giới hạn",
+	typeAll: "Tất cả phân loại",
+	typeVisaExpiration: "Hết hạn Visa (VISA)",
+	typeContractExpiration: "Hết hạn Hợp đồng (CONTRACT)",
+	typeMissingInvoice: "Thiếu Hóa đơn/Chứng từ (INVOICE)",
+	typeOvertimeLimit: "Tăng ca quá giới hạn (OVERTIME)",
+	msgScanSuccess: "Quét tuân thủ hoàn tất",
+	msgScanSuccessDesc: "Bộ máy kiểm soát đã quét xong. Phát hiện mới: {created} rủi ro, tự động chữa lành: {resolved} rủi ro.",
+	msgScanError: "Quét tuân thủ thất bại",
+	msgScanErrorDesc: "Lỗi kết nối bộ máy quét.",
+	msgActError: "Không thể xác định đường dẫn khắc phục cho loại cảnh báo này.",
+	msgResolveSuccess: "Khắc phục thành công",
+	msgResolveSuccessDesc: "Cảnh báo vi phạm tuân thủ đã được giải quyết.",
+	msgResolveError: "Thao tác thất bại",
+	msgResolveErrorDesc: "Không thể giải quyết cảnh báo."
+};
+var dashboard = {
+	title: "Bảng điều khiển",
+	welcome: "Chào mừng trở lại",
+	totalEmployees: "Tổng nhân viên",
+	totalContracts: "Tổng hợp đồng",
+	totalTransactions: "Tổng giao dịch",
+	pendingLeaves: "Nghỉ phép chờ duyệt",
+	complianceBannerTitle: "HỆ THỐNG PHÁT HIỆN VI PHẠM PHÁP LÝ",
+	complianceBannerDesc: "Cảnh báo: Phát hiện {count} rủi ro CHÍ MẠNG (Visa sắp hết hạn, vượt hạn mức tăng ca hoặc thiếu hóa đơn giao dịch). Nhấp để khắc phục tự động!",
+	enterpriseDashboard: "Bảng Điều Khiển Doanh Nghiệp",
+	welcomeUser: "Xin chào, {name}. Đây là phân tích tổng hợp dữ liệu thực từ các phòng ban.",
+	admin: "Quản trị viên",
+	fiscalYear: "Niên độ tài khóa",
+	btnComplianceControl: "Kiểm soát Tuân thủ",
+	revenueYearBadge: "NĂM CÓ THU",
+	revenueYearTitle: "Doanh thu tài khóa",
+	expenseYearBadge: "NĂM CHI TIÊU",
+	expenseYearTitle: "Chi phí vận hành",
+	netIncomePositive: "DƯƠNG VỐN",
+	netIncomeNegative: "THÂM HỤT",
+	netIncomeTitle: "Lợi nhuận thuần ròng",
+	complianceScoreTitle: "Chỉ số tuân thủ pháp lý",
+	compCompliant: "HỢP CHUẨN",
+	compWarning: "CẢNH BÁO",
+	compDanger: "NGUY HIỂM",
+	activeEmployees: "Nhân viên hiện diện",
+	employeesCount: "{active} / {total} Nhân sự",
+	activeContracts: "Hợp đồng hiệu lực",
+	contractsCount: "{active} / {total} Hợp đồng",
+	pendingLeavesCount: "{count} Yêu cầu",
+	cashflowTitle: "Dòng Tiền Thu Chi Năm {year}",
+	cashflowDesc: "Xu hướng tăng trưởng và phát sinh chi phí thực tế theo tháng",
+	optRevenue: "Doanh Thu",
+	optExpense: "Chi Phí",
+	optProfit: "Lợi Nhuận",
+	contractStructure: "Cơ Cấu Hợp Đồng",
+	contractStructureDesc: "Tỷ lệ phân chia giữa các loại hình hợp đồng",
+	topExpenses: "Top Danh Mục Chi Tiêu",
+	topExpensesDesc: "Các khoản chi phát sinh nhiều nhất trong niên độ",
+	staffDensity: "Mật Độ Nhân Sự Theo Phòng Ban",
+	staffDensityDesc: "Tỉ trọng lực lượng lao động được phân bổ",
+	timesheetStat: "Thống Kê Công & Tăng Ca Tháng Này",
+	timesheetStatDesc: "Giám sát số ngày công, tổng giờ làm và giờ tăng ca thực tế",
+	btnTimesheetDetail: "Chi tiết Chấm công",
+	colEmpCode: "Mã NV",
+	colEmpName: "Nhân viên",
+	colPresent: "Có mặt",
+	colAbsent: "Vắng",
+	colTotalHours: "Tổng giờ",
+	colOvertime: "Tăng ca",
+	colOtStatus: "Trạng thái OT",
+	otOverLimit: "Vượt giới hạn tăng ca!",
+	otWarning: "Vượt mốc Cảnh báo",
+	otApproaching: "Tiệm cận Cảnh báo",
+	otSafe: "An toàn",
+	noTimesheetData: "Không có dữ liệu chấm công phát sinh trong tháng này.",
+	recentTransactions: "Phát Sinh Giao Dịch Gần Đây",
+	recentTransactionsDesc: "Lịch sử thu chi tài chính thời gian thực mới nhất",
+	btnCashbook: "Sổ quỹ",
+	unclassified: "Không phân loại",
+	noTransactions: "Chưa có giao dịch tài chính phát sinh.",
+	msgConnectError: "Lỗi kết nối",
+	msgSyncError: "Không thể đồng bộ dữ liệu Bảng điều khiển.",
+	ageDemographics: "Phân bố Độ tuổi Nhân sự",
+	ageDemographicsDesc: "Tỷ lệ nhân viên theo nhóm tuổi trong doanh nghiệp",
+	genderDemographics: "Cơ cấu Giới tính Nhân sự",
+	genderDemographicsDesc: "Tỷ lệ giới tính nam, nữ trong doanh nghiệp"
+};
+var transaction = {
+	title: "Dòng Tiền & Chi Phí",
+	desc: "Quản lý các khoản Thu/Chi thực tế và giám sát tiến trình đính kèm chứng từ (Hóa đơn/Ủy nhiệm chi).",
+	addBtn: "Thêm giao dịch mới",
+	totalRevenue: "Doanh thu thực nhận",
+	totalExpense: "Chi phí thực chi",
+	netBalance: "Dòng tiền thuần (Net Cash)",
+	complianceRate: "Tỷ lệ đủ chứng từ chi",
+	tabAll: "Tất cả thu chi",
+	tabExpense: "Khoản chi thực tế",
+	tabRevenue: "Dòng doanh thu",
+	searchPlaceholder: "Mã giao dịch, danh mục...",
+	type: "Loại giao dịch",
+	status: "Trạng thái",
+	compliance: "Hồ sơ pháp lý",
+	refresh: "Làm mới",
+	allTypes: "Tất cả loại",
+	expense: "Khoản Chi (EXPENSE)",
+	revenue: "Khoản Thu (REVENUE)",
+	allStatus: "Tất cả trạng thái",
+	paid: "Đã thanh toán",
+	pending: "Chờ xử lý",
+	cancelled: "Đã hủy",
+	allDocs: "Tất cả tài liệu",
+	hasDocs: "Có đủ chứng từ",
+	missingDocs: "Thiếu chứng từ chi",
+	dateCol: "Ngày",
+	codeCol: "Mã GD",
+	typeCol: "Loại",
+	categoryCol: "Danh mục",
+	amountCol: "Số tiền (Tổng)",
+	taxCol: "Thông tin Thuế / Mã hóa đơn",
+	paymentCol: "Thanh toán",
+	documentCol: "Tài liệu pháp lý",
+	actionCol: "Thao tác",
+	loading: "Đang tải dữ liệu dòng tiền...",
+	noData: "Không tìm thấy giao dịch nào phù hợp.",
+	revenueShort: "Thu",
+	expenseShort: "Chi",
+	original: "Gốc",
+	files: "tệp",
+	missingDocsAlert: "THIẾU CHỨNG TỪ",
+	editTooltip: "Sửa giao dịch",
+	deleteTooltip: "Xóa giao dịch",
+	dialogDeleteTitle: "Xác nhận xóa giao dịch",
+	dialogDeleteConfirm: "Xóa giao dịch tài chính?",
+	dialogDeleteDesc: "Bạn chắc chắn muốn xóa giao dịch {code} hạng mục {category}? Hành động này sẽ cập nhật lại dòng tiền và không thể khôi phục.",
+	btnCancel: "Hủy",
+	btnConfirmDelete: "Xác nhận xóa",
+	dialogDocTitle: "Tài liệu chứng từ giao dịch — {code}",
+	errorLoad: "Lỗi tải dòng tiền",
+	errorLoadDesc: "Không thể tải danh sách giao dịch",
+	msgDeleteSuccess: "Xóa giao dịch thành công",
+	msgDeleteSuccessDesc: "Khoản thu chi đã được giải tỏa.",
+	msgDeleteFailed: "Thao tác thất bại",
+	msgDeleteFailedDesc: "Không thể xóa giao dịch.",
+	statusPaid: "Đã Chi/Đủ",
+	statusPending: "Chờ thanh toán",
+	statusCancelled: "Đã hủy",
+	noTax: "Không thuế (0%)",
+	bankTransfer: "Chuyển khoản",
+	cash: "Tiền mặt",
+	creditCard: "Thẻ tín dụng",
+	subtitle: "Kế toán & Dòng tiền",
+	createTitle: "Ghi Nhận Giao Dịch Mới",
+	editTitle: "Chỉnh Sửa Giao Dịch",
+	infoSection: "Thông tin giao dịch & Thanh toán",
+	code: "Mã giao dịch",
+	amount: "Tổng số tiền (Đã gồm thuế)",
+	date: "Ngày giao dịch",
+	codeAutoGenerate: "Tự động phát sinh mã",
+	category: "Hạng mục",
+	paymentMethod: "Phương thức thanh toán",
+	amountSection: "Giá trị giao dịch & Tính toán thuế",
+	netAmount: "Giá trị gốc (Trước thuế)",
+	taxAmount: "Tiền thuế phát sinh",
+	withholdingTax: "Thuế khấu trừ tại nguồn (nếu có)",
+	invoiceNumber: "Mã số thuế / Số hóa đơn",
+	invoiceError: "Mã Qualified Invoice của Nhật phải bắt đầu bằng chữ T và gồm đúng 13 chữ số.",
+	descriptionSection: "Nội dung / Diễn giải chi tiết",
+	descriptionPlaceholder: "Nhập diễn giải chi tiết cho giao dịch (mục đích, nhà cung cấp, nội dung)...",
+	saveTransaction: "Ghi nhận giao dịch",
+	attachSection: "Hóa đơn & Chứng từ đính kèm",
+	attachRequired: "Bắt buộc",
+	attachDesc: "Vui lòng đính kèm hóa đơn điện tử, ủy nhiệm chi hoặc chứng từ hợp lệ.",
+	uploadFile: "Chọn tệp hoặc kéo thả vào đây",
+	uploadFormats: "Hỗ trợ định dạng: PDF, DOC, DOCX, XLS, XLSX, PNG, JPG, JPEG (tối đa 10MB)",
+	taxRate: "Thuế suất áp dụng",
+	valMissInfo: "Thiếu thông tin",
+	valMissInfoDesc: "Vui lòng điền đầy đủ các trường bắt buộc.",
+	valMissDocs: "Thiếu chứng từ pháp lý",
+	valMissDocsDesc: "Doanh nghiệp bắt buộc phải đính kèm chứng từ (Hóa đơn/UNC) cho các khoản chi phí để đảm bảo tuân thủ pháp luật thuế.",
+	valInvalidInvoice: "Lỗi định dạng",
+	valInvalidInvoiceDesc: "Mã Qualified Invoice của Nhật phải bắt đầu bằng chữ T và gồm đúng 13 chữ số.",
+	msgSaveSuccess: "Đã lưu giao dịch",
+	msgSaveSuccessDesc: "Giao dịch và chứng từ đính kèm đã được cập nhật.",
+	msgSaveSuccessShort: "Giao dịch đã được ghi nhận.",
+	msgSaveFailed: "Lưu giao dịch thất bại",
+	msgSaveFailedDesc: "Lỗi ghi nhận",
+	catSalary: "Tiền lương nhân sự (Salary)",
+	catOfficeRent: "Thuê văn phòng (Office Rent)",
+	catUtilities: "Điện nước & Internet (Utilities)",
+	catOutsourcing: "Chi phí thầu phụ (Outsourcing Cost)",
+	catSoftware: "Công cụ & Phần mềm (Software & SaaS)",
+	catTravel: "Chi phí đi lại (Travel Expense)",
+	catMarketing: "Quảng cáo & Marketing (Marketing & Ads)",
+	catClientRevenue: "Doanh thu khách hàng (Client Revenue)",
+	catConsulting: "Phí tư vấn dịch vụ (Consulting Fee)",
+	catOthers: "Chi phí khác (Others)",
+	selectType: "Chọn phân loại",
+	selectCategory: "Chọn hạng mục",
+	selectMethod: "Chọn phương thức",
+	selectStatus: "Chọn trạng thái",
+	selectTax: "Chọn loại thuế suất",
+	categorySalary: "Tiền lương nhân sự",
+	categoryRent: "Thuê văn phòng",
+	categoryUtilities: "Điện nước & Internet",
+	categoryOutsourcing: "Chi phí thầu phụ",
+	categorySoftware: "Công cụ & Phần mềm",
+	categoryTravel: "Chi phí đi lại",
+	categoryMarketing: "Quảng cáo & Marketing",
+	categoryRevenue: "Doanh thu khách hàng",
+	categoryConsulting: "Phí tư vấn dịch vụ",
+	categoryOthers: "Chi phí khác",
+	edmSection: "Bản quét / Tệp đính kèm (EDM)",
+	edmDesc: "Đính kèm hóa đơn điện tử, chứng từ thanh toán hợp lệ",
+	edmRequired: "Yêu cầu chứng từ",
+	loadError: "Lỗi tải thông tin giao dịch",
+	loadingData: "Đang tải thông tin giao dịch...",
+	methodBankTransfer: "Chuyển khoản ngân hàng",
+	methodCash: "Tiền mặt",
+	methodCreditCard: "Thẻ tín dụng",
+	missingEvidence: "Thiếu chứng từ pháp lý",
+	missingEvidenceDesc: "Giao dịch chi phí bắt buộc phải có hóa đơn hoặc chứng từ đính kèm.",
+	saveChanges: "Lưu thay đổi",
+	saveError: "Lỗi khi lưu giao dịch",
+	taxCt10Jp: "Tiêu dùng Nhật Bản 10%",
+	taxCt8Jp: "Tiêu dùng Nhật Bản 8%",
+	taxNone: "Không áp dụng thuế (0%)",
+	taxVat10Vn: "VAT Việt Nam 10%",
+	taxVat8Vn: "VAT Việt Nam 8%",
+	typeExpense: "Khoản Chi (EXPENSE)",
+	typeRevenue: "Khoản Thu (REVENUE)",
+	updateSubtitle: "Cập nhật chi tiết giao dịch",
+	updateSuccess: "Cập nhật giao dịch thành công",
+	updateSuccessDesc: "Thông tin giao dịch và chứng từ đã được lưu trữ.",
+	viewDetails: "Chi tiết giao dịch",
+	edmReadonly: "Danh sách tài liệu liên kết được đính kèm với giao dịch này.",
+	complianceBadge: "Kiểm soát tuân thủ",
+	complianceTitle: "Trạng thái kiểm tra hồ sơ",
+	msgFormatError: "Lỗi định dạng",
+	msgFormatErrorDesc: "Định dạng .{ext} không được hỗ trợ.",
+	msgSizeError: "Kích thước vượt giới hạn",
+	msgSizeErrorDesc: "Tệp {name} vượt quá 10MB."
+};
+var pagination = {
+	total: "Tổng cộng: {total} mục",
+	layout: "Bố cục trang"
+};
+var common = {
+	cancel: "Hủy",
+	"delete": "Xóa",
+	system: "Hệ thống",
+	actions: "Hành động",
+	index: "STT"
+};
+var themeCustomizer = {
+	title: "Cấu hình Sidebar",
+	subtitle: "Theme & Style Customizer",
+	mode: "Kiểu hiển thị (Mode)",
+	modeColor: "Màu sắc",
+	modeImage: "Hình nền",
+	modeBoth: "Hỗn hợp",
+	colorLabel: "Màu sắc Sidebar (6 màu)",
+	colorNameDefault: "Mặc định",
+	colorNameGoc: "Gốc",
+	imageLabel: "Hình nền nghệ thuật (6 ảnh)",
+	imageNone: "Không có",
+	opacityLabel: "Độ trong suốt (Opacity)",
+	opacitySub: "Áp dụng cho màu/ảnh nền của sidebar",
+	opacityStart: "T.Suốt",
+	opacityEnd: "Đậm",
+	btnReset: "Mặc định gốc",
+	btnDone: "Hoàn tất",
+	systemPrimaryLabel: "Màu chủ đạo hệ thống",
+	systemPrimarySub: "Thay đổi tông màu thương hiệu PrimeVue toàn hệ thống",
+	colorEmerald: "Xanh lục bảo",
+	colorBlue: "Xanh hoàng gia",
+	colorPurple: "Tím thạch anh",
+	colorOrange: "Cam ấm áp",
+	colorRed: "Đỏ nhung",
+	colorTeal: "Xanh ngọc bích",
+	fontLabel: "Phông chữ hệ thống",
+	fontSub: "Thay đổi kiểu chữ (Font Family) toàn bộ ứng dụng",
+	fontDefault: "Outfit (Gốc)",
+	fontInter: "Inter (Hiện đại)",
+	fontPoppins: "Poppins (Mềm mại)",
+	fontMontserrat: "Montserrat (Hình học)",
+	fontPlayfair: "Playfair (Cổ điển)",
+	fontMono: "Roboto Mono (Mã code)"
+};
+var notification = {
+	title: "Thông báo",
+	pageTitle: "Trung tâm Thông báo",
+	"new": "MỚI",
+	markAllRead: "Đọc tất cả",
+	empty: "Không có thông báo nào",
+	emptyDesc: "Các thông báo hệ thống sẽ hiển thị ở đây.",
+	justNow: "Vừa xong",
+	minutesAgo: "{n} phút trước",
+	hoursAgo: "{n} giờ trước",
+	daysAgo: "{n} ngày trước",
+	viewAll: "Xem tất cả thông báo",
+	searchPlaceholder: "Tìm kiếm thông báo...",
+	searchBtn: "Tìm kiếm",
+	allTypes: "Tất cả loại",
+	filterAll: "Tất cả",
+	filterUnread: "Chưa đọc",
+	filterRead: "Đã đọc",
+	totalLabel: "Tổng thông báo",
+	unreadLabel: "Chưa đọc",
+	readLabel: "Đã đọc",
+	readStatus: "Đã đọc",
+	goToAction: "Chuyển đến",
+	loading: "Đang tải thông báo...",
+	typeLeaveCreated: "Đơn nghỉ phép mới",
+	typeLeaveApproved: "Phê duyệt nghỉ phép",
+	typeLeaveRejected: "Từ chối nghỉ phép",
+	typeCompliance: "Cảnh báo tuân thủ",
+	typeContract: "Hợp đồng",
+	typeTransaction: "Giao dịch"
+};
+var quickSignSuccess = "Ký hợp đồng thành công";
+var placeholder = {
+	selectCategory: "Chọn phân loại",
+	selectItem: "Chọn hạng mục",
+	selectMethod: "Chọn phương thức",
+	selectStatus: "Chọn trạng thái",
+	enterTotalAmount: "Nhập tổng số tiền",
+	selectTaxRate: "Chọn loại thuế suất",
+	amountBeforeTax: "Số tiền gốc trước thuế",
+	taxAmount: "Tiền thuế",
+	taxNoteExample: "Ví dụ: thuế TNCN 10%, nhà thầu...",
+	japanInvoiceNo: "T1234567890123 (Nếu là chi phí tại Nhật)",
+	vietnamTechCompany: "Công ty Giải pháp Công nghệ Việt Nam",
+	taxCode: "Mã số thuế",
+	registeredAddress: "Địa chỉ đăng ký",
+	legalRepresentative: "Họ tên người đại diện pháp luật",
+	jobTitleExample: "Ví dụ: Giám đốc, Tổng giám đốc",
+	enterContractCode: "Nhập mã hợp đồng",
+	enterContractValue: "Nhập giá trị hợp đồng",
+	enterCurrencyValue: "Nhập giá trị tiền tệ",
+	jobTitleDev: "Ví dụ: Lập trình viên, Quản trị viên",
+	officeExample: "Ví dụ: Trụ sở chính Hà Nội, Văn phòng Tokyo",
+	numberEight: "Ví dụ: 8",
+	durationTwoMonths: "Ví dụ: 2 tháng",
+	numberEightyFive: "Ví dụ: 85",
+	bankNames: "Ví dụ: Vietcombank, Techcombank",
+	accountNumber: "Ví dụ: 1018273645",
+	insuranceType: "BHXH, BHYT, BHTN hoặc Bảo hiểm đặc biệt thương mại",
+	enterOfficialCompanyName: "Nhập tên chính thức trên đăng ký kinh doanh",
+	enterPartnerTaxCode: "Nhập mã số thuế đối tác",
+	partnerLegalJob: "Ví dụ: Giám đốc, Tổng giám đốc, CEO",
+	partnerAddress: "Địa chỉ giao dịch chính thức của đối tác",
+	paymentTerm: "Ví dụ: Net 30, Thanh toán 100% khi ký",
+	otHours: "Ví dụ: 20 hoặc 30 giờ",
+	systemAutoGenerated: "Hệ thống tự động cấp phát",
+	companyNameDemo: "Công ty TNHH Giải pháp Công nghệ",
+	fullNameExample: "Nguyễn Văn A",
+	addressDemo: "Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	addressDetailDemo: "Tầng 12, Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	companyNote: "Nhập các thông tin ghi chú đặc biệt về doanh nghiệp này...",
+	selectFont: "Chọn phông chữ...",
+	searchAndSelectType: "Tìm kiếm và chọn {type}..."
+};
+var board = {
+	title: "Bảng tin doanh nghiệp",
+	createPost: "Đăng tin mới",
+	editPost: "Chỉnh sửa bài viết",
+	deletePost: "Xóa bài viết",
+	deletePostConfirm: "Bạn có chắc chắn muốn xóa bài viết này không? Hành động này không thể hoàn tác.",
+	deleteCommentConfirm: "Bạn có chắc chắn muốn xóa bình luận này không?",
+	postTitle: "Tiêu đề bài viết",
+	postContent: "Nội dung bài viết",
+	postLink: "Đường dẫn đính kèm (Link URL)",
+	postImage: "Tải ảnh đính kèm",
+	postTag: "Gắn cờ tag",
+	submitPost: "Đăng bài",
+	updatePost: "Cập nhật",
+	allTags: "Tất cả nhãn",
+	tagImportant: "Quan trọng",
+	tagAnnouncement: "Thông báo",
+	tagEvent: "Sự kiện",
+	tagNews: "Tin tức",
+	likes: "Lượt thích",
+	comments: "Bình luận",
+	writeComment: "Viết bình luận...",
+	sendComment: "Gửi",
+	noPosts: "Chưa có bài viết nào trên bảng tin.",
+	errorCreate: "Đăng bài thất bại. Vui lòng kiểm tra lại thông tin.",
+	successCreate: "Đăng bài thành công!",
+	successDelete: "Đã xóa bài viết thành công.",
+	successUpdate: "Cập nhật bài viết thành công!",
+	authorAdmin: "Ban Giám Đốc",
+	authorManager: "Trưởng Bộ Phận",
+	attachedLink: "Xem liên kết đính kèm",
+	description: "Nơi cập nhật thông báo chính thức, sự kiện nổi bật, tin tức doanh nghiệp và kết nối các thành viên.",
+	createPostSubtitle: "Đăng thông tin tiếp cận toàn bộ nhân viên công ty",
+	placeholderTitle: "Nhập tiêu đề tin tức hoặc thông báo...",
+	placeholderTag: "Chọn gắn cờ tag...",
+	changeImage: "Thay đổi ảnh",
+	selectImage: "Chọn hình ảnh",
+	removeCurrentImage: "Gỡ ảnh hiện tại",
+	placeholderContent: "Chia sẻ bài viết, tin tức hoặc hướng dẫn công việc tại đây...",
+	firstToShare: "Hãy là người đầu tiên chia sẻ thông tin hoặc hướng dẫn công việc.",
+	systemUser: "Người dùng hệ thống",
+	defaultDept: "Hành chính",
+	defaultTitle: "Cán bộ",
+	likeBtn: "Thích",
+	commentBtn: "Bình luận",
+	noComments: "Chưa có bình luận nào. Hãy gửi nhận xét đầu tiên!",
+	systemEmployee: "Nhân viên hệ thống",
+	deleteComment: "Xóa bình luận",
+	placeholderComment: "Viết nhận xét của bạn...",
+	loadMorePosts: "Tải thêm bài viết",
+	placeholderSelectTag: "Chọn nhãn...",
+	imageWillBeDeleted: "Ảnh hiện tại sẽ bị xóa khi cập nhật",
+	restore: "Khôi phục",
+	changeSelectedImage: "Đổi ảnh mới chọn",
+	uploadReplacementImage: "Tải lên ảnh mới thay thế",
+	failUpdate: "Cập nhật bài viết thất bại. Vui lòng kiểm tra lại.",
+	failDelete: "Xóa bài viết thất bại.",
+	failAction: "Thao tác thất bại.",
+	failComment: "Bình luận thất bại.",
+	successDeleteComment: "Đã xóa bình luận.",
+	failDeleteComment: "Xóa bình luận thất bại.",
+	likesNoOne: "Chưa có ai thích bài viết này",
+	likesBy: "Thích bởi: {names}",
+	likesByAndOthers: "Thích bởi: {names} và {count} người khác",
+	failFetch: "Không thể tải bảng tin. Vui lòng thử lại."
+};
+const locale_vi_46json_1a246d39 = {
+	btn: btn,
+	text: text,
+	msgCommon: msgCommon,
+	radioButton: radioButton,
+	deleteModal: deleteModal,
+	confirmModal: confirmModal,
+	tableBox: tableBox,
+	uploadAvatar: uploadAvatar,
+	uploadFile: uploadFile,
+	paginator: paginator,
+	"token.invalid": "Token đã hết hạn, vui lòng đăng nhập lại",
+	"email.exists": "Địa chỉ email đã nhập không tồn tại.",
+	"email.unique": "Địa chỉ email đã nhập đã tồn tại.",
+	"password.min": "Vui lòng nhập mật khẩu từ 8-20 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.",
+	"password.regex": "Vui lòng nhập mật khẩu từ 8-20 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.",
+	"common.in_use": "Dữ liệu đang được sử dụng.",
+	"system.error": "Lỗi hệ thống",
+	"common.system_error": "Lỗi hệ thống",
+	"errors.invalid_reset_password_token": "Mã OTP không hợp lệ. Vui lòng kiểm tra lại.",
+	"common.exists": "Dữ liệu đã tồn tại",
+	"common.update.fail": "Cập nhật dữ liệu thất bại",
+	"common.not_found": "Không tìm thấy dữ liệu",
+	"common.noOptions": "Không có tùy chọn",
+	"code.unique": "Mã này đã tồn tại trong hệ thống.",
+	"code.duplicate": "Mã này bị trùng lặp.",
+	"start_date.invalid": "Chỉ định ngày bắt đầu không hợp lệ.",
+	"end_date.after": "Chỉ định ngày bắt đầu không hợp lệ.",
+	"product_manual_code.unique": "Mã sản phẩm này đã được đăng ký trong hệ thống.",
+	"common.max_rate_limit": "Vượt quá giới hạn gọi API trong 1 phút.",
+	"email.not_found": "Đã chọn người phụ trách không có email, vui lòng kiểm tra lại.",
+	auth: auth,
+	notFound: notFound,
+	router: router,
+	menu: menu,
+	department: department,
+	user: user,
+	position: position,
+	company: company,
+	companySetting: companySetting,
+	userMaster: userMaster,
+	document: document,
+	employee: employee,
+	gender: gender,
+	contract: contract,
+	timesheet: timesheet,
+	leaveRequest: leaveRequest,
+	compliance: compliance,
+	dashboard: dashboard,
+	transaction: transaction,
+	pagination: pagination,
+	common: common,
+	themeCustomizer: themeCustomizer,
+	notification: notification,
+	quickSignSuccess: quickSignSuccess,
+	placeholder: placeholder,
+	board: board
+};
+
+// @ts-nocheck
+const localeCodes =  [
+  "en",
+  "ja",
+  "vi"
+];
+const localeLoaders = {
+  en: [
+    {
+      key: "locale_en_46json_0ab7440b",
+      load: () => Promise.resolve(locale_en_46json_0ab7440b),
+      cache: true
+    }
+  ],
+  ja: [
+    {
+      key: "locale_ja_46json_63a99cd6",
+      load: () => Promise.resolve(locale_ja_46json_63a99cd6),
+      cache: true
+    }
+  ],
+  vi: [
+    {
+      key: "locale_vi_46json_1a246d39",
+      load: () => Promise.resolve(locale_vi_46json_1a246d39),
+      cache: true
+    }
+  ]
+};
+const vueI18nConfigs = [];
+const normalizedLocales = [
+  {
+    code: "en",
+    name: "English",
+    language: undefined
+  },
+  {
+    code: "ja",
+    name: "Japanese",
+    language: undefined
+  },
+  {
+    code: "vi",
+    name: "Vietnamese",
+    language: undefined
+  }
+];
+
+const setupVueI18nOptions = async (defaultLocale) => {
+  const options = await loadVueI18nOptions(vueI18nConfigs);
+  options.locale = defaultLocale || options.locale || "en-US";
+  options.defaultLocale = defaultLocale;
+  options.fallbackLocale ??= false;
+  options.messages ??= {};
+  for (const locale of localeCodes) {
+    options.messages[locale] ??= {};
+  }
+  return options;
+};
+
+function defineNitroPlugin$1(def) {
+  return def;
+}
+
+function defineRenderHandler(render) {
+  const runtimeConfig = useRuntimeConfig();
+  return eventHandler(async (event) => {
+    const nitroApp = useNitroApp();
+    const ctx = { event, render, response: void 0 };
+    await nitroApp.hooks.callHook("render:before", ctx);
+    if (!ctx.response) {
+      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
+        setResponseHeader(event, "Content-Type", "image/x-icon");
+        return send(
+          event,
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        );
+      }
+      ctx.response = await ctx.render(event);
+      if (!ctx.response) {
+        const _currentStatus = getResponseStatus(event);
+        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
+        return send(
+          event,
+          "No response returned from render handler: " + event.path
+        );
+      }
+    }
+    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
+    if (ctx.response.headers) {
+      setResponseHeaders(event, ctx.response.headers);
+    }
+    if (ctx.response.statusCode || ctx.response.statusMessage) {
+      setResponseStatus(
+        event,
+        ctx.response.statusCode,
+        ctx.response.statusMessage
+      );
+    }
+    return ctx.response.body;
+  });
+}
+
+function buildAssetsDir() {
+	// TODO: support passing event to `useRuntimeConfig`
+	return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+	return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+	// TODO: support passing event to `useRuntimeConfig`
+	const app = useRuntimeConfig().app;
+	const publicBase = app.cdnURL || app.baseURL;
+	return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
+}
+
+function parseAcceptLanguage(value) {
+  return value.split(",").map((tag) => tag.split(";")[0]).filter(
+    (tag) => !(tag === "*" || tag === "")
+  );
+}
+function createPathIndexLanguageParser(index = 0) {
+  return (path) => {
+    const rawPath = typeof path === "string" ? path : path.pathname;
+    const normalizedPath = rawPath.split("?")[0];
+    const parts = normalizedPath.split("/");
+    if (parts[0] === "") {
+      parts.shift();
+    }
+    return parts.length > index ? parts[index] || "" : "";
+  };
+}
+
+function useRuntimeI18n(nuxtApp, event) {
+  {
+    return useRuntimeConfig(event).public.i18n;
+  }
+}
+function useI18nDetection(nuxtApp) {
+  const detectBrowserLanguage = useRuntimeI18n().detectBrowserLanguage;
+  const detect = detectBrowserLanguage || {};
+  return {
+    ...detect,
+    enabled: !!detectBrowserLanguage,
+    cookieKey: detect.cookieKey || "i18n_redirected"
+  };
+}
+function resolveRootRedirect(config) {
+  if (!config) {
+    return void 0;
+  }
+  return {
+    path: "/" + (isString(config) ? config : config.path).replace(/^\//, ""),
+    code: !isString(config) && config.statusCode || 302
+  };
+}
+function toArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+
+function createLocaleConfigs(fallbackLocale) {
+  const localeConfigs = {};
+  for (const locale of localeCodes) {
+    const fallbacks = getFallbackLocaleCodes(fallbackLocale, [locale]);
+    const cacheable = isLocaleWithFallbacksCacheable(locale, fallbacks);
+    localeConfigs[locale] = { fallbacks, cacheable };
+  }
+  return localeConfigs;
+}
+function getFallbackLocaleCodes(fallback, locales) {
+  if (fallback === false) {
+    return [];
+  }
+  if (isArray(fallback)) {
+    return fallback;
+  }
+  let fallbackLocales = [];
+  if (isString(fallback)) {
+    if (locales.every((locale) => locale !== fallback)) {
+      fallbackLocales.push(fallback);
+    }
+    return fallbackLocales;
+  }
+  const targets = [...locales, "default"];
+  for (const locale of targets) {
+    if (locale in fallback == false) {
+      continue;
+    }
+    fallbackLocales = [...fallbackLocales, ...fallback[locale].filter(Boolean)];
+  }
+  return fallbackLocales;
+}
+function isLocaleCacheable(locale) {
+  return localeLoaders[locale] != null && localeLoaders[locale].every((loader) => loader.cache !== false);
+}
+function isLocaleWithFallbacksCacheable(locale, fallbackLocales) {
+  return isLocaleCacheable(locale) && fallbackLocales.every((fallbackLocale) => isLocaleCacheable(fallbackLocale));
+}
+function getDefaultLocaleForDomain(host) {
+  return normalizedLocales.find((l) => !!l.defaultForDomains?.includes(host))?.code;
+}
+const isSupportedLocale = (locale) => localeCodes.includes(locale || "");
+
+function useI18nContext(event) {
+  if (event.context.nuxtI18n == null) {
+    throw new Error("Nuxt I18n server context has not been set up yet.");
+  }
+  return event.context.nuxtI18n;
+}
+function tryUseI18nContext(event) {
+  return event.context.nuxtI18n;
+}
+const getHost = (event) => getRequestURL(event, { xForwardedHost: true }).host;
+async function initializeI18nContext(event) {
+  const runtimeI18n = useRuntimeI18n(void 0, event);
+  const defaultLocale = runtimeI18n.defaultLocale || "";
+  const options = await setupVueI18nOptions(getDefaultLocaleForDomain(getHost(event)) || defaultLocale);
+  const localeConfigs = createLocaleConfigs(options.fallbackLocale);
+  const ctx = createI18nContext();
+  ctx.vueI18nOptions = options;
+  ctx.localeConfigs = localeConfigs;
+  event.context.nuxtI18n = ctx;
+  return ctx;
+}
+function createI18nContext() {
+  return {
+    messages: {},
+    slp: {},
+    localeConfigs: {},
+    trackMap: {},
+    vueI18nOptions: void 0,
+    trackKey(key, locale) {
+      this.trackMap[locale] ??= /* @__PURE__ */ new Set();
+      this.trackMap[locale].add(key);
+    }
+  };
+}
+
+function matchBrowserLocale(locales, browserLocales) {
+  const matchedLocales = [];
+  for (const [index, browserCode] of browserLocales.entries()) {
+    const matchedLocale = locales.find((l) => l.language?.toLowerCase() === browserCode.toLowerCase());
+    if (matchedLocale) {
+      matchedLocales.push({ code: matchedLocale.code, score: 1 - index / browserLocales.length });
+      break;
+    }
+  }
+  for (const [index, browserCode] of browserLocales.entries()) {
+    const languageCode = browserCode.split("-")[0].toLowerCase();
+    const matchedLocale = locales.find((l) => l.language?.split("-")[0].toLowerCase() === languageCode);
+    if (matchedLocale) {
+      matchedLocales.push({ code: matchedLocale.code, score: 0.999 - index / browserLocales.length });
+      break;
+    }
+  }
+  return matchedLocales;
+}
+function compareBrowserLocale(a, b) {
+  if (a.score === b.score) {
+    return b.code.length - a.code.length;
+  }
+  return b.score - a.score;
+}
+function findBrowserLocale(locales, browserLocales) {
+  const matchedLocales = matchBrowserLocale(
+    locales.map((l) => ({ code: l.code, language: l.language || l.code })),
+    browserLocales
+  );
+  return matchedLocales.sort(compareBrowserLocale).at(0)?.code ?? "";
+}
+
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Hệ thống Kiểm soát Tuân thủ và Quản lý Hồ sơ Pháp lý Doanh nghiệp (SaaS Multi-company)"},{"name":"format-detection","content":"telephone=no"},{"name":"robots","content":"index, follow"}],"link":[{"rel":"icon","type":"image/png","href":"/favicon.png"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"}],"style":[],"script":[],"noscript":[],"title":"Compliance System - Hệ thống Kiểm soát Tuân thủ","htmlAttrs":{"lang":"ja"}};
+
+const appRootTag = "div";
+
+const appRootAttrs = {"id":"__nuxt"};
+
+const appTeleportTag = "div";
+
+const appTeleportAttrs = {"id":"teleports"};
+
+const appSpaLoaderTag = "div";
+
+const appSpaLoaderAttrs = {"id":"__nuxt-loader"};
+
+const appId = "nuxt-app";
+
+const separator = "___";
+const pathLanguageParser = createPathIndexLanguageParser(0);
+const getLocaleFromRoutePath = (path) => pathLanguageParser(path);
+const getLocaleFromRouteName = (name) => name.split(separator).at(1) ?? "";
+function normalizeInput(input) {
+  return typeof input !== "object" ? String(input) : String(input?.name || input?.path || "");
+}
+function getLocaleFromRoute(route) {
+  const input = normalizeInput(route);
+  return input[0] === "/" ? getLocaleFromRoutePath(input) : getLocaleFromRouteName(input);
+}
+
+function matchDomainLocale(locales, host, pathLocale) {
+  const normalizeDomain = (domain = "") => domain.replace(/https?:\/\//, "");
+  const matches = locales.filter(
+    (locale) => normalizeDomain(locale.domain) === host || toArray(locale.domains).includes(host)
+  );
+  if (matches.length <= 1) {
+    return matches[0]?.code;
+  }
+  return (
+    // match by current path locale
+    matches.find((l) => l.code === pathLocale)?.code || matches.find((l) => l.defaultForDomains?.includes(host) ?? l.domainDefault)?.code
+  );
+}
+
+const getCookieLocale = (event, cookieName) => (getCookie(event, cookieName)) || void 0;
+const getRouteLocale = (event, route) => getLocaleFromRoute(route);
+const getHeaderLocale = (event) => findBrowserLocale(normalizedLocales, parseAcceptLanguage(getRequestHeader(event, "accept-language") || ""));
+const getHostLocale = (event, path, domainLocales) => {
+  const host = getRequestURL(event, { xForwardedHost: true }).host;
+  const locales = normalizedLocales.map((l) => ({
+    ...l,
+    domain: domainLocales[l.code]?.domain ?? l.domain
+  }));
+  return matchDomainLocale(locales, host, getLocaleFromRoutePath(path));
+};
+const useDetectors = (event, config, nuxtApp) => {
+  if (!event) {
+    throw new Error("H3Event is required for server-side locale detection");
+  }
+  const runtimeI18n = useRuntimeI18n();
+  return {
+    cookie: () => getCookieLocale(event, config.cookieKey),
+    header: () => getHeaderLocale(event) ,
+    navigator: () => void 0,
+    host: (path) => getHostLocale(event, path, runtimeI18n.domainLocales),
+    route: (path) => getRouteLocale(event, path)
+  };
+};
+
+// Generated by @nuxtjs/i18n
+const pathToI18nConfig = {};
+const i18nPathToPath = {};
+
+const matcher = createRouterMatcher([], {});
+for (const path of Object.keys(i18nPathToPath)) {
+  matcher.addRoute({ path, component: () => "", meta: {} });
+}
+const getI18nPathToI18nPath = (path, locale) => {
+  if (!path || !locale) {
+    return;
+  }
+  const plainPath = i18nPathToPath[path];
+  const i18nConfig = pathToI18nConfig[plainPath];
+  if (i18nConfig && i18nConfig[locale]) {
+    return i18nConfig[locale] === true ? plainPath : i18nConfig[locale];
+  }
+};
+function isExistingNuxtRoute(path) {
+  if (path === "") {
+    return;
+  }
+  if (path.endsWith("/__nuxt_error")) {
+    return;
+  }
+  const resolvedMatch = matcher.resolve({ path }, { path: "/", name: "", matched: [], params: {}, meta: {} });
+  return resolvedMatch.matched.length > 0 ? resolvedMatch : void 0;
+}
+function matchLocalized(path, locale, defaultLocale) {
+  if (path === "") {
+    return;
+  }
+  const parsed = parsePath(path);
+  const resolvedMatch = matcher.resolve(
+    { path: parsed.pathname || "/" },
+    { path: "/", name: "", matched: [], params: {}, meta: {} }
+  );
+  if (resolvedMatch.matched.length > 0) {
+    const alternate = getI18nPathToI18nPath(resolvedMatch.matched[0].path, locale);
+    const match = matcher.resolve(
+      { params: resolvedMatch.params },
+      { path: alternate || "/", name: "", matched: [], params: {}, meta: {} }
+    );
+    return withLeadingSlash(joinURL("", match.path));
+  }
+}
+
+function* detect(detectors, detection, path) {
+  if (detection.enabled) {
+    yield { locale: detectors.cookie(), source: "cookie" };
+    yield { locale: detectors.header(), source: "header" };
+  }
+  yield { locale: detection.fallbackLocale, source: "fallback" };
+}
+function createRedirectResponse(event, dest, code) {
+  event.node.res.setHeader("location", dest);
+  event.node.res.statusCode = sanitizeStatusCode(code, event.node.res.statusCode);
+  return {
+    headers: event.node.res.getHeaders(),
+    statusCode: event.node.res.statusCode,
+    body: `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=${dest.replace(/"/g, "%22")}"></head></html>`
+  };
+}
+const _NW5OFtcBHZGKnB2mCrz69ydPktXX6hxHhYw8nnlqemU = defineNitroPlugin$1(async (nitro) => {
+  const runtimeI18n = useRuntimeI18n();
+  const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
+  runtimeI18n.defaultLocale || "";
+  try {
+    const cacheStorage = useStorage("cache");
+    const cachedKeys = await cacheStorage.getKeys("nitro:handlers:i18n");
+    await Promise.all(cachedKeys.map((key) => cacheStorage.removeItem(key)));
+  } catch {
+  }
+  const detection = useI18nDetection();
+  const cookieOptions = {
+    path: "/",
+    domain: detection.cookieDomain || void 0,
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+    secure: detection.cookieSecure
+  };
+  const createBaseUrlGetter = () => {
+    isFunction(runtimeI18n.baseUrl) ? "" : runtimeI18n.baseUrl || "";
+    if (isFunction(runtimeI18n.baseUrl)) {
+      return () => "";
+    }
+    return (event, defaultLocale) => {
+      return "";
+    };
+  };
+  function resolveRedirectPath(event, path, pathLocale, defaultLocale, detector) {
+    let locale = "";
+    for (const detected of detect(detector, detection, event.path)) {
+      if (detected.locale && isSupportedLocale(detected.locale)) {
+        locale = detected.locale;
+        break;
+      }
+    }
+    locale ||= defaultLocale;
+    function getLocalizedMatch(locale2) {
+      const res = matchLocalized(path || "/", locale2);
+      if (res && res !== event.path) {
+        return res;
+      }
+    }
+    let resolvedPath = void 0;
+    let redirectCode = 302;
+    const requestURL = getRequestURL(event);
+    if (rootRedirect && requestURL.pathname === "/") {
+      locale = detection.enabled && locale || defaultLocale;
+      resolvedPath = isSupportedLocale(detector.route(rootRedirect.path)) && rootRedirect.path || matchLocalized(rootRedirect.path, locale);
+      redirectCode = rootRedirect.code;
+    } else if (runtimeI18n.redirectStatusCode) {
+      redirectCode = runtimeI18n.redirectStatusCode;
+    }
+    switch (detection.redirectOn) {
+      case "root":
+        if (requestURL.pathname !== "/") {
+          break;
+        }
+      // fallthrough (root has no prefix)
+      case "no prefix":
+        if (pathLocale) {
+          break;
+        }
+      // fallthrough to resolve
+      case "all":
+        resolvedPath ??= getLocalizedMatch(locale);
+        break;
+    }
+    if (requestURL.pathname === "/" && "no_prefix" === "prefix") ;
+    return { path: resolvedPath, code: redirectCode, locale };
+  }
+  const baseUrlGetter = createBaseUrlGetter();
+  nitro.hooks.hook("request", async (event) => {
+    await initializeI18nContext(event);
+  });
+  nitro.hooks.hook("render:before", async (context) => {
+    const { event } = context;
+    const ctx = useI18nContext(event);
+    const url = getRequestURL(event);
+    const detector = useDetectors(event, detection);
+    const localeSegment = detector.route(event.path);
+    const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
+    const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
+    if (!url.pathname.includes("/_i18n/tovQ6dz0") && !isExistingNuxtRoute(path)) {
+      return;
+    }
+    const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
+    if (resolved.path && resolved.path !== url.pathname) {
+      ctx.detectLocale = resolved.locale;
+      detection.useCookie && setCookie(event, detection.cookieKey, resolved.locale, cookieOptions);
+      context.response = createRedirectResponse(
+        event,
+        joinURL(baseUrlGetter(event, ctx.vueI18nOptions.defaultLocale), resolved.path + url.search),
+        resolved.code
+      );
+      return;
+    }
+  });
+  nitro.hooks.hook("render:html", (htmlContext, { event }) => {
+    tryUseI18nContext(event);
+  });
+});
+
+var inlineStyles$i = {
+  root: {
+    position: 'relative'
+  }
+};
+var classes$1H = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-autocomplete p-component p-inputwrapper', {
+      'p-invalid': instance.$invalid,
+      'p-focus': instance.focused,
+      'p-inputwrapper-filled': instance.$filled || isNotEmpty(instance.inputValue),
+      'p-inputwrapper-focus': instance.focused,
+      'p-autocomplete-open': instance.overlayVisible,
+      'p-autocomplete-fluid': instance.$fluid,
+      'p-autocomplete-clearable': instance.isClearIconVisible
+    }];
+  },
+  pcInputText: 'p-autocomplete-input',
+  inputMultiple: function inputMultiple(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-autocomplete-input-multiple', {
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-disabled': props.disabled
+    }];
+  },
+  clearIcon: 'p-autocomplete-clear-icon',
+  chipItem: function chipItem(_ref3) {
+    var instance = _ref3.instance,
+      i = _ref3.i;
+    return ['p-autocomplete-chip-item', {
+      'p-focus': instance.focusedMultipleOptionIndex === i
+    }];
+  },
+  pcChip: 'p-autocomplete-chip',
+  chipIcon: 'p-autocomplete-chip-icon',
+  inputChip: 'p-autocomplete-input-chip',
+  loader: 'p-autocomplete-loader',
+  dropdown: 'p-autocomplete-dropdown',
+  overlay: 'p-autocomplete-overlay p-component',
+  listContainer: 'p-autocomplete-list-container',
+  list: 'p-autocomplete-list',
+  optionGroup: 'p-autocomplete-option-group',
+  option: function option(_ref4) {
+    var instance = _ref4.instance,
+      _option = _ref4.option,
+      i = _ref4.i,
+      getItemOptions = _ref4.getItemOptions;
+    return ['p-autocomplete-option', {
+      'p-autocomplete-option-selected': instance.isSelected(_option),
+      'p-focus': instance.focusedOptionIndex === instance.getOptionIndex(i, getItemOptions),
+      'p-disabled': instance.isOptionDisabled(_option)
+    }];
+  },
+  emptyMessage: 'p-autocomplete-empty-message'
+};
+var AutoCompleteStyle = BaseStyle.extend({
+  name: 'autocomplete',
+  style: style,
+  classes: classes$1H,
+  inlineStyles: inlineStyles$i
+});
+
+var CalendarStyle = BaseStyle.extend({
+  name: 'calendar'
+});
+
+var inlineStyles$h = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      position: props.appendTo === 'self' ? 'relative' : undefined
+    };
+  }
+};
+var classes$1G = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-cascadeselect p-component p-inputwrapper', {
+      'p-cascadeselect-mobile': instance.queryMatches,
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-focus': instance.focused,
+      'p-inputwrapper-filled': instance.$filled,
+      'p-inputwrapper-focus': instance.focused || instance.overlayVisible,
+      'p-cascadeselect-open': instance.overlayVisible,
+      'p-cascadeselect-fluid': instance.$fluid,
+      'p-cascadeselect-sm p-inputfield-sm': props.size === 'small',
+      'p-cascadeselect-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  label: function label(_ref3) {
+    var _instance$label;
+    var instance = _ref3.instance,
+      props = _ref3.props;
+    return ['p-cascadeselect-label', {
+      'p-placeholder': instance.label === props.placeholder,
+      'p-cascadeselect-label-empty': !instance.$slots['value'] && (instance.label === 'p-emptylabel' || ((_instance$label = instance.label) === null || _instance$label === void 0 ? void 0 : _instance$label.length) === 0)
+    }];
+  },
+  clearIcon: 'p-cascadeselect-clear-icon',
+  dropdown: 'p-cascadeselect-dropdown',
+  loadingIcon: 'p-cascadeselect-loading-icon',
+  dropdownIcon: 'p-cascadeselect-dropdown-icon',
+  overlay: function overlay(_ref4) {
+    var instance = _ref4.instance;
+    return ['p-cascadeselect-overlay p-component', {
+      'p-cascadeselect-mobile-active': instance.queryMatches
+    }];
+  },
+  listContainer: 'p-cascadeselect-list-container',
+  list: 'p-cascadeselect-list',
+  option: function option(_ref5) {
+    var instance = _ref5.instance,
+      processedOption = _ref5.processedOption;
+    return ['p-cascadeselect-option', {
+      'p-cascadeselect-option-active': instance.isOptionActive(processedOption),
+      'p-cascadeselect-option-selected': instance.isOptionSelected(processedOption),
+      'p-focus': instance.isOptionFocused(processedOption),
+      'p-disabled': instance.isOptionDisabled(processedOption)
+    }];
+  },
+  optionContent: 'p-cascadeselect-option-content',
+  optionText: 'p-cascadeselect-option-text',
+  groupIconContainer: 'p-cascadeselect-group-icon-container',
+  groupIcon: 'p-cascadeselect-group-icon',
+  optionList: 'p-cascadeselect-overlay p-cascadeselect-option-list'
+};
+var CascadeSelectStyle = BaseStyle.extend({
+  name: 'cascadeselect',
+  style: style$1,
+  classes: classes$1G,
+  inlineStyles: inlineStyles$h
+});
+
+var classes$1F = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-checkbox p-component', {
+      'p-checkbox-checked': instance.checked,
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$pcCheckboxGroup ? instance.$pcCheckboxGroup.$invalid : instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-checkbox-sm p-inputfield-sm': props.size === 'small',
+      'p-checkbox-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  box: 'p-checkbox-box',
+  input: 'p-checkbox-input',
+  icon: 'p-checkbox-icon'
+};
+var CheckboxStyle = BaseStyle.extend({
+  name: 'checkbox',
+  style: style$2,
+  classes: classes$1F
+});
+
+var classes$1E = {
+  root: 'p-checkbox-group p-component'
+};
+var CheckboxGroupStyle = BaseStyle.extend({
+  name: 'checkboxgroup',
+  style: style$3,
+  classes: classes$1E
+});
+
+var ChipsStyle = BaseStyle.extend({
+  name: 'chips'
+});
+
+var classes$1D = {
+  root: 'p-colorpicker p-component',
+  preview: function preview(_ref) {
+    var props = _ref.props;
+    return ['p-colorpicker-preview', {
+      'p-disabled': props.disabled
+    }];
+  },
+  panel: function panel(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-colorpicker-panel', {
+      'p-colorpicker-panel-inline': props.inline,
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid
+    }];
+  },
+  colorSelector: 'p-colorpicker-color-selector',
+  colorBackground: 'p-colorpicker-color-background',
+  colorHandle: 'p-colorpicker-color-handle',
+  hue: 'p-colorpicker-hue',
+  hueHandle: 'p-colorpicker-hue-handle'
+};
+var ColorPickerStyle = BaseStyle.extend({
+  name: 'colorpicker',
+  style: style$4,
+  classes: classes$1D
+});
+
+var inlineStyles$g = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      position: props.appendTo === 'self' || props.showClear ? 'relative' : undefined
+    };
+  }
+};
+var classes$1C = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance,
+      state = _ref2.state;
+    return ['p-datepicker p-component p-inputwrapper', {
+      'p-invalid': instance.$invalid,
+      'p-inputwrapper-filled': instance.$filled,
+      'p-inputwrapper-focus': state.focused || state.overlayVisible,
+      'p-focus': state.focused || state.overlayVisible,
+      'p-datepicker-fluid': instance.$fluid
+    }];
+  },
+  pcInputText: 'p-datepicker-input',
+  clearIcon: 'p-datepicker-clear-icon',
+  dropdown: 'p-datepicker-dropdown',
+  inputIconContainer: 'p-datepicker-input-icon-container',
+  inputIcon: 'p-datepicker-input-icon',
+  panel: function panel(_ref3) {
+    var props = _ref3.props;
+    return ['p-datepicker-panel p-component', {
+      'p-datepicker-panel-inline': props.inline,
+      'p-disabled': props.disabled,
+      'p-datepicker-timeonly': props.timeOnly
+    }];
+  },
+  calendarContainer: 'p-datepicker-calendar-container',
+  calendar: 'p-datepicker-calendar',
+  header: 'p-datepicker-header',
+  pcPrevButton: 'p-datepicker-prev-button',
+  title: 'p-datepicker-title',
+  selectMonth: 'p-datepicker-select-month',
+  selectYear: 'p-datepicker-select-year',
+  decade: 'p-datepicker-decade',
+  pcNextButton: 'p-datepicker-next-button',
+  dayView: 'p-datepicker-day-view',
+  weekHeader: 'p-datepicker-weekheader p-disabled',
+  weekNumber: 'p-datepicker-weeknumber',
+  weekLabelContainer: 'p-datepicker-weeklabel-container p-disabled',
+  weekDayCell: 'p-datepicker-weekday-cell',
+  weekDay: 'p-datepicker-weekday',
+  dayCell: function dayCell(_ref4) {
+    var date = _ref4.date;
+    return ['p-datepicker-day-cell', {
+      'p-datepicker-other-month': date.otherMonth,
+      'p-datepicker-today': date.today
+    }];
+  },
+  day: function day(_ref5) {
+    var instance = _ref5.instance,
+      props = _ref5.props,
+      state = _ref5.state,
+      date = _ref5.date;
+    var selectedDayClass = '';
+    if (instance.isRangeSelection() && instance.isSelected(date) && date.selectable) {
+      var start = typeof state.rawValue[0] === 'string' ? instance.parseValue(state.rawValue[0])[0] : state.rawValue[0];
+      var end = typeof state.rawValue[1] === 'string' ? instance.parseValue(state.rawValue[1])[0] : state.rawValue[1];
+      selectedDayClass = instance.isDateEquals(start, date) || instance.isDateEquals(end, date) ? 'p-datepicker-day-selected' : 'p-datepicker-day-selected-range';
+    }
+    return ['p-datepicker-day', {
+      'p-datepicker-day-selected': !instance.isRangeSelection() && instance.isSelected(date) && date.selectable,
+      'p-disabled': props.disabled || !date.selectable
+    }, selectedDayClass];
+  },
+  monthView: 'p-datepicker-month-view',
+  month: function month(_ref6) {
+    var instance = _ref6.instance,
+      props = _ref6.props,
+      _month = _ref6.month,
+      index = _ref6.index;
+    return ['p-datepicker-month', {
+      'p-datepicker-month-selected': instance.isMonthSelected(index),
+      'p-disabled': props.disabled || !_month.selectable
+    }];
+  },
+  yearView: 'p-datepicker-year-view',
+  year: function year(_ref7) {
+    var instance = _ref7.instance,
+      props = _ref7.props,
+      _year = _ref7.year;
+    return ['p-datepicker-year', {
+      'p-datepicker-year-selected': instance.isYearSelected(_year.value),
+      'p-disabled': props.disabled || !_year.selectable
+    }];
+  },
+  timePicker: 'p-datepicker-time-picker',
+  hourPicker: 'p-datepicker-hour-picker',
+  pcIncrementButton: 'p-datepicker-increment-button',
+  pcDecrementButton: 'p-datepicker-decrement-button',
+  separator: 'p-datepicker-separator',
+  minutePicker: 'p-datepicker-minute-picker',
+  secondPicker: 'p-datepicker-second-picker',
+  ampmPicker: 'p-datepicker-ampm-picker',
+  buttonbar: 'p-datepicker-buttonbar',
+  pcTodayButton: 'p-datepicker-today-button',
+  pcClearButton: 'p-datepicker-clear-button'
+};
+var DatePickerStyle = BaseStyle.extend({
+  name: 'datepicker',
+  style: style$5,
+  classes: classes$1C,
+  inlineStyles: inlineStyles$g
+});
+
+var DropdownStyle = BaseStyle.extend({
+  name: 'dropdown'
+});
+
+var classes$1B = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-floatlabel', {
+      'p-floatlabel-over': props.variant === 'over',
+      'p-floatlabel-on': props.variant === 'on',
+      'p-floatlabel-in': props.variant === 'in'
+    }];
+  }
+};
+var FloatLabelStyle = BaseStyle.extend({
+  name: 'floatlabel',
+  style: style$6,
+  classes: classes$1B
+});
+
+var classes$1A = {
+  root: 'p-fluid'
+};
+var FluidStyle = BaseStyle.extend({
+  name: 'fluid',
+  classes: classes$1A
+});
+
+var classes$1z = {
+  root: 'p-iconfield'
+};
+var IconFieldStyle = BaseStyle.extend({
+  name: 'iconfield',
+  style: style$7,
+  classes: classes$1z
+});
+
+var classes$1y = {
+  root: 'p-iftalabel'
+};
+var IftaLabelStyle = BaseStyle.extend({
+  name: 'iftalabel',
+  style: style$8,
+  classes: classes$1y
+});
+
+var classes$1x = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-inputchips p-component p-inputwrapper', {
+      'p-disabled': props.disabled,
+      'p-invalid': props.invalid,
+      'p-focus': instance.focused,
+      'p-inputwrapper-filled': props.modelValue && props.modelValue.length || instance.inputValue && instance.inputValue.length,
+      'p-inputwrapper-focus': instance.focused
+    }];
+  },
+  input: function input(_ref2) {
+    var props = _ref2.props,
+      instance = _ref2.instance;
+    return ['p-inputchips-input', {
+      'p-variant-filled': props.variant ? props.variant === 'filled' : instance.$primevue.config.inputStyle === 'filled' || instance.$primevue.config.inputVariant === 'filled'
+    }];
+  },
+  chipItem: function chipItem(_ref3) {
+    var state = _ref3.state,
+      index = _ref3.index;
+    return ['p-inputchips-chip-item', {
+      'p-focus': state.focusedIndex === index
+    }];
+  },
+  pcChip: 'p-inputchips-chip',
+  chipIcon: 'p-inputchips-chip-icon',
+  inputItem: 'p-inputchips-input-item'
+};
+var InputChipsStyle = BaseStyle.extend({
+  name: 'inputchips',
+  style: style$9,
+  classes: classes$1x
+});
+
+var classes$1w = {
+  root: 'p-inputgroup'
+};
+var InputGroupStyle = BaseStyle.extend({
+  name: 'inputgroup',
+  style: style$a,
+  classes: classes$1w
+});
+
+var classes$1v = {
+  root: 'p-inputgroupaddon'
+};
+var InputGroupAddonStyle = BaseStyle.extend({
+  name: 'inputgroupaddon',
+  classes: classes$1v
+});
+
+var classes$1u = {
+  root: 'p-inputicon'
+};
+var InputIconStyle = BaseStyle.extend({
+  name: 'inputicon',
+  classes: classes$1u
+});
+
+var classes$1t = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-inputmask', {
+      'p-filled': instance.$filled
+    }];
+  }
+};
+var InputMaskStyle = BaseStyle.extend({
+  name: 'inputmask',
+  classes: classes$1t
+});
+
+var classes$1s = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-inputnumber p-component p-inputwrapper', {
+      'p-invalid': instance.$invalid,
+      'p-inputwrapper-filled': instance.$filled || props.allowEmpty === false,
+      'p-inputwrapper-focus': instance.focused,
+      'p-inputnumber-stacked': props.showButtons && props.buttonLayout === 'stacked',
+      'p-inputnumber-horizontal': props.showButtons && props.buttonLayout === 'horizontal',
+      'p-inputnumber-vertical': props.showButtons && props.buttonLayout === 'vertical',
+      'p-inputnumber-fluid': instance.$fluid
+    }];
+  },
+  pcInputText: 'p-inputnumber-input',
+  clearIcon: 'p-inputnumber-clear-icon',
+  buttonGroup: 'p-inputnumber-button-group',
+  incrementButton: function incrementButton(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-inputnumber-button p-inputnumber-increment-button', {
+      'p-disabled': props.showButtons && props.max !== null && instance.maxBoundry()
+    }];
+  },
+  decrementButton: function decrementButton(_ref3) {
+    var instance = _ref3.instance,
+      props = _ref3.props;
+    return ['p-inputnumber-button p-inputnumber-decrement-button', {
+      'p-disabled': props.showButtons && props.min !== null && instance.minBoundry()
+    }];
+  }
+};
+var InputNumberStyle = BaseStyle.extend({
+  name: 'inputnumber',
+  style: style$b,
+  classes: classes$1s
+});
+
+var classes$1r = {
+  root: 'p-inputotp p-component',
+  pcInputText: 'p-inputotp-input'
+};
+var InputOtpStyle = BaseStyle.extend({
+  name: 'inputotp',
+  style: style$c,
+  classes: classes$1r
+});
+
+var InputSwitchStyle = BaseStyle.extend({
+  name: 'inputswitch'
+});
+
+var classes$1q = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-inputtext p-component', {
+      'p-filled': instance.$filled,
+      'p-inputtext-sm p-inputfield-sm': props.size === 'small',
+      'p-inputtext-lg p-inputfield-lg': props.size === 'large',
+      'p-invalid': instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-inputtext-fluid': instance.$fluid
+    }];
+  }
+};
+var InputTextStyle = BaseStyle.extend({
+  name: 'inputtext',
+  style: style$d,
+  classes: classes$1q
+});
+
+var classes$1p = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-knob p-component', {
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid
+    }];
+  },
+  range: 'p-knob-range',
+  value: 'p-knob-value',
+  text: 'p-knob-text'
+};
+var KnobStyle = BaseStyle.extend({
+  name: 'knob',
+  style: style$e,
+  classes: classes$1p
+});
+
+var classes$1o = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-listbox p-component', {
+      'p-listbox-striped': props.striped,
+      'p-disabled': props.disabled,
+      'p-listbox-fluid': props.fluid,
+      'p-invalid': instance.$invalid
+    }];
+  },
+  header: 'p-listbox-header',
+  pcFilter: 'p-listbox-filter',
+  listContainer: 'p-listbox-list-container',
+  list: 'p-listbox-list',
+  optionGroup: 'p-listbox-option-group',
+  option: function option(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props,
+      _option = _ref2.option,
+      index = _ref2.index,
+      getItemOptions = _ref2.getItemOptions;
+    return ['p-listbox-option', {
+      'p-listbox-option-selected': instance.isSelected(_option) && props.highlightOnSelect,
+      'p-focus': instance.focusedOptionIndex === instance.getOptionIndex(index, getItemOptions),
+      'p-disabled': instance.isOptionDisabled(_option)
+    }];
+  },
+  optionCheckIcon: 'p-listbox-option-check-icon',
+  optionBlankIcon: 'p-listbox-option-blank-icon',
+  emptyMessage: 'p-listbox-empty-message'
+};
+var ListboxStyle = BaseStyle.extend({
+  name: 'listbox',
+  style: style$f,
+  classes: classes$1o
+});
+
+var inlineStyles$f = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      position: props.appendTo === 'self' ? 'relative' : undefined
+    };
+  }
+};
+var classes$1n = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-multiselect p-component p-inputwrapper', {
+      'p-multiselect-display-chip': props.display === 'chip',
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-focus': instance.focused,
+      'p-inputwrapper-filled': instance.$filled,
+      'p-inputwrapper-focus': instance.focused || instance.overlayVisible,
+      'p-multiselect-open': instance.overlayVisible,
+      'p-multiselect-fluid': instance.$fluid,
+      'p-multiselect-sm p-inputfield-sm': props.size === 'small',
+      'p-multiselect-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  labelContainer: 'p-multiselect-label-container',
+  label: function label(_ref3) {
+    var instance = _ref3.instance,
+      props = _ref3.props;
+    return ['p-multiselect-label', {
+      'p-placeholder': instance.label === props.placeholder,
+      'p-multiselect-label-empty': !props.placeholder && !instance.$filled
+    }];
+  },
+  clearIcon: 'p-multiselect-clear-icon',
+  chipItem: 'p-multiselect-chip-item',
+  pcChip: 'p-multiselect-chip',
+  chipIcon: 'p-multiselect-chip-icon',
+  dropdown: 'p-multiselect-dropdown',
+  loadingIcon: 'p-multiselect-loading-icon',
+  dropdownIcon: 'p-multiselect-dropdown-icon',
+  overlay: 'p-multiselect-overlay p-component',
+  header: 'p-multiselect-header',
+  pcFilterContainer: 'p-multiselect-filter-container',
+  pcFilter: 'p-multiselect-filter',
+  listContainer: 'p-multiselect-list-container',
+  list: 'p-multiselect-list',
+  optionGroup: 'p-multiselect-option-group',
+  option: function option(_ref4) {
+    var instance = _ref4.instance,
+      _option = _ref4.option,
+      index = _ref4.index,
+      getItemOptions = _ref4.getItemOptions,
+      props = _ref4.props;
+    return ['p-multiselect-option', {
+      'p-multiselect-option-selected': instance.isSelected(_option) && props.highlightOnSelect,
+      'p-focus': instance.focusedOptionIndex === instance.getOptionIndex(index, getItemOptions),
+      'p-disabled': instance.isOptionDisabled(_option)
+    }];
+  },
+  emptyMessage: 'p-multiselect-empty-message'
+};
+var MultiSelectStyle = BaseStyle.extend({
+  name: 'multiselect',
+  style: style$g,
+  classes: classes$1n,
+  inlineStyles: inlineStyles$f
+});
+
+var inlineStyles$e = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      position: props.appendTo === 'self' ? 'relative' : undefined
+    };
+  }
+};
+var classes$1m = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-password p-component p-inputwrapper', {
+      'p-inputwrapper-filled': instance.$filled,
+      'p-inputwrapper-focus': instance.focused,
+      'p-password-fluid': instance.$fluid
+    }];
+  },
+  pcInputText: 'p-password-input',
+  maskIcon: 'p-password-toggle-mask-icon p-password-mask-icon',
+  unmaskIcon: 'p-password-toggle-mask-icon p-password-unmask-icon',
+  clearIcon: 'p-password-clear-icon',
+  overlay: 'p-password-overlay p-component',
+  content: 'p-password-content',
+  meter: 'p-password-meter',
+  meterLabel: function meterLabel(_ref3) {
+    var instance = _ref3.instance;
+    return "p-password-meter-label ".concat(instance.meter ? 'p-password-meter-' + instance.meter.strength : '');
+  },
+  meterText: 'p-password-meter-text'
+};
+var PasswordStyle = BaseStyle.extend({
+  name: 'password',
+  style: style$h,
+  classes: classes$1m,
+  inlineStyles: inlineStyles$e
+});
+
+var classes$1l = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-radiobutton p-component', {
+      'p-radiobutton-checked': instance.checked,
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$pcRadioButtonGroup ? instance.$pcRadioButtonGroup.$invalid : instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-radiobutton-sm p-inputfield-sm': props.size === 'small',
+      'p-radiobutton-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  box: 'p-radiobutton-box',
+  input: 'p-radiobutton-input',
+  icon: 'p-radiobutton-icon'
+};
+var RadioButtonStyle = BaseStyle.extend({
+  name: 'radiobutton',
+  style: style$i,
+  classes: classes$1l
+});
+
+var classes$1k = {
+  root: 'p-radiobutton-group p-component'
+};
+var RadioButtonGroupStyle = BaseStyle.extend({
+  name: 'radiobuttongroup',
+  style: style$j,
+  classes: classes$1k
+});
+
+var classes$1j = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-rating', {
+      'p-readonly': props.readonly,
+      'p-disabled': props.disabled
+    }];
+  },
+  option: function option(_ref2) {
+    var instance = _ref2.instance,
+      value = _ref2.value;
+    return ['p-rating-option', {
+      'p-rating-option-active': value <= instance.d_value,
+      'p-focus-visible': value === instance.focusedOptionIndex && instance.isFocusVisibleItem
+    }];
+  },
+  onIcon: function onIcon(_ref3) {
+    var instance = _ref3.instance;
+    return ['p-rating-icon p-rating-on-icon', {
+      'p-invalid': instance.$invalid
+    }];
+  },
+  offIcon: function offIcon(_ref4) {
+    var instance = _ref4.instance;
+    return ['p-rating-icon p-rating-off-icon', {
+      'p-invalid': instance.$invalid
+    }];
+  }
+};
+var RatingStyle = BaseStyle.extend({
+  name: 'rating',
+  style: style$k,
+  classes: classes$1j
+});
+
+var classes$1i = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props,
+      state = _ref.state;
+    return ['p-select p-component p-inputwrapper', {
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-focus': state.focused,
+      'p-inputwrapper-filled': instance.$filled,
+      'p-inputwrapper-focus': state.focused || state.overlayVisible,
+      'p-select-open': state.overlayVisible,
+      'p-select-fluid': instance.$fluid,
+      'p-select-sm p-inputfield-sm': props.size === 'small',
+      'p-select-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  label: function label(_ref2) {
+    var _instance$label;
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-select-label', {
+      'p-placeholder': !props.editable && instance.label === props.placeholder,
+      'p-select-label-empty': !props.editable && !instance.$slots['value'] && (instance.label === 'p-emptylabel' || ((_instance$label = instance.label) === null || _instance$label === void 0 ? void 0 : _instance$label.length) === 0)
+    }];
+  },
+  clearIcon: 'p-select-clear-icon',
+  dropdown: 'p-select-dropdown',
+  loadingicon: 'p-select-loading-icon',
+  dropdownIcon: 'p-select-dropdown-icon',
+  overlay: 'p-select-overlay p-component',
+  header: 'p-select-header',
+  pcFilter: 'p-select-filter',
+  listContainer: 'p-select-list-container',
+  list: 'p-select-list',
+  optionGroup: 'p-select-option-group',
+  optionGroupLabel: 'p-select-option-group-label',
+  option: function option(_ref3) {
+    var instance = _ref3.instance,
+      props = _ref3.props,
+      state = _ref3.state,
+      _option = _ref3.option,
+      focusedOption = _ref3.focusedOption;
+    return ['p-select-option', {
+      'p-select-option-selected': instance.isSelected(_option) && props.highlightOnSelect,
+      'p-focus': state.focusedOptionIndex === focusedOption,
+      'p-disabled': instance.isOptionDisabled(_option)
+    }];
+  },
+  optionLabel: 'p-select-option-label',
+  optionCheckIcon: 'p-select-option-check-icon',
+  optionBlankIcon: 'p-select-option-blank-icon',
+  emptyMessage: 'p-select-empty-message'
+};
+var SelectStyle = BaseStyle.extend({
+  name: 'select',
+  style: style$l,
+  classes: classes$1i
+});
+
+var classes$1h = {
+  root: function root(_ref) {
+    var props = _ref.props,
+      instance = _ref.instance;
+    return ['p-selectbutton p-component', {
+      'p-invalid': instance.$invalid,
+      // @todo: check
+      'p-selectbutton-fluid': props.fluid
+    }];
+  }
+};
+var SelectButtonStyle = BaseStyle.extend({
+  name: 'selectbutton',
+  style: style$m,
+  classes: classes$1h
+});
+
+var inlineStyles$d = {
+  handle: {
+    position: 'absolute'
+  },
+  range: {
+    position: 'absolute'
+  }
+};
+var classes$1g = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-slider p-component', {
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid,
+      'p-slider-horizontal': props.orientation === 'horizontal',
+      'p-slider-vertical': props.orientation === 'vertical'
+    }];
+  },
+  range: 'p-slider-range',
+  handle: 'p-slider-handle'
+};
+var SliderStyle = BaseStyle.extend({
+  name: 'slider',
+  style: style$n,
+  classes: classes$1g,
+  inlineStyles: inlineStyles$d
+});
+
+var classes$1f = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-textarea p-component', {
+      'p-filled': instance.$filled,
+      'p-textarea-resizable ': props.autoResize,
+      'p-textarea-sm p-inputfield-sm': props.size === 'small',
+      'p-textarea-lg p-inputfield-lg': props.size === 'large',
+      'p-invalid': instance.$invalid,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-textarea-fluid': instance.$fluid
+    }];
+  }
+};
+var TextareaStyle = BaseStyle.extend({
+  name: 'textarea',
+  style: style$o,
+  classes: classes$1f
+});
+
+var classes$1e = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-togglebutton p-component', {
+      'p-togglebutton-checked': instance.active,
+      'p-invalid': instance.$invalid,
+      'p-togglebutton-fluid': props.fluid,
+      'p-togglebutton-sm p-inputfield-sm': props.size === 'small',
+      'p-togglebutton-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  content: 'p-togglebutton-content',
+  icon: 'p-togglebutton-icon',
+  label: 'p-togglebutton-label'
+};
+var ToggleButtonStyle = BaseStyle.extend({
+  name: 'togglebutton',
+  style: style$p,
+  classes: classes$1e
+});
+
+var inlineStyles$c = {
+  root: {
+    position: 'relative'
+  }
+};
+var classes$1d = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-toggleswitch p-component', {
+      'p-toggleswitch-checked': instance.checked,
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid
+    }];
+  },
+  input: 'p-toggleswitch-input',
+  slider: 'p-toggleswitch-slider',
+  handle: 'p-toggleswitch-handle'
+};
+var ToggleSwitchStyle = BaseStyle.extend({
+  name: 'toggleswitch',
+  style: style$q,
+  classes: classes$1d,
+  inlineStyles: inlineStyles$c
+});
+
+var inlineStyles$b = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      position: props.appendTo === 'self' ? 'relative' : undefined
+    };
+  }
+};
+var classes$1c = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-treeselect p-component p-inputwrapper', {
+      'p-treeselect-display-chip': props.display === 'chip',
+      'p-disabled': props.disabled,
+      'p-invalid': instance.$invalid,
+      'p-focus': instance.focused,
+      'p-variant-filled': instance.$variant === 'filled',
+      'p-inputwrapper-filled': instance.$filled,
+      'p-inputwrapper-focus': instance.focused || instance.overlayVisible,
+      'p-treeselect-open': instance.overlayVisible,
+      'p-treeselect-fluid': instance.$fluid,
+      'p-treeselect-sm p-inputfield-sm': props.size === 'small',
+      'p-treeselect-lg p-inputfield-lg': props.size === 'large'
+    }];
+  },
+  labelContainer: 'p-treeselect-label-container',
+  label: function label(_ref3) {
+    var instance = _ref3.instance,
+      props = _ref3.props;
+    return ['p-treeselect-label', {
+      'p-placeholder': instance.label === props.placeholder,
+      'p-treeselect-label-empty': !props.placeholder && instance.emptyValue
+    }];
+  },
+  clearIcon: 'p-treeselect-clear-icon',
+  chip: 'p-treeselect-chip-item',
+  pcChip: 'p-treeselect-chip',
+  dropdown: 'p-treeselect-dropdown',
+  dropdownIcon: 'p-treeselect-dropdown-icon',
+  panel: 'p-treeselect-overlay p-component',
+  treeContainer: 'p-treeselect-tree-container',
+  emptyMessage: 'p-treeselect-empty-message'
+};
+var TreeSelectStyle = BaseStyle.extend({
+  name: 'treeselect',
+  style: style$r,
+  classes: classes$1c,
+  inlineStyles: inlineStyles$b
+});
+
+function _typeof$3(o) { "@babel/helpers - typeof"; return _typeof$3 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof$3(o); }
+function _defineProperty$3(e, r, t) { return (r = _toPropertyKey$3(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: true, configurable: true, writable: true }) : e[r] = t, e; }
+function _toPropertyKey$3(t) { var i = _toPrimitive$3(t, "string"); return "symbol" == _typeof$3(i) ? i : i + ""; }
+function _toPrimitive$3(t, r) { if ("object" != _typeof$3(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r); if ("object" != _typeof$3(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var classes$1b = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-button p-component', _defineProperty$3(_defineProperty$3(_defineProperty$3(_defineProperty$3(_defineProperty$3(_defineProperty$3(_defineProperty$3(_defineProperty$3(_defineProperty$3({
+      'p-button-icon-only': instance.hasIcon && !props.label && !props.badge,
+      'p-button-vertical': (props.iconPos === 'top' || props.iconPos === 'bottom') && props.label,
+      'p-button-loading': props.loading,
+      'p-button-link': props.link || props.variant === 'link'
+    }, "p-button-".concat(props.severity), props.severity), 'p-button-raised', props.raised), 'p-button-rounded', props.rounded), 'p-button-text', props.text || props.variant === 'text'), 'p-button-outlined', props.outlined || props.variant === 'outlined'), 'p-button-sm', props.size === 'small'), 'p-button-lg', props.size === 'large'), 'p-button-plain', props.plain), 'p-button-fluid', instance.hasFluid)];
+  },
+  loadingIcon: 'p-button-loading-icon',
+  icon: function icon(_ref3) {
+    var props = _ref3.props;
+    return ['p-button-icon', _defineProperty$3({}, "p-button-icon-".concat(props.iconPos), props.label)];
+  },
+  label: 'p-button-label'
+};
+var ButtonStyle = BaseStyle.extend({
+  name: 'button',
+  style: style$s,
+  classes: classes$1b
+});
+
+var classes$1a = {
+  root: 'p-buttongroup p-component'
+};
+var ButtonGroupStyle = BaseStyle.extend({
+  name: 'buttongroup',
+  style: style$t,
+  classes: classes$1a
+});
+
+function _typeof$2(o) { "@babel/helpers - typeof"; return _typeof$2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof$2(o); }
+function _defineProperty$2(e, r, t) { return (r = _toPropertyKey$2(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: true, configurable: true, writable: true }) : e[r] = t, e; }
+function _toPropertyKey$2(t) { var i = _toPrimitive$2(t, "string"); return "symbol" == _typeof$2(i) ? i : i + ""; }
+function _toPrimitive$2(t, r) { if ("object" != _typeof$2(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r); if ("object" != _typeof$2(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+/* Direction */
+var inlineStyles$a = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      alignItems: (props.direction === 'up' || props.direction === 'down') && 'center',
+      justifyContent: (props.direction === 'left' || props.direction === 'right') && 'center',
+      flexDirection: props.direction === 'up' ? 'column-reverse' : props.direction === 'down' ? 'column' : props.direction === 'left' ? 'row-reverse' : props.direction === 'right' ? 'row' : null
+    };
+  },
+  list: function list(_ref2) {
+    var props = _ref2.props;
+    return {
+      flexDirection: props.direction === 'up' ? 'column-reverse' : props.direction === 'down' ? 'column' : props.direction === 'left' ? 'row-reverse' : props.direction === 'right' ? 'row' : null
+    };
+  }
+};
+var classes$19 = {
+  root: function root(_ref3) {
+    var instance = _ref3.instance,
+      props = _ref3.props;
+    return ["p-speeddial p-component p-speeddial-".concat(props.type), _defineProperty$2(_defineProperty$2(_defineProperty$2({}, "p-speeddial-direction-".concat(props.direction), props.type !== 'circle'), 'p-speeddial-open', instance.d_visible), 'p-disabled', props.disabled)];
+  },
+  pcButton: function pcButton(_ref5) {
+    var props = _ref5.props;
+    return ['p-speeddial-button', {
+      'p-speeddial-rotate': props.rotateAnimation && !props.hideIcon
+    }];
+  },
+  list: 'p-speeddial-list',
+  item: 'p-speeddial-item',
+  action: 'p-speeddial-action',
+  actionIcon: 'p-speeddial-action-icon',
+  mask: 'p-speeddial-mask p-overlay-mask'
+};
+var SpeedDialStyle = BaseStyle.extend({
+  name: 'speeddial',
+  style: style$u,
+  classes: classes$19,
+  inlineStyles: inlineStyles$a
+});
+
+var classes$18 = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-splitbutton p-component', {
+      'p-splitbutton-raised': props.raised,
+      'p-splitbutton-rounded': props.rounded,
+      'p-splitbutton-fluid': instance.hasFluid
+    }];
+  },
+  pcButton: 'p-splitbutton-button',
+  pcDropdown: 'p-splitbutton-dropdown'
+};
+var SplitButtonStyle = BaseStyle.extend({
+  name: 'splitbutton',
+  style: style$v,
+  classes: classes$18
+});
+
+var ColumnStyle = BaseStyle.extend({
+  name: 'column'
+});
+
+var RowStyle = BaseStyle.extend({
+  name: 'row'
+});
+
+var ColumnGroupStyle = BaseStyle.extend({
+  name: 'columngroup'
+});
+
+var classes$17 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-datatable p-component', {
+      'p-datatable-hoverable': props.rowHover || props.selectionMode,
+      'p-datatable-resizable': props.resizableColumns,
+      'p-datatable-resizable-fit': props.resizableColumns && props.columnResizeMode === 'fit',
+      'p-datatable-scrollable': props.scrollable,
+      'p-datatable-flex-scrollable': props.scrollable && props.scrollHeight === 'flex',
+      'p-datatable-striped': props.stripedRows,
+      'p-datatable-gridlines': props.showGridlines,
+      'p-datatable-sm': props.size === 'small',
+      'p-datatable-lg': props.size === 'large'
+    }];
+  },
+  mask: 'p-datatable-mask p-overlay-mask',
+  loadingIcon: 'p-datatable-loading-icon',
+  header: 'p-datatable-header',
+  pcPaginator: function pcPaginator(_ref2) {
+    var position = _ref2.position;
+    return 'p-datatable-paginator-' + position;
+  },
+  tableContainer: 'p-datatable-table-container',
+  table: function table(_ref3) {
+    var props = _ref3.props;
+    return ['p-datatable-table', {
+      'p-datatable-scrollable-table': props.scrollable,
+      'p-datatable-resizable-table': props.resizableColumns,
+      'p-datatable-resizable-table-fit': props.resizableColumns && props.columnResizeMode === 'fit'
+    }];
+  },
+  thead: 'p-datatable-thead',
+  headerCell: function headerCell(_ref4) {
+    var instance = _ref4.instance,
+      props = _ref4.props,
+      column = _ref4.column;
+    return column && !instance.columnProp('hidden') && (props.rowGroupMode !== 'subheader' || props.groupRowsBy !== instance.columnProp(column, 'field')) ? ['p-datatable-header-cell', {
+      'p-datatable-frozen-column': instance.columnProp('frozen')
+    }] : ['p-datatable-header-cell', {
+      'p-datatable-sortable-column': instance.columnProp('sortable'),
+      'p-datatable-resizable-column': instance.resizableColumns,
+      'p-datatable-column-sorted': instance.isColumnSorted(),
+      'p-datatable-frozen-column': instance.columnProp('frozen'),
+      'p-datatable-reorderable-column': props.reorderableColumns
+    }];
+  },
+  columnResizer: 'p-datatable-column-resizer',
+  columnHeaderContent: 'p-datatable-column-header-content',
+  columnTitle: 'p-datatable-column-title',
+  columnFooter: 'p-datatable-column-footer',
+  sortIcon: 'p-datatable-sort-icon',
+  pcSortBadge: 'p-datatable-sort-badge',
+  filter: function filter(_ref5) {
+    var props = _ref5.props;
+    return ['p-datatable-filter', {
+      'p-datatable-inline-filter': props.display === 'row',
+      'p-datatable-popover-filter': props.display === 'menu'
+    }];
+  },
+  filterElementContainer: 'p-datatable-filter-element-container',
+  pcColumnFilterButton: 'p-datatable-column-filter-button',
+  pcColumnFilterClearButton: 'p-datatable-column-filter-clear-button',
+  filterOverlay: function filterOverlay(_ref6) {
+    var props = _ref6.props;
+    return ['p-datatable-filter-overlay p-component', {
+      'p-datatable-filter-overlay-popover': props.display === 'menu'
+    }];
+  },
+  filterConstraintList: 'p-datatable-filter-constraint-list',
+  filterConstraint: function filterConstraint(_ref7) {
+    var instance = _ref7.instance,
+      matchMode = _ref7.matchMode;
+    return ['p-datatable-filter-constraint', {
+      'p-datatable-filter-constraint-selected': matchMode && instance.isRowMatchModeSelected(matchMode.value)
+    }];
+  },
+  filterConstraintSeparator: 'p-datatable-filter-constraint-separator',
+  filterOperator: 'p-datatable-filter-operator',
+  pcFilterOperatorDropdown: 'p-datatable-filter-operator-dropdown',
+  filterRuleList: 'p-datatable-filter-rule-list',
+  filterRule: 'p-datatable-filter-rule',
+  pcFilterConstraintDropdown: 'p-datatable-filter-constraint-dropdown',
+  pcFilterRemoveRuleButton: 'p-datatable-filter-remove-rule-button',
+  pcFilterAddRuleButton: 'p-datatable-filter-add-rule-button',
+  filterButtonbar: 'p-datatable-filter-buttonbar',
+  pcFilterClearButton: 'p-datatable-filter-clear-button',
+  pcFilterApplyButton: 'p-datatable-filter-apply-button',
+  tbody: function tbody(_ref8) {
+    var props = _ref8.props;
+    return props.frozenRow ? 'p-datatable-tbody p-datatable-frozen-tbody' : 'p-datatable-tbody';
+  },
+  rowGroupHeader: 'p-datatable-row-group-header',
+  rowToggleButton: 'p-datatable-row-toggle-button',
+  rowToggleIcon: 'p-datatable-row-toggle-icon',
+  row: function row(_ref9) {
+    var instance = _ref9.instance,
+      props = _ref9.props,
+      index = _ref9.index,
+      columnSelectionMode = _ref9.columnSelectionMode;
+    var rowStyleClass = [];
+    if (props.selectionMode) {
+      rowStyleClass.push('p-datatable-selectable-row');
+    }
+    if (props.selection) {
+      rowStyleClass.push({
+        'p-datatable-row-selected': columnSelectionMode ? instance.isSelected && instance.$parentInstance.$parentInstance.highlightOnSelect : instance.isSelected
+      });
+    }
+    if (props.contextMenuSelection) {
+      rowStyleClass.push({
+        'p-datatable-contextmenu-row-selected': instance.isSelectedWithContextMenu
+      });
+    }
+    rowStyleClass.push(index % 2 === 0 ? 'p-row-even' : 'p-row-odd');
+    return rowStyleClass;
+  },
+  rowExpansion: 'p-datatable-row-expansion',
+  rowGroupFooter: 'p-datatable-row-group-footer',
+  emptyMessage: 'p-datatable-empty-message',
+  bodyCell: function bodyCell(_ref0) {
+    var instance = _ref0.instance;
+    return [{
+      'p-datatable-frozen-column': instance.columnProp('frozen')
+    }];
+  },
+  reorderableRowHandle: 'p-datatable-reorderable-row-handle',
+  pcRowEditorInit: 'p-datatable-row-editor-init',
+  pcRowEditorSave: 'p-datatable-row-editor-save',
+  pcRowEditorCancel: 'p-datatable-row-editor-cancel',
+  tfoot: 'p-datatable-tfoot',
+  footerCell: function footerCell(_ref1) {
+    var instance = _ref1.instance;
+    return [{
+      'p-datatable-frozen-column': instance.columnProp('frozen')
+    }];
+  },
+  virtualScrollerSpacer: 'p-datatable-virtualscroller-spacer',
+  footer: 'p-datatable-footer',
+  columnResizeIndicator: 'p-datatable-column-resize-indicator',
+  rowReorderIndicatorUp: 'p-datatable-row-reorder-indicator-up',
+  rowReorderIndicatorDown: 'p-datatable-row-reorder-indicator-down'
+};
+var inlineStyles$9 = {
+  tableContainer: {
+    overflow: 'auto'
+  },
+  thead: {
+    position: 'sticky'
+  },
+  tfoot: {
+    position: 'sticky'
+  }
+};
+var DataTableStyle = BaseStyle.extend({
+  name: 'datatable',
+  style: style$w,
+  classes: classes$17,
+  inlineStyles: inlineStyles$9
+});
+
+var classes$16 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-dataview p-component', {
+      'p-dataview-list': props.layout === 'list',
+      'p-dataview-grid': props.layout === 'grid'
+    }];
+  },
+  header: 'p-dataview-header',
+  pcPaginator: function pcPaginator(_ref2) {
+    var position = _ref2.position;
+    return 'p-dataview-paginator-' + position;
+  },
+  content: 'p-dataview-content',
+  emptyMessage: 'p-dataview-empty-message',
+  // TODO: remove?
+  footer: 'p-dataview-footer'
+};
+var DataViewStyle = BaseStyle.extend({
+  name: 'dataview',
+  style: style$x,
+  classes: classes$16
+});
+
+var classes$15 = {
+  root: 'p-orderlist p-component',
+  controls: 'p-orderlist-controls'
+};
+var OrderListStyle = BaseStyle.extend({
+  name: 'orderlist',
+  style: style$y,
+  classes: classes$15
+});
+
+var classes$14 = {
+  root: 'p-organizationchart p-component',
+  table: 'p-organizationchart-table',
+  node: function node(_ref) {
+    var instance = _ref.instance;
+    return ['p-organizationchart-node', {
+      'p-organizationchart-node-selectable': instance.selectable,
+      'p-organizationchart-node-selected': instance.selected
+    }];
+  },
+  nodeToggleButton: function nodeToggleButton(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-organizationchart-node-toggle-button', {
+      'p-disabled': !instance.selectable
+    }];
+  },
+  nodeToggleButtonIcon: 'p-organizationchart-node-toggle-button-icon',
+  connectors: 'p-organizationchart-connectors',
+  connectorDown: 'p-organizationchart-connector-down',
+  connectorLeft: function connectorLeft(_ref3) {
+    var index = _ref3.index;
+    return ['p-organizationchart-connector-left', {
+      'p-organizationchart-connector-top': !(index === 0)
+    }];
+  },
+  connectorRight: function connectorRight(_ref4) {
+    var props = _ref4.props,
+      index = _ref4.index;
+    return ['p-organizationchart-connector-right', {
+      'p-organizationchart-connector-top': !(index === props.node.children.length - 1)
+    }];
+  },
+  nodeChildren: 'p-organizationchart-node-children'
+};
+var OrganizationChartStyle = BaseStyle.extend({
+  name: 'organizationchart',
+  style: style$z,
+  classes: classes$14
+});
+
+function _typeof$1(o) { "@babel/helpers - typeof"; return _typeof$1 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof$1(o); }
+function _defineProperty$1(e, r, t) { return (r = _toPropertyKey$1(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: true, configurable: true, writable: true }) : e[r] = t, e; }
+function _toPropertyKey$1(t) { var i = _toPrimitive$1(t, "string"); return "symbol" == _typeof$1(i) ? i : i + ""; }
+function _toPrimitive$1(t, r) { if ("object" != _typeof$1(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r); if ("object" != _typeof$1(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var classes$13 = {
+  paginator: function paginator(_ref) {
+    var instance = _ref.instance,
+      key = _ref.key;
+    return ['p-paginator p-component', _defineProperty$1({
+      'p-paginator-default': !instance.hasBreakpoints()
+    }, "p-paginator-".concat(key), instance.hasBreakpoints())];
+  },
+  content: 'p-paginator-content',
+  contentStart: 'p-paginator-content-start',
+  contentEnd: 'p-paginator-content-end',
+  first: function first(_ref3) {
+    var instance = _ref3.instance;
+    return ['p-paginator-first', {
+      'p-disabled': instance.$attrs.disabled
+    }];
+  },
+  firstIcon: 'p-paginator-first-icon',
+  prev: function prev(_ref4) {
+    var instance = _ref4.instance;
+    return ['p-paginator-prev', {
+      'p-disabled': instance.$attrs.disabled
+    }];
+  },
+  prevIcon: 'p-paginator-prev-icon',
+  next: function next(_ref5) {
+    var instance = _ref5.instance;
+    return ['p-paginator-next', {
+      'p-disabled': instance.$attrs.disabled
+    }];
+  },
+  nextIcon: 'p-paginator-next-icon',
+  last: function last(_ref6) {
+    var instance = _ref6.instance;
+    return ['p-paginator-last', {
+      'p-disabled': instance.$attrs.disabled
+    }];
+  },
+  lastIcon: 'p-paginator-last-icon',
+  pages: 'p-paginator-pages',
+  page: function page(_ref7) {
+    var props = _ref7.props,
+      pageLink = _ref7.pageLink;
+    return ['p-paginator-page', {
+      'p-paginator-page-selected': pageLink - 1 === props.page
+    }];
+  },
+  current: 'p-paginator-current',
+  pcRowPerPageDropdown: 'p-paginator-rpp-dropdown',
+  pcJumpToPageDropdown: 'p-paginator-jtp-dropdown',
+  pcJumpToPageInputText: 'p-paginator-jtp-input'
+};
+var PaginatorStyle = BaseStyle.extend({
+  name: 'paginator',
+  style: style$A,
+  classes: classes$13
+});
+
+var classes$12 = {
+  root: 'p-picklist p-component',
+  sourceControls: 'p-picklist-controls p-picklist-source-controls',
+  sourceListContainer: 'p-picklist-list-container p-picklist-source-list-container',
+  transferControls: 'p-picklist-controls p-picklist-transfer-controls',
+  targetListContainer: 'p-picklist-list-container p-picklist-target-list-container',
+  targetControls: 'p-picklist-controls p-picklist-target-controls'
+};
+var PickListStyle = BaseStyle.extend({
+  name: 'picklist',
+  style: style$B,
+  classes: classes$12
+});
+
+var classes$11 = {
+  root: function root(_ref) {
+    var props = _ref.props,
+      state = _ref.state;
+    return ['p-tree p-component', {
+      'p-tree-selectable': props.selectionMode != null,
+      'p-tree-loading': props.loading,
+      'p-tree-flex-scrollable': props.scrollHeight === 'flex',
+      'p-tree-node-dragover': state.dragHover
+    }];
+  },
+  mask: 'p-tree-mask p-overlay-mask',
+  loadingIcon: 'p-tree-loading-icon',
+  pcFilterContainer: 'p-tree-filter',
+  pcFilterInput: 'p-tree-filter-input',
+  wrapper: 'p-tree-root',
+  //TODO: discuss
+  rootChildren: 'p-tree-root-children',
+  node: function node(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-tree-node', {
+      'p-tree-node-leaf': instance.leaf
+    }];
+  },
+  nodeContent: function nodeContent(_ref3) {
+    var instance = _ref3.instance;
+    return ['p-tree-node-content', instance.node.styleClass, {
+      'p-tree-node-selectable': instance.selectable,
+      'p-tree-node-selected': instance.checkboxMode && instance.$parentInstance.highlightOnSelect ? instance.checked : instance.selected,
+      'p-tree-node-dragover': instance.isNodeDropActive
+    }];
+  },
+  nodeToggleButton: 'p-tree-node-toggle-button',
+  nodeToggleIcon: 'p-tree-node-toggle-icon',
+  nodeCheckbox: 'p-tree-node-checkbox',
+  nodeIcon: 'p-tree-node-icon',
+  nodeLabel: 'p-tree-node-label',
+  nodeChildren: 'p-tree-node-children',
+  emptyMessage: 'p-tree-empty-message',
+  dropPoint: 'p-tree-node-drop-point'
+};
+var TreeStyle = BaseStyle.extend({
+  name: 'tree',
+  style: style$C,
+  classes: classes$11
+});
+
+var classes$10 = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-treetable p-component', {
+      'p-treetable-hoverable': props.rowHover || instance.rowSelectionMode,
+      'p-treetable-resizable': props.resizableColumns,
+      'p-treetable-resizable-fit': props.resizableColumns && props.columnResizeMode === 'fit',
+      'p-treetable-scrollable': props.scrollable,
+      'p-treetable-flex-scrollable': props.scrollable && props.scrollHeight === 'flex',
+      'p-treetable-gridlines': props.showGridlines,
+      'p-treetable-sm': props.size === 'small',
+      'p-treetable-lg': props.size === 'large'
+    }];
+  },
+  loading: 'p-treetable-loading',
+  //TODO: required?
+  mask: 'p-treetable-mask p-overlay-mask',
+  loadingIcon: 'p-treetable-loading-icon',
+  header: 'p-treetable-header',
+  paginator: function paginator(_ref2) {
+    var position = _ref2.position;
+    return 'p-treetable-paginator-' + position;
+  },
+  tableContainer: 'p-treetable-table-container',
+  table: function table(_ref3) {
+    var props = _ref3.props;
+    return ['p-treetable-table', {
+      'p-treetable-scrollable-table': props.scrollable,
+      'p-treetable-resizable-table': props.resizableColumns,
+      'p-treetable-resizable-table-fit': props.resizableColumns && props.columnResizeMode === 'fit'
+    }];
+  },
+  thead: 'p-treetable-thead',
+  headerCell: function headerCell(_ref4) {
+    var instance = _ref4.instance,
+      props = _ref4.props;
+    return ['p-treetable-header-cell', {
+      'p-treetable-sortable-column': instance.columnProp('sortable'),
+      'p-treetable-resizable-column': props.resizableColumns,
+      'p-treetable-column-sorted': instance.columnProp('sortable') ? instance.isColumnSorted() : false,
+      'p-treetable-frozen-column': instance.columnProp('frozen')
+    }];
+  },
+  columnResizer: 'p-treetable-column-resizer',
+  columnHeaderContent: 'p-treetable-column-header-content',
+  columnTitle: 'p-treetable-column-title',
+  sortIcon: 'p-treetable-sort-icon',
+  pcSortBadge: 'p-treetable-sort-badge',
+  tbody: 'p-treetable-tbody',
+  row: function row(_ref5) {
+    var props = _ref5.props,
+      instance = _ref5.instance;
+    return [{
+      'p-treetable-selectable-row': instance.$parentInstance.rowSelectionMode,
+      'p-treetable-row-selected': instance.selected,
+      'p-treetable-contextmenu-row-selected': props.contextMenuSelection && instance.isSelectedWithContextMenu
+    }];
+  },
+  bodyCell: function bodyCell(_ref6) {
+    var instance = _ref6.instance;
+    return [{
+      'p-treetable-frozen-column': instance.columnProp('frozen')
+    }];
+  },
+  bodyCellContent: function bodyCellContent(_ref7) {
+    var instance = _ref7.instance;
+    return ['p-treetable-body-cell-content', {
+      'p-treetable-body-cell-content-expander': instance.columnProp('expander')
+    }];
+  },
+  nodeToggleButton: 'p-treetable-node-toggle-button',
+  nodeToggleIcon: 'p-treetable-node-toggle-icon',
+  pcNodeCheckbox: 'p-treetable-node-checkbox',
+  emptyMessage: 'p-treetable-empty-message',
+  tfoot: 'p-treetable-tfoot',
+  footerCell: function footerCell(_ref8) {
+    var instance = _ref8.instance;
+    return [{
+      'p-treetable-frozen-column': instance.columnProp('frozen')
+    }];
+  },
+  footer: 'p-treetable-footer',
+  columnResizeIndicator: 'p-treetable-column-resize-indicator'
+};
+var inlineStyles$8 = {
+  tableContainer: {
+    overflow: 'auto'
+  },
+  thead: {
+    position: 'sticky'
+  },
+  tfoot: {
+    position: 'sticky'
+  }
+};
+var TreeTableStyle = BaseStyle.extend({
+  name: 'treetable',
+  style: style$D,
+  classes: classes$10,
+  inlineStyles: inlineStyles$8
+});
+
+var classes$$ = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-timeline p-component', 'p-timeline-' + props.align, 'p-timeline-' + props.layout];
+  },
+  event: 'p-timeline-event',
+  eventOpposite: 'p-timeline-event-opposite',
+  eventSeparator: 'p-timeline-event-separator',
+  eventMarker: 'p-timeline-event-marker',
+  eventConnector: 'p-timeline-event-connector',
+  eventContent: 'p-timeline-event-content'
+};
+var TimelineStyle = BaseStyle.extend({
+  name: 'timeline',
+  style: style$E,
+  classes: classes$$
+});
+
+var css = "\n.p-virtualscroller {\n    position: relative;\n    overflow: auto;\n    contain: strict;\n    transform: translateZ(0);\n    will-change: scroll-position;\n    outline: 0 none;\n}\n\n.p-virtualscroller-content {\n    position: absolute;\n    top: 0;\n    left: 0;\n    min-height: 100%;\n    min-width: 100%;\n    will-change: transform;\n}\n\n.p-virtualscroller-spacer {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 1px;\n    width: 1px;\n    transform-origin: 0 0;\n    pointer-events: none;\n}\n\n.p-virtualscroller-loader {\n    position: sticky;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.p-virtualscroller-loader-mask {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.p-virtualscroller-horizontal > .p-virtualscroller-content {\n    display: flex;\n}\n\n.p-virtualscroller-inline .p-virtualscroller-content {\n    position: static;\n}\n\n.p-virtualscroller .p-virtualscroller-loading {\n    transform: none !important;\n    min-height: 0;\n    position: sticky;\n    inset-block-start: 0;\n    inset-inline-start: 0;\n}\n";
+var VirtualScrollerStyle = BaseStyle.extend({
+  name: 'virtualscroller',
+  css: css,
+  style: style$F
+});
+
+var classes$_ = {
+  root: 'p-accordion p-component'
+};
+var AccordionStyle = BaseStyle.extend({
+  name: 'accordion',
+  style: style$G,
+  classes: classes$_
+});
+
+var classes$Z = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-accordionpanel', {
+      'p-accordionpanel-active': instance.active,
+      'p-disabled': props.disabled
+    }];
+  }
+};
+var AccordionPanelStyle = BaseStyle.extend({
+  name: 'accordionpanel',
+  classes: classes$Z
+});
+
+var classes$Y = {
+  root: 'p-accordionheader',
+  toggleicon: 'p-accordionheader-toggle-icon'
+};
+var AccordionHeaderStyle = BaseStyle.extend({
+  name: 'accordionheader',
+  classes: classes$Y
+});
+
+var classes$X = {
+  root: 'p-accordioncontent',
+  contentWrapper: 'p-accordioncontent-wrapper',
+  content: 'p-accordioncontent-content'
+};
+var AccordionContentStyle = BaseStyle.extend({
+  name: 'accordioncontent',
+  classes: classes$X
+});
+
+var AccordionTabStyle = BaseStyle.extend({
+  name: 'accordiontab'
+});
+
+var classes$W = {
+  root: 'p-card p-component',
+  header: 'p-card-header',
+  body: 'p-card-body',
+  caption: 'p-card-caption',
+  title: 'p-card-title',
+  subtitle: 'p-card-subtitle',
+  content: 'p-card-content',
+  footer: 'p-card-footer'
+};
+var CardStyle = BaseStyle.extend({
+  name: 'card',
+  style: style$H,
+  classes: classes$W
+});
+
+var DeferredContentStyle = BaseStyle.extend({
+  name: 'deferredcontent'
+});
+
+/* Position */
+var inlineStyles$7 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return {
+      justifyContent: props.layout === 'horizontal' ? props.align === 'center' || props.align === null ? 'center' : props.align === 'left' ? 'flex-start' : props.align === 'right' ? 'flex-end' : null : null,
+      alignItems: props.layout === 'vertical' ? props.align === 'center' || props.align === null ? 'center' : props.align === 'top' ? 'flex-start' : props.align === 'bottom' ? 'flex-end' : null : null
+    };
+  }
+};
+var classes$V = {
+  root: function root(_ref2) {
+    var props = _ref2.props;
+    return ['p-divider p-component', 'p-divider-' + props.layout, 'p-divider-' + props.type, {
+      'p-divider-left': props.layout === 'horizontal' && (!props.align || props.align === 'left')
+    }, {
+      'p-divider-center': props.layout === 'horizontal' && props.align === 'center'
+    }, {
+      'p-divider-right': props.layout === 'horizontal' && props.align === 'right'
+    }, {
+      'p-divider-top': props.layout === 'vertical' && props.align === 'top'
+    }, {
+      'p-divider-center': props.layout === 'vertical' && (!props.align || props.align === 'center')
+    }, {
+      'p-divider-bottom': props.layout === 'vertical' && props.align === 'bottom'
+    }];
+  },
+  content: 'p-divider-content'
+};
+var DividerStyle = BaseStyle.extend({
+  name: 'divider',
+  style: style$I,
+  classes: classes$V,
+  inlineStyles: inlineStyles$7
+});
+
+var classes$U = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-fieldset p-component', {
+      'p-fieldset-toggleable': props.toggleable
+    }];
+  },
+  legend: 'p-fieldset-legend',
+  legendLabel: 'p-fieldset-legend-label',
+  toggleButton: 'p-fieldset-toggle-button',
+  toggleIcon: 'p-fieldset-toggle-icon',
+  contentContainer: 'p-fieldset-content-container',
+  contentWrapper: 'p-fieldset-content-wrapper',
+  content: 'p-fieldset-content'
+};
+var FieldsetStyle = BaseStyle.extend({
+  name: 'fieldset',
+  style: style$J,
+  classes: classes$U
+});
+
+var classes$T = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-panel p-component', {
+      'p-panel-toggleable': props.toggleable
+    }];
+  },
+  header: 'p-panel-header',
+  title: 'p-panel-title',
+  headerActions: 'p-panel-header-actions',
+  pcToggleButton: 'p-panel-toggle-button',
+  contentContainer: 'p-panel-content-container',
+  contentWrapper: 'p-panel-content-wrapper',
+  content: 'p-panel-content',
+  footer: 'p-panel-footer'
+};
+var PanelStyle = BaseStyle.extend({
+  name: 'panel',
+  style: style$K,
+  classes: classes$T
+});
+
+var classes$S = {
+  root: 'p-scrollpanel p-component',
+  contentContainer: 'p-scrollpanel-content-container',
+  content: 'p-scrollpanel-content',
+  barX: 'p-scrollpanel-bar p-scrollpanel-bar-x',
+  barY: 'p-scrollpanel-bar p-scrollpanel-bar-y'
+};
+var ScrollPanelStyle = BaseStyle.extend({
+  name: 'scrollpanel',
+  style: style$L,
+  classes: classes$S
+});
+
+var classes$R = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-splitter p-component', 'p-splitter-' + props.layout];
+  },
+  gutter: 'p-splitter-gutter',
+  gutterHandle: 'p-splitter-gutter-handle'
+};
+var SplitterStyle = BaseStyle.extend({
+  name: 'splitter',
+  style: style$M,
+  classes: classes$R
+});
+
+var classes$Q = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-splitterpanel', {
+      'p-splitterpanel-nested': instance.isNested
+    }];
+  }
+};
+var SplitterPanelStyle = BaseStyle.extend({
+  name: 'splitterpanel',
+  classes: classes$Q
+});
+
+var classes$P = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-stepper p-component', {
+      'p-readonly': props.linear
+    }];
+  },
+  separator: 'p-stepper-separator'
+};
+var StepperStyle = BaseStyle.extend({
+  name: 'stepper',
+  style: style$N,
+  classes: classes$P
+});
+
+var classes$O = {
+  root: 'p-steplist'
+};
+var StepListStyle = BaseStyle.extend({
+  name: 'steplist',
+  classes: classes$O
+});
+
+var classes$N = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-step', {
+      'p-step-active': instance.active,
+      'p-disabled': instance.isStepDisabled
+    }];
+  },
+  header: 'p-step-header',
+  number: 'p-step-number',
+  title: 'p-step-title'
+};
+var StepStyle = BaseStyle.extend({
+  name: 'step',
+  classes: classes$N
+});
+
+var classes$M = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-stepitem', {
+      'p-stepitem-active': instance.isActive
+    }];
+  }
+};
+var StepItemStyle = BaseStyle.extend({
+  name: 'stepitem',
+  classes: classes$M
+});
+
+var classes$L = {
+  root: 'p-steppanels'
+};
+var StepPanelsStyle = BaseStyle.extend({
+  name: 'steppanels',
+  classes: classes$L
+});
+
+var classes$K = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-steppanel', {
+      'p-steppanel-active': instance.isVertical && instance.active
+    }];
+  },
+  contentWrapper: 'p-steppanel-content-wrapper',
+  content: 'p-steppanel-content'
+};
+var StepPanelStyle = BaseStyle.extend({
+  name: 'steppanel',
+  classes: classes$K
+});
+
+var classes$J = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-tabview p-component', {
+      'p-tabview-scrollable': props.scrollable
+    }];
+  },
+  navContainer: 'p-tabview-tablist-container',
+  prevButton: 'p-tabview-prev-button',
+  navContent: 'p-tabview-tablist-scroll-container',
+  nav: 'p-tabview-tablist',
+  tab: {
+    header: function header(_ref2) {
+      var instance = _ref2.instance,
+        tab = _ref2.tab,
+        index = _ref2.index;
+      return ['p-tabview-tablist-item', instance.getTabProp(tab, 'headerClass'), {
+        'p-tabview-tablist-item-active': instance.d_activeIndex === index,
+        'p-disabled': instance.getTabProp(tab, 'disabled')
+      }];
+    },
+    headerAction: 'p-tabview-tab-header',
+    headerTitle: 'p-tabview-tab-title',
+    content: function content(_ref3) {
+      var instance = _ref3.instance,
+        tab = _ref3.tab;
+      return ['p-tabview-panel', instance.getTabProp(tab, 'contentClass')];
+    }
+  },
+  inkbar: 'p-tabview-ink-bar',
+  nextButton: 'p-tabview-next-button',
+  panelContainer: 'p-tabview-panels'
+};
+var TabViewStyle = BaseStyle.extend({
+  name: 'tabview',
+  style: style$O,
+  classes: classes$J
+});
+
+var classes$I = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-tabs p-component', {
+      'p-tabs-scrollable': props.scrollable
+    }];
+  }
+};
+var TabsStyle = BaseStyle.extend({
+  name: 'tabs',
+  style: style$P,
+  classes: classes$I
+});
+
+var classes$H = {
+  root: 'p-tablist',
+  content: 'p-tablist-content p-tablist-viewport',
+  tabList: 'p-tablist-tab-list',
+  activeBar: 'p-tablist-active-bar',
+  prevButton: 'p-tablist-prev-button p-tablist-nav-button',
+  nextButton: 'p-tablist-next-button p-tablist-nav-button'
+};
+var TabListStyle = BaseStyle.extend({
+  name: 'tablist',
+  classes: classes$H
+});
+
+var classes$G = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-tab', {
+      'p-tab-active': instance.active,
+      'p-disabled': props.disabled
+    }];
+  }
+};
+var TabStyle = BaseStyle.extend({
+  name: 'tab',
+  classes: classes$G
+});
+
+var classes$F = {
+  root: 'p-tabpanels'
+};
+var TabPanelsStyle = BaseStyle.extend({
+  name: 'tabpanels',
+  classes: classes$F
+});
+
+var classes$E = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-tabpanel', {
+      'p-tabpanel-active': instance.active
+    }];
+  }
+};
+var TabPanelStyle = BaseStyle.extend({
+  name: 'tabpanel',
+  classes: classes$E
+});
+
+var classes$D = {
+  root: 'p-toolbar p-component',
+  start: 'p-toolbar-start',
+  center: 'p-toolbar-center',
+  end: 'p-toolbar-end'
+};
+var ToolbarStyle = BaseStyle.extend({
+  name: 'toolbar',
+  style: style$Q,
+  classes: classes$D
+});
+
+var classes$C = {
+  root: 'p-confirmdialog',
+  icon: 'p-confirmdialog-icon',
+  message: 'p-confirmdialog-message',
+  pcRejectButton: 'p-confirmdialog-reject-button',
+  pcAcceptButton: 'p-confirmdialog-accept-button'
+};
+var ConfirmDialogStyle = BaseStyle.extend({
+  name: 'confirmdialog',
+  style: style$R,
+  classes: classes$C
+});
+
+var classes$B = {
+  root: 'p-confirmpopup p-component',
+  content: 'p-confirmpopup-content',
+  icon: 'p-confirmpopup-icon',
+  message: 'p-confirmpopup-message',
+  footer: 'p-confirmpopup-footer',
+  pcRejectButton: 'p-confirmpopup-reject-button',
+  pcAcceptButton: 'p-confirmpopup-accept-button'
+};
+var ConfirmPopupStyle = BaseStyle.extend({
+  name: 'confirmpopup',
+  style: style$S,
+  classes: classes$B
+});
+
+/* Position */
+var inlineStyles$6 = {
+  mask: function mask(_ref) {
+    var position = _ref.position,
+      modal = _ref.modal;
+    return {
+      position: 'fixed',
+      height: '100%',
+      width: '100%',
+      left: 0,
+      top: 0,
+      display: 'flex',
+      justifyContent: position === 'left' || position === 'topleft' || position === 'bottomleft' ? 'flex-start' : position === 'right' || position === 'topright' || position === 'bottomright' ? 'flex-end' : 'center',
+      alignItems: position === 'top' || position === 'topleft' || position === 'topright' ? 'flex-start' : position === 'bottom' || position === 'bottomleft' || position === 'bottomright' ? 'flex-end' : 'center',
+      pointerEvents: modal ? 'auto' : 'none'
+    };
+  },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    pointerEvents: 'auto'
+  }
+};
+var classes$A = {
+  mask: function mask(_ref2) {
+    var props = _ref2.props;
+    var positions = ['left', 'right', 'top', 'topleft', 'topright', 'bottom', 'bottomleft', 'bottomright'];
+    var pos = positions.find(function (item) {
+      return item === props.position;
+    });
+    return ['p-dialog-mask', {
+      'p-overlay-mask p-overlay-mask-enter-active': props.modal
+    }, pos ? "p-dialog-".concat(pos) : ''];
+  },
+  root: function root(_ref3) {
+    var props = _ref3.props,
+      instance = _ref3.instance;
+    return ['p-dialog p-component', {
+      'p-dialog-maximized': props.maximizable && instance.maximized
+    }];
+  },
+  header: 'p-dialog-header',
+  title: 'p-dialog-title',
+  headerActions: 'p-dialog-header-actions',
+  pcMaximizeButton: 'p-dialog-maximize-button',
+  pcCloseButton: 'p-dialog-close-button',
+  content: 'p-dialog-content',
+  footer: 'p-dialog-footer'
+};
+var DialogStyle = BaseStyle.extend({
+  name: 'dialog',
+  style: style$T,
+  classes: classes$A,
+  inlineStyles: inlineStyles$6
+});
+
+var inlineStyles$5 = {
+  mask: function mask(_ref) {
+    var position = _ref.position,
+      modal = _ref.modal;
+    return {
+      position: 'fixed',
+      height: '100%',
+      width: '100%',
+      left: 0,
+      top: 0,
+      display: 'flex',
+      justifyContent: position === 'left' ? 'flex-start' : position === 'right' ? 'flex-end' : 'center',
+      alignItems: position === 'top' ? 'flex-start' : position === 'bottom' ? 'flex-end' : 'center',
+      pointerEvents: modal ? 'auto' : 'none'
+    };
+  },
+  root: {
+    pointerEvents: 'auto'
+  }
+};
+var classes$z = {
+  mask: function mask(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    var positions = ['left', 'right', 'top', 'bottom'];
+    var pos = positions.find(function (item) {
+      return item === props.position;
+    });
+    return ['p-drawer-mask', {
+      'p-overlay-mask p-overlay-mask-enter-active': props.modal,
+      'p-drawer-open': instance.containerVisible,
+      'p-drawer-full': instance.fullScreen
+    }, pos ? "p-drawer-".concat(pos) : ''];
+  },
+  root: function root(_ref3) {
+    var instance = _ref3.instance;
+    return ['p-drawer p-component', {
+      'p-drawer-full': instance.fullScreen
+    }];
+  },
+  header: 'p-drawer-header',
+  title: 'p-drawer-title',
+  pcCloseButton: 'p-drawer-close-button',
+  content: 'p-drawer-content',
+  footer: 'p-drawer-footer'
+};
+var DrawerStyle = BaseStyle.extend({
+  name: 'drawer',
+  style: style$U,
+  classes: classes$z,
+  inlineStyles: inlineStyles$5
+});
+
+var DynamicDialogStyle = BaseStyle.extend({
+  name: 'dynamicdialog'
+});
+
+var OverlayPanelStyle = BaseStyle.extend({
+  name: 'overlaypanel'
+});
+
+var classes$y = {
+  root: 'p-popover p-component',
+  content: 'p-popover-content'
+};
+var PopoverStyle = BaseStyle.extend({
+  name: 'popover',
+  style: style$V,
+  classes: classes$y
+});
+
+var SidebarStyle = BaseStyle.extend({
+  name: 'sidebar'
+});
+
+var classes$x = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ["p-fileupload p-fileupload-".concat(props.mode, " p-component")];
+  },
+  header: 'p-fileupload-header',
+  pcChooseButton: 'p-fileupload-choose-button',
+  pcUploadButton: 'p-fileupload-upload-button',
+  pcCancelButton: 'p-fileupload-cancel-button',
+  content: 'p-fileupload-content',
+  fileList: 'p-fileupload-file-list',
+  file: 'p-fileupload-file',
+  fileThumbnail: 'p-fileupload-file-thumbnail',
+  fileInfo: 'p-fileupload-file-info',
+  fileName: 'p-fileupload-file-name',
+  fileSize: 'p-fileupload-file-size',
+  pcFileBadge: 'p-fileupload-file-badge',
+  fileActions: 'p-fileupload-file-actions',
+  pcFileRemoveButton: 'p-fileupload-file-remove-button',
+  basicContent: 'p-fileupload-basic-content'
+};
+var FileUploadStyle = BaseStyle.extend({
+  name: 'fileupload',
+  style: style$W,
+  classes: classes$x
+});
+
+var classes$w = {
+  root: 'p-breadcrumb p-component',
+  list: 'p-breadcrumb-list',
+  homeItem: 'p-breadcrumb-home-item',
+  separator: 'p-breadcrumb-separator',
+  separatorIcon: 'p-breadcrumb-separator-icon',
+  item: function item(_ref) {
+    var instance = _ref.instance;
+    return ['p-breadcrumb-item', {
+      'p-disabled': instance.disabled()
+    }];
+  },
+  itemLink: 'p-breadcrumb-item-link',
+  itemIcon: 'p-breadcrumb-item-icon',
+  itemLabel: 'p-breadcrumb-item-label'
+};
+var BreadcrumbStyle = BaseStyle.extend({
+  name: 'breadcrumb',
+  style: style$X,
+  classes: classes$w
+});
+
+var classes$v = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-contextmenu p-component', {
+      'p-contextmenu-mobile': instance.queryMatches
+    }];
+  },
+  rootList: 'p-contextmenu-root-list',
+  item: function item(_ref2) {
+    var instance = _ref2.instance,
+      processedItem = _ref2.processedItem;
+    return ['p-contextmenu-item', {
+      'p-contextmenu-item-active': instance.isItemActive(processedItem),
+      'p-focus': instance.isItemFocused(processedItem),
+      'p-disabled': instance.isItemDisabled(processedItem)
+    }];
+  },
+  itemContent: 'p-contextmenu-item-content',
+  itemLink: 'p-contextmenu-item-link',
+  itemIcon: 'p-contextmenu-item-icon',
+  itemLabel: 'p-contextmenu-item-label',
+  submenuIcon: 'p-contextmenu-submenu-icon',
+  submenu: 'p-contextmenu-submenu',
+  separator: 'p-contextmenu-separator'
+};
+var ContextMenuStyle = BaseStyle.extend({
+  name: 'contextmenu',
+  style: style$Y,
+  classes: classes$v
+});
+
+var classes$u = {
+  root: function root(_ref) {
+    var instance = _ref.instance,
+      props = _ref.props;
+    return ['p-dock p-component', "p-dock-".concat(props.position), {
+      'p-dock-mobile': instance.queryMatches
+    }];
+  },
+  listContainer: 'p-dock-list-container',
+  list: 'p-dock-list',
+  item: function item(_ref2) {
+    var instance = _ref2.instance,
+      processedItem = _ref2.processedItem,
+      id = _ref2.id;
+    return ['p-dock-item', {
+      'p-focus': instance.isItemActive(id),
+      'p-disabled': instance.disabled(processedItem)
+    }];
+  },
+  itemContent: 'p-dock-item-content',
+  itemLink: 'p-dock-item-link',
+  itemIcon: 'p-dock-item-icon'
+};
+var DockStyle = BaseStyle.extend({
+  name: 'dock',
+  style: style$Z,
+  classes: classes$u
+});
+
+var classes$t = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-menu p-component', {
+      'p-menu-overlay': props.popup
+    }];
+  },
+  start: 'p-menu-start',
+  list: 'p-menu-list',
+  submenuLabel: 'p-menu-submenu-label',
+  separator: 'p-menu-separator',
+  end: 'p-menu-end',
+  item: function item(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-menu-item', {
+      'p-focus': instance.id === instance.focusedOptionId,
+      'p-disabled': instance.disabled()
+    }];
+  },
+  itemContent: 'p-menu-item-content',
+  itemLink: 'p-menu-item-link',
+  itemIcon: 'p-menu-item-icon',
+  itemLabel: 'p-menu-item-label'
+};
+var MenuStyle = BaseStyle.extend({
+  name: 'menu',
+  style: style$_,
+  classes: classes$t
+});
+
+var inlineStyles$4 = {
+  submenu: function submenu(_ref) {
+    var instance = _ref.instance,
+      processedItem = _ref.processedItem;
+    return {
+      display: instance.isItemActive(processedItem) ? 'flex' : 'none'
+    };
+  }
+};
+var classes$s = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-menubar p-component', {
+      'p-menubar-mobile': instance.queryMatches,
+      'p-menubar-mobile-active': instance.mobileActive
+    }];
+  },
+  start: 'p-menubar-start',
+  button: 'p-menubar-button',
+  rootList: 'p-menubar-root-list',
+  item: function item(_ref3) {
+    var instance = _ref3.instance,
+      processedItem = _ref3.processedItem;
+    return ['p-menubar-item', {
+      'p-menubar-item-active': instance.isItemActive(processedItem),
+      'p-focus': instance.isItemFocused(processedItem),
+      'p-disabled': instance.isItemDisabled(processedItem)
+    }];
+  },
+  itemContent: 'p-menubar-item-content',
+  itemLink: 'p-menubar-item-link',
+  itemIcon: 'p-menubar-item-icon',
+  itemLabel: 'p-menubar-item-label',
+  submenuIcon: 'p-menubar-submenu-icon',
+  submenu: 'p-menubar-submenu',
+  separator: 'p-menubar-separator',
+  end: 'p-menubar-end'
+};
+var MenubarStyle = BaseStyle.extend({
+  name: 'menubar',
+  style: style$$,
+  classes: classes$s,
+  inlineStyles: inlineStyles$4
+});
+
+var inlineStyles$3 = {
+  rootList: function rootList(_ref) {
+    var props = _ref.props;
+    return {
+      'max-height': props.scrollHeight,
+      overflow: 'auto'
+    };
+  }
+};
+var classes$r = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-megamenu p-component', {
+      'p-megamenu-mobile': instance.queryMatches,
+      'p-megamenu-mobile-active': instance.mobileActive,
+      'p-megamenu-horizontal': instance.horizontal,
+      'p-megamenu-vertical': instance.vertical
+    }];
+  },
+  start: 'p-megamenu-start',
+  button: 'p-megamenu-button',
+  rootList: 'p-megamenu-root-list',
+  submenuLabel: function submenuLabel(_ref3) {
+    var instance = _ref3.instance,
+      processedItem = _ref3.processedItem;
+    return ['p-megamenu-submenu-label', {
+      'p-disabled': instance.isItemDisabled(processedItem)
+    }];
+  },
+  item: function item(_ref4) {
+    var instance = _ref4.instance,
+      processedItem = _ref4.processedItem;
+    return ['p-megamenu-item', {
+      'p-megamenu-item-active': instance.isItemActive(processedItem),
+      'p-focus': instance.isItemFocused(processedItem),
+      'p-disabled': instance.isItemDisabled(processedItem)
+    }];
+  },
+  itemContent: 'p-megamenu-item-content',
+  itemLink: 'p-megamenu-item-link',
+  itemIcon: 'p-megamenu-item-icon',
+  itemLabel: 'p-megamenu-item-label',
+  submenuIcon: 'p-megamenu-submenu-icon',
+  overlay: 'p-megamenu-overlay',
+  grid: 'p-megamenu-grid',
+  column: function column(_ref5) {
+    var instance = _ref5.instance,
+      processedItem = _ref5.processedItem;
+    var length = instance.isItemGroup(processedItem) ? processedItem.items.length : 0;
+    var columnClass;
+    if (instance.$parentInstance.queryMatches) columnClass = 'p-megamenu-col-12';else {
+      switch (length) {
+        case 2:
+          columnClass = 'p-megamenu-col-6';
+          break;
+        case 3:
+          columnClass = 'p-megamenu-col-4';
+          break;
+        case 4:
+          columnClass = 'p-megamenu-col-3';
+          break;
+        case 6:
+          columnClass = 'p-megamenu-col-2';
+          break;
+        default:
+          columnClass = 'p-megamenu-col-12';
+          break;
+      }
+    }
+    return columnClass;
+  },
+  submenu: 'p-megamenu-submenu',
+  separator: 'p-megamenu-separator',
+  end: 'p-megamenu-end'
+};
+var MegaMenuStyle = BaseStyle.extend({
+  name: 'megamenu',
+  style: style$10,
+  classes: classes$r,
+  inlineStyles: inlineStyles$3
+});
+
+var classes$q = {
+  root: 'p-panelmenu p-component',
+  panel: 'p-panelmenu-panel',
+  header: function header(_ref) {
+    var instance = _ref.instance,
+      item = _ref.item;
+    return ['p-panelmenu-header', {
+      'p-panelmenu-header-active': instance.isItemActive(item) && !!item.items,
+      'p-disabled': instance.isItemDisabled(item)
+    }];
+  },
+  headerContent: 'p-panelmenu-header-content',
+  headerLink: 'p-panelmenu-header-link',
+  headerIcon: 'p-panelmenu-header-icon',
+  headerLabel: 'p-panelmenu-header-label',
+  contentContainer: 'p-panelmenu-content-container',
+  contentWrapper: 'p-panelmenu-content-wrapper',
+  content: 'p-panelmenu-content',
+  rootList: 'p-panelmenu-root-list',
+  item: function item(_ref2) {
+    var instance = _ref2.instance,
+      processedItem = _ref2.processedItem;
+    return ['p-panelmenu-item', {
+      'p-focus': instance.isItemFocused(processedItem),
+      'p-disabled': instance.isItemDisabled(processedItem)
+    }];
+  },
+  itemContent: 'p-panelmenu-item-content',
+  itemLink: 'p-panelmenu-item-link',
+  itemIcon: 'p-panelmenu-item-icon',
+  itemLabel: 'p-panelmenu-item-label',
+  submenuIcon: 'p-panelmenu-submenu-icon',
+  submenu: 'p-panelmenu-submenu',
+  separator: 'p-menuitem-separator'
+};
+var PanelMenuStyle = BaseStyle.extend({
+  name: 'panelmenu',
+  style: style$11,
+  classes: classes$q
+});
+
+var classes$p = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-steps p-component', {
+      'p-readonly': props.readonly
+    }];
+  },
+  list: 'p-steps-list',
+  item: function item(_ref2) {
+    var instance = _ref2.instance,
+      _item = _ref2.item,
+      index = _ref2.index;
+    return ['p-steps-item', {
+      'p-steps-item-active': instance.isActive(index),
+      'p-disabled': instance.isItemDisabled(_item, index)
+    }];
+  },
+  itemLink: 'p-steps-item-link',
+  itemNumber: 'p-steps-item-number',
+  itemLabel: 'p-steps-item-label'
+};
+var StepsStyle = BaseStyle.extend({
+  name: 'steps',
+  style: style$12,
+  classes: classes$p
+});
+
+var classes$o = {
+  root: 'p-tabmenu p-component',
+  tablist: 'p-tabmenu-tablist',
+  item: function item(_ref) {
+    var instance = _ref.instance,
+      index = _ref.index,
+      _item = _ref.item;
+    return ['p-tabmenu-item', {
+      'p-tabmenu-item-active': instance.d_activeIndex === index,
+      'p-disabled': instance.disabled(_item)
+    }];
+  },
+  itemLink: 'p-tabmenu-item-link',
+  itemIcon: 'p-tabmenu-item-icon',
+  itemLabel: 'p-tabmenu-item-label',
+  activeBar: 'p-tabmenu-active-bar'
+};
+var TabMenuStyle = BaseStyle.extend({
+  name: 'tabmenu',
+  style: style$13,
+  classes: classes$o
+});
+
+var inlineStyles$2 = {
+  submenu: function submenu(_ref) {
+    var instance = _ref.instance,
+      processedItem = _ref.processedItem;
+    return {
+      display: instance.isItemActive(processedItem) ? 'flex' : 'none'
+    };
+  }
+};
+var classes$n = {
+  root: function root(_ref2) {
+    var props = _ref2.props,
+      instance = _ref2.instance;
+    return ['p-tieredmenu p-component', {
+      'p-tieredmenu-overlay': props.popup,
+      'p-tieredmenu-mobile': instance.queryMatches
+    }];
+  },
+  start: 'p-tieredmenu-start',
+  rootList: 'p-tieredmenu-root-list',
+  item: function item(_ref3) {
+    var instance = _ref3.instance,
+      processedItem = _ref3.processedItem;
+    return ['p-tieredmenu-item', {
+      'p-tieredmenu-item-active': instance.isItemActive(processedItem),
+      'p-focus': instance.isItemFocused(processedItem),
+      'p-disabled': instance.isItemDisabled(processedItem)
+    }];
+  },
+  itemContent: 'p-tieredmenu-item-content',
+  itemLink: 'p-tieredmenu-item-link',
+  itemIcon: 'p-tieredmenu-item-icon',
+  itemLabel: 'p-tieredmenu-item-label',
+  submenuIcon: 'p-tieredmenu-submenu-icon',
+  submenu: 'p-tieredmenu-submenu',
+  separator: 'p-tieredmenu-separator',
+  end: 'p-tieredmenu-end'
+};
+var TieredMenuStyle = BaseStyle.extend({
+  name: 'tieredmenu',
+  style: style$14,
+  classes: classes$n,
+  inlineStyles: inlineStyles$2
+});
+
+var classes$m = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-message p-component p-message-' + props.severity, {
+      'p-message-outlined': props.variant === 'outlined',
+      'p-message-simple': props.variant === 'simple',
+      'p-message-sm': props.size === 'small',
+      'p-message-lg': props.size === 'large'
+    }];
+  },
+  contentWrapper: 'p-message-content-wrapper',
+  content: 'p-message-content',
+  icon: 'p-message-icon',
+  text: 'p-message-text',
+  closeButton: 'p-message-close-button',
+  closeIcon: 'p-message-close-icon'
+};
+var MessageStyle = BaseStyle.extend({
+  name: 'message',
+  style: style$15,
+  classes: classes$m
+});
+
+var classes$l = {
+  root: function root(_ref) {
+    var props = _ref.props,
+      instance = _ref.instance;
+    return ['p-inlinemessage p-component p-inlinemessage-' + props.severity, {
+      'p-inlinemessage-icon-only': !instance.$slots["default"]
+    }];
+  },
+  icon: function icon(_ref2) {
+    var props = _ref2.props;
+    return ['p-inlinemessage-icon', props.icon];
+  },
+  text: 'p-inlinemessage-text'
+};
+var InlineMessageStyle = BaseStyle.extend({
+  name: 'inlinemessage',
+  style: style$16,
+  classes: classes$l
+});
+
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: true, configurable: true, writable: true }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+// Position
+var inlineStyles$1 = {
+  root: function root(_ref) {
+    var position = _ref.position;
+    return {
+      position: 'fixed',
+      top: position === 'top-right' || position === 'top-left' || position === 'top-center' ? '20px' : position === 'center' ? '50%' : null,
+      right: (position === 'top-right' || position === 'bottom-right') && '20px',
+      bottom: (position === 'bottom-left' || position === 'bottom-right' || position === 'bottom-center') && '20px',
+      left: position === 'top-left' || position === 'bottom-left' ? '20px' : position === 'center' || position === 'top-center' || position === 'bottom-center' ? '50%' : null
+    };
+  }
+};
+var classes$k = {
+  root: function root(_ref2) {
+    var props = _ref2.props;
+    return ['p-toast p-component p-toast-' + props.position];
+  },
+  message: function message(_ref3) {
+    var props = _ref3.props;
+    return ['p-toast-message', {
+      'p-toast-message-info': props.message.severity === 'info' || props.message.severity === undefined,
+      'p-toast-message-warn': props.message.severity === 'warn',
+      'p-toast-message-error': props.message.severity === 'error',
+      'p-toast-message-success': props.message.severity === 'success',
+      'p-toast-message-secondary': props.message.severity === 'secondary',
+      'p-toast-message-contrast': props.message.severity === 'contrast'
+    }];
+  },
+  messageContent: 'p-toast-message-content',
+  messageIcon: function messageIcon(_ref4) {
+    var props = _ref4.props;
+    return ['p-toast-message-icon', _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, props.infoIcon, props.message.severity === 'info'), props.warnIcon, props.message.severity === 'warn'), props.errorIcon, props.message.severity === 'error'), props.successIcon, props.message.severity === 'success')];
+  },
+  messageText: 'p-toast-message-text',
+  summary: 'p-toast-summary',
+  detail: 'p-toast-detail',
+  closeButton: 'p-toast-close-button',
+  closeIcon: 'p-toast-close-icon'
+};
+var ToastStyle = BaseStyle.extend({
+  name: 'toast',
+  style: style$17,
+  classes: classes$k,
+  inlineStyles: inlineStyles$1
+});
+
+var classes$j = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-carousel p-component', {
+      'p-carousel-vertical': instance.isVertical(),
+      'p-carousel-horizontal': !instance.isVertical()
+    }];
+  },
+  header: 'p-carousel-header',
+  contentContainer: 'p-carousel-content-container',
+  content: 'p-carousel-content',
+  pcPrevButton: function pcPrevButton(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-carousel-prev-button', {
+      'p-disabled': instance.backwardIsDisabled
+    }];
+  },
+  viewport: 'p-carousel-viewport',
+  itemList: 'p-carousel-item-list',
+  itemClone: function itemClone(_ref3) {
+    var index = _ref3.index,
+      value = _ref3.value,
+      totalShiftedItems = _ref3.totalShiftedItems,
+      d_numVisible = _ref3.d_numVisible;
+    return ['p-carousel-item p-carousel-item-clone', {
+      'p-carousel-item-active': totalShiftedItems * -1 === value.length + d_numVisible,
+      'p-carousel-item-start': index === 0,
+      'p-carousel-item-end': value.slice(-1 * d_numVisible).length - 1 === index
+    }];
+  },
+  item: function item(_ref4) {
+    var instance = _ref4.instance,
+      index = _ref4.index;
+    return ['p-carousel-item', {
+      'p-carousel-item-active': instance.firstIndex() <= index && instance.lastIndex() >= index,
+      'p-carousel-item-start': instance.firstIndex() === index,
+      'p-carousel-item-end': instance.lastIndex() === index
+    }];
+  },
+  pcNextButton: function pcNextButton(_ref5) {
+    var instance = _ref5.instance;
+    return ['p-carousel-next-button', {
+      'p-disabled': instance.forwardIsDisabled
+    }];
+  },
+  indicatorList: 'p-carousel-indicator-list',
+  indicator: function indicator(_ref6) {
+    var instance = _ref6.instance,
+      index = _ref6.index;
+    return ['p-carousel-indicator', {
+      'p-carousel-indicator-active': instance.d_page === index
+    }];
+  },
+  indicatorButton: 'p-carousel-indicator-button',
+  footer: 'p-carousel-footer'
+};
+var CarouselStyle = BaseStyle.extend({
+  name: 'carousel',
+  style: style$18,
+  classes: classes$j
+});
+
+var classes$i = {
+  mask: 'p-galleria-mask p-overlay-mask p-overlay-mask-enter-active',
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    var thumbnailsPosClass = instance.$attrs.showThumbnails && instance.getPositionClass('p-galleria-thumbnails', instance.$attrs.thumbnailsPosition);
+    var indicatorPosClass = instance.$attrs.showIndicators && instance.getPositionClass('p-galleria-indicators', instance.$attrs.indicatorsPosition);
+    return ['p-galleria p-component', {
+      'p-galleria-fullscreen': instance.$attrs.fullScreen,
+      'p-galleria-inset-indicators': instance.$attrs.showIndicatorsOnItem,
+      'p-galleria-hover-navigators': instance.$attrs.showItemNavigatorsOnHover && !instance.$attrs.fullScreen
+    }, thumbnailsPosClass, indicatorPosClass];
+  },
+  closeButton: 'p-galleria-close-button',
+  closeIcon: 'p-galleria-close-icon',
+  header: 'p-galleria-header',
+  content: 'p-galleria-content',
+  footer: 'p-galleria-footer',
+  itemsContainer: 'p-galleria-items-container',
+  items: 'p-galleria-items',
+  prevButton: function prevButton(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-galleria-prev-button p-galleria-nav-button', {
+      'p-disabled': instance.isNavBackwardDisabled
+    }];
+  },
+  prevIcon: 'p-galleria-prev-icon',
+  item: 'p-galleria-item',
+  nextButton: function nextButton(_ref3) {
+    var instance = _ref3.instance;
+    return ['p-galleria-next-button p-galleria-nav-button', {
+      'p-disabled': instance.isNavForwardDisabled
+    }];
+  },
+  nextIcon: 'p-galleria-next-icon',
+  caption: 'p-galleria-caption',
+  indicatorList: 'p-galleria-indicator-list',
+  indicator: function indicator(_ref4) {
+    var instance = _ref4.instance,
+      index = _ref4.index;
+    return ['p-galleria-indicator', {
+      'p-galleria-indicator-active': instance.isIndicatorItemActive(index)
+    }];
+  },
+  indicatorButton: 'p-galleria-indicator-button',
+  thumbnails: 'p-galleria-thumbnails',
+  thumbnailContent: 'p-galleria-thumbnails-content',
+  thumbnailPrevButton: function thumbnailPrevButton(_ref5) {
+    var instance = _ref5.instance;
+    return ['p-galleria-thumbnail-prev-button p-galleria-thumbnail-nav-button', {
+      'p-disabled': instance.isNavBackwardDisabled
+    }];
+  },
+  thumbnailPrevIcon: 'p-galleria-thumbnail-prev-icon',
+  thumbnailsViewport: 'p-galleria-thumbnails-viewport',
+  thumbnailItems: 'p-galleria-thumbnail-items',
+  thumbnailItem: function thumbnailItem(_ref6) {
+    var instance = _ref6.instance,
+      index = _ref6.index,
+      activeIndex = _ref6.activeIndex;
+    return ['p-galleria-thumbnail-item', {
+      'p-galleria-thumbnail-item-current': activeIndex === index,
+      'p-galleria-thumbnail-item-active': instance.isItemActive(index),
+      'p-galleria-thumbnail-item-start': instance.firstItemAciveIndex() === index,
+      'p-galleria-thumbnail-item-end': instance.lastItemActiveIndex() === index
+    }];
+  },
+  thumbnail: 'p-galleria-thumbnail',
+  thumbnailNextButton: function thumbnailNextButton(_ref7) {
+    var instance = _ref7.instance;
+    return ['p-galleria-thumbnail-next-button p-galleria-thumbnail-nav-button', {
+      'p-disabled': instance.isNavForwardDisabled
+    }];
+  },
+  thumbnailNextIcon: 'p-galleria-thumbnail-next-icon'
+};
+var GalleriaStyle = BaseStyle.extend({
+  name: 'galleria',
+  style: style$19,
+  classes: classes$i
+});
+
+var classes$h = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-image p-component', {
+      'p-image-preview': props.preview
+    }];
+  },
+  previewMask: 'p-image-preview-mask',
+  previewIcon: 'p-image-preview-icon',
+  mask: 'p-image-mask p-overlay-mask p-overlay-mask-enter-active',
+  toolbar: 'p-image-toolbar',
+  rotateRightButton: 'p-image-action p-image-rotate-right-button',
+  rotateLeftButton: 'p-image-action p-image-rotate-left-button',
+  zoomOutButton: function zoomOutButton(_ref2) {
+    var instance = _ref2.instance;
+    return ['p-image-action p-image-zoom-out-button', {
+      'p-disabled': instance.isZoomOutDisabled
+    }];
+  },
+  zoomInButton: function zoomInButton(_ref3) {
+    var instance = _ref3.instance;
+    return ['p-image-action p-image-zoom-in-button', {
+      'p-disabled': instance.isZoomInDisabled
+    }];
+  },
+  closeButton: 'p-image-action p-image-close-button',
+  original: 'p-image-original'
+};
+var ImageStyle = BaseStyle.extend({
+  name: 'image',
+  style: style$1a,
+  classes: classes$h
+});
+
+var classes$g = {
+  root: 'p-imagecompare',
+  slider: 'p-imagecompare-slider'
+};
+var ImageCompareStyle = BaseStyle.extend({
+  name: 'imagecompare',
+  style: style$1b,
+  classes: classes$g
+});
+
+var classes$f = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-avatar p-component', {
+      'p-avatar-image': props.image != null,
+      'p-avatar-circle': props.shape === 'circle',
+      'p-avatar-lg': props.size === 'large',
+      'p-avatar-xl': props.size === 'xlarge'
+    }];
+  },
+  label: 'p-avatar-label',
+  icon: 'p-avatar-icon'
+};
+var AvatarStyle = BaseStyle.extend({
+  name: 'avatar',
+  style: style$1c,
+  classes: classes$f
+});
+
+var classes$e = {
+  root: 'p-avatar-group p-component'
+};
+var AvatarGroupStyle = BaseStyle.extend({
+  name: 'avatargroup',
+  classes: classes$e
+});
+
+var classes$d = {
+  root: function root(_ref) {
+    var props = _ref.props,
+      instance = _ref.instance;
+    return ['p-badge p-component', {
+      'p-badge-circle': isNotEmpty(props.value) && String(props.value).length === 1,
+      'p-badge-dot': isEmpty(props.value) && !instance.$slots["default"],
+      'p-badge-sm': props.size === 'small',
+      'p-badge-lg': props.size === 'large',
+      'p-badge-xl': props.size === 'xlarge',
+      'p-badge-info': props.severity === 'info',
+      'p-badge-success': props.severity === 'success',
+      'p-badge-warn': props.severity === 'warn',
+      'p-badge-danger': props.severity === 'danger',
+      'p-badge-secondary': props.severity === 'secondary',
+      'p-badge-contrast': props.severity === 'contrast'
+    }];
+  }
+};
+var BadgeStyle = BaseStyle.extend({
+  name: 'badge',
+  style: style$1d,
+  classes: classes$d
+});
+
+var classes$c = {
+  root: 'p-blockui'
+};
+var BlockUIStyle = BaseStyle.extend({
+  name: 'blockui',
+  style: style$1e,
+  classes: classes$c
+});
+
+var classes$b = {
+  root: 'p-chip p-component',
+  image: 'p-chip-image',
+  icon: 'p-chip-icon',
+  label: 'p-chip-label',
+  removeIcon: 'p-chip-remove-icon'
+};
+var ChipStyle = BaseStyle.extend({
+  name: 'chip',
+  style: style$1f,
+  classes: classes$b
+});
+
+var classes$a = {
+  root: 'p-inplace p-component',
+  display: function display(_ref) {
+    var props = _ref.props;
+    return ['p-inplace-display', {
+      'p-disabled': props.disabled
+    }];
+  },
+  content: 'p-inplace-content'
+};
+var InplaceStyle = BaseStyle.extend({
+  name: 'inplace',
+  style: style$1g,
+  classes: classes$a
+});
+
+var classes$9 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-metergroup p-component', {
+      'p-metergroup-horizontal': props.orientation === 'horizontal',
+      'p-metergroup-vertical': props.orientation === 'vertical'
+    }];
+  },
+  meters: 'p-metergroup-meters',
+  meter: 'p-metergroup-meter',
+  labelList: function labelList(_ref2) {
+    var props = _ref2.props;
+    return ['p-metergroup-label-list', {
+      'p-metergroup-label-list-vertical': props.labelOrientation === 'vertical',
+      'p-metergroup-label-list-horizontal': props.labelOrientation === 'horizontal'
+    }];
+  },
+  label: 'p-metergroup-label',
+  labelIcon: 'p-metergroup-label-icon',
+  labelMarker: 'p-metergroup-label-marker',
+  labelText: 'p-metergroup-label-text'
+};
+var MeterGroupStyle = BaseStyle.extend({
+  name: 'metergroup',
+  style: style$1h,
+  classes: classes$9
+});
+
+var classes$8 = {
+  root: 'p-overlaybadge'
+};
+var OverlayBadgeStyle = BaseStyle.extend({
+  name: 'overlaybadge',
+  style: style$1i,
+  classes: classes$8
+});
+
+var classes$7 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-scrolltop', {
+      'p-scrolltop-sticky': props.target !== 'window'
+    }];
+  },
+  icon: 'p-scrolltop-icon'
+};
+var ScrollTopStyle = BaseStyle.extend({
+  name: 'scrolltop',
+  style: style$1j,
+  classes: classes$7
+});
+
+var inlineStyles = {
+  root: {
+    position: 'relative'
+  }
+};
+var classes$6 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-skeleton p-component', {
+      'p-skeleton-circle': props.shape === 'circle',
+      'p-skeleton-animation-none': props.animation === 'none'
+    }];
+  }
+};
+var SkeletonStyle = BaseStyle.extend({
+  name: 'skeleton',
+  style: style$1k,
+  classes: classes$6,
+  inlineStyles: inlineStyles
+});
+
+var classes$5 = {
+  root: function root(_ref) {
+    var instance = _ref.instance;
+    return ['p-progressbar p-component', {
+      'p-progressbar-determinate': instance.determinate,
+      'p-progressbar-indeterminate': instance.indeterminate
+    }];
+  },
+  value: 'p-progressbar-value',
+  label: 'p-progressbar-label'
+};
+var ProgressBarStyle = BaseStyle.extend({
+  name: 'progressbar',
+  style: style$1l,
+  classes: classes$5
+});
+
+var classes$4 = {
+  root: 'p-progressspinner',
+  spin: 'p-progressspinner-spin',
+  circle: 'p-progressspinner-circle'
+};
+var ProgressSpinnerStyle = BaseStyle.extend({
+  name: 'progressspinner',
+  style: style$1m,
+  classes: classes$4
+});
+
+var classes$3 = {
+  root: function root(_ref) {
+    var props = _ref.props;
+    return ['p-tag p-component', {
+      'p-tag-info': props.severity === 'info',
+      'p-tag-success': props.severity === 'success',
+      'p-tag-warn': props.severity === 'warn',
+      'p-tag-danger': props.severity === 'danger',
+      'p-tag-secondary': props.severity === 'secondary',
+      'p-tag-contrast': props.severity === 'contrast',
+      'p-tag-rounded': props.rounded
+    }];
+  },
+  icon: 'p-tag-icon',
+  label: 'p-tag-label'
+};
+var TagStyle = BaseStyle.extend({
+  name: 'tag',
+  style: style$1n,
+  classes: classes$3
+});
+
+var classes$2 = {
+  root: 'p-terminal p-component',
+  welcomeMessage: 'p-terminal-welcome-message',
+  commandList: 'p-terminal-command-list',
+  command: 'p-terminal-command',
+  commandValue: 'p-terminal-command-value',
+  commandResponse: 'p-terminal-command-response',
+  prompt: 'p-terminal-prompt',
+  promptLabel: 'p-terminal-prompt-label',
+  promptValue: 'p-terminal-prompt-value'
+};
+var TerminalStyle = BaseStyle.extend({
+  name: 'terminal',
+  style: style$1o,
+  classes: classes$2
+});
+
+var classes$1 = {
+  root: 'p-tooltip p-component',
+  arrow: 'p-tooltip-arrow',
+  text: 'p-tooltip-text'
+};
+var TooltipStyle = BaseStyle.extend({
+  name: 'tooltip-directive',
+  style: style$1p,
+  classes: classes$1
+});
+
+var classes = {
+  root: 'p-ink'
+};
+var RippleStyle = BaseStyle.extend({
+  name: 'ripple-directive',
+  style: style$1q,
+  classes: classes
+});
+
+var StyleClassStyle = BaseStyle.extend({
+  name: 'styleclass-directive'
+});
+
+var FocusTrapStyle = BaseStyle.extend({
+  name: 'focustrap-directive'
+});
+
+var AnimateOnScrollStyle = BaseStyle.extend({
+  name: 'animateonscroll-directive'
+});
+
+var KeyFilterStyle = BaseStyle.extend({
+  name: 'keyfilter-directive'
+});
+
+const runtimeConfig = useRuntimeConfig();
+const config = runtimeConfig?.public?.primevue ?? {};
+const { options = {} } = config;
+
+const stylesToTop = [].join('');
+const styleProps = {
+    
+};
+const styles = [
+    ,
+    BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : '',BaseComponentStyle && BaseComponentStyle.getStyleSheet ? BaseComponentStyle.getStyleSheet(undefined, styleProps) : '',AutoCompleteStyle && AutoCompleteStyle.getStyleSheet ? AutoCompleteStyle.getStyleSheet(undefined, styleProps) : '',CalendarStyle && CalendarStyle.getStyleSheet ? CalendarStyle.getStyleSheet(undefined, styleProps) : '',CascadeSelectStyle && CascadeSelectStyle.getStyleSheet ? CascadeSelectStyle.getStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getStyleSheet ? CheckboxStyle.getStyleSheet(undefined, styleProps) : '',CheckboxGroupStyle && CheckboxGroupStyle.getStyleSheet ? CheckboxGroupStyle.getStyleSheet(undefined, styleProps) : '',ChipsStyle && ChipsStyle.getStyleSheet ? ChipsStyle.getStyleSheet(undefined, styleProps) : '',ColorPickerStyle && ColorPickerStyle.getStyleSheet ? ColorPickerStyle.getStyleSheet(undefined, styleProps) : '',DatePickerStyle && DatePickerStyle.getStyleSheet ? DatePickerStyle.getStyleSheet(undefined, styleProps) : '',DropdownStyle && DropdownStyle.getStyleSheet ? DropdownStyle.getStyleSheet(undefined, styleProps) : '',FloatLabelStyle && FloatLabelStyle.getStyleSheet ? FloatLabelStyle.getStyleSheet(undefined, styleProps) : '',FluidStyle && FluidStyle.getStyleSheet ? FluidStyle.getStyleSheet(undefined, styleProps) : '',IconFieldStyle && IconFieldStyle.getStyleSheet ? IconFieldStyle.getStyleSheet(undefined, styleProps) : '',IftaLabelStyle && IftaLabelStyle.getStyleSheet ? IftaLabelStyle.getStyleSheet(undefined, styleProps) : '',InputChipsStyle && InputChipsStyle.getStyleSheet ? InputChipsStyle.getStyleSheet(undefined, styleProps) : '',InputGroupStyle && InputGroupStyle.getStyleSheet ? InputGroupStyle.getStyleSheet(undefined, styleProps) : '',InputGroupAddonStyle && InputGroupAddonStyle.getStyleSheet ? InputGroupAddonStyle.getStyleSheet(undefined, styleProps) : '',InputIconStyle && InputIconStyle.getStyleSheet ? InputIconStyle.getStyleSheet(undefined, styleProps) : '',InputMaskStyle && InputMaskStyle.getStyleSheet ? InputMaskStyle.getStyleSheet(undefined, styleProps) : '',InputNumberStyle && InputNumberStyle.getStyleSheet ? InputNumberStyle.getStyleSheet(undefined, styleProps) : '',InputOtpStyle && InputOtpStyle.getStyleSheet ? InputOtpStyle.getStyleSheet(undefined, styleProps) : '',InputSwitchStyle && InputSwitchStyle.getStyleSheet ? InputSwitchStyle.getStyleSheet(undefined, styleProps) : '',InputTextStyle && InputTextStyle.getStyleSheet ? InputTextStyle.getStyleSheet(undefined, styleProps) : '',KnobStyle && KnobStyle.getStyleSheet ? KnobStyle.getStyleSheet(undefined, styleProps) : '',ListboxStyle && ListboxStyle.getStyleSheet ? ListboxStyle.getStyleSheet(undefined, styleProps) : '',MultiSelectStyle && MultiSelectStyle.getStyleSheet ? MultiSelectStyle.getStyleSheet(undefined, styleProps) : '',PasswordStyle && PasswordStyle.getStyleSheet ? PasswordStyle.getStyleSheet(undefined, styleProps) : '',RadioButtonStyle && RadioButtonStyle.getStyleSheet ? RadioButtonStyle.getStyleSheet(undefined, styleProps) : '',RadioButtonGroupStyle && RadioButtonGroupStyle.getStyleSheet ? RadioButtonGroupStyle.getStyleSheet(undefined, styleProps) : '',RatingStyle && RatingStyle.getStyleSheet ? RatingStyle.getStyleSheet(undefined, styleProps) : '',SelectStyle && SelectStyle.getStyleSheet ? SelectStyle.getStyleSheet(undefined, styleProps) : '',SelectButtonStyle && SelectButtonStyle.getStyleSheet ? SelectButtonStyle.getStyleSheet(undefined, styleProps) : '',SliderStyle && SliderStyle.getStyleSheet ? SliderStyle.getStyleSheet(undefined, styleProps) : '',TextareaStyle && TextareaStyle.getStyleSheet ? TextareaStyle.getStyleSheet(undefined, styleProps) : '',ToggleButtonStyle && ToggleButtonStyle.getStyleSheet ? ToggleButtonStyle.getStyleSheet(undefined, styleProps) : '',ToggleSwitchStyle && ToggleSwitchStyle.getStyleSheet ? ToggleSwitchStyle.getStyleSheet(undefined, styleProps) : '',TreeSelectStyle && TreeSelectStyle.getStyleSheet ? TreeSelectStyle.getStyleSheet(undefined, styleProps) : '',ButtonStyle && ButtonStyle.getStyleSheet ? ButtonStyle.getStyleSheet(undefined, styleProps) : '',ButtonGroupStyle && ButtonGroupStyle.getStyleSheet ? ButtonGroupStyle.getStyleSheet(undefined, styleProps) : '',SpeedDialStyle && SpeedDialStyle.getStyleSheet ? SpeedDialStyle.getStyleSheet(undefined, styleProps) : '',SplitButtonStyle && SplitButtonStyle.getStyleSheet ? SplitButtonStyle.getStyleSheet(undefined, styleProps) : '',ColumnStyle && ColumnStyle.getStyleSheet ? ColumnStyle.getStyleSheet(undefined, styleProps) : '',RowStyle && RowStyle.getStyleSheet ? RowStyle.getStyleSheet(undefined, styleProps) : '',ColumnGroupStyle && ColumnGroupStyle.getStyleSheet ? ColumnGroupStyle.getStyleSheet(undefined, styleProps) : '',DataTableStyle && DataTableStyle.getStyleSheet ? DataTableStyle.getStyleSheet(undefined, styleProps) : '',DataViewStyle && DataViewStyle.getStyleSheet ? DataViewStyle.getStyleSheet(undefined, styleProps) : '',OrderListStyle && OrderListStyle.getStyleSheet ? OrderListStyle.getStyleSheet(undefined, styleProps) : '',OrganizationChartStyle && OrganizationChartStyle.getStyleSheet ? OrganizationChartStyle.getStyleSheet(undefined, styleProps) : '',PaginatorStyle && PaginatorStyle.getStyleSheet ? PaginatorStyle.getStyleSheet(undefined, styleProps) : '',PickListStyle && PickListStyle.getStyleSheet ? PickListStyle.getStyleSheet(undefined, styleProps) : '',TreeStyle && TreeStyle.getStyleSheet ? TreeStyle.getStyleSheet(undefined, styleProps) : '',TreeTableStyle && TreeTableStyle.getStyleSheet ? TreeTableStyle.getStyleSheet(undefined, styleProps) : '',TimelineStyle && TimelineStyle.getStyleSheet ? TimelineStyle.getStyleSheet(undefined, styleProps) : '',VirtualScrollerStyle && VirtualScrollerStyle.getStyleSheet ? VirtualScrollerStyle.getStyleSheet(undefined, styleProps) : '',AccordionStyle && AccordionStyle.getStyleSheet ? AccordionStyle.getStyleSheet(undefined, styleProps) : '',AccordionPanelStyle && AccordionPanelStyle.getStyleSheet ? AccordionPanelStyle.getStyleSheet(undefined, styleProps) : '',AccordionHeaderStyle && AccordionHeaderStyle.getStyleSheet ? AccordionHeaderStyle.getStyleSheet(undefined, styleProps) : '',AccordionContentStyle && AccordionContentStyle.getStyleSheet ? AccordionContentStyle.getStyleSheet(undefined, styleProps) : '',AccordionTabStyle && AccordionTabStyle.getStyleSheet ? AccordionTabStyle.getStyleSheet(undefined, styleProps) : '',CardStyle && CardStyle.getStyleSheet ? CardStyle.getStyleSheet(undefined, styleProps) : '',DeferredContentStyle && DeferredContentStyle.getStyleSheet ? DeferredContentStyle.getStyleSheet(undefined, styleProps) : '',DividerStyle && DividerStyle.getStyleSheet ? DividerStyle.getStyleSheet(undefined, styleProps) : '',FieldsetStyle && FieldsetStyle.getStyleSheet ? FieldsetStyle.getStyleSheet(undefined, styleProps) : '',PanelStyle && PanelStyle.getStyleSheet ? PanelStyle.getStyleSheet(undefined, styleProps) : '',ScrollPanelStyle && ScrollPanelStyle.getStyleSheet ? ScrollPanelStyle.getStyleSheet(undefined, styleProps) : '',SplitterStyle && SplitterStyle.getStyleSheet ? SplitterStyle.getStyleSheet(undefined, styleProps) : '',SplitterPanelStyle && SplitterPanelStyle.getStyleSheet ? SplitterPanelStyle.getStyleSheet(undefined, styleProps) : '',StepperStyle && StepperStyle.getStyleSheet ? StepperStyle.getStyleSheet(undefined, styleProps) : '',StepListStyle && StepListStyle.getStyleSheet ? StepListStyle.getStyleSheet(undefined, styleProps) : '',StepStyle && StepStyle.getStyleSheet ? StepStyle.getStyleSheet(undefined, styleProps) : '',StepItemStyle && StepItemStyle.getStyleSheet ? StepItemStyle.getStyleSheet(undefined, styleProps) : '',StepPanelsStyle && StepPanelsStyle.getStyleSheet ? StepPanelsStyle.getStyleSheet(undefined, styleProps) : '',StepPanelStyle && StepPanelStyle.getStyleSheet ? StepPanelStyle.getStyleSheet(undefined, styleProps) : '',TabViewStyle && TabViewStyle.getStyleSheet ? TabViewStyle.getStyleSheet(undefined, styleProps) : '',TabsStyle && TabsStyle.getStyleSheet ? TabsStyle.getStyleSheet(undefined, styleProps) : '',TabListStyle && TabListStyle.getStyleSheet ? TabListStyle.getStyleSheet(undefined, styleProps) : '',TabStyle && TabStyle.getStyleSheet ? TabStyle.getStyleSheet(undefined, styleProps) : '',TabPanelsStyle && TabPanelsStyle.getStyleSheet ? TabPanelsStyle.getStyleSheet(undefined, styleProps) : '',TabPanelStyle && TabPanelStyle.getStyleSheet ? TabPanelStyle.getStyleSheet(undefined, styleProps) : '',ToolbarStyle && ToolbarStyle.getStyleSheet ? ToolbarStyle.getStyleSheet(undefined, styleProps) : '',ConfirmDialogStyle && ConfirmDialogStyle.getStyleSheet ? ConfirmDialogStyle.getStyleSheet(undefined, styleProps) : '',ConfirmPopupStyle && ConfirmPopupStyle.getStyleSheet ? ConfirmPopupStyle.getStyleSheet(undefined, styleProps) : '',DialogStyle && DialogStyle.getStyleSheet ? DialogStyle.getStyleSheet(undefined, styleProps) : '',DrawerStyle && DrawerStyle.getStyleSheet ? DrawerStyle.getStyleSheet(undefined, styleProps) : '',DynamicDialogStyle && DynamicDialogStyle.getStyleSheet ? DynamicDialogStyle.getStyleSheet(undefined, styleProps) : '',OverlayPanelStyle && OverlayPanelStyle.getStyleSheet ? OverlayPanelStyle.getStyleSheet(undefined, styleProps) : '',PopoverStyle && PopoverStyle.getStyleSheet ? PopoverStyle.getStyleSheet(undefined, styleProps) : '',SidebarStyle && SidebarStyle.getStyleSheet ? SidebarStyle.getStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getStyleSheet ? FileUploadStyle.getStyleSheet(undefined, styleProps) : '',BreadcrumbStyle && BreadcrumbStyle.getStyleSheet ? BreadcrumbStyle.getStyleSheet(undefined, styleProps) : '',ContextMenuStyle && ContextMenuStyle.getStyleSheet ? ContextMenuStyle.getStyleSheet(undefined, styleProps) : '',DockStyle && DockStyle.getStyleSheet ? DockStyle.getStyleSheet(undefined, styleProps) : '',MenuStyle && MenuStyle.getStyleSheet ? MenuStyle.getStyleSheet(undefined, styleProps) : '',MenubarStyle && MenubarStyle.getStyleSheet ? MenubarStyle.getStyleSheet(undefined, styleProps) : '',MegaMenuStyle && MegaMenuStyle.getStyleSheet ? MegaMenuStyle.getStyleSheet(undefined, styleProps) : '',PanelMenuStyle && PanelMenuStyle.getStyleSheet ? PanelMenuStyle.getStyleSheet(undefined, styleProps) : '',StepsStyle && StepsStyle.getStyleSheet ? StepsStyle.getStyleSheet(undefined, styleProps) : '',TabMenuStyle && TabMenuStyle.getStyleSheet ? TabMenuStyle.getStyleSheet(undefined, styleProps) : '',TieredMenuStyle && TieredMenuStyle.getStyleSheet ? TieredMenuStyle.getStyleSheet(undefined, styleProps) : '',MessageStyle && MessageStyle.getStyleSheet ? MessageStyle.getStyleSheet(undefined, styleProps) : '',InlineMessageStyle && InlineMessageStyle.getStyleSheet ? InlineMessageStyle.getStyleSheet(undefined, styleProps) : '',ToastStyle && ToastStyle.getStyleSheet ? ToastStyle.getStyleSheet(undefined, styleProps) : '',CarouselStyle && CarouselStyle.getStyleSheet ? CarouselStyle.getStyleSheet(undefined, styleProps) : '',GalleriaStyle && GalleriaStyle.getStyleSheet ? GalleriaStyle.getStyleSheet(undefined, styleProps) : '',ImageStyle && ImageStyle.getStyleSheet ? ImageStyle.getStyleSheet(undefined, styleProps) : '',ImageCompareStyle && ImageCompareStyle.getStyleSheet ? ImageCompareStyle.getStyleSheet(undefined, styleProps) : '',AvatarStyle && AvatarStyle.getStyleSheet ? AvatarStyle.getStyleSheet(undefined, styleProps) : '',AvatarGroupStyle && AvatarGroupStyle.getStyleSheet ? AvatarGroupStyle.getStyleSheet(undefined, styleProps) : '',BadgeStyle && BadgeStyle.getStyleSheet ? BadgeStyle.getStyleSheet(undefined, styleProps) : '',BlockUIStyle && BlockUIStyle.getStyleSheet ? BlockUIStyle.getStyleSheet(undefined, styleProps) : '',ChipStyle && ChipStyle.getStyleSheet ? ChipStyle.getStyleSheet(undefined, styleProps) : '',InplaceStyle && InplaceStyle.getStyleSheet ? InplaceStyle.getStyleSheet(undefined, styleProps) : '',MeterGroupStyle && MeterGroupStyle.getStyleSheet ? MeterGroupStyle.getStyleSheet(undefined, styleProps) : '',OverlayBadgeStyle && OverlayBadgeStyle.getStyleSheet ? OverlayBadgeStyle.getStyleSheet(undefined, styleProps) : '',ScrollTopStyle && ScrollTopStyle.getStyleSheet ? ScrollTopStyle.getStyleSheet(undefined, styleProps) : '',SkeletonStyle && SkeletonStyle.getStyleSheet ? SkeletonStyle.getStyleSheet(undefined, styleProps) : '',ProgressBarStyle && ProgressBarStyle.getStyleSheet ? ProgressBarStyle.getStyleSheet(undefined, styleProps) : '',ProgressSpinnerStyle && ProgressSpinnerStyle.getStyleSheet ? ProgressSpinnerStyle.getStyleSheet(undefined, styleProps) : '',TagStyle && TagStyle.getStyleSheet ? TagStyle.getStyleSheet(undefined, styleProps) : '',TerminalStyle && TerminalStyle.getStyleSheet ? TerminalStyle.getStyleSheet(undefined, styleProps) : '',FormStyle && FormStyle.getStyleSheet ? FormStyle.getStyleSheet(undefined, styleProps) : '',FormFieldStyle && FormFieldStyle.getStyleSheet ? FormFieldStyle.getStyleSheet(undefined, styleProps) : '',TooltipStyle && TooltipStyle.getStyleSheet ? TooltipStyle.getStyleSheet(undefined, styleProps) : '',RippleStyle && RippleStyle.getStyleSheet ? RippleStyle.getStyleSheet(undefined, styleProps) : '',StyleClassStyle && StyleClassStyle.getStyleSheet ? StyleClassStyle.getStyleSheet(undefined, styleProps) : '',FocusTrapStyle && FocusTrapStyle.getStyleSheet ? FocusTrapStyle.getStyleSheet(undefined, styleProps) : '',AnimateOnScrollStyle && AnimateOnScrollStyle.getStyleSheet ? AnimateOnScrollStyle.getStyleSheet(undefined, styleProps) : '',KeyFilterStyle && KeyFilterStyle.getStyleSheet ? KeyFilterStyle.getStyleSheet(undefined, styleProps) : ''
+].join('');
+
+Theme.setTheme(options?.theme);
+
+const themes = 
+[
+    BaseStyle && BaseStyle.getCommonThemeStyleSheet ? BaseStyle.getCommonThemeStyleSheet(undefined, styleProps) : '',
+    BaseStyle && BaseStyle.getThemeStyleSheet ? BaseStyle.getThemeStyleSheet(undefined, styleProps) : '',BaseComponentStyle && BaseComponentStyle.getThemeStyleSheet ? BaseComponentStyle.getThemeStyleSheet(undefined, styleProps) : '',AutoCompleteStyle && AutoCompleteStyle.getThemeStyleSheet ? AutoCompleteStyle.getThemeStyleSheet(undefined, styleProps) : '',CalendarStyle && CalendarStyle.getThemeStyleSheet ? CalendarStyle.getThemeStyleSheet(undefined, styleProps) : '',CascadeSelectStyle && CascadeSelectStyle.getThemeStyleSheet ? CascadeSelectStyle.getThemeStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getThemeStyleSheet ? CheckboxStyle.getThemeStyleSheet(undefined, styleProps) : '',CheckboxGroupStyle && CheckboxGroupStyle.getThemeStyleSheet ? CheckboxGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',ChipsStyle && ChipsStyle.getThemeStyleSheet ? ChipsStyle.getThemeStyleSheet(undefined, styleProps) : '',ColorPickerStyle && ColorPickerStyle.getThemeStyleSheet ? ColorPickerStyle.getThemeStyleSheet(undefined, styleProps) : '',DatePickerStyle && DatePickerStyle.getThemeStyleSheet ? DatePickerStyle.getThemeStyleSheet(undefined, styleProps) : '',DropdownStyle && DropdownStyle.getThemeStyleSheet ? DropdownStyle.getThemeStyleSheet(undefined, styleProps) : '',FloatLabelStyle && FloatLabelStyle.getThemeStyleSheet ? FloatLabelStyle.getThemeStyleSheet(undefined, styleProps) : '',FluidStyle && FluidStyle.getThemeStyleSheet ? FluidStyle.getThemeStyleSheet(undefined, styleProps) : '',IconFieldStyle && IconFieldStyle.getThemeStyleSheet ? IconFieldStyle.getThemeStyleSheet(undefined, styleProps) : '',IftaLabelStyle && IftaLabelStyle.getThemeStyleSheet ? IftaLabelStyle.getThemeStyleSheet(undefined, styleProps) : '',InputChipsStyle && InputChipsStyle.getThemeStyleSheet ? InputChipsStyle.getThemeStyleSheet(undefined, styleProps) : '',InputGroupStyle && InputGroupStyle.getThemeStyleSheet ? InputGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',InputGroupAddonStyle && InputGroupAddonStyle.getThemeStyleSheet ? InputGroupAddonStyle.getThemeStyleSheet(undefined, styleProps) : '',InputIconStyle && InputIconStyle.getThemeStyleSheet ? InputIconStyle.getThemeStyleSheet(undefined, styleProps) : '',InputMaskStyle && InputMaskStyle.getThemeStyleSheet ? InputMaskStyle.getThemeStyleSheet(undefined, styleProps) : '',InputNumberStyle && InputNumberStyle.getThemeStyleSheet ? InputNumberStyle.getThemeStyleSheet(undefined, styleProps) : '',InputOtpStyle && InputOtpStyle.getThemeStyleSheet ? InputOtpStyle.getThemeStyleSheet(undefined, styleProps) : '',InputSwitchStyle && InputSwitchStyle.getThemeStyleSheet ? InputSwitchStyle.getThemeStyleSheet(undefined, styleProps) : '',InputTextStyle && InputTextStyle.getThemeStyleSheet ? InputTextStyle.getThemeStyleSheet(undefined, styleProps) : '',KnobStyle && KnobStyle.getThemeStyleSheet ? KnobStyle.getThemeStyleSheet(undefined, styleProps) : '',ListboxStyle && ListboxStyle.getThemeStyleSheet ? ListboxStyle.getThemeStyleSheet(undefined, styleProps) : '',MultiSelectStyle && MultiSelectStyle.getThemeStyleSheet ? MultiSelectStyle.getThemeStyleSheet(undefined, styleProps) : '',PasswordStyle && PasswordStyle.getThemeStyleSheet ? PasswordStyle.getThemeStyleSheet(undefined, styleProps) : '',RadioButtonStyle && RadioButtonStyle.getThemeStyleSheet ? RadioButtonStyle.getThemeStyleSheet(undefined, styleProps) : '',RadioButtonGroupStyle && RadioButtonGroupStyle.getThemeStyleSheet ? RadioButtonGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',RatingStyle && RatingStyle.getThemeStyleSheet ? RatingStyle.getThemeStyleSheet(undefined, styleProps) : '',SelectStyle && SelectStyle.getThemeStyleSheet ? SelectStyle.getThemeStyleSheet(undefined, styleProps) : '',SelectButtonStyle && SelectButtonStyle.getThemeStyleSheet ? SelectButtonStyle.getThemeStyleSheet(undefined, styleProps) : '',SliderStyle && SliderStyle.getThemeStyleSheet ? SliderStyle.getThemeStyleSheet(undefined, styleProps) : '',TextareaStyle && TextareaStyle.getThemeStyleSheet ? TextareaStyle.getThemeStyleSheet(undefined, styleProps) : '',ToggleButtonStyle && ToggleButtonStyle.getThemeStyleSheet ? ToggleButtonStyle.getThemeStyleSheet(undefined, styleProps) : '',ToggleSwitchStyle && ToggleSwitchStyle.getThemeStyleSheet ? ToggleSwitchStyle.getThemeStyleSheet(undefined, styleProps) : '',TreeSelectStyle && TreeSelectStyle.getThemeStyleSheet ? TreeSelectStyle.getThemeStyleSheet(undefined, styleProps) : '',ButtonStyle && ButtonStyle.getThemeStyleSheet ? ButtonStyle.getThemeStyleSheet(undefined, styleProps) : '',ButtonGroupStyle && ButtonGroupStyle.getThemeStyleSheet ? ButtonGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',SpeedDialStyle && SpeedDialStyle.getThemeStyleSheet ? SpeedDialStyle.getThemeStyleSheet(undefined, styleProps) : '',SplitButtonStyle && SplitButtonStyle.getThemeStyleSheet ? SplitButtonStyle.getThemeStyleSheet(undefined, styleProps) : '',ColumnStyle && ColumnStyle.getThemeStyleSheet ? ColumnStyle.getThemeStyleSheet(undefined, styleProps) : '',RowStyle && RowStyle.getThemeStyleSheet ? RowStyle.getThemeStyleSheet(undefined, styleProps) : '',ColumnGroupStyle && ColumnGroupStyle.getThemeStyleSheet ? ColumnGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',DataTableStyle && DataTableStyle.getThemeStyleSheet ? DataTableStyle.getThemeStyleSheet(undefined, styleProps) : '',DataViewStyle && DataViewStyle.getThemeStyleSheet ? DataViewStyle.getThemeStyleSheet(undefined, styleProps) : '',OrderListStyle && OrderListStyle.getThemeStyleSheet ? OrderListStyle.getThemeStyleSheet(undefined, styleProps) : '',OrganizationChartStyle && OrganizationChartStyle.getThemeStyleSheet ? OrganizationChartStyle.getThemeStyleSheet(undefined, styleProps) : '',PaginatorStyle && PaginatorStyle.getThemeStyleSheet ? PaginatorStyle.getThemeStyleSheet(undefined, styleProps) : '',PickListStyle && PickListStyle.getThemeStyleSheet ? PickListStyle.getThemeStyleSheet(undefined, styleProps) : '',TreeStyle && TreeStyle.getThemeStyleSheet ? TreeStyle.getThemeStyleSheet(undefined, styleProps) : '',TreeTableStyle && TreeTableStyle.getThemeStyleSheet ? TreeTableStyle.getThemeStyleSheet(undefined, styleProps) : '',TimelineStyle && TimelineStyle.getThemeStyleSheet ? TimelineStyle.getThemeStyleSheet(undefined, styleProps) : '',VirtualScrollerStyle && VirtualScrollerStyle.getThemeStyleSheet ? VirtualScrollerStyle.getThemeStyleSheet(undefined, styleProps) : '',AccordionStyle && AccordionStyle.getThemeStyleSheet ? AccordionStyle.getThemeStyleSheet(undefined, styleProps) : '',AccordionPanelStyle && AccordionPanelStyle.getThemeStyleSheet ? AccordionPanelStyle.getThemeStyleSheet(undefined, styleProps) : '',AccordionHeaderStyle && AccordionHeaderStyle.getThemeStyleSheet ? AccordionHeaderStyle.getThemeStyleSheet(undefined, styleProps) : '',AccordionContentStyle && AccordionContentStyle.getThemeStyleSheet ? AccordionContentStyle.getThemeStyleSheet(undefined, styleProps) : '',AccordionTabStyle && AccordionTabStyle.getThemeStyleSheet ? AccordionTabStyle.getThemeStyleSheet(undefined, styleProps) : '',CardStyle && CardStyle.getThemeStyleSheet ? CardStyle.getThemeStyleSheet(undefined, styleProps) : '',DeferredContentStyle && DeferredContentStyle.getThemeStyleSheet ? DeferredContentStyle.getThemeStyleSheet(undefined, styleProps) : '',DividerStyle && DividerStyle.getThemeStyleSheet ? DividerStyle.getThemeStyleSheet(undefined, styleProps) : '',FieldsetStyle && FieldsetStyle.getThemeStyleSheet ? FieldsetStyle.getThemeStyleSheet(undefined, styleProps) : '',PanelStyle && PanelStyle.getThemeStyleSheet ? PanelStyle.getThemeStyleSheet(undefined, styleProps) : '',ScrollPanelStyle && ScrollPanelStyle.getThemeStyleSheet ? ScrollPanelStyle.getThemeStyleSheet(undefined, styleProps) : '',SplitterStyle && SplitterStyle.getThemeStyleSheet ? SplitterStyle.getThemeStyleSheet(undefined, styleProps) : '',SplitterPanelStyle && SplitterPanelStyle.getThemeStyleSheet ? SplitterPanelStyle.getThemeStyleSheet(undefined, styleProps) : '',StepperStyle && StepperStyle.getThemeStyleSheet ? StepperStyle.getThemeStyleSheet(undefined, styleProps) : '',StepListStyle && StepListStyle.getThemeStyleSheet ? StepListStyle.getThemeStyleSheet(undefined, styleProps) : '',StepStyle && StepStyle.getThemeStyleSheet ? StepStyle.getThemeStyleSheet(undefined, styleProps) : '',StepItemStyle && StepItemStyle.getThemeStyleSheet ? StepItemStyle.getThemeStyleSheet(undefined, styleProps) : '',StepPanelsStyle && StepPanelsStyle.getThemeStyleSheet ? StepPanelsStyle.getThemeStyleSheet(undefined, styleProps) : '',StepPanelStyle && StepPanelStyle.getThemeStyleSheet ? StepPanelStyle.getThemeStyleSheet(undefined, styleProps) : '',TabViewStyle && TabViewStyle.getThemeStyleSheet ? TabViewStyle.getThemeStyleSheet(undefined, styleProps) : '',TabsStyle && TabsStyle.getThemeStyleSheet ? TabsStyle.getThemeStyleSheet(undefined, styleProps) : '',TabListStyle && TabListStyle.getThemeStyleSheet ? TabListStyle.getThemeStyleSheet(undefined, styleProps) : '',TabStyle && TabStyle.getThemeStyleSheet ? TabStyle.getThemeStyleSheet(undefined, styleProps) : '',TabPanelsStyle && TabPanelsStyle.getThemeStyleSheet ? TabPanelsStyle.getThemeStyleSheet(undefined, styleProps) : '',TabPanelStyle && TabPanelStyle.getThemeStyleSheet ? TabPanelStyle.getThemeStyleSheet(undefined, styleProps) : '',ToolbarStyle && ToolbarStyle.getThemeStyleSheet ? ToolbarStyle.getThemeStyleSheet(undefined, styleProps) : '',ConfirmDialogStyle && ConfirmDialogStyle.getThemeStyleSheet ? ConfirmDialogStyle.getThemeStyleSheet(undefined, styleProps) : '',ConfirmPopupStyle && ConfirmPopupStyle.getThemeStyleSheet ? ConfirmPopupStyle.getThemeStyleSheet(undefined, styleProps) : '',DialogStyle && DialogStyle.getThemeStyleSheet ? DialogStyle.getThemeStyleSheet(undefined, styleProps) : '',DrawerStyle && DrawerStyle.getThemeStyleSheet ? DrawerStyle.getThemeStyleSheet(undefined, styleProps) : '',DynamicDialogStyle && DynamicDialogStyle.getThemeStyleSheet ? DynamicDialogStyle.getThemeStyleSheet(undefined, styleProps) : '',OverlayPanelStyle && OverlayPanelStyle.getThemeStyleSheet ? OverlayPanelStyle.getThemeStyleSheet(undefined, styleProps) : '',PopoverStyle && PopoverStyle.getThemeStyleSheet ? PopoverStyle.getThemeStyleSheet(undefined, styleProps) : '',SidebarStyle && SidebarStyle.getThemeStyleSheet ? SidebarStyle.getThemeStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getThemeStyleSheet ? FileUploadStyle.getThemeStyleSheet(undefined, styleProps) : '',BreadcrumbStyle && BreadcrumbStyle.getThemeStyleSheet ? BreadcrumbStyle.getThemeStyleSheet(undefined, styleProps) : '',ContextMenuStyle && ContextMenuStyle.getThemeStyleSheet ? ContextMenuStyle.getThemeStyleSheet(undefined, styleProps) : '',DockStyle && DockStyle.getThemeStyleSheet ? DockStyle.getThemeStyleSheet(undefined, styleProps) : '',MenuStyle && MenuStyle.getThemeStyleSheet ? MenuStyle.getThemeStyleSheet(undefined, styleProps) : '',MenubarStyle && MenubarStyle.getThemeStyleSheet ? MenubarStyle.getThemeStyleSheet(undefined, styleProps) : '',MegaMenuStyle && MegaMenuStyle.getThemeStyleSheet ? MegaMenuStyle.getThemeStyleSheet(undefined, styleProps) : '',PanelMenuStyle && PanelMenuStyle.getThemeStyleSheet ? PanelMenuStyle.getThemeStyleSheet(undefined, styleProps) : '',StepsStyle && StepsStyle.getThemeStyleSheet ? StepsStyle.getThemeStyleSheet(undefined, styleProps) : '',TabMenuStyle && TabMenuStyle.getThemeStyleSheet ? TabMenuStyle.getThemeStyleSheet(undefined, styleProps) : '',TieredMenuStyle && TieredMenuStyle.getThemeStyleSheet ? TieredMenuStyle.getThemeStyleSheet(undefined, styleProps) : '',MessageStyle && MessageStyle.getThemeStyleSheet ? MessageStyle.getThemeStyleSheet(undefined, styleProps) : '',InlineMessageStyle && InlineMessageStyle.getThemeStyleSheet ? InlineMessageStyle.getThemeStyleSheet(undefined, styleProps) : '',ToastStyle && ToastStyle.getThemeStyleSheet ? ToastStyle.getThemeStyleSheet(undefined, styleProps) : '',CarouselStyle && CarouselStyle.getThemeStyleSheet ? CarouselStyle.getThemeStyleSheet(undefined, styleProps) : '',GalleriaStyle && GalleriaStyle.getThemeStyleSheet ? GalleriaStyle.getThemeStyleSheet(undefined, styleProps) : '',ImageStyle && ImageStyle.getThemeStyleSheet ? ImageStyle.getThemeStyleSheet(undefined, styleProps) : '',ImageCompareStyle && ImageCompareStyle.getThemeStyleSheet ? ImageCompareStyle.getThemeStyleSheet(undefined, styleProps) : '',AvatarStyle && AvatarStyle.getThemeStyleSheet ? AvatarStyle.getThemeStyleSheet(undefined, styleProps) : '',AvatarGroupStyle && AvatarGroupStyle.getThemeStyleSheet ? AvatarGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',BadgeStyle && BadgeStyle.getThemeStyleSheet ? BadgeStyle.getThemeStyleSheet(undefined, styleProps) : '',BlockUIStyle && BlockUIStyle.getThemeStyleSheet ? BlockUIStyle.getThemeStyleSheet(undefined, styleProps) : '',ChipStyle && ChipStyle.getThemeStyleSheet ? ChipStyle.getThemeStyleSheet(undefined, styleProps) : '',InplaceStyle && InplaceStyle.getThemeStyleSheet ? InplaceStyle.getThemeStyleSheet(undefined, styleProps) : '',MeterGroupStyle && MeterGroupStyle.getThemeStyleSheet ? MeterGroupStyle.getThemeStyleSheet(undefined, styleProps) : '',OverlayBadgeStyle && OverlayBadgeStyle.getThemeStyleSheet ? OverlayBadgeStyle.getThemeStyleSheet(undefined, styleProps) : '',ScrollTopStyle && ScrollTopStyle.getThemeStyleSheet ? ScrollTopStyle.getThemeStyleSheet(undefined, styleProps) : '',SkeletonStyle && SkeletonStyle.getThemeStyleSheet ? SkeletonStyle.getThemeStyleSheet(undefined, styleProps) : '',ProgressBarStyle && ProgressBarStyle.getThemeStyleSheet ? ProgressBarStyle.getThemeStyleSheet(undefined, styleProps) : '',ProgressSpinnerStyle && ProgressSpinnerStyle.getThemeStyleSheet ? ProgressSpinnerStyle.getThemeStyleSheet(undefined, styleProps) : '',TagStyle && TagStyle.getThemeStyleSheet ? TagStyle.getThemeStyleSheet(undefined, styleProps) : '',TerminalStyle && TerminalStyle.getThemeStyleSheet ? TerminalStyle.getThemeStyleSheet(undefined, styleProps) : '',FormStyle && FormStyle.getThemeStyleSheet ? FormStyle.getThemeStyleSheet(undefined, styleProps) : '',FormFieldStyle && FormFieldStyle.getThemeStyleSheet ? FormFieldStyle.getThemeStyleSheet(undefined, styleProps) : '',TooltipStyle && TooltipStyle.getThemeStyleSheet ? TooltipStyle.getThemeStyleSheet(undefined, styleProps) : '',RippleStyle && RippleStyle.getThemeStyleSheet ? RippleStyle.getThemeStyleSheet(undefined, styleProps) : '',StyleClassStyle && StyleClassStyle.getThemeStyleSheet ? StyleClassStyle.getThemeStyleSheet(undefined, styleProps) : '',FocusTrapStyle && FocusTrapStyle.getThemeStyleSheet ? FocusTrapStyle.getThemeStyleSheet(undefined, styleProps) : '',AnimateOnScrollStyle && AnimateOnScrollStyle.getThemeStyleSheet ? AnimateOnScrollStyle.getThemeStyleSheet(undefined, styleProps) : '',KeyFilterStyle && KeyFilterStyle.getThemeStyleSheet ? KeyFilterStyle.getThemeStyleSheet(undefined, styleProps) : ''
+].join('');
+
+const defineNitroPlugin = (def) => def;
+const _aG3o6LnrRn2L4d5QaRcNiH1McPtHmb7QB3oJ8NZNmG0 = defineNitroPlugin(async (nitroApp) => {
+  nitroApp.hooks.hook("render:html", (html) => {
+    html.head.unshift(stylesToTop);
+    html.head.push(styles);
+    html.head.push(themes);
+  });
+});
+
+const script = "\"use strict\";(()=>{const t=window,e=document.documentElement,c=[\"dark\",\"light\"],n=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let i=n===\"system\"?u():n;const r=e.getAttribute(\"data-color-mode-forced\");r&&(i=r),l(i),t[\"__NUXT_COLOR_MODE__\"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.add(s):e.className+=\" \"+s,a&&e.setAttribute(\"data-\"+a,o)}function d(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,\"g\"),\"\"),a&&e.removeAttribute(\"data-\"+a)}function f(o){return t.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function u(){if(t.matchMedia&&f(\"\").media!==\"not all\"){for(const o of c)if(f(\":\"+o).matches)return o}return\"light\"}})();function getStorageValue(t,e){switch(t){case\"localStorage\":return window.localStorage.getItem(e);case\"sessionStorage\":return window.sessionStorage.getItem(e);case\"cookie\":return getCookie(e);default:return null}}function getCookie(t){const c=(\"; \"+window.document.cookie).split(\"; \"+t+\"=\");if(c.length===2)return c.pop()?.split(\";\").shift()}";
+
+const _FHOPG4Xml7nh2qXI2CO4ZaSSAppVwPQ7fAfYpJ258 = (function(nitro) {
+  nitro.hooks.hook("render:html", (htmlContext) => {
+    htmlContext.head.push(`<script>${script}<\/script>`);
+  });
+});
+
+const plugins = [
+  _NW5OFtcBHZGKnB2mCrz69ydPktXX6hxHhYw8nnlqemU,
+_aG3o6LnrRn2L4d5QaRcNiH1McPtHmb7QB3oJ8NZNmG0,
+_FHOPG4Xml7nh2qXI2CO4ZaSSAppVwPQ7fAfYpJ258
+];
+
+const assets = {
+  "/favicon.ico": {
+    "type": "image/vnd.microsoft.icon",
+    "etag": "\"10be-n8egyE9tcb7sKGr/pYCaQ4uWqxI\"",
+    "mtime": "2026-06-18T09:42:55.246Z",
+    "size": 4286,
+    "path": "../public/favicon.ico"
+  },
+  "/robots.txt": {
+    "type": "text/plain; charset=utf-8",
+    "etag": "\"18-j8OIsL9qGDmNZ+lHhp2tyH4XtaE\"",
+    "mtime": "2026-06-18T09:42:55.246Z",
+    "size": 24,
+    "path": "../public/robots.txt"
+  },
+  "/_nuxt/0prwMV_s.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"a97f-4+jIag1ZDAW7k3yI4mEVUjERH7w\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 43391,
+    "path": "../public/_nuxt/0prwMV_s.js"
+  },
+  "/_nuxt/5sOQ1gmq.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"5bd-pY0dM32CSOf53kLIldSdKEBVZ1k\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 1469,
+    "path": "../public/_nuxt/5sOQ1gmq.js"
+  },
+  "/sidebar-bg.png": {
+    "type": "image/png",
+    "etag": "\"74005-bMdqlRWfRl/gXXQtMkMy1XhUp8M\"",
+    "mtime": "2026-06-18T09:42:55.246Z",
+    "size": 475141,
+    "path": "../public/sidebar-bg.png"
+  },
+  "/_nuxt/AppInputField.B4sGCITj.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"409-RXCZKzcnZSQ1VxtVdQWbamBnlvk\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 1033,
+    "path": "../public/_nuxt/AppInputField.B4sGCITj.css"
+  },
+  "/_nuxt/9AGf-SnF.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"797c-gznSNxzlMb1uKCailJSmYD5r6b0\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 31100,
+    "path": "../public/_nuxt/9AGf-SnF.js"
+  },
+  "/_nuxt/AppMasterSelect.DZNnnOvH.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"515-PSw1VbwaiAUY8muVfAFYl38lduc\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 1301,
+    "path": "../public/_nuxt/AppMasterSelect.DZNnnOvH.css"
+  },
+  "/_nuxt/AppMessageError.nHlW8_Oz.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"51-jB1LN121TLoV24e+lWuMAmS9R0c\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 81,
+    "path": "../public/_nuxt/AppMessageError.nHlW8_Oz.css"
+  },
+  "/_nuxt/B0YqC5_6.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4669-i4KUzpZBGekKbNlAfcnkXQJ03RY\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 18025,
+    "path": "../public/_nuxt/B0YqC5_6.js"
+  },
+  "/_nuxt/B18ZYH17.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6c1-zkeloJesKrZspxvRH4yxQRR38VQ\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 1729,
+    "path": "../public/_nuxt/B18ZYH17.js"
+  },
+  "/_nuxt/B5HtMAPI.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"435-huVBkflQm9kf17BPlcDET7YLUgo\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 1077,
+    "path": "../public/_nuxt/B5HtMAPI.js"
+  },
+  "/_nuxt/B5QJNGJG.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1fdb-UFxhJ/rR8YSboIm4lQqlLuJizZE\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 8155,
+    "path": "../public/_nuxt/B5QJNGJG.js"
+  },
+  "/_nuxt/B5fEUov_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"62f2-cKQ3sVXTyOp8SL1x0kFEC9RGhRA\"",
+    "mtime": "2026-06-18T09:42:55.234Z",
+    "size": 25330,
+    "path": "../public/_nuxt/B5fEUov_.js"
+  },
+  "/_nuxt/B6yamhsK.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"12d-rW2qG7gf6/WHBWs6s0RxEjStn10\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 301,
+    "path": "../public/_nuxt/B6yamhsK.js"
+  },
+  "/_nuxt/B8TD3DUZ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"11e8-mI87YUIkOCehoDmEqi2L9WM0HzU\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 4584,
+    "path": "../public/_nuxt/B8TD3DUZ.js"
+  },
+  "/_nuxt/B9LzwU8y.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"327d-hI4XyNh1gqWXy3mjOK5wEF0uF0s\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 12925,
+    "path": "../public/_nuxt/B9LzwU8y.js"
+  },
+  "/_nuxt/B9r2SdsW.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1607-LGsnSCh33AW2KIODnHD2TfWfQf4\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 5639,
+    "path": "../public/_nuxt/B9r2SdsW.js"
+  },
+  "/_nuxt/BAIKzSpe.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"218-EUsaOWVk2bwvXz1mlV6y9/n3CoU\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 536,
+    "path": "../public/_nuxt/BAIKzSpe.js"
+  },
+  "/_nuxt/BBdkoupu.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"46ea-G4KZqcaw9NQq0BS12YgpcVAHMzQ\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 18154,
+    "path": "../public/_nuxt/BBdkoupu.js"
+  },
+  "/_nuxt/BCmMUPOV.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"10b7-WMk+aTTjZt14dKN8srYdSqpEvW0\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 4279,
+    "path": "../public/_nuxt/BCmMUPOV.js"
+  },
+  "/_nuxt/BFnFJCoZ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"fd7-MO6GXrYTQjzeunKQ1rBvVLSKSAs\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 4055,
+    "path": "../public/_nuxt/BFnFJCoZ.js"
+  },
+  "/dark-gold-mesh.png": {
+    "type": "image/png",
+    "etag": "\"99c93-2v5pMkJacDBB45m3Zfz4FS35ZRg\"",
+    "mtime": "2026-06-18T09:42:55.246Z",
+    "size": 629907,
+    "path": "../public/dark-gold-mesh.png"
+  },
+  "/images/login-bg.png": {
+    "type": "image/png",
+    "etag": "\"90d11-z/TkhomEPWGtHr50yoOq1LV3s/0\"",
+    "mtime": "2026-06-18T09:42:55.246Z",
+    "size": 593169,
+    "path": "../public/images/login-bg.png"
+  },
+  "/favicon.png": {
+    "type": "image/png",
+    "etag": "\"82fb2-VsCe6M5W3dPblJDA1dJPxRuYX+I\"",
+    "mtime": "2026-06-18T09:42:55.246Z",
+    "size": 536498,
+    "path": "../public/favicon.png"
+  },
+  "/_nuxt/BGS0CCjd.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"776e-UWmBQrzxYxzby4qqcV/eG83gXFc\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 30574,
+    "path": "../public/_nuxt/BGS0CCjd.js"
+  },
+  "/_nuxt/BIzG3nan.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2e6c-iryQUMFck+8+Yum+N1Wt3oDueB4\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 11884,
+    "path": "../public/_nuxt/BIzG3nan.js"
+  },
+  "/_nuxt/BKoEIQ8V.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3a97-U1Z4u6V3+pehwdVTU8dgCpaIrL4\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 14999,
+    "path": "../public/_nuxt/BKoEIQ8V.js"
+  },
+  "/_nuxt/BLEF48ok.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"ac9-KDkJcsQNWOug0j2zSUfqx1+rKwk\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 2761,
+    "path": "../public/_nuxt/BLEF48ok.js"
+  },
+  "/_nuxt/BKzmgif_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"32e44-vMQjTsnTfJgn2Jbt+gbuthW0L3I\"",
+    "mtime": "2026-06-18T09:42:55.235Z",
+    "size": 208452,
+    "path": "../public/_nuxt/BKzmgif_.js"
+  },
+  "/_nuxt/BLaNkN5U.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"c7ac-qQcu8NWYaNdIz3hPRIC20Mlm8ho\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 51116,
+    "path": "../public/_nuxt/BLaNkN5U.js"
+  },
+  "/_nuxt/BMmMBGae.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4ed-oq3SEZSgWpijqe6oxx2UpjJNKHc\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 1261,
+    "path": "../public/_nuxt/BMmMBGae.js"
+  },
+  "/_nuxt/BPOXGVDH.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1147-zMONKPeDinT/yOOZvOYD0XA8nvE\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 4423,
+    "path": "../public/_nuxt/BPOXGVDH.js"
+  },
+  "/_nuxt/BR4Lha-S.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"9b3-dFN8zJhWcksgeTNJURs2PQXqMEg\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 2483,
+    "path": "../public/_nuxt/BR4Lha-S.js"
+  },
+  "/_nuxt/BVEEFh0D.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"11db-YS0aNlpdOy5lCQBzdB7fHWaAjwM\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 4571,
+    "path": "../public/_nuxt/BVEEFh0D.js"
+  },
+  "/_nuxt/BWnLiN6b.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"e1-ds38CjJTl7oUwqayI/ntEbPwtKE\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 225,
+    "path": "../public/_nuxt/BWnLiN6b.js"
+  },
+  "/_nuxt/BYrwOAIQ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6a8-PAKuOxmkfkRMI7OegXYKqx7ZoBs\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 1704,
+    "path": "../public/_nuxt/BYrwOAIQ.js"
+  },
+  "/_nuxt/BYu_SHbl.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"8fb-xwg9xgoPyNUdyU5mZbCAyq6etoY\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 2299,
+    "path": "../public/_nuxt/BYu_SHbl.js"
+  },
+  "/_nuxt/B_pPt2v-.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"361-B2KZNWm8sgB6Bpc1UHzZCGACGF8\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 865,
+    "path": "../public/_nuxt/B_pPt2v-.js"
+  },
+  "/_nuxt/BZw7FAR1.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"a68c-OBIw5qmpLsVULZV5EHE/bySdFFQ\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 42636,
+    "path": "../public/_nuxt/BZw7FAR1.js"
+  },
+  "/_nuxt/BaseDataTable.MAqb_pit.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"d30-P6r9IIQH522Wi1BOo/oUf7wrmHY\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 3376,
+    "path": "../public/_nuxt/BaseDataTable.MAqb_pit.css"
+  },
+  "/_nuxt/BbN4J61I.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"311-8VDtiaV43udlNxmpWqVFkeOvXzE\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 785,
+    "path": "../public/_nuxt/BbN4J61I.js"
+  },
+  "/_nuxt/Bbs_pUkS.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ee6-C5bumwT/8410dIUhf4ARuZqwDYw\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 7910,
+    "path": "../public/_nuxt/Bbs_pUkS.js"
+  },
+  "/_nuxt/Bbh4_WWS.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"18180-1BD5HTwvuV5KGjy6iDsNQA3neW4\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 98688,
+    "path": "../public/_nuxt/Bbh4_WWS.js"
+  },
+  "/_nuxt/Bc3qDBke.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"5e05-N56XLOvRJwCBJM2jfZe4QTS9nUg\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 24069,
+    "path": "../public/_nuxt/Bc3qDBke.js"
+  },
+  "/_nuxt/Bd0NyXpe.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"794-HL9bsCChFwJ5kkZFg1DQaBX+Wys\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 1940,
+    "path": "../public/_nuxt/Bd0NyXpe.js"
+  },
+  "/_nuxt/BdxwiAK6.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"55b-GnAIp0L+jYM9DwRCo70eYZM21aA\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 1371,
+    "path": "../public/_nuxt/BdxwiAK6.js"
+  },
+  "/_nuxt/BfPAGN23.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"829-3vMJHBC0Fmkghq4nAkjun9CNiGs\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 2089,
+    "path": "../public/_nuxt/BfPAGN23.js"
+  },
+  "/_nuxt/Bf_c4wi4.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"440-5r8WGh9R4UtlESWp1kmB6nvZspo\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 1088,
+    "path": "../public/_nuxt/Bf_c4wi4.js"
+  },
+  "/_nuxt/B_GwT9Xb.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"84d23-few+lDOlWMUiVEbyVfJd6f6eyPY\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 544035,
+    "path": "../public/_nuxt/B_GwT9Xb.js"
+  },
+  "/_nuxt/Bfw-4iOX.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"b527-z/1/vSMBtJrAeW3R9SQCzNUC4xA\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 46375,
+    "path": "../public/_nuxt/Bfw-4iOX.js"
+  },
+  "/_nuxt/Bhs76Epj.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"397e-buGtnRsBX5fPn5YIjnHYQpwNonE\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 14718,
+    "path": "../public/_nuxt/Bhs76Epj.js"
+  },
+  "/_nuxt/Bj_P46c2.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3252-9Vu28aCSfJsxnpUy+jbXeBNcROg\"",
+    "mtime": "2026-06-18T09:42:55.236Z",
+    "size": 12882,
+    "path": "../public/_nuxt/Bj_P46c2.js"
+  },
+  "/_nuxt/BkEXaQwS.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1d7a7-73n3YEqOnqNHb/sK/6YAz3I7s5E\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 120743,
+    "path": "../public/_nuxt/BkEXaQwS.js"
+  },
+  "/_nuxt/BlK2cvIF.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"67b0-gqgmbuIGSu6CQEf7MNKF7lA6Tyc\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 26544,
+    "path": "../public/_nuxt/BlK2cvIF.js"
+  },
+  "/_nuxt/BliEwnMF.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"aa3-ip0wzBPW74oQhZ9bV6F0rs2dwos\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 2723,
+    "path": "../public/_nuxt/BliEwnMF.js"
+  },
+  "/_nuxt/BmUHWS6t.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"33c4-h0G11xdXcRS+Pnp2XXO3JKDTjQg\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 13252,
+    "path": "../public/_nuxt/BmUHWS6t.js"
+  },
+  "/_nuxt/BmclB9CN.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"12b54-2Ocs+IUgTQ3T23l0cAi1Fngly2w\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 76628,
+    "path": "../public/_nuxt/BmclB9CN.js"
+  },
+  "/_nuxt/BpgrdJmV.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"469f-OI2pxruEv7/QsllFsc67vDwoIXM\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 18079,
+    "path": "../public/_nuxt/BpgrdJmV.js"
+  },
+  "/_nuxt/BpocbUz7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"168c-7JPu/L4bCJJkBSeridv629WwOVg\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 5772,
+    "path": "../public/_nuxt/BpocbUz7.js"
+  },
+  "/_nuxt/BsOzrPti.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"9e1-G/ekHe0szaTH5QWdZ8rrGaO6o6A\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 2529,
+    "path": "../public/_nuxt/BsOzrPti.js"
+  },
+  "/_nuxt/BsQzzy0A.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6c0-5ukc6rXyXqt+tZTOPUt7AGe+OUE\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 1728,
+    "path": "../public/_nuxt/BsQzzy0A.js"
+  },
+  "/_nuxt/BtzDmkBX.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ce-DIOMX71Al7kF+RB5zIu4d3vYCt8\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 462,
+    "path": "../public/_nuxt/BtzDmkBX.js"
+  },
+  "/_nuxt/BuzixSmO.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1714-Mq/xNdveuZmunsRXfMophLRguOQ\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 5908,
+    "path": "../public/_nuxt/BuzixSmO.js"
+  },
+  "/_nuxt/Bvj2p8VK.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"55cb-15/PzNHJuDERuhjrZkCMeTxu+ng\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 21963,
+    "path": "../public/_nuxt/Bvj2p8VK.js"
+  },
+  "/_nuxt/BxAXYyZC.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2d6f-78NWbEuQNGaWmYzaeYoMgXceTeg\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 11631,
+    "path": "../public/_nuxt/BxAXYyZC.js"
+  },
+  "/_nuxt/ByXf937K.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"14ae-FFUYkQIA+4tdExDpSk6rO/iohbk\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 5294,
+    "path": "../public/_nuxt/ByXf937K.js"
+  },
+  "/_nuxt/By_UN7pb.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"81b4-OvF7YIUN65yfx/wIWhHHShq76Wo\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 33204,
+    "path": "../public/_nuxt/By_UN7pb.js"
+  },
+  "/_nuxt/C-FkbDrp.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1d33-YdYRT4o8fslPNpbQmf4ztY0MXqU\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 7475,
+    "path": "../public/_nuxt/C-FkbDrp.js"
+  },
+  "/_nuxt/C14DguDD.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"13f7-x+3yqFwM3FKACoqUgE1mEIv3O9o\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 5111,
+    "path": "../public/_nuxt/C14DguDD.js"
+  },
+  "/_nuxt/C3AwVQw8.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ab-X5+wN9cITgsk67KjnbjiM045EKQ\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 427,
+    "path": "../public/_nuxt/C3AwVQw8.js"
+  },
+  "/_nuxt/C3RHoJR1.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2ac4-ENmc5xmC/G1BuFkHnoNhjzIkD2I\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 10948,
+    "path": "../public/_nuxt/C3RHoJR1.js"
+  },
+  "/_nuxt/C4mrvmh7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3ea0-2Jjaph5jq5/jfZZWD21ei9ftg9E\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 16032,
+    "path": "../public/_nuxt/C4mrvmh7.js"
+  },
+  "/_nuxt/C4uiEclz.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"22c3-GI4RMnktLb+DRv94cRDGuSM4qdI\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 8899,
+    "path": "../public/_nuxt/C4uiEclz.js"
+  },
+  "/_nuxt/C4yQs__9.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"140f2-Sr2KskKGSiVF8nJgxPeepSoQuNA\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 82162,
+    "path": "../public/_nuxt/C4yQs__9.js"
+  },
+  "/_nuxt/C59ujqRq.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"981-x43GjQ+ZySoD5phNrTqETunRs9Q\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 2433,
+    "path": "../public/_nuxt/C59ujqRq.js"
+  },
+  "/_nuxt/C6AdT_sV.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6b9-xSUPC+v0sE9JCHTE+6zqUeKYcSE\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1721,
+    "path": "../public/_nuxt/C6AdT_sV.js"
+  },
+  "/_nuxt/C7nbZTon.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"17ce-7cAc27QoUKy/NIgF9heVOwxfDw4\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 6094,
+    "path": "../public/_nuxt/C7nbZTon.js"
+  },
+  "/_nuxt/C8A2Ffbn.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"588a-NRMF5apzwn/h01407kUhGveGZOs\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 22666,
+    "path": "../public/_nuxt/C8A2Ffbn.js"
+  },
+  "/_nuxt/CBOA3f93.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"373c-KpyQkvu2bQtW6TJMqHjZfiMUCRU\"",
+    "mtime": "2026-06-18T09:42:55.237Z",
+    "size": 14140,
+    "path": "../public/_nuxt/CBOA3f93.js"
+  },
+  "/_nuxt/CCQ7uLQ2.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ae-xLawVjNrIkkxJ4gRxmUWEnn37oY\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 430,
+    "path": "../public/_nuxt/CCQ7uLQ2.js"
+  },
+  "/_nuxt/CGZ36CCj.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2293-uLORAssFOc68glyh+VYbDwQbjE0\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 8851,
+    "path": "../public/_nuxt/CGZ36CCj.js"
+  },
+  "/_nuxt/CF2Sceav.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"11cb-dZijtV2HGiv0G33Axb1XOPTkkl8\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 4555,
+    "path": "../public/_nuxt/CF2Sceav.js"
+  },
+  "/_nuxt/CHAX3zDa.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"bdf-W3xbBG2gCBV6h38412omIqCChHA\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 3039,
+    "path": "../public/_nuxt/CHAX3zDa.js"
+  },
+  "/_nuxt/CHWpyYUt.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"c7-ObYQi/y/tLR+Nj4gu0hK6n5TjuY\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 199,
+    "path": "../public/_nuxt/CHWpyYUt.js"
+  },
+  "/_nuxt/CHs8EGt1.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"e27-UiAMQT2yhJj9ucaJqa1oK5VNFgs\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 3623,
+    "path": "../public/_nuxt/CHs8EGt1.js"
+  },
+  "/_nuxt/CJEpJDZ9.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"ecf-/on8k3BHJJaI6umzzwDxX713JOs\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 3791,
+    "path": "../public/_nuxt/CJEpJDZ9.js"
+  },
+  "/_nuxt/CL7girb_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"35a7-fM93RK/9IT4YASJAIMVqVHVygKo\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 13735,
+    "path": "../public/_nuxt/CL7girb_.js"
+  },
+  "/_nuxt/CLVLj4zl.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4f76-erKmpPg5+M1PE5CWrVPqH/od+Bw\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 20342,
+    "path": "../public/_nuxt/CLVLj4zl.js"
+  },
+  "/_nuxt/CMZPMGRA.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"437-bKt+nRAUZ42YQkI+yJL2WTuLeWw\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 1079,
+    "path": "../public/_nuxt/CMZPMGRA.js"
+  },
+  "/_nuxt/CPNIvPla.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"ffb-xoQv6A7LmzExFnGdIj/Ak1N7Tgk\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 4091,
+    "path": "../public/_nuxt/CPNIvPla.js"
+  },
+  "/_nuxt/CPXfjgxf.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"67e-jG4QcZb07ldJ0Eh16nrHnRCI3Bk\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 1662,
+    "path": "../public/_nuxt/CPXfjgxf.js"
+  },
+  "/_nuxt/CRv50cb4.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"91c-LL+MwOnGQWHdJgamsLmbajHI4UI\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 2332,
+    "path": "../public/_nuxt/CRv50cb4.js"
+  },
+  "/_nuxt/CUwJlu7H.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"dcb-e38Ua5uv18DkzNtxihjNVC6Op7U\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 3531,
+    "path": "../public/_nuxt/CUwJlu7H.js"
+  },
+  "/_nuxt/CW3XwPdH.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"89a-AzBGnTgre0AInOZKHyiPTsAdJgA\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 2202,
+    "path": "../public/_nuxt/CW3XwPdH.js"
+  },
+  "/_nuxt/CXgazPfQ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"47e9-FGjmQlsc+E7a4rY0MPhbkRmda6w\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 18409,
+    "path": "../public/_nuxt/CXgazPfQ.js"
+  },
+  "/_nuxt/CXmDvmqB.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"70ad-Ov6rd+uObax750bKit3+ICyr8Dc\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 28845,
+    "path": "../public/_nuxt/CXmDvmqB.js"
+  },
+  "/_nuxt/CYlZlQ56.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4c8-T/ZAU8JDlTRC7HRG7wInOCFoMsg\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 1224,
+    "path": "../public/_nuxt/CYlZlQ56.js"
+  },
+  "/_nuxt/CZV3thTQ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"35a6-wkge771FO1WMA70rLgpbVfaIRmM\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 13734,
+    "path": "../public/_nuxt/CZV3thTQ.js"
+  },
+  "/_nuxt/Ca_wttjB.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1f18-pnrsDYfR/lZQ/eOBScdT9iCP9L0\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 7960,
+    "path": "../public/_nuxt/Ca_wttjB.js"
+  },
+  "/_nuxt/CafRgm9M.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1591-T1cyy/am88c29MQieQ3XcGyMOiw\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 5521,
+    "path": "../public/_nuxt/CafRgm9M.js"
+  },
+  "/_nuxt/CcnLpPJP.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"60a-p4Ddlm5M31SvmmDmcwZivDLLdfw\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 1546,
+    "path": "../public/_nuxt/CcnLpPJP.js"
+  },
+  "/_nuxt/CfCbGmYh.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"bc8-eacruIgousB34jBDmpSb75AjD/k\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 3016,
+    "path": "../public/_nuxt/CfCbGmYh.js"
+  },
+  "/_nuxt/Cfu_ZVEn.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"409b-r65kv3gMeXP7Z5CrZnXTooTGEAc\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 16539,
+    "path": "../public/_nuxt/Cfu_ZVEn.js"
+  },
+  "/_nuxt/CgRbSyKz.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"749-FC9b/UgX1NLejtF9PUqs0Wop/8Q\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 1865,
+    "path": "../public/_nuxt/CgRbSyKz.js"
+  },
+  "/_nuxt/Cggk9egM.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6ac-5wsn18T8jDcakg5rbvylJmBmz6g\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 1708,
+    "path": "../public/_nuxt/Cggk9egM.js"
+  },
+  "/_nuxt/Ch3cMd9_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1b1-gSa65NMOmD9r/eAiRU6WHrWbSGk\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 433,
+    "path": "../public/_nuxt/Ch3cMd9_.js"
+  },
+  "/_nuxt/Cj3TwwD6.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"5511-D56ztx5gcRrR0jyBG5gCO90n1RE\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 21777,
+    "path": "../public/_nuxt/Cj3TwwD6.js"
+  },
+  "/_nuxt/Ck4EnCo0.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1203-nyWuh3mnC3IZUYTt6GJVfPEgQZY\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 4611,
+    "path": "../public/_nuxt/Ck4EnCo0.js"
+  },
+  "/_nuxt/CjPBq9Bq.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"249cf-4WbS1LOMnNCmYTTbut2Ko7EHIPA\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 149967,
+    "path": "../public/_nuxt/CjPBq9Bq.js"
+  },
+  "/_nuxt/CkWZH0-t.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"c4c8-Q+GOi6IEfvgP7653Fo1lH6NLxds\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 50376,
+    "path": "../public/_nuxt/CkWZH0-t.js"
+  },
+  "/_nuxt/ClgXeVQW.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2956-ybw3Kq9bLveT2MZ+Pq1j98teqtk\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 10582,
+    "path": "../public/_nuxt/ClgXeVQW.js"
+  },
+  "/_nuxt/CndpP7mW.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"8129-cT1/tf9VA6om7Pr79RiorhD6PyQ\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 33065,
+    "path": "../public/_nuxt/CndpP7mW.js"
+  },
+  "/_nuxt/CpYCugIr.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"250-dx4DpG58WIDWAtQfPgL2x8OzQoo\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 592,
+    "path": "../public/_nuxt/CpYCugIr.js"
+  },
+  "/_nuxt/CqnDNoIy.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"5543-KvkcYVqPHHWXhAPe2tziZY1XECk\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 21827,
+    "path": "../public/_nuxt/CqnDNoIy.js"
+  },
+  "/_nuxt/CrBzth28.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"782f-cTulPrCXJWglleKN2ECDlUt1Ots\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 30767,
+    "path": "../public/_nuxt/CrBzth28.js"
+  },
+  "/_nuxt/CrQT_bzc.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1184-bK4G+Rad1tIGSU9XUZyNUiqMh20\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 4484,
+    "path": "../public/_nuxt/CrQT_bzc.js"
+  },
+  "/_nuxt/CquwA8NN.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"32a9c-dHaqI6mP474ItcqTYEh68+/EjxQ\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 207516,
+    "path": "../public/_nuxt/CquwA8NN.js"
+  },
+  "/_nuxt/CrkVH135.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"160-cg1O+wo9RE3a5rl5dYDfw2YStL0\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 352,
+    "path": "../public/_nuxt/CrkVH135.js"
+  },
+  "/_nuxt/CxHgjDZH.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"27da-zFuBePDYb3PpOYNxDtJRvhTMHg8\"",
+    "mtime": "2026-06-18T09:42:55.238Z",
+    "size": 10202,
+    "path": "../public/_nuxt/CxHgjDZH.js"
+  },
+  "/_nuxt/D-J5_YBC.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"f9f-LGDAnALNcosbfz2R+y17+dpgKVg\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 3999,
+    "path": "../public/_nuxt/D-J5_YBC.js"
+  },
+  "/_nuxt/D30MINDR.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"e0d-N/1xaNJXOJriCOIf50hQNl+y8dU\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 3597,
+    "path": "../public/_nuxt/D30MINDR.js"
+  },
+  "/_nuxt/D0nf4Lic.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"faee-SJTVP7awMlv5kYil0uZ2eNVanzU\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 64238,
+    "path": "../public/_nuxt/D0nf4Lic.js"
+  },
+  "/_nuxt/D3Fyvyjm.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6c2-qsXL1iHwxuv77ZSHb8RfpSlMcf0\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1730,
+    "path": "../public/_nuxt/D3Fyvyjm.js"
+  },
+  "/_nuxt/D7Uzqwzb.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"acf-0/vTeMwTurVyigm4R0MNH3Kl344\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 2767,
+    "path": "../public/_nuxt/D7Uzqwzb.js"
+  },
+  "/_nuxt/DAWYSB6q.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2507-1+MZurqkgGR7yVSo62tTm1LbYuk\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 9479,
+    "path": "../public/_nuxt/DAWYSB6q.js"
+  },
+  "/_nuxt/DDDjBSRz.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"d9-OxKnNqJfrM3Of33WpIQY5xe3cV8\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 217,
+    "path": "../public/_nuxt/DDDjBSRz.js"
+  },
+  "/_nuxt/DDM_bgpH.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3ef-Vsnc8TpB7DV+V/SgqfYgdBB9L1A\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1007,
+    "path": "../public/_nuxt/DDM_bgpH.js"
+  },
+  "/_nuxt/DFEXo-_o.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4e7-33HAr0CHdNIP5Su3u4iyGpfdWns\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1255,
+    "path": "../public/_nuxt/DFEXo-_o.js"
+  },
+  "/_nuxt/DGkI32l4.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"93c-ShOy3ziGxsSvq6HZCOQRCOPM3LA\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 2364,
+    "path": "../public/_nuxt/DGkI32l4.js"
+  },
+  "/_nuxt/DHjcY-8j.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ba-ryQn+r/k38s4z2Kaw4iIRsJpISc\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 442,
+    "path": "../public/_nuxt/DHjcY-8j.js"
+  },
+  "/_nuxt/DHs0E2kr.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"d96-mbFo41ipJUCHT7F70Wx5jtQTpig\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 3478,
+    "path": "../public/_nuxt/DHs0E2kr.js"
+  },
+  "/_nuxt/DIbcou9T.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3c50-tyZTUVb/iEBBuMtCGAjZnz4UFGQ\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 15440,
+    "path": "../public/_nuxt/DIbcou9T.js"
+  },
+  "/_nuxt/DJVo8xT8.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"31b3-qdxun6dSE02EN6sBMdu+tgAnM9g\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 12723,
+    "path": "../public/_nuxt/DJVo8xT8.js"
+  },
+  "/_nuxt/DJwaM9zR.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1c34-MbOEs7lTO1tnPHS9SfIZxCYWwAM\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 7220,
+    "path": "../public/_nuxt/DJwaM9zR.js"
+  },
+  "/_nuxt/DKDfX8ts.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"793-6uFQQ2eJs2vIS7dTIXhXF8DWKiE\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1939,
+    "path": "../public/_nuxt/DKDfX8ts.js"
+  },
+  "/_nuxt/DLjW_7E1.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"14a2-lPT5/noxtKRTR9CjXsDZYE3En1A\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 5282,
+    "path": "../public/_nuxt/DLjW_7E1.js"
+  },
+  "/_nuxt/DLquDyCC.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"f17-80pd3qlXSOa9XloUwUTiV+N5gNc\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 3863,
+    "path": "../public/_nuxt/DLquDyCC.js"
+  },
+  "/_nuxt/DNB1kViJ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"7dc-vVBRlC6Hg2VG9XSj+xKaKHME1QU\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 2012,
+    "path": "../public/_nuxt/DNB1kViJ.js"
+  },
+  "/_nuxt/DPcUtGMn.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1c3d-wiIQWVNzCQPdDR9LJU+blK957j8\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 7229,
+    "path": "../public/_nuxt/DPcUtGMn.js"
+  },
+  "/_nuxt/DQeOXSKh.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"31d0-QELsBbZ641NUj5ClzOeoGr7b7WQ\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 12752,
+    "path": "../public/_nuxt/DQeOXSKh.js"
+  },
+  "/_nuxt/DR4EljWA.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1304-lJDl2dAeRC2zJRVYpYqLt5Fy9Sg\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 4868,
+    "path": "../public/_nuxt/DR4EljWA.js"
+  },
+  "/_nuxt/DTeSlgba.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"8b8e-YF6gtSiEzw3umDxbTZ7UzqSSjE8\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 35726,
+    "path": "../public/_nuxt/DTeSlgba.js"
+  },
+  "/_nuxt/DUFC6QUO.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"23ad-wr8c4VDceLiC+t+7IhlYrwd1Zs0\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 9133,
+    "path": "../public/_nuxt/DUFC6QUO.js"
+  },
+  "/_nuxt/DUdy7gxG.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1a1-V7k07sXxLkfJ2G/SC58YjSthJWk\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 417,
+    "path": "../public/_nuxt/DUdy7gxG.js"
+  },
+  "/_nuxt/DVIJJ9al.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"107e-K8iafnOE4Lkouf2AJBO0CbeR2Do\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 4222,
+    "path": "../public/_nuxt/DVIJJ9al.js"
+  },
+  "/_nuxt/DWNcp2x7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"8f0-3LR3+Sfk6ZX538bm4UynivHjOKw\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 2288,
+    "path": "../public/_nuxt/DWNcp2x7.js"
+  },
+  "/_nuxt/DWU4lLBL.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1434-Id9MiqvzvO/18k0aXqqyadWOV2g\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 5172,
+    "path": "../public/_nuxt/DWU4lLBL.js"
+  },
+  "/_nuxt/DXSBmoDj.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"495-EolRG1vEVENtRzKE8PuD0lOY/6o\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1173,
+    "path": "../public/_nuxt/DXSBmoDj.js"
+  },
+  "/_nuxt/DY1dlofh.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"29c0-aS2cBJGUQyHlaHlJc7/DjEYjkfY\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 10688,
+    "path": "../public/_nuxt/DY1dlofh.js"
+  },
+  "/_nuxt/DZ4dNA-i.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1d67-C936mT/n1UtUWnrW1YnisjILmkg\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 7527,
+    "path": "../public/_nuxt/DZ4dNA-i.js"
+  },
+  "/_nuxt/DYJZq2H6.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"41dc-gd2J9skyPpdQhj5gwAs/Rd+7FB4\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 16860,
+    "path": "../public/_nuxt/DYJZq2H6.js"
+  },
+  "/_nuxt/DcFnAxUE.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"40-llQxGaxYWlt5Nv6YvpkyXq71hIc\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 64,
+    "path": "../public/_nuxt/DcFnAxUE.js"
+  },
+  "/_nuxt/Ded_Cofb.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1d2-pjktXUfKTWNJNljzXGmxMxkuOxg\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 466,
+    "path": "../public/_nuxt/Ded_Cofb.js"
+  },
+  "/_nuxt/DaM0-syc.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"11070-Yvx37CeMNnJO8gIVZV5GZiiurno\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 69744,
+    "path": "../public/_nuxt/DaM0-syc.js"
+  },
+  "/_nuxt/DfcXLbxJ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4fd4-OS203pbrqnganIrOsW8PUk+UJO0\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 20436,
+    "path": "../public/_nuxt/DfcXLbxJ.js"
+  },
+  "/_nuxt/DgAZRmMY.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1f58-1QJtzwTm/hmdvkaUQhLOk9bFh78\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 8024,
+    "path": "../public/_nuxt/DgAZRmMY.js"
+  },
+  "/_nuxt/Dh5aKzdj.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"741-CNntEE7iKcx0X2JZlYdu5iDdTmE\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1857,
+    "path": "../public/_nuxt/Dh5aKzdj.js"
+  },
+  "/_nuxt/DhDnNj1f.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"228e-YJyBAoNJY6/xW3TFCr6ivj1H0Uw\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 8846,
+    "path": "../public/_nuxt/DhDnNj1f.js"
+  },
+  "/_nuxt/Dkn3rah_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"456-l4ss/kMiIws7zWSCb8+abJEtvNk\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1110,
+    "path": "../public/_nuxt/Dkn3rah_.js"
+  },
+  "/_nuxt/DlAUqK2U.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"5b-eFCz/UrraTh721pgAl0VxBNR1es\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 91,
+    "path": "../public/_nuxt/DlAUqK2U.js"
+  },
+  "/_nuxt/Dm8DzbFC.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"63d5-F7IZNn638VpvT74Kpkmu2WzDLdE\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 25557,
+    "path": "../public/_nuxt/Dm8DzbFC.js"
+  },
+  "/_nuxt/DncxB0bA.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2f9-Hnz4hqilT+MpULOh2EuvH8Alh/4\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 761,
+    "path": "../public/_nuxt/DncxB0bA.js"
+  },
+  "/_nuxt/DvCxYy2o.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6349-rCFG3hx8h5DyfLNxAon6VSwDh8g\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 25417,
+    "path": "../public/_nuxt/DvCxYy2o.js"
+  },
+  "/_nuxt/DvE-1Eo2.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"34f5-2HbkSY+I9+zVnlh78O6Oaxewp6g\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 13557,
+    "path": "../public/_nuxt/DvE-1Eo2.js"
+  },
+  "/_nuxt/DvuZkIEz.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ef-IDaMgmwMn4Kzp2jYPS/VUQ/vrFE\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 495,
+    "path": "../public/_nuxt/DvuZkIEz.js"
+  },
+  "/_nuxt/DwXgTOl_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"cfb-C8HZw9ihBEQt6VgZ8we4cfe4duc\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 3323,
+    "path": "../public/_nuxt/DwXgTOl_.js"
+  },
+  "/_nuxt/DwjbKbPK.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"563d-o77ex19L6nCH05wnzAY7qW8ARfA\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 22077,
+    "path": "../public/_nuxt/DwjbKbPK.js"
+  },
+  "/_nuxt/DxeFAG53.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"11d5-/qX8S45+1FR/OxMY1rkpNOrdbc4\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 4565,
+    "path": "../public/_nuxt/DxeFAG53.js"
+  },
+  "/_nuxt/DzrKeW0Z.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"120-GaxTZWX4EGft7vuML8OF1tGazf0\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 288,
+    "path": "../public/_nuxt/DzrKeW0Z.js"
+  },
+  "/_nuxt/EmployeeForm.DCfCdd09.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"769-xXf1T544PbE1jYRHLDeyNHrbUHM\"",
+    "mtime": "2026-06-18T09:42:55.239Z",
+    "size": 1897,
+    "path": "../public/_nuxt/EmployeeForm.DCfCdd09.css"
+  },
+  "/_nuxt/GXNiYGp-.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"ba9c-j/T7KO9+tuNvHTzjFdg8c/iuzu0\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 47772,
+    "path": "../public/_nuxt/GXNiYGp-.js"
+  },
+  "/_nuxt/IjUtJwXx.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"402-IpoB+XmcSPO4ZD4tHAmHm9s003A\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 1026,
+    "path": "../public/_nuxt/IjUtJwXx.js"
+  },
+  "/_nuxt/IV6-p1Ms.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"212c4-QkOkAOPpLDNgkw7I5iqQTFceXPE\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 135876,
+    "path": "../public/_nuxt/IV6-p1Ms.js"
+  },
+  "/_nuxt/K5Spdl1Z.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"237-afP8FYgU5GqEflG1qJmWrpgpTUg\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 567,
+    "path": "../public/_nuxt/K5Spdl1Z.js"
+  },
+  "/_nuxt/MRt7P01F.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"c1-swRLDy++GPA4B9LsWQIlEg8V9yg\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 193,
+    "path": "../public/_nuxt/MRt7P01F.js"
+  },
+  "/_nuxt/N-71-vl7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"b8f-5cLm5HGQR0p7ZRFYwrwfy+AdSss\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 2959,
+    "path": "../public/_nuxt/N-71-vl7.js"
+  },
+  "/_nuxt/MrLEu8sn.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"80e5-9XAXO7cgbXCAUaN90XkIOV7nPKI\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 32997,
+    "path": "../public/_nuxt/MrLEu8sn.js"
+  },
+  "/_nuxt/Nsslb-zG.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2e5-iCrGFCigGRw8m0s0rAe3H6lFIbg\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 741,
+    "path": "../public/_nuxt/Nsslb-zG.js"
+  },
+  "/_nuxt/QCA0zhE6.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"160d-EjJ0Xb1kbRmPK1P/n1mTgWfMaNI\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 5645,
+    "path": "../public/_nuxt/QCA0zhE6.js"
+  },
+  "/_nuxt/TInGrbWV.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"388-2oecT9XtdyjNlRyO/RB0LpX5VtM\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 904,
+    "path": "../public/_nuxt/TInGrbWV.js"
+  },
+  "/_nuxt/UaUGNt0b.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"22d-Y2ZDvoMYQXWs0uBV85tyOY3XHY0\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 557,
+    "path": "../public/_nuxt/UaUGNt0b.js"
+  },
+  "/_nuxt/VdPSjIZ7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1a46-VgVTWPZg+p05qguxCmTGGn7fi3U\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 6726,
+    "path": "../public/_nuxt/VdPSjIZ7.js"
+  },
+  "/_nuxt/WobAvXG2.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"6c0-qadtbVIwIkFUl6blSClHYCu4EzM\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 1728,
+    "path": "../public/_nuxt/WobAvXG2.js"
+  },
+  "/_nuxt/YdTaL1AW.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"40c7-Ivvwyby5uMeFJS1l/xvCKblPq68\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 16583,
+    "path": "../public/_nuxt/YdTaL1AW.js"
+  },
+  "/_nuxt/Y_mLnU2q.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1af8-Oi4kQCVakCB5FFdMvtTWvz7VRjQ\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 6904,
+    "path": "../public/_nuxt/Y_mLnU2q.js"
+  },
+  "/_nuxt/_7dFy1ZV.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2213-Noe5BPKW46/5QF0rYHtFiD67JJs\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 8723,
+    "path": "../public/_nuxt/_7dFy1ZV.js"
+  },
+  "/_nuxt/_NKbMC8P.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1321-OVs8IBDtAjENRdJHeYszga+U+KI\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 4897,
+    "path": "../public/_nuxt/_NKbMC8P.js"
+  },
+  "/_nuxt/aHuYlBBT.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1cc-xXsalpDjSoI7HYQOfAv2kFmpllU\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 460,
+    "path": "../public/_nuxt/aHuYlBBT.js"
+  },
+  "/_nuxt/QwZ_3WfZ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"196e8-IeCE2I51nzbXJ7IAxKc5Le/d0Hg\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 104168,
+    "path": "../public/_nuxt/QwZ_3WfZ.js"
+  },
+  "/_nuxt/ae4qAe5C.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"f37-gI/9Pc9H/MIupvqPGqW6ev7yY+o\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 3895,
+    "path": "../public/_nuxt/ae4qAe5C.js"
+  },
+  "/_nuxt/auth.7GOxuQe6.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"9e8-ZIm5Zj/EiAfYqNNB+if+wzqj0Sw\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 2536,
+    "path": "../public/_nuxt/auth.7GOxuQe6.css"
+  },
+  "/_nuxt/change-password.CNGvZeNJ.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"2a-QbHcwpLAnYJMH9ohj4Kz2jJfkZ8\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 42,
+    "path": "../public/_nuxt/change-password.CNGvZeNJ.css"
+  },
+  "/_nuxt/bBXRGMSz.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"251a-4yjsV2VaipteGwrhSZ4jzitKC1Q\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 9498,
+    "path": "../public/_nuxt/bBXRGMSz.js"
+  },
+  "/_nuxt/default.BdsHiB8x.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"fcc-rUrg5LUDz1tbp48bJkGNap02slQ\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 4044,
+    "path": "../public/_nuxt/default.BdsHiB8x.css"
+  },
+  "/_nuxt/entry.Dn_-dl1K.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"26b80-Ho56Oe73AbufD1DKOpFNtBpPXDA\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 158592,
+    "path": "../public/_nuxt/entry.Dn_-dl1K.css"
+  },
+  "/_nuxt/error-404.C-Ezrlz-.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"97e-YLcQ2HBNLea0KJoUeqSqSCendIU\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 2430,
+    "path": "../public/_nuxt/error-404.C-Ezrlz-.css"
+  },
+  "/_nuxt/error-500.DBWf9FGj.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"773-9MNIE+ztUss3x7HN62QKMFz0rhs\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 1907,
+    "path": "../public/_nuxt/error-500.DBWf9FGj.css"
+  },
+  "/_nuxt/g6GlwqTG.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1c0c-WxTSnLlRUGpm9SzoTMoamFVTOnI\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 7180,
+    "path": "../public/_nuxt/g6GlwqTG.js"
+  },
+  "/_nuxt/gAie2r1s.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2a0-GEa3HNXTGd6bk/vr9mgpTHaTWos\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 672,
+    "path": "../public/_nuxt/gAie2r1s.js"
+  },
+  "/_nuxt/gnYr07CR.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"25c-+iKaZ/jTZ7zEbu9iHRPfHjT0O6o\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 604,
+    "path": "../public/_nuxt/gnYr07CR.js"
+  },
+  "/_nuxt/hWxokpXQ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"20b-I2SOmqHJxFyqgCUpoJWx5BEkT6Y\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 523,
+    "path": "../public/_nuxt/hWxokpXQ.js"
+  },
+  "/_nuxt/i6QATyuR.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"117e-5rZkd2q7ZA+TXLmwTkFi31RpPQE\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 4478,
+    "path": "../public/_nuxt/i6QATyuR.js"
+  },
+  "/_nuxt/index.B027kFzx.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"b9-F/dB597VKr0zMXcBB4pjgvhBDyw\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 185,
+    "path": "../public/_nuxt/index.B027kFzx.css"
+  },
+  "/_nuxt/index.CNSXVLz2.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"86-Y8oBlSNV61Ot0sdMVDr3ADfdZTs\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 134,
+    "path": "../public/_nuxt/index.CNSXVLz2.css"
+  },
+  "/_nuxt/index.Ca6Jlvb1.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"53-fd0a5WQUV1he0pL4LwyvaZYbbSI\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 83,
+    "path": "../public/_nuxt/index.Ca6Jlvb1.css"
+  },
+  "/_nuxt/index.Cr-mgII7.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"90-3tdCbQdGx5hKLvDYzHOdT24kJhE\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 144,
+    "path": "../public/_nuxt/index.Cr-mgII7.css"
+  },
+  "/_nuxt/index.Cyym8F-1.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"2b3-nGPcG1ji5mikeEQWGqlRMh4+OpQ\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 691,
+    "path": "../public/_nuxt/index.Cyym8F-1.css"
+  },
+  "/_nuxt/index.D8kqWpIO.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"33-knXFRoa5Ix83FKnmzdXAx8IuXyw\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 51,
+    "path": "../public/_nuxt/index.D8kqWpIO.css"
+  },
+  "/_nuxt/index.DTv8BngB.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"3e38-3S372na5EdW2f3+z1+abw4Z0o44\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 15928,
+    "path": "../public/_nuxt/index.DTv8BngB.css"
+  },
+  "/_nuxt/index.DXobnGu6.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"98-zGV2hcuTVqbZArt3Ep0pZBSQ8kw\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 152,
+    "path": "../public/_nuxt/index.DXobnGu6.css"
+  },
+  "/_nuxt/index._31N4aab.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"2e-fPd2oqAFYajy0e07XhrLsviv28Y\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 46,
+    "path": "../public/_nuxt/index._31N4aab.css"
+  },
+  "/_nuxt/j2bxfAw3.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"700d-Jo1e6TaBqM/xfY/IaHLIglLxBVE\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 28685,
+    "path": "../public/_nuxt/j2bxfAw3.js"
+  },
+  "/_nuxt/lbFiPWYN.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4fca-xgBCYn/Ojh/aCs0hzJroJxGA1Vo\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 20426,
+    "path": "../public/_nuxt/lbFiPWYN.js"
+  },
+  "/_nuxt/login.CgHixvdx.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"4e-AxbdT0pRkGzK7eipi+050VrfJWo\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 78,
+    "path": "../public/_nuxt/login.CgHixvdx.css"
+  },
+  "/_nuxt/manage.yr3reYq6.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"31b-nzi6lSrgQLuJDpW5XZRr2zmHohY\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 795,
+    "path": "../public/_nuxt/manage.yr3reYq6.css"
+  },
+  "/_nuxt/p-OCrcZt.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"738-2jULWlHMn99BaBBDc+CLwxOhyHg\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 1848,
+    "path": "../public/_nuxt/p-OCrcZt.js"
+  },
+  "/_nuxt/pByyNVBp.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"67e4-HA+9Wz+2YEjuD2/TUQeGfoa73dU\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 26596,
+    "path": "../public/_nuxt/pByyNVBp.js"
+  },
+  "/_nuxt/p-vpF0Bg.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2089f-HXADPvdhTxD2QVhBBAfmuLSGwKE\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 133279,
+    "path": "../public/_nuxt/p-vpF0Bg.js"
+  },
+  "/_nuxt/primeicons.C6QP2o4f.woff2": {
+    "type": "font/woff2",
+    "etag": "\"894c-g3wSebavnSl/NP20Pm/MkgannzI\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 35148,
+    "path": "../public/_nuxt/primeicons.C6QP2o4f.woff2"
+  },
+  "/_nuxt/primeicons.DMOk5skT.eot": {
+    "type": "application/vnd.ms-fontobject",
+    "etag": "\"14ca4-4k7BPpU2bIK6aaghv2Wg6u8pRQw\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 85156,
+    "path": "../public/_nuxt/primeicons.DMOk5skT.eot"
+  },
+  "/_nuxt/primeicons.MpK4pl85.ttf": {
+    "type": "font/ttf",
+    "etag": "\"14bf4-O4eMp+iJRajsJYFIELlTZ9iXeuY\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 84980,
+    "path": "../public/_nuxt/primeicons.MpK4pl85.ttf"
+  },
+  "/_nuxt/primeicons.WjwUDZjB.woff": {
+    "type": "font/woff",
+    "etag": "\"14c40-Nh469xu05RX+6tL3hzSKkqVScVg\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 85056,
+    "path": "../public/_nuxt/primeicons.WjwUDZjB.woff"
+  },
+  "/_nuxt/primeicons.Dr5RGzOO.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"539fd-oHrjkCfBp4C0L9gvrXV1wpJNnSg\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 342525,
+    "path": "../public/_nuxt/primeicons.Dr5RGzOO.svg"
+  },
+  "/_nuxt/r1vMDCi1.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"188-iX7JCCyH5BsZPWz0NvQ9/fGcPkU\"",
+    "mtime": "2026-06-18T09:42:55.240Z",
+    "size": 392,
+    "path": "../public/_nuxt/r1vMDCi1.js"
+  },
+  "/_nuxt/rAL1EAzO.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"4887-rl8bX61T1tmoPXWN+4K37wmUCuc\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 18567,
+    "path": "../public/_nuxt/rAL1EAzO.js"
+  },
+  "/_nuxt/rWS9TPyt.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"114c-zJQC79suRPaIt7hst6kXHRJPGvA\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 4428,
+    "path": "../public/_nuxt/rWS9TPyt.js"
+  },
+  "/_nuxt/soIweU3U.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3bf7-S1Jya8Yx3o/CrHbPHVtZVUbRc4Q\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 15351,
+    "path": "../public/_nuxt/soIweU3U.js"
+  },
+  "/_nuxt/st4NDdrH.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"45a-bFPS1kOuXKWoQwKJo6DKUu7w3oI\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 1114,
+    "path": "../public/_nuxt/st4NDdrH.js"
+  },
+  "/_nuxt/tGJ3_ABZ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2c04-DxnOXFLhZ5cvtBMTCFL18KM5KZk\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 11268,
+    "path": "../public/_nuxt/tGJ3_ABZ.js"
+  },
+  "/_nuxt/u1f1SIsJ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"212-GyVKiOeg70epuoO0RmYatd04EiY\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 530,
+    "path": "../public/_nuxt/u1f1SIsJ.js"
+  },
+  "/_nuxt/xPyR47cJ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"a3f7-SFkObIDoRhgEWlAqlN6JCQzskoQ\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 41975,
+    "path": "../public/_nuxt/xPyR47cJ.js"
+  },
+  "/_nuxt/zXUfIGXi.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1ade-Ek/DQMx0M+ywLxTeeGPjS1Qm/dk\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 6878,
+    "path": "../public/_nuxt/zXUfIGXi.js"
+  },
+  "/_nuxt/zhPiGMNi.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"227a-Yyc7GEwXrllBgx8SRgffOa3iUv0\"",
+    "mtime": "2026-06-18T09:42:55.241Z",
+    "size": 8826,
+    "path": "../public/_nuxt/zhPiGMNi.js"
+  },
+  "/_nuxt/builds/latest.json": {
+    "type": "application/json",
+    "etag": "\"47-EaeUmPWEz00TY4loI/QoKMDZwrw\"",
+    "mtime": "2026-06-18T09:42:55.171Z",
+    "size": 71,
+    "path": "../public/_nuxt/builds/latest.json"
+  },
+  "/_nuxt/builds/meta/198f3bbe-456c-465c-a686-80fb15869b6c.json": {
+    "type": "application/json",
+    "etag": "\"58-sxP9YrGoRRnWUD/9lCk4BxPNlIQ\"",
+    "mtime": "2026-06-18T09:42:55.165Z",
+    "size": 88,
+    "path": "../public/_nuxt/builds/meta/198f3bbe-456c-465c-a686-80fb15869b6c.json"
+  }
+};
+
+const _DRIVE_LETTER_START_RE = /^[A-Za-z]:\//;
+function normalizeWindowsPath(input = "") {
+  if (!input) {
+    return input;
+  }
+  return input.replace(/\\/g, "/").replace(_DRIVE_LETTER_START_RE, (r) => r.toUpperCase());
+}
+const _IS_ABSOLUTE_RE = /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^[A-Za-z]:[/\\]/;
+const _DRIVE_LETTER_RE = /^[A-Za-z]:$/;
+function cwd() {
+  if (typeof process !== "undefined" && typeof process.cwd === "function") {
+    return process.cwd().replace(/\\/g, "/");
+  }
+  return "/";
+}
+const resolve = function(...arguments_) {
+  arguments_ = arguments_.map((argument) => normalizeWindowsPath(argument));
+  let resolvedPath = "";
+  let resolvedAbsolute = false;
+  for (let index = arguments_.length - 1; index >= -1 && !resolvedAbsolute; index--) {
+    const path = index >= 0 ? arguments_[index] : cwd();
+    if (!path || path.length === 0) {
+      continue;
+    }
+    resolvedPath = `${path}/${resolvedPath}`;
+    resolvedAbsolute = isAbsolute(path);
+  }
+  resolvedPath = normalizeString(resolvedPath, !resolvedAbsolute);
+  if (resolvedAbsolute && !isAbsolute(resolvedPath)) {
+    return `/${resolvedPath}`;
+  }
+  return resolvedPath.length > 0 ? resolvedPath : ".";
+};
+function normalizeString(path, allowAboveRoot) {
+  let res = "";
+  let lastSegmentLength = 0;
+  let lastSlash = -1;
+  let dots = 0;
+  let char = null;
+  for (let index = 0; index <= path.length; ++index) {
+    if (index < path.length) {
+      char = path[index];
+    } else if (char === "/") {
+      break;
+    } else {
+      char = "/";
+    }
+    if (char === "/") {
+      if (lastSlash === index - 1 || dots === 1) ; else if (dots === 2) {
+        if (res.length < 2 || lastSegmentLength !== 2 || res[res.length - 1] !== "." || res[res.length - 2] !== ".") {
+          if (res.length > 2) {
+            const lastSlashIndex = res.lastIndexOf("/");
+            if (lastSlashIndex === -1) {
+              res = "";
+              lastSegmentLength = 0;
+            } else {
+              res = res.slice(0, lastSlashIndex);
+              lastSegmentLength = res.length - 1 - res.lastIndexOf("/");
+            }
+            lastSlash = index;
+            dots = 0;
+            continue;
+          } else if (res.length > 0) {
+            res = "";
+            lastSegmentLength = 0;
+            lastSlash = index;
+            dots = 0;
+            continue;
+          }
+        }
+        if (allowAboveRoot) {
+          res += res.length > 0 ? "/.." : "..";
+          lastSegmentLength = 2;
+        }
+      } else {
+        if (res.length > 0) {
+          res += `/${path.slice(lastSlash + 1, index)}`;
+        } else {
+          res = path.slice(lastSlash + 1, index);
+        }
+        lastSegmentLength = index - lastSlash - 1;
+      }
+      lastSlash = index;
+      dots = 0;
+    } else if (char === "." && dots !== -1) {
+      ++dots;
+    } else {
+      dots = -1;
+    }
+  }
+  return res;
+}
+const isAbsolute = function(p) {
+  return _IS_ABSOLUTE_RE.test(p);
+};
+const dirname = function(p) {
+  const segments = normalizeWindowsPath(p).replace(/\/$/, "").split("/").slice(0, -1);
+  if (segments.length === 1 && _DRIVE_LETTER_RE.test(segments[0])) {
+    segments[0] += "/";
+  }
+  return segments.join("/") || (isAbsolute(p) ? "/" : ".");
+};
+
+function readAsset (id) {
+  const serverDir = dirname(fileURLToPath(globalThis._importMeta_.url));
+  return promises.readFile(resolve(serverDir, assets[id].path))
+}
+
+const publicAssetBases = {"/_nuxt/builds/meta/":{"maxAge":31536000},"/_nuxt/builds/":{"maxAge":1},"/_nuxt/":{"maxAge":31536000}};
+
+function isPublicAssetURL(id = '') {
+  if (assets[id]) {
+    return true
+  }
+  for (const base in publicAssetBases) {
+    if (id.startsWith(base)) { return true }
+  }
+  return false
+}
+
+function getAsset (id) {
+  return assets[id]
+}
+
+const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
+const EncodingMap = { gzip: ".gz", br: ".br" };
+const _8Uq1Oy = eventHandler((event) => {
+  if (event.method && !METHODS.has(event.method)) {
+    return;
+  }
+  let id = decodePath(
+    withLeadingSlash(withoutTrailingSlash(parseURL(event.path).pathname))
+  );
+  let asset;
+  const encodingHeader = String(
+    getRequestHeader(event, "accept-encoding") || ""
+  );
+  const encodings = [
+    ...encodingHeader.split(",").map((e) => EncodingMap[e.trim()]).filter(Boolean).sort(),
+    ""
+  ];
+  for (const encoding of encodings) {
+    for (const _id of [id + encoding, joinURL(id, "index.html" + encoding)]) {
+      const _asset = getAsset(_id);
+      if (_asset) {
+        asset = _asset;
+        id = _id;
+        break;
+      }
+    }
+  }
+  if (!asset) {
+    if (isPublicAssetURL(id)) {
+      removeResponseHeader(event, "Cache-Control");
+      throw createError$1({ statusCode: 404 });
+    }
+    return;
+  }
+  if (asset.encoding !== void 0) {
+    appendResponseHeader(event, "Vary", "Accept-Encoding");
+  }
+  const ifNotMatch = getRequestHeader(event, "if-none-match") === asset.etag;
+  if (ifNotMatch) {
+    setResponseStatus(event, 304, "Not Modified");
+    return "";
+  }
+  const ifModifiedSinceH = getRequestHeader(event, "if-modified-since");
+  const mtimeDate = new Date(asset.mtime);
+  if (ifModifiedSinceH && asset.mtime && new Date(ifModifiedSinceH) >= mtimeDate) {
+    setResponseStatus(event, 304, "Not Modified");
+    return "";
+  }
+  if (asset.type && !getResponseHeader(event, "Content-Type")) {
+    setResponseHeader(event, "Content-Type", asset.type);
+  }
+  if (asset.etag && !getResponseHeader(event, "ETag")) {
+    setResponseHeader(event, "ETag", asset.etag);
+  }
+  if (asset.mtime && !getResponseHeader(event, "Last-Modified")) {
+    setResponseHeader(event, "Last-Modified", mtimeDate.toUTCString());
+  }
+  if (asset.encoding && !getResponseHeader(event, "Content-Encoding")) {
+    setResponseHeader(event, "Content-Encoding", asset.encoding);
+  }
+  if (asset.size > 0 && !getResponseHeader(event, "Content-Length")) {
+    setResponseHeader(event, "Content-Length", asset.size);
+  }
+  return readAsset(id);
+});
+
+const _SxA8c9 = defineEventHandler(() => {});
+
+const storage = prefixStorage(useStorage(), "i18n");
+function cachedFunctionI18n(fn, opts) {
+  opts = { maxAge: 1, ...opts };
+  const pending = {};
+  async function get(key, resolver) {
+    const isPending = pending[key];
+    if (!isPending) {
+      pending[key] = Promise.resolve(resolver());
+    }
+    try {
+      return await pending[key];
+    } finally {
+      delete pending[key];
+    }
+  }
+  return async (...args) => {
+    const key = [opts.name, opts.getKey(...args)].join(":").replace(/:\/$/, ":index");
+    const maxAge = opts.maxAge ?? 1;
+    const isCacheable = !opts.shouldBypassCache(...args) && maxAge >= 0;
+    const cache = isCacheable && await storage.getItemRaw(key);
+    if (!cache || cache.ttl < Date.now()) {
+      pending[key] = Promise.resolve(fn(...args));
+      const value = await get(key, () => fn(...args));
+      if (isCacheable) {
+        await storage.setItemRaw(key, { ttl: Date.now() + maxAge * 1e3, value, mtime: Date.now() });
+      }
+      return value;
+    }
+    return cache.value;
+  };
+}
+
+const _getMessages = async (locale) => {
+  return { [locale]: await getLocaleMessagesMerged(locale, localeLoaders[locale]) };
+};
+const _getMessagesCached = cachedFunctionI18n(_getMessages, {
+  name: "messages",
+  maxAge: 60 * 60 * 24,
+  getKey: (locale) => locale,
+  shouldBypassCache: (locale) => !isLocaleCacheable(locale)
+});
+const getMessages = _getMessagesCached;
+const _getMergedMessages = async (locale, fallbackLocales) => {
+  const merged = {};
+  try {
+    if (fallbackLocales.length > 0) {
+      const messages = await Promise.all(fallbackLocales.map(getMessages));
+      for (const message2 of messages) {
+        deepCopy(message2, merged);
+      }
+    }
+    const message = await getMessages(locale);
+    deepCopy(message, merged);
+    return merged;
+  } catch (e) {
+    throw new Error("Failed to merge messages: " + e.message);
+  }
+};
+const getMergedMessages = cachedFunctionI18n(_getMergedMessages, {
+  name: "merged-single",
+  maxAge: 60 * 60 * 24,
+  getKey: (locale, fallbackLocales) => `${locale}-[${[...new Set(fallbackLocales)].sort().join("-")}]`,
+  shouldBypassCache: (locale, fallbackLocales) => !isLocaleWithFallbacksCacheable(locale, fallbackLocales)
+});
+const _getAllMergedMessages = async (locales) => {
+  const merged = {};
+  try {
+    const messages = await Promise.all(locales.map(getMessages));
+    for (const message of messages) {
+      deepCopy(message, merged);
+    }
+    return merged;
+  } catch (e) {
+    throw new Error("Failed to merge messages: " + e.message);
+  }
+};
+cachedFunctionI18n(_getAllMergedMessages, {
+  name: "merged-all",
+  maxAge: 60 * 60 * 24,
+  getKey: (locales) => locales.join("-"),
+  shouldBypassCache: (locales) => !locales.every((locale) => isLocaleCacheable(locale))
+});
+
+const _messagesHandler = defineEventHandler(async (event) => {
+  const locale = getRouterParam(event, "locale");
+  if (!locale) {
+    throw createError$1({ status: 400, message: "Locale not specified." });
+  }
+  const ctx = useI18nContext(event);
+  if (ctx.localeConfigs && locale in ctx.localeConfigs === false) {
+    throw createError$1({ status: 404, message: `Locale '${locale}' not found.` });
+  }
+  const messages = await getMergedMessages(locale, ctx.localeConfigs?.[locale]?.fallbacks ?? []);
+  deepCopy(messages, ctx.messages);
+  return ctx.messages;
+});
+const _cachedMessageLoader = defineCachedFunction(_messagesHandler, {
+  name: "i18n:messages-internal",
+  maxAge: 60 * 60 * 24,
+  getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-"),
+  async shouldBypassCache(event) {
+    const locale = getRouterParam(event, "locale");
+    if (locale == null) {
+      return false;
+    }
+    const ctx = tryUseI18nContext(event) || await initializeI18nContext(event);
+    return !ctx.localeConfigs?.[locale]?.cacheable;
+  }
+});
+const _messagesHandlerCached = defineCachedEventHandler(_cachedMessageLoader, {
+  name: "i18n:messages",
+  maxAge: 10,
+  swr: false,
+  getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-")
+});
+const _YFVc0o = _messagesHandlerCached;
+
+const _lazy_nncCE6 = () => import('../routes/renderer.mjs');
+
+const handlers = [
+  { route: '', handler: _8Uq1Oy, lazy: false, middleware: true, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_nncCE6, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
+  { route: '/_i18n/:hash/:locale/messages.json', handler: _YFVc0o, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_nncCE6, lazy: true, middleware: false, method: undefined }
+];
+
+function createNitroApp() {
+  const config = useRuntimeConfig();
+  const hooks = createHooks();
+  const captureError = (error, context = {}) => {
+    const promise = hooks.callHookParallel("error", error, context).catch((error_) => {
+      console.error("Error while capturing another error", error_);
+    });
+    if (context.event && isEvent(context.event)) {
+      const errors = context.event.context.nitro?.errors;
+      if (errors) {
+        errors.push({ error, context });
+      }
+      if (context.event.waitUntil) {
+        context.event.waitUntil(promise);
+      }
+    }
+  };
+  const h3App = createApp({
+    debug: destr(false),
+    onError: (error, event) => {
+      captureError(error, { event, tags: ["request"] });
+      return errorHandler(error, event);
+    },
+    onRequest: async (event) => {
+      event.context.nitro = event.context.nitro || { errors: [] };
+      const fetchContext = event.node.req?.__unenv__;
+      if (fetchContext?._platform) {
+        event.context = {
+          _platform: fetchContext?._platform,
+          // #3335
+          ...fetchContext._platform,
+          ...event.context
+        };
+      }
+      if (!event.context.waitUntil && fetchContext?.waitUntil) {
+        event.context.waitUntil = fetchContext.waitUntil;
+      }
+      event.fetch = (req, init) => fetchWithEvent(event, req, init, { fetch: localFetch });
+      event.$fetch = (req, init) => fetchWithEvent(event, req, init, {
+        fetch: $fetch
+      });
+      event.waitUntil = (promise) => {
+        if (!event.context.nitro._waitUntilPromises) {
+          event.context.nitro._waitUntilPromises = [];
+        }
+        event.context.nitro._waitUntilPromises.push(promise);
+        if (event.context.waitUntil) {
+          event.context.waitUntil(promise);
+        }
+      };
+      event.captureError = (error, context) => {
+        captureError(error, { event, ...context });
+      };
+      await nitroApp$1.hooks.callHook("request", event).catch((error) => {
+        captureError(error, { event, tags: ["request"] });
+      });
+    },
+    onBeforeResponse: async (event, response) => {
+      await nitroApp$1.hooks.callHook("beforeResponse", event, response).catch((error) => {
+        captureError(error, { event, tags: ["request", "response"] });
+      });
+    },
+    onAfterResponse: async (event, response) => {
+      await nitroApp$1.hooks.callHook("afterResponse", event, response).catch((error) => {
+        captureError(error, { event, tags: ["request", "response"] });
+      });
+    }
+  });
+  const router = createRouter({
+    preemptive: true
+  });
+  const nodeHandler = toNodeListener(h3App);
+  const localCall = (aRequest) => b(
+    nodeHandler,
+    aRequest
+  );
+  const localFetch = (input, init) => {
+    if (!input.toString().startsWith("/")) {
+      return globalThis.fetch(input, init);
+    }
+    return C(
+      nodeHandler,
+      input,
+      init
+    ).then((response) => normalizeFetchResponse(response));
+  };
+  const $fetch = createFetch({
+    fetch: localFetch,
+    Headers: Headers$1,
+    defaults: { baseURL: config.app.baseURL }
+  });
+  globalThis.$fetch = $fetch;
+  h3App.use(createRouteRulesHandler({ localFetch }));
+  for (const h of handlers) {
+    let handler = h.lazy ? lazyEventHandler(h.handler) : h.handler;
+    if (h.middleware || !h.route) {
+      const middlewareBase = (config.app.baseURL + (h.route || "/")).replace(
+        /\/+/g,
+        "/"
+      );
+      h3App.use(middlewareBase, handler);
+    } else {
+      const routeRules = getRouteRulesForPath(
+        h.route.replace(/:\w+|\*\*/g, "_")
+      );
+      if (routeRules.cache) {
+        handler = cachedEventHandler(handler, {
+          group: "nitro/routes",
+          ...routeRules.cache
+        });
+      }
+      router.use(h.route, handler, h.method);
+    }
+  }
+  h3App.use(config.app.baseURL, router.handler);
+  const app = {
+    hooks,
+    h3App,
+    router,
+    localCall,
+    localFetch,
+    captureError
+  };
+  return app;
+}
+function runNitroPlugins(nitroApp2) {
+  for (const plugin of plugins) {
+    try {
+      plugin(nitroApp2);
+    } catch (error) {
+      nitroApp2.captureError(error, { tags: ["plugin"] });
+      throw error;
+    }
+  }
+}
+const nitroApp$1 = createNitroApp();
+function useNitroApp() {
+  return nitroApp$1;
+}
+runNitroPlugins(nitroApp$1);
+
+const debug = (...args) => {
+};
+function GracefulShutdown(server, opts) {
+  opts = opts || {};
+  const options = Object.assign(
+    {
+      signals: "SIGINT SIGTERM",
+      timeout: 3e4,
+      development: false,
+      forceExit: true,
+      onShutdown: (signal) => Promise.resolve(signal),
+      preShutdown: (signal) => Promise.resolve(signal)
+    },
+    opts
+  );
+  let isShuttingDown = false;
+  const connections = {};
+  let connectionCounter = 0;
+  const secureConnections = {};
+  let secureConnectionCounter = 0;
+  let failed = false;
+  let finalRun = false;
+  function onceFactory() {
+    let called = false;
+    return (emitter, events, callback) => {
+      function call() {
+        if (!called) {
+          called = true;
+          return Reflect.apply(callback, this, arguments);
+        }
+      }
+      for (const e of events) {
+        emitter.on(e, call);
+      }
+    };
+  }
+  const signals = options.signals.split(" ").map((s) => s.trim()).filter((s) => s.length > 0);
+  const once = onceFactory();
+  once(process, signals, (signal) => {
+    debug("received shut down signal", signal);
+    shutdown(signal).then(() => {
+      if (options.forceExit) {
+        process.exit(failed ? 1 : 0);
+      }
+    }).catch((error) => {
+      debug("server shut down error occurred", error);
+      process.exit(1);
+    });
+  });
+  function isFunction(functionToCheck) {
+    const getType = Object.prototype.toString.call(functionToCheck);
+    return /^\[object\s([A-Za-z]+)?Function]$/.test(getType);
+  }
+  function destroy(socket, force = false) {
+    if (socket._isIdle && isShuttingDown || force) {
+      socket.destroy();
+      if (socket.server instanceof http.Server) {
+        delete connections[socket._connectionId];
+      } else {
+        delete secureConnections[socket._connectionId];
+      }
+    }
+  }
+  function destroyAllConnections(force = false) {
+    debug("Destroy Connections : " + (force ? "forced close" : "close"));
+    let counter = 0;
+    let secureCounter = 0;
+    for (const key of Object.keys(connections)) {
+      const socket = connections[key];
+      const serverResponse = socket._httpMessage;
+      if (serverResponse && !force) {
+        if (!serverResponse.headersSent) {
+          serverResponse.setHeader("connection", "close");
+        }
+      } else {
+        counter++;
+        destroy(socket);
+      }
+    }
+    debug("Connections destroyed : " + counter);
+    debug("Connection Counter    : " + connectionCounter);
+    for (const key of Object.keys(secureConnections)) {
+      const socket = secureConnections[key];
+      const serverResponse = socket._httpMessage;
+      if (serverResponse && !force) {
+        if (!serverResponse.headersSent) {
+          serverResponse.setHeader("connection", "close");
+        }
+      } else {
+        secureCounter++;
+        destroy(socket);
+      }
+    }
+    debug("Secure Connections destroyed : " + secureCounter);
+    debug("Secure Connection Counter    : " + secureConnectionCounter);
+  }
+  server.on("request", (req, res) => {
+    req.socket._isIdle = false;
+    if (isShuttingDown && !res.headersSent) {
+      res.setHeader("connection", "close");
+    }
+    res.on("finish", () => {
+      req.socket._isIdle = true;
+      destroy(req.socket);
+    });
+  });
+  server.on("connection", (socket) => {
+    if (isShuttingDown) {
+      socket.destroy();
+    } else {
+      const id = connectionCounter++;
+      socket._isIdle = true;
+      socket._connectionId = id;
+      connections[id] = socket;
+      socket.once("close", () => {
+        delete connections[socket._connectionId];
+      });
+    }
+  });
+  server.on("secureConnection", (socket) => {
+    if (isShuttingDown) {
+      socket.destroy();
+    } else {
+      const id = secureConnectionCounter++;
+      socket._isIdle = true;
+      socket._connectionId = id;
+      secureConnections[id] = socket;
+      socket.once("close", () => {
+        delete secureConnections[socket._connectionId];
+      });
+    }
+  });
+  process.on("close", () => {
+    debug("closed");
+  });
+  function shutdown(sig) {
+    function cleanupHttp() {
+      destroyAllConnections();
+      debug("Close http server");
+      return new Promise((resolve, reject) => {
+        server.close((err) => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve(true);
+        });
+      });
+    }
+    debug("shutdown signal - " + sig);
+    if (options.development) {
+      debug("DEV-Mode - immediate forceful shutdown");
+      return process.exit(0);
+    }
+    function finalHandler() {
+      if (!finalRun) {
+        finalRun = true;
+        if (options.finally && isFunction(options.finally)) {
+          debug("executing finally()");
+          options.finally();
+        }
+      }
+      return Promise.resolve();
+    }
+    function waitForReadyToShutDown(totalNumInterval) {
+      debug(`waitForReadyToShutDown... ${totalNumInterval}`);
+      if (totalNumInterval === 0) {
+        debug(
+          `Could not close connections in time (${options.timeout}ms), will forcefully shut down`
+        );
+        return Promise.resolve(true);
+      }
+      const allConnectionsClosed = Object.keys(connections).length === 0 && Object.keys(secureConnections).length === 0;
+      if (allConnectionsClosed) {
+        debug("All connections closed. Continue to shutting down");
+        return Promise.resolve(false);
+      }
+      debug("Schedule the next waitForReadyToShutdown");
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(waitForReadyToShutDown(totalNumInterval - 1));
+        }, 250);
+      });
+    }
+    if (isShuttingDown) {
+      return Promise.resolve();
+    }
+    debug("shutting down");
+    return options.preShutdown(sig).then(() => {
+      isShuttingDown = true;
+      cleanupHttp();
+    }).then(() => {
+      const pollIterations = options.timeout ? Math.round(options.timeout / 250) : 0;
+      return waitForReadyToShutDown(pollIterations);
+    }).then((force) => {
+      debug("Do onShutdown now");
+      if (force) {
+        destroyAllConnections(force);
+      }
+      return options.onShutdown(sig);
+    }).then(finalHandler).catch((error) => {
+      const errString = typeof error === "string" ? error : JSON.stringify(error);
+      debug(errString);
+      failed = true;
+      throw errString;
+    });
+  }
+  function shutdownManual() {
+    return shutdown("manual");
+  }
+  return shutdownManual;
+}
+
+function getGracefulShutdownConfig() {
+  return {
+    disabled: !!process.env.NITRO_SHUTDOWN_DISABLED,
+    signals: (process.env.NITRO_SHUTDOWN_SIGNALS || "SIGTERM SIGINT").split(" ").map((s) => s.trim()),
+    timeout: Number.parseInt(process.env.NITRO_SHUTDOWN_TIMEOUT || "", 10) || 3e4,
+    forceExit: !process.env.NITRO_SHUTDOWN_NO_FORCE_EXIT
+  };
+}
+function setupGracefulShutdown(listener, nitroApp) {
+  const shutdownConfig = getGracefulShutdownConfig();
+  if (shutdownConfig.disabled) {
+    return;
+  }
+  GracefulShutdown(listener, {
+    signals: shutdownConfig.signals.join(" "),
+    timeout: shutdownConfig.timeout,
+    forceExit: shutdownConfig.forceExit,
+    onShutdown: async () => {
+      await new Promise((resolve) => {
+        const timeout = setTimeout(() => {
+          console.warn("Graceful shutdown timeout, force exiting...");
+          resolve();
+        }, shutdownConfig.timeout);
+        nitroApp.hooks.callHook("close").catch((error) => {
+          console.error(error);
+        }).finally(() => {
+          clearTimeout(timeout);
+          resolve();
+        });
+      });
+    }
+  });
+}
+
+const cert = process.env.NITRO_SSL_CERT;
+const key = process.env.NITRO_SSL_KEY;
+const nitroApp = useNitroApp();
+const server = cert && key ? new Server({ key, cert }, toNodeListener(nitroApp.h3App)) : new Server$1(toNodeListener(nitroApp.h3App));
+const port = destr(process.env.NITRO_PORT || process.env.PORT) || 3e3;
+const host = process.env.NITRO_HOST || process.env.HOST;
+const path = process.env.NITRO_UNIX_SOCKET;
+const listener = server.listen(path ? { path } : { port, host }, (err) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  const protocol = cert && key ? "https" : "http";
+  const addressInfo = listener.address();
+  if (typeof addressInfo === "string") {
+    console.log(`Listening on unix socket ${addressInfo}`);
+    return;
+  }
+  const baseURL = (useRuntimeConfig().app.baseURL || "").replace(/\/$/, "");
+  const url = `${protocol}://${addressInfo.family === "IPv6" ? `[${addressInfo.address}]` : addressInfo.address}:${addressInfo.port}${baseURL}`;
+  console.log(`Listening on ${url}`);
+});
+trapUnhandledNodeErrors();
+setupGracefulShutdown(listener, nitroApp);
+const nodeServer = {};
+
+export { appRootTag as a, appRootAttrs as b, appSpaLoaderTag as c, appSpaLoaderAttrs as d, buildAssetsURL as e, getResponseStatus as f, getResponseStatusText as g, appId as h, defineRenderHandler as i, appTeleportTag as j, appTeleportAttrs as k, getQuery as l, createError$1 as m, appHead as n, destr as o, publicAssetsURL as p, getRouteRules as q, joinURL as r, useNitroApp as s, nodeServer as t, useRuntimeConfig as u };
+//# sourceMappingURL=nitro.mjs.map

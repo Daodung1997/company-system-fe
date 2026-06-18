@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/20">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
           <i class="pi pi-clock text-2xl"></i>
@@ -17,7 +17,7 @@
       </div>
       <div class="flex items-center gap-3">
         <!-- Live Calendar Indicator -->
-        <div class="px-5 py-3 rounded-2xl bg-white/80 dark:bg-surface-800/80 border border-surface-100 dark:border-surface-700 shadow-md backdrop-blur-sm flex items-center gap-3">
+        <div class="px-5 py-3 rounded-2xl bg-white dark:bg-surface-800 border border-surface-100 dark:border-surface-700 shadow-md flex items-center gap-3">
           <i class="pi pi-calendar text-primary text-lg"></i>
           <span class="text-xs font-bold text-surface-700 dark:text-surface-200 uppercase tracking-wider font-mono">
             {{ currentDate }}
@@ -30,7 +30,7 @@
     <!-- Clock and Check Panel -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <!-- Live Clock Card -->
-      <div class="lg:col-span-4 shadow-2xl" style="background: linear-gradient(135deg, #0f172a, #020617); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-h: 320px; border-radius: 2.5rem; padding: 2rem;">
+      <div class="lg:col-span-4 shadow-md" style="background: linear-gradient(135deg, #0f172a, #020617); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-h: 320px; border-radius: 2.5rem; padding: 2rem;">
         <!-- Decorative high-opacity glowing orbs for vibrant sharp colors -->
         <div style="position: absolute; right: -80px; top: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(6,182,212,0.45) 0%, rgba(99,102,241,0.2) 50%, rgba(0,0,0,0) 100%); filter: blur(40px); pointer-events: none;"></div>
         <div style="position: absolute; left: -80px; bottom: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(20,184,166,0.15) 50%, rgba(0,0,0,0) 100%); filter: blur(40px); pointer-events: none;"></div>
@@ -64,7 +64,7 @@
       </div>
 
       <!-- Action Control Card -->
-      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none flex flex-col justify-between min-h-[320px]">
+      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm flex flex-col justify-between min-h-[320px]">
         <div class="space-y-4">
           <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight flex items-center gap-2">
             <i class="pi pi-shield text-primary"></i> {{ $t('timesheet.todayTracking') }}
@@ -76,7 +76,7 @@
 
         <div class="flex flex-col gap-3 my-4">
           <!-- Check-in block -->
-          <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-100 dark:border-surface-850 flex items-center justify-between gap-4 relative overflow-hidden group">
+          <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-200 dark:border-surface-700 flex items-center justify-between gap-4 relative overflow-hidden group">
             <div class="flex flex-col">
               <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('timesheet.checkInTime') }}</span>
               <div class="text-xl font-black tracking-tight text-surface-900 dark:text-surface-0 font-mono mt-0.5">
@@ -84,7 +84,7 @@
               </div>
             </div>
             <Button
-              :label="isCheckedIn ? $t('timesheet.checkedIn') : 'Check-in'"
+              :label="isCheckedIn ? $t('timesheet.checkedIn') : $t('timesheet.checkIn')"
               icon="pi pi-sign-in"
               severity="primary"
               class="!rounded-xl !py-2 !px-4 !font-bold transition-all text-xs"
@@ -94,7 +94,7 @@
           </div>
 
           <!-- Check-out block -->
-          <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-100 dark:border-surface-850 flex items-center justify-between gap-4 relative overflow-hidden group">
+          <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-200 dark:border-surface-700 flex items-center justify-between gap-4 relative overflow-hidden group">
             <div class="flex flex-col">
               <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('timesheet.checkOutTime') }}</span>
               <div class="text-xl font-black tracking-tight text-surface-900 dark:text-surface-0 font-mono mt-0.5">
@@ -102,7 +102,7 @@
               </div>
             </div>
             <Button
-              :label="isCheckedOut ? $t('timesheet.checkedOut') : 'Check-out'"
+              :label="isCheckedOut ? $t('timesheet.checkedOut') : $t('timesheet.checkOut')"
               icon="pi pi-sign-out"
               severity="secondary"
               class="!rounded-xl !py-2 !px-4 !font-bold transition-all text-xs"
@@ -114,9 +114,9 @@
       </div>
 
       <!-- Alternative Check-in Card (QR & Fingerprint Sync) -->
-      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none flex flex-col justify-between min-h-[320px]">
+      <div class="lg:col-span-4 bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm flex flex-col justify-between min-h-[320px]">
         <div class="space-y-4 flex-1">
-          <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-800 pb-3">
+          <div class="flex items-center justify-between border-b border-surface-200 dark:border-surface-700 pb-3">
             <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight flex items-center gap-2">
               <i class="pi pi-qrcode text-primary"></i> {{ $t('timesheet.multiModalCheckin') }}
             </h3>
@@ -206,7 +206,7 @@
 
           <!-- Tab Content 2: DEVICE SYNC -->
           <div v-else class="flex flex-col justify-between py-2 space-y-4 animate-in fade-in duration-300">
-            <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-100 dark:border-surface-850 space-y-2">
+            <div class="bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl border border-surface-200 dark:border-surface-700 space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] text-surface-500 dark:text-surface-400 font-bold uppercase tracking-wider">{{ $t('timesheet.deviceConnected') }}</span>
                 <span class="px-2 py-0.5 rounded-full text-[8px] font-black tracking-widest bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
@@ -232,8 +232,8 @@
     </div>
 
     <!-- Monthly Log List -->
-    <div class="bg-white dark:bg-surface-900 p-8 rounded-[2rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-surface-100 dark:border-surface-800 pb-6">
+    <div class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-surface-200 dark:border-surface-700 pb-6">
         <div class="space-y-1">
           <h3 class="text-xl font-bold text-surface-900 dark:text-surface-0 tracking-tight">{{ $t('timesheet.history') }}</h3>
           <p class="text-xs text-surface-400 font-semibold">{{ $t('timesheet.historyDesc') }}</p>
@@ -257,7 +257,7 @@
         :columns="columns"
         :fetchApi="fetchTimesheetsWrapper"
         :isReload="isReload"
-        :emptyText="$t('timesheet.noData') || 'Không tìm thấy dữ liệu chấm công nào'"
+        :emptyText="$t('timesheet.noData')"
         scrollHeight="50vh"
       >
         <template #body="{ column, data, index }">
@@ -354,7 +354,6 @@ const handleDeviceSync = () => {
   setTimeout(() => {
     isSyncingDevice.value = false;
     showMessage("success", t('timesheet.success'), t('timesheet.syncSuccess'));
-    fetchTimesheets();
     reloadTable();
   }, 1500);
 };
@@ -394,11 +393,11 @@ const reloadTable = () => {
 };
 
 const columns = computed(() => [
-  { key: 'stt', label: t('leaveRequest.stt') || 'STT', minWidth: '60px' },
-  { key: 'date', label: t('timesheet.date') || 'Ngày', minWidth: '130px' },
-  { key: 'check_in', label: t('timesheet.checkInTime') || 'Giờ vào', minWidth: '120px' },
-  { key: 'check_out', label: t('timesheet.checkOutTime') || 'Giờ ra', minWidth: '120px' },
-  { key: 'status', label: t('timesheet.status') || 'Trạng thái', minWidth: '135px' }
+  { key: 'stt', label: t('leaveRequest.stt'), minWidth: '60px' },
+  { key: 'date', label: t('timesheet.date'), minWidth: '130px' },
+  { key: 'check_in', label: t('timesheet.checkInTime'), minWidth: '120px' },
+  { key: 'check_out', label: t('timesheet.checkOutTime'), minWidth: '120px' },
+  { key: 'status', label: t('timesheet.status'), minWidth: '135px' }
 ]);
 
 const fetchTimesheetsWrapper = (payload: { query: string, successCallback: Function, errorCallback: Function }) => {
@@ -414,7 +413,7 @@ const fetchTimesheetsWrapper = (payload: { query: string, successCallback: Funct
       rawList.sort((a: any, b: any) => b.date.localeCompare(a.date));
       
       const page = parseInt(params.page || '1');
-      const limit = parseInt(params.limit || '10');
+      const limit = parseInt(params.limit || '30');
       const startIndex = (page - 1) * limit;
       const paginatedData = rawList.slice(startIndex, startIndex + limit);
       
@@ -467,23 +466,10 @@ const sortedTimesheets = computed(() => {
   return [...timesheets.value].sort((a, b) => b.date.localeCompare(a.date));
 });
 
-const fetchTimesheets = () => {
-  GET_MONTHLY_TIMESHEETS(
-    { year_month: selectedMonth.value },
-    (res: any) => {
-      timesheets.value = res.data?.data || [];
-    },
-    (err: any) => {
-      console.error(err);
-    }
-  );
-};
-
 const handleCheckIn = () => {
   CHECK_IN(
     (res: any) => {
       showMessage("success", t('timesheet.success'), t('timesheet.checkInSuccess'));
-      fetchTimesheets();
       reloadTable();
     },
     (err: any) => {
@@ -496,7 +482,6 @@ const handleCheckOut = () => {
   CHECK_OUT(
     (res: any) => {
       showMessage("success", t('timesheet.success'), t('timesheet.checkOutSuccess'));
-      fetchTimesheets();
       reloadTable();
     },
     (err: any) => {
@@ -506,7 +491,6 @@ const handleCheckOut = () => {
 };
 
 const onMonthChange = () => {
-  fetchTimesheets();
   reloadTable();
 };
 
@@ -531,7 +515,6 @@ onMounted(() => {
   updateClock();
   timerId = setInterval(updateClock, 1000);
   startQrTimer();
-  fetchTimesheets();
 });
 
 onUnmounted(() => {

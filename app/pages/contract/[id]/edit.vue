@@ -18,7 +18,7 @@
     </div>
 
     <!-- Main Grid Form -->
-    <div v-if="loadingContract" class="flex flex-col items-center justify-center py-20 bg-white dark:bg-surface-950 border border-surface-100 dark:border-surface-800 rounded-3xl">
+    <div v-if="loadingContract" class="flex flex-col items-center justify-center py-20 bg-white dark:bg-surface-950 border border-surface-200 dark:border-surface-700 rounded-xl">
       <i class="pi pi-spin pi-spinner text-3xl text-primary mb-3"></i>
       <span class="text-surface-500 font-medium">{{ $t('contract.loadingData') }}</span>
     </div>
@@ -28,8 +28,65 @@
       <!-- Left side: Form fields (2 cols) -->
       <div class="lg:col-span-2 space-y-6">
         
+        <!-- SECTION: COMPANY DETAILS (BÊN A) -->
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
+          <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-850 pb-3">
+            <div class="flex items-center gap-2">
+              <i class="pi pi-building text-primary text-lg"></i>
+              <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('contract.companySection') }}</h2>
+            </div>
+            <span class="text-[10px] bg-primary/10 text-primary font-black px-2.5 py-1 rounded-full uppercase tracking-wider">{{ $t('contract.contractInfo') }}</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="md:col-span-2">
+              <AppInputField :label="$t('contract.companyNameLabel')" :isRequired="true" :error="formErrors.company_name">
+                <InputText
+                  v-model="contractForm.company_name"
+                  :placeholder="$t('placeholder.vietnamTechCompany')"
+                  class="w-full rounded-xl"
+                  :invalid="!!formErrors.company_name"
+                  @change="onValidate('company_name')"
+                />
+              </AppInputField>
+            </div>
+
+            <AppInputField :label="$t('contract.companyTaxCodeLabel')">
+              <InputText
+                v-model="contractForm.company_tax_code"
+                :placeholder="$t('placeholder.taxCode')"
+                class="rounded-xl font-mono"
+              />
+            </AppInputField>
+
+            <AppInputField :label="$t('contract.companyAddressLabel')">
+              <InputText
+                v-model="contractForm.company_address"
+                :placeholder="$t('placeholder.registeredAddress')"
+                class="rounded-xl"
+              />
+            </AppInputField>
+
+            <AppInputField :label="$t('contract.companyRepresentativeLabel')">
+              <InputText
+                v-model="contractForm.company_representative"
+                :placeholder="$t('placeholder.legalRepresentative')"
+                class="rounded-xl"
+              />
+            </AppInputField>
+
+            <AppInputField :label="$t('contract.companyRepresentativeRoleLabel')">
+              <InputText
+                v-model="contractForm.company_representative_role"
+                :placeholder="$t('placeholder.jobTitleExample')"
+                class="rounded-xl"
+              />
+            </AppInputField>
+          </div>
+        </div>
+
         <!-- SECTION 1: GENERAL CONTRACT INFO -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-file-edit text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('contract.generalInfo') }}</h2>
@@ -51,7 +108,7 @@
             <AppInputField :label="$t('contract.code')">
               <InputText
                 v-model="contractForm.contract_code"
-                placeholder="Nhập mã hợp đồng"
+                :placeholder="$t('placeholder.enterContractCode')"
                 class="rounded-xl font-mono uppercase"
                 disabled
               />
@@ -86,7 +143,7 @@
             >
               <InputNumber
                 v-model="contractForm.value"
-                placeholder="Nhập giá trị hợp đồng"
+                :placeholder="$t('placeholder.enterContractValue')"
                 class="rounded-xl"
                 mode="currency"
                 currency="VND"
@@ -112,7 +169,7 @@
 
         <!-- SECTION 2: DYNAMIC BÊN B DETAILS -->
         <!-- IF LABOR: EMPLOYEE DETAILS -->
-        <div v-if="contractForm.type === 'LABOR'" class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div v-if="contractForm.type === 'LABOR'" class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-user text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('contract.laborSection') }}</h2>
@@ -159,7 +216,7 @@
             <AppInputField :label="$t('contract.jobTitle')">
               <InputText
                 v-model="contractForm.job_title"
-                placeholder="Ví dụ: Lập trình viên, Quản trị viên"
+                :placeholder="$t('placeholder.jobTitleDev')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -167,7 +224,7 @@
             <AppInputField :label="$t('contract.workLocation')">
               <InputText
                 v-model="contractForm.work_location"
-                placeholder="Ví dụ: Trụ sở chính Hà Nội, Văn phòng Tokyo"
+                :placeholder="$t('placeholder.officeExample')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -175,7 +232,7 @@
             <AppInputField :label="$t('contract.workingHours')">
               <InputNumber
                 v-model="contractForm.working_hours_per_day"
-                placeholder="Ví dụ: 8"
+                :placeholder="$t('placeholder.numberEight')"
                 class="rounded-xl"
                 :min="0"
                 :max="24"
@@ -187,7 +244,7 @@
               <Select
                 v-model="contractForm.probation_period_months"
                 :options="[0, 1, 2, 3, 6]"
-                placeholder="Ví dụ: 2 tháng"
+                :placeholder="$t('placeholder.durationTwoMonths')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -195,7 +252,7 @@
             <AppInputField :label="$t('contract.probationSalary')">
               <InputNumber
                 v-model="contractForm.probation_salary_percentage"
-                placeholder="Ví dụ: 85"
+                :placeholder="$t('placeholder.numberEightyFive')"
                 class="rounded-xl"
                 :min="0"
                 :max="100"
@@ -206,7 +263,7 @@
             <AppInputField :label="$t('contract.bankName')">
               <InputText
                 v-model="contractForm.bank_name"
-                placeholder="Ví dụ: Vietcombank, Techcombank"
+                :placeholder="$t('placeholder.bankNames')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -214,7 +271,7 @@
             <AppInputField :label="$t('contract.bankAccount')">
               <InputText
                 v-model="contractForm.bank_account_number"
-                placeholder="Ví dụ: 1018273645"
+                :placeholder="$t('placeholder.accountNumber')"
                 class="rounded-xl font-mono"
               />
             </AppInputField>
@@ -222,7 +279,7 @@
             <AppInputField :label="$t('contract.insurance')" class="col-span-1 md:col-span-2">
               <InputText
                 v-model="contractForm.insurance_enrolled"
-                placeholder="BHXH, BHYT, BHTN hoặc Bảo hiểm đặc biệt thương mại"
+                :placeholder="$t('placeholder.insuranceType')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -230,7 +287,7 @@
         </div>
 
         <!-- IF VENDOR or CLIENT: PARTNER DETAILS -->
-        <div v-else class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div v-else class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-building text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('contract.partnerSection') }}</h2>
@@ -240,7 +297,7 @@
             <AppInputField :label="$t('contract.partnerName')" :isRequired="true" :error="formErrors.partner_name" class="col-span-1 md:col-span-2">
               <InputText
                 v-model="contractForm.partner_name"
-                placeholder="Nhập tên chính thức trên đăng ký kinh doanh"
+                :placeholder="$t('placeholder.enterOfficialCompanyName')"
                 class="rounded-xl"
                 :invalid="!!formErrors.partner_name"
                 @change="onValidate('partner_name')"
@@ -250,7 +307,7 @@
             <AppInputField :label="$t('contract.partnerTaxCode')" :isRequired="true" :error="formErrors.partner_tax_code">
               <InputText
                 v-model="contractForm.partner_tax_code"
-                placeholder="Nhập mã số thuế đối tác"
+                :placeholder="$t('placeholder.enterPartnerTaxCode')"
                 class="rounded-xl font-mono"
                 :invalid="!!formErrors.partner_tax_code"
                 @change="onValidate('partner_tax_code')"
@@ -260,7 +317,7 @@
             <AppInputField :label="$t('contract.partnerRepresentative')">
               <InputText
                 v-model="contractForm.partner_representative"
-                placeholder="Họ tên người đại diện pháp luật"
+                :placeholder="$t('placeholder.legalRepresentative')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -268,7 +325,7 @@
             <AppInputField :label="$t('contract.partnerRepresentativeRole')">
               <InputText
                 v-model="contractForm.partner_representative_role"
-                placeholder="Ví dụ: Giám đốc, Tổng giám đốc, CEO"
+                :placeholder="$t('placeholder.partnerLegalJob')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -276,7 +333,7 @@
             <AppInputField :label="$t('contract.partnerAddress')" class="col-span-1 md:col-span-2">
               <InputText
                 v-model="contractForm.partner_address"
-                placeholder="Địa chỉ giao dịch chính thức của đối tác"
+                :placeholder="$t('placeholder.partnerAddress')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -295,7 +352,7 @@
             <AppInputField :label="$t('contract.paymentTerms')">
               <InputText
                 v-model="contractForm.payment_terms"
-                placeholder="Ví dụ: Net 30, Thanh toán 100% khi ký"
+                :placeholder="$t('placeholder.paymentTerm')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -314,7 +371,7 @@
         </div>
 
         <!-- SECTION 3: JAPANESE COMPLIANCE OVERTIME (ONLY FOR LABOR) -->
-        <div v-if="contractForm.type === 'LABOR'" class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div v-if="contractForm.type === 'LABOR'" class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-shield text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('contract.overtimeSection') }}</h2>
@@ -339,7 +396,7 @@
               <AppInputField :label="$t('contract.includedOvertimeHours')" :isRequired="true" :error="formErrors.included_overtime_hours">
                 <InputNumber
                   v-model="contractForm.included_overtime_hours"
-                  placeholder="Ví dụ: 20 hoặc 30 giờ"
+                  :placeholder="$t('placeholder.otHours')"
                   class="rounded-xl"
                   suffix=" giờ"
                   :min="0"
@@ -352,7 +409,7 @@
         </div>
 
         <!-- EDM APP DOCUMENT MANAGER (ACTIVE DOCUMENTS - ENHANCED FULL WIDTH SECTION) -->
-        <div class="bg-white dark:bg-surface-950 p-8 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-5">
+        <div class="bg-white dark:bg-surface-950 p-8 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-5">
           <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-850 pb-4">
             <div class="flex items-center gap-2.5">
               <div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
@@ -379,7 +436,7 @@
       <!-- Right side: Update Action Card (1 col) -->
       <div class="space-y-6">
         <!-- FORM ACTION CARD -->
-        <div class="bg-gradient-to-br from-primary/10 to-surface-50 dark:from-surface-900/50 dark:to-surface-950 p-6 rounded-3xl border border-primary/20 dark:border-surface-800 space-y-4">
+        <div class="bg-gradient-to-br from-primary/10 to-surface-50 dark:from-surface-900/50 dark:to-surface-950 p-6 rounded-xl border border-primary/20 dark:border-surface-800 space-y-4">
           <div class="compliance-badge flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
             <i class="pi pi-shield"></i>
             <span class="text-[10px] font-black uppercase tracking-widest">{{ $t('contract.complianceBadge') }}</span>
@@ -447,6 +504,12 @@ const contractCode = ref('');
 // Form schema with all new columns
 const contractForm = ref<any>({
   employee_id: null,
+  company_id: null,
+  company_name: '',
+  company_tax_code: '',
+  company_address: '',
+  company_representative: '',
+  company_representative_role: '',
   job_title: '',
   work_location: '',
   working_hours_per_day: 8.00,
@@ -481,6 +544,7 @@ const contractForm = ref<any>({
 
 // Form error fields reactive object
 const formErrors = ref<any>({
+  company_name: '',
   partner_name: '',
   partner_tax_code: '',
   sign_date: '',
@@ -492,6 +556,7 @@ const formErrors = ref<any>({
 // Dynamic FIELD_VALIDATIONS computed
 const FIELD_VALIDATIONS = computed(() => {
   const rules: any = {
+    company_name: { transitionKey: "contract.companyNameLabel", types: ["require"], errorKey: "company_name" },
     sign_date: { transitionKey: "contract.signDate", types: ["require"], errorKey: "sign_date" },
     start_date: { transitionKey: "contract.startDate", types: ["require"], errorKey: "start_date" },
     value: { transitionKey: "contract.value", types: ["require"], errorKey: "value" },
@@ -581,6 +646,12 @@ const fetchContractDetails = () => {
         }
         contractForm.value = {
           employee_id: data.employee_id,
+          company_id: data.company_id || null,
+          company_name: data.company_name || '',
+          company_tax_code: data.company_tax_code || '',
+          company_address: data.company_address || '',
+          company_representative: data.company_representative || '',
+          company_representative_role: data.company_representative_role || '',
           job_title: data.job_title || '',
           work_location: data.work_location || '',
           working_hours_per_day: data.working_hours_per_day ?? 8.00,

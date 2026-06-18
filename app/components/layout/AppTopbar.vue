@@ -430,6 +430,8 @@ const breadcrumbs = computed(() => {
     }
   } else if (parts[0] === 'compliance') {
     list.push({ label: t('menu.compliance'), to: '/compliance' });
+  } else if (parts[0] === 'board') {
+    list.push({ label: t('menu.companyBoard'), to: '/board' });
   } else {
     // Dynamic fallback for any other custom sub-routes
     parts.forEach((part, index) => {

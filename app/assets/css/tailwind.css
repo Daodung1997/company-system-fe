@@ -201,4 +201,61 @@
     width: 100% !important;
     max-width: 260px !important;
   }
+
+  /* Global Layout & Spacing Adjustments: pulls content up and reduces blank spaces */
+  main div.flex-1.p-8 {
+    padding-top: 1rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Reduce space-y-6 and space-y-8 margin spacing inside page wrappers */
+  main div.flex-1.p-8 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem !important;
+  }
+  main div.flex-1.p-8 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.25rem !important;
+  }
+
+  /* Reduce padding for glassmorphism and card headers */
+  main div.flex-1.p-8 div.backdrop-blur-xl,
+  main div.flex-1.p-8 div.backdrop-blur-md,
+  main div.flex-1.p-8 div.bg-white\/80,
+  main div.flex-1.p-8 div.bg-white\/40,
+  main div.flex-1.p-8 div.dark\:bg-surface-900\/80,
+  main div.flex-1.p-8 div.dark\:bg-surface-900\/40 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Premium Global Table Header Styling */
+  .p-datatable-thead th,
+  table thead th {
+    background-color: #f8fafc !important; /* bg-slate-50 / surface-50 */
+    border-bottom: 2px solid #cbd5e1 !important; /* border-slate-300 / surface-300 */
+    color: #334155 !important; /* text-slate-700 / surface-700 */
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important; /* tracking-wider */
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .dark .p-datatable-thead th,
+  .dark table thead th {
+    background-color: #0f172a !important; /* bg-slate-900 / surface-900 */
+    border-bottom: 2px solid #475569 !important; /* border-slate-600 / surface-600 */
+    color: #e2e8f0 !important; /* text-slate-200 / surface-200 */
+  }
+
+  /* Align sort icons beautifully on PrimeVue header */
+  .p-datatable-thead th .p-column-header-content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
 }
+

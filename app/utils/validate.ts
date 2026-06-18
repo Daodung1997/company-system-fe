@@ -55,26 +55,27 @@ const validEmail = (email: string) => {
  * - At least 1 digit
  * - At least 1 special character
  */
-const validPasswordStrength = (password: string): { valid: boolean; message: string } => {
+const validPasswordStrength = (password: string, t?: any): { valid: boolean; message: string } => {
+  const getMsg = (key: string, fallback: string) => t ? t(key) : fallback;
   if (!password) return { valid: false, message: "" };
 
   if (password.length < 8) {
-    return { valid: false, message: "Mật khẩu phải chứa ít nhất 8 ký tự." };
+    return { valid: false, message: getMsg("auth.passwordMin", "Mật khẩu phải chứa ít nhất 8 ký tự.") };
   }
   if (password.length > 50) {
-    return { valid: false, message: "Mật khẩu không được vượt quá 50 ký tự." };
+    return { valid: false, message: getMsg("auth.passwordMax", "Mật khẩu không được vượt quá 50 ký tự.") };
   }
   if (!/[a-z]/.test(password)) {
-    return { valid: false, message: "Mật khẩu phải chứa ít nhất 1 chữ thường (a-z)." };
+    return { valid: false, message: getMsg("auth.passwordLower", "Mật khẩu phải chứa ít nhất 1 chữ thường (a-z).") };
   }
   if (!/[A-Z]/.test(password)) {
-    return { valid: false, message: "Mật khẩu phải chứa ít nhất 1 chữ hoa (A-Z)." };
+    return { valid: false, message: getMsg("auth.passwordUpper", "Mật khẩu phải chứa ít nhất 1 chữ hoa (A-Z).") };
   }
   if (!/[0-9]/.test(password)) {
-    return { valid: false, message: "Mật khẩu phải chứa ít nhất 1 chữ số (0-9)." };
+    return { valid: false, message: getMsg("auth.passwordDigit", "Mật khẩu phải chứa ít nhất 1 chữ số (0-9).") };
   }
   if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/.test(password)) {
-    return { valid: false, message: "Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt (!@#$%...)." };
+    return { valid: false, message: getMsg("auth.passwordSpecial", "Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt (!@#$%...).") };
   }
 
   return { valid: true, message: "" };
@@ -100,12 +101,12 @@ const validate = (value: any, translationKey: string, type: string[], t: any, ex
   }
 
   if (check && type.includes("minLength8") && value && !validMinLength(value, 8)) {
-    errorValue = "Mật khẩu phải chứa ít nhất 8 ký tự.";
+    errorValue = t ? t("auth.passwordMin") : "Mật khẩu phải chứa ít nhất 8 ký tự.";
     check = false;
   }
 
   if (check && type.includes("passwordStrength") && value) {
-    const result = validPasswordStrength(value);
+    const result = validPasswordStrength(value, t);
     if (!result.valid) {
       errorValue = result.message;
       check = false;
@@ -114,9 +115,14 @@ const validate = (value: any, translationKey: string, type: string[], t: any, ex
 
   if (check && type.includes("passwordMatch") && value && extraData) {
     if (value !== extraData.matchValue) {
-      errorValue = t("auth.rePassNotMatch") || "Mật khẩu xác nhận không khớp.";
+      errorValue = t("auth.rePassNotMatch");
       check = false;
     }
+  }
+
+  if (check && type.includes("max10") && value && !validMaxLength(value, 10)) {
+    errorValue = t("text.max10", { field: t(translationKey) });
+    check = false;
   }
 
   if (check && type.includes("max20") && value && !validMaxLength(value, 20)) {
@@ -129,8 +135,23 @@ const validate = (value: any, translationKey: string, type: string[], t: any, ex
     check = false;
   }
 
+  if (check && type.includes("max100") && value && !validMaxLength(value, 100)) {
+    errorValue = t("text.max100", { field: t(translationKey) });
+    check = false;
+  }
+
+  if (check && type.includes("max150") && value && !validMaxLength(value, 150)) {
+    errorValue = t("text.max150", { field: t(translationKey) });
+    check = false;
+  }
+
   if (check && type.includes("max255") && value && !validMaxLength(value, 255)) {
     errorValue = t("text.max255", { field: t(translationKey) });
+    check = false;
+  }
+
+  if (check && type.includes("max500") && value && !validMaxLength(value, 500)) {
+    errorValue = t("text.max500", { field: t(translationKey) });
     check = false;
   }
 

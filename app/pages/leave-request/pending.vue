@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Access Denied Card (If not manager/admin) -->
-    <div v-if="!isManagerOrAdmin && !checkingAccess" class="bg-white/40 dark:bg-surface-900/40 p-12 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl flex flex-col items-center justify-center text-center space-y-6">
+    <div v-if="!isManagerOrAdmin && !checkingAccess" class="bg-white dark:bg-surface-900 p-12 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md flex flex-col items-center justify-center text-center space-y-6">
       <div class="w-20 h-20 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shadow-inner">
         <i class="pi pi-lock text-4xl"></i>
       </div>
@@ -17,7 +17,7 @@
     <!-- Manager Panel -->
     <template v-else-if="isManagerOrAdmin">
       <!-- Header Section -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/20">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md">
         <div class="flex items-center gap-5">
           <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
             <i class="pi pi-calendar-times text-2xl"></i>
@@ -33,28 +33,84 @@
         </div>
       </div>
 
-      <!-- Status Filter Tabs -->
-      <div class="flex items-center gap-3 px-2">
-        <button
-          v-for="tab in statusTabs"
-          :key="tab.value"
-          class="px-5 py-2.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 border cursor-pointer"
-          :class="[
-            activeStatusFilter === tab.value
-              ? tab.activeClass
-              : 'bg-white dark:bg-surface-900 border-surface-200 dark:border-surface-800 text-surface-500 hover:border-surface-300 dark:hover:border-surface-700'
-          ]"
-          @click="activeStatusFilter = tab.value"
-        >
-          <i :class="tab.icon" class="mr-1.5"></i>
-          {{ tab.label }}
-          <span class="ml-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono"
-            :class="activeStatusFilter === tab.value ? 'bg-white/25' : 'bg-surface-100 dark:bg-surface-800'"
+      <!-- Card Wrapper bọc ngoài cho Filter và Table -->
+      <div class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
+        <!-- Status Filter Tabs -->
+        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto whitespace-nowrap pb-4 border-b border-surface-200 dark:border-surface-800">
+          <button
+            v-for="tab in statusTabs"
+            :key="tab.value"
+            class="px-5 py-2.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 border cursor-pointer shrink-0"
+            :class="[
+              activeStatusFilter === tab.value
+                ? tab.activeClass
+                : 'bg-white dark:bg-surface-950 border-surface-200 dark:border-surface-800 text-surface-500 hover:border-surface-300 dark:hover:border-surface-700'
+            ]"
+            @click="activeStatusFilter = tab.value"
           >
-            {{ getCountByStatus(tab.value) }}
-          </span>
-        </button>
-      </div>
+            <i :class="tab.icon" class="mr-1.5"></i>
+            {{ tab.label }}
+            <span class="ml-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono"
+              :class="activeStatusFilter === tab.value ? 'bg-white/25' : 'bg-surface-100 dark:bg-surface-800'"
+            >
+              {{ getCountByStatus(tab.value) }}
+            </span>
+          </button>
+        </div>
+
+        <!-- Search & Filters Panel (Sub-card) -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-50 dark:bg-surface-950 p-5 rounded-xl border border-surface-200 dark:border-surface-800">
+          <div class="flex flex-wrap items-center gap-4 flex-1">
+            <!-- Search Employee -->
+            <div class="relative w-full sm:w-64">
+              <i class="pi pi-search absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400"></i>
+              <InputText
+                v-model="tableFilters.q"
+                :placeholder="$t('leaveRequest.searchEmployeePlaceholder')"
+                class="w-full pl-10 !rounded-xl"
+              />
+            </div>
+
+            <!-- Leave Type Select -->
+            <Select
+              v-model="tableFilters.leave_type"
+              :options="leaveTypeOptions"
+              optionLabel="label"
+              optionValue="value"
+              :placeholder="$t('leaveRequest.typeSelect')"
+              class="w-full sm:w-48 !rounded-xl"
+              showClear
+            />
+
+            <!-- Time Date Pickers -->
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+              <DatePicker
+                v-model="tableFilters.start_date"
+                dateFormat="dd/mm/yy"
+                :placeholder="$t('timesheet.fromDate')"
+                class="w-full sm:w-36 !rounded-xl"
+                showClear
+              />
+              <span class="text-surface-400 font-bold">~</span>
+              <DatePicker
+                v-model="tableFilters.end_date"
+                dateFormat="dd/mm/yy"
+                :placeholder="$t('timesheet.toDate')"
+                class="w-full sm:w-36 !rounded-xl"
+                showClear
+              />
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <Button
+            icon="pi pi-refresh"
+            severity="secondary"
+            outlined
+            class="!rounded-xl !w-11 !h-11 shrink-0"
+            @click="resetFilters"
+          />
+        </div>
 
       <!-- Modern Data Table -->
       <BaseDataTable
@@ -62,7 +118,7 @@
         :fetchApi="fetchPendingRequestsWrapper"
         :filters="tableFilters"
         :isReload="isReload"
-        :emptyText="$t('leaveRequest.noRequest') || 'Không tìm thấy yêu cầu nghỉ phép nào'"
+        :emptyText="$t('leaveRequest.noRequest')"
         scrollHeight="58vh"
       >
         <template #body="{ column, data, index }">
@@ -117,7 +173,7 @@
           <!-- Lý do -->
           <template v-else-if="column.key === 'reason'">
             <div class="flex items-center gap-1.5 text-xs font-semibold text-surface-500 dark:text-surface-400 max-w-[220px] truncate" :title="data.reason">
-              <i v-if="data.attachment_url" class="pi pi-paperclip text-primary text-[10px]" title="Có tài liệu đính kèm"></i>
+              <i v-if="data.attachment_url" class="pi pi-paperclip text-primary text-[10px]" :title="$t('leaveRequest.hasAttachment')"></i>
               <span>{{ data.reason || $t('leaveRequest.noReason') }}</span>
             </div>
           </template>
@@ -188,6 +244,7 @@
           </template>
         </template>
       </BaseDataTable>
+    </div>
     </template>
 
     <!-- Process Dialog -->
@@ -196,7 +253,7 @@
       modal
       :header="processAction === 'APPROVED' ? $t('leaveRequest.dialogApproveTitle') : $t('leaveRequest.dialogRejectTitle')"
       :style="{ width: '30rem' }"
-      class="!rounded-[2rem] overflow-hidden"
+      class="!rounded-xl overflow-hidden"
     >
       <div v-if="selectedRequest" class="space-y-6 p-2">
         <div class="flex flex-col bg-surface-50 dark:bg-surface-950 p-4 rounded-2xl space-y-1">
@@ -283,7 +340,7 @@ const userInfo = computed(() => {
 
 const isManagerOrAdmin = computed(() => {
   const role = userInfo.value?.role;
-  return role === 'ADMIN' || role === 'MANAGER';
+  return role === 'ADMIN' || role === 'MANAGER' || role === 'HR';
 });
 
 // Status filter tabs
@@ -295,13 +352,13 @@ const statusTabs = computed(() => [
 ]);
 
 const columns = computed(() => [
-  { key: 'stt', label: t('leaveRequest.stt') || 'STT', minWidth: '60px' },
-  { key: 'employee', label: t('leaveRequest.employee') || 'Nhân viên', minWidth: '200px' },
-  { key: 'leave_type', label: t('leaveRequest.type') || 'Loại nghỉ', minWidth: '130px' },
-  { key: 'duration', label: t('leaveRequest.timeRange') || 'Thời hạn', minWidth: '180px' },
-  { key: 'reason', label: t('leaveRequest.reason') || 'Lý do', minWidth: '220px' },
-  { key: 'status', label: t('leaveRequest.status') || 'Trạng thái', minWidth: '150px' },
-  { key: 'actions', label: t('contract.actions') || 'Thao tác', minWidth: '150px', frozen: true }
+  { key: 'stt', label: t('leaveRequest.stt'), minWidth: '60px' },
+  { key: 'employee', label: t('leaveRequest.employee'), minWidth: '200px' },
+  { key: 'leave_type', label: t('leaveRequest.type'), minWidth: '130px' },
+  { key: 'duration', label: t('leaveRequest.timeRange'), minWidth: '180px' },
+  { key: 'reason', label: t('leaveRequest.reason'), minWidth: '220px' },
+  { key: 'status', label: t('leaveRequest.status'), minWidth: '150px' },
+  { key: 'actions', label: t('contract.actions'), minWidth: '150px', frozen: true }
 ]);
 
 const getCountByStatus = (status: string) => {
@@ -319,12 +376,46 @@ const fetchPendingRequestsWrapper = (payload: { query: string, successCallback: 
       // Đồng bộ để tính toán badge count ở header
       requests.value = [...rawList];
       
+      // 1. Lọc theo Status
       if (activeStatusFilter.value !== 'ALL') {
         rawList = rawList.filter((item: any) => item.status === activeStatusFilter.value);
       }
       
+      // 2. Lọc theo nhân viên (tên hoặc mã nhân viên)
+      if (tableFilters.q) {
+        const query = tableFilters.q.trim().toLowerCase();
+        rawList = rawList.filter((item: any) => {
+          const fullName = (item.employee?.full_name || '').toLowerCase();
+          const code = (item.employee?.code || '').toLowerCase();
+          return fullName.includes(query) || code.includes(query);
+        });
+      }
+
+      // 3. Lọc theo loại nghỉ
+      if (tableFilters.leave_type) {
+        rawList = rawList.filter((item: any) => item.leave_type === tableFilters.leave_type);
+      }
+
+      // 4. Lọc theo khoảng thời gian
+      if (tableFilters.start_date) {
+        const filterStart = new Date(tableFilters.start_date);
+        filterStart.setHours(0, 0, 0, 0);
+        rawList = rawList.filter((item: any) => {
+          const requestEnd = new Date(item.end_date);
+          return requestEnd >= filterStart;
+        });
+      }
+      if (tableFilters.end_date) {
+        const filterEnd = new Date(tableFilters.end_date);
+        filterEnd.setHours(23, 59, 59, 999);
+        rawList = rawList.filter((item: any) => {
+          const requestStart = new Date(item.start_date);
+          return requestStart <= filterEnd;
+        });
+      }
+      
       const page = parseInt(params.page || '1');
-      const limit = parseInt(params.limit || '10');
+      const limit = parseInt(params.limit || '30');
       const startIndex = (page - 1) * limit;
       const paginatedData = rawList.slice(startIndex, startIndex + limit);
       
@@ -348,12 +439,31 @@ const fetchPendingRequestsWrapper = (payload: { query: string, successCallback: 
 };
 
 const tableFilters = reactive({
-  status: 'ALL'
+  status: 'ALL',
+  q: '',
+  leave_type: null as string | null,
+  start_date: null as Date | null,
+  end_date: null as Date | null,
 });
 
 watch(activeStatusFilter, (newVal) => {
   tableFilters.status = newVal;
 }, { immediate: true });
+
+const leaveTypeOptions = computed(() => [
+  { label: t('leaveRequest.typeAnnual'), value: 'ANNUAL' },
+  { label: t('leaveRequest.typeSick'), value: 'SICK' },
+  { label: t('leaveRequest.typeSpecial'), value: 'SPECIAL' },
+  { label: t('leaveRequest.typeUnpaid'), value: 'UNPAID' }
+]);
+
+const resetFilters = () => {
+  tableFilters.q = '';
+  tableFilters.leave_type = null;
+  tableFilters.start_date = null;
+  tableFilters.end_date = null;
+  activeStatusFilter.value = 'ALL';
+};
 
 const getLeaveTypeLabel = (type: string) => {
   switch (type) {

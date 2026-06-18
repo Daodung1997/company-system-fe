@@ -1,139 +1,139 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getCookie, setCookie, sanitizeStatusCode, removeResponseHeader, getQuery as getQuery$1, readBody, getRouterParam, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatusText } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getCookie, setCookie, sanitizeStatusCode, removeResponseHeader, getQuery as getQuery$1, readBody, getRouterParam, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatusText } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { escapeHtml } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@vue/shared/dist/shared.cjs.js';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, joinRelativeURL, parsePath, withLeadingSlash, withTrailingSlash, decodePath, withoutTrailingSlash } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/ufo/dist/index.mjs';
-import destr, { destr as destr$1 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, createDefu } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/radix3/dist/index.mjs';
+import { escapeHtml } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@vue/shared/dist/shared.cjs.js';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, joinRelativeURL, parsePath, withLeadingSlash, withTrailingSlash, decodePath, withoutTrailingSlash } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/ufo/dist/index.mjs';
+import destr, { destr as destr$1 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/destr/dist/index.mjs';
+import { createHooks } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/unstorage/drivers/fs.mjs';
+import { digest } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, createDefu } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/youch-core/build/index.js';
-import { Youch } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/source-map/source-map.js';
-import { createRouterMatcher } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/vue-router/vue-router.node.mjs';
+import consola, { consola as consola$1 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/youch-core/build/index.js';
+import { Youch } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/source-map/source-map.js';
+import { createRouterMatcher } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/vue-router/vue-router.node.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { stringify, uneval } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/devalue/index.js';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/errx/dist/index.js';
-import { isVNode, isRef, toValue } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/vue/index.mjs';
-import BaseStyle from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primevue/core/base/style/index.mjs';
-import BaseComponentStyle from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primevue/core/basecomponent/style/index.mjs';
-import { style } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/autocomplete/index.mjs';
-import { isNotEmpty, isEmpty } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/utils/dist/object/index.mjs';
-import { style as style$1 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/cascadeselect/index.mjs';
-import { style as style$2 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/checkbox/index.mjs';
-import { style as style$3 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/checkboxgroup/index.mjs';
-import { style as style$4 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/colorpicker/index.mjs';
-import { style as style$5 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/datepicker/index.mjs';
-import { style as style$6 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/floatlabel/index.mjs';
-import { style as style$7 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/iconfield/index.mjs';
-import { style as style$8 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/iftalabel/index.mjs';
-import { style as style$9 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inputchips/index.mjs';
-import { style as style$a } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inputgroup/index.mjs';
-import { style as style$b } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inputnumber/index.mjs';
-import { style as style$c } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inputotp/index.mjs';
-import { style as style$d } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inputtext/index.mjs';
-import { style as style$e } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/knob/index.mjs';
-import { style as style$f } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/listbox/index.mjs';
-import { style as style$g } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/multiselect/index.mjs';
-import { style as style$h } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/password/index.mjs';
-import { style as style$i } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/radiobutton/index.mjs';
-import { style as style$j } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/radiobuttongroup/index.mjs';
-import { style as style$k } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/rating/index.mjs';
-import { style as style$l } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/select/index.mjs';
-import { style as style$m } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/selectbutton/index.mjs';
-import { style as style$n } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/slider/index.mjs';
-import { style as style$o } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/textarea/index.mjs';
-import { style as style$p } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/togglebutton/index.mjs';
-import { style as style$q } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/toggleswitch/index.mjs';
-import { style as style$r } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/treeselect/index.mjs';
-import { style as style$s } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/button/index.mjs';
-import { style as style$t } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/buttongroup/index.mjs';
-import { style as style$u } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/speeddial/index.mjs';
-import { style as style$v } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/splitbutton/index.mjs';
-import { style as style$w } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/datatable/index.mjs';
-import { style as style$x } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/dataview/index.mjs';
-import { style as style$y } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/orderlist/index.mjs';
-import { style as style$z } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/organizationchart/index.mjs';
-import { style as style$A } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/paginator/index.mjs';
-import { style as style$B } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/picklist/index.mjs';
-import { style as style$C } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tree/index.mjs';
-import { style as style$D } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/treetable/index.mjs';
-import { style as style$E } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/timeline/index.mjs';
-import { style as style$F } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/virtualscroller/index.mjs';
-import { style as style$G } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/accordion/index.mjs';
-import { style as style$H } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/card/index.mjs';
-import { style as style$I } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/divider/index.mjs';
-import { style as style$J } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/fieldset/index.mjs';
-import { style as style$K } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/panel/index.mjs';
-import { style as style$L } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/scrollpanel/index.mjs';
-import { style as style$M } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/splitter/index.mjs';
-import { style as style$N } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/stepper/index.mjs';
-import { style as style$O } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tabview/index.mjs';
-import { style as style$P } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tabs/index.mjs';
-import { style as style$Q } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/toolbar/index.mjs';
-import { style as style$R } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/confirmdialog/index.mjs';
-import { style as style$S } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/confirmpopup/index.mjs';
-import { style as style$T } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/dialog/index.mjs';
-import { style as style$U } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/drawer/index.mjs';
-import { style as style$V } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/popover/index.mjs';
-import { style as style$W } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/fileupload/index.mjs';
-import { style as style$X } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/breadcrumb/index.mjs';
-import { style as style$Y } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/contextmenu/index.mjs';
-import { style as style$Z } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/dock/index.mjs';
-import { style as style$_ } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/menu/index.mjs';
-import { style as style$$ } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/menubar/index.mjs';
-import { style as style$10 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/megamenu/index.mjs';
-import { style as style$11 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/panelmenu/index.mjs';
-import { style as style$12 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/steps/index.mjs';
-import { style as style$13 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tabmenu/index.mjs';
-import { style as style$14 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tieredmenu/index.mjs';
-import { style as style$15 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/message/index.mjs';
-import { style as style$16 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inlinemessage/index.mjs';
-import { style as style$17 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/toast/index.mjs';
-import { style as style$18 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/carousel/index.mjs';
-import { style as style$19 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/galleria/index.mjs';
-import { style as style$1a } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/image/index.mjs';
-import { style as style$1b } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/imagecompare/index.mjs';
-import { style as style$1c } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/avatar/index.mjs';
-import { style as style$1d } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/badge/index.mjs';
-import { style as style$1e } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/blockui/index.mjs';
-import { style as style$1f } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/chip/index.mjs';
-import { style as style$1g } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/inplace/index.mjs';
-import { style as style$1h } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/metergroup/index.mjs';
-import { style as style$1i } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/overlaybadge/index.mjs';
-import { style as style$1j } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/scrolltop/index.mjs';
-import { style as style$1k } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/skeleton/index.mjs';
-import { style as style$1l } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/progressbar/index.mjs';
-import { style as style$1m } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/progressspinner/index.mjs';
-import { style as style$1n } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tag/index.mjs';
-import { style as style$1o } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/terminal/index.mjs';
-import FormStyle from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primevue/forms/form/style/index.mjs';
-import FormFieldStyle from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primevue/forms/formfield/style/index.mjs';
-import { style as style$1p } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/tooltip/index.mjs';
-import { style as style$1q } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styles/dist/ripple/index.mjs';
-import { Theme } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/@primeuix/styled/dist/index.mjs';
+import { stringify, uneval } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/devalue/index.js';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/errx/dist/index.js';
+import { isVNode, isRef, toValue } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/vue/index.mjs';
+import BaseStyle from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primevue/core/base/style/index.mjs';
+import BaseComponentStyle from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primevue/core/basecomponent/style/index.mjs';
+import { style } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/autocomplete/index.mjs';
+import { isNotEmpty, isEmpty } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/utils/dist/object/index.mjs';
+import { style as style$1 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/cascadeselect/index.mjs';
+import { style as style$2 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/checkbox/index.mjs';
+import { style as style$3 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/checkboxgroup/index.mjs';
+import { style as style$4 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/colorpicker/index.mjs';
+import { style as style$5 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/datepicker/index.mjs';
+import { style as style$6 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/floatlabel/index.mjs';
+import { style as style$7 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/iconfield/index.mjs';
+import { style as style$8 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/iftalabel/index.mjs';
+import { style as style$9 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inputchips/index.mjs';
+import { style as style$a } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inputgroup/index.mjs';
+import { style as style$b } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inputnumber/index.mjs';
+import { style as style$c } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inputotp/index.mjs';
+import { style as style$d } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inputtext/index.mjs';
+import { style as style$e } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/knob/index.mjs';
+import { style as style$f } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/listbox/index.mjs';
+import { style as style$g } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/multiselect/index.mjs';
+import { style as style$h } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/password/index.mjs';
+import { style as style$i } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/radiobutton/index.mjs';
+import { style as style$j } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/radiobuttongroup/index.mjs';
+import { style as style$k } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/rating/index.mjs';
+import { style as style$l } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/select/index.mjs';
+import { style as style$m } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/selectbutton/index.mjs';
+import { style as style$n } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/slider/index.mjs';
+import { style as style$o } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/textarea/index.mjs';
+import { style as style$p } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/togglebutton/index.mjs';
+import { style as style$q } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/toggleswitch/index.mjs';
+import { style as style$r } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/treeselect/index.mjs';
+import { style as style$s } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/button/index.mjs';
+import { style as style$t } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/buttongroup/index.mjs';
+import { style as style$u } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/speeddial/index.mjs';
+import { style as style$v } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/splitbutton/index.mjs';
+import { style as style$w } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/datatable/index.mjs';
+import { style as style$x } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/dataview/index.mjs';
+import { style as style$y } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/orderlist/index.mjs';
+import { style as style$z } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/organizationchart/index.mjs';
+import { style as style$A } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/paginator/index.mjs';
+import { style as style$B } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/picklist/index.mjs';
+import { style as style$C } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tree/index.mjs';
+import { style as style$D } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/treetable/index.mjs';
+import { style as style$E } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/timeline/index.mjs';
+import { style as style$F } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/virtualscroller/index.mjs';
+import { style as style$G } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/accordion/index.mjs';
+import { style as style$H } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/card/index.mjs';
+import { style as style$I } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/divider/index.mjs';
+import { style as style$J } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/fieldset/index.mjs';
+import { style as style$K } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/panel/index.mjs';
+import { style as style$L } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/scrollpanel/index.mjs';
+import { style as style$M } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/splitter/index.mjs';
+import { style as style$N } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/stepper/index.mjs';
+import { style as style$O } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tabview/index.mjs';
+import { style as style$P } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tabs/index.mjs';
+import { style as style$Q } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/toolbar/index.mjs';
+import { style as style$R } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/confirmdialog/index.mjs';
+import { style as style$S } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/confirmpopup/index.mjs';
+import { style as style$T } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/dialog/index.mjs';
+import { style as style$U } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/drawer/index.mjs';
+import { style as style$V } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/popover/index.mjs';
+import { style as style$W } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/fileupload/index.mjs';
+import { style as style$X } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/breadcrumb/index.mjs';
+import { style as style$Y } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/contextmenu/index.mjs';
+import { style as style$Z } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/dock/index.mjs';
+import { style as style$_ } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/menu/index.mjs';
+import { style as style$$ } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/menubar/index.mjs';
+import { style as style$10 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/megamenu/index.mjs';
+import { style as style$11 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/panelmenu/index.mjs';
+import { style as style$12 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/steps/index.mjs';
+import { style as style$13 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tabmenu/index.mjs';
+import { style as style$14 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tieredmenu/index.mjs';
+import { style as style$15 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/message/index.mjs';
+import { style as style$16 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inlinemessage/index.mjs';
+import { style as style$17 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/toast/index.mjs';
+import { style as style$18 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/carousel/index.mjs';
+import { style as style$19 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/galleria/index.mjs';
+import { style as style$1a } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/image/index.mjs';
+import { style as style$1b } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/imagecompare/index.mjs';
+import { style as style$1c } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/avatar/index.mjs';
+import { style as style$1d } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/badge/index.mjs';
+import { style as style$1e } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/blockui/index.mjs';
+import { style as style$1f } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/chip/index.mjs';
+import { style as style$1g } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/inplace/index.mjs';
+import { style as style$1h } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/metergroup/index.mjs';
+import { style as style$1i } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/overlaybadge/index.mjs';
+import { style as style$1j } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/scrolltop/index.mjs';
+import { style as style$1k } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/skeleton/index.mjs';
+import { style as style$1l } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/progressbar/index.mjs';
+import { style as style$1m } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/progressspinner/index.mjs';
+import { style as style$1n } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tag/index.mjs';
+import { style as style$1o } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/terminal/index.mjs';
+import FormStyle from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primevue/forms/form/style/index.mjs';
+import FormFieldStyle from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primevue/forms/formfield/style/index.mjs';
+import { style as style$1p } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/tooltip/index.mjs';
+import { style as style$1q } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styles/dist/ripple/index.mjs';
+import { Theme } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/@primeuix/styled/dist/index.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1 } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/pathe/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/unhead/dist/server.mjs';
-import { renderToString } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/vue/server-renderer/index.mjs';
-import { walkResolver } from 'file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/node_modules/unhead/dist/utils.mjs';
+import { dirname as dirname$1, resolve as resolve$1 } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/pathe/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/unhead/dist/server.mjs';
+import { renderToString } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/vue/server-renderer/index.mjs';
+import { walkResolver } from 'file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/node_modules/unhead/dist/utils.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/home/dungdao/Documents/development_ai/company_system/compliance-system-fe/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -145,11 +145,11 @@ const storage$1 = createStorage({});
 
 storage$1.mount('/assets', assets$1);
 
-storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe","watchOptions":{"ignored":[null]}}));
-storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/server","watchOptions":{"ignored":[null]}}));
-storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/.nuxt"}));
-storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/.nuxt/cache"}));
-storage$1.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/.data/kv"}));
+storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/dungdao/Documents/development_ai/company_system/compliance-system-fe","watchOptions":{"ignored":[null]}}));
+storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/dungdao/Documents/development_ai/company_system/compliance-system-fe/server","watchOptions":{"ignored":[null]}}));
+storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/dungdao/Documents/development_ai/company_system/compliance-system-fe/.nuxt"}));
+storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/dungdao/Documents/development_ai/company_system/compliance-system-fe/.nuxt/cache"}));
+storage$1.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/dungdao/Documents/development_ai/company_system/compliance-system-fe/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage$1, base) : storage$1;
@@ -9318,7 +9318,7 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _c3Oy_WZCrIk7PWk7hu0bN6fEe2nFE3hy9jfdG3_07Jo = (function(nitro) {
+const _LmYw3lCQ0BxK6Og4Ru14doLfZ1YV_8mq7C3aEBfc6XI = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script$1}<\/script>`);
   });
@@ -9469,7 +9469,13 @@ var btn$2 = {
 	showAll: "Detail",
 	logOut: "Logout",
 	close: "Close",
-	sync: "Update"
+	sync: "Update",
+	logout: "Logout",
+	upload: "Upload Image",
+	error: "Error",
+	deleteConfirm: "Confirm Delete",
+	exportExcel: "Export Excel",
+	exportPdf: "Export PDF"
 };
 var text$2 = {
 	cancel: "Cancel",
@@ -9487,6 +9493,9 @@ var text$2 = {
 	errorTimePast: "Please do not select a time in the past.",
 	saveSuccess: "{field} saved successfully.",
 	max255: "Please enter {field} within 255 characters.",
+	max500: "Please enter {field} within 500 characters.",
+	max150: "Please enter {field} within 150 characters.",
+	max100: "Please enter {field} within 100 characters.",
 	max50: "Please enter {field} within 50 characters.",
 	max20: "Please enter {field} within 20 characters.",
 	max10: "Please enter {field} within 10 characters.",
@@ -9597,9 +9606,11 @@ var text$2 = {
 	errorInput: "Invalid input information. Please double check the fields highlighted in red.",
 	addSuccess: "Added successfully.",
 	edit: "Edit",
+	viewDetail: "View Details",
 	errorMessage: "Invalid input or system error.",
 	info: "Information",
-	warning: "Warning"
+	warning: "Warning",
+	errorSystem: "An error occurred"
 };
 var msgCommon$2 = {
 	select: "Select",
@@ -9693,7 +9704,35 @@ var auth$2 = {
 	sendForgotPass: "Send Verification Code",
 	otp: "OTP",
 	errorEmail: "Invalid email address. Please check.",
-	inactive: "Access denied. Account is locked or not yet activated."
+	inactive: "Access denied. Account is locked or not yet activated.",
+	msgWelcomeBack: "Welcome {name} back!",
+	msgMustChangePassword: "Password change required",
+	msgMustChangePasswordDesc: "This is your first login. Please change your password to activate the account!",
+	msgChangePasswordSuccess: "Password has been changed successfully.",
+	changePasswordDesc: "Change your account password. The new password must be at least 8 characters long, including uppercase, lowercase, numbers, and special characters.",
+	currentPassword: "Current Password",
+	currentPasswordPlaceholder: "Enter current password",
+	newPasswordPlaceholder: "Enter new password",
+	confirmPasswordPlaceholder: "Re-enter new password",
+	lowercaseHint: "Lowercase (a-z)",
+	uppercaseHint: "Uppercase (A-Z)",
+	digitHint: "Digits (0-9)",
+	specialHint: "Special characters (!{'@'}#$...)",
+	minLengthHint: "At least 8 characters",
+	maxLengthHint: "At most 50 characters",
+	backToLogin: "Back to login",
+	usernameLabel: "User ID / Email / Phone number",
+	usernamePlaceholder: "Enter User ID, email, or phone number",
+	defaultSloganTitle1: "Comprehensive",
+	defaultSloganTitle2: "compliance",
+	defaultSloganTitle3: "control.",
+	defaultSloganDesc: "Compliance management system for legal documents, HR, contracts, and corporate documents for Vietnam - Japan multinational enterprises.",
+	passwordMin: "Password must be at least 8 characters.",
+	passwordMax: "Password must not exceed 50 characters.",
+	passwordLower: "Password must contain at least 1 lowercase letter (a-z).",
+	passwordUpper: "Password must contain at least 1 uppercase letter (A-Z).",
+	passwordDigit: "Password must contain at least 1 digit (0-9).",
+	passwordSpecial: "Password must contain at least 1 special character (!{'@'}#$%...)."
 };
 var notFound$2 = {
 	backToHome: "Go back home"
@@ -9714,6 +9753,10 @@ var router$2 = {
 	customerDetail: "Customer Details"
 };
 var menu$2 = {
+	main: "Main",
+	companyBoard: "Company News Board",
+	masterData: "Master data",
+	industrialDashboard: "Industrial dashboard",
 	master: "Master",
 	list: "List",
 	register: "Register",
@@ -9727,6 +9770,7 @@ var menu$2 = {
 	positionAdd: "Add Position",
 	positionEdit: "Edit Position",
 	company: "Company Management",
+	companySetting: "Company Settings",
 	companyList: "Company List",
 	companyAdd: "Add Company",
 	companyEdit: "Edit Company",
@@ -9746,7 +9790,11 @@ var menu$2 = {
 	transaction: "Cash Flow Management",
 	compliance: "Compliance Engine",
 	document: "Document & Archive Management",
-	member: "Member Management"
+	member: "Member Management",
+	myProfile: "My Profile",
+	logout: "Logout",
+	sidebarConfig: "Sidebar Configuration",
+	changePassword: "Change Password"
 };
 var department$2 = {
 	code: "Department Code",
@@ -9832,6 +9880,86 @@ var company$2 = {
 	headOfficeAddress: "Headquarters Address",
 	registeredAddress: "Registered Address"
 };
+var companySetting$2 = {
+	desc: "Configure the legal and corporate profile of the managing enterprise",
+	basicSectionTitle: "Basic Corporate Profile",
+	basicSectionDesc: "Fill in the official registered profile of the managing enterprise.",
+	namePlaceholder: "e.g. Technology Solutions Joint Stock Company",
+	nameKana: "Abbreviation / Kana Name",
+	capital: "Charter Capital",
+	capitalPlaceholder: "e.g. 10,000,000,000 VND or 100,000,000 JPY",
+	corporatePlaceholder: "e.g. Corporate ID: 1234567890123",
+	legalTitle: "Legal Representative",
+	legalDesc: "Legal identity details of the representative authorized for contracts.",
+	repPlaceholder: "John Doe",
+	repTitle: "Representative Position",
+	repTitlePlaceholder: "e.g. Director / General Manager / President",
+	repIdNumber: "ID / Passport Number",
+	repIdDate: "ID Date of Issue",
+	repIdPlace: "ID Place of Issue",
+	repIdPlacePlaceholder: "e.g. Department of Administrative Police",
+	contactTitle: "Contact Details & Address",
+	contactDesc: "Official registered address and communication endpoints.",
+	website: "Website",
+	addressPlaceholder: "e.g. Keangnam Landmark Tower, Me Tri, Nam Tu Liem, Hanoi",
+	addressRegisteredPlaceholder: "e.g. 12th Floor, Keangnam Landmark Tower, Me Tri, Hanoi",
+	brandingTitle: "Branding & Interface Config",
+	brandingDesc: "Customize corporate logo, login background, sidebar titles, and company slogans.",
+	sidebarName: "Sidebar Display Name",
+	sidebarSubName: "Sidebar Sub Name",
+	sidebarSubPlaceholder: "Compliance Management System",
+	logoLabel: "Corporate Logo (Web Logo)",
+	logoAccept: "Supports JPG, PNG. Transparent square image is recommended.",
+	loginBgLabel: "Login Background Image",
+	loginBgAccept: "Supports JPG, PNG. 16:9 ratio or high-resolution image is recommended.",
+	slogan1: "Company Slogan (Line 1 - Main Title)",
+	slogan1Placeholder: "Pioneering Tech - Shaping the Future",
+	slogan2: "Company Slogan (Line 2)",
+	slogan2Placeholder: "Enterprise Compliance Management System",
+	slogan3: "Company Slogan (Line 3)",
+	slogan3Placeholder: "Elevate Governance, Optimize Operations",
+	complianceBadge: "COMPLIANCE ENGINE",
+	defaultContractTitle: "Default Contract Information",
+	defaultContractDesc: "Information registered here will be auto-populated under Party A (Employer / Client) for new contracts. This can still be customized per contract.",
+	uploadLogoSuccess: "Logo uploaded successfully.",
+	uploadLogoError: "Failed to upload logo.",
+	uploadBgSuccess: "Background image uploaded successfully.",
+	uploadBgError: "Failed to upload background image.",
+	landingTitle: "Company Website Settings",
+	landingDescText: "Configure your company website using an external link or building a custom introduction page",
+	landingStyleLabel: "Introduction Page Style",
+	businessFieldLabel: "Business Field",
+	aboutUsLabel: "About Us Introduction",
+	aboutUsPlaceholder: "Introduce mission, vision, and core values of your company...",
+	servicesListLabel: "Main Services List (One service per line)",
+	servicesListPlaceholder: "Service 1: Brief description\nService 2: Brief description\nService 3: Brief description",
+	bannerDesignTitle: "Slide Banner & Image Assets (Preview Intro Page)",
+	slide1Label: "Slide Banner 1",
+	slide2Label: "Slide Banner 2",
+	slide3Label: "Slide Banner 3",
+	aboutImgLabel: "About Us Image",
+	uploadSlide1: "Upload Slide 1",
+	uploadSlide2: "Upload Slide 2",
+	uploadSlide3: "Upload Slide 3",
+	uploadAboutImg: "Upload About Image",
+	loadMockupBtn: "Load Mockup Data",
+	previewLandingBtn: "Preview Intro Page",
+	websiteOptionLabel: "Company Website Option",
+	websiteOptionExternal: "Already has own website (Enter URL link)",
+	websiteOptionInternal: "No custom website yet (Build custom intro page)",
+	websiteUrlLabel: "Company Website URL",
+	websiteUrlPlaceholder: "Example: https://www.company.com",
+	style1Label: "Style 1 - Modern Tech (Modern & Clean)",
+	style2Label: "Style 2 - Elegant Classic (Classic & Luxurious)",
+	style3Label: "Style 3 - Minimalist Clean (Minimal & Minimalist)",
+	style4Label: "Style 4 - Vibrant Creative (Creative & Active)",
+	style5Label: "Style 5 - Trust Corporate (Professional & Trusted)",
+	fieldIt: "Information Technology & Software",
+	fieldFinance: "Financial & Accounting Services",
+	fieldManufacturing: "Manufacturing & Import-Export",
+	fieldLegal: "Legal Consulting & Law",
+	fieldServices: "Services & Commerce"
+};
 var userMaster$2 = {
 	title: "User Management",
 	code: "User Code",
@@ -9859,13 +9987,70 @@ var document$2 = {
 	viewerNotSupportedTitle: "Direct Preview Not Supported",
 	viewerNotSupportedDesc: "This file format does not support online preview. Please download to view.",
 	downloadFile: "Download File",
-	deleteConfirmTitle: "Delete Document Confirmation",
-	deleteConfirmDesc: "Are you sure you want to delete this document from the system? This action is permanent and cannot be undone."
+	deleteConfirmTitle: "Confirm Document Deletion",
+	deleteConfirmDesc: "Are you sure you want to delete this document from the system? This action is permanent and cannot be undone.",
+	msgFileTooLarge: "File too large",
+	msgFileTooLargeDesc: "Please select a file under 10MB.",
+	msgNoFile: "No file selected",
+	msgNoFileDesc: "Please select a document to upload.",
+	msgNoType: "Missing document type",
+	msgNoTypeDesc: "Please select a document type.",
+	msgNoLink: "No link attached",
+	msgNoLinkDesc: "Please select a corresponding record to attach the document.",
+	msgUploadSuccess: "Document uploaded and linked successfully.",
+	msgUploadError: "An error occurred while uploading the document.",
+	msgViewError: "Unable to view the document.",
+	msgDownloadError: "Unable to download the document.",
+	msgDeleteSuccess: "Document deleted from the system.",
+	msgDeleteError: "An error occurred while deleting the document.",
+	maxSizeText: "Max size: 10MB",
+	tooltipGrid: "Grid view",
+	tooltipList: "List view",
+	uploadedBy: "Uploaded by",
+	deleteConfirmWarning: "This action cannot be undone!",
+	deleteConfirmDetails: "The system will permanently delete the attachment {name} from cloud storage. Please make sure before continuing.",
+	pageDesc: "Centralized document management, upload and smart linking to personnel, contracts and expenses.",
+	uploadDoc: "Upload Document",
+	totalDocs: "Total Documents",
+	employeeDocs: "Employee Documents",
+	contractDocs: "Contracts",
+	transactionDocs: "Invoice & Expenses",
+	placeholderSearch: "Document code, filename...",
+	placeholderFormat: "File format",
+	noData: "No documents found on the system",
+	transactionCode: "Transaction Code #{id}",
+	notLinked: "Not linked",
+	preview: "Preview",
+	downloadTooltip: "Download",
+	deleteTooltip: "Delete document",
+	uploadDialogHeader: "UPLOAD & LINK DOCUMENT",
+	docTypeLabel: "Document & File Type",
+	placeholderSelectType: "Select document type",
+	linkToTarget: "Link to {target}",
+	placeholderSearchTarget: "Search and select {target}...",
+	processUpload: "Process Upload",
+	previewDialogHeader: "VIEW DOCUMENT: {name}",
+	deleteForeverTitle: "Permanently delete this file?",
+	colName: "Document / File Name",
+	colType: "Classification",
+	colLinkedTo: "Linked to",
+	colUploadedAt: "Uploaded At",
+	tabAll: "All documents",
+	tabEmployee: "Employee records",
+	tabContract: "Labor Contract",
+	tabTransaction: "Invoice & Expenses",
+	extPdf: "PDF file (.pdf)",
+	extImage: "Image (.png, .jpg)",
+	extWord: "Word file (.doc, .docx)",
+	extExcel: "Excel file (.xls, .xlsx)",
+	otherDocs: "Other Documents",
+	filesize: "File Size",
+	deleteWarningDetails: "Document \"{name}\" will be permanently deleted from the server. You cannot undo this action."
 };
 var employee$2 = {
 	title: "Employee Management",
 	status: "Status",
-	email: "Email",
+	email: "Email Address",
 	code: "Employee Code",
 	addTitle: "Add New Employee",
 	editTitle: "Edit Employee",
@@ -9899,8 +10084,16 @@ var employee$2 = {
 	statusInactive: "Inactive",
 	statusProbation: "Probation",
 	roleAdmin: "Admin",
-	roleManager: "Manager",
+	roleRbacTooltipTitle: "Role-Based Access Control (RBAC) Permissions",
+	roleManager: "Manager / Director",
+	roleHr: "HR Personnel",
+	roleAccountant: "Accountant",
 	roleStaff: "Staff",
+	roleAdminDesc: "Full system administration rights",
+	roleManagerDesc: "Director / Executive Management",
+	roleHrDesc: "Manages profiles, contracts, timesheets, leaves",
+	roleAccountantDesc: "Manages finance, cash flow, and payrolls",
+	roleStaffDesc: "Staff self-access, timesheet, leave requests",
 	placeholderSearch: "Name, email, employee code...",
 	dialogDisableTitle: "Disable Employee?",
 	dialogDisableDesc: "The status of employee {name} will be changed to INACTIVE.",
@@ -9991,7 +10184,59 @@ var employee$2 = {
 	relationshipSibling: "Sibling",
 	relationshipOther: "Other",
 	noViewUrl: "No document preview URL available.",
-	noDownloadUrl: "No document download URL available."
+	noDownloadUrl: "No document download URL available.",
+	viewError: "Unable to view the document.",
+	downloadError: "Unable to download the document.",
+	startDate: "Start Date",
+	salary: "Salary",
+	placeholderHometown: "e.g., Ha Nam",
+	placeholderPlaceOfBirth: "Maternity Hospital",
+	placeholderNationality: "Vietnam",
+	placeholderReligion: "None",
+	sectionAccountWork: "2. Account & Work",
+	sectionAccountWorkDesc: "Contact information, specialized departments, and system permissions",
+	sectionContactAddress: "3. Contact Address",
+	sectionContactAddressDesc: "Permanent residence address and current residential address",
+	placeholderBankAccountType: "Ordinary",
+	noRelatives: "No relatives added yet. Click the button above to create a new one.",
+	relativeNumber: "Relative #",
+	deleteRelativeTooltip: "Delete this relative",
+	birthday: "Date of Birth",
+	dependentTax: "Dependent (Tax Deduction)",
+	pendingUpload: "PENDING UPLOAD",
+	deletePendingFileTooltip: "Delete pending file",
+	deletePeriodTooltip: "Delete this period",
+	placeholderSalary: "e.g., 10,000,000",
+	placeholderSalaryReason: "e.g., Regular salary increase",
+	endDateBeforeStartDate: "End date cannot be before start date",
+	removedPendingFile: "Document removed from pending list.",
+	imageTooLarge: "Image too large",
+	imageTooLargeDesc: "Please select an image under 2MB.",
+	updateSuccess: "Employee information updated.",
+	createSuccess: "New employee created successfully.",
+	createAndUploadSuccess: "Successfully created new employee and uploaded {successCount} documents.",
+	uploadDocsError: "Document upload error",
+	createSuccessUploadError: "Successfully created new employee but some document uploads failed (Success: {successCount}, Failed: {failCount}).",
+	fileTooLarge: "File too large",
+	fileTooLargeDesc: "Please select a document under 10MB.",
+	addedPendingFile: "Document added to pending list.",
+	uploadDocsSuccess: "Document uploaded successfully.",
+	uploadDocsFailed: "Error uploading document.",
+	deleteDocConfirm: "Are you sure you want to delete this document? This action cannot be undone.",
+	deleteDocSuccess: "Document deleted successfully.",
+	deleteDocFailed: "Error deleting document.",
+	ocrTitle: "Quick Profile Import using AI Gemini",
+	ocrDesc: "Upload resume, ID card, passport, or Excel sheet for AI to auto-fill the form fields.",
+	ocrButton: "Select File & Analyze",
+	ocrLoading: "Gemini AI is scanning the document and analyzing information...",
+	ocrSuccessTitle: "Analysis Successful",
+	ocrSuccessDesc: "Information has been automatically filled in the form.",
+	ocrErrorTitle: "Error",
+	ocrErrorDesc: "Could not extract information from the document.",
+	ocrFileTooLarge: "File too large",
+	ocrFileTooLargeDesc: "File \"{name}\" exceeds the 10MB limit.",
+	ocrConnectError: "Could not connect to or process the file.",
+	name: "Personnel"
 };
 var gender$2 = {
 	male: "Male",
@@ -9999,6 +10244,14 @@ var gender$2 = {
 	other: "Other"
 };
 var contract$2 = {
+	companySection: "Party A: Managing Company Information",
+	companyNameLabel: "Managing Company Name (Party A)",
+	companyTaxCodeLabel: "Party A Tax Code",
+	companyAddressLabel: "Party A Address",
+	companyRepresentativeLabel: "Party A Representative",
+	companyRepresentativeRoleLabel: "Representative Position",
+	defaultConfig: "Default Configuration",
+	contractInfo: "Contract Information",
 	title: "Contract Management",
 	createTitle: "Sign New Contract",
 	editTitle: "Update Contract",
@@ -10045,6 +10298,9 @@ var contract$2 = {
 	complianceTitle: "Compliance Registration",
 	complianceDescCreate: "Upon submission, the contract will be automatically cross-checked with the existing personnel list to ensure legality before storage.",
 	complianceDescEdit: "Any updates to contract parameters (salary, overtime terms) will automatically sync with payroll and overtime control systems.",
+	complianceDescView: "Contract details are automatically monitored by the compliance system to prevent legal risks and labor disputes.",
+	viewDetails: "Contract Details",
+	edmReadonly: "List of documents attached to this contract.",
 	submitContract: "Finalize Contract",
 	missingInfo: "Missing Information",
 	saveSuccess: "Success",
@@ -10127,7 +10383,18 @@ var contract$2 = {
 	sizeErrorDesc: "Attached file size must not exceed 10MB",
 	statusPending: "Pending Approval (PENDING)",
 	employmentFullTimeVn: "Full-time (Vietnam)",
-	employmentPartTimeVn: "Part-time (Vietnam)"
+	employmentPartTimeVn: "Part-time (Vietnam)",
+	ocrTitle: "Quick Contract Import using AI Gemini",
+	ocrDesc: "Upload labor contract scan, image, or Excel template for AI to auto-fill contract fields.",
+	ocrButton: "Select File & Analyze",
+	ocrLoading: "Gemini AI is scanning the document and analyzing information...",
+	ocrSuccessTitle: "Contract Analysis Successful",
+	ocrSuccessDesc: "Extracted contract information has been filled in the form.",
+	ocrErrorTitle: "Error",
+	ocrErrorDesc: "Could not extract contract information.",
+	ocrFileTooLarge: "File too large",
+	ocrFileTooLargeDesc: "File \"{name}\" exceeds the 10MB limit.",
+	ocrConnectError: "Could not connect to or process the contract."
 };
 var timesheet$2 = {
 	title: "Personal Timesheet",
@@ -10148,6 +10415,20 @@ var timesheet$2 = {
 	success: "Attendance Success",
 	checkInSuccess: "You have successfully checked in today.",
 	checkOutSuccess: "You have successfully checked out today.",
+	multiModalCheckin: "Multi-modal Attendance Tracking",
+	qrTab: "Personal QR Code",
+	deviceTab: "Fingerprint & FaceID Device",
+	qrDesc: "Hold your personal QR code in front of the scanner's camera to check-in/out automatically.",
+	qrRefreshesIn: "Auto refreshes in {seconds} seconds",
+	deviceConnected: "Scanner: ZK-Teco FaceID Pro #01",
+	deviceStatusConnected: "CONNECTED",
+	deviceSyncDesc: "The system automatically synchronizes fingerprints & faces every 5 minutes.",
+	syncButtonLabel: "Sync from device",
+	syncingText: "Connecting to attendance scanner...",
+	syncSuccess: "Sync successful! Loaded and recorded 2 latest attendance logs.",
+	simulateQrBtn: "Simulate Office Scanner",
+	simulatingScan: "Simulating office camera scanning your personal QR code...",
+	alreadyCheckedOut: "You have completed your check-in/out for today.",
 	date: "Date",
 	status: "Status",
 	day0: "Sunday",
@@ -10186,24 +10467,26 @@ var timesheet$2 = {
 	baseSalary: "Basic Salary",
 	workingDaysActualStandard: "Days (Actual/Standard)",
 	overtimeCol: "Overtime (OT)",
-	attendanceAllowance: "Attendance Bonus",
-	deductionLate: "Late Penalty",
-	deductionLeave: "Leave Deduction",
+	attendanceAllowance: "Attendance Allowance",
+	deductionLate: "Late Deduction",
+	deductionLeave: "Unapproved Leave Deduction",
 	advancePayment: "Paid in Advance",
-	netSalary: "Net Paid",
+	netSalary: "Net Salary",
 	statusPaid: "Paid",
 	statusPending: "Pending",
 	payrollDetailsFor: "Payslip: {name} ({code})",
-	actualWorkingDays: "Actual Workdays",
+	actualWorkingDays: "Actual Working Days",
 	payrollMonth: "Working Month",
 	overtimeSalary: "Overtime Salary",
 	attendanceAllowanceLabel: "Attendance Allowance",
 	deductionLateLabel: "Late Deduction",
 	deductionLeaveLabel: "Exceeded Leave Deduction",
-	deductionUnion: "Union Fee",
+	deductionUnion: "Union Deduction",
 	deductionTax: "Personal Income Tax",
 	deductionUnionLabel: "Union Fee Deduction",
 	deductionTaxLabel: "Income Tax Deduction",
+	totalDeductions: "Total Deductions",
+	deductionInsuranceLabel: "Compulsory Insurance (10.5%)",
 	advancePaymentLabel: "Advance Payment",
 	paymentStatusLabel: "Payment Status",
 	netSalaryLabel: "Net Paid",
@@ -10348,6 +10631,9 @@ var timesheet$2 = {
 	overtimeStatus: "Overtime",
 	overtimeAllowed: "Allowed",
 	overtimeNotAllowed: "Not Allowed",
+	overtimeAllowedWithMax: "Allowed (Max {hours} hours)",
+	leave: "Leave",
+	resetDefault: "Restore default shift",
 	assignShiftsTitle: "Employee Shift & Overtime Schedule",
 	assignShiftsDesc: "Manage flexible shifts, overtime configurations, and synchronize monthly leaves.",
 	bulkActions: "Bulk Actions",
@@ -10389,7 +10675,56 @@ var timesheet$2 = {
 	dialogBulkResetWarningPrefix: "This action will restore the schedule of",
 	dialogBulkResetWarningSuffix: "employees to system default shift within the selected date range.",
 	applyToWeekdays: "Apply to weekdays",
-	confirm: "Confirm"
+	confirm: "Confirm",
+	msgResetShiftDefault: "Reset {name}'s shift to default",
+	msgSelectShift: "Please select a shift",
+	msgSelectDateRange: "Please select a date range",
+	msgSelectWeekday: "Please select at least one weekday",
+	msgSelectEmployee: "Please select at least one employee",
+	msgSetShiftSuccess: "Shift setup successful",
+	msgResetDefaultSuccess: "Default shift restored successfully",
+	msgSelectWeekdayAssign: "Please select at least one weekday to apply",
+	msgSelectWeekdayReset: "Please select at least one weekday to reset",
+	msgPayrollLoadError: "Unable to load payroll data",
+	msgPayrollSaveSuccess: "Payroll updated successfully",
+	msgPayrollSaveError: "Error saving payroll information",
+	msgExportExcelError: "Unable to export Excel file",
+	msgExportPdfError: "Unable to export PDF file",
+	msgSaveManualSuccess: "Timesheet saved successfully",
+	insuranceLabel: "Insurance (10.5%)",
+	otNormal: "Normal:",
+	otWeekend: "Weekend:",
+	otHoliday: "Holiday:",
+	total: "Total:",
+	socialInsurance: "Social Insurance:",
+	healthInsurance: "Health Insurance:",
+	unemploymentInsurance: "Unemployment Insurance:",
+	payrollAdjustmentInfo: "Salary Adjustment Information",
+	standardWorkingDays: "Standard Working Days",
+	otNormalHours: "Normal OT (hours)",
+	otWeekendHours: "Weekend OT (hours)",
+	otHolidayHours: "Holiday OT (hours)",
+	dependents: "Dependents",
+	taxAndNetSalaryDetails: "Tax & Net Salary Details",
+	dailyRate: "Daily Rate",
+	dayUnit: "day",
+	overtimePay: "Overtime Pay",
+	otNormalRate: "Normal (1.5x)",
+	otWeekendRate: "Weekend (2.0x)",
+	otHolidayRate: "Holiday (3.0x)",
+	attendanceDeduction: "Attendance/Leave Deduction",
+	grossSalary: "GROSS Salary",
+	insuranceDeduction: "Compulsory Insurance (10.5%)",
+	socialInsuranceDeduction: "Social Insurance (8%)",
+	healthInsuranceDeduction: "Health Insurance (1.5%)",
+	unemploymentInsuranceDeduction: "Unemployment Insurance (1%)",
+	incomeBeforeTax: "Income Before Tax",
+	progressivePit: "Progressive PIT",
+	selfDeduction: "Personal Deduction",
+	dependentDeduction: "Dependent Deduction",
+	personUnit: "person",
+	taxableIncome: "Taxable Income",
+	unionAndAdvance: "Union & Advance Payment"
 };
 var leaveRequest$2 = {
 	title: "Leave Request",
@@ -10412,6 +10747,8 @@ var leaveRequest$2 = {
 	tabRejected: "Rejected",
 	noRequest: "There are currently no leave requests.",
 	noRequestWithStatus: "No leave requests found with status \"{status}\".",
+	searchEmployeePlaceholder: "Search name, code...",
+	typeSelect: "Select type...",
 	allDay: "All day",
 	morning: "Morning",
 	afternoon: "Afternoon",
@@ -10455,7 +10792,16 @@ var leaveRequest$2 = {
 	submitSuccess: "Leave Request Submitted",
 	submitSuccessDesc: "Your leave request has been sent to the manager.",
 	from: "From",
-	to: "To"
+	to: "To",
+	attachment: "Attachments",
+	uploadInstructions: "Drag and drop or click to upload file",
+	attachmentCol: "Document",
+	noAttachment: "No attachment",
+	viewAttachment: "View attachment",
+	attachmentPlaceholder: "Select supporting file (medical certificate, ticket...)",
+	fileSizeLimitError: "File size exceeds the 10MB limit.",
+	uploadFormats: "PDF, DOC, DOCX, ZIP or image (Max 10MB)",
+	hasAttachment: "Has attachment"
 };
 var compliance$2 = {
 	title: "Compliance Engine",
@@ -10596,7 +10942,11 @@ var dashboard$2 = {
 	unclassified: "Unclassified",
 	noTransactions: "No financial transactions recorded.",
 	msgConnectError: "Connection Error",
-	msgSyncError: "Unable to synchronize Dashboard data."
+	msgSyncError: "Unable to synchronize Dashboard data.",
+	ageDemographics: "Employee Age Demographics",
+	ageDemographicsDesc: "Ratio of employees by age group in the company",
+	genderDemographics: "Employee Gender Demographics",
+	genderDemographicsDesc: "Ratio of male and female employees in the company"
 };
 var transaction$2 = {
 	title: "Cashflow & Expenses",
@@ -10743,7 +11093,15 @@ var transaction$2 = {
 	typeRevenue: "Revenue (REVENUE)",
 	updateSubtitle: "Update transaction details",
 	updateSuccess: "Transaction updated successfully",
-	updateSuccessDesc: "Transaction details and attachments have been saved."
+	updateSuccessDesc: "Transaction details and attachments have been saved.",
+	viewDetails: "Transaction Details",
+	edmReadonly: "List of documents attached to this transaction.",
+	complianceBadge: "Compliance Control",
+	complianceTitle: "Document verification status",
+	msgFormatError: "Format error",
+	msgFormatErrorDesc: "Format .{ext} is not supported.",
+	msgSizeError: "Size limit exceeded",
+	msgSizeErrorDesc: "File {name} exceeds 10MB."
 };
 var pagination$2 = {
 	total: "Total: {total} items",
@@ -10751,7 +11109,10 @@ var pagination$2 = {
 };
 var common$2 = {
 	cancel: "Cancel",
-	"delete": "Delete"
+	"delete": "Delete",
+	system: "System",
+	actions: "Actions",
+	index: "No."
 };
 var themeCustomizer$2 = {
 	title: "Sidebar Settings",
@@ -10788,7 +11149,147 @@ var themeCustomizer$2 = {
 	fontPlayfair: "Playfair (Classic Serif)",
 	fontMono: "Roboto Mono (Monospace)"
 };
-const locale_en_46json_2045c38c = {
+var notification$2 = {
+	title: "Notifications",
+	pageTitle: "Notification Center",
+	"new": "NEW",
+	markAllRead: "Read All",
+	empty: "No notifications",
+	emptyDesc: "System notifications will appear here.",
+	justNow: "Just now",
+	minutesAgo: "{n} minutes ago",
+	hoursAgo: "{n} hours ago",
+	daysAgo: "{n} days ago",
+	viewAll: "View all notifications",
+	searchPlaceholder: "Search notifications...",
+	searchBtn: "Search",
+	allTypes: "All types",
+	filterAll: "All",
+	filterUnread: "Unread",
+	filterRead: "Read",
+	totalLabel: "Total notifications",
+	unreadLabel: "Unread",
+	readLabel: "Read",
+	readStatus: "Read",
+	goToAction: "Go to",
+	loading: "Loading notifications...",
+	typeLeaveCreated: "New leave request",
+	typeLeaveApproved: "Leave approved",
+	typeLeaveRejected: "Leave rejected",
+	typeCompliance: "Compliance alert",
+	typeContract: "Contract",
+	typeTransaction: "Transaction"
+};
+var quickSignSuccess$2 = "Contract signed successfully.";
+var placeholder$2 = {
+	selectCategory: "Select category",
+	selectItem: "Select item",
+	selectMethod: "Select method",
+	selectStatus: "Select status",
+	enterTotalAmount: "Enter total amount",
+	selectTaxRate: "Select tax rate",
+	amountBeforeTax: "Base amount before tax",
+	taxAmount: "Tax amount",
+	taxNoteExample: "E.g., 10% PIT, contractor tax...",
+	japanInvoiceNo: "T1234567890123 (If Japan business expense)",
+	vietnamTechCompany: "Vietnam Technology Solutions Joint Stock Company",
+	taxCode: "Tax code",
+	registeredAddress: "Registered address",
+	legalRepresentative: "Legal representative name",
+	jobTitleExample: "E.g., Director, General Manager",
+	enterContractCode: "Enter contract code",
+	enterContractValue: "Enter contract value",
+	enterCurrencyValue: "Enter monetary value",
+	jobTitleDev: "E.g., Developer, Administrator",
+	officeExample: "E.g., Hanoi HQ, Tokyo Office",
+	numberEight: "E.g., 8",
+	durationTwoMonths: "E.g., 2 months",
+	numberEightyFive: "E.g., 85",
+	bankNames: "E.g., Vietcombank, Techcombank",
+	accountNumber: "E.g., 1018273645",
+	insuranceType: "Social, Health, Unemployment or Special Commercial Insurance",
+	enterOfficialCompanyName: "Enter official name on business registration",
+	enterPartnerTaxCode: "Enter partner tax code",
+	partnerLegalJob: "E.g., Director, General Manager, CEO",
+	partnerAddress: "Partner official business address",
+	paymentTerm: "E.g., Net 30, 100% upfront",
+	otHours: "E.g., 20 or 30 hours",
+	systemAutoGenerated: "System automatically generated",
+	companyNameDemo: "Technology Solutions Co., Ltd.",
+	fullNameExample: "John Doe",
+	addressDemo: "Keangnam Landmark Tower, Me Tri, Nam Tu Liem, Hanoi",
+	addressDetailDemo: "12th Floor, Keangnam Landmark Tower, Me Tri, Nam Tu Liem, Hanoi",
+	companyNote: "Enter special notes about this business...",
+	selectFont: "Select font...",
+	searchAndSelectType: "Search and select {type}..."
+};
+var board$2 = {
+	title: "Company News Board",
+	createPost: "Post New Announcement",
+	editPost: "Edit Post",
+	deletePost: "Delete Post",
+	deletePostConfirm: "Are you sure you want to delete this post? This action cannot be undone.",
+	deleteCommentConfirm: "Are you sure you want to delete this comment?",
+	postTitle: "Post Title",
+	postContent: "Post Content",
+	postLink: "Attached URL Link",
+	postImage: "Upload Image",
+	postTag: "Post Tag/Flag",
+	submitPost: "Post Announcement",
+	updatePost: "Update",
+	allTags: "All Tags",
+	tagImportant: "Important",
+	tagAnnouncement: "Announcement",
+	tagEvent: "Event",
+	tagNews: "News",
+	likes: "Likes",
+	comments: "Comments",
+	writeComment: "Write a comment...",
+	sendComment: "Send",
+	noPosts: "No announcements posted yet.",
+	errorCreate: "Failed to create post. Please check the inputs.",
+	successCreate: "Post created successfully!",
+	successDelete: "Post deleted successfully.",
+	successUpdate: "Post updated successfully!",
+	authorAdmin: "Board of Directors",
+	authorManager: "Department Head",
+	attachedLink: "View Attached Link",
+	description: "Where official announcements, featured events, business news, and member connections are updated.",
+	createPostSubtitle: "Publish news to reach all employees in the company",
+	placeholderTitle: "Enter news title or announcement...",
+	placeholderTag: "Select a tag...",
+	changeImage: "Change image",
+	selectImage: "Select image",
+	removeCurrentImage: "Remove current image",
+	placeholderContent: "Share posts, news, or work instructions here...",
+	firstToShare: "Be the first to share news or work instructions.",
+	systemUser: "System User",
+	defaultDept: "Administration",
+	defaultTitle: "Officer",
+	likeBtn: "Like",
+	commentBtn: "Comment",
+	noComments: "No comments yet. Be the first to leave a comment!",
+	systemEmployee: "System Staff",
+	deleteComment: "Delete comment",
+	placeholderComment: "Write your comment...",
+	loadMorePosts: "Load more posts",
+	placeholderSelectTag: "Select tag...",
+	imageWillBeDeleted: "Current image will be deleted upon update",
+	restore: "Restore",
+	changeSelectedImage: "Change selected image",
+	uploadReplacementImage: "Upload replacement image",
+	failUpdate: "Failed to update post. Please try again.",
+	failDelete: "Failed to delete post.",
+	failAction: "Action failed.",
+	failComment: "Failed to post comment.",
+	successDeleteComment: "Comment deleted.",
+	failDeleteComment: "Failed to delete comment.",
+	likesNoOne: "No one has liked this post yet",
+	likesBy: "Liked by: {names}",
+	likesByAndOthers: "Liked by: {names} and {count} others",
+	failFetch: "Failed to load board news. Please try again."
+};
+const locale_en_46json_0ab7440b = {
 	btn: btn$2,
 	text: text$2,
 	msgCommon: msgCommon$2,
@@ -10827,6 +11328,7 @@ const locale_en_46json_2045c38c = {
 	user: user$2,
 	position: position$2,
 	company: company$2,
+	companySetting: companySetting$2,
 	userMaster: userMaster$2,
 	document: document$2,
 	employee: employee$2,
@@ -10839,7 +11341,11 @@ const locale_en_46json_2045c38c = {
 	transaction: transaction$2,
 	pagination: pagination$2,
 	common: common$2,
-	themeCustomizer: themeCustomizer$2
+	themeCustomizer: themeCustomizer$2,
+	notification: notification$2,
+	quickSignSuccess: quickSignSuccess$2,
+	placeholder: placeholder$2,
+	board: board$2
 };
 
 var btn$1 = {
@@ -10889,7 +11395,13 @@ var btn$1 = {
 	showAll: "詳細",
 	logOut: "ログアウト",
 	close: "閉じる",
-	sync: "更新"
+	sync: "更新",
+	logout: "ログアウト",
+	upload: "画像をアップロード",
+	error: "エラー",
+	deleteConfirm: "削除に同意する",
+	exportExcel: "Excel出力",
+	exportPdf: "PDF出力"
 };
 var text$1 = {
 	cancel: "キャンセル",
@@ -10907,6 +11419,9 @@ var text$1 = {
 	errorTimePast: "過去時間を選択しないでください。",
 	saveSuccess: "{field}保存されました。",
 	max255: "{field}を２５５文字以内で入力してください。",
+	max500: "{field}を500文字以内で入力してください。",
+	max150: "{field}を150文字以内で入力してください。",
+	max100: "{field}を100文字以内で入力してください。",
 	max50: "{field}を50文字以内で入力してください。",
 	max20: "{field}を20文字以内で入力してください。",
 	max10: "{field}を10文字以内で入力してください。",
@@ -11017,9 +11532,11 @@ var text$1 = {
 	requiredFidelity: "完了する前に、すべての必須フィールドが入力されていることを確認してください。",
 	addSuccess: "追加に成功しました。",
 	edit: "編集",
+	viewDetail: "詳細を表示",
 	errorMessage: "入力内容が無効であるか、システムエラーが発生しました。",
 	info: "情報",
-	warning: "警告"
+	warning: "警告",
+	errorSystem: "エラーが発生しました"
 };
 var msgCommon$1 = {
 	select: "選択",
@@ -11113,7 +11630,35 @@ var auth$1 = {
 	sendForgotPass: "認証コード送信",
 	otp: "OTP",
 	errorEmail: "無効なメールアドレスです。ご確認ください。",
-	inactive: "アクセスが拒否されました. アカウントがロックされているか、まだ有効化されていないかです。"
+	inactive: "アクセスが拒否されました. アカウントがロックされているか、まだ有効化されていないかです。",
+	msgWelcomeBack: "{name}さん、おかえりなさい！",
+	msgMustChangePassword: "パスワード変更が必要です",
+	msgMustChangePasswordDesc: "初回ログインです。アカウントを有効にするためにパスワードを変更してください！",
+	msgChangePasswordSuccess: "パスワードが正常に変更されました。",
+	changePasswordDesc: "アカウントのパスワードを変更します。新しいパスワードは、英大文字、英小文字、数字、および特殊文字を含む8文字以上である必要があります。",
+	currentPassword: "現在のパスワード",
+	currentPasswordPlaceholder: "現在のパスワードを入力してください",
+	newPasswordPlaceholder: "新しいパスワードを入力してください",
+	confirmPasswordPlaceholder: "新しいパスワードを再入力してください",
+	lowercaseHint: "英小文字 (a-z)",
+	uppercaseHint: "英大文字 (A-Z)",
+	digitHint: "数字 (0-9)",
+	specialHint: "特殊文字 (!{'@'}#$...)",
+	minLengthHint: "8文字以上",
+	maxLengthHint: "50文字以下",
+	backToLogin: "ログインに戻る",
+	usernameLabel: "ユーザーID / メール / 電話番号",
+	usernamePlaceholder: "ユーザーID、メール、または電話番号を入力してください",
+	defaultSloganTitle1: "総合的な",
+	defaultSloganTitle2: "コンプライアンス",
+	defaultSloganTitle3: "管理。",
+	defaultSloganDesc: "ベトナム・日本間の多国籍企業向け法務、人事、契約書および企業文書管理システム。",
+	passwordMin: "パスワードは8文字以上である必要があります。",
+	passwordMax: "パスワードは50文字を超えることはできません。",
+	passwordLower: "パスワードには小文字（a-z）を少なくとも1文字含める必要があります。",
+	passwordUpper: "パスワードには大文字（A-Z）を少なくとも1文字含める必要があります。",
+	passwordDigit: "パスワードには数字（0-9）を少なくとも1文字含める必要があります。",
+	passwordSpecial: "パスワードには特殊文字（!{'@'}#$%...）を少なくとも1文字含める必要があります。"
 };
 var notFound$1 = {
 	backToHome: "家に帰る"
@@ -11134,11 +11679,16 @@ var router$1 = {
 	customerDetail: "顧客詳細"
 };
 var menu$1 = {
+	main: "メイン",
+	companyBoard: "社内掲示板",
+	masterData: "マスターデータ",
+	industrialDashboard: "インダストリアルダッシュボード",
 	master: "マスター",
 	list: "一覧",
 	register: "登録",
 	dashboard: "ダッシュボード",
 	member: "メンバー管理",
+	myProfile: "マイプロフィール",
 	department: "部署管理",
 	departmentList: "部署一覧",
 	departmentAdd: "部署新規登録",
@@ -11148,6 +11698,7 @@ var menu$1 = {
 	positionAdd: "役職新規登録",
 	positionEdit: "役職編集",
 	company: "会社管理",
+	companySetting: "自社情報設定",
 	companyList: "会社一覧",
 	companyAdd: "会社新規登録",
 	companyEdit: "会社編集",
@@ -11166,7 +11717,10 @@ var menu$1 = {
 	contract: "契約管理",
 	transaction: "収支管理 (Cash Flow)",
 	compliance: "コンプライアンス管理",
-	document: "文書・アーカイブ管理"
+	document: "文書・アーカイブ管理",
+	logout: "ログアウト",
+	sidebarConfig: "サイドバーの設定",
+	changePassword: "パスワード変更"
 };
 var department$1 = {
 	code: "部署コード",
@@ -11252,6 +11806,86 @@ var company$1 = {
 	headOfficeAddress: "本社所在地",
 	registeredAddress: "登記住所"
 };
+var companySetting$1 = {
+	desc: "管理本社の法的・企業情報の構成",
+	basicSectionTitle: "管理本社の基本情報",
+	basicSectionDesc: "公式な管理本社の登録情報を入力してください。",
+	namePlaceholder: "例：株式会社テクノロジーソリューションズ",
+	nameKana: "略称 / カナ表記",
+	capital: "資本金",
+	capitalPlaceholder: "例：10,000,000,000 VND または 100,000,000 JPY",
+	corporatePlaceholder: "例：法人番号 1234567890123",
+	legalTitle: "法的代表者",
+	legalDesc: "契約締結等に必要な企業の法的代表者の個人情報。",
+	repPlaceholder: "山田 太郎",
+	repTitle: "代表者役職",
+	repTitlePlaceholder: "例：代表取締役 / 社長 / 会長",
+	repIdNumber: "身分証明書番号 / パスポート番号",
+	repIdDate: "身分証明書発行日",
+	repIdPlace: "身分証明書発行機関",
+	repIdPlacePlaceholder: "例：警察庁、または所管の政府機関",
+	contactTitle: "連絡先情報 & 所在地",
+	contactDesc: "公式の住所および連絡用チャネルの詳細情報。",
+	website: "ウェブサイト (Website)",
+	addressPlaceholder: "例：東京都千代田区永田町1-1-1",
+	addressRegisteredPlaceholder: "例：東京都千防田区永田町1-1-1（登記上の本社）",
+	brandingTitle: "ブランディング & UI設定",
+	brandingDesc: "ロゴ、ログイン背景、サイドバーの表示名、スローガンのカスタマイズ設定。",
+	sidebarName: "サイドバー表示名",
+	sidebarSubName: "サイドバー副表示名",
+	sidebarSubPlaceholder: "コンプライアンス管理システム",
+	logoLabel: "企業ロゴ (Web Logo)",
+	logoAccept: "JPG, PNGに対応。透過背景 of 正方形画像を推奨します。",
+	loginBgLabel: "ログイン画面背景画像",
+	loginBgAccept: "JPG, PNGに対応。16:9比率または高解像度の画像を推奨します。",
+	slogan1: "企業スローガン (1行目 - メインタイトル)",
+	slogan1Placeholder: "テクノロジーの先駆者 - 未来を創造する",
+	slogan2: "企業スローガン (2行目)",
+	slogan2Placeholder: "企業コンプライアンス管理システム",
+	slogan3: "企業スローガン (3行目)",
+	slogan3Placeholder: "ガバナンスの向上、運用の最適化",
+	complianceBadge: "コンプライアンスシステム",
+	defaultContractTitle: "デフォルト契約情報の構成",
+	defaultContractDesc: "ここに登録された情報は、新規契約書作成時に「甲」（雇用主／発注元）として自動入力されます。契約書作成時に直接編集することも可能です。",
+	uploadLogoSuccess: "ロゴのアップロードに成功しました。",
+	uploadLogoError: "ロゴ of アップロードに失敗しました。",
+	uploadBgSuccess: "背景画像のアップロードに成功しました。",
+	uploadBgError: "背景画像 of アップロードに失敗しました。",
+	landingTitle: "企業ウェブサイト設定",
+	landingDescText: "外部リンクを使用するか、カスタム紹介ページを構築して、企業のウェブサイトを構成します",
+	landingStyleLabel: "紹介ページのスタイル",
+	businessFieldLabel: "事業分野",
+	aboutUsLabel: "企業紹介 (About Us)",
+	aboutUsPlaceholder: "会社のミッション、ビジョン、コアバリューをご紹介ください...",
+	servicesListLabel: "主なサービス内容 (1行に1サービス)",
+	servicesListPlaceholder: "サービス1: 簡単な説明\nサービス2: 簡単な説明\nサービス3: 簡単な説明",
+	bannerDesignTitle: "スライドバナー＆画像アセット (紹介ページのプレビュー用)",
+	slide1Label: "スライドバナー 1",
+	slide2Label: "スライドバナー 2",
+	slide3Label: "スライドバナー 3",
+	aboutImgLabel: "紹介画像 (About Us Image)",
+	uploadSlide1: "スライド1画像をアップロード",
+	uploadSlide2: "スライド2画像をアップロード",
+	uploadSlide3: "スライド3画像をアップロード",
+	uploadAboutImg: "紹介画像をアップロード",
+	loadMockupBtn: "サンプルデータ読込",
+	previewLandingBtn: "紹介ページのプレビュー",
+	websiteOptionLabel: "企業ウェブサイトの選択",
+	websiteOptionExternal: "すでに独自のウェブサイトがある (URLを入力)",
+	websiteOptionInternal: "独自のウェブサイトがまだない (カスタム紹介ページを作成)",
+	websiteUrlLabel: "企業ウェブサイト of URL",
+	websiteUrlPlaceholder: "例: https://www.company.com",
+	style1Label: "スタイル 1 - Modern Tech (現代的＆シャープ)",
+	style2Label: "スタイル 2 - Elegant Classic (古典的＆上品)",
+	style3Label: "スタイル 3 - Minimalist Clean (極シンプル＆精巧)",
+	style4Label: "スタイル 4 - Vibrant Creative (クリエイティブ＆活発)",
+	style5Label: "スタイル 5 - Trust Corporate (プロフェッショナル＆信頼性)",
+	fieldIt: "情報技術＆ソフトウェア",
+	fieldFinance: "財務・会計サービス",
+	fieldManufacturing: "製造・輸出入",
+	fieldLegal: "法的コンサルティング＆法律",
+	fieldServices: "サービス・商業"
+};
 var userMaster$1 = {
 	title: "ユーザー管理",
 	code: "ユーザーコード",
@@ -11279,8 +11913,65 @@ var document$1 = {
 	viewerNotSupportedTitle: "プレビュー非対応",
 	viewerNotSupportedDesc: "このファイル形式はオンラインプレビューに対応していません。ダウンロードしてご確認ください。",
 	downloadFile: "ファイルをダウンロード",
-	deleteConfirmTitle: "ドキュメント削除の確認",
-	deleteConfirmDesc: "このドキュメントをシステムから削除してもよろしいですか？この操作は取り消すことができず、永久に削除されます。"
+	deleteConfirmTitle: "書類削除の確認",
+	deleteConfirmDesc: "このドキュメントをシステムから削除してもよろしいですか？この操作は取り消すことができず、永久に削除されます。",
+	msgFileTooLarge: "ファイルが大きすぎます",
+	msgFileTooLargeDesc: "10MB以下のファイルを選択してください。",
+	msgNoFile: "ファイル未選択",
+	msgNoFileDesc: "アップロードするドキュメントを選択してください。",
+	msgNoType: "ドキュメントタイプ未選択",
+	msgNoTypeDesc: "ドキュメントタイプを選択してください。",
+	msgNoLink: "リンク未設定",
+	msgNoLinkDesc: "ドキュメントを添付するレコードを選択してください。",
+	msgUploadSuccess: "ドキュメントのアップロードとリンクが成功しました。",
+	msgUploadError: "ドキュメントのアップロード中にエラーが発生しました。",
+	msgViewError: "ドキュメントを表示できません。",
+	msgDownloadError: "ドキュメントをダウンロードできません。",
+	msgDeleteSuccess: "ドキュメントをシステムから削除しました。",
+	msgDeleteError: "ドキュメントの削除中にエラーが発生しました。",
+	maxSizeText: "最大サイズ: 10MB",
+	tooltipGrid: "グリッド表示",
+	tooltipList: "リスト表示",
+	uploadedBy: "アップロード者",
+	deleteConfirmWarning: "この操作は取り消せません！",
+	deleteConfirmDetails: "システムはクラウドストレージから添付ファイル {name} を永久に削除します。よろしければ続行してください。",
+	pageDesc: "ドキュメントの一元管理、アップロード、および従業員、契約、費用へのスマートなリンクを行います。",
+	uploadDoc: "ドキュメントをアップロード",
+	totalDocs: "ドキュメント総数",
+	employeeDocs: "従業員書類",
+	contractDocs: "契約書",
+	transactionDocs: "インボイス＆収支",
+	placeholderSearch: "ドキュメントコード、ファイル名...",
+	placeholderFormat: "ファイル形式",
+	noData: "システムにドキュメントが見つかりません",
+	transactionCode: "収支コード #{id}",
+	notLinked: "リンク未設定",
+	preview: "プレビュー",
+	downloadTooltip: "ダウンロード",
+	deleteTooltip: "ドキュメント削除",
+	uploadDialogHeader: "ドキュメントのアップロードとリンク",
+	docTypeLabel: "書類＆ドキュメントの種類",
+	placeholderSelectType: "書類の分類を選択",
+	linkToTarget: "{target}にリンクする",
+	placeholderSearchTarget: "{target}を検索して選択...",
+	processUpload: "アップロード処理",
+	previewDialogHeader: "ドキュメント表示: {name}",
+	deleteForeverTitle: "このファイルを永久に削除しますか？",
+	colName: "ドキュメント / ファイル名",
+	colType: "分類",
+	colLinkedTo: "リンク先",
+	colUploadedAt: "アップロード日",
+	tabAll: "すべてのドキュメント",
+	tabEmployee: "従業員情報",
+	tabContract: "労働契約",
+	tabTransaction: "インボイス＆経費",
+	extPdf: "PDFファイル (.pdf)",
+	extImage: "画像 (.png, .jpg)",
+	extWord: "Wordファイル (.doc, .docx)",
+	extExcel: "Excelファイル (.xls, .xlsx)",
+	otherDocs: "その他の書類",
+	filesize: "サイズ",
+	deleteWarningDetails: "ドキュメント「{name}」はサーバーから永久に削除されます。この操作は取り消せません。"
 };
 var employee$1 = {
 	title: "従業員管理",
@@ -11313,14 +12004,22 @@ var employee$1 = {
 	phone: "電話番号",
 	department: "部署",
 	selectDepartment: "部署を選択",
-	jobTitle: "役職",
+	jobTitle: "職位",
 	selectJobTitle: "役職を選択",
 	statusActive: "在職中",
 	statusInactive: "退職",
 	statusProbation: "試用期間",
 	roleAdmin: "管理者",
-	roleManager: "マネージャー",
+	roleRbacTooltipTitle: "ロールベースのアクセス制御 (RBAC) 権限一覧",
+	roleManager: "マネージャー／取締役",
+	roleHr: "人事 (HR)",
+	roleAccountant: "経理 (Accountant)",
 	roleStaff: "一般社員",
+	roleAdminDesc: "フルシステム管理権限",
+	roleManagerDesc: "取締役 / 経営執行役員",
+	roleHrDesc: "人事情報、契約、勤怠、休暇の管理",
+	roleAccountantDesc: "財務、収支取引、給与計算の管理",
+	roleStaffDesc: "個人情報閲覧、自己打刻、休暇申請のみ",
 	placeholderSearch: "氏名、メール、従業員コード...",
 	dialogDisableTitle: "従業員を無効化しますか？",
 	dialogDisableDesc: "従業員 {name} のステータスが「無効 (INACTIVE)」に変更されます。",
@@ -11358,7 +12057,7 @@ var employee$1 = {
 	relativesTitle: "親族一覧",
 	relativesDesc: "緊急連絡先と扶養者情報",
 	addRelative: "親族追加",
-	relationship: "続柄",
+	relationship: "関係",
 	occupation: "職業",
 	address: "住所",
 	emergencyContact: "緊急連絡先",
@@ -11411,7 +12110,59 @@ var employee$1 = {
 	relationshipSibling: "兄弟姉妹",
 	relationshipOther: "その他",
 	noViewUrl: "書類プレビューのURLがありません。",
-	noDownloadUrl: "書類ダウンロードのURLがありません。"
+	noDownloadUrl: "書類ダウンロードのURLがありません。",
+	viewError: "ドキュメントを表示できません。",
+	downloadError: "ドキュメントをダウンロードできません。",
+	startDate: "開始日",
+	salary: "給与額",
+	placeholderHometown: "例: ハナム",
+	placeholderPlaceOfBirth: "産婦人科病院",
+	placeholderNationality: "ベトナム",
+	placeholderReligion: "なし",
+	sectionAccountWork: "2. アカウント＆業務",
+	sectionAccountWorkDesc: "連絡先情報、専任部署、およびシステム権限",
+	sectionContactAddress: "3. 連絡先住所",
+	sectionContactAddressDesc: "住民登録住所および現在の居住地住所",
+	placeholderBankAccountType: "普通",
+	noRelatives: "扶養家族が追加されていません。上のボタンをクリックして新規作成してください。",
+	relativeNumber: "扶養家族 #",
+	deleteRelativeTooltip: "この扶養家族を削除",
+	birthday: "生年月日",
+	dependentTax: "扶養家族（所得控除）",
+	pendingUpload: "アップロード待ち",
+	deletePendingFileTooltip: "待機ファイルを削除",
+	deletePeriodTooltip: "この期間を削除",
+	placeholderSalary: "例: 10,000,000",
+	placeholderSalaryReason: "例: 定期昇給",
+	endDateBeforeStartDate: "終了日は開始日より前であってはなりません",
+	removedPendingFile: "待機リストからドキュメントを削除しました。",
+	imageTooLarge: "画像が大きすぎます",
+	imageTooLargeDesc: "2MB以下の画像を選択してください。",
+	updateSuccess: "従業員情報を更新しました。",
+	createSuccess: "新しい従業員の作成に成功しました。",
+	createAndUploadSuccess: "新しい従業員を作成し、{successCount} 件のドキュメントを正常にアップロードしました。",
+	uploadDocsError: "ドキュメントアップロードエラー",
+	createSuccessUploadError: "新しい従業員の作成に成功しましたが、一部のドキュメントのアップロードに失敗しました（成功: {successCount} 件、失敗: {failCount} 件）。",
+	fileTooLarge: "ファイルサイズ超過",
+	fileTooLargeDesc: "10MB以下のファイルを選択してください。",
+	addedPendingFile: "ドキュメントを待機リストに追加しました。",
+	uploadDocsSuccess: "ドキュメントのアップロードに成功しました。",
+	uploadDocsFailed: "ドキュメントのアップロード中にエラーが発生しました。",
+	deleteDocConfirm: "この書類を削除してもよろしいですか？この操作は取り消せません。",
+	deleteDocSuccess: "書類を削除しました。",
+	deleteDocFailed: "書類の削除中にエラーが発生しました。",
+	ocrTitle: "Gemini AIを使用したプロフィール簡易入力",
+	ocrDesc: "履歴書、身分証明書、パスポート、またはExcelシートをアップロードして、AIがフォームのフィールドに自動入力します。",
+	ocrButton: "ファイル選択＆解析",
+	ocrLoading: "Gemini AIがドキュメントをスキャンし、情報を解析しています...",
+	ocrSuccessTitle: "解析成功",
+	ocrSuccessDesc: "情報がフォームに自動的に入力されました。",
+	ocrErrorTitle: "エラー",
+	ocrErrorDesc: "ドキュメントから情報を抽出できませんでした。",
+	ocrFileTooLarge: "ファイルが大きすぎます",
+	ocrFileTooLargeDesc: "ファイル「{name}」は制限の10MBを超えています。",
+	ocrConnectError: "ファイルに接続または処理できませんでした。",
+	name: "従業員"
 };
 var gender$1 = {
 	male: "男性",
@@ -11419,6 +12170,14 @@ var gender$1 = {
 	other: "その他"
 };
 var contract$1 = {
+	companySection: "甲様: 運営企業情報",
+	companyNameLabel: "運営企業名 (甲様)",
+	companyTaxCodeLabel: "甲様税コード",
+	companyAddressLabel: "甲様住所",
+	companyRepresentativeLabel: "甲様代表者",
+	companyRepresentativeRoleLabel: "代表者役職",
+	defaultConfig: "デフォルト設定",
+	contractInfo: "契約情報",
 	title: "契約管理",
 	createTitle: "新規契約締結",
 	editTitle: "契約更新",
@@ -11465,6 +12224,9 @@ var contract$1 = {
 	complianceTitle: "コンプライアンス登録",
 	complianceDescCreate: "送信時、契約は既存の人事リストと自動的にクロスチェックされ、保存前に合法性が確保されます。",
 	complianceDescEdit: "契約パラメータ（給与、残業条件）の更新は、給与計算・残業管理システムに自動同期されます。",
+	complianceDescView: "契約の詳細は、法的リスクと労働紛争を防止するためにコンプライアンスシステムにより自動的に監視されています。",
+	viewDetails: "契約詳細",
+	edmReadonly: "この契約に添付された書類の一覧。",
 	submitContract: "契約を完了",
 	missingInfo: "情報不足",
 	saveSuccess: "成功",
@@ -11547,7 +12309,18 @@ var contract$1 = {
 	sizeErrorDesc: "添付ファイルのサイズは10MBを超えてはなりません",
 	statusPending: "承認待ち (PENDING)",
 	employmentFullTimeVn: "正社員 (ベトナム)",
-	employmentPartTimeVn: "アルバイト (ベトナム)"
+	employmentPartTimeVn: "アルバイト (ベトナム)",
+	ocrTitle: "Gemini AIを使用した契約書簡易入力",
+	ocrDesc: "雇用契約書のスキャンファイル、画像、またはExcelテンプレートをアップロードして、AIが契約フィールドに自動入力します。",
+	ocrButton: "ファイル選択＆解析",
+	ocrLoading: "Gemini AIがドキュメントをスキャンし、情報を解析しています...",
+	ocrSuccessTitle: "契約書解析成功",
+	ocrSuccessDesc: "抽出された契約情報がフォームに入力されました。",
+	ocrErrorTitle: "エラー",
+	ocrErrorDesc: "契約情報を抽出できませんでした。",
+	ocrFileTooLarge: "ファイルが大きすぎます",
+	ocrFileTooLargeDesc: "ファイル「{name}」は制限 of 10MBを超えています。",
+	ocrConnectError: "契約書に接続または処理できませんでした。"
 };
 var timesheet$1 = {
 	title: "個人タイムシート",
@@ -11568,6 +12341,20 @@ var timesheet$1 = {
 	success: "打刻成功",
 	checkInSuccess: "本日正常にチェックインしました。",
 	checkOutSuccess: "本日正常にチェックアウトしました。",
+	multiModalCheckin: "マルチモード打刻システム",
+	qrTab: "個人QRコード",
+	deviceTab: "指紋・顔認証デバイス",
+	qrDesc: "自動的に打刻するには、スキャナーのカメラの前に個人のQRコードをかざしてください。",
+	qrRefreshesIn: "{seconds} 秒後に自動更新されます",
+	deviceConnected: "スキャナー: ZK-Teco FaceID Pro #01",
+	deviceStatusConnected: "接続中",
+	deviceSyncDesc: "システムは5分ごとに指紋と顔認証データを自動的に同期します。",
+	syncButtonLabel: "デバイスから同期",
+	syncingText: "タイムレコーダーに接続中...",
+	syncSuccess: "同期成功！最新の2件の打刻ログを読み込み、記録しました。",
+	simulateQrBtn: "オフィススキャナーをシミュレート",
+	simulatingScan: "オフィスのカメラで個人QRコードをスキャンするシミュレーション中...",
+	alreadyCheckedOut: "本日の出退勤の打刻は既に完了しています。",
 	date: "日付",
 	status: "ステータス",
 	day0: "日曜日",
@@ -11606,24 +12393,26 @@ var timesheet$1 = {
 	baseSalary: "基本給",
 	workingDaysActualStandard: "出勤日数 (実績/所定)",
 	overtimeCol: "残業 (OT)",
-	attendanceAllowance: "精勤手当",
+	attendanceAllowance: "皆勤手当",
 	deductionLate: "遅刻控除",
-	deductionLeave: "欠勤控除",
+	deductionLeave: "無断欠勤控除",
 	advancePayment: "前払い金",
-	netSalary: "差引支給額",
+	netSalary: "手取り額 (Net)",
 	statusPaid: "支払済",
 	statusPending: "未処理",
 	payrollDetailsFor: "給与明細: {name} ({code})",
-	actualWorkingDays: "実出勤日数",
+	actualWorkingDays: "実働日数",
 	payrollMonth: "対象月",
 	overtimeSalary: "時間外勤務手当 (残業代)",
 	attendanceAllowanceLabel: "精勤手当",
 	deductionLateLabel: "遅刻控除額",
 	deductionLeaveLabel: "所定外欠勤控除額",
-	deductionUnion: "労働組合費",
+	deductionUnion: "組合費",
 	deductionTax: "所得税",
 	deductionUnionLabel: "組合費控除",
 	deductionTaxLabel: "所得税控除 (源泉徴収税)",
+	totalDeductions: "控除合計",
+	deductionInsuranceLabel: "社会保険料 (10.5%)",
 	advancePaymentLabel: "前払い・仮払金",
 	paymentStatusLabel: "支払状況",
 	netSalaryLabel: "差引支給額",
@@ -11768,6 +12557,9 @@ var timesheet$1 = {
 	overtimeStatus: "残業",
 	overtimeAllowed: "許可",
 	overtimeNotAllowed: "不許可",
+	overtimeAllowedWithMax: "許可（最大 {hours} 時間）",
+	leave: "休暇",
+	resetDefault: "デフォルトシフトへ復元",
 	assignShiftsTitle: "従業員シフト・残業予定表",
 	assignShiftsDesc: "柔軟なシフト、残業時間設定、および月間休暇情報の同期を管理します。",
 	bulkActions: "一括操作",
@@ -11809,7 +12601,56 @@ var timesheet$1 = {
 	dialogBulkResetWarningPrefix: "この操作により、指定された期間内において選択された",
 	dialogBulkResetWarningSuffix: "名の従業員のスケジュールがシステムデフォルトのシフトに復元されます。",
 	applyToWeekdays: "適用曜日",
-	confirm: "確定"
+	confirm: "確定",
+	msgResetShiftDefault: "{name}のシフトをデフォルトにリセットしました",
+	msgSelectShift: "シフトを選択してください",
+	msgSelectDateRange: "期間を選択してください",
+	msgSelectWeekday: "少なくとも1つの曜日を選択してください",
+	msgSelectEmployee: "少なくとも1人の従業員を選択してください",
+	msgSetShiftSuccess: "シフト設定が成功しました",
+	msgResetDefaultSuccess: "デフォルトシフトに復元しました",
+	msgSelectWeekdayAssign: "適用する曜日を少なくとも1つ選択してください",
+	msgSelectWeekdayReset: "リセットする曜日を少なくとも1つ選択してください",
+	msgPayrollLoadError: "給与データを読み込めません",
+	msgPayrollSaveSuccess: "給与情報を更新しました",
+	msgPayrollSaveError: "給与情報の保存中にエラーが発生しました",
+	msgExportExcelError: "Excelファイルをエクスポートできません",
+	msgExportPdfError: "PDFファイルをエクスポートできません",
+	msgSaveManualSuccess: "打刻の保存に成功しました",
+	insuranceLabel: "保険 (10.5%)",
+	otNormal: "通常:",
+	otWeekend: "週末:",
+	otHoliday: "祝日:",
+	total: "合計:",
+	socialInsurance: "社会保険:",
+	healthInsurance: "医療保険:",
+	unemploymentInsurance: "雇用保険:",
+	payrollAdjustmentInfo: "給与調整情報",
+	standardWorkingDays: "基準労働日数",
+	otNormalHours: "通常OT（時間）",
+	otWeekendHours: "週末OT（時間）",
+	otHolidayHours: "祝日OT（時間）",
+	dependents: "扶養家族数",
+	taxAndNetSalaryDetails: "税金＆手取り詳細",
+	dailyRate: "日給単価",
+	dayUnit: "日",
+	overtimePay: "時間外手当",
+	otNormalRate: "平日 (1.5x)",
+	otWeekendRate: "週末 (2.0x)",
+	otHolidayRate: "祝日 (3.0x)",
+	attendanceDeduction: "遅刻・欠勤控除",
+	grossSalary: "総支給額 (GROSS)",
+	insuranceDeduction: "強制保険 (10.5%)",
+	socialInsuranceDeduction: "社会保険 (8%)",
+	healthInsuranceDeduction: "医療保険 (1.5%)",
+	unemploymentInsuranceDeduction: "雇用保険 (1%)",
+	incomeBeforeTax: "税引前所得",
+	progressivePit: "累進個人所得税",
+	selfDeduction: "基礎控除",
+	dependentDeduction: "扶養控除",
+	personUnit: "人",
+	taxableIncome: "課税所得",
+	unionAndAdvance: "組合費＆前払い"
 };
 var leaveRequest$1 = {
 	title: "休暇申請",
@@ -11832,6 +12673,8 @@ var leaveRequest$1 = {
 	tabRejected: "却下済み",
 	noRequest: "現在、休暇申請はありません。",
 	noRequestWithStatus: "{status} 状態の休暇申請はありません。",
+	searchEmployeePlaceholder: "名前、社員番号で検索...",
+	typeSelect: "休暇種別を選択...",
 	allDay: "終日",
 	morning: "午前休",
 	afternoon: "午後休",
@@ -11875,7 +12718,16 @@ var leaveRequest$1 = {
 	submitSuccess: "休暇申請の送信完了",
 	submitSuccessDesc: "休暇申請がマネージャーに送信されました。",
 	from: "開始",
-	to: "終了"
+	to: "終了",
+	attachment: "添付書類",
+	uploadInstructions: "ファイルをドラッグ＆ドロップするか、クリックしてアップロード",
+	attachmentCol: "添付書類",
+	noAttachment: "添付ファイルなし",
+	viewAttachment: "添付ファイルを表示",
+	attachmentPlaceholder: "証明書類（診断書、乗車券など）を選択してください",
+	fileSizeLimitError: "ファイルサイズは制限の10MBを超えています。",
+	uploadFormats: "PDF、DOC、DOCX、ZIPまたは画像（最大10MB）",
+	hasAttachment: "添付ファイルあり"
 };
 var compliance$1 = {
 	title: "コンプライアンス管理",
@@ -12016,7 +12868,11 @@ var dashboard$1 = {
 	unclassified: "未分類",
 	noTransactions: "財務取引データがありません。",
 	msgConnectError: "接続エラー",
-	msgSyncError: "ダッシュボードデータを同期できませんでした。"
+	msgSyncError: "ダッシュボードデータを同期できませんでした。",
+	ageDemographics: "従業員年齢構成",
+	ageDemographicsDesc: "企業内の年齢グループ別の従業員比率",
+	genderDemographics: "従業員男女比率",
+	genderDemographicsDesc: "企業内の男女従業員の比率"
 };
 var transaction$1 = {
 	title: "キャッシュフローと経費",
@@ -12163,7 +13019,15 @@ var transaction$1 = {
 	typeRevenue: "収益 (REVENUE)",
 	updateSubtitle: "取引詳細の更新",
 	updateSuccess: "取引の更新に成功しました",
-	updateSuccessDesc: "取引内容および添付書類が保存されました。"
+	updateSuccessDesc: "取引内容および添付書類が保存されました。",
+	viewDetails: "取引詳細",
+	edmReadonly: "この取引に添付された書類の一覧。",
+	complianceBadge: "コンプライアンス管理",
+	complianceTitle: "書類検証状況",
+	msgFormatError: "フォーマットエラー",
+	msgFormatErrorDesc: ".{ext}形式はサポートされていません。",
+	msgSizeError: "サイズ制限超過",
+	msgSizeErrorDesc: "ファイル{name}は10MBを超えています。"
 };
 var pagination$1 = {
 	total: "合計: {total} 件",
@@ -12171,7 +13035,10 @@ var pagination$1 = {
 };
 var common$1 = {
 	cancel: "キャンセル",
-	"delete": "削除"
+	"delete": "削除",
+	system: "システム",
+	actions: "アクション",
+	index: "番号"
 };
 var themeCustomizer$1 = {
 	title: "サイドバー設定",
@@ -12208,7 +13075,147 @@ var themeCustomizer$1 = {
 	fontPlayfair: "Playfair (クラシックセリフ)",
 	fontMono: "Roboto Mono (等幅)"
 };
-const locale_ja_46json_1fe0de68 = {
+var notification$1 = {
+	title: "通知",
+	pageTitle: "通知センター",
+	"new": "新着",
+	markAllRead: "すべて既読",
+	empty: "通知はありません",
+	emptyDesc: "システム通知はここに表示されます。",
+	justNow: "たった今",
+	minutesAgo: "{n}分前",
+	hoursAgo: "{n}時間前",
+	daysAgo: "{n}日前",
+	viewAll: "すべての通知を表示",
+	searchPlaceholder: "通知を検索...",
+	searchBtn: "検索",
+	allTypes: "すべてのタイプ",
+	filterAll: "すべて",
+	filterUnread: "未読",
+	filterRead: "既読",
+	totalLabel: "通知合計",
+	unreadLabel: "未読",
+	readLabel: "既読",
+	readStatus: "既読",
+	goToAction: "移動",
+	loading: "通知を読み込み中...",
+	typeLeaveCreated: "新規休暇申請",
+	typeLeaveApproved: "休暇承認済み",
+	typeLeaveRejected: "休暇却下",
+	typeCompliance: "コンプライアンス警告",
+	typeContract: "契約",
+	typeTransaction: "取引"
+};
+var quickSignSuccess$1 = "契約書の署名に成功しました。";
+var placeholder$1 = {
+	selectCategory: "カテゴリを選択",
+	selectItem: "項目を選択",
+	selectMethod: "方法を選択",
+	selectStatus: "ステータスを選択",
+	enterTotalAmount: "総額を入力",
+	selectTaxRate: "税率を選択",
+	amountBeforeTax: "税抜金額",
+	taxAmount: "消費税額",
+	taxNoteExample: "例：源泉所得税10%、請負税など...",
+	japanInvoiceNo: "T1234567890123 (日本国内の経費の場合)",
+	vietnamTechCompany: "ベトナムテクノロジーソリューションズ株式会社",
+	taxCode: "税務番号",
+	registeredAddress: "登録住所",
+	legalRepresentative: "法的代表者氏名",
+	jobTitleExample: "例：取締役、総支配人",
+	enterContractCode: "契約コードを入力",
+	enterContractValue: "契約金額を入力",
+	enterCurrencyValue: "通貨金額を入力",
+	jobTitleDev: "例：プログラマー、管理者",
+	officeExample: "例：ハノイ本社、東京オフィス",
+	numberEight: "例：8",
+	durationTwoMonths: "例：2ヶ月",
+	numberEightyFive: "例：85",
+	bankNames: "例：Vietcombank、Techcombank",
+	accountNumber: "例：1018273645",
+	insuranceType: "社会保険、医療保険、失業保険、または特別商業保険",
+	enterOfficialCompanyName: "商業登記上の正式名称を入力",
+	enterPartnerTaxCode: "取引先の税務番号を入力",
+	partnerLegalJob: "例：取締役、総支配人、CEO",
+	partnerAddress: "取引先の公式取引住所",
+	paymentTerm: "例：Net 30、契約時100%支払い",
+	otHours: "例：20時間または30時間",
+	systemAutoGenerated: "システム自動生成",
+	companyNameDemo: "テクノロジーソリューションズ有限会社",
+	fullNameExample: "山田 太郎",
+	addressDemo: "ハノイ市ナムトゥリエム区メーチー、キアンナムランドマークタワー",
+	addressDetailDemo: "ハノイ市ナムトゥリエム区メーチー、キアンナムランドマークタワー12階",
+	companyNote: "この企業に関する特別なメモを入力してください...",
+	selectFont: "フォントを選択...",
+	searchAndSelectType: "{type}を検索して選択してください..."
+};
+var board$1 = {
+	title: "社内掲示板",
+	createPost: "新規投稿の作成",
+	editPost: "投稿の編集",
+	deletePost: "投稿の削除",
+	deletePostConfirm: "この投稿を削除してもよろしいですか？この操作は取り消せません。",
+	deleteCommentConfirm: "このコメントを削除してもよろしいですか？",
+	postTitle: "タイトル",
+	postContent: "本文",
+	postLink: "関連リンク (URL)",
+	postImage: "画像をアップロード",
+	postTag: "タグ設定",
+	submitPost: "投稿する",
+	updatePost: "更新する",
+	allTags: "すべてのタグ",
+	tagImportant: "重要",
+	tagAnnouncement: "お知らせ",
+	tagEvent: "イベント",
+	tagNews: "ニュース",
+	likes: "いいね",
+	comments: "コメント",
+	writeComment: "コメントを入力...",
+	sendComment: "送信",
+	noPosts: "掲示板に投稿はありません。",
+	errorCreate: "投稿の作成に失敗しました。入力内容を確認してください。",
+	successCreate: "新規投稿を作成しました！",
+	successDelete: "投稿を削除しました。",
+	successUpdate: "投稿を更新しました！",
+	authorAdmin: "経営陣",
+	authorManager: "部門長",
+	attachedLink: "関連リンクを開く",
+	description: "公式のお知らせ、注目イベント、社内ニュースの更新やメンバーとのつながりの場所です。",
+	createPostSubtitle: "全社員向けの情報を投稿する",
+	placeholderTitle: "ニュースのタイトルまたはお知らせを入力...",
+	placeholderTag: "タグを選択してください...",
+	changeImage: "画像を変更",
+	selectImage: "画像を選択",
+	removeCurrentImage: "現在の画像を削除",
+	placeholderContent: "投稿、ニュース、または業務指示などをここに入力...",
+	firstToShare: "最初の投稿を共有しましょう。",
+	systemUser: "システムユーザー",
+	defaultDept: "総務",
+	defaultTitle: "一般",
+	likeBtn: "いいね",
+	commentBtn: "コメント",
+	noComments: "まだコメントはありません。最初のコメントを書き込みましょう！",
+	systemEmployee: "システム社員",
+	deleteComment: "コメントの削除",
+	placeholderComment: "コメントを入力...",
+	loadMorePosts: "さらに読み込む",
+	placeholderSelectTag: "タグを選択...",
+	imageWillBeDeleted: "更新時に現在の画像が削除されます",
+	restore: "復元",
+	changeSelectedImage: "選択した画像を変更",
+	uploadReplacementImage: "新しい画像をアップロードして置き換える",
+	failUpdate: "投稿の更新に失敗しました。再試行してください。",
+	failDelete: "投稿の削除に失敗しました。",
+	failAction: "操作に失敗しました。",
+	failComment: "コメントの投稿に失敗しました。",
+	successDeleteComment: "コメントを削除しました。",
+	failDeleteComment: "コメントの削除に失敗しました。",
+	likesNoOne: "まだいいねはありません",
+	likesBy: "いいね：{names}",
+	likesByAndOthers: "いいね：{names} 他{count}人",
+	failFetch: "掲示板の読み込みに失敗しました。再試行してください。"
+};
+const locale_ja_46json_63a99cd6 = {
 	btn: btn$1,
 	text: text$1,
 	msgCommon: msgCommon$1,
@@ -12247,6 +13254,7 @@ const locale_ja_46json_1fe0de68 = {
 	user: user$1,
 	position: position$1,
 	company: company$1,
+	companySetting: companySetting$1,
 	userMaster: userMaster$1,
 	document: document$1,
 	employee: employee$1,
@@ -12259,7 +13267,11 @@ const locale_ja_46json_1fe0de68 = {
 	transaction: transaction$1,
 	pagination: pagination$1,
 	common: common$1,
-	themeCustomizer: themeCustomizer$1
+	themeCustomizer: themeCustomizer$1,
+	notification: notification$1,
+	quickSignSuccess: quickSignSuccess$1,
+	placeholder: placeholder$1,
+	board: board$1
 };
 
 var btn = {
@@ -12309,7 +13321,13 @@ var btn = {
 	showAll: "Chi tiết",
 	logOut: "Đăng xuất",
 	close: "Đóng",
-	sync: "Cập nhật"
+	sync: "Cập nhật",
+	logout: "Đăng xuất",
+	upload: "Tải ảnh lên",
+	error: "Lỗi",
+	deleteConfirm: "Đồng ý Xóa",
+	exportExcel: "Xuất Excel",
+	exportPdf: "Xuất PDF"
 };
 var text = {
 	cancel: "Hủy",
@@ -12327,6 +13345,9 @@ var text = {
 	errorTimePast: "Vui lòng không chọn thời gian trong quá khứ.",
 	saveSuccess: "Đã lưu {field} thành công.",
 	max255: "Vui lòng nhập {field} trong vòng 255 ký tự.",
+	max500: "Vui lòng nhập {field} trong vòng 500 ký tự.",
+	max150: "Vui lòng nhập {field} trong vòng 150 ký tự.",
+	max100: "Vui lòng nhập {field} trong vòng 100 ký tự.",
 	max50: "Vui lòng nhập {field} trong vòng 50 ký tự.",
 	max20: "Vui lòng nhập {field} trong vòng 20 ký tự.",
 	max10: "Vui lòng nhập {field} trong vòng 10 ký tự.",
@@ -12437,9 +13458,11 @@ var text = {
 	confirmLogoutText: "Quy trình này không thể hoàn tác.",
 	addSuccess: "Thêm mới thành công.",
 	edit: "Chỉnh sửa",
+	viewDetail: "Xem chi tiết",
 	errorMessage: "Thông tin không hợp lệ hoặc lỗi hệ thống.",
 	info: "Thông tin",
-	warning: "Cảnh báo"
+	warning: "Cảnh báo",
+	errorSystem: "Có lỗi xảy ra"
 };
 var msgCommon = {
 	select: "Chọn",
@@ -12533,7 +13556,35 @@ var auth = {
 	sendForgotPass: "Gửi mã xác thực",
 	otp: "OTP",
 	errorEmail: "Địa chỉ email không hợp lệ. Vui lòng kiểm tra lại.",
-	inactive: "Truy cập bị từ chối. Tài khoản đã bị khóa hoặc chưa được kích hoạt."
+	inactive: "Truy cập bị từ chối. Tài khoản đã bị khóa hoặc chưa được kích hoạt.",
+	msgWelcomeBack: "Chào mừng {name} quay trở lại!",
+	msgMustChangePassword: "Yêu cầu đổi mật khẩu",
+	msgMustChangePasswordDesc: "Đây là lần đầu đăng nhập. Vui lòng đổi mật khẩu để kích hoạt tài khoản!",
+	msgChangePasswordSuccess: "Mật khẩu đã được thay đổi thành công.",
+	changePasswordDesc: "Thay đổi mật khẩu tài khoản của bạn. Mật khẩu mới phải chứa ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, chữ số và ký tự đặc biệt.",
+	currentPassword: "Mật khẩu hiện tại",
+	currentPasswordPlaceholder: "Nhập mật khẩu hiện tại",
+	newPasswordPlaceholder: "Nhập mật khẩu mới",
+	confirmPasswordPlaceholder: "Nhập lại mật khẩu mới",
+	lowercaseHint: "Chữ thường (a-z)",
+	uppercaseHint: "Chữ hoa (A-Z)",
+	digitHint: "Chữ số (0-9)",
+	specialHint: "Ký tự đặc biệt (!{'@'}#$...)",
+	minLengthHint: "Ít nhất 8 ký tự",
+	maxLengthHint: "Tối đa 50 ký tự",
+	backToLogin: "Quay về đăng nhập",
+	usernameLabel: "ID người dùng / Email / Số điện thoại",
+	usernamePlaceholder: "Nhập ID người dùng, email hoặc SĐT",
+	defaultSloganTitle1: "Kiểm soát",
+	defaultSloganTitle2: "tuân thủ",
+	defaultSloganTitle3: "toàn diện.",
+	defaultSloganDesc: "Hệ thống quản lý hồ sơ pháp lý, nhân sự, hợp đồng và tài liệu doanh nghiệp đa quốc gia Việt Nam - Nhật Bản.",
+	passwordMin: "Mật khẩu phải chứa ít nhất 8 ký tự.",
+	passwordMax: "Mật khẩu không được vượt quá 50 ký tự.",
+	passwordLower: "Mật khẩu phải chứa ít nhất 1 chữ thường (a-z).",
+	passwordUpper: "Mật khẩu phải chứa ít nhất 1 chữ hoa (A-Z).",
+	passwordDigit: "Mật khẩu phải chứa ít nhất 1 chữ số (0-9).",
+	passwordSpecial: "Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt (!{'@'}#$%...)."
 };
 var notFound = {
 	backToHome: "Quay về trang chủ"
@@ -12554,6 +13605,10 @@ var router = {
 	customerDetail: "Chi tiết khách hàng"
 };
 var menu = {
+	main: "Chức Năng Chính",
+	companyBoard: "Bảng tin doanh nghiệp",
+	masterData: "Dữ liệu cấu hình",
+	industrialDashboard: "Bảng điều khiển công nghiệp",
 	master: "Master",
 	list: "Danh sách",
 	register: "Đăng ký",
@@ -12567,6 +13622,7 @@ var menu = {
 	positionAdd: "Thêm mới chức vụ",
 	positionEdit: "Chỉnh sửa chức vụ",
 	company: "Quản lý công ty",
+	companySetting: "Cấu hình thông tin công ty",
 	companyList: "Danh sách công ty",
 	companyAdd: "Thêm mới công ty",
 	companyEdit: "Chỉnh sửa công ty",
@@ -12586,7 +13642,11 @@ var menu = {
 	transaction: "Quản lý thu chi (Cash Flow)",
 	compliance: "Kiểm soát Tuân thủ",
 	document: "Quản lý tài liệu & hồ sơ",
-	member: "Quản lý thành viên"
+	member: "Quản lý thành viên",
+	myProfile: "Hồ sơ cá nhân",
+	logout: "Đăng xuất",
+	sidebarConfig: "Cấu hình Sidebar",
+	changePassword: "Đổi mật khẩu"
 };
 var department = {
 	code: "Mã phòng ban",
@@ -12672,6 +13732,86 @@ var company = {
 	headOfficeAddress: "Địa chỉ trụ sở",
 	registeredAddress: "Địa chỉ đăng ký"
 };
+var companySetting = {
+	desc: "Cấu hình thông tin pháp lý doanh nghiệp chủ quản",
+	basicSectionTitle: "Thông tin cơ bản doanh nghiệp chủ quản",
+	basicSectionDesc: "Điền thông tin đăng ký doanh nghiệp chủ quản chính thức của bạn.",
+	namePlaceholder: "Công ty Cổ phần Giải pháp Công nghệ",
+	nameKana: "Tên viết tắt / Tên Kana",
+	capital: "Vốn điều lệ",
+	capitalPlaceholder: "Ví dụ: 10.000.000.000 VNĐ hoặc 100.000.000 JPY",
+	corporatePlaceholder: "GPKD: 1234567890123",
+	legalTitle: "Người đại diện pháp luật",
+	legalDesc: "Thông tin cá nhân pháp lý của người đại diện công ty ký kết hợp đồng.",
+	repPlaceholder: "Nguyễn Văn A",
+	repTitle: "Chức danh người đại diện",
+	repTitlePlaceholder: "Ví dụ: Giám đốc / Tổng giám đốc / Chủ tịch",
+	repIdNumber: "Số CMND/CCCD/Hộ chiếu",
+	repIdDate: "Ngày cấp CMND/CCCD",
+	repIdPlace: "Nơi cấp CMND/CCCD",
+	repIdPlacePlaceholder: "Cục Cảnh sát Quản lý hành chính về trật tự xã hội",
+	contactTitle: "Thông tin liên hệ & Địa chỉ",
+	contactDesc: "Địa chỉ trụ sở chính thức và các cổng thông tin liên lạc.",
+	website: "Trang web (Website)",
+	addressPlaceholder: "Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	addressRegisteredPlaceholder: "Tầng 12, Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	brandingTitle: "Cấu hình thương hiệu & Giao diện",
+	brandingDesc: "Thay đổi logo, hình nền đăng nhập, tên hiển thị tại sidebar và khẩu hiệu (slogan) của công ty.",
+	sidebarName: "Tên hiển thị ở Sidebar",
+	sidebarSubName: "Tên hiển thị phụ ở Sidebar",
+	sidebarSubPlaceholder: "Hệ thống Quản lý Tuân thủ",
+	logoLabel: "Logo công ty (Web Logo)",
+	logoAccept: "Chấp nhận JPG, PNG. Khuyên dùng ảnh vuông nền trong suốt.",
+	loginBgLabel: "Hình nền trang đăng nhập",
+	loginBgAccept: "Chấp nhận JPG, PNG. Khuyên dùng tỉ lệ 16:9 hoặc ảnh độ phân giải cao.",
+	slogan1: "Slogan công ty (Dòng 1 - Tiêu đề chính)",
+	slogan1Placeholder: "Tiên phong Công nghệ - Kiến tạo Tương lai",
+	slogan2: "Slogan công ty (Dòng 2)",
+	slogan2Placeholder: "Hệ thống Quản lý Tuân thủ Doanh nghiệp",
+	slogan3: "Slogan công ty (Dòng 3)",
+	slogan3Placeholder: "Nâng tầm Quản trị, Tối ưu Vận hành",
+	complianceBadge: "HỆ THỐNG TUÂN THỦ",
+	defaultContractTitle: "Cài đặt thông tin hợp đồng mặc định",
+	defaultContractDesc: "Các thông tin được khai báo tại trang này sẽ tự động điền vào mục \"Bên A\" (Người sử dụng lao động / Đơn vị giao thầu) khi tạo hợp đồng mới. Nhân sự soạn thảo hợp đồng vẫn có thể chỉnh sửa lại trực tiếp trên từng hợp đồng cụ thể.",
+	uploadLogoSuccess: "Tải logo lên thành công.",
+	uploadLogoError: "Lỗi tải logo lên hệ thống.",
+	uploadBgSuccess: "Tải hình nền lên thành công.",
+	uploadBgError: "Lỗi tải hình nền lên hệ thống.",
+	landingTitle: "Cấu hình Website Doanh nghiệp",
+	landingDescText: "Cấu hình website giới thiệu của công ty bạn bằng liên kết ngoài hoặc tự thiết kế trang giới thiệu",
+	landingStyleLabel: "Giao diện trang giới thiệu",
+	businessFieldLabel: "Lĩnh vực hoạt động",
+	aboutUsLabel: "Lời giới thiệu doanh nghiệp (About Us)",
+	aboutUsPlaceholder: "Giới thiệu sứ mệnh, tầm nhìn và giá trị cốt lõi của công ty...",
+	servicesListLabel: "Danh sách dịch vụ chính (Mỗi dịch vụ một dòng)",
+	servicesListPlaceholder: "Dịch vụ 1: Mô tả ngắn gọn\nDịch vụ 2: Mô tả ngắn gọn\nDịch vụ 3: Mô tả ngắn gọn",
+	bannerDesignTitle: "Thiết kế Slide Banner & Hình ảnh (Xem trước trang giới thiệu)",
+	slide1Label: "Slide Banner 1",
+	slide2Label: "Slide Banner 2",
+	slide3Label: "Slide Banner 3",
+	aboutImgLabel: "Hình ảnh About Us",
+	uploadSlide1: "Tải ảnh Slide 1",
+	uploadSlide2: "Tải ảnh Slide 2",
+	uploadSlide3: "Tải ảnh Slide 3",
+	uploadAboutImg: "Tải ảnh Giới thiệu",
+	loadMockupBtn: "Tải dữ liệu mẫu",
+	previewLandingBtn: "Xem trước trang giới thiệu",
+	websiteOptionLabel: "Lựa chọn Website doanh nghiệp",
+	websiteOptionExternal: "Đã có website riêng (Nhập URL liên kết)",
+	websiteOptionInternal: "Chưa có website riêng (Tự thiết kế trang giới thiệu)",
+	websiteUrlLabel: "Địa chỉ URL Website công ty",
+	websiteUrlPlaceholder: "Ví dụ: https://www.company.com",
+	style1Label: "Style 1 - Modern Tech (Hiện đại & Sắc nét)",
+	style2Label: "Style 2 - Elegant Classic (Cổ điển & Sang trọng)",
+	style3Label: "Style 3 - Minimalist Clean (Tối giản & Tinh tế)",
+	style4Label: "Style 4 - Vibrant Creative (Sáng tạo & Năng động)",
+	style5Label: "Style 5 - Trust Corporate (Chuyên nghiệp & Tin cậy)",
+	fieldIt: "Công nghệ thông tin & Phần mềm",
+	fieldFinance: "Dịch vụ Tài chính & Kế toán",
+	fieldManufacturing: "Sản xuất & Xuất nhập khẩu",
+	fieldLegal: "Tư vấn pháp lý & Luật",
+	fieldServices: "Dịch vụ & Thương mại"
+};
 var userMaster = {
 	title: "Quản lý nhân viên",
 	code: "Mã nhân viên",
@@ -12700,7 +13840,64 @@ var document = {
 	viewerNotSupportedDesc: "Trình duyệt không hỗ trợ xem trực tiếp định dạng này. Vui lòng tải xuống máy để mở.",
 	downloadFile: "Tải xuống tệp tin",
 	deleteConfirmTitle: "Xác nhận xóa tài liệu",
-	deleteConfirmDesc: "Bạn có chắc chắn muốn xóa tài liệu này khỏi hệ thống? Hành động này sẽ xóa vĩnh viễn tệp lưu trữ và không thể khôi phục."
+	deleteConfirmDesc: "Bạn có chắc chắn muốn xóa tài liệu này khỏi hệ thống? Hành động này sẽ xóa vĩnh viễn tệp lưu trữ và không thể khôi phục.",
+	msgFileTooLarge: "Tệp quá lớn",
+	msgFileTooLargeDesc: "Vui lòng chọn tệp có dung lượng dưới 10MB.",
+	msgNoFile: "Chưa chọn file",
+	msgNoFileDesc: "Vui lòng bấm chọn tài liệu cần tải lên.",
+	msgNoType: "Thiếu loại hồ sơ",
+	msgNoTypeDesc: "Vui lòng chọn loại hồ sơ cần lưu trữ.",
+	msgNoLink: "Chưa gắn liên kết",
+	msgNoLinkDesc: "Vui lòng chọn một bản ghi tương ứng để gắn tài liệu.",
+	msgUploadSuccess: "Đã tải lên và liên kết tài liệu thành công.",
+	msgUploadError: "Lỗi xảy ra khi tải lên tài liệu.",
+	msgViewError: "Không thể xem tài liệu.",
+	msgDownloadError: "Không thể tải tài liệu.",
+	msgDeleteSuccess: "Đã xóa tài liệu khỏi hệ thống.",
+	msgDeleteError: "Có lỗi xảy ra khi xóa tài liệu.",
+	maxSizeText: "Dung lượng tối đa: 10MB",
+	tooltipGrid: "Hiển thị lưới",
+	tooltipList: "Hiển thị danh sách",
+	uploadedBy: "Tải lên bởi",
+	deleteConfirmWarning: "Hành động này không thể hoàn tác!",
+	deleteConfirmDetails: "Hệ thống sẽ tiến hành xóa vĩnh viễn tệp đính kèm {name} khỏi lưu trữ đám mây. Hãy chắc chắn trước khi tiếp tục.",
+	pageDesc: "Quản lý tài liệu tập trung, tải lên và gắn hồ sơ thông minh vào nhân sự, hợp đồng và chi phí.",
+	uploadDoc: "Tải lên tài liệu",
+	totalDocs: "Tổng tài liệu",
+	employeeDocs: "Hồ sơ Nhân sự",
+	contractDocs: "Hợp đồng",
+	transactionDocs: "Invoice & Thu Chi",
+	placeholderSearch: "Mã tài liệu, tên file...",
+	placeholderFormat: "Định dạng file",
+	noData: "Không tìm thấy tài liệu nào trên hệ thống",
+	transactionCode: "Mã thu chi #{id}",
+	notLinked: "Chưa gắn liên kết",
+	preview: "Xem trước",
+	downloadTooltip: "Tải xuống",
+	deleteTooltip: "Xóa tài liệu",
+	uploadDialogHeader: "TẢI LÊN & GẮN LIÊN KẾT TÀI LIỆU",
+	docTypeLabel: "Loại Hồ sơ & Tài liệu",
+	placeholderSelectType: "Chọn phân loại hồ sơ",
+	linkToTarget: "Gắn liên kết vào {target}",
+	placeholderSearchTarget: "Tìm kiếm và chọn {target}...",
+	processUpload: "Xử lý Tải lên",
+	previewDialogHeader: "XEM TÀI LIỆU: {name}",
+	deleteForeverTitle: "Xóa vĩnh viễn tệp này?",
+	colName: "Tên Tài liệu / Tập tin",
+	colType: "Phân loại",
+	colLinkedTo: "Gắn liên kết tới",
+	colUploadedAt: "Ngày tải lên",
+	tabAll: "Tất cả tài liệu",
+	tabEmployee: "Hồ sơ nhân sự",
+	tabContract: "Hợp đồng lao động",
+	tabTransaction: "Invoice & Chi phí",
+	extPdf: "Tệp PDF (.pdf)",
+	extImage: "Ảnh (.png, .jpg)",
+	extWord: "Microsoft Word (.doc, .docx)",
+	extExcel: "Microsoft Excel (.xls, .xlsx)",
+	otherDocs: "Tài liệu khác",
+	filesize: "Dung lượng",
+	deleteWarningDetails: "Tài liệu \"{name}\" sẽ bị xóa vĩnh viễn khỏi máy chủ. Bạn không thể hoàn tác thao tác này."
 };
 var employee = {
 	title: "Quản lý nhân viên",
@@ -12739,8 +13936,16 @@ var employee = {
 	statusInactive: "Nghỉ việc",
 	statusProbation: "Thử việc",
 	roleAdmin: "Admin",
-	roleManager: "Quản lý",
+	roleRbacTooltipTitle: "Quyền hạn của vai trò (RBAC)",
+	roleManager: "Quản lý / Giám đốc",
+	roleHr: "Nhân sự (HR)",
+	roleAccountant: "Kế toán",
 	roleStaff: "Nhân viên",
+	roleAdminDesc: "Toàn quyền quản trị hệ thống",
+	roleManagerDesc: "Giám đốc / Quản lý điều hành",
+	roleHrDesc: "Quản lý nhân sự, hợp đồng, chấm công, nghỉ phép",
+	roleAccountantDesc: "Quản lý tài chính, giao dịch thu chi, bảng lương",
+	roleStaffDesc: "Nhân viên xem thông tin cá nhân, gửi đơn nghỉ phép",
 	placeholderSearch: "Tên, email, mã nhân viên...",
 	dialogDisableTitle: "Vô hiệu hóa nhân viên?",
 	dialogDisableDesc: "Trạng thái của nhân sự {name} sẽ được chuyển thành INACTIVE.",
@@ -12778,7 +13983,7 @@ var employee = {
 	relativesTitle: "Danh sách người thân",
 	relativesDesc: "Thông tin liên lạc khẩn cấp và người phụ thuộc",
 	addRelative: "Thêm người thân",
-	relationship: "Mối quan hệ",
+	relationship: "Quan hệ",
 	occupation: "Nghề nghiệp",
 	address: "Địa chỉ",
 	emergencyContact: "Liên lạc khẩn cấp",
@@ -12831,7 +14036,59 @@ var employee = {
 	relationshipSibling: "Anh/Chị/Em",
 	relationshipOther: "Khác",
 	noViewUrl: "Không có URL xem tài liệu.",
-	noDownloadUrl: "Không có URL tải tài liệu."
+	noDownloadUrl: "Không có URL tải tài liệu.",
+	viewError: "Không thể xem tài liệu.",
+	downloadError: "Không thể tải tài liệu.",
+	startDate: "Ngày bắt đầu",
+	salary: "Mức lương",
+	placeholderHometown: "Ví dụ: Hà Nam",
+	placeholderPlaceOfBirth: "Bệnh viện Phụ sản",
+	placeholderNationality: "Việt Nam",
+	placeholderReligion: "Không",
+	sectionAccountWork: "2. Tài khoản & Công việc",
+	sectionAccountWorkDesc: "Các thông tin liên hệ, phòng ban chuyên trách và quyền hạn hệ thống",
+	sectionContactAddress: "3. Địa chỉ liên lạc",
+	sectionContactAddressDesc: "Địa chỉ đăng ký hộ khẩu thường trú và địa chỉ cư trú hiện tại",
+	placeholderBankAccountType: "普通",
+	noRelatives: "Chưa thêm thân nhân nào. Nhấp nút phía trên để tạo mới.",
+	relativeNumber: "Thân nhân #",
+	deleteRelativeTooltip: "Xóa thân nhân này",
+	birthday: "Ngày sinh",
+	dependentTax: "Người phụ thuộc (Giảm trừ gia cảnh)",
+	pendingUpload: "CHỜ TẢI LÊN",
+	deletePendingFileTooltip: "Xóa tệp chờ",
+	deletePeriodTooltip: "Xóa giai đoạn này",
+	placeholderSalary: "Ví dụ: 10,000,000",
+	placeholderSalaryReason: "Ví dụ: Tăng lương định kỳ",
+	endDateBeforeStartDate: "Ngày kết thúc không được trước ngày bắt đầu",
+	removedPendingFile: "Đã xóa tài liệu khỏi danh sách chờ.",
+	imageTooLarge: "Ảnh quá lớn",
+	imageTooLargeDesc: "Vui lòng chọn ảnh có dung lượng dưới 2MB.",
+	updateSuccess: "Đã cập nhật thông tin nhân viên.",
+	createSuccess: "Đã tạo nhân viên mới thành công.",
+	createAndUploadSuccess: "Đã tạo nhân viên mới và tải lên thành công {successCount} tài liệu.",
+	uploadDocsError: "Tải tài liệu có lỗi",
+	createSuccessUploadError: "Đã tạo nhân viên mới thành công. Tải lên thành công {successCount} tài liệu, thất bại {failCount} tài liệu.",
+	fileTooLarge: "File quá lớn",
+	fileTooLargeDesc: "Vui lòng chọn tài liệu có dung lượng dưới 10MB.",
+	addedPendingFile: "Đã thêm tài liệu vào danh sách chờ.",
+	uploadDocsSuccess: "Tải tài liệu lên thành công.",
+	uploadDocsFailed: "Lỗi tải tài liệu lên.",
+	deleteDocConfirm: "Bạn có chắc chắn muốn xóa chứng từ này không? Hành động này không thể hoàn tác.",
+	deleteDocSuccess: "Đã xóa chứng từ thành công.",
+	deleteDocFailed: "Lỗi khi xóa chứng từ.",
+	ocrTitle: "Nhập nhanh hồ sơ bằng AI Gemini",
+	ocrDesc: "Tải lên file sơ yếu lý lịch, CCCD, hộ chiếu hoặc bảng Excel để AI tự động điền các trường thông tin.",
+	ocrButton: "Chọn file & Phân tích",
+	ocrLoading: "Gemini AI đang quét tài liệu và phân tích thông tin...",
+	ocrSuccessTitle: "Phân tích thành công",
+	ocrSuccessDesc: "Thông tin đã được tự động điền vào biểu mẫu.",
+	ocrErrorTitle: "Lỗi",
+	ocrErrorDesc: "Không trích xuất được thông tin từ tài liệu.",
+	ocrFileTooLarge: "File quá lớn",
+	ocrFileTooLargeDesc: "File \"{name}\" vượt quá giới hạn 10MB.",
+	ocrConnectError: "Không thể kết nối hoặc xử lý file.",
+	name: "Nhân sự"
 };
 var gender = {
 	male: "Nam",
@@ -12839,6 +14096,14 @@ var gender = {
 	other: "Khác"
 };
 var contract = {
+	companySection: "Bên A: Thông tin doanh nghiệp chủ quản",
+	companyNameLabel: "Tên đơn vị chủ quản (Bên A)",
+	companyTaxCodeLabel: "Mã số thuế Bên A",
+	companyAddressLabel: "Địa chỉ Bên A",
+	companyRepresentativeLabel: "Người đại diện Bên A",
+	companyRepresentativeRoleLabel: "Chức danh người đại diện",
+	defaultConfig: "Cấu hình mặc định",
+	contractInfo: "Thông tin hợp đồng",
 	title: "Quản lý Hợp Đồng",
 	createTitle: "Ký Hợp Đồng Mới",
 	editTitle: "Cập nhật Hợp Đồng",
@@ -12885,6 +14150,9 @@ var contract = {
 	complianceTitle: "Đăng ký tuân thủ",
 	complianceDescCreate: "Khi bạn gửi biểu mẫu, hợp đồng sẽ được kiểm tra chéo tự động với danh sách nhân sự hiện hữu để đảm bảo tính pháp lý trước khi lưu trữ.",
 	complianceDescEdit: "Mọi cập nhật thông số hợp đồng (lương, điều khoản làm thêm giờ) sẽ tự động đồng bộ sang bộ máy tính lương và kiểm soát giờ tăng ca.",
+	complianceDescView: "Thông tin chi tiết hợp đồng được hệ thống bảo mật tự động kiểm soát nhằm phòng tránh rủi ro pháp lý và tranh chấp lao động.",
+	viewDetails: "Chi tiết hợp đồng",
+	edmReadonly: "Danh sách tài liệu liên kết được đính kèm với hợp đồng này.",
 	submitContract: "Hoàn tất ký hợp đồng",
 	missingInfo: "Thiếu thông tin",
 	saveSuccess: "Thành công",
@@ -12967,7 +14235,18 @@ var contract = {
 	sizeErrorDesc: "Kích thước tệp đính kèm không được vượt quá 10MB",
 	statusPending: "Chờ duyệt (PENDING)",
 	employmentFullTimeVn: "Chính thức (Việt Nam)",
-	employmentPartTimeVn: "Bán thời gian (Việt Nam)"
+	employmentPartTimeVn: "Bán thời gian (Việt Nam)",
+	ocrTitle: "Nhập nhanh hợp đồng bằng AI Gemini",
+	ocrDesc: "Tải lên file scan hợp đồng lao động, file ảnh hoặc file excel mẫu để AI tự động điền các trường thông tin hợp đồng.",
+	ocrButton: "Chọn file & Phân tích",
+	ocrLoading: "Gemini AI đang quét tài liệu và phân tích thông tin...",
+	ocrSuccessTitle: "Phân tích hợp đồng thành công",
+	ocrSuccessDesc: "Các thông tin hợp đồng trích xuất được đã điền vào biểu mẫu.",
+	ocrErrorTitle: "Lỗi",
+	ocrErrorDesc: "Không trích xuất được thông tin hợp đồng.",
+	ocrFileTooLarge: "File quá lớn",
+	ocrFileTooLargeDesc: "File \"{name}\" vượt quá giới hạn 10MB.",
+	ocrConnectError: "Không thể kết nối hoặc xử lý hợp đồng."
 };
 var timesheet = {
 	title: "Bảng công cá nhân",
@@ -13040,11 +14319,11 @@ var timesheet = {
 	baseSalary: "Lương cơ bản",
 	workingDaysActualStandard: "Công (Thực/Chuẩn)",
 	overtimeCol: "Tăng ca (OT)",
-	attendanceAllowance: "Chuyên cần",
-	deductionLate: "Trừ muộn",
-	deductionLeave: "Trừ nghỉ phép",
+	attendanceAllowance: "Phụ cấp chuyên cần",
+	deductionLate: "Trừ đi muộn",
+	deductionLeave: "Trừ nghỉ không phép",
 	advancePayment: "Đã trả trước",
-	netSalary: "Thực lĩnh",
+	netSalary: "Tổng lương thực nhận (Net)",
 	statusPaid: "Đã thanh toán",
 	statusPending: "Chờ xử lý",
 	payrollDetailsFor: "Bảng lương: {name} ({code})",
@@ -13054,10 +14333,12 @@ var timesheet = {
 	attendanceAllowanceLabel: "PC Chuyên cần",
 	deductionLateLabel: "Trừ đi muộn",
 	deductionLeaveLabel: "Trừ nghỉ K.Phép",
-	deductionUnion: "Phí công đoàn",
+	deductionUnion: "Đoàn phí công đoàn",
 	deductionTax: "Thuế TNCN",
 	deductionUnionLabel: "Phí công đoàn",
 	deductionTaxLabel: "Thuế TNCN",
+	totalDeductions: "Tổng khấu trừ",
+	deductionInsuranceLabel: "Bảo hiểm (10.5%)",
 	advancePaymentLabel: "Tạm ứng",
 	paymentStatusLabel: "Trạng thái thanh toán",
 	netSalaryLabel: "Thực lĩnh",
@@ -13202,6 +14483,9 @@ var timesheet = {
 	overtimeStatus: "Tăng ca",
 	overtimeAllowed: "Cho phép",
 	overtimeNotAllowed: "Không cho phép",
+	overtimeAllowedWithMax: "Cho phép (Tối đa {hours} giờ)",
+	leave: "Nghỉ",
+	resetDefault: "Khôi phục ca mặc định",
 	assignShiftsTitle: "Bảng Phân ca & Tăng ca Nhân viên",
 	assignShiftsDesc: "Quản lý ca làm việc linh hoạt, tăng ca và đồng bộ thông tin nghỉ phép hàng tháng.",
 	bulkActions: "Hành động hàng loạt",
@@ -13243,7 +14527,56 @@ var timesheet = {
 	dialogBulkResetWarningPrefix: "Hành động này sẽ khôi phục lịch làm việc của",
 	dialogBulkResetWarningSuffix: "nhân viên về ca mặc định của hệ thống trong khoảng thời gian đã chọn.",
 	applyToWeekdays: "Áp dụng cho các ngày trong tuần",
-	confirm: "Xác nhận"
+	confirm: "Xác nhận",
+	msgResetShiftDefault: "Đã reset ca làm việc của {name} về mặc định",
+	msgSelectShift: "Vui lòng chọn ca làm việc",
+	msgSelectDateRange: "Vui lòng chọn khoảng thời gian",
+	msgSelectWeekday: "Vui lòng chọn ít nhất một ngày trong tuần",
+	msgSelectEmployee: "Vui lòng chọn ít nhất một nhân viên",
+	msgSetShiftSuccess: "Thiết lập ca làm việc thành công",
+	msgResetDefaultSuccess: "Khôi phục ca mặc định thành công",
+	msgSelectWeekdayAssign: "Vui lòng chọn ít nhất một ngày trong tuần để áp dụng",
+	msgSelectWeekdayReset: "Vui lòng chọn ít nhất một ngày trong tuần để reset",
+	msgPayrollLoadError: "Không thể tải dữ liệu bảng lương",
+	msgPayrollSaveSuccess: "Cập nhật bảng lương thành công",
+	msgPayrollSaveError: "Lỗi lưu thông tin bảng lương",
+	msgExportExcelError: "Không thể xuất file Excel",
+	msgExportPdfError: "Không thể xuất file PDF",
+	msgSaveManualSuccess: "Lưu chấm công thành công",
+	insuranceLabel: "Bảo hiểm (10.5%)",
+	otNormal: "T.Thường:",
+	otWeekend: "C.Tuần:",
+	otHoliday: "Lễ:",
+	total: "Tổng:",
+	socialInsurance: "BHXH:",
+	healthInsurance: "BHYT:",
+	unemploymentInsurance: "BHTN:",
+	payrollAdjustmentInfo: "Thông tin điều chỉnh lương",
+	standardWorkingDays: "Công chuẩn",
+	otNormalHours: "OT Thường (giờ)",
+	otWeekendHours: "OT Cuối tuần (giờ)",
+	otHolidayHours: "OT Lễ Tết (giờ)",
+	dependents: "Người phụ thuộc",
+	taxAndNetSalaryDetails: "Chi tiết thuế & Thực nhận",
+	dailyRate: "Đơn giá ngày công",
+	dayUnit: "ngày",
+	overtimePay: "Tiền OT làm thêm giờ",
+	otNormalRate: "Ngày thường (1.5x)",
+	otWeekendRate: "Cuối tuần (2.0x)",
+	otHolidayRate: "Lễ Tết (3.0x)",
+	attendanceDeduction: "Khấu trừ chuyên cần/nghỉ phép",
+	grossSalary: "Lương GROSS",
+	insuranceDeduction: "Bảo hiểm bắt buộc (10.5%)",
+	socialInsuranceDeduction: "Bảo hiểm xã hội (8%)",
+	healthInsuranceDeduction: "Bảo hiểm y tế (1.5%)",
+	unemploymentInsuranceDeduction: "Bảo hiểm thất nghiệp (1%)",
+	incomeBeforeTax: "Thu nhập trước thuế",
+	progressivePit: "Thuế TNCN lũy tiến",
+	selfDeduction: "Giảm trừ bản thân",
+	dependentDeduction: "Giảm trừ người phụ thuộc",
+	personUnit: "người",
+	taxableIncome: "Thu nhập tính thuế",
+	unionAndAdvance: "Đoàn phí & Tạm ứng"
 };
 var leaveRequest = {
 	title: "Đơn xin nghỉ phép",
@@ -13266,6 +14599,8 @@ var leaveRequest = {
 	tabRejected: "Đã từ chối",
 	noRequest: "Hiện không có đơn xin nghỉ phép nào.",
 	noRequestWithStatus: "Không có đơn nghỉ phép nào ở trạng thái \"{status}\".",
+	searchEmployeePlaceholder: "Tìm tên, mã nhân viên...",
+	typeSelect: "Chọn loại nghỉ...",
 	allDay: "Cả ngày",
 	morning: "Nghỉ Sáng",
 	afternoon: "Nghỉ Chiều",
@@ -13316,7 +14651,9 @@ var leaveRequest = {
 	submitSuccess: "Gửi đơn phép thành công",
 	submitSuccessDesc: "Đơn xin nghỉ phép của bạn đã được gửi cho quản lý.",
 	from: "Từ",
-	to: "Đến"
+	to: "Đến",
+	uploadFormats: "PDF, DOC, DOCX, ZIP hoặc ảnh (Tối đa 10MB)",
+	hasAttachment: "Có tài liệu đính kèm"
 };
 var compliance = {
 	title: "Kiểm soát Tuân thủ",
@@ -13457,7 +14794,11 @@ var dashboard = {
 	unclassified: "Không phân loại",
 	noTransactions: "Chưa có giao dịch tài chính phát sinh.",
 	msgConnectError: "Lỗi kết nối",
-	msgSyncError: "Không thể đồng bộ dữ liệu Bảng điều khiển."
+	msgSyncError: "Không thể đồng bộ dữ liệu Bảng điều khiển.",
+	ageDemographics: "Phân bố Độ tuổi Nhân sự",
+	ageDemographicsDesc: "Tỷ lệ nhân viên theo nhóm tuổi trong doanh nghiệp",
+	genderDemographics: "Cơ cấu Giới tính Nhân sự",
+	genderDemographicsDesc: "Tỷ lệ giới tính nam, nữ trong doanh nghiệp"
 };
 var transaction = {
 	title: "Dòng Tiền & Chi Phí",
@@ -13604,7 +14945,15 @@ var transaction = {
 	typeRevenue: "Khoản Thu (REVENUE)",
 	updateSubtitle: "Cập nhật chi tiết giao dịch",
 	updateSuccess: "Cập nhật giao dịch thành công",
-	updateSuccessDesc: "Thông tin giao dịch và chứng từ đã được lưu trữ."
+	updateSuccessDesc: "Thông tin giao dịch và chứng từ đã được lưu trữ.",
+	viewDetails: "Chi tiết giao dịch",
+	edmReadonly: "Danh sách tài liệu liên kết được đính kèm với giao dịch này.",
+	complianceBadge: "Kiểm soát tuân thủ",
+	complianceTitle: "Trạng thái kiểm tra hồ sơ",
+	msgFormatError: "Lỗi định dạng",
+	msgFormatErrorDesc: "Định dạng .{ext} không được hỗ trợ.",
+	msgSizeError: "Kích thước vượt giới hạn",
+	msgSizeErrorDesc: "Tệp {name} vượt quá 10MB."
 };
 var pagination = {
 	total: "Tổng cộng: {total} mục",
@@ -13612,7 +14961,10 @@ var pagination = {
 };
 var common = {
 	cancel: "Hủy",
-	"delete": "Xóa"
+	"delete": "Xóa",
+	system: "Hệ thống",
+	actions: "Hành động",
+	index: "STT"
 };
 var themeCustomizer = {
 	title: "Cấu hình Sidebar",
@@ -13649,7 +15001,147 @@ var themeCustomizer = {
 	fontPlayfair: "Playfair (Cổ điển)",
 	fontMono: "Roboto Mono (Mã code)"
 };
-const locale_vi_46json_24468de9 = {
+var notification = {
+	title: "Thông báo",
+	pageTitle: "Trung tâm Thông báo",
+	"new": "MỚI",
+	markAllRead: "Đọc tất cả",
+	empty: "Không có thông báo nào",
+	emptyDesc: "Các thông báo hệ thống sẽ hiển thị ở đây.",
+	justNow: "Vừa xong",
+	minutesAgo: "{n} phút trước",
+	hoursAgo: "{n} giờ trước",
+	daysAgo: "{n} ngày trước",
+	viewAll: "Xem tất cả thông báo",
+	searchPlaceholder: "Tìm kiếm thông báo...",
+	searchBtn: "Tìm kiếm",
+	allTypes: "Tất cả loại",
+	filterAll: "Tất cả",
+	filterUnread: "Chưa đọc",
+	filterRead: "Đã đọc",
+	totalLabel: "Tổng thông báo",
+	unreadLabel: "Chưa đọc",
+	readLabel: "Đã đọc",
+	readStatus: "Đã đọc",
+	goToAction: "Chuyển đến",
+	loading: "Đang tải thông báo...",
+	typeLeaveCreated: "Đơn nghỉ phép mới",
+	typeLeaveApproved: "Phê duyệt nghỉ phép",
+	typeLeaveRejected: "Từ chối nghỉ phép",
+	typeCompliance: "Cảnh báo tuân thủ",
+	typeContract: "Hợp đồng",
+	typeTransaction: "Giao dịch"
+};
+var quickSignSuccess = "Ký hợp đồng thành công";
+var placeholder = {
+	selectCategory: "Chọn phân loại",
+	selectItem: "Chọn hạng mục",
+	selectMethod: "Chọn phương thức",
+	selectStatus: "Chọn trạng thái",
+	enterTotalAmount: "Nhập tổng số tiền",
+	selectTaxRate: "Chọn loại thuế suất",
+	amountBeforeTax: "Số tiền gốc trước thuế",
+	taxAmount: "Tiền thuế",
+	taxNoteExample: "Ví dụ: thuế TNCN 10%, nhà thầu...",
+	japanInvoiceNo: "T1234567890123 (Nếu là chi phí tại Nhật)",
+	vietnamTechCompany: "Công ty Giải pháp Công nghệ Việt Nam",
+	taxCode: "Mã số thuế",
+	registeredAddress: "Địa chỉ đăng ký",
+	legalRepresentative: "Họ tên người đại diện pháp luật",
+	jobTitleExample: "Ví dụ: Giám đốc, Tổng giám đốc",
+	enterContractCode: "Nhập mã hợp đồng",
+	enterContractValue: "Nhập giá trị hợp đồng",
+	enterCurrencyValue: "Nhập giá trị tiền tệ",
+	jobTitleDev: "Ví dụ: Lập trình viên, Quản trị viên",
+	officeExample: "Ví dụ: Trụ sở chính Hà Nội, Văn phòng Tokyo",
+	numberEight: "Ví dụ: 8",
+	durationTwoMonths: "Ví dụ: 2 tháng",
+	numberEightyFive: "Ví dụ: 85",
+	bankNames: "Ví dụ: Vietcombank, Techcombank",
+	accountNumber: "Ví dụ: 1018273645",
+	insuranceType: "BHXH, BHYT, BHTN hoặc Bảo hiểm đặc biệt thương mại",
+	enterOfficialCompanyName: "Nhập tên chính thức trên đăng ký kinh doanh",
+	enterPartnerTaxCode: "Nhập mã số thuế đối tác",
+	partnerLegalJob: "Ví dụ: Giám đốc, Tổng giám đốc, CEO",
+	partnerAddress: "Địa chỉ giao dịch chính thức của đối tác",
+	paymentTerm: "Ví dụ: Net 30, Thanh toán 100% khi ký",
+	otHours: "Ví dụ: 20 hoặc 30 giờ",
+	systemAutoGenerated: "Hệ thống tự động cấp phát",
+	companyNameDemo: "Công ty TNHH Giải pháp Công nghệ",
+	fullNameExample: "Nguyễn Văn A",
+	addressDemo: "Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	addressDetailDemo: "Tầng 12, Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội",
+	companyNote: "Nhập các thông tin ghi chú đặc biệt về doanh nghiệp này...",
+	selectFont: "Chọn phông chữ...",
+	searchAndSelectType: "Tìm kiếm và chọn {type}..."
+};
+var board = {
+	title: "Bảng tin doanh nghiệp",
+	createPost: "Đăng tin mới",
+	editPost: "Chỉnh sửa bài viết",
+	deletePost: "Xóa bài viết",
+	deletePostConfirm: "Bạn có chắc chắn muốn xóa bài viết này không? Hành động này không thể hoàn tác.",
+	deleteCommentConfirm: "Bạn có chắc chắn muốn xóa bình luận này không?",
+	postTitle: "Tiêu đề bài viết",
+	postContent: "Nội dung bài viết",
+	postLink: "Đường dẫn đính kèm (Link URL)",
+	postImage: "Tải ảnh đính kèm",
+	postTag: "Gắn cờ tag",
+	submitPost: "Đăng bài",
+	updatePost: "Cập nhật",
+	allTags: "Tất cả nhãn",
+	tagImportant: "Quan trọng",
+	tagAnnouncement: "Thông báo",
+	tagEvent: "Sự kiện",
+	tagNews: "Tin tức",
+	likes: "Lượt thích",
+	comments: "Bình luận",
+	writeComment: "Viết bình luận...",
+	sendComment: "Gửi",
+	noPosts: "Chưa có bài viết nào trên bảng tin.",
+	errorCreate: "Đăng bài thất bại. Vui lòng kiểm tra lại thông tin.",
+	successCreate: "Đăng bài thành công!",
+	successDelete: "Đã xóa bài viết thành công.",
+	successUpdate: "Cập nhật bài viết thành công!",
+	authorAdmin: "Ban Giám Đốc",
+	authorManager: "Trưởng Bộ Phận",
+	attachedLink: "Xem liên kết đính kèm",
+	description: "Nơi cập nhật thông báo chính thức, sự kiện nổi bật, tin tức doanh nghiệp và kết nối các thành viên.",
+	createPostSubtitle: "Đăng thông tin tiếp cận toàn bộ nhân viên công ty",
+	placeholderTitle: "Nhập tiêu đề tin tức hoặc thông báo...",
+	placeholderTag: "Chọn gắn cờ tag...",
+	changeImage: "Thay đổi ảnh",
+	selectImage: "Chọn hình ảnh",
+	removeCurrentImage: "Gỡ ảnh hiện tại",
+	placeholderContent: "Chia sẻ bài viết, tin tức hoặc hướng dẫn công việc tại đây...",
+	firstToShare: "Hãy là người đầu tiên chia sẻ thông tin hoặc hướng dẫn công việc.",
+	systemUser: "Người dùng hệ thống",
+	defaultDept: "Hành chính",
+	defaultTitle: "Cán bộ",
+	likeBtn: "Thích",
+	commentBtn: "Bình luận",
+	noComments: "Chưa có bình luận nào. Hãy gửi nhận xét đầu tiên!",
+	systemEmployee: "Nhân viên hệ thống",
+	deleteComment: "Xóa bình luận",
+	placeholderComment: "Viết nhận xét của bạn...",
+	loadMorePosts: "Tải thêm bài viết",
+	placeholderSelectTag: "Chọn nhãn...",
+	imageWillBeDeleted: "Ảnh hiện tại sẽ bị xóa khi cập nhật",
+	restore: "Khôi phục",
+	changeSelectedImage: "Đổi ảnh mới chọn",
+	uploadReplacementImage: "Tải lên ảnh mới thay thế",
+	failUpdate: "Cập nhật bài viết thất bại. Vui lòng kiểm tra lại.",
+	failDelete: "Xóa bài viết thất bại.",
+	failAction: "Thao tác thất bại.",
+	failComment: "Bình luận thất bại.",
+	successDeleteComment: "Đã xóa bình luận.",
+	failDeleteComment: "Xóa bình luận thất bại.",
+	likesNoOne: "Chưa có ai thích bài viết này",
+	likesBy: "Thích bởi: {names}",
+	likesByAndOthers: "Thích bởi: {names} và {count} người khác",
+	failFetch: "Không thể tải bảng tin. Vui lòng thử lại."
+};
+const locale_vi_46json_1a246d39 = {
 	btn: btn,
 	text: text,
 	msgCommon: msgCommon,
@@ -13688,6 +15180,7 @@ const locale_vi_46json_24468de9 = {
 	user: user,
 	position: position,
 	company: company,
+	companySetting: companySetting,
 	userMaster: userMaster,
 	document: document,
 	employee: employee,
@@ -13700,7 +15193,11 @@ const locale_vi_46json_24468de9 = {
 	transaction: transaction,
 	pagination: pagination,
 	common: common,
-	themeCustomizer: themeCustomizer
+	themeCustomizer: themeCustomizer,
+	notification: notification,
+	quickSignSuccess: quickSignSuccess,
+	placeholder: placeholder,
+	board: board
 };
 
 // @ts-nocheck
@@ -13712,22 +15209,22 @@ const localeCodes =  [
 const localeLoaders = {
   en: [
     {
-      key: "locale_en_46json_2045c38c",
-      load: () => Promise.resolve(locale_en_46json_2045c38c),
+      key: "locale_en_46json_0ab7440b",
+      load: () => Promise.resolve(locale_en_46json_0ab7440b),
       cache: true
     }
   ],
   ja: [
     {
-      key: "locale_ja_46json_1fe0de68",
-      load: () => Promise.resolve(locale_ja_46json_1fe0de68),
+      key: "locale_ja_46json_63a99cd6",
+      load: () => Promise.resolve(locale_ja_46json_63a99cd6),
       cache: true
     }
   ],
   vi: [
     {
-      key: "locale_vi_46json_24468de9",
-      load: () => Promise.resolve(locale_vi_46json_24468de9),
+      key: "locale_vi_46json_1a246d39",
+      load: () => Promise.resolve(locale_vi_46json_1a246d39),
       cache: true
     }
   ]
@@ -14142,7 +15639,7 @@ function createRedirectResponse(event, dest, code) {
     body: `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=${dest.replace(/"/g, "%22")}"></head></html>`
   };
 }
-const _GGaIECDdrhncnGS94R2Szg5vZ47o1W8dfypqFUvSxKU = defineNitroPlugin$1(async (nitro) => {
+const _NW5OFtcBHZGKnB2mCrz69ydPktXX6hxHhYw8nnlqemU = defineNitroPlugin$1(async (nitro) => {
   const runtimeI18n = useRuntimeI18n();
   const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
   runtimeI18n.defaultLocale || "";
@@ -14225,7 +15722,7 @@ const _GGaIECDdrhncnGS94R2Szg5vZ47o1W8dfypqFUvSxKU = defineNitroPlugin$1(async (
     const localeSegment = detector.route(event.path);
     const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
     const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
-    if (!url.pathname.includes("/_i18n/xHyIz6rr") && !isExistingNuxtRoute(path)) {
+    if (!url.pathname.includes("/_i18n/QSMPajR-") && !isExistingNuxtRoute(path)) {
       return;
     }
     const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
@@ -14245,7 +15742,7 @@ const _GGaIECDdrhncnGS94R2Szg5vZ47o1W8dfypqFUvSxKU = defineNitroPlugin$1(async (
   });
 });
 
-const rootDir = "/home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe";
+const rootDir = "/home/dungdao/Documents/development_ai/company_system/compliance-system-fe";
 
 const devReducers = {
 	VNode: (data) => isVNode(data) ? {
@@ -14258,7 +15755,7 @@ const asyncContext = getContext("nuxt-dev", {
 	asyncContext: true,
 	AsyncLocalStorage
 });
-const _UCHc4Y8KR1CEklEytMbyArWR_CXdXTHmISqwcGu04oM = (nitroApp) => {
+const _jvPnWQKxc5W8oR5m40cHFPYlBqEQtVJhVCv45RNP3XY = (nitroApp) => {
 	const handler = nitroApp.h3App.handler;
 	nitroApp.h3App.handler = (event) => {
 		return asyncContext.callAsync({
@@ -17402,7 +18899,7 @@ const themes =
 ].join('');
 
 const defineNitroPlugin = (def) => def;
-const _AFYiMTNpS4iJVotjL5ihJeYOeIMmPOFr1fWZ8Us = defineNitroPlugin(async (nitroApp) => {
+const _aG3o6LnrRn2L4d5QaRcNiH1McPtHmb7QB3oJ8NZNmG0 = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", (html) => {
     html.head.unshift(stylesToTop);
     html.head.push(styles$2);
@@ -17412,33 +18909,33 @@ const _AFYiMTNpS4iJVotjL5ihJeYOeIMmPOFr1fWZ8Us = defineNitroPlugin(async (nitroA
 
 const script = "\"use strict\";(()=>{const t=window,e=document.documentElement,c=[\"dark\",\"light\"],n=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let i=n===\"system\"?u():n;const r=e.getAttribute(\"data-color-mode-forced\");r&&(i=r),l(i),t[\"__NUXT_COLOR_MODE__\"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.add(s):e.className+=\" \"+s,a&&e.setAttribute(\"data-\"+a,o)}function d(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,\"g\"),\"\"),a&&e.removeAttribute(\"data-\"+a)}function f(o){return t.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function u(){if(t.matchMedia&&f(\"\").media!==\"not all\"){for(const o of c)if(f(\":\"+o).matches)return o}return\"light\"}})();function getStorageValue(t,e){switch(t){case\"localStorage\":return window.localStorage.getItem(e);case\"sessionStorage\":return window.sessionStorage.getItem(e);case\"cookie\":return getCookie(e);default:return null}}function getCookie(t){const c=(\"; \"+window.document.cookie).split(\"; \"+t+\"=\");if(c.length===2)return c.pop()?.split(\";\").shift()}";
 
-const _V_Dvlz5qWZ9ubHtCafG6Oqnf_7Kvw6ma5X8_JDeJC0o = (function(nitro) {
+const _FHOPG4Xml7nh2qXI2CO4ZaSSAppVwPQ7fAfYpJ258 = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _c3Oy_WZCrIk7PWk7hu0bN6fEe2nFE3hy9jfdG3_07Jo,
-_GGaIECDdrhncnGS94R2Szg5vZ47o1W8dfypqFUvSxKU,
-_UCHc4Y8KR1CEklEytMbyArWR_CXdXTHmISqwcGu04oM,
-_AFYiMTNpS4iJVotjL5ihJeYOeIMmPOFr1fWZ8Us,
-_V_Dvlz5qWZ9ubHtCafG6Oqnf_7Kvw6ma5X8_JDeJC0o
+  _LmYw3lCQ0BxK6Og4Ru14doLfZ1YV_8mq7C3aEBfc6XI,
+_NW5OFtcBHZGKnB2mCrz69ydPktXX6hxHhYw8nnlqemU,
+_jvPnWQKxc5W8oR5m40cHFPYlBqEQtVJhVCv45RNP3XY,
+_aG3o6LnrRn2L4d5QaRcNiH1McPtHmb7QB3oJ8NZNmG0,
+_FHOPG4Xml7nh2qXI2CO4ZaSSAppVwPQ7fAfYpJ258
 ];
 
 const assets = {
   "/index.mjs": {
     "type": "text/javascript; charset=utf-8",
-    "etag": "\"b2f31-C4WPqrNcLLAiKbSDB0V8T3Vwm9U\"",
-    "mtime": "2026-06-04T03:21:05.403Z",
-    "size": 732977,
+    "etag": "\"c69b2-fCNIE3IK1LnSk6867EQVJRy4a10\"",
+    "mtime": "2026-06-18T09:26:35.788Z",
+    "size": 813490,
     "path": "index.mjs"
   },
   "/index.mjs.map": {
     "type": "application/json",
-    "etag": "\"217ebb-Vkx28GFOUSszmWxNBHpUkYhM63Q\"",
-    "mtime": "2026-06-04T03:21:05.405Z",
-    "size": 2195131,
+    "etag": "\"21849d-B/thhIJxYdn6kJoA+QzyNdkppjs\"",
+    "mtime": "2026-06-18T09:26:35.788Z",
+    "size": 2196637,
     "path": "index.mjs.map"
   }
 };
@@ -17466,7 +18963,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _jVG54h = eventHandler((event) => {
+const _8Uq1Oy = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -17594,7 +19091,7 @@ const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
 // @ts-expect-error file will be produced after app build
 const getServerEntry = () => Promise.resolve().then(function () { return server$1; }).then((r) => r.default || r);
 // @ts-expect-error file will be produced after app build
-const getClientManifest = () => import('file:///home/dungdao/Documents/phan_tich_he_thong/compliance-system-fe/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getClientManifest = () => import('file:///home/dungdao/Documents/development_ai/company_system/compliance-system-fe/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 // -- SSR Renderer --
 const getSSRRenderer = lazyCachedFunction(async () => {
 	// Load server bundle
@@ -17990,16 +19487,16 @@ defineCachedEventHandler(_cachedMessageLoader, {
   swr: false,
   getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-")
 });
-const _qKqORN = _messagesHandler ;
+const _YFVc0o = _messagesHandler ;
 
-const _lazy_sqnVpx = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_nncCE6 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '', handler: _jVG54h, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_sqnVpx, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _8Uq1Oy, lazy: false, middleware: true, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_nncCE6, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/_i18n/:hash/:locale/messages.json', handler: _qKqORN, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_sqnVpx, lazy: true, middleware: false, method: undefined }
+  { route: '/_i18n/:hash/:locale/messages.json', handler: _YFVc0o, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_nncCE6, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

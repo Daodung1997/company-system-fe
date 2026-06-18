@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
 import { PER_PAGE_LIST } from "@/config/constants";
+import Api from "~/utils/api";
 
 const defaultState = {
   pageNumber: 1,
   pageLimit: PER_PAGE_LIST[0],
   userInfo: null,
+  companySetting: null as any,
 };
 
 export const useApiStore = defineStore("apiStore", {
@@ -26,6 +28,17 @@ export const useApiStore = defineStore("apiStore", {
     },
     setUserInfo(info: any) {
       this.userInfo = info;
+    },
+    fetchCompanySetting() {
+      return Api.get("/master/company-setting")
+        .then((res: any) => {
+          const data = res?.data?.data || res?.data;
+          this.companySetting = data;
+          return data;
+        })
+        .catch(() => {
+          // Fallback or ignore
+        });
     },
     reset() {
       // @ts-ignore

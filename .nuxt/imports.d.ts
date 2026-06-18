@@ -40,7 +40,7 @@ export { JAPAN_REGIONS, JAPAN_PREFECTURES, prefFindByRegion, regionFindByPref, r
 export { getPrefecturesByArea, onGetCitiesByPrefecture, onGetTownsByCity, onSearchAddressByPostcode, onSearchPostcodeByAddress } from '../app/utils/getAddress';
 export { showMessage } from '../app/utils/global';
 export { validateOnField, validateOnAllField, validPasswordStrength } from '../app/utils/validate';
-export { useCompany } from '../app/composables/master/company';
+export { useCompanySetting } from '../app/composables/master/companySetting';
 export { useDepartment } from '../app/composables/master/department';
 export { useApiStore } from '../app/stores/api';
 export { usePrimeVue } from 'primevue/config';

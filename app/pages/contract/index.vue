@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/20">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
           <i class="pi pi-file-pdf text-2xl"></i>
@@ -28,7 +28,7 @@
 
     <!-- Quick Stats Overview Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('contract.typeLabor') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.laborCount }}</h3>
@@ -37,7 +37,7 @@
           <i class="pi pi-users text-lg"></i>
         </div>
       </div>
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('contract.typeCommercial') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.commercialCount }}</h3>
@@ -46,7 +46,7 @@
           <i class="pi pi-briefcase text-lg"></i>
         </div>
       </div>
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('contract.totalValue') }}</span>
           <h3 class="text-2xl font-black text-emerald-600 dark:text-emerald-400 font-mono">{{ formatCurrency(stats.totalValue) }}</h3>
@@ -58,15 +58,15 @@
     </div>
 
     <!-- Filter & Main Tabs Panel -->
-    <div class="bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none space-y-6">
+    <div class="bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
       <!-- Tabs header & Filters grid -->
-      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-100 dark:border-surface-800 pb-6">
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-200 dark:border-surface-700 pb-6">
         <!-- Inner Category Tabs -->
-        <div class="flex bg-surface-100/60 dark:bg-surface-950 p-1.5 rounded-2xl w-fit">
+        <div class="flex bg-surface-100 dark:bg-surface-900 p-1.5 rounded-2xl max-w-full overflow-x-auto whitespace-nowrap scrollbar-none">
           <button
             v-for="tab in tabOptions"
             :key="tab.value"
-            class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300"
+            class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 shrink-0"
             :class="[
               activeTab === tab.value
                 ? 'bg-white dark:bg-surface-900 text-primary shadow-md'
@@ -125,7 +125,7 @@
         :fetchApi="fetchContractsWrapper"
         :filters="filters"
         :isReload="isReload"
-        :emptyText="$t('contract.noData') || 'Không tìm thấy hợp đồng nào'"
+        :emptyText="$t('contract.noData')"
         scrollHeight="58vh"
       >
         <template #body="{ column, data }">
@@ -167,11 +167,11 @@
                 </div>
               </div>
               <div v-else class="text-xs font-semibold text-surface-400">
-                {{ $t('contract.noEmployee') || 'Không rõ nhân sự' }}
+                {{ $t('contract.noEmployee') }}
               </div>
             </div>
             <div v-else class="text-xs font-bold text-surface-500">
-              <i class="pi pi-building mr-1"></i> {{ $t('contract.corporatePartner') || 'Đối tác doanh nghiệp' }}
+              <i class="pi pi-building mr-1"></i> {{ $t('contract.corporatePartner') }}
             </div>
           </template>
 
@@ -222,7 +222,7 @@
               >
                 <i class="pi pi-paperclip text-xs group-hover:rotate-12 transition-transform"></i>
                 <span class="font-mono">{{ data.documents.length }}</span>
-                <span class="text-[9px] uppercase tracking-wider opacity-80">{{ $t('contract.files') || 'Tài liệu' }}</span>
+                <span class="text-[9px] uppercase tracking-wider opacity-80">{{ $t('contract.files') }}</span>
               </button>
             </div>
             <span v-else class="text-surface-300 text-xs">—</span>
@@ -231,6 +231,14 @@
           <!-- Thao tác -->
           <template v-else-if="column.key === 'actions'">
             <div class="flex items-center justify-end gap-1">
+              <Button
+                icon="pi pi-eye"
+                severity="info"
+                variant="text"
+                class="!w-9 !h-9 !rounded-xl"
+                v-tooltip.top="$t('text.viewDetail')"
+                @click="navigateTo(`/contract/${data.id}`)"
+              />
               <Button
                 icon="pi pi-file-pdf"
                 severity="info"
@@ -265,7 +273,7 @@
 
 
     <!-- PDF Theme Selection Dialog -->
-    <Dialog v-model:visible="showPdfThemeDialog" :modal="true" :closable="true" :header="$t('contract.exportPdfStyle')" class="!rounded-[2rem] overflow-hidden" :style="{ width: '560px' }">
+    <Dialog v-model:visible="showPdfThemeDialog" :modal="true" :closable="true" :header="$t('contract.exportPdfStyle')" class="!rounded-xl overflow-hidden" :style="{ width: '560px' }">
       <div class="space-y-4 p-2">
         <p class="text-xs text-surface-500 font-medium">{{ $t('contract.exportPdfDesc') }}</p>
         
@@ -273,7 +281,7 @@
           <!-- Classic Card -->
           <div 
             class="flex items-start gap-4 p-4 rounded-2xl border cursor-pointer transition-all hover:border-primary/50"
-            :class="selectedPdfTheme === 'classic' ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-surface-150 dark:border-surface-800 bg-surface-50/50 dark:bg-surface-950/20'"
+            :class="selectedPdfTheme === 'classic' ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-surface-200 dark:border-surface-700 bg-surface-50/50 dark:bg-surface-950/20'"
             @click="selectedPdfTheme = 'classic'"
           >
             <div class="w-10 h-10 rounded-xl bg-surface-200/50 dark:bg-surface-800 flex items-center justify-center text-surface-750 dark:text-surface-300">
@@ -291,7 +299,7 @@
           <!-- Modern Card -->
           <div 
             class="flex items-start gap-4 p-4 rounded-2xl border cursor-pointer transition-all hover:border-primary/50"
-            :class="selectedPdfTheme === 'modern' ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-surface-150 dark:border-surface-800 bg-surface-50/50 dark:bg-surface-950/20'"
+            :class="selectedPdfTheme === 'modern' ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-surface-200 dark:border-surface-700 bg-surface-50/50 dark:bg-surface-950/20'"
             @click="selectedPdfTheme = 'modern'"
           >
             <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
@@ -309,7 +317,7 @@
           <!-- Academic Card -->
           <div 
             class="flex items-start gap-4 p-4 rounded-2xl border cursor-pointer transition-all hover:border-primary/50"
-            :class="selectedPdfTheme === 'academic' ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-surface-150 dark:border-surface-800 bg-surface-50/50 dark:bg-surface-950/20'"
+            :class="selectedPdfTheme === 'academic' ? 'border-primary bg-primary/5 dark:bg-primary/10' : 'border-surface-200 dark:border-surface-700 bg-surface-50/50 dark:bg-surface-950/20'"
             @click="selectedPdfTheme = 'academic'"
           >
             <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400">
@@ -334,7 +342,7 @@
     </Dialog>
 
     <!-- Delete Confirmation Dialog -->
-    <Dialog v-model:visible="showDeleteDialog" :modal="true" :closable="true" :header="$t('text.confirmDelete')" class="!rounded-3xl" :style="{ width: '450px' }">
+    <Dialog v-model:visible="showDeleteDialog" :modal="true" :closable="true" :header="$t('text.confirmDelete')" class="!rounded-xl" :style="{ width: '450px' }">
       <div class="flex items-start gap-4 p-4">
         <div class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-500 flex-shrink-0">
           <i class="pi pi-exclamation-triangle text-xl"></i>
@@ -360,7 +368,7 @@
       :header="$t('contract.documents') + ' — ' + (docViewerContract?.contract_code || '')"
       :modal="true"
       :style="{ width: '800px' }"
-      class="!rounded-3xl overflow-hidden"
+      class="!rounded-xl overflow-hidden"
       :breakpoints="{'960px': '80vw', '640px': '95vw'}"
     >
       <div class="p-2">
@@ -406,14 +414,14 @@ const editingContractId = ref<number | null>(null);
 const isReload = ref(false);
 
 const columns = computed(() => [
-  { key: 'contract_code', label: t('contract.code') || 'Mã HĐ', minWidth: '130px', sortable: true },
-  { key: 'type', label: t('contract.type') || 'Loại HĐ', minWidth: '120px' },
-  { key: 'partner', label: t('contract.party') || 'Đối tác / Nhân sự', minWidth: '220px' },
-  { key: 'duration', label: t('contract.duration') || 'Thời hạn', minWidth: '200px' },
-  { key: 'value', label: t('contract.value') || 'Giá trị', minWidth: '140px' },
-  { key: 'status', label: t('contract.status') || 'Trạng thái', minWidth: '130px' },
-  { key: 'documents', label: t('contract.documents') || 'Tài liệu', minWidth: '110px' },
-  { key: 'actions', label: t('text.action') || 'Thao tác', minWidth: '130px', frozen: true }
+  { key: 'contract_code', label: t('contract.code'), minWidth: '130px', sortable: true },
+  { key: 'type', label: t('contract.type'), minWidth: '120px' },
+  { key: 'partner', label: t('contract.party'), minWidth: '220px' },
+  { key: 'duration', label: t('contract.duration'), minWidth: '200px' },
+  { key: 'value', label: t('contract.value'), minWidth: '140px' },
+  { key: 'status', label: t('contract.status'), minWidth: '130px' },
+  { key: 'documents', label: t('contract.documents'), minWidth: '110px' },
+  { key: 'actions', label: t('text.action'), minWidth: '130px', frozen: true }
 ]);
 
 const fetchContractsWrapper = (payload: { query: string, successCallback: Function, errorCallback: Function }) => {
@@ -461,7 +469,7 @@ const fetchContractsWrapper = (payload: { query: string, successCallback: Functi
       }
       
       const page = parseInt(params.page || '1');
-      const limit = parseInt(params.limit || '10');
+      const limit = parseInt(params.limit || '30');
       const startIndex = (page - 1) * limit;
       const paginatedData = rawList.slice(startIndex, startIndex + limit);
       
@@ -561,25 +569,25 @@ const statusFilterOptions = computed(() => [
 ]);
 
 const typeOptions = computed(() => [
-  { label: t('contract.typeLabor') || 'Hợp đồng lao động (LABOR)', value: 'LABOR' },
-  { label: t('contract.typeVendor') || 'Hợp đồng gia công / Thầu phụ (VENDOR)', value: 'VENDOR' },
-  { label: t('contract.typeClient') || 'Hợp đồng cung cấp dịch vụ (CLIENT)', value: 'CLIENT' },
+  { label: t('contract.typeLabor'), value: 'LABOR' },
+  { label: t('contract.typeVendor'), value: 'VENDOR' },
+  { label: t('contract.typeClient'), value: 'CLIENT' },
 ]);
 
 const employmentTypeOptions = computed(() => [
-  { label: t('contract.employmentSeishain') || 'Nhân viên chính thức Nhật Bản (SEISHAIN)', value: 'SEISHAIN' },
-  { label: t('contract.employmentKeiyakushain') || 'Nhân viên hợp đồng Nhật Bản (KEIYAKUSHAIN)', value: 'KEIYAKUSHAIN' },
-  { label: t('contract.employmentHaken') || 'Phái cử Nhật Bản (HAKEN)', value: 'HAKEN' },
-  { label: t('contract.employmentArubaito') || 'Bán thời gian Nhật Bản (ARUBAITO)', value: 'ARUBAITO' },
-  { label: t('contract.employmentFullTimeVn') || 'Chính thức Việt Nam (FULL_TIME_VN)', value: 'FULL_TIME_VN' },
-  { label: t('contract.employmentPartTimeVn') || 'Thử việc / Bán thời gian VN (PART_TIME_VN)', value: 'PART_TIME_VN' },
+  { label: t('contract.employmentSeishain'), value: 'SEISHAIN' },
+  { label: t('contract.employmentKeiyakushain'), value: 'KEIYAKUSHAIN' },
+  { label: t('contract.employmentHaken'), value: 'HAKEN' },
+  { label: t('contract.employmentArubaito'), value: 'ARUBAITO' },
+  { label: t('contract.employmentFullTimeVn'), value: 'FULL_TIME_VN' },
+  { label: t('contract.employmentPartTimeVn'), value: 'PART_TIME_VN' },
 ]);
 
 const statusOptions = computed(() => [
-  { label: t('contract.statusActive') || 'Đang hoạt động (ACTIVE)', value: 'ACTIVE' },
-  { label: t('contract.statusPending') || 'Chờ duyệt / Ký kết (PENDING)', value: 'PENDING' },
-  { label: t('contract.statusExpired') || 'Đã hết hạn (EXPIRED)', value: 'EXPIRED' },
-  { label: t('contract.statusTerminated') || 'Bị đơn phương chấm dứt (TERMINATED)', value: 'TERMINATED' },
+  { label: t('contract.statusActive'), value: 'ACTIVE' },
+  { label: t('contract.statusPending'), value: 'PENDING' },
+  { label: t('contract.statusExpired'), value: 'EXPIRED' },
+  { label: t('contract.statusTerminated'), value: 'TERMINATED' },
 ]);
 
 // Computed statistics
@@ -671,11 +679,11 @@ const doExportContractPdf = async () => {
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
 
-    showMessage('success', t('text.success'), t('contract.downloadPdfSuccess', { theme: theme === 'classic' ? t('contract.styleClassic') : theme === 'modern' ? t('contract.styleModern') : t('contract.styleAcademic') }) || `Đã tải xuống hợp đồng PDF phong cách ${theme === 'classic' ? 'Truyền thống' : theme === 'modern' ? 'Hiện đại' : 'Thanh lịch'}.`);
+    showMessage('success', t('text.success'), t('contract.downloadPdfSuccess', { theme: theme === 'classic' ? t('contract.styleClassic') : theme === 'modern' ? t('contract.styleModern') : t('contract.styleAcademic') }));
     showPdfThemeDialog.value = false;
   } catch (err: any) {
     console.error(err);
-    showMessage('error', t('text.error') || 'Lỗi', t('contract.exportPdfError') || 'Không thể xuất file PDF.');
+    showMessage('error', t('text.error'), t('contract.exportPdfError'));
   } finally {
     downloadingPdf.value = false;
     downloadingPdfId.value = null;
@@ -754,14 +762,14 @@ const saveContract = () => {
       () => {
         submitting.value = false;
         displayDialog.value = false;
-        showMessage('success', t('text.success') || 'Thành công', t('contract.updateSuccessDesc') || 'Hợp đồng đã được cập nhật thành công.');
+        showMessage('success', t('text.success'), t('contract.updateSuccessDesc'));
         isReload.value = !isReload.value;
       },
       (err: any) => {
         submitting.value = false;
         // Map specific overlap code
         const msg = err.response?.data?.messages?.message || err.message;
-        showMessage('error', t('contract.updateError') || 'Lỗi cập nhật', msg);
+        showMessage('error', t('contract.updateError'), msg);
       }
     );
   } else {
@@ -777,21 +785,21 @@ const saveContract = () => {
             submitting.value = false;
             displayDialog.value = false;
             pendingFiles.value = [];
-            showMessage('success', t('text.success') || 'Thành công', t('contract.createSuccessWithDocs') || 'Ký hợp đồng mới và tải lên tài liệu thành công.');
+            showMessage('success', t('text.success'), t('contract.createSuccessWithDocs'));
             isReload.value = !isReload.value;
           });
         } else {
           submitting.value = false;
           displayDialog.value = false;
           pendingFiles.value = [];
-          showMessage('success', t('text.success') || 'Thành công', t('contract.createSuccess') || 'Ký hợp đồng mới thành công.');
+          showMessage('success', t('text.success'), t('contract.createSuccess'));
           isReload.value = !isReload.value;
         }
       },
       (err: any) => {
         submitting.value = false;
         const msg = err.response?.data?.messages?.message || err.message;
-        showMessage('error', t('contract.createError') || 'Lỗi tạo mới', msg);
+        showMessage('error', t('contract.createError'), msg);
       }
     );
   }
@@ -881,11 +889,11 @@ const onPendingFileSelected = (e: Event) => {
     Array.from(target.files).forEach(file => {
       const ext = file.name.split('.').pop()?.toLowerCase() || '';
       if (!allowedExtensions.includes(ext)) {
-        showMessage('error', t('contract.formatError') || 'Lỗi định dạng', t('contract.formatErrorDesc', { ext }) || `Định dạng .${ext} không hỗ trợ.`);
+        showMessage('error', t('contract.formatError'), t('contract.formatErrorDesc', { ext }));
         return;
       }
       if (file.size > maxSize) {
-        showMessage('error', t('contract.sizeError') || 'Dung lượng quá lớn', t('contract.sizeErrorDesc', { name: file.name }) || `Tệp ${file.name} vượt quá 10MB.`);
+        showMessage('error', t('contract.sizeError'), t('contract.sizeErrorDesc', { name: file.name }));
         return;
       }
       pendingFiles.value.push(file);

@@ -22,7 +22,7 @@
       <!-- Left side: Form fields (2 cols) -->
       <div class="lg:col-span-2 space-y-6">
         <!-- SECTION 1: TRANSACTION TYPE & PAYMENTS -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-credit-card text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('transaction.infoSection') }}</h2>
@@ -36,7 +36,7 @@
                 :options="typeOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn phân loại"
+                :placeholder="$t('placeholder.selectCategory')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -57,7 +57,7 @@
                 :options="categoryOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn hạng mục"
+                :placeholder="$t('placeholder.selectItem')"
                 class="w-full !rounded-xl"
                 editable
                 :invalid="!!formErrors.category"
@@ -81,7 +81,7 @@
                 :options="paymentMethodOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn phương thức"
+                :placeholder="$t('placeholder.selectMethod')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -93,7 +93,7 @@
                 :options="statusOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn trạng thái"
+                :placeholder="$t('placeholder.selectStatus')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -101,7 +101,7 @@
         </div>
 
         <!-- SECTION 2: AMOUNT & COMPLIANCE TAX CALCULATIONS -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-calculator text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('transaction.amountSection') }}</h2>
@@ -112,7 +112,7 @@
             <AppInputField :label="$t('transaction.amount')" :isRequired="true" :error="formErrors.amount">
               <InputNumber
                 v-model="form.amount"
-                placeholder="Nhập tổng số tiền"
+                :placeholder="$t('placeholder.enterTotalAmount')"
                 class="rounded-xl"
                 mode="currency"
                 currency="VND"
@@ -130,7 +130,7 @@
                 :options="taxRateOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn loại thuế suất"
+                :placeholder="$t('placeholder.selectTaxRate')"
                 class="w-full !rounded-xl"
                 @change="onTaxChange"
               />
@@ -140,7 +140,7 @@
             <AppInputField :label="$t('transaction.netAmount')">
               <InputNumber
                 v-model="form.net_amount"
-                placeholder="Số tiền gốc trước thuế"
+                :placeholder="$t('placeholder.amountBeforeTax')"
                 class="rounded-xl bg-surface-50/50 dark:bg-surface-900"
                 mode="currency"
                 currency="VND"
@@ -153,7 +153,7 @@
             <AppInputField :label="$t('transaction.taxAmount')">
               <InputNumber
                 v-model="form.tax_amount"
-                placeholder="Tiền thuế"
+                :placeholder="$t('placeholder.taxAmount')"
                 class="rounded-xl bg-surface-50/50 dark:bg-surface-900"
                 mode="currency"
                 currency="VND"
@@ -166,7 +166,7 @@
             <AppInputField :label="$t('transaction.withholdingTax')">
               <InputNumber
                 v-model="form.withholding_tax"
-                placeholder="Ví dụ: thuế TNCN 10%, nhà thầu..."
+                :placeholder="$t('placeholder.taxNoteExample')"
                 class="rounded-xl"
                 mode="currency"
                 currency="VND"
@@ -179,7 +179,7 @@
             <AppInputField :label="$t('transaction.invoiceNumber')" :error="formErrors.invoice_registration_number">
               <InputText
                 v-model="form.invoice_registration_number"
-                placeholder="T1234567890123 (Nếu là chi phí tại Nhật)"
+                :placeholder="$t('placeholder.japanInvoiceNo')"
                 class="rounded-xl font-mono uppercase"
                 :invalid="!!formErrors.invoice_registration_number"
                 @change="onValidate('invoice_registration_number')"
@@ -189,7 +189,7 @@
         </div>
 
         <!-- SECTION 3: DESCRIPTION -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-align-left text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('transaction.descriptionSection') }}</h2>
@@ -208,7 +208,7 @@
       <!-- Right side: Documents Uploader & Actions (1 col) -->
       <div class="space-y-6">
         <!-- SUBMIT / CANCEL ACTIONS -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-3">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-3">
           <Button
             :label="$t('transaction.saveTransaction')"
             icon="pi pi-check"
@@ -227,7 +227,7 @@
         </div>
 
         <!-- UPLOAD INVOICE / RECEIPTS AREA (LEGAL EVIDENCE) -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-850 pb-3">
             <div class="flex items-center gap-2">
               <i class="pi pi-paperclip text-primary text-lg"></i>
@@ -264,7 +264,7 @@
             <div
               v-for="(file, idx) in pendingFiles"
               :key="idx"
-              class="flex items-center justify-between p-3 rounded-xl border border-surface-100 dark:border-surface-850"
+              class="flex items-center justify-between p-3 rounded-xl border border-surface-200 dark:border-surface-700"
               :class="getPendingFileIcon(file).bg"
             >
               <div class="flex items-center gap-3 min-w-0">
@@ -352,38 +352,38 @@ const onTaxChange = () => {
 };
 
 const typeOptions = computed(() => [
-  { label: t('transaction.expense') || 'Khoản chi thực tế (EXPENSE)', value: 'EXPENSE' },
-  { label: t('transaction.revenue') || 'Dòng doanh thu (REVENUE)', value: 'REVENUE' },
+  { label: t('transaction.expense'), value: 'EXPENSE' },
+  { label: t('transaction.revenue'), value: 'REVENUE' },
 ]);
 
 const paymentMethodOptions = computed(() => [
-  { label: t('transaction.bankTransfer') || 'Chuyển khoản ngân hàng (BANK_TRANSFER)', value: 'BANK_TRANSFER' },
-  { label: t('transaction.cash') || 'Tiền mặt (CASH)', value: 'CASH' },
-  { label: t('transaction.creditCard') || 'Thẻ tín dụng (CREDIT_CARD)', value: 'CREDIT_CARD' },
+  { label: t('transaction.bankTransfer'), value: 'BANK_TRANSFER' },
+  { label: t('transaction.cash'), value: 'CASH' },
+  { label: t('transaction.creditCard'), value: 'CREDIT_CARD' },
 ]);
 
 const statusOptions = computed(() => [
-  { label: t('transaction.statusPaid') || 'Đã hoàn tất (PAID)', value: 'PAID' },
-  { label: t('transaction.statusPending') || 'Chờ xử lý (PENDING)', value: 'PENDING' },
+  { label: t('transaction.statusPaid'), value: 'PAID' },
+  { label: t('transaction.statusPending'), value: 'PENDING' },
 ]);
 
 const taxRateOptions = computed(() => [
-  { label: t('transaction.noTax') || 'Không thuế (0% / NONE)', value: 'NONE' },
-  { label: (t('transaction.taxRate') || 'Thuế suất áp dụng') + ' 8% (VN)', value: 'VAT_8_VN' },
-  { label: (t('transaction.taxRate') || 'Thuế suất áp dụng') + ' 10% (VN)', value: 'VAT_10_VN' },
+  { label: t('transaction.noTax'), value: 'NONE' },
+  { label: (t('transaction.taxRate')) + ' 8% (VN)', value: 'VAT_8_VN' },
+  { label: (t('transaction.taxRate')) + ' 10% (VN)', value: 'VAT_10_VN' },
 ]);
 
 const categoryOptions = computed(() => [
-  { label: t('transaction.catSalary') || 'Tiền lương nhân sự (Salary)', value: 'Salary' },
-  { label: t('transaction.catOfficeRent') || 'Thuê văn phòng (Office Rent)', value: 'Office Rent' },
-  { label: t('transaction.catUtilities') || 'Điện nước & Internet (Utilities)', value: 'Utilities' },
-  { label: t('transaction.catOutsourcing') || 'Chi phí thầu phụ (Outsourcing Cost)', value: 'Outsourcing Cost' },
-  { label: t('transaction.catSoftware') || 'Công cụ & Phần mềm (Software & SaaS)', value: 'Software & SaaS' },
-  { label: t('transaction.catTravel') || 'Chi phí đi lại (Travel Expense)', value: 'Travel/Transport' },
-  { label: t('transaction.catMarketing') || 'Quảng cáo & Marketing (Marketing & Ads)', value: 'Marketing' },
-  { label: t('transaction.catClientRevenue') || 'Doanh thu khách hàng (Client Revenue)', value: 'Client Revenue' },
-  { label: t('transaction.catConsulting') || 'Phí tư vấn dịch vụ (Consulting Fee)', value: 'Consulting Fee' },
-  { label: t('transaction.catOthers') || 'Chi phí khác (Others)', value: 'Others' },
+  { label: t('transaction.catSalary'), value: 'Salary' },
+  { label: t('transaction.catOfficeRent'), value: 'Office Rent' },
+  { label: t('transaction.catUtilities'), value: 'Utilities' },
+  { label: t('transaction.catOutsourcing'), value: 'Outsourcing Cost' },
+  { label: t('transaction.catSoftware'), value: 'Software & SaaS' },
+  { label: t('transaction.catTravel'), value: 'Travel/Transport' },
+  { label: t('transaction.catMarketing'), value: 'Marketing' },
+  { label: t('transaction.catClientRevenue'), value: 'Client Revenue' },
+  { label: t('transaction.catConsulting'), value: 'Consulting Fee' },
+  { label: t('transaction.catOthers'), value: 'Others' },
 ]);
 
 const calculateTaxAndNet = () => {
@@ -424,7 +424,7 @@ const saveTransaction = () => {
   }
 
   if (form.value.type === 'EXPENSE' && pendingFiles.value.length === 0) {
-    showMessage('warning', t('transaction.valMissDocs') || 'Thiếu chứng từ pháp lý', t('transaction.valMissDocsDesc') || 'Doanh nghiệp bắt buộc phải đính kèm chứng từ (Hóa đơn/UNC) cho các khoản chi phí để đảm bảo tuân thủ pháp luật thuế.');
+    showMessage('warning', t('transaction.valMissDocs'), t('transaction.valMissDocsDesc'));
     return;
   }
 
@@ -446,19 +446,19 @@ const saveTransaction = () => {
       if (txnId && pendingFiles.value.length > 0) {
         uploadPendingFiles(txnId, () => {
           submitting.value = false;
-          showMessage('success', t('transaction.msgSaveSuccess') || 'Đã lưu giao dịch', t('transaction.msgSaveSuccessDesc') || 'Giao dịch và chứng từ đính kèm đã được cập nhật.');
+          showMessage('success', t('transaction.msgSaveSuccess'), t('transaction.msgSaveSuccessDesc'));
           navigateTo('/transaction');
         });
       } else {
         submitting.value = false;
-        showMessage('success', t('transaction.msgSaveSuccess') || 'Đã lưu giao dịch', t('transaction.msgSaveSuccessShort') || 'Giao dịch đã được ghi nhận.');
+        showMessage('success', t('transaction.msgSaveSuccess'), t('transaction.msgSaveSuccessShort'));
         navigateTo('/transaction');
       }
     },
     (err: any) => {
       submitting.value = false;
-      const msg = err.response?.data?.messages?.message || err.message || t('transaction.msgSaveFailedDesc') || 'Lưu giao dịch thất bại';
-      showMessage('error', t('transaction.msgSaveFailed') || 'Lưu giao dịch thất bại', msg);
+      const msg = err.response?.data?.messages?.message || err.message || t('transaction.msgSaveFailedDesc');
+      showMessage('error', t('transaction.msgSaveFailed'), msg);
     }
   );
 };
@@ -475,11 +475,11 @@ const onPendingFileSelected = (e: Event) => {
     Array.from(target.files).forEach(file => {
       const ext = file.name.split('.').pop()?.toLowerCase() || '';
       if (!allowedExtensions.includes(ext)) {
-        showMessage('error', 'Lỗi định dạng', `Định dạng .${ext} không được hỗ trợ.`);
+        showMessage('error', t('transaction.msgFormatError'), t('transaction.msgFormatErrorDesc', { ext }));
         return;
       }
       if (file.size > maxSize) {
-        showMessage('error', 'Kích thước vượt giới hạn', `Tệp ${file.name} vượt quá 10MB.`);
+        showMessage('error', t('transaction.msgSizeError'), t('transaction.msgSizeErrorDesc', { name: file.name }));
         return;
       }
       pendingFiles.value.push(file);

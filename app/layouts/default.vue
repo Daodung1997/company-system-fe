@@ -1,23 +1,26 @@
 <template>
   <div class="min-h-screen bg-surface-50 dark:bg-surface-950 font-sans selection:bg-primary/20 relative">
-    <!-- Decorative Background Elements -->
-    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
-      <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
-      <div class="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-blue-500/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s"></div>
-      <div class="absolute -bottom-[10%] left-[20%] w-[50%] h-[50%] bg-primary/3 rounded-full blur-[150px] animate-pulse" style="animation-delay: 4s"></div>
-    </div>
 
     <!-- Sidebar -->
     <AppSidebar />
 
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <Transition name="fade">
+      <div 
+        v-if="isMobileSidebarOpen" 
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden cursor-pointer"
+        @click="isMobileSidebarOpen = false"
+      ></div>
+    </Transition>
+
+    <!-- Top mask strip: hides scrolling content visible above the floating topbar -->
+    <div class="hidden lg:block fixed top-0 left-0 right-0 h-4 bg-surface-50 dark:bg-surface-950 z-30"></div>
+
     <!-- Main Content Area -->
-    <main 
-      class="transition-all duration-500 min-h-screen flex flex-col pt-20"
-      :style="{ paddingLeft: isCollapsed ? '80px' : '280px' }"
-    >
+    <main class="transition-all duration-500 min-h-screen flex flex-col pt-20 lg:pt-[76px] main-content-responsive">
       <AppTopbar />
       
-      <div class="flex-1 p-8 overflow-x-hidden">
+      <div class="flex-1 p-4 sm:p-8 overflow-x-hidden">
         <slot />
       </div>
     </main>
@@ -40,12 +43,22 @@ const appName = import.meta.env.VITE_APP_NAME || 'BASE DEMO';
 // In a real app we might use a store or provide/inject, 
 // for now let's use a shared ref if needed or just hardcode/reactive
 const isCollapsed = useState('sidebarCollapsed', () => false);
+const isMobileSidebarOpen = useState('mobileSidebarOpen', () => false);
 const sidebarWidthString = computed(() => isCollapsed.value ? '80px' : '280px');
 provide('sidebarWidth', sidebarWidthString);
 provide('isSidebarCollapsed', isCollapsed);
 </script>
 
 <style>
+.main-content-responsive {
+  padding-left: 0;
+}
+@media (min-width: 1024px) {
+  .main-content-responsive {
+    padding-left: calc(v-bind(sidebarWidthString) + 1.5rem);
+  }
+}
+
 /* Global Transitions */
 .page-enter-active,
 .page-leave-active {

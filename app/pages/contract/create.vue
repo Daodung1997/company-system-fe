@@ -17,6 +17,43 @@
       </div>
     </div>
 
+    <!-- Nhập nhanh hợp đồng bằng AI Gemini -->
+    <div class="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 rounded-3xl border border-primary/20 shadow-md relative overflow-hidden group">
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center border border-primary/30 text-primary">
+            <i class="pi pi-sparkles text-xl animate-pulse"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase flex items-center gap-1.5">
+              {{ $t('contract.ocrTitle') }}
+              <span class="bg-primary text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">AI OCR</span>
+            </h3>
+            <p class="text-xs text-surface-400">{{ $t('contract.ocrDesc') }}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="file" ref="ocrFileInput" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.webp,.xlsx,.xls,.csv" multiple @change="onOcrFileChange" />
+          <Button
+            :label="$t('contract.ocrButton')"
+            icon="pi pi-upload"
+            :loading="ocrLoading"
+            severity="primary"
+            outlined
+            class="!rounded-xl !px-5 !py-2.5 !font-bold !text-xs !min-w-[180px]"
+            @click="ocrFileInput?.click()"
+          />
+        </div>
+      </div>
+
+      <div v-if="ocrLoading" class="mt-4 flex items-center gap-3 p-4 bg-primary/5 border border-primary/20 rounded-2xl animate-pulse">
+        <ProgressSpinner style="width: 20px; height: 20px" strokeWidth="6" />
+        <span class="text-xs font-bold text-primary">{{ $t('contract.ocrLoading') }}</span>
+      </div>
+    </div>
+
     <!-- Main Grid Form -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       
@@ -450,6 +487,7 @@ import { UPLOAD_DOCUMENT } from '~/apis/document';
 import { GET_EMPLOYEES, GET_EMPLOYEE } from '~/apis/employee';
 import { showMessage } from "~/utils/global";
 import { validateOnAllField, validateOnField } from '~/utils/validate';
+import Api from '~/utils/api';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -457,6 +495,97 @@ const route = useRoute();
 const submitting = ref(false);
 const employees = ref<any[]>([]);
 const initEmployeeItem = ref<any>(null);
+
+const ocrLoading = ref(false);
+const ocrFileInput = ref<HTMLInputElement | null>(null);
+
+const onOcrFileChange = (e: Event) => {
+  const target = e.target as HTMLInputElement;
+  const files = target.files;
+  if (!files || files.length === 0) return;
+
+  const validFiles: File[] = [];
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    if (file.size > 10 * 1024 * 1024) {
+      showMessage('warn', t('contract.ocrFileTooLarge'), t('contract.ocrFileTooLargeDesc', { name: file.name }));
+      return;
+    }
+    validFiles.push(file);
+  }
+
+  ocrLoading.value = true;
+  const formData = new FormData();
+  validFiles.forEach((file) => {
+    formData.append('files[]', file);
+  });
+  formData.append('mode', 'contract');
+
+  Api.post('/ai/ocr', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+    .then((res: any) => {
+      const data = res.data?.data;
+      if (data) {
+        if (data.contract_code) contractForm.value.contract_code = data.contract_code;
+        if (data.type) contractForm.value.type = data.type;
+        if (data.employment_type) contractForm.value.employment_type = data.employment_type;
+        if (data.job_title) contractForm.value.job_title = data.job_title;
+        if (data.work_location) contractForm.value.work_location = data.work_location;
+        if (data.working_hours_per_day !== undefined && data.working_hours_per_day !== null) contractForm.value.working_hours_per_day = Number(data.working_hours_per_day);
+        if (data.probation_salary_percentage !== undefined && data.probation_salary_percentage !== null) contractForm.value.probation_salary_percentage = Number(data.probation_salary_percentage);
+        if (data.bank_name) contractForm.value.bank_name = data.bank_name;
+        if (data.bank_account_number) contractForm.value.bank_account_number = data.bank_account_number;
+        if (data.is_36_agreement_applicable !== undefined) contractForm.value.is_36_agreement_applicable = !!data.is_36_agreement_applicable;
+        if (data.overtime_allowance_included !== undefined) contractForm.value.overtime_allowance_included = !!data.overtime_allowance_included;
+        if (data.probation_period_months !== undefined && data.probation_period_months !== null) contractForm.value.probation_period_months = Number(data.probation_period_months);
+        if (data.insurance_enrolled) contractForm.value.insurance_enrolled = data.insurance_enrolled;
+        if (data.sign_date) contractForm.value.sign_date = new Date(data.sign_date);
+        if (data.start_date) contractForm.value.start_date = new Date(data.start_date);
+        if (data.end_date) contractForm.value.end_date = new Date(data.end_date);
+        if (data.value !== undefined && data.value !== null) contractForm.value.value = Number(data.value);
+
+        // Try to match employee by name if it's a LABOR contract
+        if (contractForm.value.type === 'LABOR' && data.employee_name) {
+          const matchedEmp = employees.value.find(emp => 
+            String(emp.full_name).toLowerCase().includes(String(data.employee_name).toLowerCase())
+          );
+          if (matchedEmp) {
+            contractForm.value.employee_id = matchedEmp.id;
+            showMessage('info', 'Tìm thấy nhân viên', `Đã tự động liên kết hợp đồng với nhân viên: ${matchedEmp.full_name}`);
+          } else {
+            showMessage('warn', 'Không tìm thấy nhân viên', `Tìm thấy tên nhân viên "${data.employee_name}" trong hợp đồng nhưng không khớp với nhân viên nào trên hệ thống.`);
+          }
+        }
+
+        // Vendor/Client fields
+        if (data.partner_name) contractForm.value.partner_name = data.partner_name;
+        if (data.partner_tax_code) contractForm.value.partner_tax_code = data.partner_tax_code;
+        if (data.partner_representative) contractForm.value.partner_representative = data.partner_representative;
+        if (data.partner_representative_role) contractForm.value.partner_representative_role = data.partner_representative_role;
+        if (data.partner_address) contractForm.value.partner_address = data.partner_address;
+        if (data.payment_method) contractForm.value.payment_method = data.payment_method;
+        if (data.payment_terms) contractForm.value.payment_terms = data.payment_terms;
+        if (data.billing_cycle) contractForm.value.billing_cycle = data.billing_cycle;
+        if (data.included_overtime_hours !== undefined && data.included_overtime_hours !== null) contractForm.value.included_overtime_hours = Number(data.included_overtime_hours);
+        if (data.status) contractForm.value.status = data.status;
+
+        showMessage('success', t('contract.ocrSuccessTitle'), t('contract.ocrSuccessDesc'));
+      } else {
+        showMessage('error', t('contract.ocrErrorTitle'), t('contract.ocrErrorDesc'));
+      }
+    })
+    .catch((err: any) => {
+      const errorMsg = err?.response?.data?.messages?.message || err?.response?.data?.message || t('contract.ocrConnectError');
+      showMessage('error', t('contract.ocrErrorTitle'), errorMsg);
+    })
+    .finally(() => {
+      ocrLoading.value = false;
+      if (target) target.value = '';
+    });
+};
 
 const getEmployeesApi = ({ query, successCallback, errorCallback }: any) => {
   const urlParams = new URLSearchParams(query);

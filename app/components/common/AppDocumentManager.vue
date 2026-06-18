@@ -32,11 +32,11 @@
       </div>
 
       <h4 class="text-lg font-black text-surface-900 dark:text-surface-0 mb-1.5">
-        {{ $t('document.dragDropText') || 'Kéo thả tài liệu vào đây hoặc click để tải lên' }}
+        {{ $t('document.dragDropText') }}
       </h4>
       <p class="text-xs text-surface-500 dark:text-surface-400 text-center max-w-sm leading-relaxed">
-        {{ $t('document.allowedFormats') || 'Hỗ trợ định dạng: PDF, Word, Excel, JPG, PNG' }}
-        <span class="block mt-1 font-semibold text-primary/80">Dung lượng tối đa: 10MB</span>
+        {{ $t('document.allowedFormats') }}
+        <span class="block mt-1 font-semibold text-primary/80">{{ $t('document.maxSizeText') }}</span>
       </p>
     </div>
 
@@ -45,7 +45,7 @@
       <div class="flex items-center gap-2">
         <i class="pi pi-spin pi-spinner text-primary text-xs"></i>
         <h5 class="text-xs font-black text-surface-500 uppercase tracking-widest">
-          {{ $t('document.uploading') || 'Đang tải lên tài liệu...' }}
+          {{ $t('document.uploading') }}
         </h5>
       </div>
       <div v-for="(file, idx) in uploadingFiles" :key="idx" class="space-y-1.5">
@@ -69,14 +69,14 @@
         <div class="flex items-center gap-2">
           <i class="pi pi-folder-open text-primary text-sm"></i>
           <span class="text-xs font-black text-surface-600 dark:text-surface-300 uppercase tracking-wider">
-            {{ $t('document.totalFiles') || 'Danh sách tài liệu đính kèm' }} ({{ localDocuments.length }})
+            {{ $t('document.totalFiles') }} ({{ localDocuments.length }})
           </span>
         </div>
         <div class="flex items-center gap-1 bg-surface-100 dark:bg-surface-800 p-1 rounded-xl">
           <button
             class="w-8 h-8 rounded-lg text-sm flex items-center justify-center transition-all"
             :class="viewMode === 'grid' ? 'bg-white dark:bg-surface-900 text-primary shadow-md font-bold' : 'text-surface-500 hover:text-surface-800 dark:hover:text-surface-300'"
-            v-tooltip.top="'Hiển thị lưới'"
+            v-tooltip.top="$t('document.tooltipGrid')"
             @click="viewMode = 'grid'"
           >
             <i class="pi pi-th-large"></i>
@@ -84,7 +84,7 @@
           <button
             class="w-8 h-8 rounded-lg text-sm flex items-center justify-center transition-all"
             :class="viewMode === 'list' ? 'bg-white dark:bg-surface-900 text-primary shadow-md font-bold' : 'text-surface-500 hover:text-surface-800 dark:hover:text-surface-300'"
-            v-tooltip.top="'Hiển thị danh sách'"
+            v-tooltip.top="$t('document.tooltipList')"
             @click="viewMode = 'list'"
           >
             <i class="pi pi-list"></i>
@@ -125,14 +125,14 @@
                 icon="pi pi-eye"
                 severity="secondary"
                 class="!w-10 !h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-transform duration-300 scale-75 group-hover:scale-100"
-                v-tooltip.top="$t('document.view') || 'Xem trực tiếp'"
+                v-tooltip.top="$t('document.view')"
                 @click.stop="previewDocument(doc)"
               />
               <Button
                 icon="pi pi-download"
                 severity="secondary"
                 class="!w-10 !h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-transform duration-300 scale-75 group-hover:scale-100"
-                v-tooltip.top="$t('document.download') || 'Tải xuống máy'"
+                v-tooltip.top="$t('document.download')"
                 @click.stop="downloadFile(doc)"
               />
               <Button
@@ -140,7 +140,7 @@
                 icon="pi pi-trash"
                 severity="danger"
                 class="!w-10 !h-10 rounded-full bg-red-500/80 hover:bg-red-500 border-none text-white transition-transform duration-300 scale-75 group-hover:scale-100"
-                v-tooltip.top="$t('document.delete') || 'Xóa tài liệu'"
+                v-tooltip.top="$t('document.delete')"
                 @click.stop="confirmDelete(doc)"
               />
             </div>
@@ -153,12 +153,12 @@
             </h5>
             <div class="flex flex-col gap-1 text-[10px] text-surface-500">
               <div class="flex justify-between">
-                <span>Dung lượng: <strong class="text-surface-700 dark:text-surface-300">{{ formatSize(doc.filesize) }}</strong></span>
+                <span>{{ $t('document.filesize') }}: <strong class="text-surface-700 dark:text-surface-300">{{ formatSize(doc.filesize) }}</strong></span>
                 <span>{{ formatDate(doc.created_at) }}</span>
               </div>
               <div v-if="doc.created_by" class="flex items-center gap-1 mt-0.5">
                 <i class="pi pi-user text-[9px] text-primary"></i>
-                <span>Tải lên bởi: <strong class="text-primary">{{ doc.created_by }}</strong></span>
+                <span>{{ $t('document.uploadedBy') }}: <strong class="text-primary">{{ doc.created_by }}</strong></span>
               </div>
             </div>
           </div>
@@ -168,10 +168,10 @@
       <!-- LIST VIEW (PREMIUM STORAGE STYLE) -->
       <div v-else class="border border-surface-200 dark:border-surface-800 rounded-3xl overflow-hidden bg-white dark:bg-surface-900 shadow-lg shadow-surface-100/30 dark:shadow-none">
         <div class="hidden sm:grid grid-cols-12 gap-4 px-6 py-3.5 bg-surface-50/50 dark:bg-surface-900 border-b border-surface-200 dark:border-surface-800 text-[10px] font-black uppercase tracking-wider text-surface-500">
-          <div class="col-span-6">Tên tài liệu</div>
-          <div class="col-span-2 text-right">Dung lượng</div>
-          <div class="col-span-2 text-center">Người tải lên</div>
-          <div class="col-span-2 text-right">Hành động</div>
+          <div class="col-span-6">{{ $t('document.colName') }}</div>
+          <div class="col-span-2 text-right">{{ $t('document.filesize') }}</div>
+          <div class="col-span-2 text-center">{{ $t('document.uploadedBy') }}</div>
+          <div class="col-span-2 text-right">{{ $t('common.actions') }}</div>
         </div>
         <div class="divide-y divide-surface-100 dark:divide-surface-800/80">
           <div
@@ -204,7 +204,7 @@
             <!-- Creator (Col 2) -->
             <div class="col-span-2 text-center text-xs font-semibold text-surface-700 dark:text-surface-300 hidden sm:block">
               <span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold">
-                {{ doc.created_by || 'Hệ thống' }}
+                {{ doc.created_by || $t('common.system') }}
               </span>
             </div>
 
@@ -215,7 +215,7 @@
                 severity="secondary"
                 variant="text"
                 class="!w-9 !h-9 p-0 rounded-xl hover:bg-surface-100 dark:hover:bg-surface-800"
-                v-tooltip.top="'Xem trực tiếp'"
+                v-tooltip.top="$t('document.view')"
                 @click.stop="previewDocument(doc)"
               />
               <Button
@@ -223,7 +223,7 @@
                 severity="secondary"
                 variant="text"
                 class="!w-9 !h-9 p-0 rounded-xl hover:bg-surface-100 dark:hover:bg-surface-800"
-                v-tooltip.top="'Tải xuống'"
+                v-tooltip.top="$t('document.downloadTooltip')"
                 @click.stop="downloadFile(doc)"
               />
               <Button
@@ -232,7 +232,7 @@
                 severity="danger"
                 variant="text"
                 class="!w-9 !h-9 p-0 rounded-xl hover:bg-red-50 dark:hover:bg-red-950/20 text-red-500"
-                v-tooltip.top="'Xóa bỏ'"
+                v-tooltip.top="$t('document.deleteTooltip')"
                 @click.stop="confirmDelete(doc)"
               />
             </div>
@@ -246,7 +246,7 @@
       <div class="w-16 h-16 rounded-full bg-surface-100 dark:bg-surface-850 flex items-center justify-center mb-3">
         <i class="pi pi-folder text-2xl text-surface-400"></i>
       </div>
-      <p class="text-sm font-bold text-surface-500">{{ $t('document.noDocuments') || 'Không có tài liệu/chứng từ nào được đính kèm.' }}</p>
+      <p class="text-sm font-bold text-surface-500">{{ $t('document.noDocuments') }}</p>
     </div>
 
     <!-- PREMIUM DOCUMENT VIEWER MODAL -->
@@ -274,12 +274,12 @@
             <div class="w-20 h-20 rounded-3xl bg-surface-800 flex items-center justify-center mx-auto mb-2 text-warning">
               <i class="pi pi-exclamation-triangle text-4xl"></i>
             </div>
-            <h4 class="text-lg font-black text-white">{{ $t('document.viewerNotSupportedTitle') || 'Không hỗ trợ xem trực tuyến' }}</h4>
+            <h4 class="text-lg font-black text-white">{{ $t('document.viewerNotSupportedTitle') }}</h4>
             <p class="text-sm max-w-sm mx-auto text-surface-400 leading-relaxed">
-              {{ $t('document.viewerNotSupportedDesc') || 'Trình duyệt không hỗ trợ xem trước các định dạng tệp tin Word/Excel để bảo mật. Vui lòng tải xuống máy cá nhân để mở.' }}
+              {{ $t('document.viewerNotSupportedDesc') }}
             </p>
             <Button
-              :label="$t('document.downloadFile') || 'Tải xuống tệp tin'"
+              :label="$t('document.downloadFile')"
               icon="pi pi-download"
               severity="warning"
               class="!rounded-xl font-bold mt-2 shadow-lg shadow-warning/20"
@@ -293,7 +293,7 @@
     <!-- Delete Confirmation Dialog -->
     <Dialog
       v-model:visible="deleteConfirmVisible"
-      :header="$t('document.deleteConfirmTitle') || 'Xác nhận gỡ bỏ tài liệu'"
+      :header="$t('document.deleteConfirmTitle')"
       :modal="true"
       :draggable="false"
       class="w-full max-w-md mx-4"
@@ -309,23 +309,23 @@
           <i class="pi pi-exclamation-triangle text-xl"></i>
         </div>
         <div class="space-y-1">
-          <p class="text-sm font-semibold text-surface-800 dark:text-surface-100">Hành động này không thể hoàn tác!</p>
+          <p class="text-sm font-semibold text-surface-800 dark:text-surface-100">{{ $t('document.deleteConfirmWarning') }}</p>
           <p class="text-xs text-surface-500 leading-relaxed">
-            Hệ thống sẽ tiến hành xóa vĩnh viễn tệp đính kèm <strong class="text-surface-700 dark:text-surface-300 font-bold">{{ docToDelete?.origin_name }}</strong> khỏi lưu trữ đám mây. Hãy chắc chắn trước khi tiếp tục.
+            {{ $t('document.deleteConfirmDetails', { name: docToDelete?.origin_name }) }}
           </p>
         </div>
       </div>
       <template #footer>
         <div class="flex gap-3 w-full">
           <Button
-            :label="$t('common.cancel') || 'Hủy bỏ'"
+            :label="$t('common.cancel')"
             severity="secondary"
             variant="outlined"
             class="flex-1 py-3 rounded-xl font-bold"
             @click="deleteConfirmVisible = false"
           />
           <Button
-            :label="$t('common.delete') || 'Xóa vĩnh viễn'"
+            :label="$t('common.delete')"
             severity="danger"
             class="flex-1 py-3 rounded-xl font-bold"
             @click="deleteDocument"

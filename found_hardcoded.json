@@ -1,0 +1,5175 @@
+[
+  {
+    "file": "config/constants.ts",
+    "line": 5,
+    "content": "export const FORMAT_DATE_SHOW_FULL = \"yyyy年MM月DD日 HH:mm:ss\";",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "config/constants.ts",
+    "line": 6,
+    "content": "export const FORMAT_DATE_SHOW = \"yyyy年MM月DD日\";",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "config/constants.ts",
+    "line": 7,
+    "content": "export const YEAR_SHOW = \"yyyy年\";",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "config/constants.ts",
+    "line": 8,
+    "content": "export const MONTH_SHOW = \"MM月\";",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "pages/login.vue",
+    "line": 11,
+    "content": "{{ $t('auth.usernameLabel') || 'Email / Số điện thoại' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/login.vue",
+    "line": 22,
+    "content": ":placeholder=\"$t('auth.usernamePlaceholder') || 'Email hoặc Số điện thoại'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/index.vue",
+    "line": 280,
+    "content": ":title=\"$t('dashboard.ageDemographics') || 'Phân bố Độ tuổi Nhân sự'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/index.vue",
+    "line": 281,
+    "content": ":subtitle=\"$t('dashboard.ageDemographicsDesc') || 'Tỷ lệ nhân viên theo nhóm tuổi trong doanh nghiệp'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/index.vue",
+    "line": 289,
+    "content": ":title=\"$t('dashboard.genderDemographics') || 'Cơ cấu Giới tính Nhân sự'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/index.vue",
+    "line": 290,
+    "content": ":subtitle=\"$t('dashboard.genderDemographicsDesc') || 'Tỷ lệ giới tính nam, nữ trong doanh nghiệp'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 6,
+    "content": "<span class=\"text-xs font-semibold text-primary uppercase tracking-widest\">{{ $t('notification.pageTitle') || 'Trung tâm Thông báo' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 7,
+    "content": "<h1 class=\"text-2xl font-black text-surface-900 dark:text-surface-0 mt-0.5\">{{ $t('notification.title') || 'Thông báo' }}</h1>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 12,
+    "content": ":label=\"$t('notification.markAllRead') || 'Đọc tất cả'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 30,
+    "content": "<p class=\"text-[10px] font-bold text-surface-400 uppercase tracking-wider mt-0.5\">{{ $t('notification.totalLabel') || 'Tổng thông báo' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 39,
+    "content": "<p class=\"text-[10px] font-bold text-surface-400 uppercase tracking-wider mt-0.5\">{{ $t('notification.unreadLabel') || 'Chưa đọc' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 48,
+    "content": "<p class=\"text-[10px] font-bold text-surface-400 uppercase tracking-wider mt-0.5\">{{ $t('notification.readLabel') || 'Đã đọc' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 61,
+    "content": ":placeholder=\"$t('notification.searchPlaceholder') || 'Tìm kiếm thông báo...'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 73,
+    "content": ":placeholder=\"$t('notification.allTypes') || 'Tất cả loại'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 91,
+    "content": ":label=\"$t('notification.searchBtn') || 'Tìm kiếm'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 103,
+    "content": "<span class=\"text-surface-500 font-medium text-sm\">{{ $t('notification.loading') || 'Đang tải thông báo...' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 109,
+    "content": "<p class=\"text-sm font-bold text-surface-400\">{{ $t('notification.empty') || 'Không có thông báo nào' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 110,
+    "content": "<p class=\"text-xs text-surface-400 mt-1\">{{ $t('notification.emptyDesc') || 'Các thông báo hệ thống sẽ hiển thị ở đây.' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 149,
+    "content": "<span v-else class=\"text-[9px] font-bold text-surface-400 uppercase tracking-wider\">{{ $t('notification.readStatus') || 'Đã đọc' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 156,
+    "content": "v-tooltip.top=\"$t('notification.goToAction') || 'Chuyển đến'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 168,
+    "content": "{{ $t('pagination.total', { total: totalNotifications }) || `Tổng: ${totalNotifications} thông báo` }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 225,
+    "content": "{ label: t('notification.allTypes') || 'Tất cả loại', value: '' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 226,
+    "content": "{ label: t('notification.typeLeaveCreated') || 'Đơn nghỉ phép mới', value: 'LEAVE_REQUEST_CREATED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 227,
+    "content": "{ label: t('notification.typeLeaveApproved') || 'Phê duyệt nghỉ phép', value: 'LEAVE_REQUEST_APPROVED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 228,
+    "content": "{ label: t('notification.typeLeaveRejected') || 'Từ chối nghỉ phép', value: 'LEAVE_REQUEST_REJECTED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 229,
+    "content": "{ label: t('notification.typeCompliance') || 'Cảnh báo tuân thủ', value: 'COMPLIANCE_ALERT' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 230,
+    "content": "{ label: t('notification.typeContract') || 'Hợp đồng', value: 'CONTRACT_CREATED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 231,
+    "content": "{ label: t('notification.typeTransaction') || 'Giao dịch', value: 'TRANSACTION_CREATED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 235,
+    "content": "{ label: t('notification.filterAll') || 'Tất cả', value: '' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 236,
+    "content": "{ label: t('notification.filterUnread') || 'Chưa đọc', value: 'unread' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 237,
+    "content": "{ label: t('notification.filterRead') || 'Đã đọc', value: 'read' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 372,
+    "content": "'LEAVE_REQUEST_CREATED': t('notification.typeLeaveCreated') || 'Nghỉ phép',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 373,
+    "content": "'LEAVE_REQUEST_APPROVED': t('notification.typeLeaveApproved') || 'Đã duyệt',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 374,
+    "content": "'LEAVE_REQUEST_REJECTED': t('notification.typeLeaveRejected') || 'Từ chối',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 375,
+    "content": "'COMPLIANCE_ALERT': t('notification.typeCompliance') || 'Tuân thủ',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 376,
+    "content": "'CONTRACT_CREATED': t('notification.typeContract') || 'Hợp đồng',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 377,
+    "content": "'TRANSACTION_CREATED': t('notification.typeTransaction') || 'Giao dịch',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 403,
+    "content": "if (diffMin < 1) return t('notification.justNow') || 'Vừa xong';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 404,
+    "content": "if (diffMin < 60) return t('notification.minutesAgo', { n: diffMin }) || `${diffMin} phút trước`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 405,
+    "content": "if (diffHour < 24) return t('notification.hoursAgo', { n: diffHour }) || `${diffHour} giờ trước`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/notification/index.vue",
+    "line": 406,
+    "content": "if (diffDay < 7) return t('notification.daysAgo', { n: diffDay }) || `${diffDay} ngày trước`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/change-password.vue",
+    "line": 128,
+    "content": ":label=\"$t('btn.logout') || $t('menu.logout') || 'Đăng xuất'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/forgot-password.vue",
+    "line": 41,
+    "content": ":label=\"$t('auth.backToLogin') || 'Quay về đăng nhập'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/forgot-password.vue",
+    "line": 97,
+    "content": "showMessage(\"success\", t(\"text.success\") || \"Thành công\", msg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/forgot-password.vue",
+    "line": 107,
+    "content": "|| t(\"text.errorMessage\") || \"Có lỗi xảy ra.\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/forgot-password.vue",
+    "line": 108,
+    "content": "showMessage(\"error\", t(\"text.error\") || \"Lỗi\", errMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/reset-password.vue",
+    "line": 223,
+    "content": "showMessage(\"warn\", t(\"text.warning\") || \"Cảnh báo\", t(\"auth.errorMail\") || \"Vui lòng nhập email.\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/reset-password.vue",
+    "line": 233,
+    "content": "showMessage(\"success\", t(\"text.success\") || \"Thành công\", msg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/reset-password.vue",
+    "line": 239,
+    "content": "|| t(\"text.errorMessage\") || \"Có lỗi xảy ra.\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/reset-password.vue",
+    "line": 240,
+    "content": "showMessage(\"error\", t(\"text.error\") || \"Lỗi\", errMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/reset-password.vue",
+    "line": 270,
+    "content": "|| t(\"text.errorMessage\") || \"Có lỗi xảy ra.\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/auth/reset-password.vue",
+    "line": 271,
+    "content": "showMessage(\"error\", t(\"text.error\") || \"Lỗi\", errMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/manage.vue",
+    "line": 114,
+    "content": "list.push({ label: t('timesheet.tabPayroll') || 'Bảng lương', value: 'payroll', icon: 'pi pi-money-bill' });",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/manage.vue",
+    "line": 118,
+    "content": "list.push({ label: t('timesheet.tabConfigs') || 'Cấu hình', value: 'configs', icon: 'pi pi-clock' });",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/manage.vue",
+    "line": 119,
+    "content": "list.push({ label: t('timesheet.tabShiftAssignments') || 'Phân ca', value: 'shift-assignments', icon: 'pi pi-users' });",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/index.vue",
+    "line": 260,
+    "content": ":emptyText=\"$t('timesheet.noData') || 'Không tìm thấy dữ liệu chấm công nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/index.vue",
+    "line": 397,
+    "content": "{ key: 'date', label: t('timesheet.date') || 'Ngày', minWidth: '130px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/index.vue",
+    "line": 398,
+    "content": "{ key: 'check_in', label: t('timesheet.checkInTime') || 'Giờ vào', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/index.vue",
+    "line": 399,
+    "content": "{ key: 'check_out', label: t('timesheet.checkOutTime') || 'Giờ ra', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/timesheet/index.vue",
+    "line": 400,
+    "content": "{ key: 'status', label: t('timesheet.status') || 'Trạng thái', minWidth: '135px' }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/company-setting/index.vue",
+    "line": 421,
+    "content": ":label=\"$t('btn.upload') || 'Tải ảnh lên'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/company-setting/index.vue",
+    "line": 431,
+    "content": ":label=\"$t('btn.delete') || 'Xóa ảnh'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/company-setting/index.vue",
+    "line": 456,
+    "content": ":label=\"$t('btn.upload') || 'Tải ảnh lên'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/company-setting/index.vue",
+    "line": 466,
+    "content": ":label=\"$t('btn.delete') || 'Xóa ảnh'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/data.ts",
+    "line": 56,
+    "content": "nationality: 'Việt Nam',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/data.ts",
+    "line": 58,
+    "content": "religion: 'Không',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 11,
+    "content": "{{ $t('menu.employee') || 'Quản lý nhân sự' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 23,
+    "content": ":label=\"$t('employee.addTitle') || 'Thêm nhân viên'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 43,
+    "content": "<AppInputField :label=\"$t('btn.search') || 'Tìm kiếm'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 48,
+    "content": ":placeholder=\"$t('employee.placeholderSearch') || 'Tên, email, SĐT, mã nhân viên...'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 56,
+    "content": "<AppInputField :label=\"$t('employee.status') || 'Trạng thái'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 62,
+    "content": ":placeholder=\"$t('text.all') || 'Tất cả'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 70,
+    "content": "<AppInputField :label=\"$t('employee.role') || 'Vai trò'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 76,
+    "content": ":placeholder=\"$t('text.all') || 'Tất cả'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 93,
+    "content": ":emptyText=\"$t('text.noData') || 'Không tìm thấy nhân viên nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 137,
+    "content": "<Button icon=\"pi pi-eye\" severity=\"info\" variant=\"text\" class=\"!w-9 !h-9 !rounded-xl\" v-tooltip.top=\"$t('btn.detail') || 'Chi tiết'\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 140,
+    "content": "<Button icon=\"pi pi-pencil\" severity=\"warn\" variant=\"text\" class=\"!w-9 !h-9 !rounded-xl\" v-tooltip.top=\"$t('btn.edit') || 'Sửa'\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 147,
+    "content": "v-tooltip.top=\"$t('contract.quickSign') || 'Ký nhanh'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 150,
+    "content": "<Button icon=\"pi pi-trash\" severity=\"danger\" variant=\"text\" class=\"!w-9 !h-9 !rounded-xl\" v-tooltip.top=\"$t('btn.disable') || 'Vô hiệu hóa'\" @click=\"confirmDelete(data)\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 157,
+    "content": "<Dialog v-model:visible=\"showDeleteDialog\" :modal=\"true\" :closable=\"true\" :header=\"$t('btn.confirm') || 'Xác nhận'\" class=\"!rounded-3xl\" :style=\"{ width: '450px' }\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 164,
+    "content": "{{ $t('employee.dialogDisableTitle') || 'Vô hiệu hóa nhân viên?' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 167,
+    "content": "{{ $t('employee.dialogDisableDesc', { name: deleteTarget?.full_name }) || `Trạng thái của nhân sự ${deleteTarget?.full_name} sẽ được chuyển thành INACTIVE.` }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 173,
+    "content": "<Button :label=\"$t('btn.cancel') || 'Hủy'\" severity=\"secondary\" outlined @click=\"showDeleteDialog = false\" class=\"!rounded-xl\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 174,
+    "content": "<Button :label=\"$t('btn.confirm') || 'Xác nhận'\" severity=\"danger\" @click=\"doDelete\" class=\"!rounded-xl\" :loading=\"deleting\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 201,
+    "content": "{ label: t('employee.statusActive') || 'Đang làm việc', value: 'ACTIVE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 202,
+    "content": "{ label: t('employee.statusInactive') || 'Nghỉ việc', value: 'INACTIVE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 203,
+    "content": "{ label: t('employee.statusProbation') || 'Thử việc', value: 'PROBATION' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 208,
+    "content": "{ label: t('employee.roleManager') || 'Quản lý', value: 'MANAGER' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 209,
+    "content": "{ label: t('employee.roleStaff') || 'Nhân viên', value: 'STAFF' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 213,
+    "content": "{ key: 'code', label: t('employee.code') || 'Mã NV', minWidth: '100px', sortable: true },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 214,
+    "content": "{ key: 'full_name', label: t('employee.fullName') || 'Họ tên', minWidth: '180px', sortable: true },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 216,
+    "content": "{ key: 'phone', label: t('employee.phone') || 'Điện thoại', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 217,
+    "content": "{ key: 'department', label: t('employee.department') || 'Phòng ban', minWidth: '150px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 218,
+    "content": "{ key: 'role', label: t('employee.role') || 'Vai trò', minWidth: '100px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 219,
+    "content": "{ key: 'status', label: t('employee.status') || 'Trạng thái', minWidth: '110px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 220,
+    "content": "{ key: 'relatives_count', label: t('employee.dependentsCount') || 'Thân nhân', minWidth: '100px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 221,
+    "content": "{ key: 'actions', label: t('text.action') || 'Thao tác', minWidth: '120px', frozen: true },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 250,
+    "content": "ACTIVE: t('employee.statusActive') || 'Đang làm',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 251,
+    "content": "INACTIVE: t('employee.statusInactive') || 'Nghỉ việc',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 252,
+    "content": "PROBATION: t('employee.statusProbation') || 'Thử việc'",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 265,
+    "content": "MANAGER: t('employee.roleManager') || 'Quản lý',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 266,
+    "content": "STAFF: t('employee.roleStaff') || 'Nhân viên'",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 287,
+    "content": "showMessage('success', t('btn.success') || 'Thành công', t('employee.msgDisableSuccess') || 'Đã vô hiệu hóa nhân viên.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 307,
+    "content": "let initialJob = emp.job_title?.name || 'Nhân sự';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 333,
+    "content": "work_location: 'Văn phòng chính',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/index.vue",
+    "line": 352,
+    "content": "showMessage('success', t('btn.success'), t('quickSignSuccess') || 'Đã ký hợp đồng thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 274,
+    "content": ":label=\"$t('contract.quickSign') || 'Ký nhanh hợp đồng'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 351,
+    "content": "{{ $t('timesheet.tabPayroll') || 'Lịch sử lương tháng' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 354,
+    "content": "{{ $t('timesheet.payrollDesc') || 'Lịch sử nhận lương chi tiết hàng tháng của nhân sự' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 364,
+    "content": "<p class=\"text-surface-400 font-medium\">{{ $t('timesheet.noPayrollData') || 'Chưa có dữ liệu bảng lương.' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 368,
+    "content": "<Column :header=\"$t('timesheet.payrollMonth') || 'Tháng'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 374,
+    "content": "<Column :header=\"$t('timesheet.baseSalary') || 'Lương cơ bản'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 380,
+    "content": "<Column :header=\"$t('timesheet.workingDaysActualStandard') || 'Công (Thực/Chuẩn)'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 388,
+    "content": "<Column :header=\"$t('timesheet.overtimeCol') || 'Tăng ca (OT)'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 413,
+    "content": "<Column :header=\"$t('timesheet.attendanceAllowance') || 'Chuyên cần'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 419,
+    "content": "<Column :header=\"$t('timesheet.deductionLate') || 'Khấu trừ / Phạt'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 456,
+    "content": "<Column :header=\"$t('timesheet.netSalary') || 'Thực lĩnh'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 464,
+    "content": "<Column :header=\"$t('timesheet.statusCol') || 'Trạng thái'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 472,
+    "content": "{{ data.status === 'PAID' ? ($t('timesheet.statusPaid') || 'Đã thanh toán') : ($t('timesheet.statusPending') || 'Chờ xử lý') }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 477,
+    "content": "<Column :header=\"$t('employee.workHistoryNote') || 'Ghi chú'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 674,
+    "content": "showMessage('error', t('btn.error') || 'Lỗi', t('employee.viewError') || 'Không thể xem tài liệu.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 692,
+    "content": "showMessage('error', t('btn.error') || 'Lỗi', t('employee.downloadError') || 'Không thể tải tài liệu.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 706,
+    "content": "let initialJob = employee.value.job_title?.name || 'Nhân sự';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 732,
+    "content": "work_location: 'Văn phòng chính',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/employee/[id]/index.vue",
+    "line": 751,
+    "content": "showMessage('success', t('btn.success'), t('quickSignSuccess') || 'Đã ký hợp đồng thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/index.vue",
+    "line": 85,
+    "content": "<span v-if=\"!data.job_titles || data.job_titles.length === 0\" class=\"text-xs text-surface-400 font-bold\">Chưa có chức vụ</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/index.vue",
+    "line": 91,
+    "content": "v-tooltip.top=\"job.description || 'Không có mô tả'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 11,
+    "content": "{{ department.name || 'Chi tiết phòng ban' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 15,
+    "content": "{{ department.code }} • Thông tin bộ phận hành chính",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 21,
+    "content": "label=\"Quay lại\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 29,
+    "content": "label=\"Chỉnh sửa\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 46,
+    "content": "<h3 class=\"text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase\">Cơ cấu tổ chức phòng ban</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 47,
+    "content": "<p class=\"text-xs text-surface-400\">Các thông tin cơ bản về phòng ban trực thuộc hệ thống</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 58,
+    "content": "<p class=\"text-[10px] text-surface-400 font-bold uppercase tracking-wider\">Mã phòng ban</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 69,
+    "content": "<p class=\"text-[10px] text-surface-400 font-bold uppercase tracking-wider\">Tên phòng ban</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 81,
+    "content": "<h4 class=\"text-sm font-black text-surface-900 dark:text-surface-0\">Danh sách chức vụ trực thuộc</h4>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 82,
+    "content": "<p class=\"text-[10px] text-surface-400 font-medium\">Chức danh nghề nghiệp được phân bổ cho bộ phận này</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 89,
+    "content": "<span class=\"text-xs text-surface-400 font-bold\">Chưa bổ nhiệm chức vụ nào cho bộ phận này.</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 116,
+    "content": "<h3 class=\"text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase mb-6 relative z-10\">Mô tả / Ghi chú</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 119,
+    "content": "{{ department.note || 'Không có mô tả chi tiết nào cho phòng ban này.' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 126,
+    "content": "<h3 class=\"text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase mb-6\">Thông tin hệ thống</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 130,
+    "content": "<span class=\"text-surface-400 font-bold uppercase tracking-wider text-[10px]\">Trạng thái</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 135,
+    "content": "{{ department.status === 'ACTIVE' ? 'Hoạt động' : 'Ngừng hoạt động' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 140,
+    "content": "<span class=\"text-surface-400 font-bold uppercase tracking-wider text-[10px]\">Ngày tạo</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/master/department/[id]/index.vue",
+    "line": 145,
+    "content": "<span class=\"text-surface-400 font-bold uppercase tracking-wider text-[10px]\">Cập nhật cuối</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 39,
+    "content": "placeholder=\"Chọn phân loại\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 60,
+    "content": "placeholder=\"Chọn hạng mục\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 84,
+    "content": "placeholder=\"Chọn phương thức\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 96,
+    "content": "placeholder=\"Chọn trạng thái\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 115,
+    "content": "placeholder=\"Nhập tổng số tiền\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 133,
+    "content": "placeholder=\"Chọn loại thuế suất\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 143,
+    "content": "placeholder=\"Số tiền gốc trước thuế\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 156,
+    "content": "placeholder=\"Tiền thuế\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 169,
+    "content": "placeholder=\"Ví dụ: thuế TNCN 10%, nhà thầu...\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 182,
+    "content": "placeholder=\"T1234567890123 (Nếu là chi phí tại Nhật)\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 355,
+    "content": "{ label: t('transaction.expense') || 'Khoản chi thực tế (EXPENSE)', value: 'EXPENSE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 356,
+    "content": "{ label: t('transaction.revenue') || 'Dòng doanh thu (REVENUE)', value: 'REVENUE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 360,
+    "content": "{ label: t('transaction.bankTransfer') || 'Chuyển khoản ngân hàng (BANK_TRANSFER)', value: 'BANK_TRANSFER' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 361,
+    "content": "{ label: t('transaction.cash') || 'Tiền mặt (CASH)', value: 'CASH' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 362,
+    "content": "{ label: t('transaction.creditCard') || 'Thẻ tín dụng (CREDIT_CARD)', value: 'CREDIT_CARD' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 366,
+    "content": "{ label: t('transaction.statusPaid') || 'Đã hoàn tất (PAID)', value: 'PAID' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 367,
+    "content": "{ label: t('transaction.statusPending') || 'Chờ xử lý (PENDING)', value: 'PENDING' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 371,
+    "content": "{ label: t('transaction.noTax') || 'Không thuế (0% / NONE)', value: 'NONE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 372,
+    "content": "{ label: (t('transaction.taxRate') || 'Thuế suất áp dụng') + ' 8% (VN)', value: 'VAT_8_VN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 373,
+    "content": "{ label: (t('transaction.taxRate') || 'Thuế suất áp dụng') + ' 10% (VN)', value: 'VAT_10_VN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 377,
+    "content": "{ label: t('transaction.catSalary') || 'Tiền lương nhân sự (Salary)', value: 'Salary' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 378,
+    "content": "{ label: t('transaction.catOfficeRent') || 'Thuê văn phòng (Office Rent)', value: 'Office Rent' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 379,
+    "content": "{ label: t('transaction.catUtilities') || 'Điện nước & Internet (Utilities)', value: 'Utilities' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 380,
+    "content": "{ label: t('transaction.catOutsourcing') || 'Chi phí thầu phụ (Outsourcing Cost)', value: 'Outsourcing Cost' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 381,
+    "content": "{ label: t('transaction.catSoftware') || 'Công cụ & Phần mềm (Software & SaaS)', value: 'Software & SaaS' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 382,
+    "content": "{ label: t('transaction.catTravel') || 'Chi phí đi lại (Travel Expense)', value: 'Travel/Transport' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 383,
+    "content": "{ label: t('transaction.catMarketing') || 'Quảng cáo & Marketing (Marketing & Ads)', value: 'Marketing' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 384,
+    "content": "{ label: t('transaction.catClientRevenue') || 'Doanh thu khách hàng (Client Revenue)', value: 'Client Revenue' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 385,
+    "content": "{ label: t('transaction.catConsulting') || 'Phí tư vấn dịch vụ (Consulting Fee)', value: 'Consulting Fee' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 386,
+    "content": "{ label: t('transaction.catOthers') || 'Chi phí khác (Others)', value: 'Others' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 427,
+    "content": "showMessage('warning', t('transaction.valMissDocs') || 'Thiếu chứng từ pháp lý', t('transaction.valMissDocsDesc') || 'Doanh nghiệp bắt buộc phải đính kèm chứng từ (Hóa đơn/UNC) cho các khoản chi phí để đảm bảo tuân thủ pháp luật thuế.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 449,
+    "content": "showMessage('success', t('transaction.msgSaveSuccess') || 'Đã lưu giao dịch', t('transaction.msgSaveSuccessDesc') || 'Giao dịch và chứng từ đính kèm đã được cập nhật.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 454,
+    "content": "showMessage('success', t('transaction.msgSaveSuccess') || 'Đã lưu giao dịch', t('transaction.msgSaveSuccessShort') || 'Giao dịch đã được ghi nhận.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 460,
+    "content": "const msg = err.response?.data?.messages?.message || err.message || t('transaction.msgSaveFailedDesc') || 'Lưu giao dịch thất bại';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 461,
+    "content": "showMessage('error', t('transaction.msgSaveFailed') || 'Lưu giao dịch thất bại', msg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/create.vue",
+    "line": 523,
+    "content": "console.error('Lỗi tải tệp: ', file.name, err);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 161,
+    "content": ":emptyText=\"$t('transaction.noData') || 'Không tìm thấy giao dịch nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 266,
+    "content": "<span class=\"font-mono\">{{ data.documents.length }} {{ $t('transaction.files') || 'Tệp' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 273,
+    "content": "{{ $t('transaction.missingDocsAlert') || 'Thiếu chứng từ' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 289,
+    "content": "v-tooltip.top=\"$t('text.viewDetail') || 'Xem chi tiết'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 392,
+    "content": "{ key: 'transaction_date', label: t('transaction.dateCol') || 'Ngày', minWidth: '120px', sortable: true },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 393,
+    "content": "{ key: 'code', label: t('transaction.codeCol') || 'Mã GD', minWidth: '120px', sortable: true },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 394,
+    "content": "{ key: 'type', label: t('transaction.typeCol') || 'Loại GD', minWidth: '110px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 395,
+    "content": "{ key: 'category', label: t('transaction.categoryCol') || 'Danh mục / Mô tả', minWidth: '220px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 396,
+    "content": "{ key: 'amount', label: t('transaction.amountCol') || 'Số tiền', minWidth: '150px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 397,
+    "content": "{ key: 'tax', label: t('transaction.taxCol') || 'Thuế & Hóa đơn', minWidth: '200px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 398,
+    "content": "{ key: 'payment', label: t('transaction.paymentCol') || 'Thanh toán', minWidth: '140px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 399,
+    "content": "{ key: 'documents', label: t('transaction.documentCol') || 'Chứng từ', minWidth: '140px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 400,
+    "content": "{ key: 'actions', label: t('transaction.actionCol') || 'Thao tác', minWidth: '120px', frozen: true }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/index.vue",
+    "line": 638,
+    "content": "default: return t('transaction.noTax') || 'Không thuế';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 44,
+    "content": "placeholder=\"Chọn phân loại\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 65,
+    "content": "placeholder=\"Chọn hạng mục\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 89,
+    "content": "placeholder=\"Chọn phương thức\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 101,
+    "content": "placeholder=\"Chọn trạng thái\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 120,
+    "content": "placeholder=\"Nhập tổng số tiền\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 138,
+    "content": "placeholder=\"Chọn loại thuế suất\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 148,
+    "content": "placeholder=\"Số tiền gốc trước thuế\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 161,
+    "content": "placeholder=\"Tiền thuế\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 174,
+    "content": "placeholder=\"Ví dụ: thuế TNCN 10%, nhà thầu...\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/edit.vue",
+    "line": 187,
+    "content": "placeholder=\"T1234567890123 (Nếu là chi phí tại Nhật)\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 14,
+    "content": "<span class=\"text-xs font-semibold text-primary uppercase tracking-widest\">{{ $t('transaction.viewDetails') || 'Chi tiết giao dịch' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 20,
+    "content": ":label=\"$t('btn.edit') || 'Chỉnh sửa'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 32,
+    "content": "<span class=\"text-surface-500 font-medium\">{{ $t('transaction.loadingData') || 'Đang tải dữ liệu...' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 61,
+    "content": "{{ form.type === 'REVENUE' ? $t('transaction.typeRevenue') || 'Doanh thu' : $t('transaction.typeExpense') || 'Chi phí' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 187,
+    "content": "{{ form.description || 'Không có mô tả chi tiết.' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 199,
+    "content": "<p class=\"text-[10px] text-surface-500 mt-0.5\">{{ $t('transaction.edmReadonly') || 'Danh sách tài liệu liên kết được đính kèm với giao dịch này.' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 219,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-widest\">{{ $t('transaction.complianceBadge') || 'KIỂM SOÁT TUÂN THỦ' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 223,
+    "content": "<h3 class=\"text-sm font-black text-surface-900 dark:text-surface-150\">{{ $t('transaction.complianceTitle') || 'Trạng thái kiểm tra hồ sơ' }}</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 226,
+    "content": "? 'Hệ thống tự động kiểm soát chứng từ, hóa đơn VAT hợp chuẩn và biên bản thanh toán liên quan để bảo vệ doanh nghiệp khỏi rủi ro thuế.'",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 227,
+    "content": ": 'Hệ thống tự động đối chiếu hợp đồng ký kết, hóa đơn và biên bản nghiệm thu để phục vụ đối soát doanh thu chính xác.' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 233,
+    "content": ":label=\"$t('btn.back') || 'Quay lại'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 319,
+    "content": "showMessage('error', t('transaction.loadError') || 'Lỗi tải giao dịch', err.message);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 343,
+    "content": "case 'PAID': return t('transaction.statusPaid') || 'Đã thanh toán';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 344,
+    "content": "case 'PENDING': return t('transaction.statusPending') || 'Chờ xử lý';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 345,
+    "content": "case 'CANCELLED': return t('transaction.statusCancelled') || 'Đã hủy';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 358,
+    "content": "default: return t('transaction.noTax') || 'Không thuế';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 364,
+    "content": "case 'BANK_TRANSFER': return t('transaction.bankTransfer') || 'Chuyển khoản';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 365,
+    "content": "case 'CASH': return t('transaction.cash') || 'Tiền mặt';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/transaction/[id]/index.vue",
+    "line": 366,
+    "content": "case 'CREDIT_CARD': return t('transaction.creditCard') || 'Thẻ tín dụng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 31,
+    "content": "<h2 class=\"text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200\">Bên A: Thông tin doanh nghiệp chủ quản</h2>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 33,
+    "content": "<span class=\"text-[10px] bg-primary/10 text-primary font-black px-2.5 py-1 rounded-full uppercase tracking-wider\">Cấu hình mặc định</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 38,
+    "content": "<AppInputField label=\"Tên đơn vị chủ quản (Bên A)\" :isRequired=\"true\" :error=\"formErrors.company_name\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 41,
+    "content": "placeholder=\"Công ty Giải pháp Công nghệ Việt Nam\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 49,
+    "content": "<AppInputField label=\"Mã số thuế Bên A\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 52,
+    "content": "placeholder=\"Mã số thuế\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 57,
+    "content": "<AppInputField label=\"Địa chỉ Bên A\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 60,
+    "content": "placeholder=\"Địa chỉ đăng ký\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 65,
+    "content": "<AppInputField label=\"Người đại diện Bên A\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 68,
+    "content": "placeholder=\"Họ tên người đại diện pháp luật\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 73,
+    "content": "<AppInputField label=\"Chức danh người đại diện\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 76,
+    "content": "placeholder=\"Ví dụ: Giám đốc, Tổng giám đốc\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 134,
+    "content": ":label=\"contractForm.type === 'LABOR' ? $t('contract.baseSalary') + ' (VNĐ)' : $t('contract.totalValue') + ' (VNĐ)'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 140,
+    "content": "placeholder=\"Nhập giá trị tiền tệ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 213,
+    "content": "placeholder=\"Ví dụ: Lập trình viên, Quản trị viên\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 221,
+    "content": "placeholder=\"Ví dụ: Trụ sở chính Hà Nội, Văn phòng Tokyo\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 229,
+    "content": "placeholder=\"Ví dụ: 8\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 233,
+    "content": "suffix=\" giờ/ngày\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 241,
+    "content": "placeholder=\"Ví dụ: 2 tháng\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 249,
+    "content": "placeholder=\"Ví dụ: 85\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 260,
+    "content": "placeholder=\"Ví dụ: Vietcombank, Techcombank\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 268,
+    "content": "placeholder=\"Ví dụ: 1018273645\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 276,
+    "content": "placeholder=\"BHXH, BHYT, BHTN hoặc Bảo hiểm đặc biệt thương mại\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 294,
+    "content": "placeholder=\"Nhập tên chính thức trên đăng ký kinh doanh\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 304,
+    "content": "placeholder=\"Nhập mã số thuế đối tác\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 314,
+    "content": "placeholder=\"Họ tên người đại diện pháp luật\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 322,
+    "content": "placeholder=\"Ví dụ: Giám đốc, Tổng giám đốc, CEO\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 330,
+    "content": "placeholder=\"Địa chỉ giao dịch chính thức của đối tác\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 349,
+    "content": "placeholder=\"Ví dụ: Net 30, Thanh toán 100% khi ký\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 393,
+    "content": "placeholder=\"Ví dụ: 20 hoặc 30 giờ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 395,
+    "content": "suffix=\" giờ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/create.vue",
+    "line": 586,
+    "content": "company_name: { transitionKey: \"Tên đơn vị chủ quản (Bên A)\", types: [\"require\"], errorKey: \"company_name\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 128,
+    "content": ":emptyText=\"$t('contract.noData') || 'Không tìm thấy hợp đồng nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 170,
+    "content": "{{ $t('contract.noEmployee') || 'Không rõ nhân sự' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 174,
+    "content": "<i class=\"pi pi-building mr-1\"></i> {{ $t('contract.corporatePartner') || 'Đối tác doanh nghiệp' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 225,
+    "content": "<span class=\"text-[9px] uppercase tracking-wider opacity-80\">{{ $t('contract.files') || 'Tài liệu' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 239,
+    "content": "v-tooltip.top=\"$t('text.viewDetail') || 'Xem chi tiết'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 417,
+    "content": "{ key: 'contract_code', label: t('contract.code') || 'Mã HĐ', minWidth: '130px', sortable: true },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 418,
+    "content": "{ key: 'type', label: t('contract.type') || 'Loại HĐ', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 419,
+    "content": "{ key: 'partner', label: t('contract.party') || 'Đối tác / Nhân sự', minWidth: '220px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 420,
+    "content": "{ key: 'duration', label: t('contract.duration') || 'Thời hạn', minWidth: '200px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 421,
+    "content": "{ key: 'value', label: t('contract.value') || 'Giá trị', minWidth: '140px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 422,
+    "content": "{ key: 'status', label: t('contract.status') || 'Trạng thái', minWidth: '130px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 423,
+    "content": "{ key: 'documents', label: t('contract.documents') || 'Tài liệu', minWidth: '110px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 424,
+    "content": "{ key: 'actions', label: t('text.action') || 'Thao tác', minWidth: '130px', frozen: true }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 572,
+    "content": "{ label: t('contract.typeLabor') || 'Hợp đồng lao động (LABOR)', value: 'LABOR' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 573,
+    "content": "{ label: t('contract.typeVendor') || 'Hợp đồng gia công / Thầu phụ (VENDOR)', value: 'VENDOR' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 574,
+    "content": "{ label: t('contract.typeClient') || 'Hợp đồng cung cấp dịch vụ (CLIENT)', value: 'CLIENT' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 578,
+    "content": "{ label: t('contract.employmentSeishain') || 'Nhân viên chính thức Nhật Bản (SEISHAIN)', value: 'SEISHAIN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 579,
+    "content": "{ label: t('contract.employmentKeiyakushain') || 'Nhân viên hợp đồng Nhật Bản (KEIYAKUSHAIN)', value: 'KEIYAKUSHAIN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 580,
+    "content": "{ label: t('contract.employmentHaken') || 'Phái cử Nhật Bản (HAKEN)', value: 'HAKEN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 581,
+    "content": "{ label: t('contract.employmentArubaito') || 'Bán thời gian Nhật Bản (ARUBAITO)', value: 'ARUBAITO' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 582,
+    "content": "{ label: t('contract.employmentFullTimeVn') || 'Chính thức Việt Nam (FULL_TIME_VN)', value: 'FULL_TIME_VN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 583,
+    "content": "{ label: t('contract.employmentPartTimeVn') || 'Thử việc / Bán thời gian VN (PART_TIME_VN)', value: 'PART_TIME_VN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 587,
+    "content": "{ label: t('contract.statusActive') || 'Đang hoạt động (ACTIVE)', value: 'ACTIVE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 588,
+    "content": "{ label: t('contract.statusPending') || 'Chờ duyệt / Ký kết (PENDING)', value: 'PENDING' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 589,
+    "content": "{ label: t('contract.statusExpired') || 'Đã hết hạn (EXPIRED)', value: 'EXPIRED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 590,
+    "content": "{ label: t('contract.statusTerminated') || 'Bị đơn phương chấm dứt (TERMINATED)', value: 'TERMINATED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 682,
+    "content": "showMessage('success', t('text.success'), t('contract.downloadPdfSuccess', { theme: theme === 'classic' ? t('contract.styleClassic') : theme === 'modern' ? t('contract.styleModern') : t('contract.styleAcademic') }) || `Đã tải xuống hợp đồng PDF phong cách ${theme === 'classic' ? 'Truyền thống' : theme === 'modern' ? 'Hiện đại' : 'Thanh lịch'}.`);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 686,
+    "content": "showMessage('error', t('text.error') || 'Lỗi', t('contract.exportPdfError') || 'Không thể xuất file PDF.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 765,
+    "content": "showMessage('success', t('text.success') || 'Thành công', t('contract.updateSuccessDesc') || 'Hợp đồng đã được cập nhật thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 772,
+    "content": "showMessage('error', t('contract.updateError') || 'Lỗi cập nhật', msg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 788,
+    "content": "showMessage('success', t('text.success') || 'Thành công', t('contract.createSuccessWithDocs') || 'Ký hợp đồng mới và tải lên tài liệu thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 795,
+    "content": "showMessage('success', t('text.success') || 'Thành công', t('contract.createSuccess') || 'Ký hợp đồng mới thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 802,
+    "content": "showMessage('error', t('contract.createError') || 'Lỗi tạo mới', msg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 875,
+    "content": "if (!val) return '0 VNĐ';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 892,
+    "content": "showMessage('error', t('contract.formatError') || 'Lỗi định dạng', t('contract.formatErrorDesc', { ext }) || `Định dạng .${ext} không hỗ trợ.`);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/index.vue",
+    "line": 896,
+    "content": "showMessage('error', t('contract.sizeError') || 'Dung lượng quá lớn', t('contract.sizeErrorDesc', { name: file.name }) || `Tệp ${file.name} vượt quá 10MB.`);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 36,
+    "content": "<h2 class=\"text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200\">Bên A: Thông tin doanh nghiệp chủ quản</h2>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 38,
+    "content": "<span class=\"text-[10px] bg-primary/10 text-primary font-black px-2.5 py-1 rounded-full uppercase tracking-wider\">Thông tin hợp đồng</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 43,
+    "content": "<AppInputField label=\"Tên đơn vị chủ quản (Bên A)\" :isRequired=\"true\" :error=\"formErrors.company_name\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 46,
+    "content": "placeholder=\"Công ty Giải pháp Công nghệ Việt Nam\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 54,
+    "content": "<AppInputField label=\"Mã số thuế Bên A\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 57,
+    "content": "placeholder=\"Mã số thuế\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 62,
+    "content": "<AppInputField label=\"Địa chỉ Bên A\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 65,
+    "content": "placeholder=\"Địa chỉ đăng ký\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 70,
+    "content": "<AppInputField label=\"Người đại diện Bên A\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 73,
+    "content": "placeholder=\"Họ tên người đại diện pháp luật\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 78,
+    "content": "<AppInputField label=\"Chức danh người đại diện\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 81,
+    "content": "placeholder=\"Ví dụ: Giám đốc, Tổng giám đốc\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 111,
+    "content": "placeholder=\"Nhập mã hợp đồng\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 140,
+    "content": ":label=\"contractForm.type === 'LABOR' ? $t('contract.baseSalary') + ' (VNĐ)' : $t('contract.totalValue') + ' (VNĐ)'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 146,
+    "content": "placeholder=\"Nhập giá trị hợp đồng\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 219,
+    "content": "placeholder=\"Ví dụ: Lập trình viên, Quản trị viên\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 227,
+    "content": "placeholder=\"Ví dụ: Trụ sở chính Hà Nội, Văn phòng Tokyo\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 235,
+    "content": "placeholder=\"Ví dụ: 8\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 239,
+    "content": "suffix=\" giờ/ngày\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 247,
+    "content": "placeholder=\"Ví dụ: 2 tháng\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 255,
+    "content": "placeholder=\"Ví dụ: 85\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 266,
+    "content": "placeholder=\"Ví dụ: Vietcombank, Techcombank\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 274,
+    "content": "placeholder=\"Ví dụ: 1018273645\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 282,
+    "content": "placeholder=\"BHXH, BHYT, BHTN hoặc Bảo hiểm đặc biệt thương mại\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 300,
+    "content": "placeholder=\"Nhập tên chính thức trên đăng ký kinh doanh\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 310,
+    "content": "placeholder=\"Nhập mã số thuế đối tác\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 320,
+    "content": "placeholder=\"Họ tên người đại diện pháp luật\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 328,
+    "content": "placeholder=\"Ví dụ: Giám đốc, Tổng giám đốc, CEO\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 336,
+    "content": "placeholder=\"Địa chỉ giao dịch chính thức của đối tác\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 355,
+    "content": "placeholder=\"Ví dụ: Net 30, Thanh toán 100% khi ký\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 399,
+    "content": "placeholder=\"Ví dụ: 20 hoặc 30 giờ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 401,
+    "content": "suffix=\" giờ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/edit.vue",
+    "line": 559,
+    "content": "company_name: { transitionKey: \"Tên đơn vị chủ quản (Bên A)\", types: [\"require\"], errorKey: \"company_name\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 14,
+    "content": "<span class=\"text-xs font-semibold text-primary uppercase tracking-widest\">{{ $t('contract.viewDetails') || 'Chi tiết hợp đồng' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 20,
+    "content": ":label=\"$t('btn.edit') || 'Chỉnh sửa'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 45,
+    "content": "<h2 class=\"text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200\">Bên A: Thông tin doanh nghiệp chủ quản</h2>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 50,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-wider text-surface-400\">Tên đơn vị chủ quản (Bên A)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 55,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-wider text-surface-400\">Mã số thuế Bên A</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 60,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-wider text-surface-400\">Địa chỉ Bên A</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 65,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-wider text-surface-400\">Người đại diện Bên A</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 70,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-wider text-surface-400\">Chức danh người đại diện</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 209,
+    "content": "{{ contractForm.working_hours_per_day ? `${contractForm.working_hours_per_day} giờ/ngày` : '—' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 217,
+    "content": "{{ contractForm.probation_period_months ? `${contractForm.probation_period_months} tháng` : '0 tháng' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 361,
+    "content": "{{ contractForm.included_overtime_hours ? `${contractForm.included_overtime_hours} giờ` : '—' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 375,
+    "content": "<p class=\"text-[10px] text-surface-500 mt-0.5\">{{ $t('contract.edmReadonly') || 'Danh sách tài liệu liên kết được đính kèm với hợp đồng này.' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 400,
+    "content": "<p class=\"text-xs text-surface-500 leading-relaxed\">{{ $t('contract.complianceDescView') || 'Thông tin chi tiết hợp đồng được hệ thống bảo mật tự động kiểm soát nhằm phòng tránh rủi ro pháp lý và tranh chấp lao động.' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 405,
+    "content": ":label=\"$t('btn.back') || 'Quay lại'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 500,
+    "content": "showMessage('error', t('contract.loadError') || 'Lỗi tải hợp đồng', err.message);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 524,
+    "content": "case 'LABOR': return t('contract.typeLabor') || 'Hợp đồng lao động';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 525,
+    "content": "case 'VENDOR': return t('contract.typeVendor') || 'Hợp đồng thầu phụ';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 526,
+    "content": "case 'CLIENT': return t('contract.typeClient') || 'Hợp đồng khách hàng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 533,
+    "content": "case 'ACTIVE': return t('contract.statusActive') || 'Hiệu lực';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 534,
+    "content": "case 'EXPIRED': return t('contract.statusExpired') || 'Hết hạn';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 535,
+    "content": "case 'TERMINATED': return t('contract.statusTerminated') || 'Chấm dứt';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 542,
+    "content": "case 'SEISHAIN': return t('contract.employmentSeishain') || 'Chính thức (Seishain)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 543,
+    "content": "case 'KEIYAKUSHAIN': return t('contract.employmentKeiyakushain') || 'Hợp đồng (Keiyakushain)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 544,
+    "content": "case 'HAKEN': return t('contract.employmentHaken') || 'Phái cử (Haken)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 545,
+    "content": "case 'ARUBAITO': return t('contract.employmentArubaito') || 'Bán thời gian (Arubaito)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 552,
+    "content": "case 'BANK_TRANSFER': return t('contract.payBank') || 'Chuyển khoản';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 553,
+    "content": "case 'CASH': return t('contract.payCash') || 'Tiền mặt';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 554,
+    "content": "case 'CREDIT_CARD': return t('contract.payCredit') || 'Thẻ tín dụng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 561,
+    "content": "case 'MONTHLY': return t('contract.cycleMonthly') || 'Hàng tháng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 562,
+    "content": "case 'QUARTERLY': return t('contract.cycleQuarterly') || 'Hàng quý';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/contract/[id]/index.vue",
+    "line": 563,
+    "content": "case 'ONE_TIME': return t('contract.cycleOneTime') || 'Một lần';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 67,
+    "content": ":placeholder=\"$t('leaveRequest.searchEmployeePlaceholder') || 'Tìm tên, mã nhân viên...'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 78,
+    "content": ":placeholder=\"$t('leaveRequest.typeSelect') || 'Chọn loại nghỉ...'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 88,
+    "content": "placeholder=\"Từ ngày\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 96,
+    "content": "placeholder=\"Đến ngày\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 119,
+    "content": ":emptyText=\"$t('leaveRequest.noRequest') || 'Không tìm thấy yêu cầu nghỉ phép nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 174,
+    "content": "<i v-if=\"data.attachment_url\" class=\"pi pi-paperclip text-primary text-[10px]\" title=\"Có tài liệu đính kèm\"></i>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 353,
+    "content": "{ key: 'employee', label: t('leaveRequest.employee') || 'Nhân viên', minWidth: '200px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 354,
+    "content": "{ key: 'leave_type', label: t('leaveRequest.type') || 'Loại nghỉ', minWidth: '130px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 355,
+    "content": "{ key: 'duration', label: t('leaveRequest.timeRange') || 'Thời hạn', minWidth: '180px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 356,
+    "content": "{ key: 'reason', label: t('leaveRequest.reason') || 'Lý do', minWidth: '220px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 357,
+    "content": "{ key: 'status', label: t('leaveRequest.status') || 'Trạng thái', minWidth: '150px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 358,
+    "content": "{ key: 'actions', label: t('contract.actions') || 'Thao tác', minWidth: '150px', frozen: true }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 451,
+    "content": "{ label: t('leaveRequest.typeAnnual') || 'Nghỉ phép năm', value: 'ANNUAL' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 452,
+    "content": "{ label: t('leaveRequest.typeSick') || 'Nghỉ ốm', value: 'SICK' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 453,
+    "content": "{ label: t('leaveRequest.typeSpecial') || 'Nghỉ đặc biệt', value: 'SPECIAL' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/pending.vue",
+    "line": 454,
+    "content": "{ label: t('leaveRequest.typeUnpaid') || 'Nghỉ không lương', value: 'UNPAID' }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 33,
+    "content": ":emptyText=\"$t('leaveRequest.noMyRequest') || 'Không tìm thấy yêu cầu nghỉ phép nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 71,
+    "content": "<i v-if=\"data.attachment_url\" class=\"pi pi-paperclip text-primary text-[10px]\" title=\"Có tài liệu đính kèm\"></i>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 195,
+    "content": "PDF, DOC, DOCX, ZIP hoặc ảnh (Tối đa 10MB)",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 335,
+    "content": "{ key: 'leave_type', label: t('leaveRequest.type') || 'Loại nghỉ', minWidth: '130px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 336,
+    "content": "{ key: 'duration', label: t('leaveRequest.timeRange') || 'Thời hạn', minWidth: '180px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 337,
+    "content": "{ key: 'reason', label: t('leaveRequest.reason') || 'Lý do', minWidth: '200px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/leave-request/index.vue",
+    "line": 338,
+    "content": "{ key: 'status', label: t('leaveRequest.status') || 'Trạng thái', minWidth: '135px' }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 228,
+    "content": ":emptyText=\"$t('compliance.noDataTitle') || 'Không tìm thấy vi phạm tuân thủ nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 281,
+    "content": "<span class=\"font-bold text-surface-700 dark:text-surface-300\">HĐ: {{ data.contract.contract_code }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 392,
+    "content": "{ key: 'severity', label: t('compliance.colSeverity') || 'Mức độ', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 393,
+    "content": "{ key: 'issue_type', label: t('compliance.colType') || 'Phân loại', minWidth: '165px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 394,
+    "content": "{ key: 'description', label: t('compliance.colDescription') || 'Mô tả sự cố', minWidth: '280px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 395,
+    "content": "{ key: 'entity', label: t('compliance.colEntity') || 'Đối tượng', minWidth: '220px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 396,
+    "content": "{ key: 'status', label: t('compliance.colStatus') || 'Trạng thái', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 397,
+    "content": "{ key: 'actions', label: t('compliance.colAction') || 'Thao tác', minWidth: '120px', frozen: true }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 434,
+    "content": "{ label: t('compliance.tabActiveRisks') || 'Rủi ro Hiện hữu', value: 'OPEN' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 435,
+    "content": "{ label: t('compliance.tabResolvedHistory') || 'Lịch sử giải quyết', value: 'RESOLVED' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 439,
+    "content": "{ label: t('compliance.sevAll') || 'Tất cả mức độ', value: null },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 440,
+    "content": "{ label: `${t('compliance.sevCritical') || 'Chí mạng'} (CRITICAL)`, value: 'CRITICAL' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 441,
+    "content": "{ label: `${t('compliance.sevWarning') || 'Cảnh báo'} (WARNING)`, value: 'WARNING' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 442,
+    "content": "{ label: `${t('compliance.sevInfo') || 'Thẩm định'} (INFO)`, value: 'INFO' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 446,
+    "content": "{ label: t('compliance.typeAll') || 'Tất cả phân loại', value: null },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 447,
+    "content": "{ label: 'Hết hạn Visa (VISA)', value: 'VISA_EXPIRATION' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 448,
+    "content": "{ label: 'Hết hạn Hợp đồng (CONTRACT)', value: 'CONTRACT_EXPIRATION' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 449,
+    "content": "{ label: 'Tăng ca quá giới hạn (OVERTIME)', value: 'OVERTIME_LIMIT' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 450,
+    "content": "{ label: 'Thiếu hợp đồng lao động', value: 'MISSING_LABOR_CONTRACT' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 451,
+    "content": "{ label: 'Thiếu CCCD / Hộ chiếu', value: 'MISSING_CCCD' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 452,
+    "content": "{ label: 'Thiếu mã số thuế', value: 'MISSING_TAX_CODE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 453,
+    "content": "{ label: 'Thiếu hóa đơn (Invoice)', value: 'MISSING_INVOICE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 454,
+    "content": "{ label: 'Thiếu hợp đồng liên kết', value: 'MISSING_CONTRACT' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 455,
+    "content": "{ label: 'Thiếu chứng từ thanh toán', value: 'MISSING_PAYMENT_VOUCHER' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 456,
+    "content": "{ label: 'Thiếu đơn đặt hàng (PO)', value: 'MISSING_PO' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 457,
+    "content": "{ label: 'Thiếu nghiệm thu bàn giao', value: 'MISSING_ACCEPTANCE' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 561,
+    "content": "if (score >= 90) return t('compliance.healthExcellent') || 'Tuyệt vời (Hợp chuẩn)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 562,
+    "content": "if (score >= 70) return t('compliance.healthFair') || 'Khá (Rủi ro trung bình)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 563,
+    "content": "return t('compliance.healthAlarm') || 'Báo động (Rủi ro cao)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 568,
+    "content": "if (score >= 90) return t('compliance.recExcellent') || 'Tiếp tục duy trì quy trình kiểm soát.';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 569,
+    "content": "if (score >= 70) return t('compliance.recFair') || 'Cần khắc phục ngay các rủi ro loại WARNING.';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 570,
+    "content": "return t('compliance.recAlarm') || 'Xử lý khẩn cấp các lỗi CRITICAL để tránh phạt pháp lý.';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 593,
+    "content": "t('compliance.msgScanSuccess') || 'Quét tuân thủ hoàn tất',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 594,
+    "content": "t('compliance.msgScanSuccessDesc', { created: createdTotal, resolved: resolved }) || `Bộ máy kiểm soát đã quét xong. Phát hiện mới: ${createdTotal} rủi ro, tự động chữa lành: ${resolved} rủi ro.`",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 600,
+    "content": "showMessage('error', t('compliance.msgScanError') || 'Quét tuân thủ thất bại', t('compliance.msgScanErrorDesc') || 'Lỗi kết nối bộ máy quét.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 617,
+    "content": "showMessage('info', t('text.info') || 'Thông báo', t('compliance.msgActError') || 'Không thể xác định đường dẫn khắc phục cho loại cảnh báo này.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 635,
+    "content": "showMessage('success', t('compliance.msgResolveSuccess') || 'Khắc phục thành công', t('compliance.msgResolveSuccessDesc') || 'Cảnh báo vi phạm tuân thủ đã được giải quyết.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 642,
+    "content": "showMessage('error', t('compliance.msgResolveError') || 'Thao tác thất bại', t('compliance.msgResolveErrorDesc') || 'Không thể giải quyết cảnh báo.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 650,
+    "content": "case 'VISA_EXPIRATION': return t('compliance.typeVisa') || 'Hạn thẻ ngoại kiều';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 651,
+    "content": "case 'CONTRACT_EXPIRATION': return t('compliance.typeContract') || 'Hết hạn hợp đồng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 652,
+    "content": "case 'MISSING_INVOICE': return 'Thiếu hóa đơn (Invoice)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 653,
+    "content": "case 'OVERTIME_LIMIT': return t('compliance.typeOvertime') || 'Làm thêm giờ quá giới hạn';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 654,
+    "content": "case 'MISSING_LABOR_CONTRACT': return 'Thiếu hợp đồng lao động';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 655,
+    "content": "case 'MISSING_CCCD': return 'Thiếu CCCD / Hộ chiếu';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 656,
+    "content": "case 'MISSING_TAX_CODE': return 'Thiếu mã số thuế';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 657,
+    "content": "case 'MISSING_CONTRACT': return 'Thiếu hợp đồng liên kết';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 658,
+    "content": "case 'MISSING_PAYMENT_VOUCHER': return 'Thiếu chứng từ thanh toán';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 659,
+    "content": "case 'MISSING_PO': return 'Thiếu đơn đặt hàng (PO)';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/compliance/index.vue",
+    "line": 660,
+    "content": "case 'MISSING_ACCEPTANCE': return 'Thiếu nghiệm thu bàn giao';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 14,
+    "content": "Quản lý tài liệu tập trung, tải lên và gắn hồ sơ thông minh vào nhân sự, hợp đồng và chi phí.",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 20,
+    "content": "label=\"Tải lên tài liệu\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 33,
+    "content": "<span class=\"text-xs font-black uppercase tracking-wider text-surface-400\">Tổng tài liệu</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 42,
+    "content": "<span class=\"text-xs font-black uppercase tracking-wider text-surface-400\">Hồ sơ Nhân sự</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 51,
+    "content": "<span class=\"text-xs font-black uppercase tracking-wider text-surface-400\">Hợp đồng</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 95,
+    "content": "placeholder=\"Mã tài liệu, tên file...\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 105,
+    "content": "placeholder=\"Định dạng file\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 126,
+    "content": "emptyText=\"Không tìm thấy tài liệu nào trên hệ thống\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 186,
+    "content": "Mã thu chi #{{ data.documentable_id }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 188,
+    "content": "<span v-else class=\"text-surface-400 italic\">Chưa gắn liên kết</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 208,
+    "content": "v-tooltip.top=\"'Xem trước'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 217,
+    "content": "v-tooltip.top=\"'Tải xuống'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 226,
+    "content": "v-tooltip.top=\"'Xóa tài liệu'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 239,
+    "content": "header=\"TẢI LÊN & GẮN LIÊN KẾT TÀI LIỆU\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 260,
+    "content": "Nhấp hoặc kéo thả file để chọn tài liệu",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 265,
+    "content": "<p class=\"text-[10px] text-surface-400 mt-1\">Hỗ trợ PDF, Word, Excel, JPG, PNG tối đa 10MB</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 271,
+    "content": "<label class=\"text-xs font-black text-surface-600 dark:text-surface-300 uppercase tracking-wider block\">Loại Hồ sơ & Tài liệu</label>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 277,
+    "content": "placeholder=\"Chọn phân loại hồ sơ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 286,
+    "content": "Gắn liên kết vào {{ getDocTypeTitle(uploadForm.type) }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 294,
+    "content": ":placeholder=\"`Tìm kiếm và chọn ${getDocTypeTitle(uploadForm.type)}...`\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 304,
+    "content": "label=\"Hủy\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 311,
+    "content": "label=\"Xử lý Tải lên\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 326,
+    "content": ":header=\"`XEM TÀI LIỆU: ${previewDoc?.origin_name || ''}`\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 344,
+    "content": "<h3 class=\"text-base font-bold text-surface-900 dark:text-surface-0\">Không hỗ trợ xem trực tuyến</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 345,
+    "content": "<p class=\"text-xs text-surface-400 max-w-sm mt-1\">Định dạng file này ({{ previewDoc.extension }}) không thể xem trực tiếp. Vui lòng tải xuống thiết bị của bạn.</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 348,
+    "content": "label=\"Tải xuống tệp\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 362,
+    "content": "header=\"XÁC NHẬN XÓA TÀI LIỆU\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 370,
+    "content": "<h3 class=\"text-base font-bold text-surface-900 dark:text-surface-0\">Xóa vĩnh viễn tệp này?</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 372,
+    "content": "Tài liệu <span class=\"font-bold text-surface-800 dark:text-surface-200\">\"{{ deleteTarget?.origin_name }}\"</span> sẽ bị xóa vĩnh viễn khỏi máy chủ. Bạn không thể hoàn tác thao tác này.",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 379,
+    "content": "label=\"Quay lại\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 386,
+    "content": "label=\"Đồng ý Xóa\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 427,
+    "content": "{ key: 'origin_name', label: 'Tên Tài liệu / Tập tin', sortable: false },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 428,
+    "content": "{ key: 'documentable_type', label: 'Phân loại', sortable: false, width: '130px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 429,
+    "content": "{ key: 'linked_target', label: 'Gắn liên kết tới', sortable: false },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 430,
+    "content": "{ key: 'created_at', label: 'Ngày tải lên', sortable: false, width: '150px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 435,
+    "content": "{ label: 'Tất cả tài liệu', value: '' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 436,
+    "content": "{ label: 'Hồ sơ nhân sự', value: 'employee' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 437,
+    "content": "{ label: 'Hợp đồng lao động', value: 'contract' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 438,
+    "content": "{ label: 'Invoice & Chi phí', value: 'transaction' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 442,
+    "content": "{ label: 'Tệp PDF (.pdf)', value: 'pdf' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 443,
+    "content": "{ label: 'Ảnh (.png, .jpg)', value: 'image' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 449,
+    "content": "{ label: 'Hồ sơ Nhân sự (CCCD, Bằng cấp...)', value: 'employee' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 450,
+    "content": "{ label: 'Hợp đồng lao động / Thương mại', value: 'contract' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 451,
+    "content": "{ label: 'Invoice, Thu Chi & Chứng từ', value: 'transaction' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 573,
+    "content": "label: `Thu chi #${item.id} - ${item.amount.toLocaleString()} VNĐ (${item.type === 'INCOME' ? 'Thu' : 'Chi'})`,",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 738,
+    "content": "if (type === 'App\\\\Models\\\\Employee') return 'Hồ sơ Nhân sự';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 739,
+    "content": "if (type === 'App\\\\Models\\\\Contract') return 'Hợp đồng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 740,
+    "content": "if (type === 'App\\\\Models\\\\Transaction') return 'Invoice / Chi phí';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 741,
+    "content": "return 'Tài liệu khác';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 745,
+    "content": "if (type === 'employee') return 'Nhân sự';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 746,
+    "content": "if (type === 'contract') return 'Hợp đồng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 747,
+    "content": "if (type === 'transaction') return 'Bản ghi thu chi / Chi phí';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 752,
+    "content": "if (type === 'LABOR') return 'HĐ Lao Động';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 753,
+    "content": "if (type === 'VENDOR') return 'HĐ Đối Tác';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "pages/document/index.vue",
+    "line": 754,
+    "content": "if (type === 'CLIENT') return 'HĐ Khách Hàng';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 2,
+    "content": "{ id: 1, name: \"北海道\", kana: \"ホッカイドウ\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 3,
+    "content": "{ id: 2, name: \"東北\", kana: \"トウホク\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 4,
+    "content": "{ id: 3, name: \"関東\", kana: \"カントウ\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 5,
+    "content": "{ id: 4, name: \"中部\", kana: \"チュウブ\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 6,
+    "content": "{ id: 5, name: \"近畿\", kana: \"キンキ\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 7,
+    "content": "{ id: 6, name: \"中国\", kana: \"チュウゴク\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 8,
+    "content": "{ id: 7, name: \"四国\", kana: \"シコク\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 9,
+    "content": "{ id: 8, name: \"九州\", kana: \"キュウシュウ\" },",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 13,
+    "content": "北海道: [\"北海道\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 14,
+    "content": "東北: [\"青森県\", \"岩手県\", \"宮城県\", \"秋田県\", \"山形県\", \"福島県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 15,
+    "content": "関東: [\"茨城県\", \"栃木県\", \"群馬県\", \"埼玉県\", \"千葉県\", \"東京都\", \"神奈川県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 16,
+    "content": "中部: [\"新潟県\", \"富山県\", \"石川県\", \"福井県\", \"山梨県\", \"長野県\", \"岐阜県\", \"静岡県\", \"愛知県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 17,
+    "content": "近畿: [\"三重県\", \"滋賀県\", \"京都府\", \"大阪府\", \"兵庫県\", \"奈良県\", \"和歌山県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 18,
+    "content": "中国: [\"鳥取県\", \"島根県\", \"岡山県\", \"広島県\", \"山口県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 19,
+    "content": "四国: [\"徳島県\", \"香川県\", \"愛媛県\", \"高知県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/geography.ts",
+    "line": 20,
+    "content": "九州: [\"福岡県\", \"佐賀県\", \"長崎県\", \"熊本県\", \"大分県\", \"宮崎県\", \"鹿児島県\", \"沖縄県\"],",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 141,
+    "content": ": (messages?.message || \"Có lỗi xảy ra.\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 145,
+    "content": "showMessage(\"error\", \"Lỗi yêu cầu\", errorMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 148,
+    "content": "showMessage(\"warn\", \"Dữ liệu không hợp lệ\", errorMsg || \"Vui lòng kiểm tra lại dữ liệu đã nhập.\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 151,
+    "content": "showMessage(\"error\", \"Từ chối truy cập\", errorMsg || \"Bạn không có quyền thực hiện hành động này.\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 154,
+    "content": "showMessage(\"warn\", \"Không tìm thấy\", errorMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 157,
+    "content": "showMessage(\"warn\", \"Quá nhiều yêu cầu\", errorMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 160,
+    "content": "showMessage(\"error\", \"Lỗi hệ thống\", \"Đã xảy ra lỗi từ phía máy chủ. Vui lòng thử lại sau.\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/api.ts",
+    "line": 164,
+    "content": "showMessage(\"error\", \"Lỗi\", errorMsg);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 62,
+    "content": "return { valid: false, message: \"Mật khẩu phải chứa ít nhất 8 ký tự.\" };",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 65,
+    "content": "return { valid: false, message: \"Mật khẩu không được vượt quá 50 ký tự.\" };",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 68,
+    "content": "return { valid: false, message: \"Mật khẩu phải chứa ít nhất 1 chữ thường (a-z).\" };",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 71,
+    "content": "return { valid: false, message: \"Mật khẩu phải chứa ít nhất 1 chữ hoa (A-Z).\" };",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 74,
+    "content": "return { valid: false, message: \"Mật khẩu phải chứa ít nhất 1 chữ số (0-9).\" };",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 77,
+    "content": "return { valid: false, message: \"Mật khẩu phải chứa ít nhất 1 ký tự đặc biệt (!@#$%...).\" };",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 103,
+    "content": "errorValue = \"Mật khẩu phải chứa ít nhất 8 ký tự.\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "utils/validate.ts",
+    "line": 117,
+    "content": "errorValue = t(\"auth.rePassNotMatch\") || \"Mật khẩu xác nhận không khớp.\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 35,
+    "content": "{{ $t('document.dragDropText') || 'Kéo thả tài liệu vào đây hoặc click để tải lên' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 38,
+    "content": "{{ $t('document.allowedFormats') || 'Hỗ trợ định dạng: PDF, Word, Excel, JPG, PNG' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 39,
+    "content": "<span class=\"block mt-1 font-semibold text-primary/80\">Dung lượng tối đa: 10MB</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 48,
+    "content": "{{ $t('document.uploading') || 'Đang tải lên tài liệu...' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 72,
+    "content": "{{ $t('document.totalFiles') || 'Danh sách tài liệu đính kèm' }} ({{ localDocuments.length }})",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 79,
+    "content": "v-tooltip.top=\"'Hiển thị lưới'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 87,
+    "content": "v-tooltip.top=\"'Hiển thị danh sách'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 128,
+    "content": "v-tooltip.top=\"$t('document.view') || 'Xem trực tiếp'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 135,
+    "content": "v-tooltip.top=\"$t('document.download') || 'Tải xuống máy'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 143,
+    "content": "v-tooltip.top=\"$t('document.delete') || 'Xóa tài liệu'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 156,
+    "content": "<span>Dung lượng: <strong class=\"text-surface-700 dark:text-surface-300\">{{ formatSize(doc.filesize) }}</strong></span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 161,
+    "content": "<span>Tải lên bởi: <strong class=\"text-primary\">{{ doc.created_by }}</strong></span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 171,
+    "content": "<div class=\"col-span-6\">Tên tài liệu</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 172,
+    "content": "<div class=\"col-span-2 text-right\">Dung lượng</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 173,
+    "content": "<div class=\"col-span-2 text-center\">Người tải lên</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 174,
+    "content": "<div class=\"col-span-2 text-right\">Hành động</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 207,
+    "content": "{{ doc.created_by || 'Hệ thống' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 218,
+    "content": "v-tooltip.top=\"'Xem trực tiếp'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 226,
+    "content": "v-tooltip.top=\"'Tải xuống'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 235,
+    "content": "v-tooltip.top=\"'Xóa bỏ'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 249,
+    "content": "<p class=\"text-sm font-bold text-surface-500\">{{ $t('document.noDocuments') || 'Không có tài liệu/chứng từ nào được đính kèm.' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 277,
+    "content": "<h4 class=\"text-lg font-black text-white\">{{ $t('document.viewerNotSupportedTitle') || 'Không hỗ trợ xem trực tuyến' }}</h4>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 279,
+    "content": "{{ $t('document.viewerNotSupportedDesc') || 'Trình duyệt không hỗ trợ xem trước các định dạng tệp tin Word/Excel để bảo mật. Vui lòng tải xuống máy cá nhân để mở.' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 282,
+    "content": ":label=\"$t('document.downloadFile') || 'Tải xuống tệp tin'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 296,
+    "content": ":header=\"$t('document.deleteConfirmTitle') || 'Xác nhận gỡ bỏ tài liệu'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 312,
+    "content": "<p class=\"text-sm font-semibold text-surface-800 dark:text-surface-100\">Hành động này không thể hoàn tác!</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 314,
+    "content": "Hệ thống sẽ tiến hành xóa vĩnh viễn tệp đính kèm <strong class=\"text-surface-700 dark:text-surface-300 font-bold\">{{ docToDelete?.origin_name }}</strong> khỏi lưu trữ đám mây. Hãy chắc chắn trước khi tiếp tục.",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 321,
+    "content": ":label=\"$t('common.cancel') || 'Hủy bỏ'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 328,
+    "content": ":label=\"$t('common.delete') || 'Xóa vĩnh viễn'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 432,
+    "content": "summary: \"Lỗi định dạng\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 433,
+    "content": "detail: `Định dạng .${ext} của tệp ${file.name} không hỗ trợ.`,",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 443,
+    "content": "summary: \"Dung lượng quá lớn\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 444,
+    "content": "detail: `Tệp ${file.name} vượt quá giới hạn dung lượng 10MB.`,",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 476,
+    "content": "summary: \"Tải lên thành công\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 477,
+    "content": "detail: `Tài liệu ${file.name} đã được đính kèm vào hệ thống.`,",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 485,
+    "content": "const errMsg = err?.response?.data?.messages?.message || `Lỗi tải lên tài liệu ${file.name}`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 488,
+    "content": "summary: \"Lỗi tải lên\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 536,
+    "content": "summary: \"Lỗi\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 537,
+    "content": "detail: \"Không thể tải file xem trước.\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 559,
+    "content": "summary: \"Lỗi\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 560,
+    "content": "detail: \"Không thể tải tệp tin.\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 587,
+    "content": "summary: \"Đã xóa tài liệu\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 588,
+    "content": "detail: \"Tài liệu đã được gỡ bỏ khỏi hệ thống.\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 593,
+    "content": "const errMsg = err?.response?.data?.messages?.message || \"Lỗi khi xóa tài liệu.\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/common/AppDocumentManager.vue",
+    "line": 596,
+    "content": "summary: \"Lỗi khi xóa\",",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 57,
+    "content": ":emptyText=\"$t('timesheet.noHistoryFound') || 'Không tìm thấy lịch sử chấm công nào'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 72,
+    "content": "{{ data.employee?.full_name || 'Nghiệp vụ ẩn' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 75,
+    "content": "Mã: {{ data.employee?.code || data.employee?.employee_code || 'N/A' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 262,
+    "content": "{ key: 'employee', label: t('timesheet.staff') || 'Nhân viên', minWidth: '180px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 263,
+    "content": "{ key: 'date', label: t('timesheet.dateCol') || 'Ngày', minWidth: '110px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 264,
+    "content": "{ key: 'check_in', label: t('timesheet.checkInCol') || 'Giờ vào', minWidth: '100px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 265,
+    "content": "{ key: 'check_out', label: t('timesheet.checkOutCol') || 'Giờ ra', minWidth: '100px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 266,
+    "content": "{ key: 'status', label: t('timesheet.statusCol') || 'Trạng thái', minWidth: '120px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 267,
+    "content": "{ key: 'note', label: t('timesheet.noteCol') || 'Ghi chú', minWidth: '150px' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 268,
+    "content": "{ key: 'actions', label: t('timesheet.actionCol') || 'Thao tác', minWidth: '130px', frozen: true }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetRecordsTab.vue",
+    "line": 485,
+    "content": "showMessage(\"success\", t(\"text.success\"), t(\"timesheet.msgSaveManualSuccess\") || \"Lưu chấm công thành công\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 211,
+    "content": "<span v-if=\"getDayCellDetails(emp, d.dateString, d.dayOfWeek).timeRange === 'Nghỉ'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 348,
+    "content": ":label=\"$t('timesheet.resetDefault') || 'Khôi phục ca mặc định'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 694,
+    "content": "timeRange = t('timesheet.legendOff') || 'Nghỉ';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 696,
+    "content": "shiftName = t('timesheet.legendOff') || 'Cuối tuần';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 740,
+    "content": "if (details.timeRange === 'Nghỉ') {",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 764,
+    "content": "let tooltip = `Ngày: ${dateStr}\\nCa làm việc: ${details.shiftName}`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 765,
+    "content": "if (details.timeRange && details.timeRange !== 'Nghỉ') {",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 769,
+    "content": "tooltip += `\\nNghỉ phép: ${details.leaveText}`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 772,
+    "content": "tooltip += `\\nTăng ca: ${details.overtimeText}`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 835,
+    "content": "showMessage(\"error\", t(\"text.error\"), t(\"text.errorSystem\") || \"Có lỗi xảy ra\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 867,
+    "content": "showMessage(\"error\", t(\"text.error\"), t(\"text.errorSystem\") || \"Có lỗi xảy ra\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 948,
+    "content": "showMessage(\"error\", t(\"text.error\"), t(\"text.errorSystem\") || \"Có lỗi xảy ra\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetShiftsTab.vue",
+    "line": 987,
+    "content": "showMessage(\"error\", t(\"text.error\"), t(\"text.errorSystem\") || \"Có lỗi xảy ra\");",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetStatsTab.vue",
+    "line": 14,
+    "content": ":placeholder=\"$t('timesheet.searchPlaceholder') || 'Tìm nhân viên...'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetConfigsTab.vue",
+    "line": 56,
+    "content": "<span>{{ config.is_default ? $t('timesheet.defaultSystem') : 'Mẫu ca làm việc' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetConfigsTab.vue",
+    "line": 74,
+    "content": "<span class=\"text-[9px] font-black uppercase tracking-widest text-surface-400\">Tăng ca (OT)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetConfigsTab.vue",
+    "line": 76,
+    "content": "<i class=\"pi pi-check-circle\"></i> Cho phép (Max {{ config.max_overtime_hours || 0 }}h)",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetConfigsTab.vue",
+    "line": 79,
+    "content": "<i class=\"pi pi-times-circle\"></i> Không cho phép",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 75,
+    "content": "<th class=\"px-4 py-4 text-right font-bold text-xs uppercase tracking-widest text-rose-500 whitespace-nowrap\">Bảo hiểm (10.5%)</th>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 101,
+    "content": "<div>T.Thường: {{ formatVND(row.overtime_salary_normal) }}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 102,
+    "content": "<div>C.Tuần: {{ formatVND(row.overtime_salary_weekend) }}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 103,
+    "content": "<div>Lễ: {{ formatVND(row.overtime_salary_holiday) }}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 106,
+    "content": "Tổng: {{ formatVND(row.overtime_salary) }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 153,
+    "content": "<h4 class=\"font-bold text-surface-900 dark:text-surface-0 border-b border-surface-100 dark:border-surface-800 pb-2\">Thông tin điều chỉnh lương</h4>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 169,
+    "content": "<AppInputField :label=\"'Công chuẩn'\" :isRequired=\"true\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 180,
+    "content": "<AppInputField :label=\"'Công thực tế'\" :isRequired=\"true\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 195,
+    "content": "<AppInputField :label=\"'OT Thường (giờ)'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 206,
+    "content": "<AppInputField :label=\"'OT Cuối tuần (giờ)'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 217,
+    "content": "<AppInputField :label=\"'OT Lễ Tết (giờ)'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 242,
+    "content": "<AppInputField :label=\"'Người phụ thuộc'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 254,
+    "content": "<AppInputField :label=\"'Trừ đi muộn'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 266,
+    "content": "<AppInputField :label=\"'Trừ nghỉ không phép'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 278,
+    "content": "<AppInputField :label=\"'Đoàn phí công đoàn'\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 330,
+    "content": "<h4 class=\"font-bold text-surface-900 dark:text-surface-0 border-b border-surface-200 dark:border-surface-800 pb-2 mb-4\">Chi tiết thuế & Thực nhận</h4>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 334,
+    "content": "<span class=\"text-surface-500 font-semibold\">Lương cơ bản</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 339,
+    "content": "<span>Đơn giá ngày công</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 341,
+    "content": "{{ formatVND(payrollForm.standard_working_days > 0 ? payrollForm.base_salary / payrollForm.standard_working_days : 0) }} / ngày",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 346,
+    "content": "<span class=\"text-surface-500 font-semibold\">Tiền OT làm thêm giờ</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 352,
+    "content": "<span>Ngày thường (1.5x)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 356,
+    "content": "<span>Cuối tuần (2.0x)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 360,
+    "content": "<span>Lễ Tết (3.0x)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 366,
+    "content": "<span class=\"text-surface-500 font-semibold\">Phụ cấp chuyên cần</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 371,
+    "content": "<span class=\"text-surface-500 font-semibold\">Khấu trừ chuyên cần/nghỉ phép</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 376,
+    "content": "<span>Lương GROSS</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 381,
+    "content": "<span class=\"text-surface-500 font-semibold\">Bảo hiểm bắt buộc (10.5%)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 386,
+    "content": "<span>Bảo hiểm xã hội (8%)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 390,
+    "content": "<span>Bảo hiểm y tế (1.5%)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 394,
+    "content": "<span>Bảo hiểm thất nghiệp (1%)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 400,
+    "content": "<span>Thu nhập trước thuế</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 405,
+    "content": "<span class=\"text-surface-500 font-semibold\">Thuế TNCN lũy tiến</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 411,
+    "content": "<span>Giảm trừ bản thân</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 415,
+    "content": "<span>Giảm trừ người phụ thuộc</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 416,
+    "content": "<span class=\"font-mono\">{{ payrollForm.dependents_count || 0 }} người = {{ formatVND((payrollForm.dependents_count || 0) * 6200000) }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 419,
+    "content": "<span>Thu nhập tính thuế</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 425,
+    "content": "<span class=\"text-surface-500 font-semibold\">Đoàn phí & Tạm ứng</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/timesheet/TimesheetPayrollTab.vue",
+    "line": 434,
+    "content": "<span class=\"text-[10px] font-black uppercase tracking-widest text-surface-400 mb-1\">Tổng lương thực nhận (Net)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 63,
+    "content": "placeholder=\"Hệ thống tự động cấp phát\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 92,
+    "content": "placeholder=\"Công ty TNHH Giải pháp Công nghệ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 111,
+    "content": "placeholder=\"グエン・ヴァン・A\"",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 129,
+    "content": "placeholder=\"Nguyễn Văn A\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 283,
+    "content": "placeholder=\"Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 303,
+    "content": "placeholder=\"Tầng 12, Tòa nhà Keangnam, Mễ Trì, Nam Từ Liêm, Hà Nội\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/CompanyForm.vue",
+    "line": 326,
+    "content": "placeholder=\"Nhập các thông tin ghi chú đặc biệt về doanh nghiệp này...\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 68,
+    "content": "{{ form.full_name || 'Họ và tên' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 115,
+    "content": "<h3 class=\"text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase\">1. Thông tin cá nhân cơ bản</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 116,
+    "content": "<p class=\"text-xs text-surface-400\">Các thông tin định danh cá nhân và lý lịch cơ bản</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 125,
+    "content": "<InputText v-model=\"form.full_name\" :invalid=\"!!form.errorFullName\" class=\"w-full !rounded-xl !pl-11 !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4 focus:ring-primary/10\" placeholder=\"Nguyễn Văn A\" @change=\"onValidate('full_name')\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 133,
+    "content": "<InputText v-model=\"form.full_name_kana\" :invalid=\"!!form.errorFullNameKana\" class=\"w-full !rounded-xl !pl-11 !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4 focus:ring-primary/10\" placeholder=\"グエン ヴァン\" @change=\"onValidate('full_name_kana')\" />",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 154,
+    "content": "<InputText v-model=\"form.hometown\" :invalid=\"!!form.errorHometown\" class=\"w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4\" placeholder=\"Ví dụ: Hà Nam\" @change=\"onValidate('hometown')\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 158,
+    "content": "<InputText v-model=\"form.place_of_birth\" :invalid=\"!!form.errorPlaceOfBirth\" class=\"w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4\" placeholder=\"Bệnh viện Phụ sản\" @change=\"onValidate('place_of_birth')\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 162,
+    "content": "<InputText v-model=\"form.nationality\" :invalid=\"!!form.errorNationality\" class=\"w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4\" placeholder=\"Việt Nam\" @change=\"onValidate('nationality')\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 170,
+    "content": "<InputText v-model=\"form.religion\" :invalid=\"!!form.errorReligion\" class=\"w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4\" placeholder=\"Không\" @change=\"onValidate('religion')\" />",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 182,
+    "content": "<h3 class=\"text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase\">2. Tài khoản & Công việc</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 183,
+    "content": "<p class=\"text-xs text-surface-400\">Các thông tin liên hệ, phòng ban chuyên trách và quyền hạn hệ thống</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 269,
+    "content": "<h3 class=\"text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase\">3. Địa chỉ liên lạc</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 270,
+    "content": "<p class=\"text-xs text-surface-400\">Địa chỉ đăng ký hộ khẩu thường trú và địa chỉ cư trú hiện tại</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 368,
+    "content": "<InputText v-model=\"form.bank_account_type\" :invalid=\"!!form.errorBankAccountType\" class=\"w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 focus:!ring-4\" placeholder=\"普通\" @change=\"onValidate('bank_account_type')\" />",
+    "has_vi": false,
+    "has_ja": true
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 409,
+    "content": "<span class=\"text-sm text-surface-400 font-bold\">Chưa thêm thân nhân nào. Nhấp nút phía trên để tạo mới.</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 419,
+    "content": "<i class=\"pi pi-user-plus text-xs\"></i> Thân nhân #{{ index + 1 }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 427,
+    "content": "v-tooltip.top=\"'Xóa thân nhân này'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 452,
+    "content": "<AppInputField label=\"Nghề nghiệp\" :error=\"form.relativeErrors?.[index]?.occupation\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 456,
+    "content": "<AppInputField label=\"Ngày sinh\">",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 463,
+    "content": "<span class=\"text-sm font-bold text-surface-600\">Liên hệ khẩn cấp</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 467,
+    "content": "<span class=\"text-sm font-bold text-surface-600\">Người phụ thuộc (Giảm trừ gia cảnh)</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 653,
+    "content": "{{ doc.extension }} • {{ (doc.filesize / 1024).toFixed(1) }} KB • <span class=\"bg-primary/20 px-1.5 py-0.5 rounded text-[8px] font-extrabold text-primary\">CHỜ TẢI LÊN</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 664,
+    "content": "v-tooltip.top=\"'Xóa tệp chờ'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 720,
+    "content": "v-tooltip.top=\"'Xóa giai đoạn này'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 778,
+    "content": "placeholder=\"Ví dụ: 10,000,000\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 788,
+    "content": "placeholder=\"Ví dụ: Tăng lương định kỳ\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 912,
+    "content": "department_id: { transitionKey: \"Phòng ban\", types: [\"require\"], errorKey: \"department_id\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 913,
+    "content": "job_title_id: { transitionKey: \"Chức vụ\", types: [\"require\"], errorKey: \"job_title_id\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 914,
+    "content": "start_date: { transitionKey: \"Ngày bắt đầu\", types: [\"require\"], errorKey: \"start_date\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 915,
+    "content": "salary: { transitionKey: \"Mức lương\", types: [\"min0\"], errorKey: \"salary\" }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 922,
+    "content": "itemError.end_date = \"Ngày kết thúc không được trước ngày bắt đầu\";",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 996,
+    "content": "showMessage('success', t('text.success'), 'Đã xóa tài liệu khỏi danh sách chờ.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1031,
+    "content": "showMessage('warn', 'Ảnh quá lớn', 'Vui lòng chọn ảnh có dung lượng dưới 2MB.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1052,
+    "content": "<div class='font-bold text-sm border-b border-surface-200 dark:border-surface-700 pb-1 mb-2'>${t('employee.roleRbacTooltipTitle') || 'Quyền hạn của vai trò (RBAC):'}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1054,
+    "content": "<div><strong>• ${t('employee.roleManager') || 'Quản lý'}:</strong> ${t('employee.roleManagerDesc') || ''}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1055,
+    "content": "<div><strong>• ${t('employee.roleHr') || 'Nhân sự'}:</strong> ${t('employee.roleHrDesc') || ''}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1056,
+    "content": "<div><strong>• ${t('employee.roleAccountant') || 'Kế toán'}:</strong> ${t('employee.roleAccountantDesc') || ''}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1057,
+    "content": "<div><strong>• ${t('employee.roleStaff') || 'Nhân viên'}:</strong> ${t('employee.roleStaffDesc') || ''}</div>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1066,
+    "content": "{ label: t('employee.roleManager') || 'Quản lý', value: 'MANAGER' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1067,
+    "content": "{ label: t('employee.roleHr') || 'Nhân sự', value: 'HR' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1068,
+    "content": "{ label: t('employee.roleAccountant') || 'Kế toán', value: 'ACCOUNTANT' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1069,
+    "content": "{ label: t('employee.roleStaff') || 'Nhân viên', value: 'STAFF' }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1074,
+    "content": "ADMIN: t('employee.roleAdminDesc') || 'Toàn quyền',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1075,
+    "content": "MANAGER: t('employee.roleManagerDesc') || 'Giám đốc / Quản lý',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1076,
+    "content": "HR: t('employee.roleHrDesc') || 'Quản lý nhân sự',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1077,
+    "content": "ACCOUNTANT: t('employee.roleAccountantDesc') || 'Kế toán / Tài chính',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1078,
+    "content": "STAFF: t('employee.roleStaffDesc') || 'Nhân viên'",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1087,
+    "content": "const identityTypes = [{ label: 'CCCD', value: 'CCCD' }, { label: 'My Number', value: 'MY_NUMBER' }, { label: 'Thẻ cư trú', value: 'ZAIRYU_CARD' }, { label: 'Hộ chiếu', value: 'PASSPORT' }];",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1088,
+    "content": "const relOptions = [{ label: 'Vợ/Chồng', value: 'SPOUSE' }, { label: 'Con', value: 'CHILD' }, { label: 'Bố/Mẹ', value: 'PARENT' }, { label: 'Anh/Chị/Em', value: 'SIBLING' }, { label: 'Khác', value: 'OTHER' }];",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1177,
+    "content": "full_name: { transitionKey: \"Họ tên\", types: [\"require\", \"max150\"], errorKey: \"full_name\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1178,
+    "content": "relationship: { transitionKey: \"Quan hệ\", types: [\"require\"], errorKey: \"relationship\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1179,
+    "content": "phone: { transitionKey: \"Số điện thoại\", types: [\"require\", \"max20\"], errorKey: \"phone\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1181,
+    "content": "occupation: { transitionKey: \"Nghề nghiệp\", types: [\"max150\"], errorKey: \"occupation\" }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1198,
+    "content": "full_name: { transitionKey: \"Họ tên\", types: [\"require\", \"max150\"], errorKey: \"full_name\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1199,
+    "content": "relationship: { transitionKey: \"Quan hệ\", types: [\"require\"], errorKey: \"relationship\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1200,
+    "content": "phone: { transitionKey: \"Số điện thoại\", types: [\"require\", \"max20\"], errorKey: \"phone\" },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1202,
+    "content": "occupation: { transitionKey: \"Nghề nghiệp\", types: [\"max150\"], errorKey: \"occupation\" }",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1284,
+    "content": "showMessage('warn', 'Thiếu thông tin', 'Vui lòng kiểm tra các tab có đánh dấu lỗi đỏ để hoàn thiện thông tin.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1344,
+    "content": "showMessage('success', t('text.success'), isEdit.value ? 'Đã cập nhật thông tin nhân viên.' : 'Đã tạo nhân viên mới thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1389,
+    "content": "console.error('Lỗi khi tải lên file:', item.title, e);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1397,
+    "content": "showMessage('success', t('text.success'), `Đã tạo nhân viên mới và tải lên thành công ${successCount} tài liệu.`);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1399,
+    "content": "showMessage('warn', 'Tải tài liệu có lỗi', `Đã tạo nhân viên mới thành công. Tải lên thành công ${successCount} tài liệu, thất bại ${failCount} tài liệu.`);",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1419,
+    "content": "showMessage('warn', 'File quá lớn', 'Vui lòng chọn tài liệu có dung lượng dưới 10MB.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1433,
+    "content": "showMessage('success', t('text.success'), 'Đã thêm tài liệu vào danh sách chờ.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1448,
+    "content": "showMessage('success', t('text.success'), 'Tải tài liệu lên thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1454,
+    "content": "showMessage('error', t('text.error'), err.message || 'Lỗi tải tài liệu lên.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1481,
+    "content": "showMessage('error', t('btn.error') || 'Lỗi', t('employee.viewError') || 'Không thể xem tài liệu.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1499,
+    "content": "showMessage('error', t('btn.error') || 'Lỗi', t('employee.downloadError') || 'Không thể tải tài liệu.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1504,
+    "content": "if (!confirm('Bạn có chắc chắn muốn xóa chứng từ này không? Hành động này không thể hoàn tác.')) {",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1511,
+    "content": "showMessage('success', t('text.success'), 'Đã xóa chứng từ thành công.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/master/EmployeeForm.vue",
+    "line": 1515,
+    "content": "showMessage('error', t('text.error'), err.message || 'Lỗi khi xóa chứng từ.');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 130,
+    "content": "v-tooltip.top=\"'Cấu hình Sidebar'\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 152,
+    "content": "<h3 class=\"text-sm font-black uppercase tracking-wider text-surface-900 dark:text-surface-0\">{{ $t('notification.title') || 'Thông báo' }}</h3>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 153,
+    "content": "<span v-if=\"unreadCount > 0\" class=\"text-[9px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold\">{{ unreadCount }} {{ $t('notification.new') || 'MỚI' }}</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 160,
+    "content": "{{ $t('notification.markAllRead') || 'Đọc tất cả' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 197,
+    "content": "<p class=\"text-xs text-surface-400 font-bold\">{{ $t('notification.empty') || 'Không có thông báo nào' }}</p>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 206,
+    "content": "{{ $t('notification.viewAll') || 'Xem tất cả thông báo' }}",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 259,
+    "content": "<span class=\"text-[11px] font-black uppercase tracking-wider text-surface-600 dark:text-surface-300 italic group-hover:text-primary transition-colors\">Hồ sơ cá nhân</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 265,
+    "content": "<span class=\"text-[11px] font-black uppercase tracking-wider text-surface-600 dark:text-surface-300 italic group-hover:text-primary transition-colors\">Đổi mật khẩu</span>",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 277,
+    "content": "Đăng xuất",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 415,
+    "content": "if (diffMin < 1) return 'Vừa xong';",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 416,
+    "content": "if (diffMin < 60) return `${diffMin} phút trước`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 417,
+    "content": "if (diffHour < 24) return `${diffHour} giờ trước`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 418,
+    "content": "if (diffDay < 7) return `${diffDay} ngày trước`;",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 482,
+    "content": "const userDisplayName = computed(() => userInfo.value?.full_name || 'Người dùng');",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 488,
+    "content": "'ADMIN': 'Quản trị viên',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 489,
+    "content": "'MANAGER': 'Quản lý',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 490,
+    "content": "'EMPLOYEE': 'Nhân viên',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppTopbar.vue",
+    "line": 600,
+    "content": "list.push({ label: t('notification.title') || 'Thông báo', to: '/notification' });",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 101,
+    "content": "placeholder=\"Chọn phông chữ...\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 164,
+    "content": "@click=\"setColor('default', 'Mặc định')\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 209,
+    "content": "@click=\"setImage('', 'Không có')\"",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 311,
+    "content": "colorName: 'Crimson (Đỏ)',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 316,
+    "content": "systemPrimaryName: 'Mặc định',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 333,
+    "content": "{ name: 'Emerald (Lá cây)', value: 'rgb(6, 95, 70)' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 334,
+    "content": "{ name: 'Amethyst (Tím)', value: 'rgb(109, 40, 217)' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 335,
+    "content": "{ name: 'Crimson (Đỏ)', value: 'rgb(153, 27, 27)' },",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 551,
+    "content": "colorName: 'Crimson (Đỏ)',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppThemeCustomizer.vue",
+    "line": 556,
+    "content": "systemPrimaryName: 'Mặc định',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppSidebar.vue",
+    "line": 278,
+    "content": "colorName: 'Crimson (Đỏ)',",
+    "has_vi": true,
+    "has_ja": false
+  },
+  {
+    "file": "components/layout/AppSidebar.vue",
+    "line": 283,
+    "content": "systemPrimaryName: 'Mặc định',",
+    "has_vi": true,
+    "has_ja": false
+  }
+]

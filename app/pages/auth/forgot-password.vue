@@ -1,28 +1,30 @@
 <template>
-  <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <div class="space-y-2">
-      <h2 class="text-3xl font-black text-surface-900 dark:text-white tracking-tighter uppercase italic">
+  <div>
+    <!-- Header -->
+    <div class="mb-8 text-center sm:text-left">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
         {{ $t("auth.forgotPassword") }}
       </h2>
-      <p class="text-surface-500 dark:text-surface-400 font-medium">
+      <p class="text-surface-400 text-sm">
         {{ $t("auth.enterEmailResetPass") }}
       </p>
     </div>
 
-    <form @submit.prevent="handleForgotPassword" class="space-y-6">
-      <div class="group">
-        <label class="block text-[10px] font-black text-surface-400 group-focus-within:text-primary uppercase tracking-[0.2em] mb-2 px-1 transition-colors">
+    <form @submit.prevent="handleForgotPassword" class="space-y-5">
+      <!-- Email Field -->
+      <div class="space-y-1.5">
+        <label class="text-[11px] font-bold text-surface-400 uppercase tracking-[0.15em] ml-1">
           {{ $t("auth.email") }}
-          <span class="text-red-500 ml-1">*</span>
+          <span class="text-red-400 ml-0.5">*</span>
         </label>
-        <div class="relative">
-          <i class="pi pi-envelope absolute left-4 top-1/2 -translate-y-1/2 text-surface-400 group-focus-within:text-primary transition-colors"></i>
+        <div class="relative group">
+          <i class="pi pi-envelope absolute left-4 top-1/2 -translate-y-1/2 text-surface-500 group-focus-within:text-primary transition-colors z-10"></i>
           <InputText
             id="email"
             v-model.trim="forgotPass.email"
             type="email"
             :invalid="!!forgotPass.errorEmail"
-            class="w-full !rounded-2xl !py-4 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
+            class="w-full !rounded-xl !h-[44px] !pl-11 !text-sm"
             placeholder="name@company.com"
             @change="onValidate('email')"
           />
@@ -30,18 +32,19 @@
         <AppMessageError :error="forgotPass.errorEmail" class="mt-2" />
       </div>
 
-      <div class="flex flex-col gap-4">
+      <!-- Actions -->
+      <div class="flex flex-col gap-3 pt-2">
         <Button
           :label="$t('auth.sendForgotPass')"
           :loading="isLoading"
-          class="w-full !rounded-2xl !py-4 !font-black !tracking-tight !shadow-xl !shadow-primary/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          class="w-full !rounded-xl !h-[46px] !font-bold !tracking-wide !border-none hover:!-translate-y-0.5 active:!translate-y-0 !transition-all !duration-300"
           type="submit"
         />
         <Button
-          :label="$t('auth.haveAnPassword') || 'Quay về đăng nhập'"
+          :label="$t('auth.backToLogin')"
           severity="secondary"
           variant="text"
-          class="w-full !rounded-2xl !font-bold"
+          class="w-full !rounded-xl !font-bold !text-surface-400 hover:!text-white hover:!bg-white/5"
           @click="router.push('/login')"
         />
       </div>
@@ -94,7 +97,7 @@ const handleForgotPassword = () => {
     data: { email: forgotPass.email },
     successCallback: (response: any) => {
       const msg = response?.data?.data?.message || t("auth.sendResetSuccess");
-      showMessage("success", t("text.success") || "Thành công", msg);
+      showMessage("success", t("text.success"), msg);
       router.push({
         path: "/auth/reset-password",
         query: { email: forgotPass.email },
@@ -104,8 +107,8 @@ const handleForgotPassword = () => {
     errorCallback: (error: any) => {
       const errMsg = error?.response?.data?.messages?.message
         || error?.response?.data?.messages?.[0]
-        || t("text.errorMessage") || "Có lỗi xảy ra.";
-      showMessage("error", t("text.error") || "Lỗi", errMsg);
+        || t("text.errorMessage");
+      showMessage("error", t("text.error"), errMsg);
       isLoading.value = false;
     },
   });

@@ -41,6 +41,43 @@
     </div>
 
     <template v-else>
+      <!-- Nhập nhanh hồ sơ bằng AI Gemini -->
+      <div v-if="!isEdit" class="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 rounded-3xl border border-primary/20 shadow-md relative overflow-hidden group">
+        <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center border border-primary/30 text-primary">
+              <i class="pi pi-sparkles text-xl animate-pulse"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase flex items-center gap-1.5">
+                {{ $t('employee.ocrTitle') }}
+                <span class="bg-primary text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">AI OCR</span>
+              </h3>
+              <p class="text-xs text-surface-400">{{ $t('employee.ocrDesc') }}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="file" ref="ocrFileInput" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.webp,.xlsx,.xls,.csv" multiple @change="onOcrFileChange" />
+            <Button
+              :label="$t('employee.ocrButton')"
+              icon="pi pi-upload"
+              :loading="ocrLoading"
+              severity="primary"
+              outlined
+              class="!rounded-xl !px-5 !py-2.5 !font-bold !text-xs !min-w-[180px]"
+              @click="ocrFileInput?.click()"
+            />
+          </div>
+        </div>
+
+        <div v-if="ocrLoading" class="mt-4 flex items-center gap-3 p-4 bg-primary/5 border border-primary/20 rounded-2xl animate-pulse">
+          <ProgressSpinner style="width: 20px; height: 20px" strokeWidth="6" />
+          <span class="text-xs font-bold text-primary">{{ $t('employee.ocrLoading') }}</span>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
         <!-- Left Column: Profile Card (Glassmorphism) -->
         <div class="lg:col-span-1 bg-white dark:bg-surface-900 border border-surface-100 dark:border-surface-800 rounded-3xl p-6 shadow-xl space-y-6 text-center relative overflow-hidden group">
@@ -122,10 +159,11 @@
                     <AppInputField :label="$t('employee.fullName')" :isRequired="true" :error="form.errorFullName">
                       <div class="relative group">
                         <i class="pi pi-user absolute left-4 top-1/2 -translate-y-1/2 text-surface-400 group-focus-within:text-primary transition-colors z-10"></i>
-                        <InputText v-model="form.full_name" :invalid="!!form.errorFullName" class="w-full !rounded-xl !pl-11 !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4 focus:ring-primary/10" placeholder="Nguyễn Văn A" @change="onValidate('full_name')" />
+                        <InputText v-model="form.full_name" :invalid="!!form.errorFullName" class="w-full !rounded-xl !pl-11 !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4 focus:ring-primary/10" :placeholder="$t('placeholder.fullNameExample')" @change="onValidate('full_name')" />
                       </div>
                     </AppInputField>
 
+                    <!--
                     <AppInputField :label="$t('employee.katakanaName')" :error="form.errorFullNameKana">
                       <div class="relative group">
                         <i class="pi pi-language absolute left-4 top-1/2 -translate-y-1/2 text-surface-400 group-focus-within:text-primary transition-colors z-10"></i>
@@ -139,6 +177,7 @@
                         <InputText v-model="form.romaji_name" :invalid="!!form.errorRomajiName" class="w-full !rounded-xl !pl-11 !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4 focus:ring-primary/10" placeholder="Nguyen Van A" @change="onValidate('romaji_name')" />
                       </div>
                     </AppInputField>
+                    -->
 
                     <AppInputField :label="$t('employee.dateOfBirth')" :error="form.errorDateOfBirth">
                       <DatePickerCommon v-model="form.date_of_birth" :invalid="!!form.errorDateOfBirth" @change="onValidate('date_of_birth')" />
@@ -149,15 +188,15 @@
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.hometown')" :error="form.errorHometown">
-                      <InputText v-model="form.hometown" :invalid="!!form.errorHometown" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" placeholder="Ví dụ: Hà Nam" @change="onValidate('hometown')" />
+                      <InputText v-model="form.hometown" :invalid="!!form.errorHometown" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" :placeholder="$t('employee.placeholderHometown')" @change="onValidate('hometown')" />
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.placeOfBirth')" :error="form.errorPlaceOfBirth">
-                      <InputText v-model="form.place_of_birth" :invalid="!!form.errorPlaceOfBirth" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" placeholder="Bệnh viện Phụ sản" @change="onValidate('place_of_birth')" />
+                      <InputText v-model="form.place_of_birth" :invalid="!!form.errorPlaceOfBirth" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" :placeholder="$t('employee.placeholderPlaceOfBirth')" @change="onValidate('place_of_birth')" />
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.nationality')" :error="form.errorNationality">
-                      <InputText v-model="form.nationality" :invalid="!!form.errorNationality" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" placeholder="Việt Nam" @change="onValidate('nationality')" />
+                      <InputText v-model="form.nationality" :invalid="!!form.errorNationality" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" :placeholder="$t('employee.placeholderNationality')" @change="onValidate('nationality')" />
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.ethnicity')" :error="form.errorEthnicity">
@@ -165,7 +204,7 @@
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.religion')" :error="form.errorReligion">
-                      <InputText v-model="form.religion" :invalid="!!form.errorReligion" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" placeholder="Không" @change="onValidate('religion')" />
+                      <InputText v-model="form.religion" :invalid="!!form.errorReligion" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" :placeholder="$t('employee.placeholderReligion')" @change="onValidate('religion')" />
                     </AppInputField>
                   </div>
                 </div>
@@ -177,8 +216,8 @@
                   <div class="flex items-center gap-3 mb-6 border-b border-surface-100 dark:border-surface-800 pb-4 relative z-10">
                     <div class="w-1.5 h-6 bg-primary rounded-full"></div>
                     <div>
-                      <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">2. Tài khoản & Công việc</h3>
-                      <p class="text-xs text-surface-400">Các thông tin liên hệ, phòng ban chuyên trách và quyền hạn hệ thống</p>
+                      <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">{{ $t('employee.sectionAccountWork') }}</h3>
+                      <p class="text-xs text-surface-400">{{ $t('employee.sectionAccountWorkDesc') }}</p>
                     </div>
                   </div>
 
@@ -207,6 +246,7 @@
                         optionLabel="name"
                         :placeholder="$t('employee.selectDepartment')"
                         :initItem="initDepartment"
+                        :disabled="!canManageOrg"
                         @change="onDepartmentChange"
                       />
                     </AppInputField>
@@ -219,21 +259,39 @@
                         optionValue="id"
                         :placeholder="$t('employee.selectJobTitle')"
                         class="w-full !rounded-xl border border-surface-200 dark:border-surface-800"
-                        :disabled="!form.department_id"
+                        :disabled="!form.department_id || !canManageOrg"
                         @change="onValidate('job_title_id')"
                       />
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.joinDate')" :isRequired="true" :error="form.errorJoinDate">
-                      <DatePickerCommon v-model="form.join_date" :invalid="!!form.errorJoinDate" @change="onValidate('join_date')" />
+                      <DatePickerCommon v-model="form.join_date" :invalid="!!form.errorJoinDate" :disabled="!canManageOrg" @change="onValidate('join_date')" />
                     </AppInputField>
 
                     <AppInputField :label="$t('employee.role')">
-                      <Select v-model="form.role" :options="roleOptions" optionLabel="label" optionValue="value" class="w-full !rounded-xl border border-surface-200 dark:border-surface-800" />
+                      <template #label>
+                        <i
+                          class="pi pi-question-circle text-primary cursor-help hover:text-primary-emphasis transition-colors ml-1"
+                          v-tooltip.right="{
+                            value: roleTooltipHtml,
+                            escape: false
+                          }"
+                        ></i>
+                      </template>
+                      <Select v-model="form.role" :options="roleOptions" optionLabel="label" optionValue="value" class="w-full !rounded-xl border border-surface-200 dark:border-surface-800" :disabled="!canManageOrg">
+                        <template #option="optProps">
+                          <div class="flex items-center justify-between w-full">
+                            <span>{{ optProps.option.label }}</span>
+                            <span class="text-[10px] text-surface-400 font-normal italic ml-2">
+                              {{ getRoleDesc(optProps.option.value) }}
+                            </span>
+                          </div>
+                        </template>
+                      </Select>
                     </AppInputField>
 
                     <AppInputField :label="$t('text.status')">
-                      <Select v-model="form.status" :options="statusOptions" optionLabel="label" optionValue="value" class="w-full !rounded-xl border border-surface-200 dark:border-surface-800" />
+                      <Select v-model="form.status" :options="statusOptions" optionLabel="label" optionValue="value" class="w-full !rounded-xl border border-surface-200 dark:border-surface-800" :disabled="!canManageOrg" />
                     </AppInputField>
                   </div>
                 </div>
@@ -245,8 +303,8 @@
                   <div class="flex items-center gap-3 mb-6 border-b border-surface-100 dark:border-surface-800 pb-4 relative z-10">
                     <div class="w-1.5 h-6 bg-primary rounded-full"></div>
                     <div>
-                      <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">3. Địa chỉ liên lạc</h3>
-                      <p class="text-xs text-surface-400">Địa chỉ đăng ký hộ khẩu thường trú và địa chỉ cư trú hiện tại</p>
+                      <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">{{ $t('employee.sectionContactAddress') }}</h3>
+                      <p class="text-xs text-surface-400">{{ $t('employee.sectionContactAddressDesc') }}</p>
                     </div>
                   </div>
 
@@ -344,7 +402,7 @@
                   </AppInputField>
 
                   <AppInputField :label="$t('employee.bankAccountType')" :error="form.errorBankAccountType">
-                    <InputText v-model="form.bank_account_type" :invalid="!!form.errorBankAccountType" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 focus:!ring-4" placeholder="普通" @change="onValidate('bank_account_type')" />
+                    <InputText v-model="form.bank_account_type" :invalid="!!form.errorBankAccountType" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 focus:!ring-4" :placeholder="$t('employee.placeholderBankAccountType')" @change="onValidate('bank_account_type')" />
                   </AppInputField>
 
                   <AppInputField :label="$t('employee.bankAccountNumber')" :error="form.errorBankAccountNumber">
@@ -385,7 +443,7 @@
 
               <div v-if="!form.relatives || form.relatives.length === 0" class="flex flex-col items-center py-16 border border-dashed border-surface-200 dark:border-surface-800 rounded-3xl">
                 <i class="pi pi-users text-5xl text-surface-300 mb-3"></i>
-                <span class="text-sm text-surface-400 font-bold">Chưa thêm thân nhân nào. Nhấp nút phía trên để tạo mới.</span>
+                <span class="text-sm text-surface-400 font-bold">{{ $t('employee.noRelatives') }}</span>
               </div>
 
               <div v-else class="space-y-6">
@@ -395,7 +453,7 @@
                   <!-- Card Header with Title and Delete Button -->
                   <div class="flex justify-between items-center border-b border-surface-100 dark:border-surface-800 pb-4 mb-6 relative z-10">
                     <h4 class="font-black text-primary flex items-center gap-2">
-                      <i class="pi pi-user-plus text-xs"></i> Thân nhân #{{ index + 1 }}
+                      <i class="pi pi-user-plus text-xs"></i> {{ $t('employee.relativeNumber') }}{{ index + 1 }}
                     </h4>
                     <Button 
                       icon="pi pi-trash" 
@@ -403,7 +461,7 @@
                       outlined
                       rounded
                       class="!w-8 !h-8 !p-0 !rounded-full hover:!bg-red-50 dark:hover:!bg-red-950/20" 
-                      v-tooltip.top="'Xóa thân nhân này'" 
+                      v-tooltip.top="$t('employee.deleteRelativeTooltip')" 
                       @click="removeRelative(index)" 
                     />
                   </div>
@@ -432,18 +490,18 @@
                       <InputText v-model="relative.occupation" :invalid="!!form.relativeErrors?.[index]?.occupation" class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 focus:!ring-4" @change="onValidateRelative(index, 'occupation')" />
                     </AppInputField>
                     
-                    <AppInputField label="Ngày sinh">
+                    <AppInputField :label="$t('employee.birthday')">
                       <DatePickerCommon v-model="relative.date_of_birth" />
                     </AppInputField>
                     
                     <div class="lg:col-span-3 flex gap-8 items-center pt-2">
                       <div class="flex items-center gap-2">
                         <Checkbox v-model="relative.is_emergency_contact" :binary="true" />
-                        <span class="text-sm font-bold text-surface-600">Liên hệ khẩn cấp</span>
+                        <span class="text-sm font-bold text-surface-600">{{ $t('employee.emergencyContact') }}</span>
                       </div>
                       <div class="flex items-center gap-2">
                         <Checkbox v-model="relative.is_dependent" :binary="true" />
-                        <span class="text-sm font-bold text-surface-600">Người phụ thuộc (Giảm trừ gia cảnh)</span>
+                        <span class="text-sm font-bold text-surface-600">{{ $t('employee.dependentTax') }}</span>
                       </div>
                     </div>
                   </div>
@@ -629,7 +687,7 @@
                         <div class="overflow-hidden space-y-0.5">
                           <span class="text-sm font-black text-primary block truncate" v-tooltip.bottom="doc.title">{{ doc.title }}</span>
                           <span class="text-[10px] text-primary/80 block uppercase font-black tracking-wider flex items-center gap-1">
-                            {{ doc.extension }} • {{ (doc.filesize / 1024).toFixed(1) }} KB • <span class="bg-primary/20 px-1.5 py-0.5 rounded text-[8px] font-extrabold text-primary">CHỜ TẢI LÊN</span>
+                            {{ doc.extension }} • {{ (doc.filesize / 1024).toFixed(1) }} KB • <span class="bg-primary/20 px-1.5 py-0.5 rounded text-[8px] font-extrabold text-primary">{{ $t('employee.pendingUpload') }}</span>
                           </span>
                         </div>
                       </div>
@@ -640,7 +698,7 @@
                           text
                           rounded
                           class="!w-8 !h-8 hover:!bg-red-50 dark:hover:!bg-red-950/20" 
-                          v-tooltip.top="'Xóa tệp chờ'" 
+                          v-tooltip.top="$t('employee.deletePendingFileTooltip')" 
                           @click="removePendingFile(doc.id)"
                         />
                       </div>
@@ -696,7 +754,7 @@
                       outlined
                       rounded
                       class="!w-8 !h-8 !p-0 !rounded-full hover:!bg-red-50 dark:hover:!bg-red-950/20" 
-                      v-tooltip.top="'Xóa giai đoạn này'" 
+                      v-tooltip.top="$t('employee.deletePeriodTooltip')" 
                       @click="removeWorkHistory(index)" 
                     />
                   </div>
@@ -754,7 +812,7 @@
                           :invalid="!!form.workHistoryErrors?.[index]?.salary" 
                           mode="decimal" 
                           class="w-full !rounded-xl !pl-11 border border-surface-200 dark:border-surface-800 transition-all focus:!ring-4" 
-                          placeholder="Ví dụ: 10,000,000" 
+                          :placeholder="$t('employee.placeholderSalary')" 
                           @change="onValidateWorkHistory(index, 'salary')" 
                         />
                       </div>
@@ -764,7 +822,7 @@
                       <InputText 
                         v-model="history.note" 
                         class="w-full !rounded-xl !py-2.5 border border-surface-200 dark:border-surface-800 focus:!ring-4" 
-                        placeholder="Ví dụ: Tăng lương định kỳ" 
+                        :placeholder="$t('employee.placeholderSalaryReason')" 
                       />
                     </AppInputField>
                   </div>
@@ -802,6 +860,81 @@ const { getDepartments, getDepartmentById } = useDepartment() as any;
 const loading = ref(true);
 const submitting = ref(false);
 const form = reactive<any>({ ...DEFAULT_FORM });
+
+const ocrLoading = ref(false);
+const ocrFileInput = ref<HTMLInputElement | null>(null);
+
+const onOcrFileChange = (e: Event) => {
+  const target = e.target as HTMLInputElement;
+  const files = target.files;
+  if (!files || files.length === 0) return;
+
+  const validFiles: File[] = [];
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    if (file.size > 10 * 1024 * 1024) {
+      showMessage('warn', t('employee.ocrFileTooLarge'), t('employee.ocrFileTooLargeDesc', { name: file.name }));
+      return;
+    }
+    validFiles.push(file);
+  }
+
+  ocrLoading.value = true;
+  const formData = new FormData();
+  validFiles.forEach((file) => {
+    formData.append('files[]', file);
+  });
+  formData.append('mode', 'employee');
+
+  Api.post('/ai/ocr', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+    .then((res: any) => {
+      const data = res.data?.data;
+      if (data) {
+        if (data.full_name) form.full_name = data.full_name;
+        if (data.full_name_kana) form.full_name_kana = data.full_name_kana;
+        if (data.romaji_name) form.romaji_name = data.romaji_name;
+        if (data.date_of_birth) form.date_of_birth = new Date(data.date_of_birth);
+        if (data.gender) form.gender = data.gender;
+        if (data.phone) form.phone = data.phone;
+        if (data.email) form.email = data.email;
+        if (data.hometown) form.hometown = data.hometown;
+        if (data.place_of_birth) form.place_of_birth = data.place_of_birth;
+        if (data.nationality) form.nationality = data.nationality;
+        if (data.ethnicity) form.ethnicity = data.ethnicity;
+        if (data.religion) form.religion = data.religion;
+        if (data.join_date) form.join_date = new Date(data.join_date);
+        if (data.identity_type) form.identity_type = data.identity_type;
+        if (data.identity_number) form.identity_number = data.identity_number;
+        if (data.address_registered) form.address_registered = data.address_registered;
+        if (data.address_current) form.address_current = data.address_current;
+        if (data.tax_code) form.tax_code = data.tax_code;
+        if (data.social_insurance_code) form.social_insurance_code = data.social_insurance_code;
+        if (data.pension_number) form.pension_number = data.pension_number;
+        if (data.employment_insurance_number) form.employment_insurance_number = data.employment_insurance_number;
+        if (data.bank_code) form.bank_code = data.bank_code;
+        if (data.bank_branch_code) form.bank_branch_code = data.bank_branch_code;
+        if (data.bank_account_type) form.bank_account_type = data.bank_account_type;
+        if (data.bank_account_number) form.bank_account_number = data.bank_account_number;
+        if (data.bank_account_holder_kana) form.bank_account_holder_kana = data.bank_account_holder_kana;
+
+        showMessage('success', t('employee.ocrSuccessTitle'), t('employee.ocrSuccessDesc'));
+      } else {
+        showMessage('error', t('employee.ocrErrorTitle'), t('employee.ocrErrorDesc'));
+      }
+    })
+    .catch((err: any) => {
+      const errorMsg = err?.response?.data?.messages?.message || err?.response?.data?.message || t('employee.ocrConnectError');
+      showMessage('error', t('employee.ocrErrorTitle'), errorMsg);
+    })
+    .finally(() => {
+      ocrLoading.value = false;
+      if (target) target.value = '';
+    });
+};
 const jobTitleOptions = ref<any[]>([]);
 
 const departmentsList = ref<any[]>([]);
@@ -888,17 +1021,17 @@ const onValidateWorkHistory = (index: number, field: string) => {
   const itemError = form.workHistoryErrors[index];
 
   const FIELD_VALIDATIONS_HIST = {
-    department_id: { transitionKey: "Phòng ban", types: ["require"], errorKey: "department_id" },
-    job_title_id: { transitionKey: "Chức vụ", types: ["require"], errorKey: "job_title_id" },
-    start_date: { transitionKey: "Ngày bắt đầu", types: ["require"], errorKey: "start_date" },
-    salary: { transitionKey: "Mức lương", types: ["min0"], errorKey: "salary" }
+    department_id: { transitionKey: "employee.department", types: ["require"], errorKey: "department_id" },
+    job_title_id: { transitionKey: "employee.jobTitle", types: ["require"], errorKey: "job_title_id" },
+    start_date: { transitionKey: "employee.startDate", types: ["require"], errorKey: "start_date" },
+    salary: { transitionKey: "employee.salary", types: ["min0"], errorKey: "salary" }
   };
 
   validateOnField(field, item, itemError, FIELD_VALIDATIONS_HIST, t);
 
   if (field === 'end_date' || field === 'start_date') {
     if (item.start_date && item.end_date && new Date(item.end_date) < new Date(item.start_date)) {
-      itemError.end_date = "Ngày kết thúc không được trước ngày bắt đầu";
+      itemError.end_date = t("employee.endDateBeforeStartDate");
     } else {
       itemError.end_date = "";
     }
@@ -972,7 +1105,7 @@ const pendingFiles = ref<{ id: string, file: File, title: string, extension: str
 
 const removePendingFile = (id: string) => {
   pendingFiles.value = pendingFiles.value.filter(f => f.id !== id);
-  showMessage('success', t('text.success'), 'Đã xóa tài liệu khỏi danh sách chờ.');
+  showMessage('success', t('text.success'), 't("employee.removedPendingFile")');
 };
 
 const onDepartmentChange = (deptId: any) => {
@@ -1018,10 +1151,46 @@ const onAvatarFileChange = (e: Event) => {
   reader.readAsDataURL(file);
 };
 
+const currentUser = ref<any>(null);
+
+const canManageOrg = computed(() => {
+  if (!currentUser.value) return false;
+  const role = currentUser.value.role;
+  return role === 'ADMIN' || role === 'MANAGER' || role === 'HR';
+});
+
+const roleTooltipHtml = computed(() => {
+  return `<div class='p-3 space-y-2 text-xs line-clamp-none'>
+    <div class='font-bold text-sm border-b border-surface-200 dark:border-surface-700 pb-1 mb-2'>${t('employee.roleRbacTooltipTitle')}</div>
+    <div><strong>• ${t('employee.roleAdmin')}:</strong> ${t('employee.roleAdminDesc')}</div>
+    <div><strong>• ${t('employee.roleManager')}:</strong> ${t('employee.roleManagerDesc')}</div>
+    <div><strong>• ${t('employee.roleHr')}:</strong> ${t('employee.roleHrDesc')}</div>
+    <div><strong>• ${t('employee.roleAccountant')}:</strong> ${t('employee.roleAccountantDesc')}</div>
+    <div><strong>• ${t('employee.roleStaff')}:</strong> ${t('employee.roleStaffDesc')}</div>
+  </div>`;
+});
+
 const initDepartment = ref<any>(null);
 const isEdit = computed(() => !!props.id);
 
-const roleOptions = [{ label: 'Admin', value: 'ADMIN' }, { label: 'Quản lý', value: 'MANAGER' }, { label: 'Nhân viên', value: 'STAFF' }];
+const roleOptions = computed(() => [
+  { label: t('employee.roleAdmin'), value: 'ADMIN' },
+  { label: t('employee.roleManager'), value: 'MANAGER' },
+  { label: t('employee.roleHr'), value: 'HR' },
+  { label: t('employee.roleAccountant'), value: 'ACCOUNTANT' },
+  { label: t('employee.roleStaff'), value: 'STAFF' }
+]);
+
+const getRoleDesc = (val: string) => {
+  const map: Record<string, string> = {
+    ADMIN: t('employee.roleAdminDesc'),
+    MANAGER: t('employee.roleManagerDesc'),
+    HR: t('employee.roleHrDesc'),
+    ACCOUNTANT: t('employee.roleAccountantDesc'),
+    STAFF: t('employee.roleStaffDesc')
+  };
+  return map[val] || '';
+};
 const statusOptions = computed(() => [
   { label: t('employee.statusActive'), value: 'ACTIVE' },
   { label: t('employee.statusProbation'), value: 'PROBATION' },
@@ -1031,6 +1200,12 @@ const identityTypes = [{ label: 'CCCD', value: 'CCCD' }, { label: 'My Number', v
 const relOptions = [{ label: 'Vợ/Chồng', value: 'SPOUSE' }, { label: 'Con', value: 'CHILD' }, { label: 'Bố/Mẹ', value: 'PARENT' }, { label: 'Anh/Chị/Em', value: 'SIBLING' }, { label: 'Khác', value: 'OTHER' }];
 
 onMounted(() => {
+  if (process.client) {
+    const raw = localStorage.getItem("userInfo");
+    if (raw) {
+      currentUser.value = JSON.parse(raw);
+    }
+  }
   fetchDepartmentsList();
   if (isEdit.value) {
     fetchEmployee();
@@ -1111,11 +1286,11 @@ const onValidateRelative = (index: number, field: string) => {
   const relError = form.relativeErrors[index];
 
   const FIELD_VALIDATIONS_REL = {
-    full_name: { transitionKey: "Họ tên", types: ["require", "max150"], errorKey: "full_name" },
-    relationship: { transitionKey: "Quan hệ", types: ["require"], errorKey: "relationship" },
-    phone: { transitionKey: "Số điện thoại", types: ["require", "max20"], errorKey: "phone" },
-    email: { transitionKey: "Email", types: ["validEmail", "max150"], errorKey: "email" },
-    occupation: { transitionKey: "Nghề nghiệp", types: ["max150"], errorKey: "occupation" }
+    full_name: { transitionKey: "employee.fullName", types: ["require", "max150"], errorKey: "full_name" },
+    relationship: { transitionKey: "employee.relationship", types: ["require"], errorKey: "relationship" },
+    phone: { transitionKey: "employee.phone", types: ["require", "max20"], errorKey: "phone" },
+    email: { transitionKey: "employee.email", types: ["validEmail", "max150"], errorKey: "email" },
+    occupation: { transitionKey: "employee.occupation", types: ["max150"], errorKey: "occupation" }
   };
 
   validateOnField(field, relative, relError, FIELD_VALIDATIONS_REL, t);
@@ -1132,11 +1307,11 @@ const validateAllRelatives = () => {
       });
 
       const FIELD_VALIDATIONS_REL = {
-        full_name: { transitionKey: "Họ tên", types: ["require", "max150"], errorKey: "full_name" },
-        relationship: { transitionKey: "Quan hệ", types: ["require"], errorKey: "relationship" },
-        phone: { transitionKey: "Số điện thoại", types: ["require", "max20"], errorKey: "phone" },
-        email: { transitionKey: "Email", types: ["validEmail", "max150"], errorKey: "email" },
-        occupation: { transitionKey: "Nghề nghiệp", types: ["max150"], errorKey: "occupation" }
+        full_name: { transitionKey: "employee.fullName", types: ["require", "max150"], errorKey: "full_name" },
+        relationship: { transitionKey: "employee.relationship", types: ["require"], errorKey: "relationship" },
+        phone: { transitionKey: "employee.phone", types: ["require", "max20"], errorKey: "phone" },
+        email: { transitionKey: "employee.email", types: ["validEmail", "max150"], errorKey: "email" },
+        occupation: { transitionKey: "employee.occupation", types: ["max150"], errorKey: "occupation" }
       };
 
       const isValid = validateOnAllField(relative, form.relativeErrors[index], FIELD_VALIDATIONS_REL, t);
@@ -1331,9 +1506,9 @@ const uploadPendingFiles = async (employeeId: number) => {
   uploadingDoc.value = false;
   
   if (failCount === 0) {
-    showMessage('success', t('text.success'), `Đã tạo nhân viên mới và tải lên thành công ${successCount} tài liệu.`);
+    showMessage('success', t('text.success'), t("employee.createAndUploadSuccess", { successCount }));
   } else {
-    showMessage('warn', 'Tải tài liệu có lỗi', `Đã tạo nhân viên mới thành công. Tải lên thành công ${successCount} tài liệu, thất bại ${failCount} tài liệu.`);
+    showMessage('warn', 'Tải tài liệu có lỗi', t("employee.createSuccessUploadError", { successCount, failCount }));
   }
   
   emit('save-success');
@@ -1367,7 +1542,7 @@ const onDocFileChange = (e: Event) => {
       extension: ext,
       filesize: file.size
     });
-    showMessage('success', t('text.success'), 'Đã thêm tài liệu vào danh sách chờ.');
+    showMessage('success', t('text.success'), 't("employee.addedPendingFile")');
     target.value = '';
     return;
   }
@@ -1382,13 +1557,13 @@ const onDocFileChange = (e: Event) => {
     data: formData,
     successCallback: (res: any) => {
       uploadingDoc.value = false;
-      showMessage('success', t('text.success'), 'Tải tài liệu lên thành công.');
+      showMessage('success', t('text.success'), 't("employee.uploadDocsSuccess")');
       // Refresh dữ liệu nhân viên để cập nhật danh sách documents
       fetchEmployee();
     },
     errorCallback: (err: any) => {
       uploadingDoc.value = false;
-      showMessage('error', t('text.error'), err.message || 'Lỗi tải tài liệu lên.');
+      showMessage('error', t('text.error'), err.message || 't("employee.uploadDocsFailed")');
     }
   });
 
@@ -1415,7 +1590,7 @@ const previewFile = (doc: any) => {
       window.open(fileURL, '_blank');
     })
     .catch((err: any) => {
-      showMessage('error', t('btn.error') || 'Lỗi', t('employee.viewError') || 'Không thể xem tài liệu.');
+      showMessage('error', t('btn.error'), t('employee.viewError'));
     });
 };
 
@@ -1433,7 +1608,7 @@ const downloadFile = (doc: any) => {
       window.URL.revokeObjectURL(url);
     })
     .catch((err: any) => {
-      showMessage('error', t('btn.error') || 'Lỗi', t('employee.downloadError') || 'Không thể tải tài liệu.');
+      showMessage('error', t('btn.error'), t('employee.downloadError'));
     });
 };
 
@@ -1445,11 +1620,11 @@ const confirmDeleteDoc = (docId: number) => {
   deleteDocument({
     documentId: docId,
     successCallback: () => {
-      showMessage('success', t('text.success'), 'Đã xóa chứng từ thành công.');
+      showMessage('success', t('text.success'), 't("employee.deleteDocSuccess")');
       fetchEmployee();
     },
     errorCallback: (err: any) => {
-      showMessage('error', t('text.error'), err.message || 'Lỗi khi xóa chứng từ.');
+      showMessage('error', t('text.error'), err.message || 't("employee.deleteDocFailed")');
     }
   });
 };

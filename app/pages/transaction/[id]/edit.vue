@@ -18,7 +18,7 @@
     </div>
 
     <!-- Main Grid Form -->
-    <div v-if="loadingTransaction" class="flex flex-col items-center justify-center py-20 bg-white dark:bg-surface-950 border border-surface-100 dark:border-surface-800 rounded-3xl">
+    <div v-if="loadingTransaction" class="flex flex-col items-center justify-center py-20 bg-white dark:bg-surface-950 border border-surface-200 dark:border-surface-700 rounded-xl">
       <i class="pi pi-spin pi-spinner text-3xl text-primary mb-3"></i>
       <span class="text-surface-500 font-medium">{{ $t('transaction.loadingData') }}</span>
     </div>
@@ -27,7 +27,7 @@
       <!-- Left side: Form fields (2 cols) -->
       <div class="lg:col-span-2 space-y-6">
         <!-- SECTION 1: TRANSACTION TYPE & PAYMENTS -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-credit-card text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('transaction.infoSection') }}</h2>
@@ -41,7 +41,7 @@
                 :options="typeOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn phân loại"
+                :placeholder="$t('placeholder.selectCategory')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -62,7 +62,7 @@
                 :options="categoryOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn hạng mục"
+                :placeholder="$t('placeholder.selectItem')"
                 class="w-full !rounded-xl"
                 editable
                 :invalid="!!formErrors.category"
@@ -86,7 +86,7 @@
                 :options="paymentMethodOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn phương thức"
+                :placeholder="$t('placeholder.selectMethod')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -98,7 +98,7 @@
                 :options="statusOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn trạng thái"
+                :placeholder="$t('placeholder.selectStatus')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -106,7 +106,7 @@
         </div>
 
         <!-- SECTION 2: AMOUNT & COMPLIANCE TAX CALCULATIONS -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-calculator text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('transaction.amountSection') }}</h2>
@@ -117,7 +117,7 @@
             <AppInputField :label="$t('transaction.amount')" :isRequired="true" :error="formErrors.amount">
               <InputNumber
                 v-model="form.amount"
-                placeholder="Nhập tổng số tiền"
+                :placeholder="$t('placeholder.enterTotalAmount')"
                 class="rounded-xl"
                 mode="currency"
                 currency="VND"
@@ -135,7 +135,7 @@
                 :options="taxRateOptions"
                 optionLabel="label"
                 optionValue="value"
-                placeholder="Chọn loại thuế suất"
+                :placeholder="$t('placeholder.selectTaxRate')"
                 class="w-full !rounded-xl"
                 @change="onTaxChange"
               />
@@ -145,7 +145,7 @@
             <AppInputField :label="$t('transaction.netAmount')">
               <InputNumber
                 v-model="form.net_amount"
-                placeholder="Số tiền gốc trước thuế"
+                :placeholder="$t('placeholder.amountBeforeTax')"
                 class="rounded-xl bg-surface-50/50 dark:bg-surface-900"
                 mode="currency"
                 currency="VND"
@@ -158,7 +158,7 @@
             <AppInputField :label="$t('transaction.taxAmount')">
               <InputNumber
                 v-model="form.tax_amount"
-                placeholder="Tiền thuế"
+                :placeholder="$t('placeholder.taxAmount')"
                 class="rounded-xl bg-surface-50/50 dark:bg-surface-900"
                 mode="currency"
                 currency="VND"
@@ -171,7 +171,7 @@
             <AppInputField :label="$t('transaction.withholdingTax')">
               <InputNumber
                 v-model="form.withholding_tax"
-                placeholder="Ví dụ: thuế TNCN 10%, nhà thầu..."
+                :placeholder="$t('placeholder.taxNoteExample')"
                 class="rounded-xl"
                 mode="currency"
                 currency="VND"
@@ -184,7 +184,7 @@
             <AppInputField :label="$t('transaction.invoiceNumber')" :error="formErrors.invoice_registration_number">
               <InputText
                 v-model="form.invoice_registration_number"
-                placeholder="T1234567890123 (Nếu là chi phí tại Nhật)"
+                :placeholder="$t('placeholder.japanInvoiceNo')"
                 class="rounded-xl font-mono uppercase"
                 :invalid="!!formErrors.invoice_registration_number"
                 @change="onValidate('invoice_registration_number')"
@@ -194,7 +194,7 @@
         </div>
 
         <!-- SECTION 3: DESCRIPTION -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-4">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-4">
           <div class="flex items-center gap-2 border-b border-surface-100 dark:border-surface-850 pb-3">
             <i class="pi pi-align-left text-primary text-lg"></i>
             <h2 class="text-sm font-black uppercase tracking-wider text-surface-800 dark:text-surface-200">{{ $t('transaction.descriptionSection') }}</h2>
@@ -210,7 +210,7 @@
         </div>
 
         <!-- EDM APP DOCUMENT MANAGER (ACTIVE DOCUMENTS - ENHANCED FULL WIDTH SECTION) -->
-        <div class="bg-white dark:bg-surface-950 p-8 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-5">
+        <div class="bg-white dark:bg-surface-950 p-8 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-5">
           <div class="flex items-center justify-between border-b border-surface-100 dark:border-surface-850 pb-4">
             <div class="flex items-center gap-2.5">
               <div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
@@ -240,7 +240,7 @@
       <!-- Right side: Action Buttons (1 col) -->
       <div class="space-y-6">
         <!-- FORM ACTION CARD -->
-        <div class="bg-white dark:bg-surface-950 p-6 rounded-3xl shadow-xl shadow-surface-100/50 dark:shadow-none border border-surface-100 dark:border-surface-800 space-y-3">
+        <div class="bg-white dark:bg-surface-950 p-6 rounded-xl shadow-sm border border-surface-200 dark:border-surface-700 space-y-3">
           <Button
             :label="$t('transaction.saveChanges')"
             icon="pi pi-check"
@@ -368,9 +368,9 @@ const calculateTaxAndNet = () => {
   const amt = form.value.amount || 0;
   let rate = 0;
   
-  if (form.value.tax_rate_type === 'VAT_8_VN') {
+  if (form.value.tax_rate_type === 'VAT_8_VN' || form.value.tax_rate_type === 'VAT_8') {
     rate = 0.08;
-  } else if (form.value.tax_rate_type === 'VAT_10_VN') {
+  } else if (form.value.tax_rate_type === 'VAT_10_VN' || form.value.tax_rate_type === 'VAT_10') {
     rate = 0.10;
   }
 
@@ -392,12 +392,17 @@ const loadTransactionDetails = () => {
       const data = res?.data?.data || res?.data || res;
       if (data) {
         transactionCode.value = data.code || `TXN${String(data.id).padStart(10, '0')}`;
+        
+        let loadedTaxRate = data.tax_rate_type || 'NONE';
+        if (loadedTaxRate === 'VAT_8') loadedTaxRate = 'VAT_8_VN';
+        if (loadedTaxRate === 'VAT_10') loadedTaxRate = 'VAT_10_VN';
+
         form.value = {
           type: data.type || 'EXPENSE',
           amount: data.amount ? Number(data.amount) : null,
           net_amount: data.net_amount ? Number(data.net_amount) : null,
           tax_amount: data.tax_amount ? Number(data.tax_amount) : null,
-          tax_rate_type: data.tax_rate_type || 'NONE',
+          tax_rate_type: loadedTaxRate,
           invoice_registration_number: data.invoice_registration_number || '',
           withholding_tax: data.withholding_tax ? Number(data.withholding_tax) : null,
           payment_method: data.payment_method || 'BANK_TRANSFER',

@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-6 duration-700 pb-10">
     <!-- Header (Premium Glass) -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between bg-white/80 dark:bg-surface-900/80 backdrop-blur-xl p-6 rounded-3xl border border-white dark:border-surface-800 shadow-xl shadow-surface-200/20 gap-4">
+    <div class="flex flex-col md:flex-row md:items-center justify-between bg-white dark:bg-surface-900  p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-md gap-4">
       <div class="flex items-center gap-5">
         <div class="w-16 h-16 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg shadow-primary/30 rotate-2 hover:rotate-0 transition-transform duration-500 bg-gradient-to-tr from-primary to-emerald-400">
           <img v-if="employee?.avatar" :src="employee.avatar" class="w-full h-full object-cover" />
@@ -30,10 +30,10 @@
         </div>
       </div>
       <div class="flex items-center gap-3">
-        <NuxtLink :to="`/master/employee/${route.params.id}/edit`">
+        <NuxtLink v-if="canEdit" :to="`/master/employee/${route.params.id}/edit`">
           <Button icon="pi pi-pencil" :label="$t('employee.editTitle')" severity="warn" class="!rounded-xl !px-6 !py-3 !font-black !text-sm hover:scale-105 transition-transform" />
         </NuxtLink>
-        <NuxtLink to="/master/employee">
+        <NuxtLink :to="backRoute">
           <Button icon="pi pi-arrow-left" :label="$t('btn.back')" severity="secondary" outlined class="!rounded-xl !px-5 !py-3 !font-bold !text-sm hover:!bg-surface-100 dark:hover:!bg-surface-800" />
         </NuxtLink>
       </div>
@@ -48,7 +48,7 @@
         <div class="lg:col-span-2 space-y-6">
           
           <!-- Personal Info -->
-          <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 relative overflow-hidden group">
+          <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm relative overflow-hidden group">
             <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
             
             <div class="flex items-center gap-3 mb-8 relative z-10">
@@ -61,8 +61,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
               <InfoItem :label="$t('employee.fullName')" :value="employee.full_name" />
+              <!--
               <InfoItem :label="$t('employee.katakanaName')" :value="employee.full_name_kana" />
               <InfoItem :label="$t('employee.romajiName')" :value="employee.romaji_name" />
+              -->
               <InfoItem :label="$t('employee.dateOfBirth')" :value="employee.date_of_birth" />
               <InfoItem :label="$t('employee.gender')" :value="employee.gender === 'MALE' ? $t('gender.male') : employee.gender === 'FEMALE' ? $t('gender.female') : employee.gender === 'OTHER' ? $t('gender.other') : '-'" />
               <InfoItem :label="$t('employee.phone')" :value="employee.phone" />
@@ -80,7 +82,7 @@
           </section>
 
           <!-- Banking Details -->
-          <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 relative overflow-hidden group">
+          <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm relative overflow-hidden group">
             <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
             
             <div class="flex items-center gap-3 mb-8 relative z-10">
@@ -104,7 +106,7 @@
         <!-- Right Side: Business unit, Tax & Identity Metadata -->
         <div class="space-y-6">
           <!-- Organizational Unit -->
-          <section class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 space-y-5">
+          <section class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-5">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-1.5 h-5 bg-primary rounded-full"></div>
               <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">{{ $t('employee.orgUnit') }}</h3>
@@ -138,7 +140,7 @@
           </section>
 
           <!-- Tax & Identity Info -->
-          <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 space-y-6">
+          <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-1.5 h-5 bg-primary rounded-full"></div>
               <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">{{ $t('employee.taxInsurance') }}</h3>
@@ -158,7 +160,7 @@
       </div>
 
       <!-- Work History Table -->
-      <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5">
+      <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm">
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-3">
             <div class="w-1.5 h-6 bg-primary rounded-full"></div>
@@ -169,7 +171,7 @@
           </div>
         </div>
 
-        <DataTable :value="employee.work_histories || []" stripedRows class="p-datatable-sm rounded-2xl overflow-hidden border border-surface-100 dark:border-surface-800">
+        <DataTable :value="employee.work_histories || []" stripedRows class="p-datatable-sm rounded-2xl overflow-hidden border border-surface-200 dark:border-surface-700">
           <template #empty>
             <div class="flex flex-col items-center py-10">
               <i class="pi pi-history text-4xl text-surface-300 mb-2"></i>
@@ -205,7 +207,7 @@
       </section>
 
       <!-- Relatives Table -->
-      <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5">
+      <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm">
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-3">
             <div class="w-1.5 h-6 bg-primary rounded-full"></div>
@@ -216,7 +218,7 @@
           </div>
         </div>
 
-        <DataTable :value="employee.relatives || []" stripedRows class="p-datatable-sm rounded-2xl overflow-hidden border border-surface-100 dark:border-surface-800">
+        <DataTable :value="employee.relatives || []" stripedRows class="p-datatable-sm rounded-2xl overflow-hidden border border-surface-200 dark:border-surface-700">
           <template #empty>
             <div class="flex flex-col items-center py-10">
               <i class="pi pi-users text-4xl text-surface-300 mb-2"></i>
@@ -257,7 +259,7 @@
       </section>
 
       <!-- Contracts Table -->
-      <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5">
+      <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm">
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-3">
             <div class="w-1.5 h-6 bg-primary rounded-full"></div>
@@ -267,8 +269,9 @@
             </div>
           </div>
           <Button 
+            v-if="canSignContract"
             icon="pi pi-bolt" 
-            :label="$t('contract.quickSign') || 'Ký nhanh hợp đồng'" 
+            :label="$t('contract.quickSign')" 
             severity="success" 
             class="!rounded-xl !px-4 !py-2 !text-xs !font-bold"
             :loading="quickSigning"
@@ -276,7 +279,7 @@
           />
         </div>
 
-        <div v-if="!employee.contracts || employee.contracts.length === 0" class="flex flex-col items-center py-10 border border-dashed border-surface-200 dark:border-surface-800 rounded-3xl relative z-10 bg-white dark:bg-surface-950/60">
+        <div v-if="!employee.contracts || employee.contracts.length === 0" class="flex flex-col items-center py-10 border border-dashed border-surface-200 dark:border-surface-800 rounded-xl relative z-10 bg-white dark:bg-surface-950/60">
           <i class="pi pi-file text-4xl text-surface-300 mb-2"></i>
           <span class="text-sm text-surface-400 font-bold">{{ $t('employee.contractEmpty') }}</span>
         </div>
@@ -284,7 +287,7 @@
         <div v-else class="border border-surface-200 dark:border-surface-800 rounded-2xl overflow-hidden shadow-sm relative z-10 bg-white dark:bg-surface-950/60">
           <table class="w-full text-left border-collapse">
             <thead>
-              <tr class="bg-surface-50 dark:bg-surface-950/60 text-xs font-bold text-surface-600 dark:text-surface-300 border-b border-surface-150 dark:border-surface-800 uppercase tracking-wider">
+              <tr class="bg-surface-50 dark:bg-surface-950/60 text-xs font-bold text-surface-600 dark:text-surface-300 border-b border-surface-200 dark:border-surface-700 uppercase tracking-wider">
                 <th class="p-4">{{ $t('employee.contractCode') }}</th>
                 <th class="p-4">{{ $t('employee.contractType') }}</th>
                 <th class="p-4">{{ $t('employee.contractDuration') }}</th>
@@ -338,8 +341,151 @@
         </div>
       </section>
 
+      <!-- Payroll History Table -->
+      <section v-if="employee.payslips" class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-1.5 h-6 bg-primary rounded-full"></div>
+            <div>
+              <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase">
+                {{ $t('timesheet.tabPayroll') }}
+              </h3>
+              <p class="text-xs text-surface-400 font-medium">
+                {{ $t('timesheet.payrollDesc') }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <DataTable :value="employee.payslips" stripedRows class="p-datatable-sm rounded-2xl overflow-hidden border border-surface-200 dark:border-surface-700">
+          <template #empty>
+            <div class="flex flex-col items-center py-10">
+              <i class="pi pi-money-bill text-4xl text-surface-300 mb-2"></i>
+              <p class="text-surface-400 font-medium">{{ $t('timesheet.noPayrollData') }}</p>
+            </div>
+          </template>
+          
+          <Column :header="$t('timesheet.payrollMonth')">
+            <template #body="{ data }">
+              <span class="font-bold text-primary">{{ formatYearMonth(data.year_month) }}</span>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.baseSalary')">
+            <template #body="{ data }">
+              <span>{{ formatCurrency(data.base_salary) }}</span>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.workingDaysActualStandard')">
+            <template #body="{ data }">
+              <span class="font-medium text-surface-600 dark:text-surface-400">
+                {{ Number(data.actual_working_days) }} / {{ Number(data.standard_working_days) }}
+              </span>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.overtimeCol')">
+            <template #body="{ data }">
+              <div class="flex flex-col gap-0.5 text-xs min-w-[140px]">
+                <div v-if="Number(data.overtime_salary) > 0" class="flex items-center gap-1 font-bold text-surface-900 dark:text-surface-100">
+                  <span>{{ formatCurrency(data.overtime_salary) }}</span>
+                  <span class="text-[10px] text-surface-400 font-mono">({{ Number(data.overtime_hours) }}h)</span>
+                </div>
+                <span v-else class="text-surface-400">-</span>
+                
+                <div v-if="Number(data.overtime_hours_normal) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.overtimeNormal') }}:</span>
+                  <span class="font-mono">{{ formatCurrency(data.overtime_salary_normal) }} ({{ Number(data.overtime_hours_normal) }}h)</span>
+                </div>
+                <div v-if="Number(data.overtime_hours_weekend) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.overtimeWeekend') }}:</span>
+                  <span class="font-mono">{{ formatCurrency(data.overtime_salary_weekend) }} ({{ Number(data.overtime_hours_weekend) }}h)</span>
+                </div>
+                <div v-if="Number(data.overtime_hours_holiday) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.overtimeHoliday') }}:</span>
+                  <span class="font-mono">{{ formatCurrency(data.overtime_salary_holiday) }} ({{ Number(data.overtime_hours_holiday) }}h)</span>
+                </div>
+              </div>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.attendanceAllowance')">
+            <template #body="{ data }">
+              <span>{{ Number(data.allowance_attendance) > 0 ? formatCurrency(data.allowance_attendance) : '-' }}</span>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.deductionLate')">
+            <template #body="{ data }">
+              <div class="flex flex-col gap-0.5 text-xs min-w-[170px]">
+                <div v-if="calculateTotalDeductions(data) > 0" class="font-bold text-rose-500 flex items-center justify-between">
+                  <span>{{ $t('timesheet.totalDeductions') }}:</span>
+                  <span>-{{ formatCurrency(calculateTotalDeductions(data)) }}</span>
+                </div>
+                <span v-else class="text-surface-400">-</span>
+
+                <div v-if="Number(data.deduction_late) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.deductionLateLabel') }}:</span>
+                  <span class="font-mono text-rose-500">-{{ formatCurrency(data.deduction_late) }}</span>
+                </div>
+                <div v-if="Number(data.deduction_leave) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.deductionLeaveLabel') }}:</span>
+                  <span class="font-mono text-rose-500">-{{ formatCurrency(data.deduction_leave) }}</span>
+                </div>
+                <div v-if="Number(data.deduction_union) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.deductionUnionLabel') }}:</span>
+                  <span class="font-mono text-rose-500">-{{ formatCurrency(data.deduction_union) }}</span>
+                </div>
+                <div v-if="Number(data.insurance_deduction) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.deductionInsuranceLabel') }}:</span>
+                  <span class="font-mono text-rose-500">-{{ formatCurrency(data.insurance_deduction) }}</span>
+                </div>
+                <div v-if="Number(data.deduction_tax) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.deductionTaxLabel') }}:</span>
+                  <span class="font-mono text-rose-500">-{{ formatCurrency(data.deduction_tax) }}</span>
+                </div>
+                <div v-if="Number(data.advance_payment) > 0" class="text-[10px] text-surface-500 flex justify-between leading-none gap-2">
+                  <span class="text-surface-400">{{ $t('timesheet.advancePaymentLabel') }}:</span>
+                  <span class="font-mono text-rose-500">-{{ formatCurrency(data.advance_payment) }}</span>
+                </div>
+              </div>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.netSalary')">
+            <template #body="{ data }">
+              <span class="font-black text-emerald-600 dark:text-emerald-400 text-base">
+                {{ formatCurrency(data.net_salary) }}
+              </span>
+            </template>
+          </Column>
+
+          <Column :header="$t('timesheet.statusCol')">
+            <template #body="{ data }">
+              <span 
+                class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
+                :class="[
+                  data.status === 'PAID' ? 'bg-emerald-500/10 text-emerald-600' : 'bg-amber-500/10 text-amber-600'
+                ]"
+              >
+                {{ data.status === 'PAID' ? ($t('timesheet.statusPaid')) : ($t('timesheet.statusPending')) }}
+              </span>
+            </template>
+          </Column>
+
+          <Column :header="$t('employee.workHistoryNote')">
+            <template #body="{ data }">
+              <span class="text-xs text-surface-500 block max-w-[150px] truncate" v-tooltip.bottom="data.note">
+                {{ data.note || '-' }}
+              </span>
+            </template>
+          </Column>
+        </DataTable>
+      </section>
+
       <!-- Personal Documents Grid -->
-      <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5">
+      <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm">
         <div class="flex items-center gap-3 mb-6">
           <div class="w-1.5 h-6 bg-primary rounded-full"></div>
           <div>
@@ -348,16 +494,16 @@
           </div>
         </div>
 
-        <div v-if="!employee.documents || employee.documents.length === 0" class="flex flex-col items-center py-16 border border-dashed border-surface-200 dark:border-surface-800 rounded-3xl bg-white dark:bg-surface-950/60">
+        <div v-if="!employee.documents || employee.documents.length === 0" class="flex flex-col items-center py-16 border border-dashed border-surface-200 dark:border-surface-800 rounded-xl bg-white dark:bg-surface-950/60">
           <i class="pi pi-folder text-5xl text-surface-300 mb-3"></i>
           <span class="text-sm text-surface-400 font-bold mb-1">{{ $t('employee.docEmptyTitle') }}</span>
           <span class="text-xs text-surface-400">{{ $t('employee.docEmptyDesc') }}</span>
         </div>
 
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-          <div v-for="doc in employee.documents" :key="doc.id" class="p-4 bg-white dark:bg-surface-950/40 border border-surface-150 dark:border-surface-800 rounded-2xl flex items-center justify-between group hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden">
+          <div v-for="doc in employee.documents" :key="doc.id" class="p-4 bg-white dark:bg-surface-950/40 border border-surface-200 dark:border-surface-700 rounded-2xl flex items-center justify-between group hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden">
             <div class="flex items-center gap-3 w-[70%]">
-              <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-md bg-surface-50 dark:bg-surface-900 border border-surface-100 dark:border-surface-800 text-surface-500">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-md bg-surface-50 dark:bg-surface-900 border border-surface-200 dark:border-surface-700 text-surface-500">
                 <i class="pi text-xl" :class="getFileIcon(doc.extension)"></i>
               </div>
               <div class="overflow-hidden space-y-0.5">
@@ -418,6 +564,25 @@ const { getEmployee } = useEmployee() as any;
 const employee = ref<any>(null);
 const loading = ref(true);
 const quickSigning = ref(false);
+const currentUser = ref<any>(null);
+
+const canEdit = computed(() => {
+  if (!currentUser.value) return false;
+  const role = currentUser.value.role;
+  return role === 'ADMIN' || role === 'MANAGER' || role === 'HR' || currentUser.value.id === employee.value?.id;
+});
+
+const canSignContract = computed(() => {
+  if (!currentUser.value) return false;
+  const role = currentUser.value.role;
+  return role === 'ADMIN' || role === 'MANAGER' || role === 'HR';
+});
+
+const backRoute = computed(() => {
+  if (!currentUser.value) return '/';
+  const role = currentUser.value.role;
+  return (role === 'ADMIN' || role === 'MANAGER' || role === 'HR') ? '/master/employee' : '/';
+});
 
 const relLabel = (r: string) => {
   const map: Record<string, string> = { 
@@ -460,7 +625,7 @@ const formatDate = (dateStr?: string) => {
   try {
     const d = new Date(dateStr);
     if (isNaN(d.getTime())) return dateStr;
-    return d.toLocaleDateString(t('locale') || 'vi-VN', { year: 'numeric', month: '2-digit', day: '2-digit' });
+    return d.toLocaleDateString(t('locale'), { year: 'numeric', month: '2-digit', day: '2-digit' });
   } catch {
     return dateStr;
   }
@@ -470,12 +635,19 @@ const fetchEmployee = () => {
   loading.value = true;
   getEmployee({ 
     id: Number(route.params.id), 
-    successCallback: (res: any) => { 
-      employee.value = res.data?.data; 
-      loading.value = false; 
-    }, 
-    errorCallback: () => { 
-      loading.value = false; 
+    successCallback: (res: any) => {
+      const dataObj = res.data?.data;
+      if (dataObj && dataObj.payslips) {
+        dataObj.payslips = dataObj.payslips.map((p: any) => calculateRowPayroll({
+          ...p,
+          dependents_count: dataObj.dependents_count || 0
+        }));
+      }
+      employee.value = dataObj;
+      loading.value = false;
+    },
+    errorCallback: () => {
+      loading.value = false;
     } 
   });
 };
@@ -499,7 +671,7 @@ const previewFile = (doc: any) => {
       window.open(fileURL, '_blank');
     })
     .catch((err: any) => {
-      showMessage('error', t('btn.error') || 'Lỗi', t('employee.viewError') || 'Không thể xem tài liệu.');
+      showMessage('error', t('btn.error'), t('employee.viewError'));
     });
 };
 
@@ -517,7 +689,7 @@ const downloadFile = (doc: any) => {
       window.URL.revokeObjectURL(url);
     })
     .catch((err: any) => {
-      showMessage('error', t('btn.error') || 'Lỗi', t('employee.downloadError') || 'Không thể tải tài liệu.');
+      showMessage('error', t('btn.error'), t('employee.downloadError'));
     });
 };
 
@@ -576,7 +748,7 @@ const quickSignContract = () => {
   CREATE_CONTRACT(
     payload,
     (res: any) => {
-      showMessage('success', t('btn.success'), t('quickSignSuccess') || 'Đã ký hợp đồng thành công.');
+      showMessage('success', t('btn.success'), t('quickSignSuccess'));
       fetchEmployee();
       quickSigning.value = false;
     },
@@ -587,5 +759,119 @@ const quickSignContract = () => {
   );
 };
 
-onMounted(fetchEmployee);
+const formatYearMonth = (ym?: string) => {
+  if (!ym) return '-';
+  const parts = ym.split('-');
+  if (parts.length === 2) {
+    return `${parts[1]}/${parts[0]}`;
+  }
+  return ym;
+};
+
+const formatCurrency = (val: any) => {
+  if (val === null || val === undefined) return '-';
+  const num = Number(val);
+  if (isNaN(num)) return val;
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 }).format(num);
+};
+
+const calculateRowPayroll = (row: any) => {
+  const baseSalary = Number(row.base_salary) || 0;
+  const standardDays = Number(row.standard_working_days) || 22;
+  const actualDays = Number(row.actual_working_days) || 0;
+  const dependentsCount = Number(row.dependents_count) || 0;
+
+  // Standard rates
+  const dailyRate = standardDays > 0 ? (baseSalary / standardDays) : 0;
+  const hourlyRate = dailyRate / 8;
+
+  // Overtime calculations
+  const otNormalHours = Number(row.overtime_hours_normal) || 0;
+  const otWeekendHours = Number(row.overtime_hours_weekend) || 0;
+  const otHolidayHours = Number(row.overtime_hours_holiday) || 0;
+
+  const otNormalPay = otNormalHours * hourlyRate * 1.5;
+  const otWeekendPay = otWeekendHours * hourlyRate * 2.0;
+  const otHolidayPay = otHolidayHours * hourlyRate * 3.0;
+
+  const overtime_salary_normal = Math.round(otNormalPay * 100) / 100;
+  const overtime_salary_weekend = Math.round(otWeekendPay * 100) / 100;
+  const overtime_salary_holiday = Math.round(otHolidayPay * 100) / 100;
+
+  const totalOtSalary = otNormalPay + otWeekendPay + otHolidayPay;
+  const overtime_salary = Math.round(totalOtSalary * 100) / 100;
+  const overtime_hours = otNormalHours + otWeekendHours + otHolidayHours;
+
+  // Allowances and Deductions
+  const allowanceAttendance = Number(row.allowance_attendance) || 0;
+  const deductionLate = Number(row.deduction_late) || 0;
+  const deductionLeave = Number(row.deduction_leave) || 0;
+  const deductionUnion = Number(row.deduction_union) || 0;
+  const advancePayment = Number(row.advance_payment) || 0;
+
+  // Gross Salary
+  const grossSalary = baseSalary + totalOtSalary + allowanceAttendance - deductionLate - deductionLeave;
+
+  // Compulsory Insurance (10.5%: 8% BHXH + 1.5% BHYT + 1% BHTN)
+  const insuranceDeduction = grossSalary * 0.105;
+  const incomeBeforeTax = Math.max(0, grossSalary - insuranceDeduction);
+
+  // Progressive personal income tax (PIT)
+  const selfDeduction = 15500000;
+  const dependentDeduction = dependentsCount * 6200000;
+  const taxableIncome = Math.max(0, incomeBeforeTax - selfDeduction - dependentDeduction);
+
+  let defaultTax = 0;
+  if (taxableIncome > 0) {
+    if (taxableIncome <= 10000000) {
+      defaultTax = taxableIncome * 0.05;
+    } else if (taxableIncome <= 30000000) {
+      defaultTax = taxableIncome * 0.10 - 500000;
+    } else if (taxableIncome <= 60000000) {
+      defaultTax = taxableIncome * 0.20 - 3500000;
+    } else if (taxableIncome <= 100000000) {
+      defaultTax = taxableIncome * 0.30 - 9500000;
+    } else {
+      defaultTax = taxableIncome * 0.35 - 14500000;
+    }
+  }
+
+  const deduction_tax = Math.round(defaultTax * 100) / 100;
+
+  // Net Salary: Income Before Tax - Union - Tax - Advance
+  const netSalary = Math.round(Math.max(0, incomeBeforeTax - deductionUnion - defaultTax - advancePayment) * 100) / 100;
+
+  return {
+    ...row,
+    overtime_hours,
+    overtime_salary,
+    overtime_salary_normal,
+    overtime_salary_weekend,
+    overtime_salary_holiday,
+    deduction_tax,
+    net_salary: netSalary,
+    gross_salary: grossSalary,
+    insurance_deduction: insuranceDeduction,
+  };
+};
+
+const calculateTotalDeductions = (data: any) => {
+  const late = Number(data.deduction_late || 0);
+  const leave = Number(data.deduction_leave || 0);
+  const union = Number(data.deduction_union || 0);
+  const tax = Number(data.deduction_tax || 0);
+  const advance = Number(data.advance_payment || 0);
+  const insurance = Number(data.insurance_deduction || 0);
+  return late + leave + union + tax + advance + insurance;
+};
+
+onMounted(() => {
+  if (process.client) {
+    const raw = localStorage.getItem("userInfo");
+    if (raw) {
+      currentUser.value = JSON.parse(raw);
+    }
+  }
+  fetchEmployee();
+});
 </script>

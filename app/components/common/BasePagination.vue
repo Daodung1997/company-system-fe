@@ -14,7 +14,7 @@
     >
       <template #start>
         <span class="text-xs text-surface-400 font-bold uppercase tracking-widest hidden md:inline ml-2">
-          {{ t('pagination.layout') || 'Page Layout' }}
+          {{ t('pagination.layout') }}
         </span>
       </template>
     </Paginator>

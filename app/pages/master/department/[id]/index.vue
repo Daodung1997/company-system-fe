@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-[1200px] mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-6 duration-700 pb-10">
     <!-- Header (Premium Glass) -->
-    <div class="z-30 flex items-center justify-between bg-white/80 dark:bg-surface-900/80 backdrop-blur-xl p-6 rounded-3xl border border-white dark:border-surface-800 shadow-xl shadow-surface-200/20">
+    <div class="z-30 flex items-center justify-between bg-white dark:bg-surface-900  p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shadow-lg border border-primary/20 rotate-3 hover:rotate-0 transition-transform duration-500">
           <i class="pi pi-sitemap text-2xl"></i>
@@ -39,7 +39,7 @@
     <div class="grid grid-cols-12 gap-6" v-if="!isLoading">
       <!-- Left Column: Department Profile -->
       <div class="col-span-12 lg:col-span-8 space-y-6">
-        <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 relative overflow-hidden group">
+        <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm relative overflow-hidden group">
           <div class="flex items-center gap-3 mb-8">
             <div class="w-1.5 h-6 bg-primary rounded-full"></div>
             <div>
@@ -50,7 +50,7 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             <!-- Department Code -->
-            <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-50 dark:bg-surface-800/40 border border-surface-100 dark:border-surface-800/60">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-50 dark:bg-surface-800/40 border border-surface-200 dark:border-surface-700/60">
               <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                 <i class="pi pi-id-card text-sm"></i>
               </div>
@@ -61,7 +61,7 @@
             </div>
 
             <!-- Department Name -->
-            <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-50 dark:bg-surface-800/40 border border-surface-100 dark:border-surface-800/60">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-50 dark:bg-surface-800/40 border border-surface-200 dark:border-surface-700/60">
               <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                 <i class="pi pi-sitemap text-sm"></i>
               </div>
@@ -72,7 +72,7 @@
             </div>
 
             <!-- Job Titles list -->
-            <div class="flex flex-col gap-4 p-6 rounded-2xl bg-surface-50 dark:bg-surface-800/40 border border-surface-100 dark:border-surface-800/60 md:col-span-2">
+            <div class="flex flex-col gap-4 p-6 rounded-2xl bg-surface-50 dark:bg-surface-800/40 border border-surface-200 dark:border-surface-700/60 md:col-span-2">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                   <i class="pi pi-briefcase text-sm"></i>
@@ -92,7 +92,7 @@
                   v-else 
                   v-for="job in department.job_titles" 
                   :key="job.id" 
-                  class="flex flex-col p-4 rounded-xl bg-white dark:bg-surface-900 border border-surface-100 dark:border-surface-800 shadow-sm relative group overflow-hidden"
+                  class="flex flex-col p-4 rounded-xl bg-white dark:bg-surface-900 border border-surface-200 dark:border-surface-700 shadow-sm relative group overflow-hidden"
                 >
                   <div class="absolute -right-6 -bottom-6 w-14 h-14 bg-primary/5 rounded-full blur-md"></div>
                   <span class="text-xs font-mono text-surface-400 font-black uppercase tracking-wider">{{ job.code }}</span>
@@ -110,11 +110,11 @@
       <!-- Right Column: Notes & Metadata -->
       <div class="col-span-12 lg:col-span-4 space-y-6">
         <!-- Notes Section -->
-        <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 relative overflow-hidden group">
+        <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm relative overflow-hidden group">
           <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] group-hover:scale-125 transition-transform duration-1000"></div>
 
           <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase mb-6 relative z-10">Mô tả / Ghi chú</h3>
-          <div class="p-5 rounded-2xl bg-surface-50/50 dark:bg-surface-800/20 border border-surface-100 dark:border-surface-800/40 min-h-[120px] relative z-10">
+          <div class="p-5 rounded-2xl bg-surface-50/50 dark:bg-surface-800/20 border border-surface-200 dark:border-surface-700/40 min-h-[120px] relative z-10">
             <p class="text-xs text-surface-500 dark:text-surface-400 whitespace-pre-wrap leading-relaxed italic">
               {{ department.note || 'Không có mô tả chi tiết nào cho phòng ban này.' }}
             </p>
@@ -122,11 +122,11 @@
         </section>
 
         <!-- Metadata Section -->
-        <section class="bg-white dark:bg-surface-900 p-8 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 relative overflow-hidden">
+        <section class="bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm relative overflow-hidden">
           <h3 class="text-base font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase mb-6">Thông tin hệ thống</h3>
           
           <div class="space-y-4 text-xs">
-            <div class="flex justify-between items-center py-2 border-b border-surface-100 dark:border-surface-800">
+            <div class="flex justify-between items-center py-2 border-b border-surface-200 dark:border-surface-700">
               <span class="text-surface-400 font-bold uppercase tracking-wider text-[10px]">Trạng thái</span>
               <span 
                 class="px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider"
@@ -136,7 +136,7 @@
               </span>
             </div>
             
-            <div class="flex justify-between items-center py-2 border-b border-surface-100 dark:border-surface-800">
+            <div class="flex justify-between items-center py-2 border-b border-surface-200 dark:border-surface-700">
               <span class="text-surface-400 font-bold uppercase tracking-wider text-[10px]">Ngày tạo</span>
               <span class="font-mono font-bold text-surface-900 dark:text-surface-0">{{ department.created_at ? formatDate(department.created_at) : '—' }}</span>
             </div>
@@ -152,7 +152,7 @@
 
     <!-- Skeleton Loading -->
     <div v-else class="space-y-6">
-      <div class="h-64 bg-white dark:bg-surface-900 rounded-3xl border border-surface-100 dark:border-surface-800 animate-pulse"></div>
+      <div class="h-64 bg-white dark:bg-surface-900 rounded-xl border border-surface-200 dark:border-surface-700 animate-pulse"></div>
     </div>
   </div>
 </template>

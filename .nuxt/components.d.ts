@@ -41,6 +41,11 @@ export const AppTopbar: typeof import("../app/components/layout/AppTopbar.vue")[
 export const CompanyForm: typeof import("../app/components/master/CompanyForm.vue")['default']
 export const DepartmentForm: typeof import("../app/components/master/DepartmentForm.vue")['default']
 export const EmployeeForm: typeof import("../app/components/master/EmployeeForm.vue")['default']
+export const TimesheetConfigsTab: typeof import("../app/components/timesheet/TimesheetConfigsTab.vue")['default']
+export const TimesheetPayrollTab: typeof import("../app/components/timesheet/TimesheetPayrollTab.vue")['default']
+export const TimesheetRecordsTab: typeof import("../app/components/timesheet/TimesheetRecordsTab.vue")['default']
+export const TimesheetShiftsTab: typeof import("../app/components/timesheet/TimesheetShiftsTab.vue")['default']
+export const TimesheetStatsTab: typeof import("../app/components/timesheet/TimesheetStatsTab.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -215,6 +220,11 @@ export const LazyAppTopbar: LazyComponent<typeof import("../app/components/layou
 export const LazyCompanyForm: LazyComponent<typeof import("../app/components/master/CompanyForm.vue")['default']>
 export const LazyDepartmentForm: LazyComponent<typeof import("../app/components/master/DepartmentForm.vue")['default']>
 export const LazyEmployeeForm: LazyComponent<typeof import("../app/components/master/EmployeeForm.vue")['default']>
+export const LazyTimesheetConfigsTab: LazyComponent<typeof import("../app/components/timesheet/TimesheetConfigsTab.vue")['default']>
+export const LazyTimesheetPayrollTab: LazyComponent<typeof import("../app/components/timesheet/TimesheetPayrollTab.vue")['default']>
+export const LazyTimesheetRecordsTab: LazyComponent<typeof import("../app/components/timesheet/TimesheetRecordsTab.vue")['default']>
+export const LazyTimesheetShiftsTab: LazyComponent<typeof import("../app/components/timesheet/TimesheetShiftsTab.vue")['default']>
+export const LazyTimesheetStatsTab: LazyComponent<typeof import("../app/components/timesheet/TimesheetStatsTab.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

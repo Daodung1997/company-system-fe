@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Premium Header Section -->
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2.5rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/10">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-2xl bg-rose-500/10 dark:bg-rose-500/20 text-rose-500 flex items-center justify-center shadow-inner relative">
           <i class="pi pi-shield text-2xl animate-pulse"></i>
@@ -32,7 +32,7 @@
     <!-- Company Health & Quick Stats Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
       <!-- Health Score Gauge -->
-      <div class="lg:col-span-2 bg-gradient-to-br from-surface-900 to-surface-950 text-white p-8 rounded-[2rem] border border-surface-800 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+      <div class="lg:col-span-2 bg-gradient-to-br from-surface-900 to-surface-950 text-white p-8 rounded-xl border border-surface-800 shadow-xl flex flex-col justify-between relative overflow-hidden group">
         <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-primary/10 rounded-full blur-[60px] group-hover:scale-125 transition-transform duration-700"></div>
         <div class="space-y-2 relative z-10">
           <div class="flex items-center gap-2">
@@ -71,7 +71,7 @@
 
       <!-- Stats Cards -->
       <!-- Critical Issues count -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-150 dark:border-surface-850 shadow-xl flex flex-col justify-between group cursor-pointer hover:border-rose-500/30 transition-all duration-300" @click="switchSeverity('CRITICAL')">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-xl flex flex-col justify-between group cursor-pointer hover:border-rose-500/30 transition-all duration-300" @click="switchSeverity('CRITICAL')">
         <div class="flex justify-between items-start">
           <div class="space-y-1">
             <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('compliance.criticalRisk') }}</span>
@@ -89,7 +89,7 @@
       </div>
 
       <!-- Warnings count -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-150 dark:border-surface-850 shadow-xl flex flex-col justify-between group cursor-pointer hover:border-amber-500/30 transition-all duration-300" @click="switchSeverity('WARNING')">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-xl flex flex-col justify-between group cursor-pointer hover:border-amber-500/30 transition-all duration-300" @click="switchSeverity('WARNING')">
         <div class="flex justify-between items-start">
           <div class="space-y-1">
             <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('compliance.warningRisk') }}</span>
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Resolved count -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-150 dark:border-surface-850 shadow-xl flex flex-col justify-between group hover:border-emerald-500/30 transition-all duration-300">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-xl flex flex-col justify-between group hover:border-emerald-500/30 transition-all duration-300">
         <div class="flex justify-between items-start">
           <div class="space-y-1">
             <span class="text-[10px] font-black uppercase tracking-wider text-surface-400">{{ $t('compliance.resolvedRisk') }}</span>
@@ -126,7 +126,7 @@
     </div>
 
     <!-- Active Compliance Alerts Banner for Critical Issues -->
-    <div v-if="activeCriticalIssues.length > 0" class="space-y-3">
+    <div v-if="activeCriticalIssues.length > 0" class="space-y-3 max-h-[280px] overflow-y-auto pr-2 custom-scrollbar">
       <div 
         v-for="issue in activeCriticalIssues" 
         :key="issue.id"
@@ -150,11 +150,11 @@
     </div>
 
     <!-- Main Filter & Alerts Board -->
-    <div class="bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-150 dark:border-surface-850 shadow-xl space-y-6">
+    <div class="bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
       <!-- Filters header -->
       <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-100 dark:border-surface-850 pb-6">
         <!-- Status switcher tabs -->
-        <div class="flex bg-surface-100/60 dark:bg-surface-950 p-1.5 rounded-2xl w-fit">
+        <div class="flex bg-surface-100 dark:bg-surface-900 p-1.5 rounded-2xl w-fit">
           <button
             v-for="statusOpt in statusTabs"
             :key="statusOpt.value"
@@ -225,7 +225,7 @@
         :columns="columns"
         :fetchApi="fetchIssuesWrapper"
         :isReload="isReload"
-        :emptyText="$t('compliance.noDataTitle') || 'Không tìm thấy vi phạm tuân thủ nào'"
+        :emptyText="$t('compliance.noDataTitle')"
         scrollHeight="58vh"
       >
         <template #body="{ column, data }">
@@ -258,7 +258,10 @@
 
           <!-- Mô tả sự cố -->
           <template v-else-if="column.key === 'description'">
-            <span class="text-xs font-semibold leading-relaxed text-surface-800 dark:text-surface-200 block max-w-[320px]">
+            <span 
+              class="text-xs font-semibold leading-relaxed text-surface-800 dark:text-surface-200 block max-w-[380px] line-clamp-3 whitespace-normal break-words cursor-help"
+              v-tooltip.top="{ value: data.description, fitContent: true }"
+            >
               {{ data.description }}
             </span>
           </template>
@@ -329,11 +332,11 @@
             </div>
           </template>
         </template>
-      </BaseDataTable>>
+      </BaseDataTable>
     </div>
 
     <!-- Manual Resolve confirmation dialog -->
-    <Dialog v-model:visible="showResolveDialog" :modal="true" :header="$t('compliance.dialogResolveTitle')" class="!rounded-3xl" :style="{ width: '450px' }">
+    <Dialog v-model:visible="showResolveDialog" :modal="true" :header="$t('compliance.dialogResolveTitle')" class="!rounded-xl" :style="{ width: '450px' }">
       <div class="flex flex-col gap-4 p-4">
         <div class="flex items-start gap-4">
           <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 flex items-center justify-center text-emerald-500 flex-shrink-0">
@@ -386,12 +389,12 @@ const reloadTable = () => {
 };
 
 const columns = computed(() => [
-  { key: 'severity', label: t('compliance.colSeverity') || 'Mức độ', minWidth: '120px' },
-  { key: 'issue_type', label: t('compliance.colType') || 'Phân loại', minWidth: '165px' },
-  { key: 'description', label: t('compliance.colDescription') || 'Mô tả sự cố', minWidth: '280px' },
-  { key: 'entity', label: t('compliance.colEntity') || 'Đối tượng', minWidth: '220px' },
-  { key: 'status', label: t('compliance.colStatus') || 'Trạng thái', minWidth: '120px' },
-  { key: 'actions', label: t('compliance.colAction') || 'Thao tác', minWidth: '120px', frozen: true }
+  { key: 'severity', label: t('compliance.colSeverity'), minWidth: '120px' },
+  { key: 'issue_type', label: t('compliance.colType'), minWidth: '165px' },
+  { key: 'description', label: t('compliance.colDescription'), minWidth: '280px' },
+  { key: 'entity', label: t('compliance.colEntity'), minWidth: '220px' },
+  { key: 'status', label: t('compliance.colStatus'), minWidth: '120px' },
+  { key: 'actions', label: t('compliance.colAction'), minWidth: '120px', frozen: true }
 ]);
 
 // Manual resolve state
@@ -428,23 +431,30 @@ const switchSeverity = async (value: string) => {
 };
 
 const statusTabs = computed(() => [
-  { label: t('compliance.tabActiveRisks') || 'Rủi ro Hiện hữu', value: 'OPEN' },
-  { label: t('compliance.tabResolvedHistory') || 'Lịch sử giải quyết', value: 'RESOLVED' },
+  { label: t('compliance.tabActiveRisks'), value: 'OPEN' },
+  { label: t('compliance.tabResolvedHistory'), value: 'RESOLVED' },
 ]);
 
 const severityFilterOptions = computed(() => [
-  { label: t('compliance.sevAll') || 'Tất cả mức độ', value: null },
-  { label: `${t('compliance.sevCritical') || 'Chí mạng'} (CRITICAL)`, value: 'CRITICAL' },
-  { label: `${t('compliance.sevWarning') || 'Cảnh báo'} (WARNING)`, value: 'WARNING' },
-  { label: `${t('compliance.sevInfo') || 'Thẩm định'} (INFO)`, value: 'INFO' },
+  { label: t('compliance.sevAll'), value: null },
+  { label: `${t('compliance.sevCritical')} (CRITICAL)`, value: 'CRITICAL' },
+  { label: `${t('compliance.sevWarning')} (WARNING)`, value: 'WARNING' },
+  { label: `${t('compliance.sevInfo')} (INFO)`, value: 'INFO' },
 ]);
 
 const typeFilterOptions = computed(() => [
-  { label: t('compliance.typeAll') || 'Tất cả phân loại', value: null },
-  { label: t('compliance.typeVisaExpiration') || 'Hết hạn Visa (VISA)', value: 'VISA_EXPIRATION' },
-  { label: t('compliance.typeContractExpiration') || 'Hết hạn Hợp đồng (CONTRACT)', value: 'CONTRACT_EXPIRATION' },
-  { label: t('compliance.typeMissingInvoice') || 'Thiếu Hóa đơn/Chứng từ (INVOICE)', value: 'MISSING_INVOICE' },
-  { label: t('compliance.typeOvertimeLimit') || 'Tăng ca quá giới hạn (OVERTIME)', value: 'OVERTIME_LIMIT' },
+  { label: t('compliance.typeAll'), value: null },
+  { label: 'Hết hạn Visa (VISA)', value: 'VISA_EXPIRATION' },
+  { label: 'Hết hạn Hợp đồng (CONTRACT)', value: 'CONTRACT_EXPIRATION' },
+  { label: 'Tăng ca quá giới hạn (OVERTIME)', value: 'OVERTIME_LIMIT' },
+  { label: 'Thiếu hợp đồng lao động', value: 'MISSING_LABOR_CONTRACT' },
+  { label: 'Thiếu CCCD / Hộ chiếu', value: 'MISSING_CCCD' },
+  { label: 'Thiếu mã số thuế', value: 'MISSING_TAX_CODE' },
+  { label: 'Thiếu hóa đơn (Invoice)', value: 'MISSING_INVOICE' },
+  { label: 'Thiếu hợp đồng liên kết', value: 'MISSING_CONTRACT' },
+  { label: 'Thiếu chứng từ thanh toán', value: 'MISSING_PAYMENT_VOUCHER' },
+  { label: 'Thiếu đơn đặt hàng (PO)', value: 'MISSING_PO' },
+  { label: 'Thiếu nghiệm thu bàn giao', value: 'MISSING_ACCEPTANCE' },
 ]);
 
 // Load issues from backend — wrapped in try/finally to guarantee loading resets
@@ -467,7 +477,7 @@ const fetchIssuesWrapper = (payload: { query: string, successCallback: Function,
         issues.value = items;
         
         const page = parseInt(params.page || '1');
-        const limit = parseInt(params.limit || '15');
+        const limit = parseInt(params.limit || '30');
         const startIndex = (page - 1) * limit;
         const paginatedData = items.slice(startIndex, startIndex + limit);
         
@@ -548,16 +558,16 @@ const healthScoreColor = computed(() => {
 
 const healthScoreLabel = computed(() => {
   const score = healthScore.value;
-  if (score >= 90) return t('compliance.healthExcellent') || 'Tuyệt vời (Hợp chuẩn)';
-  if (score >= 70) return t('compliance.healthFair') || 'Khá (Rủi ro trung bình)';
-  return t('compliance.healthAlarm') || 'Báo động (Rủi ro cao)';
+  if (score >= 90) return t('compliance.healthExcellent');
+  if (score >= 70) return t('compliance.healthFair');
+  return t('compliance.healthAlarm');
 });
 
 const healthScoreRecommendation = computed(() => {
   const score = healthScore.value;
-  if (score >= 90) return t('compliance.recExcellent') || 'Tiếp tục duy trì quy trình kiểm soát.';
-  if (score >= 70) return t('compliance.recFair') || 'Cần khắc phục ngay các rủi ro loại WARNING.';
-  return t('compliance.recAlarm') || 'Xử lý khẩn cấp các lỗi CRITICAL để tránh phạt pháp lý.';
+  if (score >= 90) return t('compliance.recExcellent');
+  if (score >= 70) return t('compliance.recFair');
+  return t('compliance.recAlarm');
 });
 
 // Trigger real-time scanner
@@ -571,36 +581,40 @@ const triggerScan = () => {
       const createdTotal = (results.visa_issues_created || 0) + 
                            (results.contract_issues_created || 0) + 
                            (results.invoice_issues_created || 0) + 
-                           (results.ot_issues_created || 0);
+                           (results.ot_issues_created || 0) +
+                           (results.employee_issues_created || 0) +
+                           (results.expense_issues_created || 0) +
+                           (results.revenue_issues_created || 0);
 
       const resolved = results.resolved_count || 0;
 
       showMessage(
         'success',
-        t('compliance.msgScanSuccess') || 'Quét tuân thủ hoàn tất',
-        t('compliance.msgScanSuccessDesc', { created: createdTotal, resolved: resolved }) || `Bộ máy kiểm soát đã quét xong. Phát hiện mới: ${createdTotal} rủi ro, tự động chữa lành: ${resolved} rủi ro.`
+        t('compliance.msgScanSuccess'),
+        t('compliance.msgScanSuccessDesc', { created: createdTotal, resolved: resolved })
       );
       reloadTable();
     },
     (err: any) => {
       scanning.value = false;
-      showMessage('error', t('compliance.msgScanError') || 'Quét tuân thủ thất bại', t('compliance.msgScanErrorDesc') || 'Lỗi kết nối bộ máy quét.');
+      showMessage('error', t('compliance.msgScanError'), t('compliance.msgScanErrorDesc'));
     }
   );
 };
 
 // Act context navigation
 const actOnIssue = (issue: any) => {
-  if (issue.issue_type === 'VISA_EXPIRATION' && issue.employee_id) {
-    navigateTo(`/master/employee/${issue.employee_id}/edit`);
-  } else if (issue.issue_type === 'OVERTIME_LIMIT' && issue.employee_id) {
+  const empTypes = ['VISA_EXPIRATION', 'OVERTIME_LIMIT', 'MISSING_LABOR_CONTRACT', 'MISSING_CCCD', 'MISSING_TAX_CODE'];
+  const txnTypes = ['MISSING_INVOICE', 'MISSING_CONTRACT', 'MISSING_PAYMENT_VOUCHER', 'MISSING_PO', 'MISSING_ACCEPTANCE'];
+
+  if (empTypes.includes(issue.issue_type) && issue.employee_id) {
     navigateTo(`/master/employee/${issue.employee_id}/edit`);
   } else if (issue.issue_type === 'CONTRACT_EXPIRATION' && issue.contract_id) {
-    navigateTo(`/contract/${issue.contract_id}/edit`);
-  } else if (issue.issue_type === 'MISSING_INVOICE' && issue.transaction_id) {
-    navigateTo(`/transaction/${issue.transaction_id}/edit`);
+    navigateTo(`/contract/${issue.contract_id}`);
+  } else if (txnTypes.includes(issue.issue_type) && issue.transaction_id) {
+    navigateTo(`/transaction/${issue.transaction_id}`);
   } else {
-    showMessage('info', t('text.info') || 'Thông báo', t('compliance.msgActError') || 'Không thể xác định đường dẫn khắc phục cho loại cảnh báo này.');
+    showMessage('info', t('text.info'), t('compliance.msgActError'));
   }
 };
 
@@ -618,14 +632,14 @@ const doResolveIssue = () => {
     resolveTarget.value.id,
     resolveNote.value,
     () => {
-      showMessage('success', t('compliance.msgResolveSuccess') || 'Khắc phục thành công', t('compliance.msgResolveSuccessDesc') || 'Cảnh báo vi phạm tuân thủ đã được giải quyết.');
+      showMessage('success', t('compliance.msgResolveSuccess'), t('compliance.msgResolveSuccessDesc'));
       showResolveDialog.value = false;
       resolving.value = false;
       reloadTable();
     },
     (err: any) => {
       resolving.value = false;
-      showMessage('error', t('compliance.msgResolveError') || 'Thao tác thất bại', t('compliance.msgResolveErrorDesc') || 'Không thể giải quyết cảnh báo.');
+      showMessage('error', t('compliance.msgResolveError'), t('compliance.msgResolveErrorDesc'));
     }
   );
 };
@@ -633,10 +647,17 @@ const doResolveIssue = () => {
 // Helpers
 const getIssueTypeLabel = (type: string) => {
   switch (type) {
-    case 'VISA_EXPIRATION': return t('compliance.typeVisa') || 'Hạn thẻ ngoại kiều';
-    case 'CONTRACT_EXPIRATION': return t('compliance.typeContract') || 'Hết hạn hợp đồng';
-    case 'MISSING_INVOICE': return t('compliance.typeInvoice') || 'Thiếu hóa đơn/chứng từ';
-    case 'OVERTIME_LIMIT': return t('compliance.typeOvertime') || 'Làm thêm giờ quá giới hạn';
+    case 'VISA_EXPIRATION': return t('compliance.typeVisa');
+    case 'CONTRACT_EXPIRATION': return t('compliance.typeContract');
+    case 'MISSING_INVOICE': return 'Thiếu hóa đơn (Invoice)';
+    case 'OVERTIME_LIMIT': return t('compliance.typeOvertime');
+    case 'MISSING_LABOR_CONTRACT': return 'Thiếu hợp đồng lao động';
+    case 'MISSING_CCCD': return 'Thiếu CCCD / Hộ chiếu';
+    case 'MISSING_TAX_CODE': return 'Thiếu mã số thuế';
+    case 'MISSING_CONTRACT': return 'Thiếu hợp đồng liên kết';
+    case 'MISSING_PAYMENT_VOUCHER': return 'Thiếu chứng từ thanh toán';
+    case 'MISSING_PO': return 'Thiếu đơn đặt hàng (PO)';
+    case 'MISSING_ACCEPTANCE': return 'Thiếu nghiệm thu bàn giao';
     default: return type;
   }
 };
@@ -647,6 +668,13 @@ const getIssueTypeIcon = (type: string) => {
     case 'CONTRACT_EXPIRATION': return 'pi-file-pdf';
     case 'MISSING_INVOICE': return 'pi-money-bill';
     case 'OVERTIME_LIMIT': return 'pi-clock';
+    case 'MISSING_LABOR_CONTRACT': return 'pi-briefcase';
+    case 'MISSING_CCCD': return 'pi-id-card';
+    case 'MISSING_TAX_CODE': return 'pi-percentage';
+    case 'MISSING_CONTRACT': return 'pi-file';
+    case 'MISSING_PAYMENT_VOUCHER': return 'pi-credit-card';
+    case 'MISSING_PO': return 'pi-shopping-cart';
+    case 'MISSING_ACCEPTANCE': return 'pi-verified';
     default: return 'pi-shield';
   }
 };
@@ -659,6 +687,21 @@ const formatCurrency = (val: any) => {
 
 <style scoped>
 /* Advanced hover transitions & micro animations */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(225, 29, 72, 0.3) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(225, 29, 72, 0.3);
+  border-radius: 9999px;
+}
+
 .transition-transform {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

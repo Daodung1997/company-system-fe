@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/20">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
           <i class="pi pi-wallet text-2xl"></i>
@@ -29,7 +29,7 @@
     <!-- Quick Cashflow Summary Cards -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       <!-- Total Revenue -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('transaction.totalRevenue') }}</span>
           <h3 class="text-2xl font-black text-emerald-600 dark:text-emerald-400 font-mono">{{ formatCurrency(stats.totalRevenue) }}</h3>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <!-- Total Expense -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('transaction.totalExpense') }}</span>
           <h3 class="text-2xl font-black text-rose-600 dark:text-rose-400 font-mono">{{ formatCurrency(stats.totalExpense) }}</h3>
@@ -49,7 +49,7 @@
         </div>
       </div>
       <!-- Net Balance -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('transaction.netBalance') }}</span>
           <h3 class="text-2xl font-black font-mono" :class="stats.netBalance >= 0 ? 'text-primary' : 'text-amber-600'">
@@ -61,7 +61,7 @@
         </div>
       </div>
       <!-- Compliance Rate -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('transaction.complianceRate') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0 font-mono">
@@ -75,11 +75,11 @@
     </div>
 
     <!-- Filter & Main Tabs Panel -->
-    <div class="bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none space-y-6">
+    <div class="bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
       <!-- Tabs header & Filters grid -->
-      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-100 dark:border-surface-800 pb-6">
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-200 dark:border-surface-700 pb-6">
         <!-- Inner Category Tabs -->
-        <div class="flex bg-surface-100/60 dark:bg-surface-950 p-1.5 rounded-2xl w-fit">
+        <div class="flex bg-surface-100 dark:bg-surface-900 p-1.5 rounded-2xl w-fit">
           <button
             v-for="tab in tabOptions"
             :key="tab.value"
@@ -158,7 +158,7 @@
         :fetchApi="fetchTransactionsWrapper"
         :filters="filters"
         :isReload="isReload"
-        :emptyText="$t('transaction.noData') || 'Không tìm thấy giao dịch nào'"
+        :emptyText="$t('transaction.noData')"
         scrollHeight="58vh"
       >
         <template #body="{ column, data }">
@@ -263,14 +263,14 @@
                 @click="openDocumentViewer(data)"
               >
                 <i class="pi pi-file text-xs group-hover:rotate-12 transition-transform"></i>
-                <span class="font-mono">{{ data.documents.length }} {{ $t('transaction.files') || 'Tệp' }}</span>
+                <span class="font-mono">{{ data.documents.length }} {{ $t('transaction.files') }}</span>
               </button>
             </div>
             <!-- NO documents for EXPENSE -> High Risk Compliance Alert -->
             <div v-else-if="data.type === 'EXPENSE'" class="flex justify-center">
               <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 font-black text-[10px] tracking-wide animate-pulse">
                 <i class="pi pi-exclamation-circle text-xs"></i>
-                {{ $t('transaction.missingDocsAlert') || 'Thiếu chứng từ' }}
+                {{ $t('transaction.missingDocsAlert') }}
               </span>
             </div>
             <!-- Revenue without documents (normal/optional) -->
@@ -280,6 +280,15 @@
           <!-- Thao tác CRUD -->
           <template v-else-if="column.key === 'actions'">
             <div class="flex items-center justify-end gap-1">
+              <!-- Xem chi tiết -->
+              <Button
+                icon="pi pi-eye"
+                severity="info"
+                variant="text"
+                class="!w-9 !h-9 !rounded-xl"
+                v-tooltip.top="$t('text.viewDetail')"
+                @click="navigateTo(`/transaction/${data.id}`)"
+              />
               <!-- Sửa -->
               <Button
                 icon="pi pi-pencil"
@@ -305,7 +314,7 @@
     </div>
 
     <!-- Delete Confirmation Dialog -->
-    <Dialog v-model:visible="showDeleteDialog" :modal="true" :closable="true" :header="$t('transaction.dialogDeleteTitle')" class="!rounded-3xl" :style="{ width: '450px' }">
+    <Dialog v-model:visible="showDeleteDialog" :modal="true" :closable="true" :header="$t('transaction.dialogDeleteTitle')" class="!rounded-xl" :style="{ width: '450px' }">
       <div class="flex items-start gap-4 p-4">
         <div class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/30 flex items-center justify-center text-rose-500 flex-shrink-0">
           <i class="pi pi-exclamation-triangle text-xl"></i>
@@ -331,7 +340,7 @@
       :header="$t('transaction.dialogDocTitle', { code: docViewerTransaction?.code || '' })"
       :modal="true"
       :style="{ width: '800px' }"
-      class="!rounded-3xl overflow-hidden"
+      class="!rounded-xl overflow-hidden"
       :breakpoints="{'960px': '80vw', '640px': '95vw'}"
     >
       <div class="p-2">
@@ -380,15 +389,15 @@ const filters = ref({
 const isReload = ref(false);
 
 const columns = computed(() => [
-  { key: 'transaction_date', label: t('transaction.dateCol') || 'Ngày', minWidth: '120px', sortable: true },
-  { key: 'code', label: t('transaction.codeCol') || 'Mã GD', minWidth: '120px', sortable: true },
-  { key: 'type', label: t('transaction.typeCol') || 'Loại GD', minWidth: '110px' },
-  { key: 'category', label: t('transaction.categoryCol') || 'Danh mục / Mô tả', minWidth: '220px' },
-  { key: 'amount', label: t('transaction.amountCol') || 'Số tiền', minWidth: '150px' },
-  { key: 'tax', label: t('transaction.taxCol') || 'Thuế & Hóa đơn', minWidth: '200px' },
-  { key: 'payment', label: t('transaction.paymentCol') || 'Thanh toán', minWidth: '140px' },
-  { key: 'documents', label: t('transaction.documentCol') || 'Chứng từ', minWidth: '140px' },
-  { key: 'actions', label: t('transaction.actionCol') || 'Thao tác', minWidth: '120px', frozen: true }
+  { key: 'transaction_date', label: t('transaction.dateCol'), minWidth: '120px', sortable: true },
+  { key: 'code', label: t('transaction.codeCol'), minWidth: '120px', sortable: true },
+  { key: 'type', label: t('transaction.typeCol'), minWidth: '110px' },
+  { key: 'category', label: t('transaction.categoryCol'), minWidth: '220px' },
+  { key: 'amount', label: t('transaction.amountCol'), minWidth: '150px' },
+  { key: 'tax', label: t('transaction.taxCol'), minWidth: '200px' },
+  { key: 'payment', label: t('transaction.paymentCol'), minWidth: '140px' },
+  { key: 'documents', label: t('transaction.documentCol'), minWidth: '140px' },
+  { key: 'actions', label: t('transaction.actionCol'), minWidth: '120px', frozen: true }
 ]);
 
 const fetchTransactionsWrapper = (payload: { query: string, successCallback: Function, errorCallback: Function }) => {
@@ -442,7 +451,7 @@ const fetchTransactionsWrapper = (payload: { query: string, successCallback: Fun
       }
       
       const page = parseInt(params.page || '1');
-      const limit = parseInt(params.limit || '10');
+      const limit = parseInt(params.limit || '30');
       const startIndex = (page - 1) * limit;
       const paginatedData = rawList.slice(startIndex, startIndex + limit);
       
@@ -620,8 +629,10 @@ const getStatusLabel = (status: string) => {
 
 const getTaxRateLabel = (rateType: string) => {
   switch (rateType) {
-    case 'VAT_8_VN': return 'VAT 8% (VN)';
-    case 'VAT_10_VN': return 'VAT 10% (VN)';
+    case 'VAT_8_VN':
+    case 'VAT_8': return 'VAT 8% (VN)';
+    case 'VAT_10_VN':
+    case 'VAT_10': return 'VAT 10% (VN)';
     case 'CT_8_JP': return 'Consumption 8% (JP)';
     case 'CT_10_JP': return 'Consumption 10% (JP)';
     default: return t('transaction.noTax');

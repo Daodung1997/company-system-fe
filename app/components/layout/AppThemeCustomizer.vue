@@ -98,7 +98,7 @@
                   v-model="selectedFontObj"
                   :options="fontPresets"
                   optionLabel="name"
-                  placeholder="Chọn phông chữ..."
+                  :placeholder="$t('placeholder.selectFont')"
                   class="w-full rounded-2xl border border-surface-200 dark:border-surface-800 bg-white dark:bg-surface-900 text-xs shadow-sm focus:ring-2 focus:ring-primary/20"
                   @change="onFontChange"
                 >

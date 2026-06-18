@@ -122,7 +122,7 @@ declare global {
   const useAuth: typeof import('../../app/composables/auth').useAuth
   const useBrowserLocale: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useBrowserLocale
   const useColorMode: typeof import('../../node_modules/@nuxtjs/color-mode/dist/runtime/composables').useColorMode
-  const useCompany: typeof import('../../app/composables/master/company').useCompany
+  const useCompanySetting: typeof import('../../app/composables/master/companySetting').useCompanySetting
   const useConfirm: typeof import('primevue/useconfirm').useConfirm
   const useCookie: typeof import('../../node_modules/nuxt/dist/app/composables/cookie').useCookie
   const useCookieLocale: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index').useCookieLocale
@@ -354,7 +354,7 @@ declare module 'vue' {
     readonly useAuth: UnwrapRef<typeof import('../../app/composables/auth')['useAuth']>
     readonly useBrowserLocale: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useBrowserLocale']>
     readonly useColorMode: UnwrapRef<typeof import('../../node_modules/@nuxtjs/color-mode/dist/runtime/composables')['useColorMode']>
-    readonly useCompany: UnwrapRef<typeof import('../../app/composables/master/company')['useCompany']>
+    readonly useCompanySetting: UnwrapRef<typeof import('../../app/composables/master/companySetting')['useCompanySetting']>
     readonly useConfirm: UnwrapRef<typeof import('primevue/useconfirm')['useConfirm']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/cookie')['useCookie']>
     readonly useCookieLocale: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useCookieLocale']>

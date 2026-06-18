@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/20">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="flex items-center gap-5">
         <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-inner">
           <i class="pi pi-folder-open text-2xl"></i>
@@ -11,13 +11,13 @@
             {{ $t('menu.document') }}
           </h1>
           <p class="text-sm text-surface-500 dark:text-surface-400 font-medium">
-            Quản lý tài liệu tập trung, tải lên và gắn hồ sơ thông minh vào nhân sự, hợp đồng và chi phí.
+            {{ $t('document.pageDesc') }}
           </p>
         </div>
       </div>
       <div>
         <Button
-          label="Tải lên tài liệu"
+          :label="$t('document.uploadDoc')"
           icon="pi pi-upload"
           severity="primary"
           class="!rounded-xl !px-6 !py-3 !shadow-lg !shadow-primary/25 !font-bold"
@@ -28,34 +28,34 @@
 
     <!-- Quick Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
-          <span class="text-xs font-black uppercase tracking-wider text-surface-400">Tổng tài liệu</span>
+          <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('document.totalDocs') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.total }}</h3>
         </div>
         <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
           <i class="pi pi-file text-lg"></i>
         </div>
       </div>
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
-          <span class="text-xs font-black uppercase tracking-wider text-surface-400">Hồ sơ Nhân sự</span>
+          <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('document.employeeDocs') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.employee }}</h3>
         </div>
         <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
           <i class="pi pi-user text-lg"></i>
         </div>
       </div>
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
-          <span class="text-xs font-black uppercase tracking-wider text-surface-400">Hợp đồng</span>
+          <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('document.contractDocs') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.contract }}</h3>
         </div>
         <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center">
           <i class="pi pi-paperclip text-lg"></i>
         </div>
       </div>
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-3xl border border-surface-150 dark:border-surface-800 shadow-xl shadow-surface-200/5 flex items-center justify-between">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">Invoice & Thu Chi</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.transaction }}</h3>
@@ -67,10 +67,10 @@
     </div>
 
     <!-- Filter & Main Tabs Panel -->
-    <div class="bg-white dark:bg-surface-900 p-8 rounded-[2.5rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 dark:shadow-none space-y-6">
-      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-100 dark:border-surface-800 pb-6">
+    <div class="bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-6">
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-surface-200 dark:border-surface-700 pb-6">
         <!-- Inner Category Tabs -->
-        <div class="flex bg-surface-100/60 dark:bg-surface-950 p-1.5 rounded-2xl w-fit">
+        <div class="flex bg-surface-100 dark:bg-surface-900 p-1.5 rounded-2xl w-fit">
           <button
             v-for="tab in tabOptions"
             :key="tab.value"
@@ -92,7 +92,7 @@
             <i class="pi pi-search absolute left-4 top-1/2 -translate-y-1/2 text-surface-400 group-focus-within:text-primary transition-colors z-10"></i>
             <InputText
               v-model="filters.keyword"
-              placeholder="Mã tài liệu, tên file..."
+              :placeholder="$t('document.placeholderSearch')"
               class="w-full !rounded-xl !pl-11"
             />
           </div>
@@ -102,7 +102,7 @@
             :options="extensionOptions"
             optionLabel="label"
             optionValue="value"
-            placeholder="Định dạng file"
+            :placeholder="$t('document.placeholderFormat')"
             class="w-full sm:w-[180px] !rounded-xl"
             showClear
           />
@@ -123,14 +123,14 @@
         :fetchApi="fetchDocumentsWrapper"
         :filters="filters"
         :isReload="isReload"
-        emptyText="Không tìm thấy tài liệu nào trên hệ thống"
+        :emptyText="$t('document.noData')"
         scrollHeight="58vh"
       >
         <template #body="{ column, data }">
           <!-- Tên Tài Liệu -->
           <template v-if="column.key === 'origin_name'">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-md bg-surface-50 dark:bg-surface-900 border border-surface-100 dark:border-surface-800" :class="getFileIconColor(data.extension)">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-md bg-surface-50 dark:bg-surface-900 border border-surface-200 dark:border-surface-700" :class="getFileIconColor(data.extension)">
                 <i class="pi text-lg" :class="getFileIcon(data.extension)"></i>
               </div>
               <div class="overflow-hidden space-y-0.5">
@@ -161,16 +161,31 @@
           <!-- Đang Gắn Vào -->
           <template v-else-if="column.key === 'linked_target'">
             <div class="text-xs space-y-0.5">
-              <div v-if="data.documentable_type === 'App\\Models\\Employee' && data.employee" class="font-bold text-surface-700 dark:text-surface-300">
-                <i class="pi pi-user text-[10px] mr-1"></i> {{ data.employee.full_name }} ({{ data.employee.code }})
-              </div>
-              <div v-else-if="data.documentable_type === 'App\\Models\\Contract' && data.contract" class="font-bold text-surface-700 dark:text-surface-300">
-                <i class="pi pi-file text-[10px] mr-1"></i> {{ data.contract.contract_code }} ({{ getContractTypeLabel(data.contract.type) }})
-              </div>
-              <div v-else-if="data.documentable_type === 'App\\Models\\Transaction'" class="font-bold text-surface-700 dark:text-surface-300">
-                <i class="pi pi-wallet text-[10px] mr-1"></i> Mã thu chi #{{ data.documentable_id }}
-              </div>
-              <span v-else class="text-surface-400 italic">Chưa gắn liên kết</span>
+              <NuxtLink
+                v-if="data.documentable_type === 'App\\Models\\Employee' && data.employee"
+                :to="`/master/employee/${data.employee.id}`"
+                class="font-bold text-primary hover:underline flex items-center gap-1 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+              >
+                <i class="pi pi-user text-[10px]"></i>
+                {{ data.employee.full_name }} ({{ data.employee.code }})
+              </NuxtLink>
+              <NuxtLink
+                v-else-if="data.documentable_type === 'App\\Models\\Contract' && data.contract"
+                :to="`/contract/${data.contract.id}`"
+                class="font-bold text-primary hover:underline flex items-center gap-1 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+              >
+                <i class="pi pi-file text-[10px]"></i>
+                {{ data.contract.contract_code }} ({{ getContractTypeLabel(data.contract.type) }})
+              </NuxtLink>
+              <NuxtLink
+                v-else-if="data.documentable_type === 'App\\Models\\Transaction'"
+                :to="`/transaction/${data.documentable_id}`"
+                class="font-bold text-primary hover:underline flex items-center gap-1 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+              >
+                <i class="pi pi-wallet text-[10px]"></i>
+                {{ $t('document.transactionCode', { id: data.documentable_id }) }}
+              </NuxtLink>
+              <span v-else class="text-surface-400 italic">{{ $t('document.notLinked') }}</span>
             </div>
           </template>
 
@@ -190,7 +205,7 @@
                 text
                 rounded
                 class="!w-8 !h-8 hover:scale-105"
-                v-tooltip.top="'Xem trước'"
+                v-tooltip.top="$t('document.preview')"
                 @click="previewFile(data)"
               />
               <Button
@@ -199,7 +214,7 @@
                 text
                 rounded
                 class="!w-8 !h-8 hover:scale-105"
-                v-tooltip.top="'Tải xuống'"
+                v-tooltip.top="$t('document.downloadTooltip')"
                 @click="downloadFile(data)"
               />
               <Button
@@ -208,7 +223,7 @@
                 text
                 rounded
                 class="!w-8 !h-8 hover:scale-105"
-                v-tooltip.top="'Xóa tài liệu'"
+                v-tooltip.top="$t('document.deleteTooltip')"
                 @click="confirmDeleteDoc(data)"
               />
             </div>
@@ -221,8 +236,8 @@
     <Dialog
       v-model:visible="uploadDialog"
       modal
-      header="TẢI LÊN & GẮN LIÊN KẾT TÀI LIỆU"
-      class="w-full max-w-lg !rounded-3xl"
+      :header="$t('document.uploadDialogHeader')"
+      class="w-full max-w-lg !rounded-xl"
       contentClass="p-6 space-y-6"
     >
       <div class="space-y-4">
@@ -253,13 +268,13 @@
 
         <!-- Document Type selection -->
         <div class="space-y-2">
-          <label class="text-xs font-black text-surface-600 dark:text-surface-300 uppercase tracking-wider block">Loại Hồ sơ & Tài liệu</label>
+          <label class="text-xs font-black text-surface-600 dark:text-surface-300 uppercase tracking-wider block">{{ $t('document.docTypeLabel') }}</label>
           <Select
             v-model="uploadForm.type"
             :options="docTypeOptions"
             optionLabel="label"
             optionValue="value"
-            placeholder="Chọn phân loại hồ sơ"
+            :placeholder="$t('document.placeholderSelectType')"
             class="w-full !rounded-xl"
             @change="onDocTypeChange"
           />
@@ -268,7 +283,7 @@
         <!-- Target Searchable dropdown -->
         <div v-if="uploadForm.type" class="space-y-2">
           <label class="text-xs font-black text-surface-600 dark:text-surface-300 uppercase tracking-wider block">
-            Gắn liên kết vào {{ getDocTypeTitle(uploadForm.type) }}
+            {{ $t('document.linkToTarget', { target: getDocTypeTitle(uploadForm.type) }) }}
           </label>
           <Select
             v-model="uploadForm.target_id"
@@ -276,7 +291,7 @@
             optionLabel="label"
             optionValue="value"
             filter
-            :placeholder="`Tìm kiếm và chọn ${getDocTypeTitle(uploadForm.type)}...`"
+            :placeholder="$t('placeholder.searchAndSelectType', { type: getDocTypeTitle(uploadForm.type) })"
             class="w-full !rounded-xl"
             :loading="loadingTargets"
           />
@@ -286,14 +301,14 @@
       <template #footer>
         <div class="flex items-center gap-3 justify-end pt-4 border-t border-surface-150 dark:border-surface-850">
           <Button
-            label="Hủy"
+            :label="$t('timesheet.btnCancel') || 'Hủy'"
             severity="secondary"
             outlined
             class="!rounded-xl !font-bold"
             @click="uploadDialog = false"
           />
           <Button
-            label="Xử lý Tải lên"
+            :label="$t('document.processUpload')"
             icon="pi pi-check"
             severity="primary"
             class="!rounded-xl !font-bold"
@@ -309,7 +324,7 @@
       v-model:visible="previewDialog"
       modal
       :header="`XEM TÀI LIỆU: ${previewDoc?.origin_name || ''}`"
-      class="w-full max-w-4xl h-[85vh] !rounded-3xl"
+      class="w-full max-w-4xl h-[85vh] !rounded-xl"
       contentClass="p-0 overflow-hidden"
     >
       <div v-if="previewDoc" class="w-full h-full bg-surface-900/10 flex items-center justify-center relative">
@@ -319,7 +334,7 @@
           class="w-full h-[75vh] border-none"
         ></iframe>
         <div v-else-if="['jpg', 'jpeg', 'png', 'gif'].includes(previewDoc.extension.toLowerCase())" class="max-w-full max-h-full p-6 flex items-center justify-center">
-          <img :src="previewBlobUrl" class="max-w-full max-h-[70vh] rounded-2xl shadow-2xl object-contain border border-surface-200 dark:border-surface-800" />
+          <img :src="previewBlobUrl" class="max-w-full max-h-[70vh] rounded-2xl shadow-md object-contain border border-surface-200 dark:border-surface-800" />
         </div>
         <div v-else class="text-center p-12 space-y-4">
           <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto">
@@ -344,31 +359,31 @@
     <Dialog
       v-model:visible="deleteDialog"
       modal
-      header="XÁC NHẬN XÓA TÀI LIỆU"
-      class="w-full max-w-md !rounded-3xl"
+      :header="$t('document.deleteConfirmTitle')"
+      class="w-full max-w-md !rounded-xl"
     >
       <div class="space-y-4 text-center py-4">
         <div class="w-16 h-16 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center mx-auto text-2xl">
           <i class="pi pi-exclamation-triangle"></i>
         </div>
         <div class="space-y-1">
-          <h3 class="text-base font-bold text-surface-900 dark:text-surface-0">Xóa vĩnh viễn tệp này?</h3>
+          <h3 class="text-base font-bold text-surface-900 dark:text-surface-0">{{ $t('document.deleteForeverTitle') }}</h3>
           <p class="text-xs text-surface-400 leading-relaxed px-4">
-            Tài liệu <span class="font-bold text-surface-800 dark:text-surface-200">"{{ deleteTarget?.origin_name }}"</span> sẽ bị xóa vĩnh viễn khỏi máy chủ. Bạn không thể hoàn tác thao tác này.
+            {{ $t('document.deleteWarningDetails', { name: deleteTarget?.origin_name }) }}
           </p>
         </div>
       </div>
       <template #footer>
         <div class="flex items-center gap-3 justify-center w-full pt-4 border-t border-surface-150 dark:border-surface-850">
           <Button
-            label="Quay lại"
+            :label="$t('btn.back') || 'Quay lại'"
             severity="secondary"
             outlined
             class="!rounded-xl !font-bold flex-1"
             @click="deleteDialog = false"
           />
           <Button
-            label="Đồng ý Xóa"
+            :label="$t('btn.deleteConfirm')"
             severity="danger"
             class="!rounded-xl !font-bold flex-1"
             :loading="deleting"
@@ -409,31 +424,31 @@ const stats = reactive({
 });
 
 const columns = computed(() => [
-  { key: 'origin_name', label: 'Tên Tài liệu / Tập tin', sortable: false },
-  { key: 'documentable_type', label: 'Phân loại', sortable: false, width: '130px' },
-  { key: 'linked_target', label: 'Gắn liên kết tới', sortable: false },
-  { key: 'created_at', label: 'Ngày tải lên', sortable: false, width: '150px' },
+  { key: 'origin_name', label: t('document.colName'), sortable: false },
+  { key: 'documentable_type', label: t('document.colType'), sortable: false, width: '130px' },
+  { key: 'linked_target', label: t('document.colLinkedTo'), sortable: false },
+  { key: 'created_at', label: t('document.colUploadedAt'), sortable: false, width: '150px' },
   { key: 'actions', label: '', sortable: false, width: '130px', style: 'text-align: right' },
 ]);
 
 const tabOptions = computed(() => [
-  { label: 'Tất cả tài liệu', value: '' },
-  { label: 'Hồ sơ nhân sự', value: 'employee' },
-  { label: 'Hợp đồng lao động', value: 'contract' },
-  { label: 'Invoice & Chi phí', value: 'transaction' },
+  { label: t('document.tabAll'), value: '' },
+  { label: t('document.tabEmployee'), value: 'employee' },
+  { label: t('document.tabContract'), value: 'contract' },
+  { label: t('document.tabTransaction'), value: 'transaction' },
 ]);
 
 const extensionOptions = computed(() => [
-  { label: 'Tệp PDF (.pdf)', value: 'pdf' },
-  { label: 'Ảnh (.png, .jpg)', value: 'image' },
-  { label: 'Microsoft Word (.doc, .docx)', value: 'doc' },
-  { label: 'Microsoft Excel (.xls, .xlsx)', value: 'xls' },
+  { label: t('document.extPdf'), value: 'pdf' },
+  { label: t('document.extImage'), value: 'image' },
+  { label: t('document.extWord'), value: 'doc' },
+  { label: t('document.extExcel'), value: 'xls' },
 ]);
 
 const docTypeOptions = computed(() => [
-  { label: 'Hồ sơ Nhân sự (CCCD, Bằng cấp...)', value: 'employee' },
-  { label: 'Hợp đồng lao động / Thương mại', value: 'contract' },
-  { label: 'Invoice, Thu Chi & Chứng từ', value: 'transaction' },
+  { label: t('document.employeeDocs'), value: 'employee' },
+  { label: t('document.contractDocs'), value: 'contract' },
+  { label: t('document.transactionDocs'), value: 'transaction' },
 ]);
 
 // Wrapper for BaseDataTable to fetch search results
@@ -509,7 +524,7 @@ const handleFileSelect = (e: Event) => {
   const file = target.files?.[0];
   if (file) {
     if (file.size > 10 * 1024 * 1024) {
-      showMessage('warn', 'Tệp quá lớn', 'Vui lòng chọn tệp có dung lượng dưới 10MB.');
+      showMessage('warn', t('document.msgFileTooLarge'), t('document.msgFileTooLargeDesc'));
       return;
     }
     selectedFile.value = file;
@@ -567,15 +582,15 @@ const onDocTypeChange = () => {
 
 const submitUpload = () => {
   if (!selectedFile.value) {
-    showMessage('warn', 'Chưa chọn file', 'Vui lòng bấm chọn tài liệu cần tải lên.');
+    showMessage('warn', t('document.msgNoFile'), t('document.msgNoFileDesc'));
     return;
   }
   if (!uploadForm.type) {
-    showMessage('warn', 'Thiếu loại hồ sơ', 'Vui lòng chọn loại hồ sơ cần lưu trữ.');
+    showMessage('warn', t('document.msgNoType'), t('document.msgNoTypeDesc'));
     return;
   }
   if (!uploadForm.target_id) {
-    showMessage('warn', 'Chưa gắn liên kết', 'Vui lòng chọn một bản ghi tương ứng để gắn tài liệu.');
+    showMessage('warn', t('document.msgNoLink'), t('document.msgNoLinkDesc'));
     return;
   }
 
@@ -594,12 +609,12 @@ const submitUpload = () => {
     successCallback: () => {
       submitting.value = false;
       uploadDialog.value = false;
-      showMessage('success', 'Thành công', 'Đã tải lên và liên kết tài liệu thành công.');
+      showMessage('success', t('text.success'), t('document.msgUploadSuccess'));
       isReload.value++;
     },
     errorCallback: (err: any) => {
       submitting.value = false;
-      showMessage('error', 'Lỗi', err.message || 'Lỗi xảy ra khi tải lên tài liệu.');
+      showMessage('error', t('text.error'), err.message || t('document.msgUploadError'));
     }
   });
 };
@@ -627,7 +642,7 @@ const previewFile = (doc: any) => {
       previewDialog.value = true;
     })
     .catch((err: any) => {
-      showMessage('error', t('btn.error') || 'Lỗi', 'Không thể xem tài liệu.');
+      showMessage('error', t('text.error'), t('document.msgViewError'));
     });
 };
 
@@ -645,7 +660,7 @@ const downloadFile = (doc: any) => {
       window.URL.revokeObjectURL(url);
     })
     .catch((err: any) => {
-      showMessage('error', t('btn.error') || 'Lỗi', 'Không thể tải tài liệu.');
+      showMessage('error', t('text.error'), t('document.msgDownloadError'));
     });
 };
 
@@ -668,12 +683,12 @@ const executeDeleteDoc = () => {
     successCallback: () => {
       deleting.value = false;
       deleteDialog.value = false;
-      showMessage('success', 'Thành công', 'Đã xóa tài liệu khỏi hệ thống.');
+      showMessage('success', t('text.success'), t('document.msgDeleteSuccess'));
       isReload.value++;
     },
     errorCallback: (err: any) => {
       deleting.value = false;
-      showMessage('error', 'Lỗi', err.message || 'Có lỗi xảy ra khi xóa tài liệu.');
+      showMessage('error', t('text.error'), err.message || t('document.msgDeleteError'));
     }
   });
 };
@@ -720,16 +735,16 @@ const getFileIconColor = (ext: string) => {
 };
 
 const getDocTypeLabel = (type: string) => {
-  if (type === 'App\\Models\\Employee') return 'Hồ sơ Nhân sự';
-  if (type === 'App\\Models\\Contract') return 'Hợp đồng';
-  if (type === 'App\\Models\\Transaction') return 'Invoice / Chi phí';
-  return 'Tài liệu khác';
+  if (type === 'App\\Models\\Employee') return t('document.employeeDocs');
+  if (type === 'App\\Models\\Contract') return t('document.contractDocs');
+  if (type === 'App\\Models\\Transaction') return t('document.transactionDocs');
+  return t('document.otherDocs');
 };
 
 const getDocTypeTitle = (type: string) => {
-  if (type === 'employee') return 'Nhân sự';
-  if (type === 'contract') return 'Hợp đồng';
-  if (type === 'transaction') return 'Bản ghi thu chi / Chi phí';
+  if (type === 'employee') return t('employee.name');
+  if (type === 'contract') return t('document.contractDocs');
+  if (type === 'transaction') return t('document.transactionDocs');
   return '';
 };
 

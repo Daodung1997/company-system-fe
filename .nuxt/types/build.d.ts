@@ -17,7 +17,7 @@ declare module "#build/primevue-plugin.mjs";
 declare module "#build/i18n-options.mjs";
 declare module "#build/color-mode-options.mjs";
 declare module "#build/devtools/settings.mjs";
-declare module "#build/runtime.vue-devtools-client.G54pb7BwaikHZHYJgydSxBCbijoyfu7inVLWOnFQpxE.js";
+declare module "#build/runtime.vue-devtools-client.H6VAOePuHyMwhnYCbkttDGHd7XvSyON0RlWkvqMXra8.js";
 declare module "#build/routes.mjs";
 declare module "#build/pages.mjs";
 declare module "#build/router.options.mjs";

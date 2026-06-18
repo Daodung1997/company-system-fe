@@ -1,41 +1,46 @@
 <template>
   <div>
-    <div class="mb-10">
-      <h2 class="text-4xl font-bold text-surface-900 dark:text-white mb-3 tracking-tight">{{ $t('auth.login') }}</h2>
-      <p class="text-surface-500 dark:text-surface-400">{{ $t('auth.titleLogin') }}</p>
+    <!-- Header -->
+    <div class="mb-8 text-center sm:text-left">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">{{ $t('auth.login') }}</h2>
+      <p class="text-surface-400 text-sm">{{ $t('auth.titleLogin') }}</p>
     </div>
 
-    <form @submit.prevent="login" class="space-y-6">
+    <form @submit.prevent="login" class="space-y-5">
+      <!-- Username Field -->
       <div class="space-y-1.5">
-        <label for="username" class="text-[16px] font-black text-surface-800 dark:text-surface-200 ml-1">
-          Email / Số điện thoại
-          <span class="text-red-500 ml-1">*</span>
+        <label for="username" class="text-[11px] font-bold text-surface-400 uppercase tracking-[0.15em] ml-1">
+          {{ $t('auth.usernameLabel') }}
+          <span class="text-red-400 ml-0.5">*</span>
         </label>
         <div class="relative group">
-          <i class="pi pi-user absolute left-4 top-1/2 -translate-y-1/2 text-surface-400 group-focus-within:text-primary transition-colors z-10"></i>
+          <i class="pi pi-user absolute left-4 top-1/2 -translate-y-1/2 text-surface-500 group-focus-within:text-primary transition-colors z-10"></i>
           <InputText
             id="username"
             v-model.trim="auth.username"
             :invalid="!!auth.errorUsername"
-            class="w-full !pl-12 !h-[42px] bg-surface-50 dark:bg-surface-900 border-surface-200 dark:border-surface-800 !rounded-xl focus:ring-2 focus:ring-primary/20 transition-all text-sm"
-            :class="{'!border-red-500 !ring-red-500/20': auth.errorUsername}"
-            placeholder="Email hoặc Số điện thoại"
+            class="w-full !pl-11 !h-[44px] !rounded-xl !text-sm"
+            :class="{'!border-red-500/50 !ring-red-500/20': auth.errorUsername}"
+            :placeholder="$t('auth.usernamePlaceholder')"
             @update:modelValue="onValidate('username')"
           />
         </div>
-        <Message v-if="auth.errorUsername" severity="error" variant="simple" size="small" class="ml-1">{{ auth.errorUsername }}</Message>
+        <Message v-if="auth.errorUsername" severity="error" variant="simple" size="small" class="ml-1 !text-red-400">{{ auth.errorUsername }}</Message>
       </div>
 
+      <!-- Password Field -->
       <div class="space-y-1.5">
-        <div class="flex items-center justify-between mb-1 ml-1">
-          <label for="password" class="text-[16px] font-black text-surface-800 dark:text-surface-200">
+        <div class="flex items-center justify-between ml-1">
+          <label for="password" class="text-[11px] font-bold text-surface-400 uppercase tracking-[0.15em]">
             {{ $t('auth.password') }}
-            <span class="text-red-500 ml-1">*</span>
+            <span class="text-red-400 ml-0.5">*</span>
           </label>
-          <NuxtLink to="/auth/forgot-password" class="text-xs font-bold text-primary hover:text-primary-emphasis transition-colors">{{ $t('auth.forgotPassword') }}</NuxtLink>
+          <NuxtLink to="/auth/forgot-password" class="text-[11px] font-bold text-primary/80 hover:text-primary transition-colors">
+            {{ $t('auth.forgotPassword') }}
+          </NuxtLink>
         </div>
         <div class="relative group">
-          <i class="pi pi-lock absolute left-4 top-1/2 -translate-y-1/2 text-surface-400 group-focus-within:text-primary z-10 transition-colors"></i>
+          <i class="pi pi-lock absolute left-4 top-1/2 -translate-y-1/2 text-surface-500 group-focus-within:text-primary z-10 transition-colors"></i>
           <Password
             id="password"
             v-model="auth.password"
@@ -43,34 +48,55 @@
             :feedback="false"
             toggleMask
             class="w-full"
-            :inputClass="['w-full !pl-12 !h-[42px] bg-surface-50 dark:bg-surface-900 border-surface-200 dark:border-surface-800 !rounded-xl focus:ring-2 focus:ring-primary/20 transition-all text-sm', {'!border-red-500 !ring-red-500/20': auth.errorPassword}]"
+            :inputClass="['w-full !pl-11 !h-[44px] !rounded-xl !text-sm', {'!border-red-500/50 !ring-red-500/20': auth.errorPassword}]"
             placeholder="••••••••"
             @update:modelValue="onValidate('password')"
           />
         </div>
-        <Message v-if="auth.errorPassword" severity="error" variant="simple" size="small" class="ml-1">{{ auth.errorPassword }}</Message>
+        <Message v-if="auth.errorPassword" severity="error" variant="simple" size="small" class="ml-1 !text-red-400">{{ auth.errorPassword }}</Message>
       </div>
 
-      <div class="flex items-center gap-2 ml-1">
+      <!-- Remember Me -->
+      <div class="flex items-center gap-2.5 ml-1">
         <Checkbox v-model="rememberMe" :binary="true" inputId="remember" />
-        <label for="remember" class="text-[15px] text-surface-700 dark:text-surface-300 cursor-pointer font-bold">{{ $t('auth.rememberPassword') }}</label>
+        <label for="remember" class="text-sm text-surface-300 cursor-pointer font-medium select-none">
+          {{ $t('auth.rememberPassword') }}
+        </label>
       </div>
 
+      <!-- Submit Button -->
       <Button
         type="submit"
         :loading="isLoading"
-        class="w-full !h-[42px] bg-primary text-white border-none !rounded-xl text-sm font-bold shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-lg transition-all"
+        class="w-full !h-[46px] !rounded-xl !text-sm !font-bold !tracking-wide !border-none hover:!-translate-y-0.5 active:!translate-y-0 !transition-all !duration-300"
       >
-        <span class="flex items-center justify-center gap-2">
+        <span class="flex items-center justify-center gap-2.5">
           {{ $t('auth.login').toUpperCase() }}
           <i class="pi pi-arrow-right text-xs"></i>
         </span>
       </Button>
-    </form>
 
-    <p class="mt-10 text-center text-sm text-surface-500 dark:text-surface-400">
-      Compliance & Document Control System
-    </p>
+      <!-- Landing Page Link -->
+      <div class="text-center pt-2">
+        <a 
+          v-if="apiStore.companySetting?.has_website && apiStore.companySetting?.website"
+          :href="apiStore.companySetting.website"
+          target="_blank"
+          class="text-xs font-bold text-surface-400 hover:text-white transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+        >
+          <i class="pi pi-home"></i>
+          Xem Trang Giới Thiệu Công Ty
+        </a>
+        <NuxtLink 
+          v-else
+          to="/landing" 
+          class="text-xs font-bold text-surface-400 hover:text-white transition-colors flex items-center justify-center gap-1.5"
+        >
+          <i class="pi pi-home"></i>
+          Xem Trang Giới Thiệu Công Ty
+        </NuxtLink>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -81,12 +107,14 @@ import { APP_TOKEN_NAME } from "~/config/constants";
 import { validateOnField, validateOnAllField } from "~/utils/validate";
 import { useAuth } from "~/composables/auth";
 import { showMessage } from "~/utils/global";
+import { useApiStore } from "@/stores/api";
 
 definePageMeta({
   layout: 'auth'
 });
 
 const { loginUser } = useAuth();
+const apiStore = useApiStore();
 const router = useRouter();
 const { t } = useI18n();
 const rememberMe = ref(false);
@@ -137,10 +165,10 @@ const login = () => {
       }
 
       const displayName = employeeInfo?.full_name || auth.username;
-      showMessage("success", "Đăng nhập thành công", `Chào mừng ${displayName} quay trở lại!`);
+      showMessage("success", t("text.success"), t("auth.msgWelcomeBack", { name: displayName }));
       
       if (data?.must_change_password) {
-        showMessage("warn", "Yêu cầu đổi mật khẩu", "Đây là lần đầu đăng nhập. Vui lòng đổi mật khẩu để kích hoạt tài khoản!");
+        showMessage("warn", t("auth.msgMustChangePassword"), t("auth.msgMustChangePasswordDesc"));
         router.push("/auth/change-password");
       } else {
         router.push("/");
@@ -160,8 +188,5 @@ const onValidate = (field: string) => {
 <style scoped>
 :deep(.p-password), :deep(.p-password input) {
   width: 100%;
-}
-:deep(.p-inputtext) {
-  padding-left: 3rem !important;
 }
 </style>

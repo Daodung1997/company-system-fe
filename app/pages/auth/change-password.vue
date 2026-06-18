@@ -5,19 +5,19 @@
       <h1 class="text-3xl font-bold text-surface-900 dark:text-white tracking-tight">
         <i class="pi pi-lock mr-3 text-primary"></i>
         {{ $t('auth.resetPass') }}
-      </h1>
+       </h1>
       <p class="text-surface-500 dark:text-surface-400 mt-2">
-        Thay đổi mật khẩu tài khoản của bạn. Mật khẩu mới phải chứa ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, chữ số và ký tự đặc biệt.
+        {{ $t('auth.changePasswordDesc') }}
       </p>
     </div>
 
     <!-- Change Password Form -->
-    <div class="bg-white dark:bg-surface-900 rounded-3xl shadow-xl shadow-surface-200/50 dark:shadow-none border border-surface-100 dark:border-surface-800 p-8">
+    <div class="bg-white dark:bg-surface-900 rounded-xl shadow-sm0 dark:shadow-none border border-surface-200 dark:border-surface-700 p-8">
       <form @submit.prevent="handleChangePassword" class="space-y-6">
         <!-- Current Password -->
         <div class="group">
           <label class="block text-sm font-semibold text-surface-700 dark:text-surface-300 mb-2">
-            Mật khẩu hiện tại
+            {{ $t('auth.currentPassword') }}
             <span class="text-red-500 ml-1">*</span>
           </label>
           <div class="relative">
@@ -30,7 +30,7 @@
               toggleMask
               class="w-full"
               inputClass="w-full !rounded-2xl !py-3.5 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
-              placeholder="Nhập mật khẩu hiện tại"
+              :placeholder="$t('auth.currentPasswordPlaceholder')"
               @update:modelValue="onValidate('currentPassword')"
             />
           </div>
@@ -43,7 +43,7 @@
         <!-- New Password -->
         <div class="group">
           <label class="block text-sm font-semibold text-surface-700 dark:text-surface-300 mb-2">
-            Mật khẩu mới
+            {{ $t('auth.newPassword') }}
             <span class="text-red-500 ml-1">*</span>
           </label>
           <div class="relative">
@@ -56,7 +56,7 @@
               toggleMask
               class="w-full"
               inputClass="w-full !rounded-2xl !py-3.5 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
-              placeholder="Nhập mật khẩu mới"
+              :placeholder="$t('auth.newPasswordPlaceholder')"
               @update:modelValue="onValidate('newPassword')"
             />
           </div>
@@ -65,27 +65,27 @@
           <div class="mt-3 grid grid-cols-2 gap-2 text-xs" v-if="form.newPassword">
             <div class="flex items-center gap-1.5" :class="hasLowercase ? 'text-green-600' : 'text-surface-400'">
               <i :class="hasLowercase ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[10px]"></i>
-              Chữ thường (a-z)
+              {{ $t('auth.lowercaseHint') }}
             </div>
             <div class="flex items-center gap-1.5" :class="hasUppercase ? 'text-green-600' : 'text-surface-400'">
               <i :class="hasUppercase ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[10px]"></i>
-              Chữ hoa (A-Z)
+              {{ $t('auth.uppercaseHint') }}
             </div>
             <div class="flex items-center gap-1.5" :class="hasDigit ? 'text-green-600' : 'text-surface-400'">
               <i :class="hasDigit ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[10px]"></i>
-              Chữ số (0-9)
+              {{ $t('auth.digitHint') }}
             </div>
             <div class="flex items-center gap-1.5" :class="hasSpecial ? 'text-green-600' : 'text-surface-400'">
               <i :class="hasSpecial ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[10px]"></i>
-              Ký tự đặc biệt (!@#$...)
+              {{ $t('auth.specialHint') }}
             </div>
             <div class="flex items-center gap-1.5" :class="hasMinLength ? 'text-green-600' : 'text-surface-400'">
               <i :class="hasMinLength ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[10px]"></i>
-              Ít nhất 8 ký tự
+              {{ $t('auth.minLengthHint') }}
             </div>
             <div class="flex items-center gap-1.5" :class="hasMaxLength ? 'text-green-600' : 'text-surface-400'">
               <i :class="hasMaxLength ? 'pi pi-check-circle' : 'pi pi-circle'" class="text-[10px]"></i>
-              Tối đa 50 ký tự
+              {{ $t('auth.maxLengthHint') }}
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
         <!-- Confirm Password -->
         <div class="group">
           <label class="block text-sm font-semibold text-surface-700 dark:text-surface-300 mb-2">
-            Xác nhận mật khẩu mới
+            {{ $t('auth.newPasswordConfirm') }}
             <span class="text-red-500 ml-1">*</span>
           </label>
           <div class="relative">
@@ -106,7 +106,7 @@
               toggleMask
               class="w-full"
               inputClass="w-full !rounded-2xl !py-3.5 !pl-11 focus:!ring-4 focus:!ring-primary/10 transition-all"
-              placeholder="Nhập lại mật khẩu mới"
+              :placeholder="$t('auth.confirmPasswordPlaceholder')"
               @update:modelValue="onValidate('confirmPassword')"
             />
           </div>
@@ -117,7 +117,7 @@
         <div class="flex items-center justify-end gap-4 pt-4">
           <Button
             v-if="!mustChangePassword"
-            :label="'Hủy bỏ'"
+            :label="$t('btn.cancel')"
             severity="secondary"
             variant="outlined"
             class="!rounded-2xl !px-8 !font-semibold"
@@ -125,7 +125,7 @@
           />
           <Button
             v-else
-            :label="'Đăng xuất'"
+            :label="$t('btn.logout') || $t('menu.logout')"
             severity="danger"
             variant="outlined"
             class="!rounded-2xl !px-8 !font-semibold"
@@ -133,7 +133,7 @@
           />
           <Button
             type="submit"
-            :label="'Đổi mật khẩu'"
+            :label="$t('auth.resetPass')"
             :loading="isLoading"
             icon="pi pi-check"
             class="!rounded-2xl !px-8 !font-bold !shadow-lg !shadow-primary/25"
@@ -250,15 +250,15 @@ const handleChangePassword = () => {
         }
       }
 
-      showMessage("success", "Thành công", data?.message || "Mật khẩu đã được thay đổi thành công.");
+      showMessage("success", t("text.success"), data?.message || t("auth.msgChangePasswordSuccess"));
       router.push("/");
     },
     errorCallback: (error: any) => {
       isLoading.value = false;
       const errorMsg = error?.response?.data?.messages?.message
         || error?.response?.data?.messages?.[0]
-        || "Có lỗi xảy ra. Vui lòng thử lại.";
-      showMessage("error", "Lỗi", errorMsg);
+        || t("text.errorSystem");
+      showMessage("error", t("text.error"), errorMsg);
     },
   });
 };

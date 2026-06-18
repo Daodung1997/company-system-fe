@@ -3,7 +3,7 @@
      <!-- Critical Compliance Banner on Dashboard -->
     <div 
       v-if="stats.kpi.critical_issues > 0" 
-      class="bg-gradient-to-r from-rose-600 to-rose-700 text-white px-6 py-5 rounded-[2rem] border border-rose-500 shadow-xl shadow-rose-500/10 flex items-center justify-between gap-4 animate-pulse cursor-pointer"
+      class="bg-gradient-to-r from-rose-600 to-rose-700 text-white px-6 py-5 rounded-xl border border-rose-500 shadow-xl shadow-rose-500/10 flex items-center justify-between gap-4 animate-pulse cursor-pointer"
       @click="navigateTo('/compliance')"
     >
       <div class="flex items-center gap-4">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Welcome Header -->
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 bg-white/40 dark:bg-surface-900/40 p-8 rounded-[2.5rem] border border-white dark:border-surface-800 backdrop-blur-md shadow-2xl shadow-surface-200/5">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 bg-white dark:bg-surface-900 p-8 rounded-2xl border border-surface-200 dark:border-surface-700  shadow-md">
       <div class="space-y-1">
         <h1 class="text-3xl font-black text-surface-900 dark:text-surface-0 tracking-tighter flex items-center gap-3">
           <i class="pi pi-chart-bar text-primary"></i>
@@ -34,18 +34,14 @@
 
       <div class="flex flex-wrap items-center gap-3">
         <!-- Year Selector Filter -->
-        <div class="flex items-center gap-2 bg-white dark:bg-surface-950 px-4 py-2 rounded-2xl border border-surface-150 dark:border-surface-850 shadow-sm">
+        <div class="flex items-center gap-2 bg-white dark:bg-surface-950 px-4 py-2 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('dashboard.fiscalYear') }}</span>
-          <select 
+          <Select 
             v-model="selectedYear" 
-            class="bg-transparent text-sm font-bold text-surface-900 dark:text-surface-0 focus:outline-none cursor-pointer"
+            :options="[2024, 2025, 2026, 2027]"
+            class="!bg-transparent !border-none !shadow-none !py-0 !pl-1 !pr-0 !text-sm !font-bold focus:!ring-0 cursor-pointer w-20"
             @change="fetchDashboardData"
-          >
-            <option :value="2024">2024</option>
-            <option :value="2025">2025</option>
-            <option :value="2026">2026</option>
-            <option :value="2027">2027</option>
-          </select>
+          />
         </div>
 
         <Button 
@@ -60,7 +56,7 @@
           icon="pi pi-refresh" 
           severity="secondary" 
           variant="text" 
-          class="!rounded-2xl !w-12 !h-12 !bg-white/50 dark:!bg-surface-800/50 !backdrop-blur-sm"
+          class="!rounded-2xl !w-12 !h-12 !bg-white dark:!bg-surface-800"
           :loading="loading"
           @click="fetchDashboardData"
         />
@@ -70,7 +66,7 @@
     <!-- Quick Stats Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- 1. Total Revenue -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 hover:shadow-2xl hover:border-emerald-500/20 transition-all duration-500 group relative overflow-hidden">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm hover:shadow-2xl hover:border-emerald-500/20 transition-all duration-500 group relative overflow-hidden">
         <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
         <div class="flex items-start justify-between relative z-10">
           <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-lg shadow-emerald-500/5">
@@ -89,7 +85,7 @@
       </div>
 
       <!-- 2. Total Expense -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group relative overflow-hidden">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group relative overflow-hidden">
         <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
         <div class="flex items-start justify-between relative z-10">
           <div class="w-14 h-14 rounded-2xl bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-lg shadow-amber-500/5">
@@ -108,7 +104,7 @@
       </div>
 
       <!-- 3. Net Income -->
-      <div class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group relative overflow-hidden">
+      <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group relative overflow-hidden">
         <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
         <div class="flex items-start justify-between relative z-10">
           <div class="w-14 h-14 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-lg shadow-blue-500/5">
@@ -131,7 +127,7 @@
 
       <!-- 4. Legal Compliance -->
       <div 
-        class="bg-white dark:bg-surface-900 p-6 rounded-[2rem] border border-surface-100 dark:border-surface-800 shadow-xl shadow-surface-200/5 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden cursor-pointer"
+        class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden cursor-pointer"
         :class="complianceTheme.border"
         @click="navigateTo('/compliance')"
       >
@@ -162,7 +158,7 @@
     <!-- Quick Master Info Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Active Employees -->
-      <div class="bg-surface-50 dark:bg-surface-950 p-6 rounded-3xl border border-surface-100 dark:border-surface-900 flex items-center gap-4">
+      <div class="bg-surface-50 dark:bg-surface-950 p-6 rounded-xl border border-surface-100 dark:border-surface-900 flex items-center gap-4">
         <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center">
           <i class="pi pi-users text-xl"></i>
         </div>
@@ -175,7 +171,7 @@
       </div>
 
       <!-- Active Contracts -->
-      <div class="bg-surface-50 dark:bg-surface-950 p-6 rounded-3xl border border-surface-100 dark:border-surface-900 flex items-center gap-4">
+      <div class="bg-surface-50 dark:bg-surface-950 p-6 rounded-xl border border-surface-100 dark:border-surface-900 flex items-center gap-4">
         <div class="w-12 h-12 bg-cyan-500/10 text-cyan-500 rounded-2xl flex items-center justify-center">
           <i class="pi pi-file-pdf text-xl"></i>
         </div>
@@ -189,7 +185,7 @@
 
       <!-- Pending Leave Requests -->
       <div 
-        class="bg-surface-50 dark:bg-surface-950 p-6 rounded-3xl border border-surface-100 dark:border-surface-900 flex items-center gap-4 cursor-pointer hover:border-amber-500/30 transition-colors"
+        class="bg-surface-50 dark:bg-surface-950 p-6 rounded-xl border border-surface-100 dark:border-surface-900 flex items-center gap-4 cursor-pointer hover:border-amber-500/30 transition-colors"
         @click="navigateTo('/leave-request/pending')"
       >
         <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center">
@@ -209,7 +205,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <!-- 1. Revenue/Expense Monthly Trend Line Chart (Left) -->
       <div class="lg:col-span-8 space-y-4">
-        <div class="p-6 bg-white dark:bg-surface-950 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl flex flex-col justify-between h-full">
+        <div class="p-6 bg-white dark:bg-surface-950 rounded-xl border border-surface-200 dark:border-surface-700 shadow-xl flex flex-col justify-between h-full">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
               <h3 class="text-lg font-black text-surface-900 dark:text-surface-0 tracking-tight">
@@ -277,8 +273,8 @@
       <div class="lg:col-span-6">
         <AppChartBar 
           :data="stats.age_distribution" 
-          title="Phân bố Độ tuổi Nhân sự" 
-          subtitle="Tỷ lệ nhân viên theo nhóm tuổi trong doanh nghiệp" 
+          :title="$t('dashboard.ageDemographics')" 
+          :subtitle="$t('dashboard.ageDemographicsDesc')" 
         />
       </div>
 
@@ -286,8 +282,8 @@
       <div class="lg:col-span-6">
         <AppChartDonut 
           :data="stats.gender_distribution" 
-          title="Cơ cấu Giới tính Nhân sự" 
-          subtitle="Tỷ lệ giới tính nam, nữ trong doanh nghiệp" 
+          :title="$t('dashboard.genderDemographics')" 
+          :subtitle="$t('dashboard.genderDemographicsDesc')" 
         />
       </div>
     </div>
@@ -295,7 +291,7 @@
     <!-- Data Tables: Deep Attendance and Recent Transactions -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <!-- 1. Deep Attendance Monitoring (Left) -->
-      <div class="lg:col-span-7 bg-white dark:bg-surface-950 p-6 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl space-y-4">
+      <div class="lg:col-span-7 bg-white dark:bg-surface-950 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h3 class="text-lg font-black text-surface-900 dark:text-surface-0 tracking-tight flex items-center gap-2">
@@ -371,7 +367,7 @@
       </div>
 
       <!-- 2. Recent Transactions List (Right) -->
-      <div class="lg:col-span-5 bg-white dark:bg-surface-950 p-6 rounded-3xl border border-surface-100 dark:border-surface-800 shadow-xl space-y-4 flex flex-col justify-between">
+      <div class="lg:col-span-5 bg-white dark:bg-surface-950 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm space-y-4 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between gap-4 mb-4">
             <div>

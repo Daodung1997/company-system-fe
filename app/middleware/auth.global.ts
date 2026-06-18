@@ -22,6 +22,7 @@ export default defineNuxtRouteMiddleware((to) => {
     "/login",
     "/auth/forgot-password",
     "/auth/reset-password",
+    "/landing",
   ];
 
   // 1. If no token
@@ -61,7 +62,12 @@ export default defineNuxtRouteMiddleware((to) => {
   }
 
   // 4. Prevent logged-in users from visiting login/forgot-password etc.
-  if (publicPaths.includes(to.path)) {
+  const guestOnlyPaths = [
+    "/login",
+    "/auth/forgot-password",
+    "/auth/reset-password",
+  ];
+  if (guestOnlyPaths.includes(to.path)) {
     // Only redirect if they are not already at home (to avoid infinite loops)
     if (to.path !== "/") {
       return navigateTo("/");
@@ -69,20 +75,64 @@ export default defineNuxtRouteMiddleware((to) => {
     return;
   }
 
-  // 5. Role-based Route Guard (Restrict specific routes to ADMIN & MANAGER)
-  const managerAdminPaths = [
-    '/master/employee',
-    '/master/department',
-    '/timesheet/manage',
-    '/leave-request/pending',
-    '/compliance'
-  ];
+  // 5. Role-based Route Guard (RBAC - Role-Based Access Control)
+  const role = userInfo.role;
+  const path = to.path;
 
-  const isRestricted = managerAdminPaths.some(path => 
-    to.path === path || to.path.startsWith(path + '/')
-  );
+  // ADMIN and MANAGER have full access to everything
+  if (role === 'ADMIN' || role === 'MANAGER') {
+    return;
+  }
 
-  if (isRestricted && userInfo.role !== 'ADMIN' && userInfo.role !== 'MANAGER') {
-    return navigateTo('/');
+  // Helper to check if path matches prefix or is nested under it
+  const isPath = (prefix: string) => path === prefix || path.startsWith(prefix + '/');
+
+  // STAFF restrictions
+  if (role === 'STAFF') {
+    // Staff can only access their own profile detail page: /master/employee/[id]
+    if (isPath('/master/employee')) {
+      const ownProfilePath = `/master/employee/${userInfo.id}`;
+      if (path !== ownProfilePath) {
+        return navigateTo('/');
+      }
+    }
+    // Block admin/management paths entirely
+    if (
+      isPath('/master/department') ||
+      isPath('/timesheet/manage') ||
+      isPath('/leave-request/pending') ||
+      isPath('/compliance') ||
+      isPath('/transaction') ||
+      isPath('/contract')
+    ) {
+      return navigateTo('/');
+    }
+  }
+
+  // HR restrictions
+  if (role === 'HR') {
+    // HR can manage HR files, timesheets, contracts, leaves, compliance
+    // But cannot access financial transactions
+    if (isPath('/transaction')) {
+      return navigateTo('/');
+    }
+  }
+
+  // ACCOUNTANT restrictions
+  if (role === 'ACCOUNTANT') {
+    // Accountant can access transactions, contracts, timesheet logs, compliance
+    // But cannot access general employee list (except own profile), departments, or leave approval list
+    if (isPath('/master/employee')) {
+      const ownProfilePath = `/master/employee/${userInfo.id}`;
+      if (path !== ownProfilePath) {
+        return navigateTo('/');
+      }
+    }
+    if (
+      isPath('/master/department') ||
+      isPath('/leave-request/pending')
+    ) {
+      return navigateTo('/');
+    }
   }
 });

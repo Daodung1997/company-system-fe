@@ -15,8 +15,13 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { useApiStore } from '@/stores/api';
 const apiStore = useApiStore();
+
+onMounted(() => {
+  apiStore.fetchCompanySetting();
+});
 </script>
 
 <style>
