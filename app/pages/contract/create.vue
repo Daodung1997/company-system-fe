@@ -487,9 +487,10 @@ import { UPLOAD_DOCUMENT } from '~/apis/document';
 import { GET_EMPLOYEES, GET_EMPLOYEE } from '~/apis/employee';
 import { showMessage } from "~/utils/global";
 import { validateOnAllField, validateOnField } from '~/utils/validate';
-import Api from '~/utils/api';
+import { useAi } from '~/composables/ai';
 
 const { t } = useI18n();
+const { analyzeFileOcr } = useAi();
 const route = useRoute();
 
 const submitting = ref(false);
@@ -521,12 +522,9 @@ const onOcrFileChange = (e: Event) => {
   });
   formData.append('mode', 'contract');
 
-  Api.post('/ai/ocr', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  })
-    .then((res: any) => {
+  analyzeFileOcr({
+    data: formData,
+    successCallback: (res: any) => {
       const data = res.data?.data;
       if (data) {
         if (data.contract_code) contractForm.value.contract_code = data.contract_code;
@@ -576,15 +574,15 @@ const onOcrFileChange = (e: Event) => {
       } else {
         showMessage('error', t('contract.ocrErrorTitle'), t('contract.ocrErrorDesc'));
       }
-    })
-    .catch((err: any) => {
+    },
+    errorCallback: (err: any) => {
       const errorMsg = err?.response?.data?.messages?.message || err?.response?.data?.message || t('contract.ocrConnectError');
       showMessage('error', t('contract.ocrErrorTitle'), errorMsg);
-    })
-    .finally(() => {
-      ocrLoading.value = false;
-      if (target) target.value = '';
-    });
+    }
+  }).finally(() => {
+    ocrLoading.value = false;
+    if (target) target.value = '';
+  });
 };
 
 const getEmployeesApi = ({ query, successCallback, errorCallback }: any) => {

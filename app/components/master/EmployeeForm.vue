@@ -842,6 +842,7 @@ import { ref, reactive, computed, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { showMessage } from '~/utils/global';
 import Api from "~/utils/api";
+import { useAi } from '~/composables/ai';
 import { useDepartment } from '~/composables/master/department';
 import { validateOnAllField, validateOnField } from '~/utils/validate';
 import { DEFAULT_FORM, FIELD_VALIDATIONS } from '~/pages/master/employee/data';
@@ -856,6 +857,7 @@ const router = useRouter();
 const { t } = useI18n();
 const { createEmployee, updateEmployee, getEmployee, uploadDocument, deleteDocument } = useEmployee();
 const { getDepartments, getDepartmentById } = useDepartment() as any;
+const { analyzeFileOcr } = useAi();
 
 const loading = ref(true);
 const submitting = ref(false);
@@ -886,12 +888,9 @@ const onOcrFileChange = (e: Event) => {
   });
   formData.append('mode', 'employee');
 
-  Api.post('/ai/ocr', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  })
-    .then((res: any) => {
+  analyzeFileOcr({
+    data: formData,
+    successCallback: (res: any) => {
       const data = res.data?.data;
       if (data) {
         if (data.full_name) form.full_name = data.full_name;
@@ -925,15 +924,15 @@ const onOcrFileChange = (e: Event) => {
       } else {
         showMessage('error', t('employee.ocrErrorTitle'), t('employee.ocrErrorDesc'));
       }
-    })
-    .catch((err: any) => {
+    },
+    errorCallback: (err: any) => {
       const errorMsg = err?.response?.data?.messages?.message || err?.response?.data?.message || t('employee.ocrConnectError');
       showMessage('error', t('employee.ocrErrorTitle'), errorMsg);
-    })
-    .finally(() => {
-      ocrLoading.value = false;
-      if (target) target.value = '';
-    });
+    }
+  }).finally(() => {
+    ocrLoading.value = false;
+    if (target) target.value = '';
+  });
 };
 const jobTitleOptions = ref<any[]>([]);
 

@@ -415,7 +415,20 @@
     "notePlaceholder": "Enter detailed description of the functional structure of this department...",
     "valMissPositionName": "Please enter job title",
     "valMissPositionDesc": "Please fill in all job titles.",
-    "associatedJobTitles": "Associated Job Titles"
+    "associatedJobTitles": "Associated Job Titles",
+    "aiAnalyzeBtn": "AI Analysis",
+    "aiTitle": "AI Department & Position Analysis",
+    "aiDesc": "Enter description text to automatically structure department info and corresponding positions list.",
+    "aiDialogHeader": "AI ANALYSIS - CREATE DEPARTMENT & POSITIONS",
+    "aiTextareaLabel": "Enter department description text and associated job positions",
+    "aiTextareaPlaceholder": "e.g. Research & Development Department (R&D) is responsible for researching new technologies and developing products. This department has the following positions: Department Manager (Technical project management and system architecture design), Software Engineer (Writing backend and frontend code, optimizing database), QA Engineer (System testing and writing automated test scripts).",
+    "aiAnalyzeSubmitBtn": "Analyze Text",
+    "aiAnalyzing": "Analyzing data, please wait...",
+    "aiSuccessTitle": "Analysis Successful",
+    "aiSuccessDesc": "Department and positions have been automatically populated.",
+    "aiErrorTitle": "Analysis Error",
+    "aiErrorDesc": "Failed to analyze the raw text.",
+    "aiDialogClose": "Close"
   },
   "user": {
     "gender": "Gender",
@@ -1698,7 +1711,18 @@
     "msgFormatError": "Format error",
     "msgFormatErrorDesc": "Format .{ext} is not supported.",
     "msgSizeError": "Size limit exceeded",
-    "msgSizeErrorDesc": "File {name} exceeds 10MB."
+    "msgSizeErrorDesc": "File {name} exceeds 10MB.",
+    "ocrTitle": "Quick Transaction Input via Gemini AI",
+    "ocrDesc": "Upload invoice/receipt file (PDF or image) to automatically analyze and populate the fields.",
+    "ocrButton": "Select File & Analyze",
+    "ocrLoading": "Gemini AI is scanning invoice and analyzing details...",
+    "ocrSuccessTitle": "Analysis Successful",
+    "ocrSuccessDesc": "Invoice data has been automatically populated into the transaction form.",
+    "ocrErrorTitle": "Analysis Error",
+    "ocrErrorDesc": "Failed to extract information from this invoice.",
+    "ocrFileTooLarge": "File too large",
+    "ocrFileTooLargeDesc": "File \"{name}\" exceeds 10MB limit.",
+    "downloadSample": "Download Sample"
   },
   "pagination": {
     "total": "Total: {total} items",
@@ -1884,6 +1908,17 @@
     "likesNoOne": "No one has liked this post yet",
     "likesBy": "Liked by: {names}",
     "likesByAndOthers": "Liked by: {names} and {count} others",
-    "failFetch": "Failed to load board news. Please try again."
+    "failFetch": "Failed to load board news. Please try again.",
+    "ocrTitle": "Quick Post with Gemini AI",
+    "ocrDesc": "Analyze raw text or upload documents/images to automatically draft the post title, content, tag, and link.",
+    "ocrAnalyzeTextBtn": "Analyze Text",
+    "ocrUploadFileBtn": "Analyze File",
+    "ocrInputTextTitle": "Paste Text for Analysis",
+    "ocrInputTextPlaceholder": "Paste email contents, raw announcements, or notes here for AI to draft the post...",
+    "ocrLoading": "Gemini AI is analyzing content and drafting your post...",
+    "ocrSuccessTitle": "Drafting Successful",
+    "ocrSuccessDesc": "AI has extracted post information and populated the form.",
+    "ocrErrorTitle": "Analysis Error",
+    "ocrErrorDesc": "Failed to analyze this content into a post."
   }
 }

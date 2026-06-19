@@ -45,6 +45,57 @@
       </div>
     </div>
 
+    <!-- Nhập nhanh bài viết bằng AI Gemini (ADMIN & MANAGER only) -->
+    <div 
+      v-if="isCreatorRole"
+      class="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 md:pr-16 rounded-3xl border border-primary/20 shadow-md relative overflow-hidden group"
+    >
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center border border-primary/30 text-primary flex-shrink-0">
+            <i class="pi pi-sparkles text-xl animate-pulse"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase flex items-center gap-1.5">
+              {{ $t('board.ocrTitle') }}
+              <span class="bg-primary text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">AI Gemini</span>
+            </h3>
+            <p class="text-xs text-surface-450 mt-0.5">{{ $t('board.ocrDesc') }}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <!-- Button: Analyze Text -->
+          <Button
+            :label="$t('board.ocrAnalyzeTextBtn')"
+            icon="pi pi-align-left"
+            :loading="ocrLoading"
+            severity="secondary"
+            outlined
+            class="!rounded-xl !px-5 !py-2.5 !font-bold !text-xs flex-1 md:flex-none"
+            @click="openAnalyzeTextDialog"
+          />
+          <!-- Button: Analyze File (OCR) -->
+          <input type="file" ref="ocrFileInput" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.webp" @change="onOcrFileChange" />
+          <Button
+            :label="$t('board.ocrUploadFileBtn')"
+            icon="pi pi-upload"
+            :loading="ocrLoading"
+            severity="primary"
+            outlined
+            class="!rounded-xl !px-5 !py-2.5 !font-bold !text-xs flex-1 md:flex-none"
+            @click="ocrFileInput?.click()"
+          />
+        </div>
+      </div>
+
+      <div v-if="ocrLoading" class="mt-4 flex items-center gap-3 p-4 bg-primary/5 border border-primary/20 rounded-2xl animate-pulse">
+        <ProgressSpinner style="width: 20px; height: 20px" strokeWidth="6" />
+        <span class="text-xs font-bold text-primary">{{ $t('board.ocrLoading') }}</span>
+      </div>
+    </div>
+
     <!-- Create Post Form Card (ADMIN & MANAGER only) -->
     <div 
       v-if="isCreatorRole" 
@@ -319,7 +370,7 @@
           </p>
 
           <!-- Attached URL preview link -->
-          <div v-if="post.link_url" class="rounded-xl border border-surface-200 dark:border-surface-800 hover:border-primary/40 overflow-hidden bg-surface-50/50 dark:bg-surface-800/30 transition-all duration-300 group/link">
+          <div v-if="post.link_url && post.link_url !== 'null'" class="rounded-xl border border-surface-200 dark:border-surface-800 hover:border-primary/40 overflow-hidden bg-surface-50/50 dark:bg-surface-800/30 transition-all duration-300 group/link">
             <a :href="post.link_url" target="_blank" class="flex items-center justify-between p-4 gap-4 text-xs font-bold text-surface-600 dark:text-surface-300">
               <div class="flex items-center gap-3 min-w-0">
                 <div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 group-hover/link:bg-primary group-hover/link:text-white transition-all duration-300">
@@ -639,6 +690,44 @@
         </button>
       </div>
     </Dialog>
+
+    <!-- Dialog Paste Text for AI Analysis -->
+    <Dialog 
+      v-model:visible="displayAnalyzeTextDialog" 
+      :header="$t('board.ocrInputTextTitle')" 
+      modal 
+      class="w-full max-w-xl mx-4"
+    >
+      <div class="space-y-4 pt-2">
+        <div class="space-y-1.5">
+          <label class="text-[11px] font-bold text-surface-500 uppercase tracking-wider">{{ $t('board.ocrInputTextTitle') }}</label>
+          <Textarea 
+            v-model="rawOcrText"
+            rows="6"
+            class="w-full !rounded-xl border border-surface-200 dark:border-surface-800"
+            :placeholder="$t('board.ocrInputTextPlaceholder')"
+          />
+        </div>
+        
+        <div class="flex justify-end gap-2 pt-2">
+          <Button 
+            type="button" 
+            :label="$t('btn.cancel')" 
+            icon="pi pi-times"
+            class="p-button-text p-button-sm font-bold text-surface-500 !rounded-xl" 
+            @click="displayAnalyzeTextDialog = false" 
+          />
+          <Button 
+            type="button" 
+            :label="$t('board.ocrAnalyzeTextBtn')" 
+            icon="pi pi-sparkles"
+            :loading="ocrLoading" 
+            class="p-button-sm font-bold bg-primary text-white hover:bg-primary-600 !rounded-xl" 
+            @click="submitAnalyzeText" 
+          />
+        </div>
+      </div>
+    </Dialog>
   </div>
 </template>
 
@@ -649,6 +738,7 @@ import { useI18n } from 'vue-i18n';
 import { useApiStore } from '~/stores/api';
 import { showMessage } from '~/utils/global';
 import { useConfirm } from 'primevue/useconfirm';
+import { useAi } from '~/composables/ai';
 import { 
   GET_POSTS, 
   CREATE_POST, 
@@ -663,11 +753,18 @@ import {
 const { t } = useI18n();
 const apiStore = useApiStore();
 const confirm = useConfirm();
+const { analyzeFileOcr, analyzeText } = useAi();
 
 // State
 const loading = ref(false);
 const submitting = ref(false);
 const posts = ref<any[]>([]);
+
+// AI OCR & Text Analysis state
+const ocrLoading = ref(false);
+const ocrFileInput = ref<HTMLInputElement | null>(null);
+const displayAnalyzeTextDialog = ref(false);
+const rawOcrText = ref('');
 
 // Filter and Pagination State
 const activeTagFilter = ref('ALL');
@@ -843,6 +940,98 @@ const clearSelectedFile = () => {
   if (fileInput.value) fileInput.value.value = '';
 };
 
+// AI Board Quick Post Handlers
+const openAnalyzeTextDialog = () => {
+  rawOcrText.value = '';
+  displayAnalyzeTextDialog.value = true;
+};
+
+const submitAnalyzeText = () => {
+  if (!rawOcrText.value.trim()) return;
+
+  ocrLoading.value = true;
+  displayAnalyzeTextDialog.value = false;
+
+  analyzeText({
+    data: {
+      text: rawOcrText.value,
+      mode: 'post'
+    },
+    successCallback: (res: any) => {
+      const data = res.data?.data || res.data;
+      if (data) {
+        if (data.title) newPost.value.title = data.title;
+        if (data.content) newPost.value.content = data.content;
+        if (data.link_url && data.link_url !== 'null') {
+          newPost.value.link_url = data.link_url;
+        } else {
+          newPost.value.link_url = '';
+        }
+        if (data.tag) {
+          newPost.value.tag = data.tag;
+        }
+        showMessage('success', t('board.ocrSuccessTitle'), t('board.ocrSuccessDesc'));
+      } else {
+        showMessage('error', t('board.ocrErrorTitle'), t('board.ocrErrorDesc'));
+      }
+    },
+    errorCallback: (err: any) => {
+      console.error('Text Analysis Error:', err);
+      const msg = err.response?.data?.messages?.[0] || err.response?.data?.message || t('board.ocrErrorDesc');
+      showMessage('error', t('board.ocrErrorTitle'), msg);
+    }
+  }).finally(() => {
+    ocrLoading.value = false;
+  });
+};
+
+const onOcrFileChange = (e: Event) => {
+  const target = e.target as HTMLInputElement;
+  const files = target.files;
+  if (!files || files.length === 0) return;
+
+  const file = files[0];
+  if (file.size > 10 * 1024 * 1024) {
+    showMessage('warn', t('btn.warning'), 'File size exceeds 10MB');
+    return;
+  }
+
+  ocrLoading.value = true;
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('mode', 'post');
+
+  analyzeFileOcr({
+    data: formData,
+    successCallback: (res: any) => {
+      const data = res.data?.data || res.data;
+      if (data) {
+        if (data.title) newPost.value.title = data.title;
+        if (data.content) newPost.value.content = data.content;
+        if (data.link_url && data.link_url !== 'null') {
+          newPost.value.link_url = data.link_url;
+        } else {
+          newPost.value.link_url = '';
+        }
+        if (data.tag) {
+          newPost.value.tag = data.tag;
+        }
+        showMessage('success', t('board.ocrSuccessTitle'), t('board.ocrSuccessDesc'));
+      } else {
+        showMessage('error', t('board.ocrErrorTitle'), t('board.ocrErrorDesc'));
+      }
+    },
+    errorCallback: (err: any) => {
+      console.error('OCR Error:', err);
+      const msg = err.response?.data?.messages?.[0] || err.response?.data?.message || t('board.ocrErrorDesc');
+      showMessage('error', t('board.ocrErrorTitle'), msg);
+    }
+  }).finally(() => {
+    ocrLoading.value = false;
+    if (target) target.value = '';
+  });
+};
+
 // Edit Dialog Image helpers
 const triggerEditFileInput = () => {
   editFileInput.value?.click();
@@ -938,7 +1127,7 @@ const openEditDialog = (post: any) => {
     title: post.title,
     content: post.content,
     tag: post.tag,
-    link_url: post.link_url || '',
+    link_url: (post.link_url && post.link_url !== 'null') ? post.link_url : '',
     current_image_url: post.image_url,
     image: null,
     remove_image: false

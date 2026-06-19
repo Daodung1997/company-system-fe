@@ -36,6 +36,36 @@
       </div>
     </div>
 
+    <!-- Nhập nhanh phòng ban bằng AI Gemini -->
+    <div class="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 rounded-3xl border border-primary/20 shadow-md relative overflow-hidden group">
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center border border-primary/30 text-primary">
+            <i class="pi pi-sparkles text-xl animate-pulse"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase flex items-center gap-1.5">
+              {{ $t('department.aiTitle') }}
+              <span class="bg-primary text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">AI Gemini</span>
+            </h3>
+            <p class="text-xs text-surface-400">{{ $t('department.aiDesc') }}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <Button
+            :label="$t('department.aiAnalyzeBtn')"
+            icon="pi pi-sparkles"
+            severity="primary"
+            outlined
+            class="!rounded-xl !px-5 !py-2.5 !font-bold !text-xs !min-w-[180px]"
+            @click="showAiDialog = true"
+          />
+        </div>
+      </div>
+    </div>
+
     <!-- Form Content -->
     <div class="grid grid-cols-12 gap-6">
        <!-- Left: Basic Info -->
@@ -170,6 +200,61 @@
           </section>
        </div>
     </div>
+
+    <!-- AI Text Analysis Dialog -->
+    <Dialog
+      v-model:visible="showAiDialog"
+      :modal="true"
+      :closable="!aiLoading"
+      :header="$t('department.aiDialogHeader')"
+      class="!rounded-3xl !border-surface-200 dark:!border-surface-800 shadow-2xl"
+      :style="{ width: '600px' }"
+    >
+      <div class="space-y-5 pt-3">
+        <div class="flex items-center gap-3 bg-purple-50 dark:bg-purple-950/20 p-4 rounded-2xl border border-purple-100 dark:border-purple-900/30">
+          <i class="pi pi-sparkles text-purple-500 text-xl animate-pulse"></i>
+          <p class="text-xs text-purple-700 dark:text-purple-300 font-medium leading-relaxed">
+            {{ $t('department.aiTextareaLabel') }}
+          </p>
+        </div>
+
+        <div class="relative group">
+          <Textarea
+            v-model="aiText"
+            rows="8"
+            class="w-full !rounded-2xl !p-4 !bg-surface-50 dark:!bg-surface-800 border !border-surface-200 dark:!border-surface-700 !text-surface-900 dark:!text-surface-0 focus:!ring-4 focus:!ring-purple-500/10 focus:!border-purple-500 transition-all !resize-none"
+            :placeholder="$t('department.aiTextareaPlaceholder')"
+            :disabled="aiLoading"
+          />
+        </div>
+
+        <div v-if="aiLoading" class="flex items-center gap-3 p-4 bg-purple-500/5 border border-purple-500/20 rounded-2xl animate-pulse">
+          <i class="pi pi-spin pi-spinner text-purple-500"></i>
+          <span class="text-xs font-bold text-purple-600 dark:text-purple-400">{{ $t('department.aiAnalyzing') }}</span>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-3">
+          <Button
+            :label="$t('btn.cancel')"
+            icon="pi pi-times"
+            severity="secondary"
+            outlined
+            class="!rounded-xl !px-5 !py-2.5 !font-bold !text-sm"
+            :disabled="aiLoading"
+            @click="showAiDialog = false"
+          />
+          <Button
+            :label="$t('department.aiAnalyzeSubmitBtn')"
+            icon="pi pi-sparkles"
+            severity="help"
+            class="!rounded-xl !px-6 !py-2.5 !font-black !text-sm !shadow-lg !shadow-purple-500/25 transition-all hover:scale-105"
+            :loading="aiLoading"
+            :disabled="!aiText.trim()"
+            @click="onAiAnalyze"
+          />
+        </div>
+      </div>
+    </Dialog>
   </div>
 </template>
 
@@ -180,6 +265,7 @@ import { validateOnAllField, validateOnField } from "~/utils/validate";
 import { showMessage } from "~/utils/global";
 import { useDepartment } from "~/composables/master/department";
 import { DEFAULT_FORM, FIELD_VALIDATIONS } from "~/pages/master/department/data";
+import { useAi } from "~/composables/ai";
 
 const props = defineProps({
   id: { type: String, default: null }
@@ -190,10 +276,52 @@ const emit = defineEmits(['save-success']);
 const router = useRouter();
 const { t } = useI18n();
 const { createDepartment, updateDepartment, getDepartmentById } = useDepartment() as any;
+const { analyzeText } = useAi();
 
 const form = reactive({ ...DEFAULT_FORM });
 const isLoading = ref(false);
 const isEdit = computed(() => !!props.id);
+
+// AI text analysis states & methods
+const showAiDialog = ref(false);
+const aiText = ref("");
+const aiLoading = ref(false);
+
+const onAiAnalyze = () => {
+  if (!aiText.value.trim()) return;
+  aiLoading.value = true;
+  analyzeText({
+    data: {
+      text: aiText.value,
+      mode: "department"
+    },
+    successCallback: (res: any) => {
+      const data = res.data?.data;
+      if (data) {
+        if (data.name) form.name = data.name;
+        if (data.note) form.note = data.note;
+        if (data.job_titles && Array.isArray(data.job_titles)) {
+          form.job_titles = data.job_titles.map((job: any) => ({
+            name: job.name || "",
+            description: job.description || "",
+            errorName: ""
+          }));
+        }
+        showMessage("success", t("department.aiSuccessTitle"), t("department.aiSuccessDesc"));
+        showAiDialog.value = false;
+        aiText.value = "";
+      } else {
+        showMessage("error", t("department.aiErrorTitle"), t("department.aiErrorDesc"));
+      }
+    },
+    errorCallback: (err: any) => {
+      const errorMsg = err?.response?.data?.messages?.[0] || err?.response?.data?.message || t("text.errorMessage");
+      showMessage("error", t("department.aiErrorTitle"), errorMsg);
+    }
+  }).finally(() => {
+    aiLoading.value = false;
+  });
+};
 
 onMounted(() => {
   if (isEdit.value) {

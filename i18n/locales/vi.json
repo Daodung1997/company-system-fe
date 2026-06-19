@@ -415,7 +415,20 @@
     "notePlaceholder": "Nhập thông tin mô tả chi tiết về sơ đồ chức năng của phòng ban này...",
     "valMissPositionName": "Vui lòng nhập tên chức vụ",
     "valMissPositionDesc": "Vui lòng điền đầy đủ tên các chức vụ.",
-    "associatedJobTitles": "Chức vụ trực thuộc"
+    "associatedJobTitles": "Chức vụ trực thuộc",
+    "aiAnalyzeBtn": "Phân tích AI",
+    "aiTitle": "Phân tích bộ phận & chức vụ bằng AI",
+    "aiDesc": "Nhập văn bản mô tả để AI tự động cấu trúc thông tin phòng ban và danh sách các chức vụ tương ứng.",
+    "aiDialogHeader": "PHÂN TÍCH AI - TẠO BỘ PHẬN & CHỨC VỤ",
+    "aiTextareaLabel": "Nhập văn bản mô tả phòng ban và các chức vụ trực thuộc",
+    "aiTextareaPlaceholder": "Ví dụ: Phòng Kỹ thuật Công nghệ (R&D) có nhiệm vụ nghiên cứu công nghệ mới và phát triển sản phẩm. Phòng này gồm các chức vụ: Trưởng phòng (Quản lý dự án kỹ thuật và thiết kế kiến trúc hệ thống), Kỹ sư lập trình (Viết code backend và frontend, tối ưu cơ sở dữ liệu), Kỹ sư QA (Kiểm thử hệ thống và viết kịch bản kiểm thử tự động).",
+    "aiAnalyzeSubmitBtn": "Phân tích văn bản",
+    "aiAnalyzing": "Đang phân tích dữ liệu, vui lòng đợi...",
+    "aiSuccessTitle": "Phân tích thành công",
+    "aiSuccessDesc": "Đã tự động điền thông tin phòng ban và chức vụ.",
+    "aiErrorTitle": "Lỗi phân tích",
+    "aiErrorDesc": "Không thể phân tích văn bản thô này.",
+    "aiDialogClose": "Đóng"
   },
   "user": {
     "gender": "Giới tính",
@@ -1698,7 +1711,18 @@
     "msgFormatError": "Lỗi định dạng",
     "msgFormatErrorDesc": "Định dạng .{ext} không được hỗ trợ.",
     "msgSizeError": "Kích thước vượt giới hạn",
-    "msgSizeErrorDesc": "Tệp {name} vượt quá 10MB."
+    "msgSizeErrorDesc": "Tệp {name} vượt quá 10MB.",
+    "ocrTitle": "Nhập nhanh giao dịch bằng AI Gemini",
+    "ocrDesc": "Tải lên file hóa đơn, biên lai (PDF, ảnh) để AI tự động phân tích và điền vào các trường thông tin.",
+    "ocrButton": "Chọn file & Phân tích",
+    "ocrLoading": "Gemini AI đang quét hóa đơn và phân tích thông tin...",
+    "ocrSuccessTitle": "Phân tích thành công",
+    "ocrSuccessDesc": "Dữ liệu hóa đơn đã được tự động điền vào biểu mẫu giao dịch.",
+    "ocrErrorTitle": "Lỗi phân tích",
+    "ocrErrorDesc": "Không trích xuất được thông tin từ hóa đơn này.",
+    "ocrFileTooLarge": "File quá lớn",
+    "ocrFileTooLargeDesc": "File \"{name}\" vượt quá giới hạn 10MB.",
+    "downloadSample": "Tải file mẫu"
   },
   "pagination": {
     "total": "Tổng cộng: {total} mục",
@@ -1884,6 +1908,17 @@
     "likesNoOne": "Chưa có ai thích bài viết này",
     "likesBy": "Thích bởi: {names}",
     "likesByAndOthers": "Thích bởi: {names} và {count} người khác",
-    "failFetch": "Không thể tải bảng tin. Vui lòng thử lại."
+    "failFetch": "Không thể tải bảng tin. Vui lòng thử lại.",
+    "ocrTitle": "Đăng bài nhanh bằng AI Gemini",
+    "ocrDesc": "Phân tích văn bản thô hoặc tải lên tài liệu/ảnh để AI tự động soạn thảo tiêu đề, nội dung, tag và link.",
+    "ocrAnalyzeTextBtn": "Phân tích văn bản",
+    "ocrUploadFileBtn": "Phân tích file",
+    "ocrInputTextTitle": "Dán văn bản phân tích",
+    "ocrInputTextPlaceholder": "Dán nội dung email, thông báo thô hoặc ghi chú công việc tại đây để AI soạn thảo bài viết...",
+    "ocrLoading": "Gemini AI đang phân tích dữ liệu và soạn thảo bài viết...",
+    "ocrSuccessTitle": "Soạn thảo thành công",
+    "ocrSuccessDesc": "AI đã tự động trích xuất thông tin bài viết và điền vào form.",
+    "ocrErrorTitle": "Lỗi phân tích",
+    "ocrErrorDesc": "Không thể phân tích nội dung này thành bài viết."
   }
 }

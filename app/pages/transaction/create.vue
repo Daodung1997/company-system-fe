@@ -17,6 +17,43 @@
       </div>
     </div>
 
+    <!-- Nhập nhanh giao dịch bằng AI Gemini -->
+    <div class="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 rounded-3xl border border-primary/20 shadow-md relative overflow-hidden group">
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center border border-primary/30 text-primary">
+            <i class="pi pi-sparkles text-xl animate-pulse"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-surface-900 dark:text-surface-0 tracking-tight uppercase flex items-center gap-1.5">
+              {{ $t('transaction.ocrTitle') }}
+              <span class="bg-primary text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">AI OCR</span>
+            </h3>
+            <p class="text-xs text-surface-400">{{ $t('transaction.ocrDesc') }}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="file" ref="ocrFileInput" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.webp" @change="onOcrFileChange" />
+          <Button
+            :label="$t('transaction.ocrButton')"
+            icon="pi pi-upload"
+            :loading="ocrLoading"
+            severity="primary"
+            outlined
+            class="!rounded-xl !px-5 !py-2.5 !font-bold !text-xs !min-w-[180px]"
+            @click="ocrFileInput?.click()"
+          />
+        </div>
+      </div>
+
+      <div v-if="ocrLoading" class="mt-4 flex items-center gap-3 p-4 bg-primary/5 border border-primary/20 rounded-2xl animate-pulse">
+        <ProgressSpinner style="width: 20px; height: 20px" strokeWidth="6" />
+        <span class="text-xs font-bold text-primary">{{ $t('transaction.ocrLoading') }}</span>
+      </div>
+    </div>
+
     <!-- Main Grid Form -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <!-- Left side: Form fields (2 cols) -->
@@ -296,9 +333,15 @@ import { CREATE_TRANSACTION } from '~/apis/transaction';
 import { UPLOAD_DOCUMENT } from '~/apis/document';
 import { showMessage } from '~/utils/global';
 import { validateOnAllField, validateOnField } from '~/utils/validate';
+import { useAi } from '~/composables/ai';
 
 const { t } = useI18n();
+const { analyzeFileOcr } = useAi();
 const submitting = ref(false);
+
+// AI OCR Reactive State
+const ocrLoading = ref(false);
+const ocrFileInput = ref<HTMLInputElement | null>(null);
 
 const form = ref({
   type: 'EXPENSE',
@@ -525,6 +568,97 @@ const uploadPendingFiles = (txnId: number, onComplete: () => void) => {
         if (completed >= total) onComplete();
       }
     );
+  });
+};
+
+// AI OCR Handlers
+const onOcrFileChange = (e: Event) => {
+  const target = e.target as HTMLInputElement;
+  const files = target.files;
+  if (!files || files.length === 0) return;
+
+  const validFiles: File[] = [];
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    if (file.size > 10 * 1024 * 1024) {
+      showMessage('warn', t('transaction.ocrFileTooLarge'), t('transaction.ocrFileTooLargeDesc', { name: file.name }));
+      return;
+    }
+    validFiles.push(file);
+  }
+
+  ocrLoading.value = true;
+  const formData = new FormData();
+  validFiles.forEach((file) => {
+    formData.append('files[]', file);
+  });
+  formData.append('mode', 'transaction');
+
+  analyzeFileOcr({
+    data: formData,
+    successCallback: (res: any) => {
+      const data = res.data?.data || res.data;
+      if (data) {
+        // Map to form
+        if (data.type) form.value.type = data.type;
+        if (data.amount !== undefined && data.amount !== null) form.value.amount = Number(data.amount);
+        if (data.tax_rate_type) form.value.tax_rate_type = data.tax_rate_type;
+        
+        // Auto-recalculate net and tax
+        calculateTaxAndNet();
+
+        if (data.invoice_registration_number) {
+          form.value.invoice_registration_number = data.invoice_registration_number;
+        }
+        if (data.withholding_tax !== undefined && data.withholding_tax !== null) {
+          form.value.withholding_tax = Number(data.withholding_tax);
+        }
+        if (data.payment_method) {
+          form.value.payment_method = data.payment_method;
+        }
+        
+        // Map category if match, otherwise search closest
+        if (data.category) {
+          const catValue = data.category.toLowerCase().replace(/\s+/g, '');
+          const matched = categoryOptions.value.find(opt => 
+            opt.value.toLowerCase().replace(/\s+/g, '') === catValue || 
+            opt.label.toLowerCase().includes(data.category.toLowerCase())
+          );
+          if (matched) {
+            form.value.category = matched.value;
+          } else {
+            form.value.category = 'Others';
+          }
+        }
+
+        if (data.transaction_date) {
+          form.value.transaction_date = new Date(data.transaction_date);
+        }
+        if (data.description) {
+          form.value.description = data.description;
+        }
+
+        // Add the analyzed files to pendingFiles so they get saved as evidence
+        validFiles.forEach(file => {
+          const fileExists = pendingFiles.value.some(f => f.name === file.name && f.size === file.size);
+          if (!fileExists) {
+            pendingFiles.value.push(file);
+          }
+        });
+
+        showMessage('success', t('transaction.ocrSuccessTitle'), t('transaction.ocrSuccessDesc'));
+      } else {
+        showMessage('error', t('transaction.ocrErrorTitle'), t('transaction.ocrErrorDesc'));
+      }
+    },
+    errorCallback: (err: any) => {
+      console.error('OCR Error:', err);
+      const msg = err.response?.data?.messages?.[0] || err.response?.data?.message || t('transaction.ocrErrorDesc');
+      showMessage('error', t('transaction.ocrErrorTitle'), msg);
+    }
+  }).finally(() => {
+    ocrLoading.value = false;
+    if (target) target.value = '';
   });
 };
 </script>

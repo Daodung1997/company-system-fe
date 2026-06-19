@@ -415,7 +415,20 @@
     "notePlaceholder": "この部署の機能構造に関する詳細な説明を入力してください...",
     "valMissPositionName": "役職名を入力してください",
     "valMissPositionDesc": "すべての役職名を入力してください。",
-    "associatedJobTitles": "所属役職"
+    "associatedJobTitles": "所属役職",
+    "aiAnalyzeBtn": "AI分析",
+    "aiTitle": "AIによる部署と役職の分析",
+    "aiDesc": "部署の説明テキストを入力すると、AIが部署情報と対応する役職のリストを自動的に構成します。",
+    "aiDialogHeader": "AI分析 - 部署と役職の作成",
+    "aiTextareaLabel": "部署の説明と所属する役職名を入力してください",
+    "aiTextareaPlaceholder": "例: 研究開発部 (R&D) は、新しい技術の研究と製品の開発を担当しています。この部署には次の役職があります: 部門マネージャー (技術プロジェクトの管理とシステムアーキテクチャの設計)、ソフトウェアエンジニア (バックエンドおよびフロントエンド of コード作成、データベース of 最適化)、QAエンジニア (システムテストと自動テストスクリプト of 作成)。",
+    "aiAnalyzeSubmitBtn": "テキストを分析する",
+    "aiAnalyzing": "データを分析しています。しばらくお待ちください...",
+    "aiSuccessTitle": "分析成功",
+    "aiSuccessDesc": "部署と役職が自動的に入力されました。",
+    "aiErrorTitle": "分析エラー",
+    "aiErrorDesc": "テキストの分析に失敗しました。",
+    "aiDialogClose": "閉じる"
   },
   "user": {
     "gender": "性別",
@@ -1698,7 +1711,18 @@
     "msgFormatError": "フォーマットエラー",
     "msgFormatErrorDesc": ".{ext}形式はサポートされていません。",
     "msgSizeError": "サイズ制限超過",
-    "msgSizeErrorDesc": "ファイル{name}は10MBを超えています。"
+    "msgSizeErrorDesc": "ファイル{name}は10MBを超えています。",
+    "ocrTitle": "Gemini AI による取引のクイック入力",
+    "ocrDesc": "請求書や領収書（PDF、画像）をアップロードすると、AIが自動的に解析してフォームに入力します。",
+    "ocrButton": "ファイル選択 & 解析",
+    "ocrLoading": "Gemini AIが請求書をスキャンし、詳細情報を解析しています...",
+    "ocrSuccessTitle": "解析成功",
+    "ocrSuccessDesc": "抽出された取引データがフォームに自動入力されました。",
+    "ocrErrorTitle": "解析エラー",
+    "ocrErrorDesc": "この請求書から情報を抽出できませんでした。",
+    "ocrFileTooLarge": "ファイルサイズ超過",
+    "ocrFileTooLargeDesc": "ファイル \"{name}\" は10MB of 制限を超えています。",
+    "downloadSample": "サンプルダウンロード"
   },
   "pagination": {
     "total": "合計: {total} 件",
@@ -1884,6 +1908,17 @@
     "likesNoOne": "まだいいねはありません",
     "likesBy": "いいね：{names}",
     "likesByAndOthers": "いいね：{names} 他{count}人",
-    "failFetch": "掲示板の読み込みに失敗しました。再試行してください。"
+    "failFetch": "掲示板의 読み込みに失敗しました。再試行してください。",
+    "ocrTitle": "Gemini AIによるクイック投稿",
+    "ocrDesc": "生のテキストを分析するか、文書/画像をアップロードして、AIが記事のタイトル、コンテンツ、タグ、リンクを自動的に下書きします。",
+    "ocrAnalyzeTextBtn": "テキスト分析",
+    "ocrUploadFileBtn": "ファイル分析",
+    "ocrInputTextTitle": "分析用テキストの貼り付け",
+    "ocrInputTextPlaceholder": "ここにメールの内容、案内文の原文、メモを貼り付けると、AIが投稿の下書きを作成します...",
+    "ocrLoading": "Gemini AIがコンテンツを分析し、投稿を下書きしています...",
+    "ocrSuccessTitle": "下書き作成成功",
+    "ocrSuccessDesc": "AIが投稿情報を抽出し、フォームに入力しました。",
+    "ocrErrorTitle": "分析エラー",
+    "ocrErrorDesc": "このコンテンツを投稿として分析できませんでした。"
   }
 }
