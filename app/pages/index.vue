@@ -36,11 +36,12 @@
         <!-- Year Selector Filter -->
         <div class="flex items-center gap-2 bg-white dark:bg-surface-950 px-4 py-2 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('dashboard.fiscalYear') }}</span>
-          <Select 
-            v-model="selectedYear" 
-            :options="[2024, 2025, 2026, 2027]"
-            class="!bg-transparent !border-none !shadow-none !py-0 !pl-1 !pr-0 !text-sm !font-bold focus:!ring-0 cursor-pointer w-24"
-            @change="fetchDashboardData"
+          <DatePicker 
+            v-model="selectedYearDate" 
+            view="year" 
+            dateFormat="yy"
+            class="!bg-transparent !border-none !shadow-none !py-0 !pl-1 !pr-0 !text-sm !font-bold focus:!ring-0 cursor-pointer w-20"
+            inputClass="!bg-transparent !border-none !shadow-none !p-0 !text-sm !font-bold focus:!ring-0 cursor-pointer"
           />
         </div>
 
@@ -430,7 +431,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useApiStore } from '~/stores/api';
 import { GET_DASHBOARD_STATS } from '~/apis/dashboard';
@@ -445,7 +446,18 @@ import AppChartPie from '~/components/charts/AppChartPie.vue';
 const { t } = useI18n();
 const apiStore = useApiStore();
 const loading = ref(false);
-const selectedYear = ref(2026);
+
+const selectedYearDate = ref(new Date(2026, 0, 1));
+const selectedYear = computed(() => {
+  if (!selectedYearDate.value) return 2026;
+  const d = new Date(selectedYearDate.value);
+  return isNaN(d.getTime()) ? 2026 : d.getFullYear();
+});
+
+watch(selectedYearDate, () => {
+  fetchDashboardData();
+});
+
 const activeChartMode = ref<'revenue' | 'expense' | 'profit'>('revenue');
 
 // Default initial state matching the aggregated structure
