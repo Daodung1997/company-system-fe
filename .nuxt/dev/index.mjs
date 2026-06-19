@@ -9483,6 +9483,15 @@ var text$2 = {
 	empty: "Empty",
 	no: "No.",
 	id: "ID",
+	noDescription: "No description",
+	roleAdmin: "Administrator",
+	roleManager: "Manager",
+	roleEmployee: "Employee",
+	user: "User",
+	hiddenOperation: "Hidden Operation",
+	hoursPerDay: " hours/day",
+	hours: " hours",
+	months: " months",
 	deleteSuccess: "{field} deleted successfully",
 	syncSuccess: "Saved to sync queue successfully. It will be processed in order, please wait.",
 	resignSuccess: "{field} registered.",
@@ -9797,6 +9806,7 @@ var menu$2 = {
 	changePassword: "Change Password"
 };
 var department$2 = {
+	noJobTitles: "No job titles",
 	code: "Department Code",
 	name: "Department Name",
 	note: "Note",
@@ -9853,6 +9863,8 @@ var company$2 = {
 	name: "Company Name",
 	postcode: "Postcode",
 	searchAddress: "Search Address",
+	viewingModes: "Viewing Modes",
+	viewOnGoogleMaps: "View on Google Maps",
 	area: "Area",
 	prefecture: "Prefecture",
 	city: "City",
@@ -10574,6 +10586,7 @@ var timesheet$2 = {
 	loadingConfigs: "Loading configurations...",
 	noConfigsYet: "No working hour configurations created yet.",
 	defaultSystem: "System Default",
+	shiftTemplate: "Shift Template",
 	flexible: "Flexible",
 	applyAllTime: "Apply: All time (Fallback)",
 	applyRange: "Apply: {start} ~ {end}",
@@ -10617,6 +10630,10 @@ var timesheet$2 = {
 	msgSaveConfigSuccess: "Working hour configuration saved.",
 	msgDeleteConfigConfirm: "Are you sure you want to delete this working hour configuration?",
 	msgDeleteConfigSuccess: "Configuration deleted successfully.",
+	tooltipDate: "Date",
+	tooltipShift: "Shift",
+	tooltipLeave: "Leave",
+	tooltipOvertime: "Overtime",
 	tabShifts: "Shifts",
 	tabShiftAssignments: "Shift Assignments",
 	shiftTitle: "Shift Management",
@@ -11444,6 +11461,9 @@ var text$1 = {
 	empty: "空欄",
 	no: "No.",
 	id: "ID",
+	hoursPerDay: " 時間/日",
+	hours: " 時間",
+	months: " ヶ月",
 	deleteSuccess: "{field}削除に成功しました",
 	syncSuccess: "同期の待列に保存成功しました。順番に処理されますので、お待ちください。",
 	resignSuccess: "{field}登録されました。",
@@ -12578,6 +12598,10 @@ var timesheet$1 = {
 	msgSaveConfigSuccess: "勤務時間設定を保存しました。",
 	msgDeleteConfigConfirm: "この勤務時間設定を削除してもよろしいですか？",
 	msgDeleteConfigSuccess: "設定を正常に削除しました。",
+	tooltipDate: "日付",
+	tooltipShift: "シフト",
+	tooltipLeave: "休暇",
+	tooltipOvertime: "残業",
 	tabShifts: "シフト管理",
 	tabShiftAssignments: "シフト割り当て",
 	shiftTitle: "シフト一覧",
@@ -13405,6 +13429,15 @@ var text = {
 	empty: "Trống",
 	no: "STT",
 	id: "ID",
+	noDescription: "Không có mô tả",
+	roleAdmin: "Quản trị viên",
+	roleManager: "Quản lý",
+	roleEmployee: "Nhân viên",
+	user: "Người dùng",
+	hiddenOperation: "Nghiệp vụ ẩn",
+	hoursPerDay: " giờ/ngày",
+	hours: " giờ",
+	months: " tháng",
 	deleteSuccess: "Xóa {field} thành công",
 	syncSuccess: "Đã lưu vào hàng đợi đồng bộ thành công. Vui lòng chờ xử lý.",
 	resignSuccess: "Đã đăng ký {field}.",
@@ -13719,6 +13752,7 @@ var menu = {
 	changePassword: "Đổi mật khẩu"
 };
 var department = {
+	noJobTitles: "Chưa có chức vụ",
 	code: "Mã phòng ban",
 	name: "Tên phòng ban",
 	note: "Ghi chú",
@@ -13775,6 +13809,8 @@ var company = {
 	name: "Tên công ty",
 	postcode: "Mã bưu điện (Postcode)",
 	searchAddress: "Tìm kiếm địa chỉ",
+	viewingModes: "Chế độ hiển thị bản đồ",
+	viewOnGoogleMaps: "Xem trên Google Maps",
 	area: "Vùng",
 	prefecture: "Tỉnh/Thành phố",
 	city: "Quận/Huyện",
@@ -14496,6 +14532,7 @@ var timesheet = {
 	loadingConfigs: "Đang tải danh sách...",
 	noConfigsYet: "Chưa có cấu hình giờ làm việc nào được tạo.",
 	defaultSystem: "Mặc định hệ thống",
+	shiftTemplate: "Mẫu ca làm việc",
 	flexible: "Linh hoạt",
 	applyAllTime: "Áp dụng: Toàn bộ thời gian (Fallback)",
 	applyRange: "Áp dụng: {start} ~ {end}",
@@ -14539,6 +14576,10 @@ var timesheet = {
 	msgSaveConfigSuccess: "Đã lưu cấu hình giờ làm việc.",
 	msgDeleteConfigConfirm: "Bạn có chắc chắn muốn xóa cấu hình giờ làm việc này?",
 	msgDeleteConfigSuccess: "Đã xóa cấu hình thành công.",
+	tooltipDate: "Ngày",
+	tooltipShift: "Ca làm việc",
+	tooltipLeave: "Nghỉ phép",
+	tooltipOvertime: "Tăng ca",
 	tabShifts: "Ca làm việc",
 	tabShiftAssignments: "Phân ca nhân viên",
 	shiftTitle: "Danh sách Ca làm việc",
@@ -15827,7 +15868,7 @@ const _NW5OFtcBHZGKnB2mCrz69ydPktXX6hxHhYw8nnlqemU = defineNitroPlugin$1(async (
     const localeSegment = detector.route(event.path);
     const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
     const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
-    if (!url.pathname.includes("/_i18n/_xZxU8mp") && !isExistingNuxtRoute(path)) {
+    if (!url.pathname.includes("/_i18n/O_DyxpKP") && !isExistingNuxtRoute(path)) {
       return;
     }
     const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
@@ -19031,16 +19072,16 @@ _FHOPG4Xml7nh2qXI2CO4ZaSSAppVwPQ7fAfYpJ258
 const assets = {
   "/index.mjs": {
     "type": "text/javascript; charset=utf-8",
-    "etag": "\"c874f-Zg9+aPV4iDkj9p3jNEp7cTjc3/Q\"",
-    "mtime": "2026-06-19T02:07:52.255Z",
-    "size": 821071,
+    "etag": "\"c8f1f-mTflp0VJtCf4laB7Fla+swUweNM\"",
+    "mtime": "2026-06-19T03:16:29.404Z",
+    "size": 823071,
     "path": "index.mjs"
   },
   "/index.mjs.map": {
     "type": "application/json",
-    "etag": "\"218503-yZoH0HUtfeC7QrFYdmPNSFp821o\"",
-    "mtime": "2026-06-19T02:07:52.257Z",
-    "size": 2196739,
+    "etag": "\"218533-s2wsL/iJiOzhpDx4yx/u5uTd3Tg\"",
+    "mtime": "2026-06-19T03:16:29.406Z",
+    "size": 2196787,
     "path": "index.mjs.map"
   }
 };

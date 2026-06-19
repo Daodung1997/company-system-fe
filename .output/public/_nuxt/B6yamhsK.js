@@ -1,1 +1,0 @@
-import{S as r}from"./B_GwT9Xb.js";const c="/master/company-setting",a=(e,n)=>r.get(c).then(e).catch(n),o=(e,n,t)=>r.post(c,e).then(n).catch(t);function u(){return{getCompanySetting:t=>a(t.successCallback,t.errorCallback),updateCompanySetting:t=>o(t.data,t.successCallback,t.errorCallback)}}export{u};
