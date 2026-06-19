@@ -9818,7 +9818,20 @@ var department$2 = {
 	notePlaceholder: "Enter detailed description of the functional structure of this department...",
 	valMissPositionName: "Please enter job title",
 	valMissPositionDesc: "Please fill in all job titles.",
-	associatedJobTitles: "Associated Job Titles"
+	associatedJobTitles: "Associated Job Titles",
+	aiAnalyzeBtn: "AI Analysis",
+	aiTitle: "AI Department & Position Analysis",
+	aiDesc: "Enter description text to automatically structure department info and corresponding positions list.",
+	aiDialogHeader: "AI ANALYSIS - CREATE DEPARTMENT & POSITIONS",
+	aiTextareaLabel: "Enter department description text and associated job positions",
+	aiTextareaPlaceholder: "e.g. Research & Development Department (R&D) is responsible for researching new technologies and developing products. This department has the following positions: Department Manager (Technical project management and system architecture design), Software Engineer (Writing backend and frontend code, optimizing database), QA Engineer (System testing and writing automated test scripts).",
+	aiAnalyzeSubmitBtn: "Analyze Text",
+	aiAnalyzing: "Analyzing data, please wait...",
+	aiSuccessTitle: "Analysis Successful",
+	aiSuccessDesc: "Department and positions have been automatically populated.",
+	aiErrorTitle: "Analysis Error",
+	aiErrorDesc: "Failed to analyze the raw text.",
+	aiDialogClose: "Close"
 };
 var user$2 = {
 	gender: "Gender",
@@ -11101,7 +11114,18 @@ var transaction$2 = {
 	msgFormatError: "Format error",
 	msgFormatErrorDesc: "Format .{ext} is not supported.",
 	msgSizeError: "Size limit exceeded",
-	msgSizeErrorDesc: "File {name} exceeds 10MB."
+	msgSizeErrorDesc: "File {name} exceeds 10MB.",
+	ocrTitle: "Quick Transaction Input via Gemini AI",
+	ocrDesc: "Upload invoice/receipt file (PDF or image) to automatically analyze and populate the fields.",
+	ocrButton: "Select File & Analyze",
+	ocrLoading: "Gemini AI is scanning invoice and analyzing details...",
+	ocrSuccessTitle: "Analysis Successful",
+	ocrSuccessDesc: "Invoice data has been automatically populated into the transaction form.",
+	ocrErrorTitle: "Analysis Error",
+	ocrErrorDesc: "Failed to extract information from this invoice.",
+	ocrFileTooLarge: "File too large",
+	ocrFileTooLargeDesc: "File \"{name}\" exceeds 10MB limit.",
+	downloadSample: "Download Sample"
 };
 var pagination$2 = {
 	total: "Total: {total} items",
@@ -11287,7 +11311,18 @@ var board$2 = {
 	likesNoOne: "No one has liked this post yet",
 	likesBy: "Liked by: {names}",
 	likesByAndOthers: "Liked by: {names} and {count} others",
-	failFetch: "Failed to load board news. Please try again."
+	failFetch: "Failed to load board news. Please try again.",
+	ocrTitle: "Quick Post with Gemini AI",
+	ocrDesc: "Analyze raw text or upload documents/images to automatically draft the post title, content, tag, and link.",
+	ocrAnalyzeTextBtn: "Analyze Text",
+	ocrUploadFileBtn: "Analyze File",
+	ocrInputTextTitle: "Paste Text for Analysis",
+	ocrInputTextPlaceholder: "Paste email contents, raw announcements, or notes here for AI to draft the post...",
+	ocrLoading: "Gemini AI is analyzing content and drafting your post...",
+	ocrSuccessTitle: "Drafting Successful",
+	ocrSuccessDesc: "AI has extracted post information and populated the form.",
+	ocrErrorTitle: "Analysis Error",
+	ocrErrorDesc: "Failed to analyze this content into a post."
 };
 const locale_en_46json_0ab7440b = {
 	btn: btn$2,
@@ -11744,7 +11779,20 @@ var department$1 = {
 	notePlaceholder: "この部署の機能構造に関する詳細な説明を入力してください...",
 	valMissPositionName: "役職名を入力してください",
 	valMissPositionDesc: "すべての役職名を入力してください。",
-	associatedJobTitles: "所属役職"
+	associatedJobTitles: "所属役職",
+	aiAnalyzeBtn: "AI分析",
+	aiTitle: "AIによる部署と役職の分析",
+	aiDesc: "部署の説明テキストを入力すると、AIが部署情報と対応する役職のリストを自動的に構成します。",
+	aiDialogHeader: "AI分析 - 部署と役職の作成",
+	aiTextareaLabel: "部署の説明と所属する役職名を入力してください",
+	aiTextareaPlaceholder: "例: 研究開発部 (R&D) は、新しい技術の研究と製品の開発を担当しています。この部署には次の役職があります: 部門マネージャー (技術プロジェクトの管理とシステムアーキテクチャの設計)、ソフトウェアエンジニア (バックエンドおよびフロントエンド of コード作成、データベース of 最適化)、QAエンジニア (システムテストと自動テストスクリプト of 作成)。",
+	aiAnalyzeSubmitBtn: "テキストを分析する",
+	aiAnalyzing: "データを分析しています。しばらくお待ちください...",
+	aiSuccessTitle: "分析成功",
+	aiSuccessDesc: "部署と役職が自動的に入力されました。",
+	aiErrorTitle: "分析エラー",
+	aiErrorDesc: "テキストの分析に失敗しました。",
+	aiDialogClose: "閉じる"
 };
 var user$1 = {
 	gender: "性別",
@@ -13027,7 +13075,18 @@ var transaction$1 = {
 	msgFormatError: "フォーマットエラー",
 	msgFormatErrorDesc: ".{ext}形式はサポートされていません。",
 	msgSizeError: "サイズ制限超過",
-	msgSizeErrorDesc: "ファイル{name}は10MBを超えています。"
+	msgSizeErrorDesc: "ファイル{name}は10MBを超えています。",
+	ocrTitle: "Gemini AI による取引のクイック入力",
+	ocrDesc: "請求書や領収書（PDF、画像）をアップロードすると、AIが自動的に解析してフォームに入力します。",
+	ocrButton: "ファイル選択 & 解析",
+	ocrLoading: "Gemini AIが請求書をスキャンし、詳細情報を解析しています...",
+	ocrSuccessTitle: "解析成功",
+	ocrSuccessDesc: "抽出された取引データがフォームに自動入力されました。",
+	ocrErrorTitle: "解析エラー",
+	ocrErrorDesc: "この請求書から情報を抽出できませんでした。",
+	ocrFileTooLarge: "ファイルサイズ超過",
+	ocrFileTooLargeDesc: "ファイル \"{name}\" は10MB of 制限を超えています。",
+	downloadSample: "サンプルダウンロード"
 };
 var pagination$1 = {
 	total: "合計: {total} 件",
@@ -13213,7 +13272,18 @@ var board$1 = {
 	likesNoOne: "まだいいねはありません",
 	likesBy: "いいね：{names}",
 	likesByAndOthers: "いいね：{names} 他{count}人",
-	failFetch: "掲示板の読み込みに失敗しました。再試行してください。"
+	failFetch: "掲示板의 読み込みに失敗しました。再試行してください。",
+	ocrTitle: "Gemini AIによるクイック投稿",
+	ocrDesc: "生のテキストを分析するか、文書/画像をアップロードして、AIが記事のタイトル、コンテンツ、タグ、リンクを自動的に下書きします。",
+	ocrAnalyzeTextBtn: "テキスト分析",
+	ocrUploadFileBtn: "ファイル分析",
+	ocrInputTextTitle: "分析用テキストの貼り付け",
+	ocrInputTextPlaceholder: "ここにメールの内容、案内文の原文、メモを貼り付けると、AIが投稿の下書きを作成します...",
+	ocrLoading: "Gemini AIがコンテンツを分析し、投稿を下書きしています...",
+	ocrSuccessTitle: "下書き作成成功",
+	ocrSuccessDesc: "AIが投稿情報を抽出し、フォームに入力しました。",
+	ocrErrorTitle: "分析エラー",
+	ocrErrorDesc: "このコンテンツを投稿として分析できませんでした。"
 };
 const locale_ja_46json_63a99cd6 = {
 	btn: btn$1,
@@ -13670,7 +13740,20 @@ var department = {
 	notePlaceholder: "Nhập thông tin mô tả chi tiết về sơ đồ chức năng của phòng ban này...",
 	valMissPositionName: "Vui lòng nhập tên chức vụ",
 	valMissPositionDesc: "Vui lòng điền đầy đủ tên các chức vụ.",
-	associatedJobTitles: "Chức vụ trực thuộc"
+	associatedJobTitles: "Chức vụ trực thuộc",
+	aiAnalyzeBtn: "Phân tích AI",
+	aiTitle: "Phân tích bộ phận & chức vụ bằng AI",
+	aiDesc: "Nhập văn bản mô tả để AI tự động cấu trúc thông tin phòng ban và danh sách các chức vụ tương ứng.",
+	aiDialogHeader: "PHÂN TÍCH AI - TẠO BỘ PHẬN & CHỨC VỤ",
+	aiTextareaLabel: "Nhập văn bản mô tả phòng ban và các chức vụ trực thuộc",
+	aiTextareaPlaceholder: "Ví dụ: Phòng Kỹ thuật Công nghệ (R&D) có nhiệm vụ nghiên cứu công nghệ mới và phát triển sản phẩm. Phòng này gồm các chức vụ: Trưởng phòng (Quản lý dự án kỹ thuật và thiết kế kiến trúc hệ thống), Kỹ sư lập trình (Viết code backend và frontend, tối ưu cơ sở dữ liệu), Kỹ sư QA (Kiểm thử hệ thống và viết kịch bản kiểm thử tự động).",
+	aiAnalyzeSubmitBtn: "Phân tích văn bản",
+	aiAnalyzing: "Đang phân tích dữ liệu, vui lòng đợi...",
+	aiSuccessTitle: "Phân tích thành công",
+	aiSuccessDesc: "Đã tự động điền thông tin phòng ban và chức vụ.",
+	aiErrorTitle: "Lỗi phân tích",
+	aiErrorDesc: "Không thể phân tích văn bản thô này.",
+	aiDialogClose: "Đóng"
 };
 var user = {
 	gender: "Giới tính",
@@ -14953,7 +15036,18 @@ var transaction = {
 	msgFormatError: "Lỗi định dạng",
 	msgFormatErrorDesc: "Định dạng .{ext} không được hỗ trợ.",
 	msgSizeError: "Kích thước vượt giới hạn",
-	msgSizeErrorDesc: "Tệp {name} vượt quá 10MB."
+	msgSizeErrorDesc: "Tệp {name} vượt quá 10MB.",
+	ocrTitle: "Nhập nhanh giao dịch bằng AI Gemini",
+	ocrDesc: "Tải lên file hóa đơn, biên lai (PDF, ảnh) để AI tự động phân tích và điền vào các trường thông tin.",
+	ocrButton: "Chọn file & Phân tích",
+	ocrLoading: "Gemini AI đang quét hóa đơn và phân tích thông tin...",
+	ocrSuccessTitle: "Phân tích thành công",
+	ocrSuccessDesc: "Dữ liệu hóa đơn đã được tự động điền vào biểu mẫu giao dịch.",
+	ocrErrorTitle: "Lỗi phân tích",
+	ocrErrorDesc: "Không trích xuất được thông tin từ hóa đơn này.",
+	ocrFileTooLarge: "File quá lớn",
+	ocrFileTooLargeDesc: "File \"{name}\" vượt quá giới hạn 10MB.",
+	downloadSample: "Tải file mẫu"
 };
 var pagination = {
 	total: "Tổng cộng: {total} mục",
@@ -15139,7 +15233,18 @@ var board = {
 	likesNoOne: "Chưa có ai thích bài viết này",
 	likesBy: "Thích bởi: {names}",
 	likesByAndOthers: "Thích bởi: {names} và {count} người khác",
-	failFetch: "Không thể tải bảng tin. Vui lòng thử lại."
+	failFetch: "Không thể tải bảng tin. Vui lòng thử lại.",
+	ocrTitle: "Đăng bài nhanh bằng AI Gemini",
+	ocrDesc: "Phân tích văn bản thô hoặc tải lên tài liệu/ảnh để AI tự động soạn thảo tiêu đề, nội dung, tag và link.",
+	ocrAnalyzeTextBtn: "Phân tích văn bản",
+	ocrUploadFileBtn: "Phân tích file",
+	ocrInputTextTitle: "Dán văn bản phân tích",
+	ocrInputTextPlaceholder: "Dán nội dung email, thông báo thô hoặc ghi chú công việc tại đây để AI soạn thảo bài viết...",
+	ocrLoading: "Gemini AI đang phân tích dữ liệu và soạn thảo bài viết...",
+	ocrSuccessTitle: "Soạn thảo thành công",
+	ocrSuccessDesc: "AI đã tự động trích xuất thông tin bài viết và điền vào form.",
+	ocrErrorTitle: "Lỗi phân tích",
+	ocrErrorDesc: "Không thể phân tích nội dung này thành bài viết."
 };
 const locale_vi_46json_1a246d39 = {
 	btn: btn,
@@ -15722,7 +15827,7 @@ const _NW5OFtcBHZGKnB2mCrz69ydPktXX6hxHhYw8nnlqemU = defineNitroPlugin$1(async (
     const localeSegment = detector.route(event.path);
     const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
     const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
-    if (!url.pathname.includes("/_i18n/QSMPajR-") && !isExistingNuxtRoute(path)) {
+    if (!url.pathname.includes("/_i18n/_xZxU8mp") && !isExistingNuxtRoute(path)) {
       return;
     }
     const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
@@ -18926,16 +19031,16 @@ _FHOPG4Xml7nh2qXI2CO4ZaSSAppVwPQ7fAfYpJ258
 const assets = {
   "/index.mjs": {
     "type": "text/javascript; charset=utf-8",
-    "etag": "\"c69b2-fCNIE3IK1LnSk6867EQVJRy4a10\"",
-    "mtime": "2026-06-18T09:26:35.788Z",
-    "size": 813490,
+    "etag": "\"c874f-Zg9+aPV4iDkj9p3jNEp7cTjc3/Q\"",
+    "mtime": "2026-06-19T02:07:52.255Z",
+    "size": 821071,
     "path": "index.mjs"
   },
   "/index.mjs.map": {
     "type": "application/json",
-    "etag": "\"21849d-B/thhIJxYdn6kJoA+QzyNdkppjs\"",
-    "mtime": "2026-06-18T09:26:35.788Z",
-    "size": 2196637,
+    "etag": "\"218503-yZoH0HUtfeC7QrFYdmPNSFp821o\"",
+    "mtime": "2026-06-19T02:07:52.257Z",
+    "size": 2196739,
     "path": "index.mjs.map"
   }
 };

@@ -31,6 +31,7 @@ export { setInterval } from '#app/compat/interval';
 export { useRouteBaseName, useLocalePath, useLocaleRoute, useSwitchLocalePath, useLocaleHead, useBrowserLocale, useCookieLocale, useSetI18nParams, useI18nPreloadKeys, defineI18nRoute, defineI18nLocale, defineI18nConfig } from '../node_modules/@nuxtjs/i18n/dist/runtime/composables/index';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
+export { useAi } from '../app/composables/ai';
 export { useAuth } from '../app/composables/auth';
 export { useDocument } from '../app/composables/document';
 export { useEmployee } from '../app/composables/employee';

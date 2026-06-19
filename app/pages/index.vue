@@ -39,7 +39,7 @@
           <Select 
             v-model="selectedYear" 
             :options="[2024, 2025, 2026, 2027]"
-            class="!bg-transparent !border-none !shadow-none !py-0 !pl-1 !pr-0 !text-sm !font-bold focus:!ring-0 cursor-pointer w-20"
+            class="!bg-transparent !border-none !shadow-none !py-0 !pl-1 !pr-0 !text-sm !font-bold focus:!ring-0 cursor-pointer w-24"
             @change="fetchDashboardData"
           />
         </div>
