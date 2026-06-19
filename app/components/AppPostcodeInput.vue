@@ -171,7 +171,7 @@
               @click="isLayerMenuOpen = !isLayerMenuOpen"
               class="group/layer-toggle !text-primary relative w-14 h-14 rounded-2xl overflow-hidden transition-all duration-500 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border border-white/60 dark:border-surface-700 active:scale-95"
               :class="isLayerMenuOpen ? 'ring-2 ring-primary ring-offset-4 scale-105' : 'hover:-translate-y-1'"
-              v-tooltip.left="'Viewing Modes'"
+              v-tooltip.left="$t('company.viewingModes')"
             >
               <!-- Crystal Glass Background -->
               <div class="absolute inset-0 bg-white/90 dark:bg-surface-900/90 backdrop-blur-2xl transition-colors duration-500"></div>
@@ -241,7 +241,7 @@
                :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(prefecture + city + town)}`" 
                target="_blank"
                class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center hover:scale-110 active:scale-90 transition-all shadow-lg shadow-primary/30 cursor-pointer"
-               v-tooltip.top="'View on Google Maps'"
+               v-tooltip.top="$t('company.viewOnGoogleMaps')"
              >
                 <i class="pi pi-directions text-white text-sm"></i>
              </a>

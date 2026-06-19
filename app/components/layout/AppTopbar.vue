@@ -121,7 +121,7 @@
         <button 
           @click="openSidebarCustomizer"
           class="w-10 h-10 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group shrink-0"
-          v-tooltip.top="'Cấu hình Sidebar'"
+          v-tooltip.top="$t('sidebarConfig')"
         >
           <i class="pi pi-palette text-lg group-hover:rotate-12 transition-transform"></i>
         </button>

@@ -60,6 +60,7 @@
     "empty": "Empty",
     "no": "No.",
     "id": "ID",
+    "noDescription": "No description",
     "deleteSuccess": "{field} deleted successfully",
     "syncSuccess": "Saved to sync queue successfully. It will be processed in order, please wait.",
     "resignSuccess": "{field} registered.",
@@ -394,6 +395,7 @@
     "changePassword": "Change Password"
   },
   "department": {
+    "noJobTitles": "No job titles",
     "code": "Department Code",
     "name": "Department Name",
     "note": "Note",
@@ -450,6 +452,8 @@
     "name": "Company Name",
     "postcode": "Postcode",
     "searchAddress": "Search Address",
+    "viewingModes": "Viewing Modes",
+    "viewOnGoogleMaps": "View on Google Maps",
     "area": "Area",
     "prefecture": "Prefecture",
     "city": "City",

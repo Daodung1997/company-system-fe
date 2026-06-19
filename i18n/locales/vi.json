@@ -60,6 +60,7 @@
     "empty": "Trống",
     "no": "STT",
     "id": "ID",
+    "noDescription": "Không có mô tả",
     "deleteSuccess": "Xóa {field} thành công",
     "syncSuccess": "Đã lưu vào hàng đợi đồng bộ thành công. Vui lòng chờ xử lý.",
     "resignSuccess": "Đã đăng ký {field}.",
@@ -394,6 +395,7 @@
     "changePassword": "Đổi mật khẩu"
   },
   "department": {
+    "noJobTitles": "Chưa có chức vụ",
     "code": "Mã phòng ban",
     "name": "Tên phòng ban",
     "note": "Ghi chú",
@@ -450,6 +452,8 @@
     "name": "Tên công ty",
     "postcode": "Mã bưu điện (Postcode)",
     "searchAddress": "Tìm kiếm địa chỉ",
+    "viewingModes": "Chế độ hiển thị bản đồ",
+    "viewOnGoogleMaps": "Xem trên Google Maps",
     "area": "Vùng",
     "prefecture": "Tỉnh/Thành phố",
     "city": "Quận/Huyện",

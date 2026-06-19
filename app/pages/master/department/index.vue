@@ -82,13 +82,13 @@
 
           <template v-else-if="column.key === 'job_titles'">
             <div class="flex flex-wrap gap-1.5 max-w-[320px]">
-              <span v-if="!data.job_titles || data.job_titles.length === 0" class="text-xs text-surface-400 font-bold">Chưa có chức vụ</span>
+              <span v-if="!data.job_titles || data.job_titles.length === 0" class="text-xs text-surface-400 font-bold">{{ $t('department.noJobTitles') }}</span>
               <div 
                 v-else 
                 v-for="job in data.job_titles" 
                 :key="job.id" 
                 class="inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 cursor-pointer"
-                v-tooltip.top="job.description || 'Không có mô tả'"
+                v-tooltip.top="job.description || $t('text.noDescription')"
               >
                 <i class="pi pi-briefcase mr-1.5 text-[9px]"></i>
                 {{ job.name }}

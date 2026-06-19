@@ -57,7 +57,7 @@
       </div>
       <div class="bg-white dark:bg-surface-900 p-6 rounded-xl border border-surface-200 dark:border-surface-700 shadow-sm flex items-center justify-between">
         <div class="space-y-1">
-          <span class="text-xs font-black uppercase tracking-wider text-surface-400">Invoice & Thu Chi</span>
+          <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('document.transactionDocs') }}</span>
           <h3 class="text-2xl font-black text-surface-900 dark:text-surface-0">{{ stats.transaction }}</h3>
         </div>
         <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
@@ -257,12 +257,12 @@
           </div>
           <div>
             <p v-if="!selectedFile" class="text-xs font-bold text-surface-700 dark:text-surface-300">
-              Nhấp hoặc kéo thả file để chọn tài liệu
+              {{ $t('document.dragDropText') }}
             </p>
             <p v-else class="text-xs font-black text-primary truncate max-w-xs">
               {{ selectedFile.name }} ({{ formatSize(selectedFile.size) }})
             </p>
-            <p class="text-[10px] text-surface-400 mt-1">Hỗ trợ PDF, Word, Excel, JPG, PNG tối đa 10MB</p>
+            <p class="text-[10px] text-surface-400 mt-1">{{ $t('document.allowedFormats') }}</p>
           </div>
         </div>
 
@@ -323,7 +323,7 @@
     <Dialog
       v-model:visible="previewDialog"
       modal
-      :header="`XEM TÀI LIỆU: ${previewDoc?.origin_name || ''}`"
+      :header="$t('document.previewDialogHeader', { name: previewDoc?.origin_name || '' })"
       class="w-full max-w-4xl h-[85vh] !rounded-xl"
       contentClass="p-0 overflow-hidden"
     >
@@ -341,11 +341,11 @@
             <i class="pi pi-file text-3xl"></i>
           </div>
           <div>
-            <h3 class="text-base font-bold text-surface-900 dark:text-surface-0">Không hỗ trợ xem trực tuyến</h3>
-            <p class="text-xs text-surface-400 max-w-sm mt-1">Định dạng file này ({{ previewDoc.extension }}) không thể xem trực tiếp. Vui lòng tải xuống thiết bị của bạn.</p>
+            <h3 class="text-base font-bold text-surface-900 dark:text-surface-0">{{ $t('document.viewerNotSupportedTitle') }}</h3>
+            <p class="text-xs text-surface-400 max-w-sm mt-1">{{ $t('document.viewerNotSupportedDesc') }}</p>
           </div>
           <Button
-            label="Tải xuống tệp"
+            :label="$t('document.downloadFile')"
             icon="pi pi-download"
             severity="primary"
             class="!rounded-xl"
@@ -749,9 +749,9 @@ const getDocTypeTitle = (type: string) => {
 };
 
 const getContractTypeLabel = (type: string) => {
-  if (type === 'LABOR') return 'HĐ Lao Động';
-  if (type === 'VENDOR') return 'HĐ Đối Tác';
-  if (type === 'CLIENT') return 'HĐ Khách Hàng';
+  if (type === 'LABOR') return t('contract.typeLabor');
+  if (type === 'VENDOR') return t('contract.typeVendor');
+  if (type === 'CLIENT') return t('contract.typeClient');
   return type;
 };
 
