@@ -69,10 +69,10 @@
         <template v-else-if="column.key === 'employee'">
           <div class="flex flex-col">
             <span class="font-bold text-surface-900 dark:text-surface-0 tracking-tight text-sm">
-              {{ data.employee?.full_name || 'Nghiệp vụ ẩn' }}
+              {{ data.employee?.full_name || $t('text.hiddenOperation') }}
             </span>
             <span class="text-[9px] font-black uppercase tracking-widest text-surface-450 font-mono mt-0.5">
-              Mã: {{ data.employee?.code || data.employee?.employee_code || 'N/A' }}
+              {{ $t('timesheet.staffCode') }}: {{ data.employee?.code || data.employee?.employee_code || 'N/A' }}
             </span>
           </div>
         </template>

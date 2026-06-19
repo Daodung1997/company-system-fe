@@ -102,7 +102,7 @@
           <!-- Dynamic Info Card -->
           <div class="space-y-2 relative z-10">
             <h2 class="text-xl font-black text-surface-900 dark:text-surface-0 tracking-tight truncate px-2">
-              {{ form.full_name || 'Họ và tên' }}
+              {{ form.full_name || $t('employee.fullName') }}
             </h2>
             <p class="text-xs text-surface-400 font-mono truncate px-2">
               {{ form.email || 'email@company.com' }}

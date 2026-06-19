@@ -210,13 +210,13 @@
                         <div class="w-8 h-8 rounded-lg bg-surface-100 dark:bg-surface-800 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                            <i class="pi pi-user text-xs"></i>
                         </div>
-                        <span class="text-[11px] font-black uppercase tracking-wider text-surface-600 dark:text-surface-300 italic group-hover:text-primary transition-colors">Hồ sơ cá nhân</span>
+                        <span class="text-[11px] font-black uppercase tracking-wider text-surface-600 dark:text-surface-300 italic group-hover:text-primary transition-colors">{{ $t('menu.myProfile') }}</span>
                      </button>
                      <button @click="navigateTo('/auth/change-password'); isUserMenuOpen = false" class="w-full flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-surface-50 dark:hover:bg-surface-800/50 transition-all group">
                         <div class="w-8 h-8 rounded-lg bg-surface-100 dark:bg-surface-800 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                            <i class="pi pi-lock text-xs"></i>
                         </div>
-                        <span class="text-[11px] font-black uppercase tracking-wider text-surface-600 dark:text-surface-300 italic group-hover:text-primary transition-colors">Đổi mật khẩu</span>
+                        <span class="text-[11px] font-black uppercase tracking-wider text-surface-600 dark:text-surface-300 italic group-hover:text-primary transition-colors">{{ $t('menu.changePassword') }}</span>
                      </button>
                   </div>
 
@@ -228,7 +228,7 @@
                      >
                         <div class="flex items-center gap-3 font-black text-[11px] uppercase tracking-widest italic">
                            <i class="pi pi-power-off text-xs"></i>
-                           Đăng xuất
+                           {{ $t('menu.logout') }}
                         </div>
                         <i class="pi pi-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0"></i>
                      </button>
@@ -313,15 +313,15 @@ onUnmounted(() => {
   }
 });
 
-const userDisplayName = computed(() => userInfo.value?.full_name || 'Người dùng');
+const userDisplayName = computed(() => userInfo.value?.full_name || t('text.user'));
 const userEmail = computed(() => userInfo.value?.email || '');
 const userRole = computed(() => {
   const role = userInfo.value?.role;
   if (!role) return 'Active';
   const roleMap: Record<string, string> = {
-    'ADMIN': 'Quản trị viên',
-    'MANAGER': 'Quản lý',
-    'EMPLOYEE': 'Nhân viên',
+    'ADMIN': t('text.roleAdmin'),
+    'MANAGER': t('text.roleManager'),
+    'EMPLOYEE': t('text.roleEmployee'),
   };
   return roleMap[role] || role;
 });

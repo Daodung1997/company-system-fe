@@ -117,7 +117,7 @@
             >
               <InputNumber
                 v-model="contractForm.value"
-                placeholder="Nhập giá trị tiền tệ"
+                :placeholder="$t('placeholder.enterCurrencyValue')"
                 class="rounded-xl"
                 mode="currency"
                 currency="VND"
@@ -191,7 +191,7 @@
             <AppInputField :label="$t('contract.jobTitle')">
               <InputText
                 v-model="contractForm.job_title"
-                placeholder="Ví dụ: Lập trình viên, Quản trị viên"
+                :placeholder="$t('placeholder.jobTitleDev')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -199,7 +199,7 @@
             <AppInputField :label="$t('contract.workLocation')">
               <InputText
                 v-model="contractForm.work_location"
-                placeholder="Ví dụ: Trụ sở chính Hà Nội, Văn phòng Tokyo"
+                :placeholder="$t('placeholder.officeExample')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -207,11 +207,11 @@
             <AppInputField :label="$t('contract.workingHours')">
               <InputNumber
                 v-model="contractForm.working_hours_per_day"
-                placeholder="Ví dụ: 8"
+                :placeholder="$t('placeholder.numberEight')"
                 class="rounded-xl"
                 :min="0"
                 :max="24"
-                suffix=" giờ/ngày"
+                :suffix="$t('text.hoursPerDay')"
               />
             </AppInputField>
 
@@ -219,7 +219,7 @@
               <Select
                 v-model="contractForm.probation_period_months"
                 :options="[0, 1, 2, 3, 6]"
-                placeholder="Ví dụ: 2 tháng"
+                :placeholder="$t('placeholder.durationTwoMonths')"
                 class="w-full !rounded-xl"
               />
             </AppInputField>
@@ -227,7 +227,7 @@
             <AppInputField :label="$t('contract.probationSalary')">
               <InputNumber
                 v-model="contractForm.probation_salary_percentage"
-                placeholder="Ví dụ: 85"
+                :placeholder="$t('placeholder.numberEightyFive')"
                 class="rounded-xl"
                 :min="0"
                 :max="100"
@@ -238,7 +238,7 @@
             <AppInputField :label="$t('contract.bankName')">
               <InputText
                 v-model="contractForm.bank_name"
-                placeholder="Ví dụ: Vietcombank, Techcombank"
+                :placeholder="$t('placeholder.bankNames')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -246,7 +246,7 @@
             <AppInputField :label="$t('contract.bankAccount')">
               <InputText
                 v-model="contractForm.bank_account_number"
-                placeholder="Ví dụ: 1018273645"
+                :placeholder="$t('placeholder.accountNumber')"
                 class="rounded-xl font-mono"
               />
             </AppInputField>
@@ -254,7 +254,7 @@
             <AppInputField :label="$t('contract.insurance')" class="col-span-1 md:col-span-2">
               <InputText
                 v-model="contractForm.insurance_enrolled"
-                placeholder="BHXH, BHYT, BHTN hoặc Bảo hiểm đặc biệt thương mại"
+                :placeholder="$t('placeholder.insuranceType')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -272,7 +272,7 @@
             <AppInputField :label="$t('contract.partnerName')" :isRequired="true" :error="formErrors.partner_name" class="col-span-1 md:col-span-2">
               <InputText
                 v-model="contractForm.partner_name"
-                placeholder="Nhập tên chính thức trên đăng ký kinh doanh"
+                :placeholder="$t('contract.enterOfficialCompanyName')"
                 class="rounded-xl"
                 :invalid="!!formErrors.partner_name"
                 @change="onValidate('partner_name')"
@@ -282,7 +282,7 @@
             <AppInputField :label="$t('contract.partnerTaxCode')" :isRequired="true" :error="formErrors.partner_tax_code">
               <InputText
                 v-model="contractForm.partner_tax_code"
-                placeholder="Nhập mã số thuế đối tác"
+                :placeholder="$t('contract.enterPartnerTaxCode')"
                 class="rounded-xl font-mono"
                 :invalid="!!formErrors.partner_tax_code"
                 @change="onValidate('partner_tax_code')"
@@ -292,7 +292,7 @@
             <AppInputField :label="$t('contract.partnerRepresentative')">
               <InputText
                 v-model="contractForm.partner_representative"
-                placeholder="Họ tên người đại diện pháp luật"
+                :placeholder="$t('contract.legalRepresentative')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -300,7 +300,7 @@
             <AppInputField :label="$t('contract.partnerRepresentativeRole')">
               <InputText
                 v-model="contractForm.partner_representative_role"
-                placeholder="Ví dụ: Giám đốc, Tổng giám đốc, CEO"
+                :placeholder="$t('contract.partnerLegalJob')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -308,7 +308,7 @@
             <AppInputField :label="$t('contract.partnerAddress')" class="col-span-1 md:col-span-2">
               <InputText
                 v-model="contractForm.partner_address"
-                placeholder="Địa chỉ giao dịch chính thức của đối tác"
+                :placeholder="$t('contract.partnerAddress')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -327,7 +327,7 @@
             <AppInputField :label="$t('contract.paymentTerms')">
               <InputText
                 v-model="contractForm.payment_terms"
-                placeholder="Ví dụ: Net 30, Thanh toán 100% khi ký"
+                :placeholder="$t('contract.paymentTerm')"
                 class="rounded-xl"
               />
             </AppInputField>
@@ -371,9 +371,9 @@
               <AppInputField :label="$t('contract.includedOvertimeHours')" :isRequired="true" :error="formErrors.included_overtime_hours">
                 <InputNumber
                   v-model="contractForm.included_overtime_hours"
-                  placeholder="Ví dụ: 20 hoặc 30 giờ"
+                  :placeholder="$t('contract.otHours')"
                   class="rounded-xl"
-                  suffix=" giờ"
+                  :suffix="$t('text.hours')"
                   :min="0"
                   :invalid="!!formErrors.included_overtime_hours"
                   @value-change="onValidate('included_overtime_hours')"

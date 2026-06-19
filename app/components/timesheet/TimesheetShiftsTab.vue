@@ -737,7 +737,7 @@ const getDayCellDetails = (employee: any, dateStr: string, dow: number) => {
 
 const getCellClass = (employee: any, dateStr: string, dow: number): string => {
   const details = getDayCellDetails(employee, dateStr, dow);
-  if (details.timeRange === 'Nghỉ') {
+  if (details.timeRange === t('timesheet.legendOff')) {
     return 'bg-surface-100 dark:bg-surface-800/40 text-surface-400 dark:text-surface-500 border-l border-surface-200 dark:border-surface-700';
   }
 
@@ -761,15 +761,15 @@ const getCellClass = (employee: any, dateStr: string, dow: number): string => {
 
 const getCellTooltip = (employee: any, dateStr: string, dow: number): string => {
   const details = getDayCellDetails(employee, dateStr, dow);
-  let tooltip = `Ngày: ${dateStr}\nCa làm việc: ${details.shiftName}`;
-  if (details.timeRange && details.timeRange !== 'Nghỉ') {
+  let tooltip = `${t('timesheet.tooltipDate')}: ${dateStr}\n${t('timesheet.tooltipShift')}: ${details.shiftName}`;
+  if (details.timeRange && details.timeRange !== t('timesheet.legendOff')) {
     tooltip += ` (${details.timeRange})`;
   }
   if (details.leaveText) {
-    tooltip += `\nNghỉ phép: ${details.leaveText}`;
+    tooltip += `\n${t('timesheet.tooltipLeave')}: ${details.leaveText}`;
   }
   if (details.overtimeText) {
-    tooltip += `\nTăng ca: ${details.overtimeText}`;
+    tooltip += `\n${t('timesheet.tooltipOvertime')}: ${details.overtimeText}`;
   }
   return tooltip;
 };

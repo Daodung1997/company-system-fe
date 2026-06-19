@@ -53,7 +53,7 @@
           <div class="space-y-1">
             <h4 class="font-bold text-surface-900 dark:text-surface-0 tracking-tight text-lg">{{ config.name }}</h4>
             <p class="text-xs text-surface-500 font-medium font-mono">
-              <span>{{ config.is_default ? $t('timesheet.defaultSystem') : 'Mẫu ca làm việc' }}</span>
+              <span>{{ config.is_default ? $t('timesheet.defaultSystem') : $t('timesheet.shiftTemplate') }}</span>
             </p>
           </div>
 
