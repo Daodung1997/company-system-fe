@@ -34,15 +34,18 @@
 
       <div class="flex flex-wrap items-center gap-3">
         <!-- Year Selector Filter -->
-        <div class="flex items-center gap-2 bg-white dark:bg-surface-950 px-4 py-1.5 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm">
+        <div class="flex items-center gap-1.5 bg-white dark:bg-surface-950 px-4 py-1.5 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm cursor-pointer hover:border-primary/50 transition-colors duration-300">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400 select-none">{{ $t('dashboard.fiscalYear') }}</span>
-          <DatePicker 
-            v-model="selectedYearDate" 
-            view="year" 
-            dateFormat="yy"
-            class="w-16 !bg-transparent !border-none !shadow-none"
-            inputClass="!bg-transparent !border-none !shadow-none !p-0 !text-sm !font-black text-primary focus:!ring-0 cursor-pointer"
-          />
+          <div class="flex items-center gap-1">
+            <DatePicker 
+              v-model="selectedYearDate" 
+              view="year" 
+              dateFormat="yy"
+              class="w-10"
+              panelClass="!w-64"
+            />
+            <i class="pi pi-chevron-down text-[10px] text-surface-400 font-black"></i>
+          </div>
         </div>
 
         <Button 
@@ -601,3 +604,28 @@ onMounted(() => {
   fetchDashboardData();
 });
 </script>
+
+<style scoped>
+/* Scoped overrides to render DatePicker as an inline, borderless year selector */
+:deep(.p-datepicker) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+:deep(.p-datepicker-input) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 0.875rem !important; /* text-sm */
+  font-weight: 900 !important; /* font-black */
+  color: var(--p-primary-color) !important; /* text-primary */
+  cursor: pointer !important;
+  text-align: left !important;
+}
+
+:deep(.p-datepicker-panel) {
+  min-width: 280px !important;
+}
+</style>
