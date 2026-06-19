@@ -34,14 +34,14 @@
 
       <div class="flex flex-wrap items-center gap-3">
         <!-- Year Selector Filter -->
-        <div class="flex items-center gap-2 bg-white dark:bg-surface-950 px-4 py-2 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm">
-          <span class="text-xs font-black uppercase tracking-wider text-surface-400">{{ $t('dashboard.fiscalYear') }}</span>
+        <div class="flex items-center gap-2 bg-white dark:bg-surface-950 px-4 py-1.5 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm">
+          <span class="text-xs font-black uppercase tracking-wider text-surface-400 select-none">{{ $t('dashboard.fiscalYear') }}</span>
           <DatePicker 
             v-model="selectedYearDate" 
             view="year" 
             dateFormat="yy"
-            class="!bg-transparent !border-none !shadow-none !py-0 !pl-1 !pr-0 !text-sm !font-bold focus:!ring-0 cursor-pointer w-20"
-            inputClass="!bg-transparent !border-none !shadow-none !p-0 !text-sm !font-bold focus:!ring-0 cursor-pointer"
+            class="w-16 !bg-transparent !border-none !shadow-none"
+            inputClass="!bg-transparent !border-none !shadow-none !p-0 !text-sm !font-black text-primary focus:!ring-0 cursor-pointer"
           />
         </div>
 
