@@ -36,16 +36,19 @@
         <!-- Year Selector Filter -->
         <div class="flex items-center gap-1.5 bg-white dark:bg-surface-950 px-4 py-1.5 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-sm cursor-pointer hover:border-primary/50 transition-colors duration-300">
           <span class="text-xs font-black uppercase tracking-wider text-surface-400 select-none">{{ $t('dashboard.fiscalYear') }}</span>
-          <div class="flex items-center gap-1">
-            <DatePicker 
-              v-model="selectedYearDate" 
-              view="year" 
-              dateFormat="yy"
-              class="w-10"
-              panelClass="!w-64"
-            />
-            <i class="pi pi-chevron-down text-[10px] text-surface-400 font-black"></i>
-          </div>
+          <DatePicker 
+            v-model="selectedYearDate" 
+            view="year" 
+            dateFormat="yy"
+            class="w-[68px]"
+            panelClass="!w-64"
+            showIcon
+            iconDisplay="input"
+          >
+            <template #inputicon="{ clickCallback }">
+              <i class="pi pi-chevron-down text-[10px] text-surface-400 font-black cursor-pointer" @click="clickCallback" />
+            </template>
+          </DatePicker>
         </div>
 
         <Button 
@@ -617,12 +620,21 @@ onMounted(() => {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 1.25rem !important; /* space for icon */
   font-size: 0.875rem !important; /* text-sm */
   font-weight: 900 !important; /* font-black */
   color: var(--p-primary-color) !important; /* text-primary */
   cursor: pointer !important;
   text-align: left !important;
+}
+
+:deep(.p-datepicker-input-icon) {
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 :deep(.p-datepicker-panel) {
